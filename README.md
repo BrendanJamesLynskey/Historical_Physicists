@@ -73,7 +73,8 @@ signal processing, electronics, and telecommunications pioneers who shaped the m
 | 32 | [Murray Gell-Mann — Quarks, the Eightfold Way & QCD](Gell-Mann/) | 17 | Complete |
 | 33 | [John Stewart Bell — Bell's Theorem & Quantum Non-Locality](Bell/) | 17 | Complete |
 | 34 | [Roger Penrose — Singularities, Twistors & Aperiodic Tilings](Penrose/) | 17 | Complete |
-| 35 | [Stephen Hawking — Black Holes, Singularities & A Brief History](Hawking/) | 17 | Complete |
+| 35 | [Peter Higgs — The Mechanism, the Boson & Symmetry Breaking](Higgs/) | 17 | Complete |
+| 36 | [Stephen Hawking — Black Holes, Singularities & A Brief History](Hawking/) | 17 | Complete |
 
 ## Historical Lineages
 
@@ -175,12 +176,13 @@ Historical_Physicists/
 ├── Gell-Mann/index.html
 ├── Bell/index.html
 ├── Penrose/index.html
+├── Higgs/index.html
 └── Hawking/index.html
 ```
 
 ## Design
 
-Dark theme with consistent visual language across all 35 presentations:
+Dark theme with consistent visual language across all 36 presentations:
 
 - **Fonts:** Playfair Display (headings) · DM Sans (body) · JetBrains Mono (code/labels)
 - **Background:** `#0a0a0f`
