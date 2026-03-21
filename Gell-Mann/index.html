@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murray Gell-Mann — The Man Who Named the Quark</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #e8b84b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.5"/>
+            <!-- Threefold symmetry for quarks -->
+            <g fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.5">
+                <polygon points="100,15 172,143 28,143"/>
+                <polygon points="100,185 28,57 172,57"/>
+            </g>
+            <g fill="none" stroke="#e8b84b" stroke-width="0.6" opacity="0.4">
+                <polygon points="100,30 158,130 42,130"/>
+                <polygon points="100,170 42,70 158,70"/>
+            </g>
+            <g fill="#e8b84b" opacity="0.7">
+                <circle cx="100" cy="15" r="3"/><circle cx="172" cy="143" r="3"/><circle cx="28" cy="143" r="3"/>
+                <circle cx="100" cy="185" r="3"/><circle cx="28" cy="57" r="3"/><circle cx="172" cy="57" r="3"/>
+            </g>
+            <circle cx="100" cy="100" r="6" fill="#e8b84b" opacity="0.8"/>
+            <circle cx="100" cy="100" r="3" fill="#0a0a0f"/>
+        </svg>
+    </div>
+    <h1>Murray Gell-Mann</h1>
+    <p class="subtitle">1929 &ndash; 2019</p>
+    <div class="separator"></div>
+    <p style="max-width: 70%; margin: 0.5em auto; text-align: center;">The polymath who brought <span class="accent">order to the subatomic zoo</span> &mdash; proposing quarks, classifying hadrons, and laying the foundations of quantum chromodynamics. A towering intellect who reshaped our understanding of matter itself.</p>
+    <div style="margin-top: 0.6em;">
+        <span class="tag amber">Quark Model</span>
+        <span class="tag green">Eightfold Way</span>
+        <span class="tag">QCD</span>
+        <span class="tag rose">Nobel Prize 1969</span>
+        <span class="tag blue">SU(3) Symmetry</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 — ORIGINS</span>
+    <h2>Early Life & Education</h2>
+    <div class="two-col">
+        <div>
+            <p>Born on <strong class="accent">September 15, 1929</strong> in Manhattan, New York, Murray Gell-Mann was the son of Arthur and Pauline Gell-Mann, Austrian-Jewish immigrants. A child prodigy of extraordinary breadth, he entered Yale University at just fifteen, already fluent in multiple languages and deeply versed in natural history, archaeology, and linguistics alongside physics.</p>
+            <p>At Yale, he earned his B.S. in physics in 1948, then moved to MIT for his Ph.D. under Victor Weisskopf, completing it in 1951 at age twenty-one. His dissertation on the physics of coupled angular momenta already displayed the mathematical elegance that would define his career.</p>
+            <p>Gell-Mann's intellectual range was legendary. He was as comfortable discussing Mesoamerican archaeology or Romance etymology as quantum field theory. This polymathic breadth was not merely a hobby &mdash; it informed his unique approach to physics, where pattern recognition across domains was his greatest weapon.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">Manhattan Childhood</h4>
+                <p>Grew up on 15th Street in New York during the Depression. His father ran a language school that eventually failed. The family's financial struggles instilled a fierce academic ambition in Murray.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-amber">Yale at Fifteen</h4>
+                <p>Originally wanted to study archaeology or linguistics. His father insisted on something "practical." Physics was a compromise &mdash; and the world of subatomic particles would never be the same.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">MIT & Weisskopf</h4>
+                <p>Victor Weisskopf recognized Gell-Mann's extraordinary talent immediately. The Ph.D. took only three years &mdash; remarkably fast even for a prodigy of Gell-Mann's caliber.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02 — CAREER</span>
+    <h2>Career & Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Institute for Advanced Study <span class="tag amber">1951</span></h4>
+            <p>Brief postdoctoral stay at the IAS in Princeton, where Gell-Mann began working on the "strange" particles that were puzzling experimentalists. He introduced the concept of strangeness as a new quantum number conserved by the strong force.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Caltech <span class="tag amber">1955–1993</span></h4>
+            <p>Gell-Mann spent nearly four decades at Caltech, becoming the Robert Andrews Millikan Professor of Theoretical Physics. It was here that he developed the Eightfold Way, proposed quarks, and co-developed QCD &mdash; reshaping particle physics from the ground up.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Nobel Prize <span class="tag green">1969</span></h4>
+            <p>Awarded the Nobel Prize in Physics "for his contributions and discoveries concerning the classification of elementary particles and their interactions." Notably, the Nobel committee cited the Eightfold Way but not quarks explicitly &mdash; they were still controversial.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Santa Fe Institute <span class="tag">1984–2019</span></h4>
+            <p>Co-founded the Santa Fe Institute to study complexity science. In his later decades, Gell-Mann turned his pattern-finding genius to complex adaptive systems, linguistics, and sustainability &mdash; always seeking deeper structures beneath apparent chaos.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 — CONTEXT</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Particle Zoo</h3>
+            <p>By the early 1950s, particle physics was in crisis. Cosmic ray experiments and the new generation of particle accelerators were discovering dozens of unexpected particles: pions, kaons, hyperons, and more. Each had different masses, charges, spins, and lifetimes, and no one could discern an underlying pattern.</p>
+            <p>Enrico Fermi reportedly quipped: "If I could remember the names of all these particles, I'd have been a botanist." Willis Lamb, in his 1955 Nobel lecture, suggested that anyone who discovered a new particle should be fined rather than rewarded.</p>
+            <p>The strong nuclear force, responsible for holding nuclei together, was poorly understood. Unlike electromagnetism, which had the elegant framework of quantum electrodynamics (QED), the strong force lacked both a fundamental theory and even a clear classification scheme for the particles it produced.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-purple">Strange Particles</h4>
+                <p>Particles like kaons and hyperons were produced rapidly (via strong force) but decayed slowly (via weak force). This puzzling behavior demanded a new quantum number &mdash; "strangeness" &mdash; which Gell-Mann independently introduced in 1953.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">The Symmetry Revolution</h4>
+                <p>The 1950s and 60s saw a growing appreciation that symmetry groups could organize physics. Heisenberg's isospin SU(2) was a first step. Gell-Mann would take the decisive leap to SU(3), revealing the hidden mathematical architecture of the strong force.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 — Quark Model -->
+<section>
+    <span class="section-number">04 — CONTRIBUTION I</span>
+    <h2>The Quark Model</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>In 1964, Gell-Mann proposed that all hadrons &mdash; protons, neutrons, pions, and the entire zoo of strongly interacting particles &mdash; were composed of more fundamental entities he called <strong class="accent">quarks</strong>.</p>
+            <p>The name came from James Joyce's <em>Finnegans Wake</em>: "Three quarks for Muster Mark!" Initially, three flavors sufficed: <span class="accent">up</span> (charge +2/3), <span class="accent-blue">down</span> (charge &minus;1/3), and <span class="accent-purple">strange</span> (charge &minus;1/3).</p>
+            <p>A proton is <code>uud</code>, a neutron is <code>udd</code>. Mesons are quark-antiquark pairs. The fractional charges were deeply controversial &mdash; no one had ever observed a charge of 1/3 or 2/3. George Zweig independently proposed the same idea, calling them "aces."</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 360 310" xmlns="http://www.w3.org/2000/svg">
+                <!-- Proton -->
+                <circle cx="110" cy="100" r="65" fill="none" stroke="#e8b84b" stroke-width="1.5" opacity="0.5"/>
+                <text x="110" y="30" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="13" font-weight="700">Proton (uud)</text>
+                <circle cx="85" cy="80" r="18" fill="#1a2a1a" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="85" y="76" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="12" font-weight="bold">u</text>
+                <text x="85" y="90" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="7">+2/3</text>
+                <circle cx="135" cy="80" r="18" fill="#1a2a1a" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="135" y="76" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="12" font-weight="bold">u</text>
+                <text x="135" y="90" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="7">+2/3</text>
+                <circle cx="110" cy="125" r="18" fill="#1a1a2a" stroke="#5b8cd4" stroke-width="1.5"/>
+                <text x="110" y="121" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12" font-weight="bold">d</text>
+                <text x="110" y="135" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="7">-1/3</text>
+                <!-- Gluon lines -->
+                <path d="M100,85 Q110,100 115,90" fill="none" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="3,2"/>
+                <path d="M120,85 Q110,105 110,110" fill="none" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="3,2"/>
+                <path d="M95,90 Q100,110 105,115" fill="none" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="3,2"/>
+                <text x="110" y="175" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">charge = +2/3+2/3-1/3 = +1</text>
+
+                <!-- Neutron -->
+                <circle cx="270" cy="100" r="65" fill="none" stroke="#e8b84b" stroke-width="1.5" opacity="0.5"/>
+                <text x="270" y="30" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="13" font-weight="700">Neutron (udd)</text>
+                <circle cx="270" cy="75" r="18" fill="#1a2a1a" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="270" y="71" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="12" font-weight="bold">u</text>
+                <text x="270" y="85" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="7">+2/3</text>
+                <circle cx="245" cy="125" r="18" fill="#1a1a2a" stroke="#5b8cd4" stroke-width="1.5"/>
+                <text x="245" y="121" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12" font-weight="bold">d</text>
+                <text x="245" y="135" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="7">-1/3</text>
+                <circle cx="295" cy="125" r="18" fill="#1a1a2a" stroke="#5b8cd4" stroke-width="1.5"/>
+                <text x="295" y="121" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12" font-weight="bold">d</text>
+                <text x="295" y="135" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="7">-1/3</text>
+                <!-- Gluon lines -->
+                <path d="M260,85 Q265,105 250,115" fill="none" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="3,2"/>
+                <path d="M280,85 Q280,105 290,115" fill="none" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="3,2"/>
+                <path d="M258,125 Q270,130 282,125" fill="none" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="3,2"/>
+                <text x="270" y="175" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">charge = +2/3-1/3-1/3 = 0</text>
+
+                <!-- Legend -->
+                <text x="180" y="220" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="13">Quark Composition of Nucleons</text>
+                <text x="180" y="240" text-anchor="middle" fill="#e8b84b" font-family="DM Sans" font-size="9">Dashed lines represent gluon exchange (strong force)</text>
+                <!-- Color legend -->
+                <circle cx="100" y="265" r="5" fill="#4ecca3" opacity="0.8" cy="265"/>
+                <text x="115" y="269" fill="#4ecca3" font-family="JetBrains Mono" font-size="9">up quark</text>
+                <circle cx="200" cy="265" r="5" fill="#5b8cd4" opacity="0.8"/>
+                <text x="215" y="269" fill="#5b8cd4" font-family="JetBrains Mono" font-size="9">down quark</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Quark Model Deeper Dive -->
+<section>
+    <span class="section-number">04b — DEEPER DIVE</span>
+    <h2>Fractional Charges & Confinement</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Audacity of Quarks</h3>
+            <p>When Gell-Mann proposed quarks in 1964, the idea was met with deep skepticism. Fractional electric charges had never been observed. Many physicists, including Gell-Mann himself at times, hedged on whether quarks were "real" physical entities or merely useful mathematical constructs.</p>
+            <p>The critical evidence came from the 1968 deep inelastic scattering experiments at SLAC, where electrons fired at protons bounced off point-like constituents inside &mdash; exactly as the quark model predicted. Richard Feynman called these constituents "partons," but they were soon identified with Gell-Mann's quarks.</p>
+        </div>
+        <div>
+            <h3>Color Confinement</h3>
+            <p>A puzzle remained: why were quarks never observed in isolation? The answer came from <strong class="accent">color charge</strong> and <strong class="accent">confinement</strong>. Each quark carries one of three color charges (red, green, blue). The strong force, mediated by gluons, grows stronger with distance &mdash; unlike electromagnetism. Trying to pull quarks apart generates enough energy to create new quark-antiquark pairs instead.</p>
+            <p>This means quarks are permanently confined inside hadrons. Only "colorless" combinations &mdash; three quarks (baryons) or quark-antiquark pairs (mesons) &mdash; can exist as free particles. This profound feature of quantum chromodynamics has no analogue in any other force of nature.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"Think how hard physics would be if particles could think."</p>
+        <span class="attribution">&mdash; Murray Gell-Mann</span>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 — Eightfold Way -->
+<section>
+    <span class="section-number">05 — CONTRIBUTION II</span>
+    <h2>The Eightfold Way</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>In 1961, Gell-Mann (and independently Yuval Ne'eman) proposed that hadrons could be organized using the mathematical symmetry group <strong class="accent">SU(3)</strong>. He called this classification scheme the <strong class="accent">Eightfold Way</strong>, a playful reference to Buddhism's Noble Eightfold Path.</p>
+            <p>Particles with the same spin but different charge and strangeness fell into geometric multiplets &mdash; octets and decuplets &mdash; when plotted by strangeness versus isospin. The patterns were strikingly regular.</p>
+            <p>The scheme's greatest triumph: Gell-Mann predicted the existence and properties of the <strong class="accent-green">&Omega;&minus;</strong> baryon (strangeness &minus;3) to complete the baryon decuplet. It was discovered at Brookhaven in 1964, with exactly the predicted mass.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 340" xmlns="http://www.w3.org/2000/svg">
+                <!-- Baryon Octet (top) -->
+                <text x="190" y="20" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="12" font-weight="700">Baryon Octet (J=1/2)</text>
+                <!-- S=0 row -->
+                <circle cx="145" cy="55" r="14" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="145" y="59" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10">p</text>
+                <circle cx="235" cy="55" r="14" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="235" y="59" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10">n</text>
+                <!-- S=-1 row -->
+                <circle cx="100" cy="95" r="14" fill="#161622" stroke="#e8b84b" stroke-width="1.5"/>
+                <text x="100" y="99" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="9">&Sigma;+</text>
+                <circle cx="190" cy="95" r="14" fill="#161622" stroke="#e8b84b" stroke-width="1.5"/>
+                <text x="190" y="99" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="9">&Sigma;0,&Lambda;</text>
+                <circle cx="280" cy="95" r="14" fill="#161622" stroke="#e8b84b" stroke-width="1.5"/>
+                <text x="280" y="99" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="9">&Sigma;&minus;</text>
+                <!-- S=-2 row -->
+                <circle cx="145" cy="135" r="14" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+                <text x="145" y="139" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="9">&Xi;0</text>
+                <circle cx="235" cy="135" r="14" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+                <text x="235" y="139" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="9">&Xi;&minus;</text>
+                <!-- Connecting lines octet -->
+                <line x1="145" y1="69" x2="100" y2="81" stroke="#2a2a3a" stroke-width="0.8"/>
+                <line x1="145" y1="69" x2="190" y2="81" stroke="#2a2a3a" stroke-width="0.8"/>
+                <line x1="235" y1="69" x2="190" y2="81" stroke="#2a2a3a" stroke-width="0.8"/>
+                <line x1="235" y1="69" x2="280" y2="81" stroke="#2a2a3a" stroke-width="0.8"/>
+                <line x1="100" y1="109" x2="145" y2="121" stroke="#2a2a3a" stroke-width="0.8"/>
+                <line x1="190" y1="109" x2="145" y2="121" stroke="#2a2a3a" stroke-width="0.8"/>
+                <line x1="190" y1="109" x2="235" y2="121" stroke="#2a2a3a" stroke-width="0.8"/>
+                <line x1="280" y1="109" x2="235" y2="121" stroke="#2a2a3a" stroke-width="0.8"/>
+                <!-- Axis labels octet -->
+                <text x="40" y="59" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">S=0</text>
+                <text x="40" y="99" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">S=-1</text>
+                <text x="40" y="139" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">S=-2</text>
+
+                <!-- Baryon Decuplet (bottom) -->
+                <text x="190" y="180" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="12" font-weight="700">Baryon Decuplet (J=3/2)</text>
+                <!-- S=0 row: 4 particles -->
+                <circle cx="85" cy="210" r="12" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+                <text x="85" y="214" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8">&Delta;++</text>
+                <circle cx="155" cy="210" r="12" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+                <text x="155" y="214" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8">&Delta;+</text>
+                <circle cx="225" cy="210" r="12" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+                <text x="225" y="214" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8">&Delta;0</text>
+                <circle cx="295" cy="210" r="12" fill="#161622" stroke="#4ecca3" stroke-width="1"/>
+                <text x="295" y="214" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8">&Delta;&minus;</text>
+                <!-- S=-1 row: 3 particles -->
+                <circle cx="120" cy="245" r="12" fill="#161622" stroke="#e8b84b" stroke-width="1"/>
+                <text x="120" y="249" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="8">&Sigma;*+</text>
+                <circle cx="190" cy="245" r="12" fill="#161622" stroke="#e8b84b" stroke-width="1"/>
+                <text x="190" y="249" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="8">&Sigma;*0</text>
+                <circle cx="260" cy="245" r="12" fill="#161622" stroke="#e8b84b" stroke-width="1"/>
+                <text x="260" y="249" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="8">&Sigma;*&minus;</text>
+                <!-- S=-2 row: 2 particles -->
+                <circle cx="155" cy="280" r="12" fill="#161622" stroke="#9b72cf" stroke-width="1"/>
+                <text x="155" y="284" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">&Xi;*0</text>
+                <circle cx="225" cy="280" r="12" fill="#161622" stroke="#9b72cf" stroke-width="1"/>
+                <text x="225" y="284" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">&Xi;*&minus;</text>
+                <!-- S=-3 row: Omega minus (predicted!) -->
+                <circle cx="190" cy="315" r="14" fill="#161622" stroke="#cf7272" stroke-width="2"/>
+                <text x="190" y="319" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="9" font-weight="bold">&Omega;&minus;</text>
+                <text x="240" y="319" fill="#cf7272" font-family="DM Sans" font-size="7" font-weight="700">PREDICTED!</text>
+                <!-- Connecting lines decuplet -->
+                <line x1="85" y1="222" x2="120" y2="233" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="155" y1="222" x2="120" y2="233" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="155" y1="222" x2="190" y2="233" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="225" y1="222" x2="190" y2="233" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="225" y1="222" x2="260" y2="233" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="295" y1="222" x2="260" y2="233" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="120" y1="257" x2="155" y2="268" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="190" y1="257" x2="155" y2="268" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="190" y1="257" x2="225" y2="268" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="260" y1="257" x2="225" y2="268" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="155" y1="292" x2="190" y2="301" stroke="#2a2a3a" stroke-width="0.6"/>
+                <line x1="225" y1="292" x2="190" y2="301" stroke="#2a2a3a" stroke-width="0.6"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Eightfold Way Deeper Dive -->
+<section>
+    <span class="section-number">05b — DEEPER DIVE</span>
+    <h2>SU(3) Symmetry & the Omega Minus</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Mathematics of Flavor</h3>
+            <p>The Eightfold Way is based on the Lie group SU(3) &mdash; the group of 3&times;3 unitary matrices with determinant 1. Its eight generators correspond to the eight "directions" in the abstract space of quark flavors (up, down, strange), explaining why hadrons organize into octets.</p>
+            <p>The representations of SU(3) naturally produce multiplets of size 1, 8, 10, 27, etc. Mesons form octets and singlets; baryons form octets and decuplets. The mass splittings within each multiplet arise from the strange quark being heavier than up and down quarks, breaking the perfect SU(3) symmetry.</p>
+            <p>Gell-Mann derived a mass formula &mdash; the <strong class="accent">Gell-Mann&ndash;Okubo relation</strong> &mdash; that predicted hadron masses within multiplets with remarkable accuracy, confirming the underlying symmetry even though it is only approximate.</p>
+        </div>
+        <div>
+            <h3>Prediction of the &Omega;&minus;</h3>
+            <p>The baryon decuplet (spin-3/2 particles) had nine known members by 1962. The triangular pattern of SU(3) demanded a tenth particle at the apex: strangeness &minus;3, charge &minus;1, with a predicted mass near 1680 MeV.</p>
+            <p>At a 1962 conference at CERN, Gell-Mann publicly predicted this particle and its properties. In February 1964, a team at Brookhaven National Laboratory discovered the <strong class="accent-green">&Omega;&minus;</strong> in a bubble chamber photograph, with mass 1672 MeV &mdash; within 1% of the prediction.</p>
+            <p>This was the "periodic table" moment for particle physics. Just as Mendeleev's prediction of gallium confirmed the periodic table, the &Omega;&minus; confirmed the Eightfold Way and pointed unmistakably toward a deeper substructure &mdash; quarks.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 — QCD -->
+<section>
+    <span class="section-number">06 — CONTRIBUTION III</span>
+    <h2>Quantum Chromodynamics</h2>
+    <h3>The Theory of the Strong Force</h3>
+    <p style="max-width: 85%; margin: 0.3em auto;">In the early 1970s, Gell-Mann, Harald Fritzsch, and Heinrich Leutwyler developed <strong class="accent">quantum chromodynamics (QCD)</strong> &mdash; the quantum field theory of the strong interaction. QCD is to the strong force what QED is to electromagnetism, and it completed the Standard Model's account of three fundamental forces.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Color Charge</h4>
+            <p>Quarks carry a new type of charge called "color" (red, green, blue) &mdash; a name Gell-Mann chose. Unlike electric charge, which comes in one type (positive/negative), color charge comes in three. Antiquarks carry anticolor. All observable particles must be "white" (color-neutral).</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Gluons</h4>
+            <p>The strong force is mediated by eight massless gluons, which themselves carry color charge. This self-interaction is what makes QCD radically different from QED &mdash; photons don't carry electric charge, but gluons carry color. This leads to confinement and asymptotic freedom.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Asymptotic Freedom</h4>
+            <p>At very short distances (high energies), the strong force becomes weak &mdash; quarks behave almost as free particles. This "asymptotic freedom," discovered by Gross, Wilczek, and Politzer in 1973, explained why deep inelastic scattering showed point-like quarks inside protons.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Confinement</h4>
+            <p>At large distances, the strong force grows without bound. The gluon field between separating quarks forms a "flux tube" whose energy increases linearly with distance. Eventually it's energetically favorable to create new quarks rather than stretch further &mdash; hence quarks are never free.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 — METHOD</span>
+    <h2>Gell-Mann's Scientific Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Classify</h4>
+            <p>Find patterns in the data</p>
+        </div>
+        <span class="process-arrow">&#8594;</span>
+        <div class="process-step">
+            <h4 class="accent-amber">Symmetry</h4>
+            <p>Identify the mathematical group</p>
+        </div>
+        <span class="process-arrow">&#8594;</span>
+        <div class="process-step">
+            <h4 class="accent-green">Predict</h4>
+            <p>Derive missing particles</p>
+        </div>
+        <span class="process-arrow">&#8594;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Unify</h4>
+            <p>Build the deeper theory</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent">Pattern Recognition Across Domains</h4>
+            <p>Gell-Mann's polymathic background gave him an extraordinary ability to spot structural similarities. He drew on group theory, linguistics, and taxonomy &mdash; the habit of classifying things was almost instinctive. Where others saw chaos in the particle zoo, he saw a puzzle waiting to be organized.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Mathematical Elegance as Guide</h4>
+            <p>Gell-Mann trusted mathematical beauty as a guide to truth. His choice of SU(3) was motivated partly by its elegant representation theory. He believed that nature's deepest structures must be mathematically beautiful &mdash; and was repeatedly vindicated.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Naming as Understanding</h4>
+            <p>Gell-Mann was a master namer: "quarks," "strangeness," "color," "flavor," the "Eightfold Way." His names were never arbitrary &mdash; they carried conceptual freight, making abstract ideas vivid and memorable. Good naming, he believed, was a form of insight.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Competitive Drive</h4>
+            <p>Gell-Mann was fiercely competitive and acutely aware of priority. His rivalry with Feynman at Caltech was legendary. This competitiveness drove him to publish quickly and broadly, ensuring his ideas reached the community before competitors could claim them.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">08 — NETWORK</span>
+    <h2>Connections & Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node -->
+            <circle cx="350" cy="170" r="32" fill="#161622" stroke="#e8b84b" stroke-width="2.5"/>
+            <text x="350" y="165" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display" font-size="10" font-weight="700">Murray</text>
+            <text x="350" y="180" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display" font-size="10" font-weight="700">Gell-Mann</text>
+
+            <line x1="318" y1="155" x2="140" y2="70" stroke="#cf7272" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="120" cy="60" r="25" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="120" y="57" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="700">Feynman</text>
+            <text x="120" y="70" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Caltech rival</text>
+
+            <line x1="382" y1="155" x2="560" y2="70" stroke="#4ecca3" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="580" cy="60" r="25" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="580" y="57" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="700">Fritzsch</text>
+            <text x="580" y="70" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">QCD</text>
+
+            <line x1="382" y1="185" x2="580" y2="200" stroke="#4ecca3" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="600" cy="200" r="25" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="600" y="197" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="700">Leutwyler</text>
+            <text x="600" y="210" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">QCD</text>
+
+            <line x1="318" y1="185" x2="130" y2="200" stroke="#9b72cf" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="110" cy="200" r="25" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="110" y="197" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="9" font-weight="700">Ne'eman</text>
+            <text x="110" y="210" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Eightfold Way</text>
+
+            <line x1="350" y1="138" x2="350" y2="50" stroke="#d4a053" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="350" cy="35" r="25" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="350" y="32" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="9" font-weight="700">Weisskopf</text>
+            <text x="350" y="45" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Ph.D. advisor</text>
+
+            <line x1="350" y1="202" x2="250" y2="300" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <circle cx="240" cy="310" r="25" fill="#161622" stroke="#5b8cd4" stroke-width="1"/>
+            <text x="240" y="307" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="9" font-weight="700">Zweig</text>
+            <text x="240" y="320" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Indep. quarks</text>
+
+            <line x1="350" y1="202" x2="460" y2="300" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <circle cx="470" cy="310" r="25" fill="#161622" stroke="#5b8cd4" stroke-width="1"/>
+            <text x="470" y="307" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="9" font-weight="700">Cabibbo</text>
+            <text x="470" y="320" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Mixing angle</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">09 — CONTROVERSY</span>
+    <h2>Gell-Mann vs. Feynman</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Caltech Duel</h3>
+            <p>For nearly four decades, Murray Gell-Mann and Richard Feynman occupied adjacent offices at Caltech &mdash; two of the greatest theoretical physicists of the twentieth century in constant, combustible proximity. Their rivalry was both intellectually productive and personally bruising.</p>
+            <p>They collaborated on the V-A theory of weak interactions in 1958, a foundational contribution. But their styles could not have been more different. Feynman was intuitive, theatrical, and cultivated an anti-establishment persona. Gell-Mann was erudite, precise, and valued proper attribution and nomenclature.</p>
+            <p>Gell-Mann was deeply irritated by Feynman's "parton" terminology for quarks inside protons. He felt Feynman was deliberately obscuring the priority of the quark model. Feynman, for his part, found Gell-Mann's obsession with naming and classification fussy and insufficiently physical.</p>
+            <p>Despite the friction, their proximity raised the standard of theoretical physics at Caltech to extraordinary heights. Competition, however uncomfortable, sharpened both men's work.</p>
+        </div>
+        <div>
+            <div class="quote-box">
+                <p>"Feynman was a great scientist, but he was also a great actor. I'm not an actor."</p>
+                <span class="attribution">&mdash; Murray Gell-Mann</span>
+            </div>
+            <div class="card" style="margin-top: 0.5em;">
+                <h4 class="accent-rose">The Zweig Controversy</h4>
+                <p>George Zweig independently proposed the quark model (calling them "aces") in 1964 but was unable to publish in a major journal. Some physicists felt Gell-Mann did not adequately acknowledge Zweig's parallel work. Zweig himself was gracious, but the priority question lingered for decades.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em;">
+                <h4 class="accent-amber">The "Mathematical Fiction" Hedge</h4>
+                <p>Gell-Mann initially described quarks as possibly just mathematical constructs rather than real particles. Critics argued he was hedging to protect himself if quarks were never found. Supporters countered it was intellectual honesty in the face of genuine uncertainty.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">10 — LEGACY</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Standard Model</h4>
+            <p>QCD is one of the three pillars of the Standard Model, alongside the electroweak theory. Gell-Mann's quarks and color charges provide the fundamental description of all strongly interacting matter. Every proton, neutron, and pion in the universe is built from his quarks.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Lattice QCD</h4>
+            <p>Modern computational physics uses lattice QCD &mdash; a discrete, numerical approach to solving the QCD equations &mdash; to calculate hadron masses, decay rates, and other properties from first principles. These calculations confirm the quark model with extraordinary precision.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Quark-Gluon Plasma</h4>
+            <p>At extreme temperatures (trillions of degrees), quarks and gluons become deconfined, forming a quark-gluon plasma &mdash; the state of matter that existed microseconds after the Big Bang. Experiments at RHIC and the LHC have created and studied this exotic state.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Complexity Science</h4>
+            <p>Gell-Mann's later work at the Santa Fe Institute pioneered the study of complex adaptive systems. His ideas about effective complexity, coarse graining, and information compression continue to influence fields from ecology to economics to artificial intelligence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 — APPLICATIONS</span>
+    <h2>Real-World Applications</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Particle Accelerators</h4>
+            <p>The quark model and QCD guide the design and interpretation of experiments at CERN's LHC, Fermilab, and facilities worldwide. The Higgs boson discovery relied on QCD predictions for background processes.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Nuclear Physics</h4>
+            <p>Understanding nuclear forces as residual QCD interactions has refined nuclear structure calculations, improving predictions for nuclear reactors and astrophysical processes like nucleosynthesis.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Medical Physics</h4>
+            <p>Proton and heavy-ion therapy for cancer treatment relies on understanding how hadrons interact with matter &mdash; knowledge rooted in the quark model and QCD cross-section calculations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Neutron Stars</h4>
+            <p>The equation of state for ultra-dense matter inside neutron stars depends on QCD at high density. Some models predict quark matter cores, where neutrons dissolve into free quarks &mdash; a direct consequence of Gell-Mann's theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Cosmology</h4>
+            <p>The QCD phase transition in the early universe &mdash; when quarks and gluons condensed into hadrons &mdash; shaped the matter content of the cosmos. Understanding this transition is key to Big Bang nucleosynthesis models.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Complexity & AI</h4>
+            <p>Gell-Mann's work on effective complexity and information theory at the Santa Fe Institute influenced modern approaches to machine learning, data compression, and the study of emergent phenomena in complex systems.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">12 — TIMELINE</span>
+    <h2>Life & Milestones</h2>
+    <div style="max-width: 85%; margin: 0 auto;">
+        <svg viewBox="0 0 700 30" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.4em;">
+            <line x1="20" y1="15" x2="680" y2="15" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="50" cy="15" r="4" fill="#e8b84b"/><text x="50" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1929</text>
+            <circle cx="140" cy="15" r="4" fill="#e8b84b"/><text x="140" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1953</text>
+            <circle cx="240" cy="15" r="4" fill="#4ecca3"/><text x="240" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1961</text>
+            <circle cx="320" cy="15" r="4" fill="#9b72cf"/><text x="320" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1964</text>
+            <circle cx="410" cy="15" r="4" fill="#d4a053"/><text x="410" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1969</text>
+            <circle cx="500" cy="15" r="4" fill="#5b8cd4"/><text x="500" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1972</text>
+            <circle cx="580" cy="15" r="4" fill="#cf7272"/><text x="580" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1984</text>
+            <circle cx="650" cy="15" r="4" fill="#6a6a7a"/><text x="650" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">2019</text>
+        </svg>
+        <div class="timeline-item">
+            <span class="year">1929</span>
+            <div class="event"><strong>Born in New York City</strong>Son of Austrian-Jewish immigrants. A child prodigy who entered Yale at fifteen.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1953</span>
+            <div class="event"><strong>Introduced Strangeness</strong>Proposed a new quantum number to explain the puzzling behavior of kaons and hyperons. Independently proposed by Nishijima.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1961</span>
+            <div class="event"><strong>The Eightfold Way</strong>Published the SU(3) classification scheme for hadrons. Independently developed by Yuval Ne'eman in Israel.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1964</span>
+            <div class="event"><strong>Proposed the Quark Model</strong>Suggested hadrons are composed of fractionally charged quarks. The &Omega;&minus; baryon confirmed the Eightfold Way the same year.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1969</span>
+            <div class="event"><strong>Nobel Prize in Physics</strong>Awarded for "contributions concerning the classification of elementary particles and their interactions."</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1972</span>
+            <div class="event"><strong>Quantum Chromodynamics</strong>With Fritzsch and Leutwyler, formulated QCD as the gauge theory of the strong interaction with SU(3) color symmetry.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1984</span>
+            <div class="event"><strong>Co-founded Santa Fe Institute</strong>Turned his attention to complexity science, studying how complex adaptive systems emerge from simple underlying rules.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">2019</span>
+            <div class="event"><strong>Died in Santa Fe, New Mexico</strong>Passed away on May 24, aged 89. Left a transformed Standard Model and a new science of complexity.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">13 — READING</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent"><em>Strange Beauty: Murray Gell-Mann and the Revolution in 20th-Century Physics</em></h4>
+            <p>George Johnson (1999). The definitive biography. Johnson had extensive access to Gell-Mann and captures both the brilliance and the difficult personality with remarkable skill.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber"><em>The Quark and the Jaguar</em></h4>
+            <p>Murray Gell-Mann (1994). Gell-Mann's own account of the connections between particle physics and complexity science. A rare window into how one of the century's great minds thought about the world.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green"><em>The Eightfold Way</em></h4>
+            <p>Murray Gell-Mann & Yuval Ne'eman (1964). The original collected papers on SU(3) symmetry. A primary source that shows the classification scheme as it was being constructed.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple"><em>QCD and Collider Physics</em></h4>
+            <p>R.K. Ellis, W.J. Stirling & B.R. Webber (1996). The standard reference on quantum chromodynamics in practice. Essential for understanding how QCD is applied in modern experiments.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose"><em>The Second Creation</em></h4>
+            <p>Robert Crease & Charles Mann (1996). A history of 20th-century particle physics told through the physicists who made it. Gell-Mann features prominently alongside his contemporaries and rivals.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue"><em>Quarks: The Stuff of Matter</em></h4>
+            <p>Harald Fritzsch (1983). Written by Gell-Mann's QCD collaborator. An accessible introduction to the quark model and chromodynamics for the general reader.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.5"/>
+            <circle cx="100" cy="100" r="30" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.6"/>
+            <g fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.4">
+                <polygon points="100,15 172,143 28,143"/>
+                <polygon points="100,185 28,57 172,57"/>
+                <path d="M100 10 L100 190"/><path d="M10 100 L190 100"/>
+            </g>
+            <g fill="#e8b84b" opacity="0.6">
+                <circle cx="100" cy="15" r="3"/><circle cx="172" cy="143" r="3"/><circle cx="28" cy="143" r="3"/>
+                <circle cx="100" cy="185" r="3"/><circle cx="28" cy="57" r="3"/><circle cx="172" cy="57" r="3"/>
+                <circle cx="10" cy="100" r="2"/><circle cx="190" cy="100" r="2"/>
+            </g>
+            <circle cx="100" cy="100" r="8" fill="#e8b84b" opacity="0.7"/>
+            <circle cx="100" cy="100" r="4" fill="#0a0a0f"/>
+        </svg>
+    </div>
+    <h2>Murray Gell-Mann</h2>
+    <p class="subtitle">1929 &ndash; 2019</p>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width: 65%;">
+        <p>"Think how hard physics would be if particles could think."</p>
+        <span class="attribution">&mdash; Murray Gell-Mann</span>
+    </div>
+    <p style="text-align: center; margin-top: 1em; font-size: 0.48em !important; color: var(--text-muted);">He found order in chaos, quarks in hadrons, and complexity in simplicity.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

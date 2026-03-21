@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Bardeen — The Quiet Genius</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #5b8cd4;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#5b8cd4" stroke-width="1" opacity="0.6">
+                <path d="M100 10 L100 190"/><path d="M10 100 L190 100"/>
+                <path d="M36 36 L164 164"/><path d="M164 36 L36 164"/>
+            </g>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.5">
+                <polygon points="100,15 130,50 130,90 100,110 70,90 70,50"/>
+                <polygon points="100,185 130,150 130,110 100,90 70,110 70,150"/>
+            </g>
+            <g fill="#5b8cd4" opacity="0.7">
+                <circle cx="100" cy="10" r="3"/><circle cx="100" cy="190" r="3"/>
+                <circle cx="10" cy="100" r="3"/><circle cx="190" cy="100" r="3"/>
+                <circle cx="36" cy="36" r="2.5"/><circle cx="164" cy="36" r="2.5"/>
+                <circle cx="36" cy="164" r="2.5"/><circle cx="164" cy="164" r="2.5"/>
+            </g>
+            <circle cx="100" cy="100" r="6" fill="#5b8cd4" opacity="0.8"/>
+            <circle cx="100" cy="100" r="3" fill="#0a0a0f"/>
+        </svg>
+    </div>
+    <h1>John Bardeen</h1>
+    <p class="subtitle">1908 &ndash; 1991</p>
+    <div class="separator"></div>
+    <p style="max-width: 70%; margin: 0.5em auto; text-align: center;">The only person in history to win <span class="accent">two Nobel Prizes in Physics</span> &mdash; for the transistor and the theory of superconductivity. A quiet revolutionary who transformed both technology and fundamental science.</p>
+    <div style="margin-top: 0.6em;">
+        <span class="tag blue">Solid-State Physics</span>
+        <span class="tag green">Transistor</span>
+        <span class="tag amber">Superconductivity</span>
+        <span class="tag">BCS Theory</span>
+        <span class="tag rose">Two Nobel Prizes</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 — ORIGINS</span>
+    <h2>Early Life & Education</h2>
+    <div class="two-col">
+        <div>
+            <p>Born on <strong class="accent">May 23, 1908</strong> in Madison, Wisconsin, John Bardeen was a child prodigy who skipped several grades, entering the University of Wisconsin at just fifteen. His father, Charles Bardeen, was the first dean of the UW Medical School; his mother, Althea Harmer, died when John was twelve &mdash; a loss that shaped his reserved, introspective temperament.</p>
+            <p>Bardeen earned a B.S. and M.S. in electrical engineering at Wisconsin, where he first encountered quantum mechanics. He spent three years as a geophysicist at Gulf Research Laboratories in Pittsburgh before pursuing a Ph.D. in mathematical physics at <strong class="accent">Princeton</strong> under Eugene Wigner, completing it in 1936 with a dissertation on the work function of metals.</p>
+            <p>Even as a graduate student, his quiet brilliance was evident. Wigner remarked that Bardeen was one of the most talented students he had ever supervised &mdash; though his soft-spoken manner often led others to underestimate him.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">Madison, Wisconsin</h4>
+                <p>Grew up in an academic household; his father shaped UW's medical school. The midwestern ethos of quiet competence stayed with Bardeen his entire life.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-amber">Princeton Years</h4>
+                <p>Studied under Eugene Wigner alongside future luminaries. Developed early interest in surface physics and electron behavior in metals.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Gulf Research Labs</h4>
+                <p>Three years in industry gave Bardeen a practical sensibility rare among theorists &mdash; he understood that theory must connect to experiment.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02 — CAREER</span>
+    <h2>Career & Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Bell Telephone Labs <span class="tag blue">1945–1951</span></h4>
+            <p>Joined the newly formed solid-state physics group under William Shockley. Bardeen's surface states theory unlocked the path to the transistor. With Walter Brattain, he invented the point-contact transistor on December 23, 1947 &mdash; one of the most consequential experiments in history.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">University of Illinois <span class="tag amber">1951–1975</span></h4>
+            <p>Left Bell Labs partly due to tensions with Shockley. At Illinois, Bardeen turned to the unsolved mystery of superconductivity, assembling a team with Leon Cooper and J. Robert Schrieffer that would crack the problem in 1957.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">First Nobel Prize <span class="tag green">1956</span></h4>
+            <p>Shared with Shockley and Brattain for the transistor. At the ceremony, King Gustav VI noted the invention's transformative potential &mdash; though even he could not have imagined the digital revolution ahead.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Second Nobel Prize <span class="tag rose">1972</span></h4>
+            <p>Shared with Cooper and Schrieffer for BCS theory. Bardeen became the only person to receive two Nobel Prizes in Physics &mdash; a distinction that remains unique to this day.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 — CONTEXT</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Post-War Physics Boom</h3>
+            <p>World War II had demonstrated the immense practical power of physics &mdash; from radar to the atomic bomb. In the aftermath, Bell Labs and other industrial research facilities invested heavily in fundamental science, recognizing that understanding quantum mechanics at the material level could yield revolutionary technologies.</p>
+            <p>The vacuum tube, backbone of wartime electronics, was bulky, fragile, and power-hungry. The military and telecommunications industry urgently needed a solid-state replacement. Bell Labs assembled the brightest minds in solid-state physics to solve this problem.</p>
+            <p>Meanwhile, superconductivity &mdash; discovered in 1911 by Kamerlingh Onnes &mdash; remained one of physics' great unsolved puzzles. For nearly half a century, the best theoretical minds (including Feynman, Bohr, and Heisenberg) had failed to explain why certain metals lost all electrical resistance near absolute zero.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-purple">The Semiconductor Race</h4>
+                <p>Germanium and silicon were poorly understood. Wartime radar research on crystal rectifiers provided crucial clues, but a theoretical framework for semiconductor surfaces was missing &mdash; until Bardeen provided it.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">The Superconductivity Mystery</h4>
+                <p>From 1911 to 1957, no satisfactory microscopic theory existed. The London equations and Ginzburg-Landau theory described behavior phenomenologically, but the underlying mechanism remained elusive.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 — Transistor -->
+<section>
+    <span class="section-number">04 — CONTRIBUTION I</span>
+    <h2>The Transistor</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Bardeen's key insight was the concept of <strong class="accent">surface states</strong> &mdash; electrons trapped at a semiconductor surface that shielded the interior from external electric fields. This explained why Shockley's initial field-effect design failed.</p>
+            <p>Once Bardeen and Brattain understood surface states, they devised the <strong class="accent">point-contact transistor</strong>: two gold contacts pressed onto a germanium crystal, with a third contact on the base. On December 23, 1947, it amplified an electrical signal for the first time.</p>
+            <p>The device demonstrated that a small input current could control a much larger output current &mdash; the principle of <span class="accent">amplification</span> that underlies all modern electronics.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- NPN Transistor diagram -->
+                <rect x="30" y="100" width="80" height="120" rx="4" fill="#1a2a4a" stroke="#5b8cd4" stroke-width="1.5"/>
+                <text x="70" y="165" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="14" font-weight="bold">N</text>
+                <text x="70" y="135" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Emitter</text>
+                <rect x="130" y="100" width="80" height="120" rx="4" fill="#2a1a1a" stroke="#cf7272" stroke-width="1.5"/>
+                <text x="170" y="165" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="14" font-weight="bold">P</text>
+                <text x="170" y="135" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Base</text>
+                <rect x="230" y="100" width="80" height="120" rx="4" fill="#1a2a4a" stroke="#5b8cd4" stroke-width="1.5"/>
+                <text x="270" y="165" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="14" font-weight="bold">N</text>
+                <text x="270" y="135" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Collector</text>
+                <!-- Carrier flow arrows -->
+                <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#4ecca3"/></marker></defs>
+                <line x1="55" y1="185" x2="130" y2="185" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#arr)"/>
+                <line x1="175" y1="185" x2="230" y2="185" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#arr)"/>
+                <text x="90" y="200" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8">e⁻ flow</text>
+                <text x="200" y="200" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8">e⁻ flow</text>
+                <!-- Base current -->
+                <line x1="170" y1="100" x2="170" y2="60" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arr)"/>
+                <text x="170" y="52" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="9">Small I_b</text>
+                <!-- Labels -->
+                <text x="170" y="260" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="13">NPN Junction Transistor</text>
+                <text x="170" y="278" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Small base current controls large collector current</text>
+                <!-- Depletion zones -->
+                <rect x="107" y="100" width="6" height="120" fill="#5b8cd4" opacity="0.15"/>
+                <rect x="117" y="100" width="6" height="120" fill="#cf7272" opacity="0.15"/>
+                <rect x="207" y="100" width="6" height="120" fill="#cf7272" opacity="0.15"/>
+                <rect x="217" y="100" width="6" height="120" fill="#5b8cd4" opacity="0.15"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Transistor Deeper Dive -->
+<section>
+    <span class="section-number">04b — DEEPER DIVE</span>
+    <h2>Surface States & Amplification</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Surface States Breakthrough</h3>
+            <p>Shockley's original field-effect transistor concept failed because external electric fields were screened by electrons trapped at the semiconductor surface. Bardeen published his surface states theory in 1947, showing that these trapped charges formed a barrier preventing field penetration into the bulk material.</p>
+            <p>This was not merely a technical fix &mdash; it was a fundamental contribution to semiconductor physics. Bardeen showed that the interface between a semiconductor and its environment was not a passive boundary but an active electronic region with its own distinct properties.</p>
+        </div>
+        <div>
+            <h3>The December Miracle</h3>
+            <p>Working with experimentalist Walter Brattain, Bardeen designed a series of increasingly refined experiments. On December 16, 1947, they observed transistor action; by December 23, they had a reliable amplifying device. Brattain's experimental skill and Bardeen's theoretical insight proved a perfect combination.</p>
+            <p>Shockley, their group leader, was initially excluded from the key experiments. His subsequent development of the junction transistor &mdash; a more practical design &mdash; ensured all three shared the 1956 Nobel Prize, though the interpersonal dynamics were strained.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"I knew the transistor was important, but I never foresaw the revolution in electronics it would bring."</p>
+        <span class="attribution">&mdash; John Bardeen</span>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 — BCS Theory -->
+<section>
+    <span class="section-number">05 — CONTRIBUTION II</span>
+    <h2>BCS Theory of Superconductivity</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>In 1957, Bardeen, Leon Cooper, and J. Robert Schrieffer published the <strong class="accent">BCS theory</strong>, finally explaining why metals become superconducting at low temperatures.</p>
+            <p>The key insight was <strong class="accent">Cooper pairing</strong>: at sufficiently low temperatures, electrons with opposite spin and momentum form bound pairs mediated by lattice vibrations (phonons). These Cooper pairs condense into a single quantum state, flowing without resistance.</p>
+            <p>The energy gap between the superconducting ground state and excited states prevents scattering &mdash; hence zero resistance. BCS theory predicted this gap quantitatively and matched experimental data with stunning precision.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Lattice grid -->
+                <g fill="#6a6a7a" opacity="0.4">
+                    <circle cx="60" cy="60" r="10"/><circle cx="140" cy="60" r="10"/><circle cx="220" cy="60" r="10"/><circle cx="300" cy="60" r="10"/>
+                    <circle cx="60" cy="140" r="10"/><circle cx="140" cy="140" r="10"/><circle cx="220" cy="140" r="10"/><circle cx="300" cy="140" r="10"/>
+                    <circle cx="60" cy="220" r="10"/><circle cx="140" cy="220" r="10"/><circle cx="220" cy="220" r="10"/><circle cx="300" cy="220" r="10"/>
+                </g>
+                <text x="60" y="64" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="8">+</text>
+                <text x="140" y="64" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="8">+</text>
+                <text x="220" y="64" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="8">+</text>
+                <text x="300" y="64" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="8">+</text>
+                <text x="60" y="144" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="8">+</text>
+                <text x="300" y="144" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono" font-size="8">+</text>
+                <!-- Lattice distortion near electron 1 -->
+                <circle cx="140" cy="133" r="10" fill="#6a6a7a" opacity="0.5" stroke="#d4a053" stroke-width="1" stroke-dasharray="2,2"/>
+                <circle cx="220" cy="133" r="10" fill="#6a6a7a" opacity="0.5" stroke="#d4a053" stroke-width="1" stroke-dasharray="2,2"/>
+                <!-- Electron 1 -->
+                <circle cx="150" cy="105" r="7" fill="#5b8cd4" opacity="0.9"/>
+                <text x="150" y="109" text-anchor="middle" fill="#0a0a0f" font-family="JetBrains Mono" font-size="8" font-weight="bold">e↑</text>
+                <!-- Phonon wave -->
+                <path d="M158,112 Q170,95 180,112 Q190,129 200,112" fill="none" stroke="#d4a053" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <text x="180" y="90" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="8">phonon</text>
+                <!-- Electron 2 -->
+                <circle cx="210" cy="105" r="7" fill="#cf7272" opacity="0.9"/>
+                <text x="210" y="109" text-anchor="middle" fill="#0a0a0f" font-family="JetBrains Mono" font-size="8" font-weight="bold">e↓</text>
+                <!-- Cooper pair bracket -->
+                <path d="M140,85 Q180,72 220,85" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="180" y="72" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="bold">Cooper Pair</text>
+                <!-- Labels -->
+                <text x="170" y="262" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="13">Cooper Pair Formation</text>
+                <text x="170" y="280" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Lattice vibrations mediate attractive electron-electron interaction</text>
+                <!-- Ion labels -->
+                <text x="60" y="250" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">lattice ions</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: BCS Deeper Dive -->
+<section>
+    <span class="section-number">05b — DEEPER DIVE</span>
+    <h2>The Superconducting State</h2>
+    <div class="two-col">
+        <div>
+            <h3>Phonon-Mediated Attraction</h3>
+            <p>The central puzzle of superconductivity was explaining how electrons &mdash; which repel each other via Coulomb interaction &mdash; could form bound pairs. Cooper showed in 1956 that even an infinitesimally weak attractive interaction would cause pairing instability in a filled Fermi sea.</p>
+            <p>The attraction comes from the lattice: an electron passing through the crystal lattice pulls positive ions slightly toward it, creating a region of excess positive charge. A second electron is attracted to this deformation. The interaction is retarded &mdash; by the time the second electron arrives, the first has moved on, reducing Coulomb repulsion.</p>
+        </div>
+        <div>
+            <h3>The BCS Ground State</h3>
+            <p>Schrieffer constructed the many-body wave function using a variational approach. The BCS ground state is a coherent superposition of Cooper pair states, described by a single macroscopic wave function. This explained the Meissner effect, the energy gap, and the isotope effect in a unified framework.</p>
+            <p>BCS theory's predictions were confirmed experimentally with remarkable precision. The theory remains the foundation of our understanding of conventional superconductors, and its mathematical methods influenced particle physics, leading to the concept of <span class="accent">spontaneous symmetry breaking</span> in the Standard Model.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 — Surface States -->
+<section>
+    <span class="section-number">06 — CONTRIBUTION III</span>
+    <h2>Semiconductor Surface Physics</h2>
+    <h3>The Foundation Beneath the Revolution</h3>
+    <p style="max-width: 85%; margin: 0.3em auto;">Bardeen's theory of surface states, published in Physical Review in 1947, was not just a stepping stone to the transistor &mdash; it established an entire subfield of physics. He demonstrated that at the surface of a semiconductor, the periodic potential of the crystal terminates abruptly, creating localized electronic states with energies within the band gap.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Fermi Level Pinning</h4>
+            <p>Surface states can "pin" the Fermi level, making the surface electronic properties largely independent of bulk doping. This explained persistent puzzles in metal-semiconductor contacts and was critical for understanding Schottky barriers.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Band Bending</h4>
+            <p>Charge trapped in surface states creates electric fields that bend the energy bands near the surface. Bardeen's quantitative treatment of band bending became a cornerstone of semiconductor device physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Impact on MOSFET Design</h4>
+            <p>The metal-oxide-semiconductor field-effect transistor (MOSFET) &mdash; the basis of all modern computing &mdash; works precisely because engineers learned to minimize surface states at the Si/SiO₂ interface, following principles Bardeen established.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Modern Surface Science</h4>
+            <p>Bardeen's work laid the groundwork for scanning tunneling microscopy (STM), for which Binnig and Rohrer won the 1986 Nobel Prize. The tunneling current in STM depends on surface electronic states exactly as Bardeen described.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 — METHOD</span>
+    <h2>Bardeen's Scientific Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Identify</h4>
+            <p>Isolate the key experimental puzzle</p>
+        </div>
+        <span class="process-arrow">&#8594;</span>
+        <div class="process-step">
+            <h4 class="accent-amber">Simplify</h4>
+            <p>Strip to essential physics</p>
+        </div>
+        <span class="process-arrow">&#8594;</span>
+        <div class="process-step">
+            <h4 class="accent-green">Model</h4>
+            <p>Build minimal mathematical framework</p>
+        </div>
+        <span class="process-arrow">&#8594;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Validate</h4>
+            <p>Compare predictions to data</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent">Theory-Experiment Symbiosis</h4>
+            <p>Unlike many theorists, Bardeen stayed in constant dialogue with experimentalists. He attended lab meetings, understood apparatus limitations, and shaped his theories around what could actually be measured. His partnership with Brattain exemplified this approach.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Quiet Persistence</h4>
+            <p>Bardeen was famous for working on problems for years without publishing premature results. He spent nearly a decade on superconductivity before the BCS breakthrough. He believed in patient, methodical accumulation of understanding over flashy speculation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Collaborative Spirit</h4>
+            <p>Both of his Nobel-winning achievements were collaborative. Bardeen excelled at assembling small teams with complementary skills &mdash; Brattain's experimental craft, Cooper's mathematical brilliance, Schrieffer's computational ingenuity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Physical Intuition</h4>
+            <p>Colleagues marveled at Bardeen's ability to see through mathematical complexity to the underlying physics. He would often arrive at correct answers through physical reasoning before formal derivation confirmed them.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">08 — NETWORK</span>
+    <h2>Connections & Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node -->
+            <circle cx="350" cy="170" r="32" fill="#161622" stroke="#5b8cd4" stroke-width="2.5"/>
+            <text x="350" y="167" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display" font-size="11" font-weight="700">John</text>
+            <text x="350" y="181" text-anchor="middle" fill="#5b8cd4" font-family="Playfair Display" font-size="11" font-weight="700">Bardeen</text>
+            <!-- Connections -->
+            <line x1="318" y1="170" x2="150" y2="90" stroke="#cf7272" stroke-width="1" opacity="0.6"/>
+            <circle cx="130" cy="80" r="25" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="130" y="77" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="700">Shockley</text>
+            <text x="130" y="90" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Bell Labs</text>
+
+            <line x1="318" y1="170" x2="150" y2="190" stroke="#4ecca3" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="130" cy="190" r="25" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="130" y="187" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="700">Brattain</text>
+            <text x="130" y="200" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Transistor</text>
+
+            <line x1="350" y1="138" x2="350" y2="50" stroke="#d4a053" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="350" cy="35" r="25" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="350" y="32" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="9" font-weight="700">Wigner</text>
+            <text x="350" y="45" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Advisor</text>
+
+            <line x1="382" y1="170" x2="550" y2="90" stroke="#9b72cf" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="570" cy="80" r="25" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="570" y="77" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="9" font-weight="700">Cooper</text>
+            <text x="570" y="90" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">BCS Theory</text>
+
+            <line x1="382" y1="170" x2="570" y2="190" stroke="#9b72cf" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="580" cy="190" r="25" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="580" y="187" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="9" font-weight="700">Schrieffer</text>
+            <text x="580" y="200" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">BCS Theory</text>
+
+            <line x1="350" y1="202" x2="250" y2="290" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <circle cx="240" cy="300" r="25" fill="#161622" stroke="#5b8cd4" stroke-width="1"/>
+            <text x="240" y="297" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="9" font-weight="700">Feynman</text>
+            <text x="240" y="310" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Rival theorist</text>
+
+            <line x1="350" y1="202" x2="460" y2="290" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <circle cx="470" cy="300" r="25" fill="#161622" stroke="#5b8cd4" stroke-width="1"/>
+            <text x="470" y="297" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="9" font-weight="700">Pines</text>
+            <text x="470" y="310" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Illinois collab.</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">09 — CONTROVERSY</span>
+    <h2>The Shockley Rift</h2>
+    <div class="two-col">
+        <div>
+            <h3>A Bitter Falling Out</h3>
+            <p>William Shockley was the leader of the Bell Labs solid-state group and had originally conceived the field-effect transistor idea. When Bardeen and Brattain invented the point-contact transistor without him, Shockley felt personally slighted &mdash; even though it was <em>his</em> failed design that Bardeen's surface states theory had rescued.</p>
+            <p>Shockley responded by secretly developing the junction transistor, a superior design, and then attempted to claim sole credit for the transistor's invention. Bell Labs' patent department listed only Shockley on key patents, marginalizing Bardeen and Brattain.</p>
+            <p>The tension became untenable. Bardeen, characteristically quiet about the conflict, simply left Bell Labs in 1951 for the University of Illinois &mdash; where he would go on to win his second Nobel Prize, something Shockley never achieved.</p>
+        </div>
+        <div>
+            <div class="quote-box">
+                <p>"Bardeen went to the University of Illinois and won a second Nobel Prize. Shockley went to Silicon Valley and founded a company that failed. The contrast speaks for itself."</p>
+                <span class="attribution">&mdash; Lillian Hoddeson, historian of physics</span>
+            </div>
+            <div class="card" style="margin-top: 0.5em;">
+                <h4 class="accent-rose">The Nobel Ceremony Incident</h4>
+                <p>At the 1956 Nobel ceremony, King Gustav VI gently chided Bardeen for not bringing his children. Bardeen, ever the modest midwesterner, had left them at home. He promised to bring them next time &mdash; and did, when he returned in 1972.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">10 — LEGACY</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Semiconductor Industry</h4>
+            <p>The transistor is the fundamental building block of all modern electronics. Over 10 sextillion transistors have been manufactured &mdash; more than any other object in human history. Every computer, smartphone, and digital device descends directly from Bardeen and Brattain's 1947 invention.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Superconductor Technology</h4>
+            <p>BCS theory enabled the engineering of superconducting magnets used in MRI machines, particle accelerators (including the LHC), and maglev trains. Josephson junctions, based on BCS theory, form the basis of SQUIDs and emerging quantum computers.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Spontaneous Symmetry Breaking</h4>
+            <p>The mathematical structure of BCS theory &mdash; a broken gauge symmetry &mdash; directly inspired the Higgs mechanism in particle physics. Anderson, Nambu, and others explicitly drew on BCS theory in developing the Standard Model. Nambu's 2008 Nobel Prize acknowledged this debt.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Surface Science & Nanotechnology</h4>
+            <p>Bardeen's surface states theory underpins modern surface science, scanning probe microscopy, and nanotechnology. His tunneling theory provided the theoretical basis for the scanning tunneling microscope (STM), which enabled atomic-scale imaging.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 — APPLICATIONS</span>
+    <h2>Real-World Applications</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Computing</h4>
+            <p>Billions of transistors per chip enable modern CPUs and GPUs. Moore's Law, the exponential scaling of computing power, rests on Bardeen's transistor.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">MRI Imaging</h4>
+            <p>Superconducting magnets based on BCS theory generate the powerful, stable fields needed for magnetic resonance imaging &mdash; now a cornerstone of medical diagnostics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Quantum Computing</h4>
+            <p>Superconducting qubits (transmons) exploit the macroscopic quantum coherence of Cooper pairs. BCS theory is essential for designing these devices.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Telecommunications</h4>
+            <p>Transistor-based amplifiers and switches form the backbone of global telecommunications networks, from fiber optic repeaters to cellular base stations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Particle Accelerators</h4>
+            <p>The LHC uses over 1,200 superconducting dipole magnets cooled to 1.9 K. Without BCS theory, designing these magnets would have been impossible.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">SQUIDs</h4>
+            <p>Superconducting Quantum Interference Devices detect incredibly faint magnetic fields, with applications from brain imaging (MEG) to geological surveys.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">12 — TIMELINE</span>
+    <h2>Life & Milestones</h2>
+    <div style="max-width: 85%; margin: 0 auto;">
+        <svg viewBox="0 0 700 30" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 0.4em;">
+            <line x1="20" y1="15" x2="680" y2="15" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="60" cy="15" r="4" fill="#5b8cd4"/><text x="60" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1908</text>
+            <circle cx="200" cy="15" r="4" fill="#5b8cd4"/><text x="200" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1936</text>
+            <circle cx="300" cy="15" r="4" fill="#4ecca3"/><text x="300" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1947</text>
+            <circle cx="380" cy="15" r="4" fill="#d4a053"/><text x="380" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1956</text>
+            <circle cx="430" cy="15" r="4" fill="#9b72cf"/><text x="430" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1957</text>
+            <circle cx="540" cy="15" r="4" fill="#cf7272"/><text x="540" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1972</text>
+            <circle cx="650" cy="15" r="4" fill="#6a6a7a"/><text x="650" y="10" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7">1991</text>
+        </svg>
+        <div class="timeline-item">
+            <span class="year">1908</span>
+            <div class="event"><strong>Born in Madison, Wisconsin</strong>Child prodigy; skipped three grades in school. Father was dean of UW Medical School.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1936</span>
+            <div class="event"><strong>Ph.D. from Princeton</strong>Studied under Eugene Wigner. Dissertation on the work function of metals &mdash; his first contribution to surface physics.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1945</span>
+            <div class="event"><strong>Joined Bell Telephone Laboratories</strong>Recruited to Shockley's solid-state physics group. Began work on semiconductor surfaces.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1947</span>
+            <div class="event"><strong>Invention of the Transistor</strong>With Walter Brattain, demonstrated the first point-contact transistor on December 23. Published surface states theory.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1956</span>
+            <div class="event"><strong>First Nobel Prize in Physics</strong>Shared with Shockley and Brattain "for researches on semiconductors and the discovery of the transistor effect."</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1957</span>
+            <div class="event"><strong>BCS Theory Published</strong>With Cooper and Schrieffer, published the microscopic theory of superconductivity in Physical Review.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1972</span>
+            <div class="event"><strong>Second Nobel Prize in Physics</strong>Shared with Cooper and Schrieffer. Became the only person to win two Nobel Prizes in Physics.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1991</span>
+            <div class="event"><strong>Died in Boston, Massachusetts</strong>Passed away on January 30, aged 82. Left a legacy unmatched in the history of physics.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">13 — READING</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent"><em>True Genius: The Life and Science of John Bardeen</em></h4>
+            <p>Lillian Hoddeson & Vicki Daitch (2002). The definitive biography, drawing on extensive interviews and archival research. Captures both the science and the quiet, remarkable personality.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber"><em>Crystal Fire: The Invention of the Transistor</em></h4>
+            <p>Michael Riordan & Lillian Hoddeson (1997). A gripping narrative of the transistor's invention at Bell Labs, including the Bardeen-Shockley tensions. Essential reading for understanding the context.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green"><em>The Theory of Superconductivity</em></h4>
+            <p>J. Robert Schrieffer (1964). Schrieffer's own account of BCS theory, written at a level accessible to advanced physics students. A primary source of enduring value.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple"><em>Introduction to Superconductivity</em></h4>
+            <p>Michael Tinkham (1996, 2nd ed.). The standard graduate textbook on superconductivity. Gives a thorough treatment of BCS theory and its experimental consequences.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose"><em>The Idea Factory: Bell Labs</em></h4>
+            <p>Jon Gertner (2012). Chronicles the extraordinary institution where the transistor was born. Provides rich context on the culture of industrial research that enabled Bardeen's work.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue"><em>Out of the Crystal Maze</em></h4>
+            <p>Lillian Hoddeson et al. (1992). A history of solid-state physics from 1900 to 1960. Places Bardeen's contributions within the broader development of condensed matter physics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+            <circle cx="100" cy="100" r="30" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.6"/>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.4">
+                <path d="M100 10 L100 190"/><path d="M10 100 L190 100"/>
+                <path d="M36 36 L164 164"/><path d="M164 36 L36 164"/>
+                <path d="M100 10 L164 164"/><path d="M100 10 L36 164"/>
+                <path d="M10 100 L164 36"/><path d="M10 100 L164 164"/>
+            </g>
+            <g fill="#5b8cd4" opacity="0.6">
+                <circle cx="100" cy="10" r="3"/><circle cx="100" cy="190" r="3"/>
+                <circle cx="10" cy="100" r="3"/><circle cx="190" cy="100" r="3"/>
+                <circle cx="36" cy="36" r="2"/><circle cx="164" cy="36" r="2"/>
+                <circle cx="36" cy="164" r="2"/><circle cx="164" cy="164" r="2"/>
+            </g>
+            <circle cx="100" cy="100" r="8" fill="#5b8cd4" opacity="0.7"/>
+            <circle cx="100" cy="100" r="4" fill="#0a0a0f"/>
+        </svg>
+    </div>
+    <h2>John Bardeen</h2>
+    <p class="subtitle">1908 &ndash; 1991</p>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width: 65%;">
+        <p>"Science is a collaborative effort. The combined results of several people working together is often much more effective than could be that of an individual scientist working alone."</p>
+        <span class="attribution">&mdash; John Bardeen</span>
+    </div>
+    <p style="text-align: center; margin-top: 1em; font-size: 0.48em !important; color: var(--text-muted);">The quiet man who invented the modern world &mdash; twice.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

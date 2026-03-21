@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J.J. Thomson — Discoverer of the Electron</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #4ecca3;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="100" cy="100" r="6" fill="#4ecca3" opacity="0.8"/>
+            <g stroke="#4ecca3" stroke-width="0.6" opacity="0.5">
+                <line x1="100" y1="10" x2="100" y2="190"/><line x1="10" y1="100" x2="190" y2="100"/>
+                <line x1="36" y1="36" x2="164" y2="164"/><line x1="164" y1="36" x2="36" y2="164"/>
+            </g>
+            <circle cx="100" cy="10" r="3" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="100" cy="190" r="3" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="10" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="190" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="36" cy="36" r="3" fill="#4ecca3" opacity="0.6"/>
+            <circle cx="164" cy="36" r="3" fill="#4ecca3" opacity="0.6"/>
+            <circle cx="36" cy="164" r="3" fill="#4ecca3" opacity="0.6"/>
+            <circle cx="164" cy="164" r="3" fill="#4ecca3" opacity="0.6"/>
+            <path d="M100 30 A70 70 0 0 1 170 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <path d="M170 100 A70 70 0 0 1 100 170" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <path d="M100 170 A70 70 0 0 1 30 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <path d="M30 100 A70 70 0 0 1 100 30" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+        </svg>
+    </div>
+    <h1>J.J. Thomson</h1>
+    <p class="subtitle">1856 &ndash; 1940</p>
+    <div class="separator"></div>
+    <p style="max-width:70%;margin:0.4em auto;text-align:center;">The physicist who revealed the first subatomic particle, shattering the notion of the indivisible atom and launching the era of particle physics.</p>
+    <div style="margin-top:0.6em;">
+        <span class="tag green">Electron Discovery</span>
+        <span class="tag amber">Cathode Rays</span>
+        <span class="tag blue">Mass Spectrometry</span>
+        <span class="tag">Nobel Prize 1906</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Early Life</h2>
+    <div class="two-col">
+        <div>
+            <p>Joseph John Thomson was born on 18 December 1856 in Cheetham Hill, Manchester, to a family of modest means. His father, a bookseller, intended him for an engineering apprenticeship, but when the family could not secure the placement, young Thomson entered Owens College at the remarkably early age of fourteen.</p>
+            <p>At Owens College, his talent for mathematics was quickly recognized. A scholarship brought him to Trinity College, Cambridge, in 1876, where he became Second Wrangler in the Mathematical Tripos of 1880 &mdash; a testament to the fierce mathematical culture of Victorian Cambridge.</p>
+            <p>His early academic work focused on electromagnetic theory, extending Maxwell's ideas on vortex motion. By age 27, he was appointed Cavendish Professor of Experimental Physics &mdash; a position previously held by Maxwell and Lord Rayleigh &mdash; shocking many who expected a more senior experimentalist.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent">Manchester Roots</h4>
+                <p>Born into the industrial heartland of England, Thomson grew up surrounded by the practical engineering culture that would later inform his experimental instincts.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">Owens College</h4>
+                <p>Enrolled at age 14, he studied under Balfour Stewart and Thomas Barker, developing both mathematical rigour and a feel for physical reasoning.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Trinity College, Cambridge</h4>
+                <p>Arrived 1876. Won the Adams Prize in 1882 for work on vortex rings. Appointed Cavendish Professor in 1884 at just 27 years old.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Cavendish Laboratory Director</h4>
+            <p>From 1884 to 1919, Thomson transformed the Cavendish into the world's premier physics laboratory. He attracted brilliant students from across the globe, including Rutherford, Townsend, Wilson, and Aston &mdash; seven of his research students would win Nobel Prizes.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Cathode Ray Experiments (1897)</h4>
+            <p>Through meticulous experiments measuring the deflection of cathode rays by electric and magnetic fields, Thomson demonstrated that these rays were streams of particles far lighter than any atom &mdash; the electron.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Nobel Prize in Physics (1906)</h4>
+            <p>Awarded "in recognition of the great merits of his theoretical and experimental investigations on the conduction of electricity by gases." The prize validated the reality of subatomic particles.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Positive Ray Analysis</h4>
+            <p>After 1906, Thomson turned to positive rays (canal rays), developing techniques to measure atomic and molecular masses. His student Aston refined this into the mass spectrograph, discovering isotopes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Victorian Physics Landscape</h3>
+            <p>By the 1890s, classical physics appeared nearly complete. Lord Kelvin famously spoke of only "two small clouds" on the horizon. The atom was considered indivisible &mdash; the fundamental building block posited by Dalton a century earlier.</p>
+            <p>Yet cracks were appearing. Crookes' work on vacuum tubes revealed mysterious "cathode rays." On the continent, Hertz showed they could pass through thin metal foils, suggesting they were waves. Lenard agreed. But British physicists, including Thomson, suspected particles.</p>
+            <p>The debate was not merely technical &mdash; it was cultural. German physics favoured energeticist and wave interpretations; British physics, rooted in Newtonian mechanics, leaned toward corpuscular explanations. Thomson's resolution of the controversy would reshape both traditions.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-rose">The Cathode Ray Debate</h4>
+                <p>Were cathode rays waves (as Hertz and Lenard argued) or particles? The answer would determine whether atoms had internal structure.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">Concurrent Discoveries</h4>
+                <p>R&ouml;ntgen discovered X-rays in 1895. Becquerel found radioactivity in 1896. The atom was revealing its secrets from multiple angles simultaneously.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Imperial Science</h4>
+                <p>The Cavendish Laboratory, funded by the Duke of Devonshire, exemplified how British aristocratic patronage supported the era's most revolutionary science.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 — Electron Discovery + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>Discovery of the Electron</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>In 1897, Thomson performed a series of experiments on cathode rays that would change physics forever. By carefully balancing electric and magnetic deflections, he measured the charge-to-mass ratio (<code>e/m</code>) of the particles composing cathode rays.</p>
+            <p>The result was stunning: the <code>e/m</code> ratio was over a thousand times greater than that of hydrogen ions. Either these "corpuscles" carried an enormous charge, or they were extraordinarily light. Thomson correctly concluded they were subatomic &mdash; pieces of the atom itself.</p>
+            <p>He showed the same particles emerged regardless of the cathode material or the residual gas, proving electrons were universal constituents of all matter.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 420 220" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+                    <!-- Cathode ray tube -->
+                    <rect x="20" y="60" width="60" height="100" rx="4" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+                    <text x="50" y="115" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Cathode</text>
+                    <rect x="100" y="75" width="8" height="70" rx="2" fill="none" stroke="#d4a053" stroke-width="1.2"/>
+                    <rect x="100" y="95" width="8" height="30" fill="none"/>
+                    <text x="104" y="72" text-anchor="middle" fill="#d4a053" font-size="8" font-family="DM Sans">Anode</text>
+                    <!-- Beam path -->
+                    <line x1="80" y1="110" x2="130" y2="110" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+                    <!-- Deflection plates -->
+                    <rect x="160" y="75" width="100" height="6" rx="2" fill="#cf7272" opacity="0.6"/>
+                    <rect x="160" y="139" width="100" height="6" rx="2" fill="#5b8cd4" opacity="0.6"/>
+                    <text x="210" y="70" text-anchor="middle" fill="#cf7272" font-size="8" font-family="DM Sans">+ Plate</text>
+                    <text x="210" y="158" text-anchor="middle" fill="#5b8cd4" font-size="8" font-family="DM Sans">&minus; Plate</text>
+                    <!-- Beam through plates, deflected -->
+                    <path d="M130 110 L160 110 Q210 110 260 95" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+                    <!-- Undeflected path -->
+                    <line x1="260" y1="110" x2="390" y2="110" stroke="#6a6a7a" stroke-width="0.5" stroke-dasharray="4,3"/>
+                    <!-- Deflected beam continues -->
+                    <line x1="260" y1="95" x2="390" y2="68" stroke="#4ecca3" stroke-width="1.5"/>
+                    <!-- Fluorescent screen -->
+                    <rect x="388" y="40" width="8" height="140" rx="3" fill="none" stroke="#9a9a9a" stroke-width="1"/>
+                    <circle cx="392" cy="68" r="5" fill="#4ecca3" opacity="0.6"/>
+                    <text x="392" y="190" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">Screen</text>
+                    <!-- Labels -->
+                    <text x="210" y="205" text-anchor="middle" fill="#e8e6e3" font-size="10" font-family="DM Sans">Cathode Ray Tube with Electric Deflection</text>
+                    <!-- Arrows showing E field -->
+                    <line x1="210" y1="82" x2="210" y2="137" stroke="#d4a053" stroke-width="0.7" marker-end="url(#arrowT)"/>
+                    <text x="225" y="113" fill="#d4a053" font-size="8" font-family="JetBrains Mono">E</text>
+                    <defs><marker id="arrowT" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#d4a053"/></marker></defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deeper Dive -->
+<section>
+    <span class="section-number">04a &mdash; DEEPER DIVE</span>
+    <h2>The <code>e/m</code> Measurement</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Experimental Logic</h3>
+            <p>Thomson's genius lay in combining two measurements. First, he applied a magnetic field perpendicular to the beam, causing circular deflection. The radius of curvature gave him a relation involving <code>e/m</code> and the velocity <code>v</code>.</p>
+            <p>Then he applied an electric field to counterbalance the magnetic deflection. When the beam traveled straight, the electric and magnetic forces were equal, giving him <code>v = E/B</code>. Substituting back yielded <code>e/m</code> directly.</p>
+            <p>His measured value of approximately <code>1.7 &times; 10<sup>11</sup> C/kg</code> was remarkably close to the modern accepted value. The consistency across different gases and cathode materials was the clinching evidence for a universal subatomic particle.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent">Key Equation</h4>
+                <p><code>e/m = E / (B&sup2;r)</code> where E is the electric field, B the magnetic field, and r the radius of curvature. This elegantly simple relation gave Thomson access to the subatomic world.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-rose">The Crucial Insight</h4>
+                <p>Previous experiments failed because vacuum technology was poor &mdash; residual gas ionized and shielded the electric field. Thomson used better pumps, finally achieving true electrostatic deflection of the beam.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">Universal Particle</h4>
+                <p>The same <code>e/m</code> ratio appeared whether the cathode was aluminum, platinum, or iron, and whether the gas was air, hydrogen, or CO&sub2;. Electrons were everywhere.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 — Plum Pudding Model + SVG -->
+<section>
+    <span class="section-number">05 &mdash; CONTRIBUTION II</span>
+    <h2>The Plum Pudding Model</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Having discovered the electron, Thomson faced a profound question: if atoms contain tiny negative corpuscles, how is the atom structured? Since atoms are electrically neutral, positive charge must exist to balance the electrons.</p>
+            <p>In 1904, Thomson proposed his model: electrons were embedded within a diffuse sphere of uniform positive charge, like plums in a British pudding. The electrons would arrange themselves in concentric rings, seeking equilibrium positions.</p>
+            <p>Though ultimately replaced by Rutherford's nuclear model, the plum pudding model was the first serious attempt at atomic structure and correctly predicted that electron arrangements should determine chemical properties.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 300 300" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+                    <!-- Positive charge sphere -->
+                    <circle cx="150" cy="140" r="100" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1" opacity="0.6"/>
+                    <circle cx="150" cy="140" r="100" fill="none" stroke="#4ecca3" stroke-width="0.5" stroke-dasharray="4,3"/>
+                    <text x="150" y="255" text-anchor="middle" fill="#9a9a9a" font-size="9" font-family="DM Sans">Diffuse positive charge sphere</text>
+                    <!-- Plus signs for positive charge -->
+                    <text x="90" y="105" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="130" y="85" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="175" y="90" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="200" y="120" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="110" y="160" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="190" y="170" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="145" y="195" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <!-- Electrons (the "plums") -->
+                    <circle cx="150" cy="140" r="7" fill="#cf7272" opacity="0.9"/><text x="150" y="143" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="120" cy="110" r="7" fill="#cf7272" opacity="0.9"/><text x="120" y="113" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="180" cy="110" r="7" fill="#cf7272" opacity="0.9"/><text x="180" y="113" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="105" cy="150" r="7" fill="#cf7272" opacity="0.9"/><text x="105" y="153" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="195" cy="150" r="7" fill="#cf7272" opacity="0.9"/><text x="195" y="153" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="135" cy="175" r="7" fill="#cf7272" opacity="0.9"/><text x="135" y="178" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="165" cy="175" r="7" fill="#cf7272" opacity="0.9"/><text x="165" y="178" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <!-- Label -->
+                    <text x="150" y="275" text-anchor="middle" fill="#e8e6e3" font-size="11" font-family="DM Sans">Thomson's "Plum Pudding" Atom</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deeper Dive -->
+<section>
+    <span class="section-number">05a &mdash; DEEPER DIVE</span>
+    <h2>Stability &amp; Structure</h2>
+    <p style="max-width:85%;margin:0.2em auto;">Thomson worked out the mathematics of electron ring stability within the positive sphere with extraordinary care, drawing on his earlier work on vortex atoms.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Ring Arrangements</h4>
+            <p>Thomson calculated that electrons in a uniform positive sphere would settle into concentric rings. For small numbers, a single ring sufficed. Larger numbers required multiple nested rings &mdash; prefiguring the idea of electron shells.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Chemical Periodicity</h4>
+            <p>He noticed that the maximum number of electrons stable in each ring matched patterns in the periodic table. This was the first attempt to connect atomic structure to Mendeleev's periodic law.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Downfall: Rutherford's Experiment</h4>
+            <p>In 1911, Rutherford's alpha-scattering experiment showed that most of an atom's mass was concentrated in a tiny nucleus &mdash; impossible in Thomson's diffuse model. The plum pudding gave way to the nuclear atom.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Lasting Value</h4>
+            <p>Despite being "wrong," Thomson's model was scientifically productive. It made testable predictions and motivated the very experiments (by his own student Rutherford) that superseded it &mdash; the hallmark of good science.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 — Mass Spectrometry -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION III</span>
+    <h2>Positive Rays &amp; Mass Spectrometry</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>After his Nobel Prize, Thomson turned to "positive rays" &mdash; streams of positively charged ions moving opposite to cathode rays. By 1912, he had developed a method of separating ions by mass using combined electric and magnetic deflections.</p>
+            <p>His apparatus produced parabolic traces on photographic plates, each parabola corresponding to a different charge-to-mass ratio. In 1913, he found that neon gas produced two distinct parabolas at masses 20 and 22, the first evidence for stable isotopes of a non-radioactive element.</p>
+            <p>Thomson's student Francis Aston perfected this into the mass spectrograph, winning his own Nobel Prize in 1922. The technique remains one of the most important analytical tools in modern science.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 240" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+                    <!-- Ion source -->
+                    <rect x="20" y="90" width="50" height="50" rx="4" fill="none" stroke="#d4a053" stroke-width="1.2"/>
+                    <text x="45" y="118" text-anchor="middle" fill="#d4a053" font-size="8" font-family="DM Sans">Ion</text>
+                    <text x="45" y="128" text-anchor="middle" fill="#d4a053" font-size="8" font-family="DM Sans">Source</text>
+                    <!-- Beam -->
+                    <line x1="70" y1="115" x2="130" y2="115" stroke="#4ecca3" stroke-width="1.2"/>
+                    <!-- E + B fields region -->
+                    <rect x="130" y="70" width="80" height="90" rx="4" fill="rgba(78,204,163,0.05)" stroke="#9b72cf" stroke-width="1" stroke-dasharray="3,2"/>
+                    <text x="170" y="65" text-anchor="middle" fill="#9b72cf" font-size="8" font-family="JetBrains Mono">E + B fields</text>
+                    <!-- Diverging beams -->
+                    <line x1="210" y1="100" x2="340" y2="60" stroke="#4ecca3" stroke-width="1.2"/>
+                    <line x1="210" y1="115" x2="340" y2="115" stroke="#5b8cd4" stroke-width="1.2"/>
+                    <line x1="210" y1="130" x2="340" y2="165" stroke="#cf7272" stroke-width="1.2"/>
+                    <!-- Detector -->
+                    <rect x="340" y="40" width="8" height="150" rx="3" fill="none" stroke="#9a9a9a" stroke-width="1"/>
+                    <circle cx="344" cy="60" r="4" fill="#4ecca3" opacity="0.7"/>
+                    <circle cx="344" cy="115" r="4" fill="#5b8cd4" opacity="0.7"/>
+                    <circle cx="344" cy="165" r="4" fill="#cf7272" opacity="0.7"/>
+                    <!-- Labels -->
+                    <text x="360" y="63" fill="#4ecca3" font-size="8" font-family="JetBrains Mono">m&#8321;</text>
+                    <text x="360" y="118" fill="#5b8cd4" font-size="8" font-family="JetBrains Mono">m&#8322;</text>
+                    <text x="360" y="168" fill="#cf7272" font-size="8" font-family="JetBrains Mono">m&#8323;</text>
+                    <text x="344" y="210" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">Plate</text>
+                    <text x="190" y="225" text-anchor="middle" fill="#e8e6e3" font-size="10" font-family="DM Sans">Mass Separation by Electric &amp; Magnetic Fields</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 &mdash; METHOD</span>
+    <h2>Thomson's Experimental Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Hypothesis</h4>
+            <p>Cathode rays are charged particles, not waves</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Apparatus</h4>
+            <p>Improved vacuum tubes with deflection plates</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Measurement</h4>
+            <p>Balance E and B fields to find velocity, then e/m</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-rose">Validation</h4>
+            <p>Repeat with different materials to prove universality</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-blue">Quantitative Rigour</h4>
+            <p>Thomson insisted on numerical precision. He didn't just show cathode rays were deflected &mdash; he measured exactly how much, extracting the <code>e/m</code> ratio to within a few percent of the true value.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Technical Innovation</h4>
+            <p>The key breakthrough was improving vacuum quality. Earlier experimenters (including Hertz) had failed to see electrostatic deflection because residual gas shielded the electric field. Better pumps made the discovery possible.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">08 &mdash; CONNECTIONS</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+            <!-- Central node: Thomson -->
+            <circle cx="350" cy="170" r="38" fill="rgba(78,204,163,0.15)" stroke="#4ecca3" stroke-width="2"/>
+            <text x="350" y="166" text-anchor="middle" fill="#4ecca3" font-size="11" font-weight="bold" font-family="Playfair Display">J.J.</text>
+            <text x="350" y="180" text-anchor="middle" fill="#4ecca3" font-size="11" font-weight="bold" font-family="Playfair Display">Thomson</text>
+            <!-- Rutherford -->
+            <circle cx="170" cy="90" r="30" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="170" y="88" text-anchor="middle" fill="#cf7272" font-size="9" font-family="DM Sans">Rutherford</text>
+            <text x="170" y="100" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="200" y1="105" x2="315" y2="155" stroke="#cf7272" stroke-width="0.8" opacity="0.5"/>
+            <!-- Aston -->
+            <circle cx="540" cy="80" r="30" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="540" y="78" text-anchor="middle" fill="#d4a053" font-size="9" font-family="DM Sans">Aston</text>
+            <text x="540" y="90" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="510" y1="95" x2="385" y2="155" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
+            <!-- C.T.R. Wilson -->
+            <circle cx="150" cy="240" r="30" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="150" y="238" text-anchor="middle" fill="#5b8cd4" font-size="9" font-family="DM Sans">C.T.R. Wilson</text>
+            <text x="150" y="250" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="178" y1="225" x2="320" y2="190" stroke="#5b8cd4" stroke-width="0.8" opacity="0.5"/>
+            <!-- G.P. Thomson (son) -->
+            <circle cx="560" cy="250" r="30" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="560" y="244" text-anchor="middle" fill="#9b72cf" font-size="9" font-family="DM Sans">G.P. Thomson</text>
+            <text x="560" y="258" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Son</text>
+            <line x1="530" y1="240" x2="385" y2="190" stroke="#9b72cf" stroke-width="0.8" opacity="0.5"/>
+            <!-- Lord Rayleigh -->
+            <circle cx="350" cy="40" r="28" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="0.8"/>
+            <text x="350" y="38" text-anchor="middle" fill="#4ecca3" font-size="9" font-family="DM Sans">Rayleigh</text>
+            <text x="350" y="50" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Predecessor</text>
+            <line x1="350" y1="68" x2="350" y2="132" stroke="#4ecca3" stroke-width="0.6" opacity="0.4"/>
+            <!-- Townsend -->
+            <circle cx="80" cy="160" r="26" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="0.8"/>
+            <text x="80" y="158" text-anchor="middle" fill="#e8e6e3" font-size="8" font-family="DM Sans">Townsend</text>
+            <text x="80" y="170" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="106" y1="162" x2="312" y2="168" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <!-- Millikan connection -->
+            <circle cx="620" cy="170" r="26" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="620" y="168" text-anchor="middle" fill="#e8e6e3" font-size="8" font-family="DM Sans">Millikan</text>
+            <text x="620" y="180" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Measured e</text>
+            <line x1="594" y1="170" x2="388" y2="170" stroke="#cf7272" stroke-width="0.5" opacity="0.3"/>
+            <!-- 7 Nobel Prizes note -->
+            <text x="350" y="320" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans" font-style="italic">Seven of Thomson's research students went on to win Nobel Prizes</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">09 &mdash; CONTROVERSY</span>
+    <h2>Waves vs. Particles: The Cathode Ray Debate</h2>
+    <div class="two-col">
+        <div>
+            <h3>A Transatlantic Dispute</h3>
+            <p>The cathode ray controversy was one of the great scientific debates of the 1890s. German physicists, led by Heinrich Hertz and Philipp Lenard, maintained that cathode rays were a form of electromagnetic radiation &mdash; akin to light.</p>
+            <p>Their evidence was compelling: Hertz had failed to deflect cathode rays with electric fields (due to poor vacuum), and Lenard showed the rays could pass through thin aluminum windows, much as light passes through glass.</p>
+            <p>British physicists countered that the rays carried charge and were deflected by magnets &mdash; behaviors inconsistent with waves. The debate carried nationalist overtones, with reputations and institutional pride at stake.</p>
+            <p>Thomson's definitive 1897 experiments settled the matter, but with a twist no one expected: the particles were not atoms, but something far smaller.</p>
+        </div>
+        <div>
+            <div class="quote-box" style="margin-top:0.4em;">
+                <p>"Could anything at first sight seem more impractical than a body which is so small that its mass is an insignificant fraction of the mass of an atom of hydrogen?"</p>
+                <span class="attribution">&mdash; J.J. Thomson, on the electron</span>
+            </div>
+            <div class="card" style="margin-top:0.6em;">
+                <h4 class="accent-rose">Ironic Twist</h4>
+                <p>Thomson won the Nobel Prize for showing the electron was a particle. His son, G.P. Thomson, won the Nobel Prize for showing the electron was also a wave &mdash; confirming de Broglie's wave-particle duality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Particle Physics Founded</h4>
+            <p>Thomson's discovery that atoms have internal structure opened the door to nuclear physics, quantum mechanics, and the entire Standard Model. Every particle accelerator traces its conceptual lineage to his cathode ray tube.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Electronics Revolution</h4>
+            <p>Understanding the electron made possible vacuum tubes, transistors, semiconductors, and the entire electronics industry. The device you're reading this on exists because Thomson identified its fundamental carrier of charge.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The Cavendish Tradition</h4>
+            <p>Thomson built the Cavendish into a factory of Nobel laureates. Under his leadership and that of his successor Rutherford, it produced discoveries from the neutron to DNA's structure.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Mass Spectrometry</h4>
+            <p>Thomson's positive ray work spawned an analytical technique now indispensable in chemistry, biology, medicine, forensics, environmental science, and space exploration.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 &mdash; APPLICATIONS</span>
+    <h2>Modern Applications</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">CRT Displays</h4>
+            <p>For decades, cathode ray tubes based directly on Thomson's apparatus powered television and computer monitors worldwide.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Proteomics</h4>
+            <p>Mass spectrometry identifies proteins and their modifications, driving breakthroughs in drug discovery and personalized medicine.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Isotope Dating</h4>
+            <p>Mass spectrometers measure isotopic ratios for radiocarbon dating, geological age determination, and climate reconstruction.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Semiconductor Design</h4>
+            <p>Electron beam lithography, rooted in understanding electron optics, patterns the nanoscale circuits in modern processors.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Space Exploration</h4>
+            <p>Miniature mass spectrometers aboard Mars rovers analyze soil composition, searching for signs of past life.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Forensic Science</h4>
+            <p>Mass spectrometry detects trace substances in toxicology, explosives analysis, and environmental contamination investigations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">12 &mdash; TIMELINE</span>
+    <h2>Life &amp; Career Timeline</h2>
+    <div class="two-col">
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 280 420" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+                    <line x1="40" y1="20" x2="40" y2="400" stroke="#2a2a3a" stroke-width="2"/>
+                    <circle cx="40" cy="30" r="4" fill="#4ecca3"/><text x="55" y="34" fill="#9a9a9a" font-size="9" font-family="DM Sans">1856 &mdash; Born, Manchester</text>
+                    <circle cx="40" cy="70" r="4" fill="#d4a053"/><text x="55" y="74" fill="#9a9a9a" font-size="9" font-family="DM Sans">1870 &mdash; Owens College (age 14)</text>
+                    <circle cx="40" cy="110" r="4" fill="#5b8cd4"/><text x="55" y="114" fill="#9a9a9a" font-size="9" font-family="DM Sans">1876 &mdash; Trinity College</text>
+                    <circle cx="40" cy="150" r="4" fill="#4ecca3"/><text x="55" y="154" fill="#9a9a9a" font-size="9" font-family="DM Sans">1884 &mdash; Cavendish Professor</text>
+                    <circle cx="40" cy="200" r="5" fill="#cf7272"/><text x="55" y="204" fill="#e8e6e3" font-size="10" font-weight="bold" font-family="DM Sans">1897 &mdash; Electron discovered</text>
+                    <circle cx="40" cy="240" r="4" fill="#9b72cf"/><text x="55" y="244" fill="#9a9a9a" font-size="9" font-family="DM Sans">1904 &mdash; Plum pudding model</text>
+                    <circle cx="40" cy="280" r="5" fill="#d4a053"/><text x="55" y="284" fill="#e8e6e3" font-size="10" font-weight="bold" font-family="DM Sans">1906 &mdash; Nobel Prize</text>
+                    <circle cx="40" cy="320" r="4" fill="#5b8cd4"/><text x="55" y="324" fill="#9a9a9a" font-size="9" font-family="DM Sans">1913 &mdash; Neon isotopes found</text>
+                    <circle cx="40" cy="360" r="4" fill="#4ecca3"/><text x="55" y="364" fill="#9a9a9a" font-size="9" font-family="DM Sans">1919 &mdash; Retires from Cavendish</text>
+                    <circle cx="40" cy="395" r="4" fill="#6a6a7a"/><text x="55" y="399" fill="#9a9a9a" font-size="9" font-family="DM Sans">1940 &mdash; Dies, Cambridge</text>
+                </svg>
+            </div>
+        </div>
+        <div>
+            <div class="timeline-item">
+                <div class="year">1897</div>
+                <div class="event"><strong>The Discovery</strong>Thomson announces cathode ray corpuscles to the Royal Institution on 30 April. The physics world is skeptical but the data is irrefutable.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1899</div>
+                <div class="event"><strong>Charge Measured</strong>Using C.T.R. Wilson's cloud chamber, Thomson estimates the electron charge, confirming its tiny mass.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1904</div>
+                <div class="event"><strong>Atomic Model</strong>Publishes the plum pudding model, the first structural theory of the atom based on subatomic particles.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1906</div>
+                <div class="event"><strong>Nobel Prize</strong>Awarded for investigations on the conduction of electricity by gases.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1913</div>
+                <div class="event"><strong>Isotope Discovery</strong>Finds two parabolas for neon at masses 20 and 22, providing the first evidence for stable isotopes.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">13 &mdash; READING</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Electron: A Centenary Volume</h4>
+            <p>Edited by Jaume Navarro. A comprehensive collection of essays examining the discovery and its far-reaching consequences across physics, chemistry, and technology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">J.J. Thomson and the Discovery of the Electron</h4>
+            <p>By E.A. Davis and I.J. Falconer. The definitive biography, combining personal history with detailed analysis of Thomson's experimental methods and reasoning.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Recollections and Reflections</h4>
+            <p>By J.J. Thomson (autobiography). Thomson's own account of his career, rich with anecdotes about the Cavendish and its remarkable cast of characters.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">A History of the Cavendish Laboratory</h4>
+            <p>Covers the institutional context that made Thomson's work possible, from Maxwell's founding vision to the laboratory's golden age under Thomson and Rutherford.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Making of the Atomic Bomb</h4>
+            <p>By Richard Rhodes. While focused on later events, the opening chapters brilliantly trace how Thomson's electron discovery set the stage for nuclear physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Inward Bound</h4>
+            <p>By Abraham Pais. A masterful history of particle physics from Thomson's electron through quarks, placing his work in its full scientific context.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container" style="margin-top:1.5em;">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="100" cy="100" r="6" fill="#4ecca3" opacity="0.8"/>
+            <g stroke="#4ecca3" stroke-width="0.6" opacity="0.5">
+                <line x1="100" y1="10" x2="100" y2="190"/><line x1="10" y1="100" x2="190" y2="100"/>
+                <line x1="36" y1="36" x2="164" y2="164"/><line x1="164" y1="36" x2="36" y2="164"/>
+            </g>
+            <circle cx="100" cy="10" r="3" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="100" cy="190" r="3" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="10" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="190" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
+            <path d="M100 30 A70 70 0 0 1 170 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <path d="M170 100 A70 70 0 0 1 100 170" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <path d="M100 170 A70 70 0 0 1 30 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <path d="M30 100 A70 70 0 0 1 100 30" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+        </svg>
+    </div>
+    <div class="quote-box" style="max-width:70%;">
+        <p>"Could anything at first sight seem more impractical than a body which is so small that its mass is an insignificant fraction of the mass of an atom of hydrogen?"</p>
+        <span class="attribution">&mdash; J.J. Thomson, Nobel Lecture, 1906</span>
+    </div>
+    <div class="separator" style="margin-top:1em;"></div>
+    <p style="text-align:center;color:var(--text-muted);font-size:0.44em;margin-top:0.6em;">Joseph John Thomson &nbsp;&bull;&nbsp; 1856&ndash;1940 &nbsp;&bull;&nbsp; Discoverer of the Electron</p>
+    <p style="text-align:center;color:var(--text-muted);font-size:0.38em;">Cavendish Laboratory, Cambridge &nbsp;|&nbsp; Nobel Prize in Physics, 1906</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

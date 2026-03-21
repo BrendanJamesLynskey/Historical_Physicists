@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Francis FitzGerald - The Maxwellian Pioneer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #d4a053; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+        .reveal-viewport { background: var(--bg-primary); }
+        .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+        .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+        .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+        .reveal h3 { font-size: 1.15em; font-weight: 700; }
+        .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+        .reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+        .reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+        .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+        .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+        .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+        .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+        .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+        .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+        .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+        .card:hover { border-color: var(--accent); }
+        .card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+        .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+        .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+        .timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+        .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+        .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+        .diagram-container { margin: 0.6em auto; max-width: 85%; }
+        .two-col .diagram-container { max-width: 100%; margin: 0; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+        .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+        .tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+        .tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+        .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+        .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+        .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+        .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+        @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+        .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+        .process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+        .process-step p { font-size: 0.40em !important; margin: 0; }
+        .process-arrow { color: var(--accent); font-size: 1.0em; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+        .reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+        .reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+        .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+        .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Title -->
+            <section>
+                <div class="mandala-container">
+                    <svg viewBox="0 0 140 140">
+                        <circle cx="70" cy="70" r="60" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.3"/>
+                        <circle cx="70" cy="70" r="45" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.25"/>
+                        <circle cx="70" cy="70" r="30" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2"/>
+                        <path d="M70 10 L70 130 M10 70 L130 70 M25 25 L115 115 M115 25 L25 115" stroke="#d4a053" stroke-width="0.3" opacity="0.15"/>
+                        <ellipse cx="70" cy="70" rx="55" ry="25" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2" transform="rotate(30 70 70)"/>
+                        <ellipse cx="70" cy="70" rx="55" ry="25" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2" transform="rotate(-30 70 70)"/>
+                        <ellipse cx="70" cy="70" rx="55" ry="25" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2" transform="rotate(90 70 70)"/>
+                    </svg>
+                </div>
+                <h1>George Francis FitzGerald</h1>
+                <p class="subtitle">The Maxwellian Who Contracted Space</p>
+                <div class="separator"></div>
+                <p style="text-align:center;"><span class="accent">1851 &ndash; 1901</span> &nbsp;&middot;&nbsp; Dublin, Ireland &nbsp;&middot;&nbsp; Trinity College Dublin</p>
+                <div style="margin-top:0.8em;">
+                    <span class="tag amber">Electromagnetism</span>
+                    <span class="tag green">Length Contraction</span>
+                    <span class="tag blue">Maxwellian Physics</span>
+                    <span class="tag rose">Antenna Theory</span>
+                </div>
+            </section>
+
+            <!-- Slide 2: Early Life -->
+            <section>
+                <span class="section-number">01 &mdash; ORIGINS</span>
+                <h2>A Dublin Childhood</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>George Francis FitzGerald was born on <span class="accent">3 August 1851</span> in Kill-o'-the-Grange, Monkstown, County Dublin, into a prominent Irish intellectual family. His father, William FitzGerald, was a minister of the Church of Ireland who eventually became Bishop of Cork and later Bishop of Killaloe.</p>
+                        <p>His mother, Anne Frances Stoney, came from a remarkable scientific family &mdash; her brother was the physicist <span class="accent-blue">George Johnstone Stoney</span>, who coined the term "electron" in 1891. Young George grew up immersed in both theological and scientific discourse.</p>
+                        <p>Educated privately at home during his early years, FitzGerald showed exceptional mathematical aptitude from a young age. In <span class="accent">1867</span>, at just sixteen, he entered Trinity College Dublin, where he would remain for the rest of his life.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent">Family Heritage</h4>
+                            <p>The Stoney-FitzGerald connection produced multiple scientists. His uncle G.J. Stoney was a Fellow of the Royal Society and a pioneer in understanding electric charge as quantised units.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-green">Trinity College Dublin</h4>
+                            <p>TCD was the intellectual heart of Irish science. FitzGerald graduated first in his class in mathematics and experimental science in 1871, winning a University Studentship to continue his studies.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Career -->
+            <section>
+                <span class="section-number">02 &mdash; CAREER</span>
+                <h2>The Erasmus Smith Professor</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>FitzGerald became a Fellow of Trinity College Dublin in <span class="accent">1877</span> and was appointed <span class="accent">Erasmus Smith Professor of Natural and Experimental Philosophy</span> in 1881, a position he held until his untimely death. He was just thirty years old when he took the chair.</p>
+                        <p>As professor, he transformed the physics programme at TCD, introducing laboratory teaching methods and emphasising the importance of Maxwell's electromagnetic theory at a time when it was not yet widely accepted. He became one of the most energetic advocates for Maxwell's field theory on either side of the Irish Sea.</p>
+                        <p>Elected a Fellow of the Royal Society in <span class="accent">1883</span>, FitzGerald served on its council and was active in the British Association for the Advancement of Science. He was known as a brilliant conversationalist and generous collaborator who freely shared ideas &mdash; sometimes to his own disadvantage in matters of priority.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-amber">Teaching Innovation</h4>
+                            <p>FitzGerald established one of the first proper physics laboratories at TCD, insisting students learn through hands-on experiment, not just theoretical study.</p>
+                        </div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-purple">The Generous Mind</h4>
+                            <p>Oliver Lodge recalled that FitzGerald "threw out ideas with a lavish hand" and seldom bothered to establish his own priority, preferring collaboration to competition.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-rose">Short Life, Deep Impact</h4>
+                            <p>FitzGerald died on 22 February 1901 at just 49, from a perforated ulcer. His death was mourned across the physics community of Britain and Ireland.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Historical Context -->
+            <section>
+                <span class="section-number">03 &mdash; CONTEXT</span>
+                <h2>The Age of the Aether</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.5em;">FitzGerald worked during the golden age of classical electromagnetism &mdash; a period when Maxwell's equations were new, the aether was a central concept, and experiment was rapidly catching up with theory.</p>
+                <div class="card-grid cols-3">
+                    <div class="card">
+                        <h4 class="accent">Maxwell's Legacy</h4>
+                        <p>James Clerk Maxwell died in 1879, leaving behind his Treatise on Electricity and Magnetism. The equations were dense and the implications far from clear. A small group of physicists took up the challenge of interpreting, extending, and testing them.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">The Luminiferous Aether</h4>
+                        <p>Physicists universally believed that electromagnetic waves required a medium &mdash; the aether. Experiments to detect the Earth's motion through this aether (notably Michelson-Morley, 1887) produced famously null results that demanded explanation.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Hertz's Confirmation</h4>
+                        <p>In 1887-88, Heinrich Hertz demonstrated electromagnetic waves experimentally, triumphantly confirming Maxwell's theory. But FitzGerald had predicted such radiation independently as early as 1883, years before Hertz's apparatus.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"The ether must be a substance of most extreme tenuity and most extreme rigidity &mdash; a combination that defies all ordinary experience."</p>
+                    <span class="attribution">&mdash; William Thomson (Lord Kelvin), on the paradox of the aether</span>
+                </div>
+            </section>
+
+            <!-- Slide 5: Contribution #1 - FitzGerald-Lorentz Contraction + SVG -->
+            <section>
+                <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+                <h2>The FitzGerald-Lorentz Contraction</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>In <span class="accent">1889</span>, FitzGerald proposed a radical hypothesis to explain the null result of the Michelson-Morley experiment: that bodies moving through the aether physically contract in the direction of motion by a factor of <code>&radic;(1 - v&sup2;/c&sup2;)</code>.</p>
+                        <p>This was not mere mathematical trickery. FitzGerald argued that if intermolecular forces were electromagnetic in nature (as seemed increasingly likely), then motion through the aether would alter these forces and physically shorten objects in the direction of travel.</p>
+                        <p>Hendrik Lorentz independently derived the same contraction in <span class="accent">1892</span>, placing it on firmer mathematical footing. The hypothesis became known as the <span class="accent">FitzGerald-Lorentz contraction</span>.</p>
+                        <p>Though rooted in aether physics, this contraction factor <code>&gamma; = 1/&radic;(1 - v&sup2;/c&sup2;)</code> became the cornerstone of Einstein's special relativity in 1905, where it emerged not as a mechanical effect but as a geometric property of spacetime itself.</p>
+                    </div>
+                    <div>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
+                                <!-- At rest -->
+                                <text x="160" y="20" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">Object at Rest</text>
+                                <rect x="80" y="35" width="160" height="60" rx="8" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.8"/>
+                                <text x="160" y="70" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono" font-size="10">L&#x2080;</text>
+                                <line x1="80" y1="105" x2="240" y2="105" stroke="#6a6a7a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                                <text x="80" y="118" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">|</text>
+                                <text x="240" y="118" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">|</text>
+                                <!-- Arrow showing velocity -->
+                                <text x="160" y="150" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">Moving at velocity v</text>
+                                <line x1="170" y1="158" x2="220" y2="158" stroke="#d4a053" stroke-width="1" marker-end="url(#arrowAmber)"/>
+                                <text x="200" y="170" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="9">v</text>
+                                <!-- Contracted -->
+                                <rect x="105" y="180" width="110" height="60" rx="8" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,2"/>
+                                <rect x="105" y="180" width="110" height="60" rx="8" fill="rgba(212,160,83,0.06)"/>
+                                <text x="160" y="215" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono" font-size="10">L = L&#x2080;&radic;(1-v&sup2;/c&sup2;)</text>
+                                <line x1="105" y1="250" x2="215" y2="250" stroke="#6a6a7a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                                <!-- Formula -->
+                                <rect x="40" y="275" width="240" height="45" rx="6" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="0.5"/>
+                                <text x="160" y="295" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="11">L = L&#x2080; / &gamma;</text>
+                                <text x="160" y="312" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">&gamma; = 1 / &radic;(1 - v&sup2;/c&sup2;)</text>
+                                <defs>
+                                    <marker id="arrowAmber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#d4a053"/></marker>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Deep Dive - Contraction -->
+            <section>
+                <span class="section-number">05 &mdash; DEEP DIVE</span>
+                <h2>From Aether to Spacetime</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.4em;">FitzGerald's original proposal was remarkably brief &mdash; a short letter to <em>Science</em> in 1889 that was barely noticed at the time. Its significance grew only as the crisis of the aether deepened.</p>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">The Michelson-Morley Problem</h4>
+                        <p>The 1887 experiment expected to measure Earth's motion through the aether by detecting differences in the speed of light along perpendicular arms of an interferometer. The result was null &mdash; no fringe shift was observed. FitzGerald's contraction of the arm parallel to motion exactly cancelled the expected effect.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">The Physical Mechanism</h4>
+                        <p>FitzGerald reasoned that since molecular forces are electromagnetic, and electromagnetic fields are altered by motion through the aether, the equilibrium spacing between molecules must change. The object literally contracts &mdash; not as an illusion, but as a real physical effect.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Lorentz's Independent Derivation</h4>
+                        <p>Lorentz arrived at the same result from a more rigorous electromagnetic analysis in 1892. He showed that Maxwell's equations, combined with the assumption that all matter is held together by electromagnetic forces, predicted exactly the contraction FitzGerald had proposed.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-rose">Einstein's Reinterpretation</h4>
+                        <p>In 1905, Einstein derived the same factor from two postulates alone &mdash; the constancy of the speed of light and the principle of relativity &mdash; without reference to the aether. The contraction became a property of measurement and geometry, not of matter.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"I have read with much interest Messrs. Michelson and Morley's wonderful experiment. Their result seems opposed to other experiments. I would suggest that almost the only hypothesis that can reconcile this is that the length of material bodies changes."</p>
+                    <span class="attribution">&mdash; George Francis FitzGerald, letter to <em>Science</em>, 1889</span>
+                </div>
+            </section>
+
+            <!-- Slide 7: Contribution #2 - EM Radiation + SVG -->
+            <section>
+                <span class="section-number">06 &mdash; CONTRIBUTION II</span>
+                <h2>Electromagnetic Radiation from Oscillating Currents</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>In <span class="accent">1883</span>, FitzGerald presented a paper to the Royal Dublin Society in which he demonstrated theoretically that an <span class="accent">oscillating electric current</span> would radiate electromagnetic energy into space. This was four years before Hertz's famous experimental confirmation.</p>
+                        <p>FitzGerald calculated the power radiated by a small current loop, deriving what we would now recognise as the radiation from a <span class="accent-green">magnetic dipole</span>. He showed that the radiated power scaled with the <em>fourth power</em> of the frequency &mdash; a result that explained why static or slowly-varying currents radiate negligibly.</p>
+                        <p>This work was foundational for antenna theory. FitzGerald essentially described the physics behind how antennas generate electromagnetic waves, decades before practical radio communication became a reality.</p>
+                        <p>Oliver Lodge later wrote that FitzGerald was "the first to suggest and theoretically examine the radiation of electromagnetic waves from wires carrying alternating currents."</p>
+                    </div>
+                    <div>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Dipole antenna -->
+                                <text x="150" y="18" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">Oscillating Dipole Radiation</text>
+                                <!-- Antenna rod -->
+                                <line x1="150" y1="120" x2="150" y2="200" stroke="#e8e6e3" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="150" cy="160" r="3" fill="#d4a053"/>
+                                <!-- Current arrows -->
+                                <line x1="150" y1="155" x2="150" y2="130" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrFG1)"/>
+                                <line x1="150" y1="165" x2="150" y2="190" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrFG1)"/>
+                                <text x="165" y="140" fill="#d4a053" font-family="JetBrains Mono" font-size="8">I(t)</text>
+                                <!-- Radiation pattern (figure-8 / toroidal cross-section) -->
+                                <ellipse cx="150" cy="160" rx="90" ry="45" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.25"/>
+                                <ellipse cx="150" cy="160" rx="70" ry="35" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.3"/>
+                                <ellipse cx="150" cy="160" rx="50" ry="25" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.4"/>
+                                <!-- Radiation lobes (figure-8 in elevation) -->
+                                <path d="M150 160 Q200 120 190 80 Q180 50 150 60" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                                <path d="M150 160 Q100 120 110 80 Q120 50 150 60" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                                <path d="M150 160 Q200 200 190 240 Q180 270 150 260" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                                <path d="M150 160 Q100 200 110 240 Q120 270 150 260" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                                <!-- Wave fronts propagating outward -->
+                                <path d="M240 100 Q260 160 240 220" fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.3"/>
+                                <path d="M260 90 Q285 160 260 230" fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.2"/>
+                                <path d="M60 100 Q40 160 60 220" fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.3"/>
+                                <path d="M40 90 Q15 160 40 230" fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.2"/>
+                                <!-- Labels -->
+                                <text x="260" y="165" fill="#6a6a7a" font-family="DM Sans" font-size="8">EM waves</text>
+                                <rect x="50" y="280" width="200" height="30" rx="5" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="0.5"/>
+                                <text x="150" y="299" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="9">P &prop; &omega;&#x2074; |p|&sup2; / c&sup3;</text>
+                                <defs>
+                                    <marker id="arrFG1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#d4a053"/></marker>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Deep Dive - Radiation -->
+            <section>
+                <span class="section-number">07 &mdash; DEEP DIVE</span>
+                <h2>The Birth of Antenna Theory</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.4em;">FitzGerald's 1883 analysis laid the theoretical groundwork for understanding how electromagnetic energy could be launched into free space &mdash; the fundamental problem of all wireless communication.</p>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <h4 class="accent">Oscillating Current</h4>
+                        <p>Time-varying I(t)<br/>in conductor</p>
+                    </div>
+                    <div class="process-arrow">&rarr;</div>
+                    <div class="process-step">
+                        <h4 class="accent-green">Changing Fields</h4>
+                        <p>Time-varying E &amp; B<br/>near conductor</p>
+                    </div>
+                    <div class="process-arrow">&rarr;</div>
+                    <div class="process-step">
+                        <h4 class="accent-blue">Radiation</h4>
+                        <p>Self-propagating<br/>EM wave in space</p>
+                    </div>
+                    <div class="process-arrow">&rarr;</div>
+                    <div class="process-step">
+                        <h4 class="accent-purple">Detection</h4>
+                        <p>Induced current in<br/>distant receiver</p>
+                    </div>
+                </div>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent-amber">Why Frequency Matters</h4>
+                        <p>FitzGerald showed that radiated power goes as the fourth power of frequency. This explained why DC circuits do not radiate appreciably &mdash; and why higher-frequency oscillations were needed for practical electromagnetic wave generation. The <code>f&sup4;</code> scaling is analogous to Rayleigh's scattering law for light.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Before Hertz</h4>
+                        <p>FitzGerald's prediction of radiation from oscillating currents predated Hertz's 1887 experiments by four years. Had the experimental apparatus been available in Dublin, FitzGerald might well have demonstrated electromagnetic waves first. As it was, he lacked Hertz's resources and laboratory facilities.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"FitzGerald was the first to suggest and theoretically examine the radiation of electromagnetic energy from an oscillating current, and to show the conditions under which the radiation would be appreciable."</p>
+                    <span class="attribution">&mdash; Oliver Lodge, recollection of FitzGerald's contribution</span>
+                </div>
+            </section>
+
+            <!-- Slide 9: Contribution #3 - The Maxwellians -->
+            <section>
+                <span class="section-number">08 &mdash; CONTRIBUTION III</span>
+                <h2>The Maxwellians</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.5em;">FitzGerald was a central figure in the informal group known as <span class="accent">the Maxwellians</span> &mdash; the small band of physicists who decoded, reformulated, and championed Maxwell's electromagnetic theory after his death.</p>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Oliver Heaviside</h4>
+                        <p>The self-taught English mathematician who reformulated Maxwell's twenty equations into the four elegant vector equations we know today. FitzGerald was one of the few who recognised Heaviside's genius early and actively promoted his work in academic circles, helping an isolated outsider gain recognition.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Oliver Lodge</h4>
+                        <p>The Liverpool physicist who worked on electromagnetic waves, lightning conductors, and wireless telegraphy. Lodge and FitzGerald maintained a prolific correspondence that drove both men's research. They debated the nature of the aether, the design of experiments, and the interpretation of Maxwell's theory.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Joseph Larmor</h4>
+                        <p>The Cambridge mathematician who developed the theory of electrons in the aether and derived the Larmor precession. Larmor was deeply influenced by FitzGerald's physical intuition and later edited his collected scientific papers after his death.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Their Collective Achievement</h4>
+                        <p>Together, the Maxwellians transformed Maxwell's dense, sometimes obscure Treatise into a working theory. They introduced the vector notation, clarified the energy and momentum of fields, predicted and confirmed radiation, and established electromagnetism as the dominant framework of late-nineteenth-century physics.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Method -->
+            <section>
+                <span class="section-number">09 &mdash; METHOD</span>
+                <h2>Physical Intuition and Mechanical Models</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>FitzGerald's scientific method was characterised by a powerful <span class="accent">physical intuition</span> combined with a willingness to construct bold mechanical models. Unlike Heaviside, who worked primarily with abstract mathematics, or Larmor, who favoured formal theoretical frameworks, FitzGerald thought in terms of physical pictures.</p>
+                        <p>He was a master of the <span class="accent-green">mechanical analogy</span> &mdash; using models of vortices, elastic solids, and gear-wheel systems to understand electromagnetic phenomena. This approach, deeply rooted in the British tradition of mathematical physics descended from Kelvin and Maxwell, allowed him to grasp results intuitively before they could be rigorously proved.</p>
+                        <p>FitzGerald was also notable for his commitment to <span class="accent-blue">scientific correspondence</span>. He maintained a vast network of letters with physicists across Europe and America, sharing ideas freely and stimulating work in many laboratories besides his own.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-amber">The Model Builder</h4>
+                            <p>FitzGerald constructed elaborate mechanical models of the aether, using wheels, bands, and springs to visualise how electromagnetic energy could be stored and transmitted through a medium.</p>
+                        </div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-purple">The Correspondent</h4>
+                            <p>His letters to Heaviside alone fill volumes. He would sketch ideas, suggest experiments, critique derivations, and propose new directions &mdash; often several times a week.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-rose">The Experimentalist</h4>
+                            <p>Despite limited resources at TCD compared to Cambridge or Continental laboratories, FitzGerald designed and supervised experiments on electromagnetic waves, discharge tubes, and optical phenomena.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Connections SVG -->
+            <section>
+                <span class="section-number">10 &mdash; CONNECTIONS</span>
+                <h2>FitzGerald's Intellectual Network</h2>
+                <div class="separator"></div>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Central node -->
+                        <circle cx="350" cy="190" r="40" fill="rgba(212,160,83,0.15)" stroke="#d4a053" stroke-width="2"/>
+                        <text x="350" y="186" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="12" font-weight="700">FitzGerald</text>
+                        <text x="350" y="200" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">1851-1901</text>
+                        <!-- Heaviside -->
+                        <circle cx="140" cy="100" r="32" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1.5"/>
+                        <text x="140" y="97" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700">Heaviside</text>
+                        <text x="140" y="110" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Vector calculus</text>
+                        <line x1="172" y1="115" x2="315" y2="175" stroke="#4ecca3" stroke-width="0.8" opacity="0.4"/>
+                        <!-- Lodge -->
+                        <circle cx="140" cy="280" r="32" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.5"/>
+                        <text x="140" y="277" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="10" font-weight="700">Lodge</text>
+                        <text x="140" y="290" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Wireless telegraphy</text>
+                        <line x1="172" y1="265" x2="315" y2="205" stroke="#5b8cd4" stroke-width="0.8" opacity="0.4"/>
+                        <!-- Larmor -->
+                        <circle cx="560" cy="100" r="32" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.5"/>
+                        <text x="560" y="97" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="700">Larmor</text>
+                        <text x="560" y="110" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Electron theory</text>
+                        <line x1="528" y1="115" x2="385" y2="175" stroke="#9b72cf" stroke-width="0.8" opacity="0.4"/>
+                        <!-- Lorentz -->
+                        <circle cx="560" cy="280" r="32" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1.5"/>
+                        <text x="560" y="277" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="10" font-weight="700">Lorentz</text>
+                        <text x="560" y="290" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Contraction theory</text>
+                        <line x1="528" y1="265" x2="385" y2="205" stroke="#cf7272" stroke-width="0.8" opacity="0.4"/>
+                        <!-- Maxwell (influence) -->
+                        <circle cx="350" cy="50" r="28" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1" stroke-dasharray="4,2"/>
+                        <text x="350" y="47" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="700">Maxwell</text>
+                        <text x="350" y="60" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">d. 1879</text>
+                        <line x1="350" y1="78" x2="350" y2="150" stroke="#d4a053" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
+                        <!-- Hertz -->
+                        <circle cx="230" cy="340" r="28" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1"/>
+                        <text x="230" y="337" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="700">Hertz</text>
+                        <text x="230" y="350" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">EM experiments</text>
+                        <line x1="248" y1="316" x2="330" y2="225" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+                        <!-- Einstein (influence outward) -->
+                        <circle cx="470" cy="340" r="28" fill="rgba(91,140,212,0.08)" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="4,2"/>
+                        <text x="470" y="337" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="10" font-weight="700">Einstein</text>
+                        <text x="470" y="350" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Special relativity</text>
+                        <line x1="452" y1="316" x2="370" y2="225" stroke="#5b8cd4" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Slide 12: Rivalry / Controversy -->
+            <section>
+                <span class="section-number">11 &mdash; CONTROVERSY</span>
+                <h2>Priority and the Lost Letter</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>FitzGerald's place in history has been complicated by questions of <span class="accent">priority and publication</span>. His contraction hypothesis was first communicated in a brief letter to the American journal <em>Science</em> in <span class="accent">1889</span>, but this obscure publication was little noticed.</p>
+                        <p>When Lorentz published his own derivation in <span class="accent-rose">1892</span>, he was initially unaware of FitzGerald's earlier proposal. It was only through Oliver Lodge's intervention &mdash; who mentioned FitzGerald's idea in his 1893 paper &mdash; that Lorentz learned of it and graciously acknowledged FitzGerald's priority.</p>
+                        <p>The episode illustrates a recurring theme in FitzGerald's career: his habit of communicating ideas informally through letters and conversation rather than through formal publication. Many of his insights were shared freely with colleagues who then developed and published them more fully.</p>
+                        <p>Some historians have argued that FitzGerald's generosity cost him due recognition, while others note that his informal approach reflected a collaborative ideal that advanced the field more rapidly than individual competition would have.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-rose">The Naming Dispute</h4>
+                            <p>The contraction is variously called the "FitzGerald contraction," the "Lorentz contraction," or the "FitzGerald-Lorentz contraction." The hyphenated form is generally preferred by historians who wish to acknowledge both contributors.</p>
+                        </div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-blue">Radiation Priority</h4>
+                            <p>Similarly, FitzGerald's 1883 prediction of electromagnetic radiation from oscillating currents was largely overshadowed by Hertz's dramatic experimental demonstration in 1887-88. Theory without experiment rarely captures the public imagination.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-green">Lorentz's Generosity</h4>
+                            <p>To his credit, Lorentz always acknowledged FitzGerald once he became aware of the earlier work, writing that "this hypothesis had been already put forward by FitzGerald" and consistently using the joint name.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: Legacy -->
+            <section>
+                <span class="section-number">12 &mdash; LEGACY</span>
+                <h2>The Invisible Architect</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.5em;">FitzGerald died at forty-nine, never knowing that his contraction hypothesis would become a pillar of special relativity. His legacy permeates modern physics and engineering, often without attribution.</p>
+                <div class="card-grid cols-3">
+                    <div class="card">
+                        <h4 class="accent">Relativity</h4>
+                        <p>The contraction factor he proposed is embedded in the Lorentz transformations and thus in the very fabric of special relativity. Every GPS satellite, every particle accelerator, every relativistic calculation carries FitzGerald's insight.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Antenna Theory</h4>
+                        <p>His analysis of radiation from oscillating currents was foundational for antenna design. Modern wireless communication &mdash; from radio to WiFi to 5G &mdash; rests on principles he was the first to articulate mathematically.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Scientific Culture</h4>
+                        <p>FitzGerald's model of generous, collaborative science &mdash; sharing ideas freely, championing others' work, valuing understanding over credit &mdash; represents an ideal that the scientific community continues to aspire to.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"He had, to a greater degree than any man I have known, the power of instantly forming a mental picture of any physical problem presented to him, and of foreseeing qualitatively the solution."</p>
+                    <span class="attribution">&mdash; Joseph Larmor, on FitzGerald's scientific intuition</span>
+                </div>
+            </section>
+
+            <!-- Slide 14: Applications -->
+            <section>
+                <span class="section-number">13 &mdash; APPLICATIONS</span>
+                <h2>Where FitzGerald's Work Lives Today</h2>
+                <div class="separator"></div>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Particle Physics</h4>
+                        <p>At CERN and other accelerators, particles approach the speed of light and undergo extreme Lorentz contraction. The colliding nuclei in heavy-ion experiments appear as thin "pancakes" due to the very effect FitzGerald first proposed. Understanding this contraction is essential for interpreting collision geometry.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Wireless Communications</h4>
+                        <p>Every antenna &mdash; from the dipole in your smartphone to the phased arrays on communication satellites &mdash; works on the principle FitzGerald analysed: oscillating currents radiating electromagnetic energy. His frequency-scaling law determines the fundamental efficiency limits of antenna design.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">GPS and Satellite Navigation</h4>
+                        <p>Relativistic corrections are essential for GPS accuracy. The Lorentz factor that FitzGerald introduced affects the apparent tick rate of satellite clocks relative to ground receivers. Without these corrections, GPS would accumulate errors of roughly 10 km per day.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Signal Processing</h4>
+                        <p>The Maxwellian framework that FitzGerald helped establish is the theoretical foundation of all electromagnetic signal processing. From radar to MRI to fibre optics, Maxwell's equations &mdash; as interpreted and extended by FitzGerald and his collaborators &mdash; govern the physics.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 15: Timeline SVG -->
+            <section>
+                <span class="section-number">14 &mdash; TIMELINE</span>
+                <h2>A Life in Electromagnetism</h2>
+                <div class="separator"></div>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 750 360" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Main timeline line -->
+                        <line x1="50" y1="180" x2="700" y2="180" stroke="#2a2a3a" stroke-width="2"/>
+                        <!-- Birth -->
+                        <circle cx="80" cy="180" r="5" fill="#d4a053"/>
+                        <text x="80" y="170" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1851</text>
+                        <text x="80" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Born in</text>
+                        <text x="80" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Dublin</text>
+                        <!-- TCD -->
+                        <circle cx="170" cy="180" r="5" fill="#4ecca3"/>
+                        <text x="170" y="170" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="500">1867</text>
+                        <text x="170" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Enters</text>
+                        <text x="170" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">TCD</text>
+                        <!-- Fellow -->
+                        <circle cx="260" cy="180" r="5" fill="#5b8cd4"/>
+                        <text x="260" y="170" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="500">1877</text>
+                        <text x="260" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Fellow</text>
+                        <text x="260" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">of TCD</text>
+                        <!-- Professor -->
+                        <circle cx="330" cy="180" r="5" fill="#9b72cf"/>
+                        <text x="330" y="170" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" font-weight="500">1881</text>
+                        <text x="330" y="145" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Erasmus Smith</text>
+                        <text x="330" y="156" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Professor</text>
+                        <!-- Radiation paper -->
+                        <circle cx="400" cy="180" r="6" fill="#d4a053"/>
+                        <text x="400" y="170" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1883</text>
+                        <text x="400" y="205" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">EM Radiation</text>
+                        <text x="400" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">prediction</text>
+                        <!-- FRS -->
+                        <circle cx="450" cy="180" r="4" fill="#4ecca3"/>
+                        <text x="450" y="145" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="500">1883</text>
+                        <text x="450" y="156" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">FRS</text>
+                        <!-- Contraction -->
+                        <circle cx="530" cy="180" r="7" fill="#d4a053"/>
+                        <text x="530" y="170" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1889</text>
+                        <text x="530" y="205" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Length</text>
+                        <text x="530" y="216" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Contraction</text>
+                        <!-- Maxwellian work -->
+                        <circle cx="610" cy="180" r="5" fill="#5b8cd4"/>
+                        <text x="610" y="145" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="500">1893</text>
+                        <text x="610" y="156" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Maxwellian</text>
+                        <text x="610" y="167" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">peak years</text>
+                        <!-- Death -->
+                        <circle cx="680" cy="180" r="5" fill="#cf7272"/>
+                        <text x="680" y="170" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="10" font-weight="500">1901</text>
+                        <text x="680" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Dies in</text>
+                        <text x="680" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Dublin, age 49</text>
+                        <!-- Context bar -->
+                        <rect x="50" y="260" width="650" height="1" fill="#2a2a3a"/>
+                        <text x="50" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1865: Maxwell's equations</text>
+                        <text x="250" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1879: Maxwell dies</text>
+                        <text x="420" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1887: Hertz &amp; Michelson-Morley</text>
+                        <text x="600" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1905: Einstein SR</text>
+                        <!-- Sub-labels for context -->
+                        <text x="50" y="295" fill="#6a6a7a" font-family="DM Sans" font-size="7" opacity="0.6">published</text>
+                        <text x="420" y="295" fill="#6a6a7a" font-family="DM Sans" font-size="7" opacity="0.6">experiments</text>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Slide 16: Further Reading -->
+            <section>
+                <span class="section-number">15 &mdash; FURTHER READING</span>
+                <h2>Explore Further</h2>
+                <div class="separator"></div>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">The Maxwellians</h4>
+                        <p><strong>Bruce J. Hunt</strong> (Cornell University Press, 1991). The definitive study of FitzGerald, Heaviside, Lodge, and their collective effort to develop and promote Maxwell's electromagnetic theory. Essential reading for understanding FitzGerald's context and contributions.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">The Scientific Writings of the Late George Francis FitzGerald</h4>
+                        <p><strong>Edited by Joseph Larmor</strong> (Hodges, Figgis &amp; Co., 1902). The collected papers of FitzGerald, assembled by Larmor shortly after his death. Includes the original contraction hypothesis letter and the 1883 radiation paper.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Einstein's Clocks, Poincar&eacute;'s Maps</h4>
+                        <p><strong>Peter Galison</strong> (W.W. Norton, 2003). Places FitzGerald's contraction hypothesis in the broader context of the revolutionary rethinking of space and time that led to special relativity.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Nineteenth-Century Aether Theories</h4>
+                        <p><strong>Kenneth F. Schaffner</strong> (Pergamon, 1972). A scholarly collection of primary sources on aether theory, including key papers by FitzGerald, Lorentz, and their contemporaries, with extensive commentary.</p>
+                    </div>
+                </div>
+                <p style="text-align:center; margin-top:0.6em;">
+                    <span class="tag amber">Electromagnetism</span>
+                    <span class="tag green">History of Physics</span>
+                    <span class="tag blue">Relativity</span>
+                    <span class="tag rose">Irish Science</span>
+                </p>
+            </section>
+
+            <!-- Slide 17: Closing Quote -->
+            <section>
+                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
+                    <div class="mandala-container">
+                        <svg viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="60" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="70" cy="70" r="40" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.15"/>
+                            <circle cx="70" cy="70" r="20" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.1"/>
+                            <path d="M70 10 L70 130 M10 70 L130 70" stroke="#d4a053" stroke-width="0.3" opacity="0.1"/>
+                        </svg>
+                    </div>
+                    <div class="quote-box" style="max-width:70%; margin:0.8em auto;">
+                        <p>"We have not the smallest reason for believing the aether to be imponderable."</p>
+                        <span class="attribution">&mdash; George Francis FitzGerald</span>
+                    </div>
+                    <div class="separator" style="margin:1em auto;"></div>
+                    <h3 style="margin-bottom:0.2em;"><span class="accent">George Francis FitzGerald</span></h3>
+                    <p style="text-align:center; color:var(--text-muted); font-size:0.48em;">1851 &ndash; 1901</p>
+                    <p style="text-align:center; color:var(--text-secondary); font-size:0.44em; max-width:60%; margin:0.5em auto;">He contracted space before Einstein curved it &mdash; a Dublin physicist whose ideas outran the experiments of his age and whose generous spirit advanced a science he would not live to see fulfilled.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+    <script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+    <script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

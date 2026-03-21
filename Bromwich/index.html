@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas John l'Anson Bromwich - The Contour Integral Master</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #9b72cf; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+        .reveal-viewport { background: var(--bg-primary); }
+        .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+        .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+        .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+        .reveal h3 { font-size: 1.15em; font-weight: 700; }
+        .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+        .reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+        .reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+        .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+        .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+        .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+        .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+        .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+        .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+        .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+        .card:hover { border-color: var(--accent); }
+        .card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+        .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+        .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+        .timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+        .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+        .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+        .diagram-container { margin: 0.6em auto; max-width: 85%; }
+        .two-col .diagram-container { max-width: 100%; margin: 0; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+        .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+        .tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+        .tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+        .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+        .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+        .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+        .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+        @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+        .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+        .process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+        .process-step p { font-size: 0.40em !important; margin: 0; }
+        .process-arrow { color: var(--accent); font-size: 1.0em; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+        .reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+        .reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+        .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+        .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Title -->
+            <section>
+                <div class="mandala-container">
+                    <svg viewBox="0 0 140 140">
+                        <circle cx="70" cy="70" r="60" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3"/>
+                        <circle cx="70" cy="70" r="45" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.25"/>
+                        <circle cx="70" cy="70" r="30" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.2"/>
+                        <path d="M70 10 L70 130 M10 70 L130 70 M25 25 L115 115 M115 25 L25 115" stroke="#9b72cf" stroke-width="0.3" opacity="0.15"/>
+                        <!-- Contour integral path suggestion -->
+                        <path d="M40 70 Q40 40 70 40 Q100 40 100 70 Q100 100 70 100 Q40 100 40 70" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.3"/>
+                        <circle cx="55" cy="60" r="2" fill="#9b72cf" opacity="0.4"/>
+                        <circle cx="85" cy="80" r="2" fill="#9b72cf" opacity="0.4"/>
+                    </svg>
+                </div>
+                <h1>Thomas John l'Anson Bromwich</h1>
+                <p class="subtitle">The Mathematician Who Inverted the Transform</p>
+                <div class="separator"></div>
+                <p style="text-align:center;"><span class="accent">1875 &ndash; 1929</span> &nbsp;&middot;&nbsp; Wolverhampton &amp; Cambridge &nbsp;&middot;&nbsp; St John's College</p>
+                <div style="margin-top:0.8em;">
+                    <span class="tag">Inverse Laplace Transform</span>
+                    <span class="tag green">Infinite Series</span>
+                    <span class="tag blue">Diffraction Theory</span>
+                    <span class="tag amber">Mathematical Physics</span>
+                </div>
+            </section>
+
+            <!-- Slide 2: Early Life -->
+            <section>
+                <span class="section-number">01 &mdash; ORIGINS</span>
+                <h2>From Wolverhampton to the Senior Wrangler</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Thomas John l'Anson Bromwich was born on <span class="accent">8 February 1875</span> in Wolverhampton, England, into a middle-class family. His unusual middle name, l'Anson, reflected a family connection that he carried throughout his life and that appears on all his published works.</p>
+                        <p>Bromwich spent part of his youth in <span class="accent-blue">South Africa</span>, but returned to England for his higher education. He entered <span class="accent">St John's College, Cambridge</span> as a mathematics student, where he rapidly distinguished himself as one of the most talented analysts of his generation.</p>
+                        <p>In <span class="accent">1895</span>, Bromwich was named <span class="accent">Senior Wrangler</span> &mdash; the highest-scoring first-class degree in the Mathematical Tripos, Cambridge's fearsome mathematics examination. This was still the era when the Senior Wrangler was a national celebrity, and the achievement marked Bromwich as a mathematician of exceptional ability.</p>
+                        <p>He was elected a Fellow of St John's College in <span class="accent">1897</span>, beginning a lifelong association with Cambridge mathematics.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent">Senior Wrangler, 1895</h4>
+                            <p>The Mathematical Tripos was a gruelling multi-day examination. Being named Senior Wrangler placed Bromwich in the company of Kelvin, Rayleigh, Stokes, and other giants of British mathematics and physics.</p>
+                        </div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-green">St John's College</h4>
+                            <p>One of Cambridge's largest and most distinguished colleges, with a long tradition of mathematical excellence. Bromwich's election as Fellow confirmed his place in the Cambridge mathematical establishment.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-amber">The South African Connection</h4>
+                            <p>Bromwich's time in South Africa would later influence his career: he spent several years as Professor of Mathematics at Queen's College, Galway, before returning to Cambridge permanently.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Career -->
+            <section>
+                <span class="section-number">02 &mdash; CAREER</span>
+                <h2>A Life in Cambridge Mathematics</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>After his Fellowship at St John's, Bromwich spent a period as <span class="accent">Professor of Mathematics</span> at Queen's College, Galway (now NUI Galway), Ireland, from <span class="accent">1902 to 1907</span>. There he began the research on infinite series that would form the core of his mathematical legacy.</p>
+                        <p>In <span class="accent">1907</span>, Bromwich returned to Cambridge as a college lecturer at St John's, where he would remain for the rest of his career. He was elected a <span class="accent">Fellow of the Royal Society</span> in 1906, recognising his contributions to pure and applied mathematics.</p>
+                        <p>Bromwich was a dedicated teacher known for his clear, rigorous style. His textbook <em>An Introduction to the Theory of Infinite Series</em> (1908) became a standard reference that remained in print for decades, valued for its careful treatment of convergence and its wealth of examples.</p>
+                        <p>Though primarily a pure mathematician, Bromwich was deeply interested in the applications of analysis to physics, particularly electromagnetic theory and diffraction. This interest led to his most famous contribution: the rigorous formulation of the <span class="accent-green">inverse Laplace transform</span>.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-purple">The Analyst's Analyst</h4>
+                            <p>Bromwich's peers regarded him as exceptionally careful and thorough. Hardy once described his work on series as "models of accuracy and completeness" &mdash; high praise from the greatest analyst of the age.</p>
+                        </div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-blue">FRS at 31</h4>
+                            <p>Election to the Royal Society in 1906 came unusually early, a testament to the quality and volume of Bromwich's mathematical output in his late twenties and early thirties.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-rose">A Troubled Later Life</h4>
+                            <p>Bromwich suffered from severe depression in his later years. He took his own life on 24 August 1929, at the age of fifty-four. His death was a significant loss to British mathematics.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Historical Context -->
+            <section>
+                <span class="section-number">03 &mdash; CONTEXT</span>
+                <h2>The Rigorisation of Analysis</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.5em;">Bromwich worked during a pivotal era in mathematics &mdash; when the informal methods of Victorian applied mathematics were being placed on rigorous foundations, and when the tools of complex analysis were being connected to physical problems.</p>
+                <div class="card-grid cols-3">
+                    <div class="card">
+                        <h4 class="accent">The Cambridge Tradition</h4>
+                        <p>Early 20th-century Cambridge mathematics was shaped by the tension between the old Tripos tradition of applied problem-solving and the new rigour championed by Hardy, Littlewood, and their school. Bromwich bridged both worlds, combining rigorous analysis with genuine physical application.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Heaviside's Operational Calculus</h4>
+                        <p>Oliver Heaviside had developed a powerful but formally unjustified "operational calculus" for solving differential equations in circuit theory. His methods worked brilliantly in practice but lacked mathematical rigour. Providing that rigour became a major challenge for mathematicians like Bromwich.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Complex Analysis Matures</h4>
+                        <p>The theory of functions of a complex variable, developed by Cauchy, Riemann, and Weierstrass, had reached maturity by the late 19th century. Bromwich was among those who saw how contour integration could provide the missing bridge between Heaviside's methods and rigorous mathematics.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"Mathematics knows no races or geographic boundaries; for mathematics, the cultural world is one country."</p>
+                    <span class="attribution">&mdash; David Hilbert, expressing the universalism of the mathematical community Bromwich inhabited</span>
+                </div>
+            </section>
+
+            <!-- Slide 5: Contribution #1 - Bromwich Integral + SVG -->
+            <section>
+                <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+                <h2>The Bromwich Integral</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Bromwich's most celebrated contribution is the <span class="accent">Bromwich integral</span> &mdash; the contour integral formula for the <span class="accent-green">inverse Laplace transform</span>. Published in <span class="accent">1916</span>, it provides the rigorous method for recovering a time-domain function from its Laplace transform.</p>
+                        <p>Given a function <code>F(s)</code> defined in the complex s-plane, the inverse Laplace transform is:</p>
+                        <p style="text-align:center; color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:0.55em;">f(t) = (1/2&pi;i) &int;<sub>c-i&infin;</sub><sup>c+i&infin;</sup> F(s) e<sup>st</sup> ds</p>
+                        <p>The integral is evaluated along a vertical line in the complex plane (the <span class="accent">Bromwich contour</span>), where the real part <code>c</code> is chosen so that all singularities of <code>F(s)</code> lie to the left of the line.</p>
+                        <p>This formula gave rigorous mathematical meaning to Heaviside's operational methods and became the foundation of the Laplace transform technique used throughout engineering and physics. Every electrical engineer who analyses a circuit in the s-domain and transforms back to the time domain is using Bromwich's integral.</p>
+                    </div>
+                    <div>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg">
+                                <text x="160" y="20" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">Bromwich Contour in the s-plane</text>
+                                <!-- Axes -->
+                                <line x1="160" y1="40" x2="160" y2="310" stroke="#2a2a3a" stroke-width="1"/>
+                                <line x1="30" y1="175" x2="290" y2="175" stroke="#2a2a3a" stroke-width="1"/>
+                                <!-- Axis labels -->
+                                <text x="285" y="168" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">Re(s)</text>
+                                <text x="165" y="48" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">Im(s)</text>
+                                <!-- Poles (singularities) -->
+                                <text x="90" y="130" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="14">&times;</text>
+                                <text x="75" y="118" fill="#cf7272" font-family="DM Sans" font-size="7">pole</text>
+                                <text x="120" y="200" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="14">&times;</text>
+                                <text x="105" y="215" fill="#cf7272" font-family="DM Sans" font-size="7">pole</text>
+                                <text x="100" y="165" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="14">&times;</text>
+                                <!-- Bromwich contour (vertical line) -->
+                                <line x1="210" y1="50" x2="210" y2="300" stroke="#9b72cf" stroke-width="2.5" opacity="0.8"/>
+                                <!-- Arrows on contour -->
+                                <polygon points="210,80 206,95 214,95" fill="#9b72cf" opacity="0.8"/>
+                                <polygon points="210,240 206,255 214,255" fill="#9b72cf" opacity="0.6"/>
+                                <!-- Label for contour -->
+                                <text x="232" y="170" fill="#9b72cf" font-family="JetBrains Mono" font-size="9">Re(s) = c</text>
+                                <!-- c marker -->
+                                <circle cx="210" cy="175" r="3" fill="#9b72cf"/>
+                                <text x="210" y="190" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">c</text>
+                                <!-- Shaded region left of contour -->
+                                <rect x="30" y="50" width="180" height="250" fill="rgba(155,114,207,0.04)" rx="0"/>
+                                <text x="80" y="265" fill="#6a6a7a" font-family="DM Sans" font-size="8">All poles lie in</text>
+                                <text x="80" y="278" fill="#6a6a7a" font-family="DM Sans" font-size="8">this half-plane</text>
+                                <!-- Direction arrows -->
+                                <text x="210" y="45" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="8">c + i&infin;</text>
+                                <text x="210" y="318" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="8">c - i&infin;</text>
+                                <!-- Formula box -->
+                                <rect x="30" y="325" width="260" height="28" rx="5" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="0.5"/>
+                                <text x="160" y="344" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10">f(t) = (1/2&pi;i) &int; F(s)e&#x02E2;&#x1D57; ds</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Deep Dive - Bromwich Integral -->
+            <section>
+                <span class="section-number">05 &mdash; DEEP DIVE</span>
+                <h2>Justifying Heaviside</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.4em;">The Bromwich integral answered a question that had nagged mathematicians for decades: why did Heaviside's mysterious operational calculus actually work?</p>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Heaviside's Operator <code>p</code></h4>
+                        <p>Heaviside treated the differentiation operator <code>d/dt</code> as an algebraic quantity <code>p</code>, manipulating it as though it were a number. He could "divide" by <code>p</code> (integrate), factor polynomials in <code>p</code>, and expand in partial fractions &mdash; all without rigorous justification. The results were consistently correct, which infuriated rigorous mathematicians.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">The Laplace Connection</h4>
+                        <p>Bromwich showed that Heaviside's operator <code>p</code> corresponds precisely to the complex variable <code>s</code> in the Laplace transform. The operational manipulations that Heaviside performed algebraically correspond to well-defined operations on analytic functions in the complex plane, governed by Cauchy's integral theorem.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Conditions for Validity</h4>
+                        <p>Crucially, Bromwich established the precise conditions under which the inverse transform converges: <code>F(s)</code> must be analytic in a right half-plane <code>Re(s) > c</code> and must decay sufficiently rapidly as <code>|s| &rarr; &infin;</code>. These conditions tell the engineer exactly when the method is trustworthy.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">The Residue Method</h4>
+                        <p>In practice, the Bromwich integral is usually evaluated by closing the contour to the left and summing residues at the poles of <code>F(s)</code>. Each pole contributes an exponential or sinusoidal term to <code>f(t)</code> &mdash; giving the natural modes of the system. This connects complex analysis directly to physical behaviour.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"The virtue of the Laplace transform method is that it converts differential equations into algebraic equations; the Bromwich integral is the bridge that carries us back."</p>
+                    <span class="attribution">&mdash; A common paraphrase in engineering textbooks</span>
+                </div>
+            </section>
+
+            <!-- Slide 7: Contribution #2 - Infinite Series + SVG -->
+            <section>
+                <span class="section-number">06 &mdash; CONTRIBUTION II</span>
+                <h2>The Theory of Infinite Series</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Bromwich's textbook <em>An Introduction to the Theory of Infinite Series</em>, first published in <span class="accent">1908</span> with a second edition in 1926, was one of the most influential works on series and convergence in the English language.</p>
+                        <p>The book brought together the work of Continental analysts &mdash; Cauchy, Abel, Dirichlet, Ces&agrave;ro, and others &mdash; and presented it in a systematic, accessible form for English-speaking mathematicians. At a time when British mathematics lagged behind the Continent in rigour, Bromwich helped bridge the gap.</p>
+                        <p>His treatment of <span class="accent-green">summability methods</span> was particularly influential. Bromwich clarified the relationships between different definitions of the "sum" of a divergent series &mdash; Abel summation, Ces&agrave;ro summation, and others &mdash; showing when they agreed and when they diverged.</p>
+                        <p>The book also contains Bromwich's own contributions to convergence theory, including refined tests for absolute and conditional convergence and careful treatment of double series and infinite products.</p>
+                    </div>
+                    <div>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+                                <text x="150" y="20" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">Laplace Transform Pair</text>
+                                <!-- Time domain box -->
+                                <rect x="20" y="40" width="120" height="100" rx="8" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1"/>
+                                <text x="80" y="60" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700">Time Domain</text>
+                                <text x="80" y="80" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono" font-size="11">f(t)</text>
+                                <!-- Simple waveform sketch -->
+                                <path d="M35 115 Q50 95 65 110 Q80 125 95 100 Q110 80 125 110" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                                <!-- s-domain box -->
+                                <rect x="160" y="40" width="120" height="100" rx="8" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="1"/>
+                                <text x="220" y="60" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="700">s-Domain</text>
+                                <text x="220" y="80" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono" font-size="11">F(s)</text>
+                                <!-- Pole-zero sketch -->
+                                <text x="190" y="115" fill="#cf7272" font-family="JetBrains Mono" font-size="12">&times;</text>
+                                <text x="215" y="105" fill="#cf7272" font-family="JetBrains Mono" font-size="12">&times;</text>
+                                <circle cx="245" cy="110" r="4" fill="none" stroke="#4ecca3" stroke-width="1"/>
+                                <!-- Forward transform arrow -->
+                                <line x1="140" y1="70" x2="158" y2="70" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrBr1)"/>
+                                <text x="150" y="63" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="7">L</text>
+                                <!-- Inverse transform arrow -->
+                                <line x1="158" y1="90" x2="140" y2="90" stroke="#9b72cf" stroke-width="1.5" marker-end="url(#arrBr2)"/>
+                                <text x="150" y="100" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="7">L&sup1;</text>
+                                <!-- Convergence diagram below -->
+                                <text x="150" y="175" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="10">Convergence of Partial Sums</text>
+                                <!-- Axes -->
+                                <line x1="40" y1="300" x2="270" y2="300" stroke="#2a2a3a" stroke-width="1"/>
+                                <line x1="40" y1="190" x2="40" y2="300" stroke="#2a2a3a" stroke-width="1"/>
+                                <text x="270" y="315" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">n</text>
+                                <text x="28" y="195" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">S&#x2099;</text>
+                                <!-- Partial sums approaching limit -->
+                                <line x1="40" y1="240" x2="270" y2="240" stroke="#9b72cf" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+                                <text x="278" y="243" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">S</text>
+                                <!-- Oscillating convergence -->
+                                <circle cx="60" cy="270" r="2.5" fill="#d4a053"/>
+                                <circle cx="85" cy="220" r="2.5" fill="#d4a053"/>
+                                <circle cx="110" cy="258" r="2.5" fill="#d4a053"/>
+                                <circle cx="135" cy="228" r="2.5" fill="#d4a053"/>
+                                <circle cx="160" cy="250" r="2.5" fill="#d4a053"/>
+                                <circle cx="185" cy="234" r="2.5" fill="#d4a053"/>
+                                <circle cx="210" cy="245" r="2.5" fill="#d4a053"/>
+                                <circle cx="235" cy="237" r="2.5" fill="#d4a053"/>
+                                <circle cx="260" cy="241" r="2.5" fill="#d4a053"/>
+                                <path d="M60 270 L85 220 L110 258 L135 228 L160 250 L185 234 L210 245 L235 237 L260 241" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+                                <defs>
+                                    <marker id="arrBr1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#d4a053"/></marker>
+                                    <marker id="arrBr2" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M7,0 L0,2.5 L7,5" fill="#9b72cf"/></marker>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Deep Dive - Series -->
+            <section>
+                <span class="section-number">07 &mdash; DEEP DIVE</span>
+                <h2>Summability and the Meaning of Sums</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.4em;">What does it mean to "sum" a divergent series? Bromwich's careful treatment of summability methods brought clarity to a question that had puzzled mathematicians since Euler.</p>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Abel Summation</h4>
+                        <p>A series &sum;a<sub>n</sub> is Abel summable to S if the power series &sum;a<sub>n</sub>x<sup>n</sup> converges for |x|&lt;1 and its limit as x&rarr;1<sup>&minus;</sup> equals S. This generalises ordinary convergence: every convergent series is Abel summable to the same value, but some divergent series are also Abel summable.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Ces&agrave;ro Summation</h4>
+                        <p>Ces&agrave;ro's method averages the partial sums: if S<sub>n</sub> = a<sub>0</sub> + ... + a<sub>n</sub>, the Ces&agrave;ro sum is the limit of (S<sub>0</sub> + ... + S<sub>n</sub>)/(n+1). The classic example is 1 &minus; 1 + 1 &minus; 1 + ..., which Ces&agrave;ro sums to 1/2. Bromwich systematised the hierarchy of Ces&agrave;ro means of different orders.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Tauberian Theorems</h4>
+                        <p>Bromwich contributed to the growing body of "Tauberian" results &mdash; converses of Abel's theorem that establish when summability implies convergence. Hardy and Littlewood later extended this programme dramatically, but Bromwich's textbook helped make the subject accessible.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">Physical Significance</h4>
+                        <p>Summability methods have direct physical applications: Fourier series at discontinuities can be made to converge by Ces&agrave;ro averaging (F&eacute;j&eacute;r's theorem), and the Abel sum of a divergent series often represents the physically meaningful answer in quantum field theory and statistical mechanics.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Contribution #3 - Diffraction Theory -->
+            <section>
+                <span class="section-number">08 &mdash; CONTRIBUTION III</span>
+                <h2>Electromagnetic Diffraction Theory</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Bromwich made important contributions to the mathematical theory of <span class="accent">electromagnetic wave diffraction</span>, particularly the problem of diffraction by a conducting sphere. This work connected his analytical expertise directly to physics.</p>
+                        <p>The problem of how electromagnetic waves scatter from a sphere &mdash; relevant to radio wave propagation around the Earth &mdash; requires summing infinite series of spherical harmonics. Bromwich developed methods for evaluating these sums, extending earlier work by Mie and others.</p>
+                        <p>His <span class="accent-green">1919 paper</span> on the scattering of plane electromagnetic waves by a conducting sphere provided improved convergence techniques for the series solutions. This work anticipated later developments in radar cross-section calculations and electromagnetic compatibility analysis.</p>
+                        <p>Bromwich also studied the <span class="accent-blue">diffraction of waves around the Earth</span>, a problem of practical importance for understanding how radio signals propagate beyond the horizon. His mathematical tools helped place Watson's transformation &mdash; used to convert slowly convergent series into rapidly convergent integrals &mdash; on a firm foundation.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-purple">Sphere Diffraction</h4>
+                            <p>When a plane wave encounters a conducting sphere, the scattered field can be expressed as an infinite sum of multipole terms. The convergence of this sum, especially for large spheres, was the mathematical challenge Bromwich addressed.</p>
+                        </div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-amber">Radio Propagation</h4>
+                            <p>In the early 20th century, Marconi's transatlantic radio transmissions (1901) puzzled physicists: how could radio waves follow the Earth's curvature? Diffraction theory, aided by Bromwich's analytical methods, was part of the answer.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-green">Watson's Transform</h4>
+                            <p>G.N. Watson developed a powerful technique for resumming the slowly convergent multipole series into a rapidly convergent integral. Bromwich's rigorous treatment of series convergence and integral transforms provided key tools for this programme.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Method -->
+            <section>
+                <span class="section-number">09 &mdash; METHOD</span>
+                <h2>Rigour as a Bridge to Application</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Bromwich's approach to mathematics was defined by a commitment to <span class="accent">rigour</span> that was always directed toward <span class="accent-green">utility</span>. Unlike some pure mathematicians who pursued abstraction for its own sake, Bromwich was motivated by the desire to put powerful applied methods on firm foundations.</p>
+                        <p>His treatment of the inverse Laplace transform exemplifies this philosophy. Heaviside's methods were spectacularly useful but formally unjustified. Rather than dismissing them, Bromwich asked: <em>under what precise conditions are these methods valid, and how can we prove it?</em></p>
+                        <p>This same spirit informed his work on infinite series. He did not merely catalogue convergence tests but explained <em>why</em> they work and <em>when</em> they fail, giving the practitioner clear guidance rather than mere theorems.</p>
+                        <p>Bromwich was also a careful expositor. His textbooks and papers are notable for their <span class="accent-blue">clarity of presentation</span>, with worked examples that illuminate general principles and careful attention to the hypotheses of theorems.</p>
+                    </div>
+                    <div>
+                        <div class="process-flow" style="flex-direction:column; gap:0.3em;">
+                            <div class="process-step" style="width:200px;">
+                                <h4 class="accent">Identify the Method</h4>
+                                <p>Observe a powerful but<br/>unjustified technique in use</p>
+                            </div>
+                            <div class="process-arrow" style="transform:rotate(90deg);">&rarr;</div>
+                            <div class="process-step" style="width:200px;">
+                                <h4 class="accent-green">Find the Framework</h4>
+                                <p>Identify the branch of<br/>rigorous analysis that applies</p>
+                            </div>
+                            <div class="process-arrow" style="transform:rotate(90deg);">&rarr;</div>
+                            <div class="process-step" style="width:200px;">
+                                <h4 class="accent-blue">Prove Validity</h4>
+                                <p>Establish precise conditions<br/>for the method's correctness</p>
+                            </div>
+                            <div class="process-arrow" style="transform:rotate(90deg);">&rarr;</div>
+                            <div class="process-step" style="width:200px;">
+                                <h4 class="accent-amber">Communicate Clearly</h4>
+                                <p>Present results so practitioners<br/>can apply them confidently</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Connections SVG -->
+            <section>
+                <span class="section-number">10 &mdash; CONNECTIONS</span>
+                <h2>Bromwich's Intellectual Network</h2>
+                <div class="separator"></div>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Central node -->
+                        <circle cx="350" cy="190" r="40" fill="rgba(155,114,207,0.15)" stroke="#9b72cf" stroke-width="2"/>
+                        <text x="350" y="186" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display" font-size="12" font-weight="700">Bromwich</text>
+                        <text x="350" y="200" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">1875-1929</text>
+                        <!-- Heaviside -->
+                        <circle cx="130" cy="100" r="32" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1.5"/>
+                        <text x="130" y="97" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="700">Heaviside</text>
+                        <text x="130" y="110" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Operational calculus</text>
+                        <line x1="162" y1="115" x2="315" y2="175" stroke="#d4a053" stroke-width="0.8" opacity="0.4"/>
+                        <text x="225" y="135" fill="#6a6a7a" font-family="DM Sans" font-size="7" transform="rotate(-18 225 135)">justified methods</text>
+                        <!-- Hardy -->
+                        <circle cx="130" cy="280" r="32" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1.5"/>
+                        <text x="130" y="277" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700">Hardy</text>
+                        <text x="130" y="290" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Rigorous analysis</text>
+                        <line x1="162" y1="265" x2="315" y2="205" stroke="#4ecca3" stroke-width="0.8" opacity="0.4"/>
+                        <!-- Laplace (historical influence) -->
+                        <circle cx="350" cy="50" r="28" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1" stroke-dasharray="4,2"/>
+                        <text x="350" y="47" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="700">Laplace</text>
+                        <text x="350" y="60" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Transform (1780s)</text>
+                        <line x1="350" y1="78" x2="350" y2="150" stroke="#9b72cf" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
+                        <!-- Watson -->
+                        <circle cx="570" cy="100" r="32" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.5"/>
+                        <text x="570" y="97" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="10" font-weight="700">Watson</text>
+                        <text x="570" y="110" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Transform methods</text>
+                        <line x1="538" y1="115" x2="385" y2="175" stroke="#5b8cd4" stroke-width="0.8" opacity="0.4"/>
+                        <!-- Cauchy (historical) -->
+                        <circle cx="570" cy="280" r="32" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,2"/>
+                        <text x="570" y="277" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="10" font-weight="700">Cauchy</text>
+                        <text x="570" y="290" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Contour integration</text>
+                        <line x1="538" y1="265" x2="385" y2="205" stroke="#cf7272" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
+                        <!-- Littlewood -->
+                        <circle cx="240" cy="340" r="28" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1"/>
+                        <text x="240" y="337" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700">Littlewood</text>
+                        <text x="240" y="350" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Tauberian theory</text>
+                        <line x1="258" y1="316" x2="335" y2="225" stroke="#4ecca3" stroke-width="0.8" opacity="0.3"/>
+                        <!-- Whittaker -->
+                        <circle cx="460" cy="340" r="28" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1"/>
+                        <text x="460" y="337" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="700">Whittaker</text>
+                        <text x="460" y="350" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Modern analysis</text>
+                        <line x1="442" y1="316" x2="365" y2="225" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Slide 12: Controversy -->
+            <section>
+                <span class="section-number">11 &mdash; CONTROVERSY</span>
+                <h2>The Rigour Wars</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Bromwich's career was shaped by one of the great tensions in mathematics: the conflict between <span class="accent">rigour</span> and <span class="accent-amber">utility</span>. His work on the Bromwich integral placed him squarely in the middle of the debate over Heaviside's operational calculus.</p>
+                        <p>Heaviside's methods were spectacularly effective for solving differential equations arising in electrical engineering, but his cavalier disregard for mathematical proof drew sharp criticism from Cambridge analysts. Heaviside himself was contemptuous of what he saw as mathematical pedantry, famously asking: <span class="accent-rose">"Shall I refuse my dinner because I do not fully understand the process of digestion?"</span></p>
+                        <p>Bromwich, characteristically, sought a middle path. He respected Heaviside's physical insight while insisting that the methods deserved proper justification. His 1916 paper provided exactly that &mdash; showing that Heaviside's operations corresponded to rigorous operations in the complex plane.</p>
+                        <p>Yet even Bromwich's rigorous treatment did not fully resolve the controversy. Some purists felt he had not gone far enough; some engineers felt the effort was unnecessary. The debate between formal rigour and practical calculation continues to this day in applied mathematics.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-rose">Heaviside vs. The Mathematicians</h4>
+                            <p>Heaviside's relationship with the mathematical establishment was famously hostile. He was denied a Cambridge degree, his papers were rejected by journals, and his methods were publicly attacked &mdash; even as engineers relied on them daily.</p>
+                        </div>
+                        <div class="card" style="margin-bottom:0.4em;">
+                            <h4 class="accent-green">The Pragmatic Resolution</h4>
+                            <p>Bromwich's Laplace transform approach eventually became the standard way to teach Heaviside's methods. Engineering students learn the transform technique (rigorous) rather than the operational calculus (heuristic), though the results are identical.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-blue">A Personal Cost</h4>
+                            <p>Bromwich's perfectionism and drive for rigour may have contributed to his mental health struggles. Colleagues noted his tendency toward self-criticism and his distress when he believed his work fell short of his own exacting standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: Legacy -->
+            <section>
+                <span class="section-number">12 &mdash; LEGACY</span>
+                <h2>The Invisible Foundation</h2>
+                <div class="separator"></div>
+                <p style="text-align:center; max-width:80%; margin:0 auto 0.5em;">Bromwich's name appears in every textbook on Laplace transforms, yet his broader contributions to analysis and mathematical physics remain underappreciated outside specialist circles.</p>
+                <div class="card-grid cols-3">
+                    <div class="card">
+                        <h4 class="accent">The Bromwich Integral</h4>
+                        <p>Used daily by thousands of engineers and physicists worldwide, the Bromwich integral is the standard method for inverting Laplace transforms. Every control systems textbook, every circuit analysis course, every signal processing reference contains this formula.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Infinite Series Textbook</h4>
+                        <p>Bromwich's textbook educated generations of analysts. Its careful treatment of convergence, its wealth of problems, and its balance of rigour and clarity set a standard that later textbooks aspired to match. The second edition (1926) remained a standard reference into the 1970s.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Mathematical Physics</h4>
+                        <p>His work on electromagnetic diffraction contributed to the development of radar theory in World War II and to the understanding of radio wave propagation. The analytical techniques he refined are still used in computational electromagnetics.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"The rigorous justification of a powerful method is itself a creative mathematical achievement &mdash; it reveals the hidden structure that makes the method work."</p>
+                    <span class="attribution">&mdash; A reflection on the legacy of Bromwich's approach to analysis</span>
+                </div>
+            </section>
+
+            <!-- Slide 14: Applications -->
+            <section>
+                <span class="section-number">13 &mdash; APPLICATIONS</span>
+                <h2>Where Bromwich's Work Lives Today</h2>
+                <div class="separator"></div>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Control Systems Engineering</h4>
+                        <p>The Laplace transform is the primary tool for analysing and designing feedback control systems. Transfer functions, stability criteria (Nyquist, Bode), and system response are all formulated in the s-domain. The Bromwich integral provides the theoretical foundation for converting s-domain results back to time-domain behaviour.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Signal Processing</h4>
+                        <p>Filter design, spectral analysis, and system identification all rely on transform methods descended from Bromwich's work. The z-transform used in digital signal processing is a discrete analogue of the Laplace transform, and its inversion follows the same contour-integral logic.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Circuit Analysis</h4>
+                        <p>Electrical engineers routinely analyse circuits by transforming differential equations into algebraic equations in the s-domain. The impedance concept (Z = R + sL + 1/sC) is a direct application of the Laplace transform. Bromwich's integral tells us how to get back to voltages and currents as functions of time.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">Probability and Queueing Theory</h4>
+                        <p>The moment-generating function and the probability-generating function are Laplace and z-transforms of probability distributions. Inverting them to recover distributions uses precisely the Bromwich contour integral, making Bromwich's work fundamental to modern stochastic modelling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 15: Timeline SVG -->
+            <section>
+                <span class="section-number">14 &mdash; TIMELINE</span>
+                <h2>A Life in Analysis</h2>
+                <div class="separator"></div>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 750 360" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Main timeline line -->
+                        <line x1="50" y1="180" x2="700" y2="180" stroke="#2a2a3a" stroke-width="2"/>
+                        <!-- Birth -->
+                        <circle cx="80" cy="180" r="5" fill="#9b72cf"/>
+                        <text x="80" y="170" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" font-weight="500">1875</text>
+                        <text x="80" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Born in</text>
+                        <text x="80" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Wolverhampton</text>
+                        <!-- Senior Wrangler -->
+                        <circle cx="180" cy="180" r="6" fill="#d4a053"/>
+                        <text x="180" y="170" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1895</text>
+                        <text x="180" y="145" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Senior</text>
+                        <text x="180" y="156" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Wrangler</text>
+                        <!-- Fellow -->
+                        <circle cx="250" cy="180" r="4" fill="#4ecca3"/>
+                        <text x="250" y="170" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="500">1897</text>
+                        <text x="250" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Fellow of</text>
+                        <text x="250" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">St John's</text>
+                        <!-- Galway -->
+                        <circle cx="330" cy="180" r="4" fill="#5b8cd4"/>
+                        <text x="330" y="145" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="500">1902</text>
+                        <text x="330" y="156" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Professor, Galway</text>
+                        <!-- FRS -->
+                        <circle cx="390" cy="180" r="5" fill="#4ecca3"/>
+                        <text x="390" y="170" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="500">1906</text>
+                        <text x="390" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">FRS</text>
+                        <!-- Textbook -->
+                        <circle cx="450" cy="180" r="6" fill="#d4a053"/>
+                        <text x="450" y="145" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1908</text>
+                        <text x="450" y="156" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Infinite Series</text>
+                        <text x="450" y="167" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">published</text>
+                        <!-- Bromwich Integral -->
+                        <circle cx="540" cy="180" r="7" fill="#9b72cf"/>
+                        <text x="540" y="170" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" font-weight="500">1916</text>
+                        <text x="540" y="205" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Bromwich</text>
+                        <text x="540" y="216" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Integral</text>
+                        <!-- 2nd Edition -->
+                        <circle cx="620" cy="180" r="4" fill="#5b8cd4"/>
+                        <text x="620" y="145" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="500">1926</text>
+                        <text x="620" y="156" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">2nd ed. Series</text>
+                        <!-- Death -->
+                        <circle cx="680" cy="180" r="5" fill="#cf7272"/>
+                        <text x="680" y="170" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="10" font-weight="500">1929</text>
+                        <text x="680" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Dies in</text>
+                        <text x="680" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Cambridge</text>
+                        <!-- Context bar -->
+                        <rect x="50" y="260" width="650" height="1" fill="#2a2a3a"/>
+                        <text x="50" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1893: Heaviside publishes</text>
+                        <text x="50" y="293" fill="#6a6a7a" font-family="DM Sans" font-size="7" opacity="0.6">Electromagnetic Theory vol.1</text>
+                        <text x="300" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1901: Marconi transatlantic radio</text>
+                        <text x="540" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1925: Operational calculus debate peaks</text>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Slide 16: Further Reading -->
+            <section>
+                <span class="section-number">15 &mdash; FURTHER READING</span>
+                <h2>Explore Further</h2>
+                <div class="separator"></div>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">An Introduction to the Theory of Infinite Series</h4>
+                        <p><strong>T.J.I'A. Bromwich</strong> (Macmillan, 1908; 2nd ed. 1926). Bromwich's masterwork on convergence, summability, and infinite processes. Still valuable for its rigorous treatment and excellent problem sets. Available in reprinted editions.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">The Laplace Transform</h4>
+                        <p><strong>David V. Widder</strong> (Princeton, 1941). The standard rigorous treatment of the Laplace transform, building directly on Bromwich's foundational work. Provides the full analytical machinery behind the Bromwich integral.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Heaviside's Operational Calculus and the Rise of the Laplace Transform</h4>
+                        <p><strong>Michael Deakin</strong> (Archive for History of Exact Sciences, 1981). Scholarly article tracing the historical development from Heaviside's heuristic methods through Bromwich's rigorous justification to the modern Laplace transform technique.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">The Maxwellians</h4>
+                        <p><strong>Bruce J. Hunt</strong> (Cornell, 1991). While focused on FitzGerald, Heaviside, and Lodge, this book provides essential context for understanding the electromagnetic problems that motivated Bromwich's mathematical work, particularly his justification of Heaviside's methods.</p>
+                    </div>
+                </div>
+                <p style="text-align:center; margin-top:0.6em;">
+                    <span class="tag">Complex Analysis</span>
+                    <span class="tag green">Transform Methods</span>
+                    <span class="tag amber">History of Mathematics</span>
+                    <span class="tag blue">Signal Processing</span>
+                </p>
+            </section>
+
+            <!-- Slide 17: Closing Quote -->
+            <section>
+                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
+                    <div class="mandala-container">
+                        <svg viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="60" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="70" cy="70" r="40" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.15"/>
+                            <circle cx="70" cy="70" r="20" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.1"/>
+                            <path d="M70 10 L70 130 M10 70 L130 70" stroke="#9b72cf" stroke-width="0.3" opacity="0.1"/>
+                            <!-- Contour path motif -->
+                            <path d="M50 70 Q50 45 70 45 Q90 45 90 70" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.2"/>
+                        </svg>
+                    </div>
+                    <div class="quote-box" style="max-width:70%; margin:0.8em auto;">
+                        <p>"The power of complex analysis lies in its ability to transform the difficult into the tractable &mdash; to replace an impenetrable real-variable problem with a contour integral that yields its secrets to the calculus of residues."</p>
+                        <span class="attribution">&mdash; On the philosophy underlying Bromwich's approach</span>
+                    </div>
+                    <div class="separator" style="margin:1em auto;"></div>
+                    <h3 style="margin-bottom:0.2em;"><span class="accent">Thomas John l'Anson Bromwich</span></h3>
+                    <p style="text-align:center; color:var(--text-muted); font-size:0.48em;">1875 &ndash; 1929</p>
+                    <p style="text-align:center; color:var(--text-secondary); font-size:0.44em; max-width:60%; margin:0.5em auto;">He built the bridge between Heaviside's inspired intuition and rigorous mathematics &mdash; a contour integral that carries engineers safely from the complex plane back to the real world, millions of times a day.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+    <script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+    <script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

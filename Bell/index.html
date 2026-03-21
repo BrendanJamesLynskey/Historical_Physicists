@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Stewart Bell — Quantum Foundations, Bell's Theorem</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #cf7272; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="55" fill="none" stroke="#cf7272" stroke-width="1" opacity="0.3"/>
+      <circle cx="70" cy="70" r="40" fill="none" stroke="#cf7272" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="70" cy="70" r="25" fill="none" stroke="#cf7272" stroke-width="0.5" opacity="0.15"/>
+      <!-- Entangled pair symbol -->
+      <circle cx="50" cy="70" r="10" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="90" cy="70" r="10" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.6"/>
+      <line x1="60" y1="70" x2="80" y2="70" stroke="#cf7272" stroke-width="1" opacity="0.5" stroke-dasharray="3,2"/>
+      <text x="70" y="45" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="8" opacity="0.5">|&#x3C8;&#x27E9;</text>
+    </svg>
+  </div>
+  <h1>John Stewart Bell</h1>
+  <div class="separator"></div>
+  <p class="subtitle">Quantum Foundations &middot; 1928&ndash;1990</p>
+  <p style="text-align:center; margin-top:0.6em;">The man who proved that nature is fundamentally non-local,<br>and changed our understanding of reality itself</p>
+  <div style="margin-top:0.8em;">
+    <span class="tag rose">Bell's Theorem</span>
+    <span class="tag green">Quantum Mechanics</span>
+    <span class="tag">CERN</span>
+    <span class="tag blue">Non-locality</span>
+  </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+  <span class="section-number">01 / ORIGINS</span>
+  <h2>A Belfast Working-Class Prodigy</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>John Stewart Bell was born on <strong class="accent">28 June 1928</strong> in Belfast, Northern Ireland, into a working-class family. His father was a horse trader; his mother worked in a mill. None of his family had attended university. Of four siblings, only John would receive higher education.</p>
+      <p>Bell knew from age eleven that he wanted to be a scientist. He devoured books from the public library and showed exceptional mathematical talent. But his family's poverty was a constant constraint &mdash; he had to leave school at fifteen because they could not afford the fees.</p>
+      <p>He took a job as a laboratory assistant in the physics department at Queen's University Belfast. The physicists there recognized his extraordinary ability and allowed him to attend lectures. By <strong class="accent-green">1948</strong>, he had earned a degree in experimental physics, and in 1949 a second degree in mathematical physics &mdash; both from Queen's.</p>
+      <p>This dual training &mdash; experimentalist and theorist &mdash; shaped Bell's entire career. He always insisted that physics was about <em>real things</em> happening in the <em>real world</em>, not just mathematical formalism.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.4em;">
+        <h4 class="accent">Key Early Facts</h4>
+        <p><strong>Born:</strong> 28 June 1928, Belfast, Northern Ireland</p>
+        <p><strong>Family:</strong> Working class; father a horse trader</p>
+        <p><strong>Education:</strong> Queen's University Belfast (two degrees, 1948&ndash;49)</p>
+        <p><strong>Early work:</strong> Lab technician at Queen's physics dept.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">The Formative Question</h4>
+        <p>As an undergraduate, Bell encountered the Copenhagen interpretation of quantum mechanics and was deeply troubled. He found the division between "classical" measuring apparatus and "quantum" system to be arbitrary and unsatisfying. This discomfort would simmer for fifteen years before producing the most important theorem in modern physics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+  <span class="section-number">02 / CAREER</span>
+  <h2>From Harwell to CERN</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">Bell's official career was in accelerator physics and quantum field theory. His foundational work was done "on the side" &mdash; a hobby that changed everything.</p>
+  <div class="card-grid cols-3" style="margin-top:0.6em;">
+    <div class="card">
+      <h4 class="accent">Harwell (1949&ndash;1960)</h4>
+      <p>Bell joined the UK Atomic Energy Research Establishment at Harwell, working on nuclear reactor design and particle accelerator physics. Here he married Mary Ross, also a physicist. He developed expertise in quantum field theory and CPT symmetry, contributing to the understanding of charge-parity-time reversal invariance.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">CERN (1960&ndash;1990)</h4>
+      <p>Bell moved to CERN in Geneva, where he spent the rest of his career. His "day job" involved accelerator design, quantum field theory, and particle physics. He made important contributions to the theory of neutrino oscillations, anomalies in gauge theories, and the design of particle focusing systems.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The "Hobby" That Changed Physics</h4>
+      <p>Bell considered his work on quantum foundations to be a sideline &mdash; something he did between his "real" work at CERN. His 1964 paper on hidden variables was written during a sabbatical year at Stanford, SLAC, and Brandeis. He published remarkably few papers on the topic, but each one was devastating.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.6em;">
+    <p>"I am a quantum engineer, but on Sundays I have principles."</p>
+    <span class="attribution">&mdash; John S. Bell</span>
+  </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+  <span class="section-number">03 / CONTEXT</span>
+  <h2>The Quantum Measurement Problem</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">Bell's work emerged from the deepest unresolved puzzle of 20th-century physics: what does quantum mechanics actually <em>mean</em>?</p>
+  <div class="card-grid cols-2" style="margin-top:0.5em;">
+    <div class="card">
+      <h4 class="accent-amber">The Copenhagen Orthodoxy</h4>
+      <p>By the 1950s, the Copenhagen interpretation (Bohr, Heisenberg, Born) was dominant. It held that quantum mechanics is <em>complete</em> &mdash; the wavefunction contains all possible information. Measurement "collapses" the wavefunction, but the process is fundamentally random. Don't ask what happens between measurements: the question is meaningless.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Einstein's Dissent</h4>
+      <p>Einstein rejected Copenhagen. In 1935, with Podolsky and Rosen, he published the EPR paradox, arguing that quantum mechanics must be incomplete. There should be "hidden variables" &mdash; deeper properties that determine outcomes. "God does not play dice." The EPR paper introduced entanglement as a challenge to completeness.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Von Neumann's "Proof"</h4>
+      <p>In 1932, John von Neumann published a mathematical "proof" that hidden variable theories were impossible. This was accepted for decades. But in 1952, David Bohm constructed an explicit hidden variable theory that reproduced all quantum predictions &mdash; apparently contradicting von Neumann. Bell was fascinated: who was right?</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Taboo Topic</h4>
+      <p>In the 1950s&ndash;60s, questioning the foundations of quantum mechanics was considered career suicide. "Shut up and calculate" was the prevailing attitude. Bell worked on these questions in near-isolation, acutely aware that his mainstream colleagues regarded the topic as philosophical, not physical.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Contribution #1 — Bell's Theorem + SVG -->
+<section>
+  <span class="section-number">04 / CONTRIBUTION I</span>
+  <h2>Bell's Theorem (1964)</h2>
+  <div class="separator"></div>
+  <div class="two-col wide-left">
+    <div>
+      <p>In 1964, Bell published <em>"On the Einstein Podolsky Rosen Paradox"</em> in the journal <em>Physics</em>. In just six pages, he proved the most profound result in the history of physics.</p>
+      <p>Bell showed that <strong class="accent">any theory based on local hidden variables</strong> must obey a certain mathematical inequality &mdash; now called <strong class="accent">Bell's inequality</strong>. He then demonstrated that quantum mechanics <em>violates</em> this inequality.</p>
+      <p>The implication was staggering: <strong class="accent-green">no local realistic theory can reproduce the predictions of quantum mechanics</strong>. If quantum mechanics is correct (and experiments confirm it is), then either:</p>
+      <ul>
+        <li><strong class="accent-blue">Locality fails:</strong> distant events can instantaneously influence each other</li>
+        <li><strong class="accent-purple">Realism fails:</strong> particles don't have definite properties before measurement</li>
+        <li><strong class="accent-amber">Both fail</strong></li>
+      </ul>
+      <p>Einstein had hoped hidden variables would <em>restore</em> locality and realism. Bell proved this was impossible. Nature is fundamentally stranger than Einstein wanted to believe.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 280 340" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="270" height="330" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+          <text x="140" y="30" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="12" font-weight="700">Bell Experiment Setup</text>
+          <!-- Source in center -->
+          <circle cx="140" cy="110" r="18" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="1.5"/>
+          <text x="140" y="107" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="8" font-weight="600">Source</text>
+          <text x="140" y="118" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="6">|&#x3C8;&#x27E9;</text>
+          <!-- Particle paths -->
+          <line x1="122" y1="110" x2="50" y2="110" stroke="#4ecca3" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="158" y1="110" x2="230" y2="110" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="4,3"/>
+          <!-- Particle labels -->
+          <text x="85" y="100" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="7">particle A</text>
+          <text x="195" y="100" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="7">particle B</text>
+          <!-- Detector A -->
+          <rect x="18" y="92" width="35" height="36" rx="4" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1.2"/>
+          <text x="35" y="108" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="7" font-weight="600">Det. A</text>
+          <text x="35" y="120" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="6">angle a</text>
+          <!-- Detector B -->
+          <rect x="227" y="92" width="35" height="36" rx="4" fill="rgba(91,140,212,0.08)" stroke="#5b8cd4" stroke-width="1.2"/>
+          <text x="245" y="108" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="7" font-weight="600">Det. B</text>
+          <text x="245" y="120" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="6">angle b</text>
+          <!-- Measurement arrows -->
+          <line x1="35" y1="88" x2="35" y2="60" stroke="#4ecca3" stroke-width="0.8"/>
+          <polygon points="30,65 35,55 40,65" fill="#4ecca3"/>
+          <text x="35" y="52" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="7">+1/-1</text>
+          <line x1="245" y1="88" x2="245" y2="60" stroke="#5b8cd4" stroke-width="0.8"/>
+          <polygon points="240,65 245,55 250,65" fill="#5b8cd4"/>
+          <text x="245" y="52" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="7">+1/-1</text>
+          <!-- Bell inequality -->
+          <rect x="25" y="150" width="230" height="50" rx="6" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1"/>
+          <text x="140" y="168" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display, serif" font-size="10" font-weight="700">Bell Inequality (CHSH form)</text>
+          <text x="140" y="190" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500">|S| &#x2264; 2</text>
+          <!-- QM prediction -->
+          <rect x="25" y="215" width="230" height="40" rx="6" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="1"/>
+          <text x="140" y="232" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">QM predicts: S = 2&#x221A;2 &#x2248; 2.83</text>
+          <text x="140" y="247" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">VIOLATES the inequality!</text>
+          <!-- Bottom text -->
+          <text x="140" y="280" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Local hidden variables: |S| &#x2264; 2</text>
+          <text x="140" y="295" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Quantum mechanics: |S| = 2&#x221A;2</text>
+          <text x="140" y="310" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="8" font-weight="700">Nature sides with QM</text>
+          <text x="140" y="325" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="7">(Confirmed experimentally: Aspect 1982, etc.)</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Deep Dive — Bell's Theorem -->
+<section>
+  <span class="section-number">05 / DEEP DIVE</span>
+  <h2>What Bell's Theorem Actually Proves</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>The Assumptions</h3>
+      <p>Bell's proof rests on only two assumptions, both seemingly obvious:</p>
+      <ul>
+        <li><strong class="accent">Locality:</strong> An event at one location cannot instantaneously influence a distant event. No faster-than-light signaling. (This is built into special relativity.)</li>
+        <li><strong class="accent-blue">Realism:</strong> Physical properties exist independently of measurement. A particle has a definite spin before you measure it, even if you don't know the value.</li>
+      </ul>
+      <p>From these two assumptions alone, Bell derived a mathematical constraint: a set of inequalities that any local realistic theory must satisfy.</p>
+      <p>He then showed that quantum mechanics predicts correlations between entangled particles that <strong class="accent-rose">violate</strong> these inequalities. The violation is not marginal &mdash; quantum mechanics exceeds the local realistic bound by a factor of &#x221A;2.</p>
+    </div>
+    <div>
+      <h3>The Consequences</h3>
+      <p>The theorem has three possible interpretations:</p>
+      <div class="card" style="margin-bottom:0.3em;">
+        <h4 class="accent-green">Option 1: Non-locality</h4>
+        <p>Nature allows "spooky action at a distance" (Einstein's phrase). Entangled particles influence each other instantaneously, regardless of separation. This is the majority view today.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.3em;">
+        <h4 class="accent-purple">Option 2: No realism</h4>
+        <p>Properties don't exist before measurement. The universe is fundamentally indeterminate. This aligns with Copenhagen but disturbed Bell deeply.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-amber">Option 3: Superdeterminism</h4>
+        <p>The detector settings and particle properties were correlated from the Big Bang. Bell found this "conspiratorial" and unscientific, though he could not rule it out logically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 7: Contribution #2 — Bell's Spaceship Paradox + SVG -->
+<section>
+  <span class="section-number">06 / CONTRIBUTION II</span>
+  <h2>Bell's Spaceship Paradox</h2>
+  <div class="separator"></div>
+  <div class="two-col wide-left">
+    <div>
+      <p>Bell was not only a master of quantum theory. He also made a striking contribution to <strong class="accent-blue">special relativity</strong> with his famous spaceship paradox, published in 1976.</p>
+      <p>The scenario: Two spaceships are connected by a taut string. Both accelerate simultaneously (in the launch frame) with identical acceleration programs. Does the string break?</p>
+      <p>Most physicists, when Bell informally polled them at CERN, answered <strong class="accent-rose">no</strong> &mdash; since the ships accelerate identically, the distance between them should remain constant. But the correct answer is <strong class="accent-green">yes</strong>: the string breaks.</p>
+      <p>The key insight is <strong class="accent">Lorentz contraction</strong>. In the ships' instantaneous rest frame, the distance between them increases, even though it stays constant in the launch frame. The string, which must Lorentz-contract, cannot span the growing proper distance. It snaps.</p>
+      <p>Bell used this paradox to argue that relativity is best understood through <em>physical</em> reasoning about rods and clocks, not merely through abstract spacetime geometry. He preferred Lorentz's constructive approach to Einstein's more axiomatic one.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 250 310" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="240" height="300" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+          <text x="125" y="28" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="11" font-weight="700">Spaceship Paradox</text>
+          <!-- Before: at rest -->
+          <text x="125" y="52" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Before acceleration (lab frame)</text>
+          <!-- Ship A -->
+          <polygon points="40,75 65,68 65,82" fill="rgba(78,204,163,0.3)" stroke="#4ecca3" stroke-width="1"/>
+          <text x="52" y="95" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="7">A</text>
+          <!-- String -->
+          <line x1="65" y1="75" x2="165" y2="75" stroke="#d4a053" stroke-width="1.5"/>
+          <text x="115" y="68" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="6">string (taut)</text>
+          <!-- Ship B -->
+          <polygon points="165,75 190,68 190,82" fill="rgba(91,140,212,0.3)" stroke="#5b8cd4" stroke-width="1"/>
+          <text x="177" y="95" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="7">B</text>
+          <!-- Arrow showing acceleration -->
+          <line x1="52" y1="100" x2="52" y2="120" stroke="#4ecca3" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <line x1="177" y1="100" x2="177" y2="120" stroke="#5b8cd4" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <!-- After: moving -->
+          <text x="125" y="140" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">After acceleration (lab frame)</text>
+          <text x="125" y="152" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="7">Same distance in lab frame, but...</text>
+          <!-- Ship A moving -->
+          <polygon points="40,170 60,164 60,176" fill="rgba(78,204,163,0.3)" stroke="#4ecca3" stroke-width="1"/>
+          <!-- String breaking -->
+          <line x1="60" y1="170" x2="103" y2="170" stroke="#d4a053" stroke-width="1.5"/>
+          <line x1="127" y1="170" x2="165" y2="170" stroke="#d4a053" stroke-width="1.5"/>
+          <text x="115" y="167" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">SNAP!</text>
+          <!-- Ship B moving -->
+          <polygon points="165,170 185,164 185,176" fill="rgba(91,140,212,0.3)" stroke="#5b8cd4" stroke-width="1"/>
+          <!-- Explanation box -->
+          <rect x="20" y="195" width="210" height="95" rx="5" fill="rgba(207,114,114,0.05)" stroke="#cf7272" stroke-width="0.8"/>
+          <text x="125" y="212" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Why does the string break?</text>
+          <text x="125" y="228" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">In the ships' rest frame, the</text>
+          <text x="125" y="240" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">distance between them INCREASES</text>
+          <text x="125" y="256" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="8">L(rest) = &#x3B3; &#xD7; L(lab)</text>
+          <text x="125" y="272" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">The string must Lorentz-contract</text>
+          <text x="125" y="284" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">but the gap grows &mdash; it snaps</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Deep Dive — Spaceship Paradox & Pedagogy -->
+<section>
+  <span class="section-number">07 / DEEP DIVE</span>
+  <h2>Relativity as Physical Reality</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Why the Poll Mattered</h3>
+      <p>When Bell posed the spaceship problem to the CERN theory division, the majority got it wrong. These were among the best theoretical physicists in the world. Bell saw this as evidence that modern physics education was failing.</p>
+      <p>The error stemmed from an overly abstract understanding of relativity. Physicists had learned to manipulate Minkowski diagrams and Lorentz transformations, but had lost touch with what these transformations <em>physically mean</em> for rods, strings, and clocks.</p>
+      <p>Bell argued that Lorentz and FitzGerald's original <em>constructive</em> approach &mdash; treating length contraction as a real physical effect on material bodies &mdash; was pedagogically superior to Einstein's <em>principle-based</em> approach, even if both gave the same predictions.</p>
+    </div>
+    <div>
+      <h3>Bell's Pedagogical Legacy</h3>
+      <div class="card" style="margin-bottom:0.3em;">
+        <h4 class="accent">Constructive vs. Principle Theories</h4>
+        <p>Einstein himself distinguished these. Constructive theories explain <em>how</em> things work (like kinetic theory of gases). Principle theories state <em>what cannot happen</em> (like thermodynamics). Bell believed relativity needed more construction and less pure principle.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.3em;">
+        <h4 class="accent-green">The Bell-Aspect Connection</h4>
+        <p>Bell's insistence on physical clarity &mdash; in both relativity and quantum mechanics &mdash; stemmed from the same philosophical commitment: physics must describe what actually happens, not merely predict measurement outcomes.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Modern Impact</h4>
+        <p>The spaceship paradox is now a standard problem in relativity textbooks. It teaches students that Lorentz contraction is not merely a coordinate effect but has real physical consequences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 9: Contribution #3 — QFT & CERN -->
+<section>
+  <span class="section-number">08 / CONTRIBUTION III</span>
+  <h2>Quantum Field Theory &amp; Accelerator Physics</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Bell's "day job" contributions to physics were themselves world-class, though overshadowed by his foundational work. At CERN, he was a leading figure in theoretical accelerator physics for three decades.</p>
+      <p>His most important technical result was the discovery of the <strong class="accent">Bell-Jackiw anomaly</strong> (1969), independently found by Stephen Adler. This "ABJ anomaly" showed that certain symmetries of classical field theory are broken by quantum effects. The anomaly explained the observed decay rate of the neutral pion (&#x3C0;&#x2070; &#x2192; &#x3B3;&#x3B3;) and became fundamental to the Standard Model.</p>
+      <p>Bell also contributed to:</p>
+      <ul>
+        <li><strong class="accent-green">CPT theorem:</strong> Clarified the logical structure of the proof that charge-parity-time reversal is an exact symmetry</li>
+        <li><strong class="accent-blue">Neutrino physics:</strong> Early work on neutrino oscillations and interactions</li>
+        <li><strong class="accent-purple">Accelerator design:</strong> Theoretical work on beam focusing, particularly strong focusing in synchrotrons</li>
+        <li><strong class="accent-amber">Gauge theories:</strong> Important papers on the consistency of gauge field theories</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.4em;">
+        <h4 class="accent">The ABJ Anomaly</h4>
+        <p>In quantum field theory, an "anomaly" is a classical symmetry that is destroyed by quantization. Bell and Jackiw showed that the axial current in QED is not conserved at the quantum level, even though it is classically conserved. This has profound consequences:</p>
+        <p style="margin-top:0.3em;"><strong class="accent-green">&#x2022;</strong> Explains &#x3C0;&#x2070; decay rate</p>
+        <p><strong class="accent-blue">&#x2022;</strong> Constrains viable quantum field theories</p>
+        <p><strong class="accent-purple">&#x2022;</strong> Connects to topology of gauge fields</p>
+        <p><strong class="accent-amber">&#x2022;</strong> Essential for anomaly cancellation in the Standard Model</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">CERN Reputation</h4>
+        <p>At CERN, Bell was revered. Colleagues described him as the person you went to when you needed to know if your calculation was <em>really</em> right. His clarity of thought was legendary; he could find the flaw in an argument faster than anyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 10: Method -->
+<section>
+  <span class="section-number">09 / METHOD</span>
+  <h2>Bell's Way of Thinking</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">Bell combined extraordinary mathematical precision with a stubborn insistence on physical clarity. He distrusted formalism for its own sake.</p>
+  <div class="process-flow" style="margin-top:0.6em;">
+    <div class="process-step">
+      <h4 class="accent">Physical Discomfort</h4>
+      <p>Identify something that doesn't make intuitive sense</p>
+    </div>
+    <span class="process-arrow">&#x2192;</span>
+    <div class="process-step">
+      <h4 class="accent-green">Strip to Essentials</h4>
+      <p>Remove all unnecessary complexity; find the simplest model</p>
+    </div>
+    <span class="process-arrow">&#x2192;</span>
+    <div class="process-step">
+      <h4 class="accent-blue">Prove a Theorem</h4>
+      <p>Derive an inequality or impossibility result with minimal assumptions</p>
+    </div>
+    <span class="process-arrow">&#x2192;</span>
+    <div class="process-step">
+      <h4 class="accent-purple">Demand Experiment</h4>
+      <p>Insist on empirical test; nature must be the final arbiter</p>
+    </div>
+  </div>
+  <div class="card-grid cols-2" style="margin-top:0.6em;">
+    <div class="card">
+      <h4 class="accent-amber">Against Vagueness</h4>
+      <p>Bell's most famous critical essay, "Against 'Measurement'" (1990), attacked the Copenhagen interpretation's reliance on undefined terms. He listed words that should be "banned" from quantum mechanics: "measurement," "observable," "information." These words, he argued, smuggle in classical assumptions and disguise the real conceptual problems.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">FAPP</h4>
+      <p>Bell coined the ironic acronym <strong>FAPP</strong> &mdash; "For All Practical Purposes." He used it to mock the attitude that quantum mechanics "works FAPP" and therefore its conceptual problems don't matter. Bell believed that fundamental physics must be conceptually clear, not merely practically useful. The question of what quantum mechanics <em>means</em> was a real physics question.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 11: Connections SVG -->
+<section>
+  <span class="section-number">10 / CONNECTIONS</span>
+  <h2>Bell's Intellectual World</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- Connection lines -->
+      <line x1="350" y1="170" x2="140" y2="80" stroke="#cf7272" stroke-width="2" opacity="0.5"/>
+      <line x1="350" y1="170" x2="560" y2="80" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+      <line x1="350" y1="170" x2="140" y2="265" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
+      <line x1="350" y1="170" x2="560" y2="265" stroke="#9b72cf" stroke-width="1.5" opacity="0.5"/>
+      <line x1="350" y1="170" x2="140" y2="170" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+      <line x1="350" y1="170" x2="560" y2="170" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+      <line x1="350" y1="170" x2="350" y2="345" stroke="#cf7272" stroke-width="1.5" opacity="0.4"/>
+      <!-- Dashed historical links -->
+      <line x1="140" y1="80" x2="140" y2="170" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+      <line x1="140" y1="80" x2="560" y2="80" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+      <!-- Central node: Bell -->
+      <circle cx="350" cy="170" r="35" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="2"/>
+      <text x="350" y="165" text-anchor="middle" fill="#cf7272" font-family="Playfair Display, serif" font-size="12" font-weight="700">J.S. Bell</text>
+      <text x="350" y="181" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">1928&ndash;1990</text>
+      <!-- Einstein -->
+      <circle cx="140" cy="80" r="28" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="1.5"/>
+      <text x="140" y="75" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">A. Einstein</text>
+      <text x="140" y="88" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">EPR inspiration</text>
+      <!-- Bohm -->
+      <circle cx="560" cy="80" r="28" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1.5"/>
+      <text x="560" y="75" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">D. Bohm</text>
+      <text x="560" y="88" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Hidden variables</text>
+      <!-- Bohr -->
+      <circle cx="140" cy="170" r="24" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1"/>
+      <text x="140" y="167" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">N. Bohr</text>
+      <text x="140" y="179" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Copenhagen</text>
+      <!-- Aspect -->
+      <circle cx="140" cy="265" r="28" fill="rgba(91,140,212,0.08)" stroke="#5b8cd4" stroke-width="1.5"/>
+      <text x="140" y="260" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">A. Aspect</text>
+      <text x="140" y="273" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Experimental test</text>
+      <!-- Clauser -->
+      <circle cx="560" cy="265" r="28" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1.5"/>
+      <text x="560" y="260" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">J. Clauser</text>
+      <text x="560" y="273" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">First Bell test</text>
+      <!-- Jackiw -->
+      <circle cx="560" cy="170" r="24" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1"/>
+      <text x="560" y="167" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">R. Jackiw</text>
+      <text x="560" y="179" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">ABJ anomaly</text>
+      <!-- Zeilinger -->
+      <circle cx="350" cy="345" r="28" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="1.5"/>
+      <text x="350" y="340" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">A. Zeilinger</text>
+      <text x="350" y="353" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Loophole-free tests</text>
+      <!-- Relationship labels -->
+      <text x="230" y="112" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(-22,230,112)">EPR paradox (1935)</text>
+      <text x="470" y="112" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(22,470,112)">Pilot wave (1952)</text>
+      <text x="228" y="230" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(28,228,230)">Paris experiments (1982)</text>
+    </svg>
+  </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+  <span class="section-number">11 / CONTROVERSIES</span>
+  <h2>Against the Orthodoxy</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">Bell's gentleness of manner concealed a fierce intellectual independence. He spent his career challenging the most powerful orthodoxy in physics.</p>
+  <div class="card-grid cols-2" style="margin-top:0.5em;">
+    <div class="card">
+      <h4 class="accent-rose">Bell vs. Copenhagen</h4>
+      <p>Bell regarded the Copenhagen interpretation as "unprofessionally vague and ambiguous." He objected to its division of the world into "classical" and "quantum" domains, arguing that this was an arbitrary line with no physical justification. In paper after paper, he exposed the logical gaps in Bohr's complementarity and Heisenberg's uncertainty arguments.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Bell vs. Von Neumann</h4>
+      <p>Bell's first major paper on quantum foundations (1966, written in 1964) demolished von Neumann's famous 1932 "proof" that hidden variable theories are impossible. Bell showed that von Neumann's proof relied on an unreasonable assumption &mdash; that expectation values of non-commuting observables must add linearly even for hidden variable states. The error had gone unnoticed for 30 years.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">The Establishment's Response</h4>
+      <p>For years, Bell's foundational work was largely ignored by mainstream physicists. The 1964 paper was published in an obscure journal (<em>Physics</em>) that ceased publication shortly after. It took the experimental work of Clauser (1972) and Aspect (1982) to force the community to take Bell's theorem seriously.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Bohm's Theory: Respect Without Adoption</h4>
+      <p>Bell deeply admired David Bohm's pilot wave theory as a proof of concept &mdash; it showed that a deterministic, hidden-variable interpretation of QM was possible. But he never fully endorsed it, noting its non-locality was "explicit and ugly." He saw it as a challenge to complacency, not a final answer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+  <span class="section-number">12 / LEGACY</span>
+  <h2>The Most Profound Discovery</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>John Stewart Bell died suddenly on <strong class="accent">1 October 1990</strong> of a cerebral hemorrhage at CERN, aged just 62. He had been nominated for the Nobel Prize that year; many believe he would have received it had he lived.</p>
+      <p>Bell's theorem is now recognized as one of the most important results in the entire history of physics. Henry Stapp called it <strong class="accent">"the most profound discovery of science."</strong> It is not merely a result about quantum mechanics &mdash; it is a result about <em>nature itself</em>.</p>
+      <p>The theorem showed that the classical worldview &mdash; in which objects have definite properties and influences propagate locally &mdash; is <strong>false</strong>. No future theory, however different from quantum mechanics, can restore full local realism. This is not an interpretation; it is a mathematical fact, confirmed by experiment.</p>
+      <p>In <strong class="accent-green">2022</strong>, the Nobel Prize in Physics was awarded to Alain Aspect, John Clauser, and Anton Zeilinger "for experiments with entangled photons, establishing the violation of Bell inequalities." Bell himself was acknowledged throughout as the intellectual foundation of the entire field.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.4em;">
+        <h4 class="accent">Recognition</h4>
+        <p><strong>Dirac Medal:</strong> 1988</p>
+        <p><strong>Dannie Heineman Prize:</strong> 1989</p>
+        <p><strong>Hughes Medal:</strong> Royal Society, 1989</p>
+        <p><strong>Honorary degrees:</strong> Queen's Belfast, Trinity College Dublin</p>
+        <p><strong>John Stewart Bell Prize:</strong> Established 2009 by Centre for Quantum Information</p>
+        <p><strong>2022 Nobel Prize:</strong> Awarded for Bell test experiments (Aspect, Clauser, Zeilinger)</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">What If He Had Lived?</h4>
+        <p>Bell was working on new approaches to quantum field theory foundations and the measurement problem at the time of his death. His final papers suggest he was moving toward a rigorous formulation of "beables" &mdash; real physical quantities, as opposed to "observables" &mdash; that might resolve the measurement problem completely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+  <span class="section-number">13 / APPLICATIONS</span>
+  <h2>Where Bell's Work Lives Today</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent">Quantum Computing</h4>
+      <p>Entanglement &mdash; the phenomenon at the heart of Bell's theorem &mdash; is the key resource in quantum computing. Quantum algorithms exploit non-local correlations to achieve speedups impossible for classical computers. Bell inequality violations verify that a quantum computer is truly quantum.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Quantum Cryptography</h4>
+      <p>Quantum key distribution (QKD) protocols like E91 directly use Bell inequality violations to guarantee security. If two parties observe Bell-violating correlations, they can prove that no eavesdropper has intercepted their quantum channel. Bell's theorem provides the security proof.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Quantum Teleportation</h4>
+      <p>The protocol for quantum teleportation, demonstrated experimentally in 1997, relies on entangled pairs and Bell-state measurements. Every teleportation experiment is a direct application of the non-local correlations Bell identified in 1964.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Loophole-Free Tests</h4>
+      <p>In 2015, three independent groups closed all major loopholes in Bell tests simultaneously (detection efficiency and locality). These experiments, in Delft, Vienna, and Boulder, provided the definitive confirmation of Bell inequality violations and non-locality.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Device-Independent Certification</h4>
+      <p>Bell violations can certify randomness and quantum behavior without trusting the devices. This "device-independent" approach, rooted entirely in Bell's theorem, is revolutionizing quantum metrology, random number generation, and secure communication.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Foundations of Physics</h4>
+      <p>Bell's work launched the modern field of quantum foundations. Hundreds of physicists now work on interpretations, hidden variable theories, quantum information theory, and the measurement problem &mdash; a field that was taboo before Bell legitimized it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+  <span class="section-number">14 / TIMELINE</span>
+  <h2>A Life That Changed Reality</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central timeline line -->
+      <line x1="80" y1="35" x2="80" y2="405" stroke="#2a2a3a" stroke-width="2"/>
+
+      <circle cx="80" cy="37" r="4" fill="#cf7272"/>
+      <text x="60" y="42" text-anchor="end" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1928</text>
+      <text x="100" y="37" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Born in Belfast, Northern Ireland</text>
+      <text x="100" y="50" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Working-class family; self-educated passion for science</text>
+
+      <circle cx="80" cy="80" r="3" fill="#4ecca3"/>
+      <text x="60" y="85" text-anchor="end" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1948</text>
+      <text x="100" y="80" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">BSc in Physics, Queen's University Belfast</text>
+      <text x="100" y="93" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Followed by second degree in mathematical physics (1949)</text>
+
+      <circle cx="80" cy="125" r="3" fill="#9a9a9a"/>
+      <text x="60" y="130" text-anchor="end" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1949</text>
+      <text x="100" y="125" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Joins AERE Harwell</text>
+      <text x="100" y="138" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Accelerator physics and nuclear reactor theory</text>
+
+      <circle cx="80" cy="168" r="4" fill="#5b8cd4"/>
+      <text x="60" y="173" text-anchor="end" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1960</text>
+      <text x="100" y="168" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Moves to CERN, Geneva</text>
+      <text x="100" y="181" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Joins Theory Division; begins three decades of work</text>
+
+      <circle cx="80" cy="218" r="5" fill="#cf7272"/>
+      <text x="60" y="223" text-anchor="end" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1964</text>
+      <text x="100" y="218" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Publishes Bell's Theorem</text>
+      <text x="100" y="231" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">"On the Einstein Podolsky Rosen Paradox" &mdash; 6 pages that changed physics</text>
+      <rect x="97" y="208" width="420" height="28" rx="3" fill="rgba(207,114,114,0.05)" stroke="none"/>
+
+      <circle cx="80" cy="265" r="4" fill="#9b72cf"/>
+      <text x="60" y="270" text-anchor="end" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1969</text>
+      <text x="100" y="265" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Bell-Jackiw anomaly discovered</text>
+      <text x="100" y="278" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">With Jackiw (and independently Adler) &mdash; key to the Standard Model</text>
+
+      <circle cx="80" cy="310" r="3" fill="#d4a053"/>
+      <text x="60" y="315" text-anchor="end" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1976</text>
+      <text x="100" y="310" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Bell's spaceship paradox published</text>
+      <text x="100" y="323" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Reveals widespread misunderstanding of Lorentz contraction</text>
+
+      <circle cx="80" cy="355" r="4" fill="#4ecca3"/>
+      <text x="60" y="360" text-anchor="end" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1982</text>
+      <text x="100" y="355" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Aspect experiments confirm Bell violations</text>
+      <text x="100" y="368" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Alain Aspect's Paris experiments bring Bell's theorem to world attention</text>
+
+      <circle cx="80" cy="397" r="4" fill="#cf7272"/>
+      <text x="60" y="402" text-anchor="end" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1990</text>
+      <text x="100" y="397" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Dies suddenly at CERN, aged 62</text>
+      <text x="100" y="410" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Cerebral hemorrhage; had been nominated for the Nobel Prize</text>
+    </svg>
+  </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+  <span class="section-number">15 / FURTHER READING</span>
+  <h2>Recommended Reading</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">Bell's Own Writings</h4>
+      <p><strong>J.S. Bell,</strong> <em>Speakable and Unspeakable in Quantum Mechanics</em> (Cambridge UP, 2nd ed. 2004). The essential collection. Contains all of Bell's foundational papers, including the 1964 theorem, "Against 'Measurement'", and the spaceship paradox. Beautifully written; accessible to anyone with undergraduate physics.</p>
+      <p style="margin-top:0.3em;"><strong>Bell,</strong> "On the Einstein Podolsky Rosen Paradox," <em>Physics</em> 1, 195 (1964). The original six-page paper. Startlingly concise and clear.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Biographies &amp; History</h4>
+      <p><strong>Andrew Whitaker,</strong> <em>John Stewart Bell and Twentieth-Century Physics: Vision and Integrity</em> (Oxford UP, 2016). The definitive biography, by a physicist who knew Bell personally.</p>
+      <p style="margin-top:0.3em;"><strong>Louisa Gilder,</strong> <em>The Age of Entanglement</em> (Knopf, 2008). Brilliantly narrated history of the EPR-to-Bell story, reconstructed from letters and interviews.</p>
+      <p style="margin-top:0.3em;"><strong>David Kaiser,</strong> <em>How the Hippies Saved Physics</em> (Norton, 2011). How a countercultural group at Berkeley helped bring Bell's theorem to mainstream attention.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Technical Treatments</h4>
+      <p><strong>Tim Maudlin,</strong> <em>Quantum Non-Locality and Relativity</em> (Wiley-Blackwell, 3rd ed. 2011). The deepest philosophical analysis of Bell's theorem and its implications for spacetime.</p>
+      <p style="margin-top:0.3em;"><strong>Nicolas Gisin,</strong> <em>Quantum Chance: Nonlocality, Teleportation and Other Quantum Marvels</em> (Springer, 2014). Accessible introduction by a leading experimentalist.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The 2022 Nobel Context</h4>
+      <p><strong>Alain Aspect, John Clauser, Anton Zeilinger,</strong> Nobel Prize lectures (2022). Available free at nobelprize.org. All three laureates discuss Bell's foundational role.</p>
+      <p style="margin-top:0.3em;"><strong>Scientific Background document,</strong> "Experiments with entangled photons, establishing the violation of Bell inequalities" (Nobel Committee, 2022). Excellent technical summary of the entire Bell test program.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+  <span class="section-number">16 / CLOSING</span>
+  <h2>In His Own Words</h2>
+  <div class="separator"></div>
+  <div class="quote-box" style="margin-top:1.2em; max-width:70%;">
+    <p>"Is it not good to know what follows from what, even if it is not necessary FAPP?"</p>
+    <span class="attribution">&mdash; John S. Bell, "Against 'Measurement'" (1990)</span>
+  </div>
+  <div style="text-align:center; margin-top:1.5em;">
+    <p style="color:var(--text-muted); font-size:0.48em;">John Stewart Bell (1928&ndash;1990)</p>
+    <p style="color:var(--text-muted); font-size:0.42em; margin-top:0.3em;">He proved that nature is non-local, demolished a false impossibility proof,<br>and insisted that physics must mean something &mdash; not just work.</p>
+    <div style="margin-top:0.8em;">
+      <span class="tag rose">Bell's Theorem</span>
+      <span class="tag green">Non-locality</span>
+      <span class="tag">CERN</span>
+      <span class="tag blue">Quantum Foundations</span>
+      <span class="tag amber">FAPP</span>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

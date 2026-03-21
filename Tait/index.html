@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peter Guthrie Tait — Mathematician, Physicist, Quaternionist</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #e8b84b; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="55" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.3"/>
+      <circle cx="70" cy="70" r="40" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="70" cy="70" r="25" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.15"/>
+      <path d="M70 15 L85 55 L125 55 L92 78 L105 120 L70 95 L35 120 L48 78 L15 55 L55 55 Z" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.25"/>
+      <text x="70" y="74" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="18" font-weight="700">T</text>
+    </svg>
+  </div>
+  <h1>Peter Guthrie Tait</h1>
+  <div class="separator"></div>
+  <p class="subtitle">Scottish Natural Philosopher &middot; 1831&ndash;1901</p>
+  <p style="text-align:center; margin-top:0.6em;">The man who, alongside Lord Kelvin, rewrote the foundations<br>of energy physics and pioneered knot theory</p>
+  <div style="margin-top:0.8em;">
+    <span class="tag amber">Natural Philosophy</span>
+    <span class="tag green">Quaternions</span>
+    <span class="tag">Knot Theory</span>
+    <span class="tag blue">Thermodynamics</span>
+  </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+  <span class="section-number">01 / ORIGINS</span>
+  <h2>Early Life in Dalkeith</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Peter Guthrie Tait was born on <strong class="accent">28 April 1831</strong> in Dalkeith, a small town just south of Edinburgh. His father, John Tait, was secretary to Walter Francis Scott, 5th Duke of Buccleuch. The elder Tait died when Peter was only seven, and the boy was raised by his mother's family.</p>
+      <p>From childhood, Tait displayed remarkable mathematical ability. He attended the Edinburgh Academy, where he formed a lifelong friendship with a boy one year his junior &mdash; <strong class="accent-blue">James Clerk Maxwell</strong>. The two would exchange scientific correspondence for the rest of Maxwell's life.</p>
+      <p>At sixteen, Tait entered the University of Edinburgh. After just one year, he moved to Peterhouse, Cambridge, where in 1852 he graduated as <strong class="accent">Senior Wrangler</strong> and First Smith's Prizeman &mdash; the top mathematics student of his year.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.4em;">
+        <h4 class="accent">Key Early Facts</h4>
+        <p><strong>Born:</strong> 28 April 1831, Dalkeith, Scotland</p>
+        <p><strong>School:</strong> Edinburgh Academy (classmate of Maxwell)</p>
+        <p><strong>University:</strong> Peterhouse, Cambridge</p>
+        <p><strong>Distinction:</strong> Senior Wrangler, 1852</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">The Maxwell Connection</h4>
+        <p>Tait and Maxwell's boyhood friendship at Edinburgh Academy became one of the most productive scientific relationships of the century. Their constant correspondence pushed both men to sharpen their ideas on electromagnetism, thermodynamics, and the kinetic theory of gases.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+  <span class="section-number">02 / CAREER</span>
+  <h2>A Chair in Edinburgh</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">After Cambridge, Tait took the chair of Mathematics at Queen's College, Belfast in 1854. But in <strong class="accent">1860</strong>, at just 29, he was appointed to the prestigious <strong class="accent">Chair of Natural Philosophy</strong> at the University of Edinburgh &mdash; a post he held for the remaining 41 years of his life.</p>
+  <div class="card-grid cols-3" style="margin-top:0.6em;">
+    <div class="card">
+      <h4 class="accent">Belfast (1854&ndash;1860)</h4>
+      <p>Professor of Mathematics at Queen's College. Here Tait first encountered William Rowan Hamilton's quaternions, which would become a lifelong passion. He also began collaborating with William Thomson (Lord Kelvin).</p>
+    </div>
+    <div class="card">
+      <h4 class="accent">Edinburgh (1860&ndash;1901)</h4>
+      <p>Chair of Natural Philosophy. Tait transformed Edinburgh's teaching, emphasizing experimental demonstration alongside mathematical rigor. His laboratory trained a generation of Scottish physicists and engineers.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent">The Prolific Author</h4>
+      <p>Tait published over 350 papers and several influential textbooks. He was elected Fellow of the Royal Society of Edinburgh in 1860 and of the Royal Society of London in 1867. He served as Secretary of the RSE for over 20 years.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.6em;">
+    <p>"He was the most combative scientific man I ever knew &mdash; always ready to fight for a principle."</p>
+    <span class="attribution">&mdash; A contemporary colleague on Tait's temperament</span>
+  </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+  <span class="section-number">03 / CONTEXT</span>
+  <h2>Victorian Physics at its Zenith</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">Tait worked during the golden age of classical physics, when Scotland was the intellectual capital of natural philosophy.</p>
+  <div class="card-grid cols-2" style="margin-top:0.5em;">
+    <div class="card">
+      <h4 class="accent-amber">The Scottish Enlightenment Legacy</h4>
+      <p>Edinburgh and Glasgow universities dominated British science. The tradition of combining mathematics with physical experiment &mdash; stretching back through Fourier, Lagrange, and the Scottish common sense school &mdash; shaped Tait's approach to every problem.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">The Energy Revolution</h4>
+      <p>The 1840s&ndash;1860s saw the formulation of thermodynamics. Joule, Clausius, Helmholtz, and Thomson were establishing the conservation of energy and entropy. Tait and Thomson's collaboration placed energy at the center of all physics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Mathematics vs. Physics</h4>
+      <p>A fierce debate raged over the proper mathematical language for physics. Hamilton's quaternions competed with Cartesian coordinates. Later, Gibbs and Heaviside would extract vector analysis from quaternions, provoking Tait's furious opposition.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Kelvin Circle</h4>
+      <p>Lord Kelvin (William Thomson) was the era's dominant physicist. Tait was his closest collaborator and intellectual equal. Their partnership, and their textbook, reshaped how energy, force, and motion were taught worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 5: Contribution #1 — Treatise on Natural Philosophy + SVG -->
+<section>
+  <span class="section-number">04 / CONTRIBUTION I</span>
+  <h2>Treatise on Natural Philosophy</h2>
+  <div class="separator"></div>
+  <div class="two-col wide-left">
+    <div>
+      <p>In <strong class="accent">1867</strong>, Thomson and Tait published the first volume of their <em>Treatise on Natural Philosophy</em>, universally known as <strong class="accent">"T&amp;T"</strong> or simply "Thomson and Tait." It was the most influential physics textbook of the 19th century.</p>
+      <p>The Treatise was revolutionary because it placed <strong class="accent-green">energy</strong> &mdash; not force &mdash; at the foundation of mechanics. Where Newton's <em>Principia</em> began with forces and derived motion, T&amp;T began with kinetic and potential energy, the conservation principle, and the concept of work.</p>
+      <p>The book introduced rigorous treatments of <strong class="accent-blue">kinematics</strong> (the geometry of motion, separated from dynamics for the first time), established the modern formulation of Lagrangian mechanics for British physicists, and provided the framework that would later support both relativity and quantum theory.</p>
+      <p>A second edition appeared in 1879&ndash;1883. The pair had planned a second volume covering electromagnetism and thermodynamics, but it was never completed &mdash; partly because Thomson kept demanding revisions.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 280 320" xmlns="http://www.w3.org/2000/svg">
+          <!-- Energy framework diagram -->
+          <rect x="10" y="10" width="260" height="300" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+          <text x="140" y="38" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="14" font-weight="700">T&amp;T Energy Framework</text>
+          <!-- Top: Energy -->
+          <rect x="85" y="55" width="110" height="36" rx="6" fill="none" stroke="#e8b84b" stroke-width="1.5"/>
+          <text x="140" y="77" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">ENERGY</text>
+          <!-- Branches -->
+          <line x1="115" y1="91" x2="75" y2="120" stroke="#4ecca3" stroke-width="1"/>
+          <line x1="165" y1="91" x2="205" y2="120" stroke="#5b8cd4" stroke-width="1"/>
+          <!-- Kinetic -->
+          <rect x="25" y="120" width="100" height="32" rx="5" fill="none" stroke="#4ecca3" stroke-width="1"/>
+          <text x="75" y="140" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Kinetic (T)</text>
+          <!-- Potential -->
+          <rect x="155" y="120" width="100" height="32" rx="5" fill="none" stroke="#5b8cd4" stroke-width="1"/>
+          <text x="205" y="140" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Potential (V)</text>
+          <!-- Conservation -->
+          <line x1="75" y1="152" x2="140" y2="180" stroke="#9a9a9a" stroke-width="0.8" stroke-dasharray="4,3"/>
+          <line x1="205" y1="152" x2="140" y2="180" stroke="#9a9a9a" stroke-width="0.8" stroke-dasharray="4,3"/>
+          <rect x="70" y="175" width="140" height="32" rx="5" fill="rgba(232,184,75,0.1)" stroke="#e8b84b" stroke-width="1"/>
+          <text x="140" y="190" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">T + V = const</text>
+          <text x="140" y="201" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Conservation of Energy</text>
+          <!-- Lower concepts -->
+          <line x1="105" y1="207" x2="65" y2="230" stroke="#9a9a9a" stroke-width="0.6"/>
+          <line x1="140" y1="207" x2="140" y2="230" stroke="#9a9a9a" stroke-width="0.6"/>
+          <line x1="175" y1="207" x2="215" y2="230" stroke="#9a9a9a" stroke-width="0.6"/>
+          <rect x="20" y="230" width="85" height="28" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+          <text x="62" y="248" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Kinematics</text>
+          <rect x="118" y="230" width="45" height="28" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+          <text x="140" y="248" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Work</text>
+          <rect x="175" y="230" width="85" height="28" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+          <text x="217" y="248" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Lagrangian</text>
+          <!-- Bottom label -->
+          <text x="140" y="285" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="7">"The entire framework of mechanics</text>
+          <text x="140" y="297" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="7">rebuilt upon the concept of energy"</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 6: Deep Dive — T&T -->
+<section>
+  <span class="section-number">05 / DEEP DIVE</span>
+  <h2>Why T&amp;T Changed Everything</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Before Thomson and Tait</h3>
+      <ul>
+        <li>British physics relied on Newton's geometric methods and the <em>Principia</em>'s force-based reasoning</li>
+        <li>Continental analysts (Lagrange, Hamilton, Jacobi) had developed powerful energy methods, but these were poorly known in Britain</li>
+        <li>No unified textbook connected mechanics, thermodynamics, and the new energy concepts</li>
+        <li>The word "energy" itself was only coined by Thomas Young in 1807; its precise scientific meaning was still being established</li>
+      </ul>
+    </div>
+    <div>
+      <h3>After Thomson and Tait</h3>
+      <ul>
+        <li>Energy became the central organizing concept of all physics, from mechanics to heat to electromagnetism</li>
+        <li><strong class="accent">Kinematics</strong> was separated from dynamics as a distinct discipline for the first time</li>
+        <li>The <strong class="accent-green">conservation of energy</strong> was presented as the fundamental law from which all else followed</li>
+        <li>Lagrangian and Hamiltonian methods entered mainstream British physics education</li>
+        <li>The book trained every major British physicist of the next generation, from J.J. Thomson to Larmor</li>
+      </ul>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.5em;">
+    <p>"Thomson and Tait's great merit is that they put energy, not force, at the foundation of dynamics."</p>
+    <span class="attribution">&mdash; Ludwig Boltzmann</span>
+  </div>
+</section>
+
+<!-- Slide 7: Contribution #2 — Quaternions + SVG -->
+<section>
+  <span class="section-number">06 / CONTRIBUTION II</span>
+  <h2>Quaternions and the Vector Wars</h2>
+  <div class="separator"></div>
+  <div class="two-col wide-left">
+    <div>
+      <p>In 1843, William Rowan Hamilton discovered <strong class="accent">quaternions</strong> &mdash; a four-dimensional extension of complex numbers obeying the rule <code>i&sup2; = j&sup2; = k&sup2; = ijk = &minus;1</code>. Tait became their most passionate champion after Hamilton's death in 1865.</p>
+      <p>Tait published <em>An Elementary Treatise on Quaternions</em> in 1867, with expanded editions in 1873 and 1890. He demonstrated how quaternions could elegantly express rotations, fluid dynamics, electromagnetism, and the equations of elasticity.</p>
+      <p>The great controversy erupted in the 1880s when <strong class="accent-rose">Josiah Willard Gibbs</strong> at Yale and <strong class="accent-rose">Oliver Heaviside</strong> in England independently extracted the <strong class="accent-blue">scalar (dot)</strong> and <strong class="accent-green">vector (cross)</strong> products from quaternion multiplication, creating modern vector analysis. They discarded the full quaternion algebra as needlessly complex.</p>
+      <p>Tait was furious. He saw vector analysis as a mutilated version of a complete, beautiful system. The ensuing "vector wars" consumed much of his later career.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 250 300" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="240" height="290" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+          <text x="125" y="30" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="12" font-weight="700">Quaternion Structure</text>
+          <!-- q = w + xi + yj + zk -->
+          <text x="125" y="58" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono, monospace" font-size="11">q = w + xi + yj + zk</text>
+          <!-- Scalar part -->
+          <rect x="25" y="72" width="90" height="40" rx="5" fill="rgba(232,184,75,0.08)" stroke="#e8b84b" stroke-width="1"/>
+          <text x="70" y="90" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Scalar Part</text>
+          <text x="70" y="104" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="8">w (real)</text>
+          <!-- Vector part -->
+          <rect x="135" y="72" width="90" height="40" rx="5" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1"/>
+          <text x="180" y="90" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Vector Part</text>
+          <text x="180" y="104" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="8">xi + yj + zk</text>
+          <!-- Hamilton rules -->
+          <text x="125" y="135" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">i&#xB2; = j&#xB2; = k&#xB2; = ijk = -1</text>
+          <!-- Multiplication circle -->
+          <circle cx="125" cy="185" r="40" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+          <circle cx="125" cy="145" r="8" fill="rgba(232,184,75,0.15)" stroke="#e8b84b" stroke-width="1"/>
+          <text x="125" y="148" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">i</text>
+          <circle cx="90" cy="210" r="8" fill="rgba(78,204,163,0.15)" stroke="#4ecca3" stroke-width="1"/>
+          <text x="90" y="213" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">j</text>
+          <circle cx="160" cy="210" r="8" fill="rgba(91,140,212,0.15)" stroke="#5b8cd4" stroke-width="1"/>
+          <text x="160" y="213" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">k</text>
+          <!-- Arrows showing ij=k, jk=i, ki=j -->
+          <path d="M120 148 Q105 175 95 205" fill="none" stroke="#d4a053" stroke-width="0.8" marker-end="url(#arrowGold)"/>
+          <path d="M98 210 Q125 225 155 213" fill="none" stroke="#d4a053" stroke-width="0.8" marker-end="url(#arrowGold)"/>
+          <path d="M163 203 Q150 175 130 150" fill="none" stroke="#d4a053" stroke-width="0.8" marker-end="url(#arrowGold)"/>
+          <defs><marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#d4a053"/></marker></defs>
+          <!-- Labels -->
+          <text x="80" y="173" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="7">ij=k</text>
+          <text x="132" y="227" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="7">jk=i</text>
+          <text x="162" y="173" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="7">ki=j</text>
+          <!-- Bottom note -->
+          <text x="125" y="260" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="7">Non-commutative: ij = k but ji = -k</text>
+          <text x="125" y="275" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="7">Encodes 3D rotations without gimbal lock</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 8: Deep Dive — Quaternion Wars -->
+<section>
+  <span class="section-number">07 / DEEP DIVE</span>
+  <h2>The Great Vector Controversy</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:85%; margin:0.3em auto;">The quaternion-vs-vector debate was the fiercest mathematical controversy of the late 19th century. Tait stood at its center.</p>
+  <div class="card-grid cols-2" style="margin-top:0.5em;">
+    <div class="card">
+      <h4 class="accent">Tait's Position</h4>
+      <p>Quaternions are a <em>complete</em> algebraic system. The scalar and vector parts are inseparable &mdash; splitting them is like ripping apart a living organism. Quaternion multiplication naturally encodes rotation, reflection, and scaling in one operation. Any physicist who understands them gains extraordinary power.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Gibbs &amp; Heaviside's Position</h4>
+      <p>Physicists need the <em>dot product</em> and <em>cross product</em>, not the full quaternion formalism. Vector analysis extracts exactly what is useful and discards unnecessary abstraction. The notation is simpler, more intuitive, and better suited to electromagnetism and fluid dynamics.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.5em;">
+    <p>"The only good quaternion is a dead quaternion."</p>
+    <span class="attribution">&mdash; Oliver Heaviside (attacking Tait's position)</span>
+  </div>
+  <p style="text-align:center; max-width:80%; margin:0.5em auto;"><strong class="accent-purple">The ironic twist:</strong> History proved both sides right. Vector analysis won for everyday physics &mdash; but quaternions returned triumphantly in the 20th century for computer graphics, robotics, aerospace navigation, and quantum mechanics (as spinors).</p>
+</section>
+
+<!-- Slide 9: Contribution #3 — Knot Theory -->
+<section>
+  <span class="section-number">08 / CONTRIBUTION III</span>
+  <h2>Knot Theory: Tabulating the Tangled</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>In the 1860s, Lord Kelvin proposed that atoms were <strong class="accent-blue">knotted vortices</strong> in the luminiferous aether. Different chemical elements corresponded to different knots. To test this theory, someone needed to systematically classify all knots.</p>
+      <p>Tait took on this enormous task. Between <strong class="accent">1876 and 1885</strong>, he produced the first systematic tabulation of knots, classifying all prime knots up to seven crossings and many with more. He developed methods still used in knot theory today.</p>
+      <p>In the course of this work, Tait formulated three conjectures about alternating knots &mdash; now called the <strong class="accent">Tait conjectures</strong>. These remained unproven for over a century, until Morwen Thistlethwaite, Louis Kauffman, and Kunio Murasugi proved them in <strong class="accent-green">1987&ndash;1991</strong> using the Jones polynomial.</p>
+      <p>Although Kelvin's vortex atom theory was eventually abandoned, Tait's knot tabulations became the foundation of a major branch of pure mathematics with deep connections to quantum field theory and DNA biology.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.4em;">
+        <h4 class="accent">The Three Tait Conjectures</h4>
+        <p><strong class="accent-amber">1. Crossing number:</strong> A reduced alternating diagram has the minimum possible number of crossings.</p>
+        <p style="margin-top:0.3em;"><strong class="accent-green">2. Writhe:</strong> Any two reduced alternating diagrams of the same knot have the same writhe (signed crossing number).</p>
+        <p style="margin-top:0.3em;"><strong class="accent-blue">3. Flyping:</strong> Any two reduced alternating diagrams of the same knot are related by a sequence of flypes.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">All Three Proved ~100 Years Later</h4>
+        <p>The development of the Jones polynomial (1984) and Kauffman bracket gave mathematicians the tools to finally settle Tait's conjectures, vindicating his extraordinary intuition about the structure of knots.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 10: Method -->
+<section>
+  <span class="section-number">09 / METHOD</span>
+  <h2>Tait's Scientific Approach</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">Tait was distinctive for combining rigorous mathematical formalism with hands-on experimental work &mdash; a true natural philosopher in the Scottish tradition.</p>
+  <div class="process-flow" style="margin-top:0.6em;">
+    <div class="process-step">
+      <h4 class="accent">Physical Intuition</h4>
+      <p>Begin with concrete physical phenomena and experimental observation</p>
+    </div>
+    <span class="process-arrow">&#x2192;</span>
+    <div class="process-step">
+      <h4 class="accent-green">Mathematical Formalism</h4>
+      <p>Express the physics in the most powerful notation available (quaternions)</p>
+    </div>
+    <span class="process-arrow">&#x2192;</span>
+    <div class="process-step">
+      <h4 class="accent-blue">Systematic Classification</h4>
+      <p>Exhaustively enumerate and tabulate all cases</p>
+    </div>
+    <span class="process-arrow">&#x2192;</span>
+    <div class="process-step">
+      <h4 class="accent-purple">Combative Publication</h4>
+      <p>Defend results vigorously against all challengers</p>
+    </div>
+  </div>
+  <div class="card-grid cols-2" style="margin-top:0.6em;">
+    <div class="card">
+      <h4 class="accent-amber">The Experimentalist</h4>
+      <p>Tait conducted pioneering experiments on the physics of golf balls (studying why dimpled balls fly farther), thermoelectricity, and the compressibility of water at great depths. He was equally comfortable at the bench and the blackboard.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">The Polemicist</h4>
+      <p>Tait relished scientific controversy. He conducted long-running public disputes with Clausius over thermodynamics, with Gibbs and Heaviside over quaternions, and with Tyndall over the history of energy conservation. He never backed down.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 11: Connections SVG -->
+<section>
+  <span class="section-number">10 / CONNECTIONS</span>
+  <h2>Tait's Scientific Network</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- Connection lines (drawn first, behind nodes) -->
+      <line x1="350" y1="165" x2="140" y2="85" stroke="#e8b84b" stroke-width="2" opacity="0.5"/>
+      <line x1="350" y1="165" x2="560" y2="85" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+      <line x1="350" y1="165" x2="140" y2="260" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
+      <line x1="350" y1="165" x2="560" y2="260" stroke="#cf7272" stroke-width="1.5" opacity="0.4"/>
+      <line x1="350" y1="165" x2="350" y2="340" stroke="#9b72cf" stroke-width="1.5" opacity="0.4"/>
+      <line x1="350" y1="165" x2="140" y2="170" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+      <line x1="350" y1="165" x2="560" y2="170" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+      <line x1="140" y1="85" x2="560" y2="85" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+      <!-- Central node: Tait -->
+      <circle cx="350" cy="165" r="35" fill="rgba(232,184,75,0.12)" stroke="#e8b84b" stroke-width="2"/>
+      <text x="350" y="160" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="12" font-weight="700">P.G. Tait</text>
+      <text x="350" y="176" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">1831&ndash;1901</text>
+      <!-- Lord Kelvin -->
+      <circle cx="140" cy="85" r="28" fill="rgba(232,184,75,0.08)" stroke="#e8b84b" stroke-width="1.5"/>
+      <text x="140" y="80" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Lord Kelvin</text>
+      <text x="140" y="93" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">T&amp;T collaborator</text>
+      <!-- Maxwell -->
+      <circle cx="560" cy="85" r="28" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1.5"/>
+      <text x="560" y="80" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">J.C. Maxwell</text>
+      <text x="560" y="93" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">School friend</text>
+      <!-- Hamilton -->
+      <circle cx="140" cy="260" r="28" fill="rgba(91,140,212,0.08)" stroke="#5b8cd4" stroke-width="1.5"/>
+      <text x="140" y="255" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">W.R. Hamilton</text>
+      <text x="140" y="268" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Quaternion mentor</text>
+      <!-- Heaviside -->
+      <circle cx="560" cy="260" r="28" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="1.5"/>
+      <text x="560" y="255" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">O. Heaviside</text>
+      <text x="560" y="268" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Vector rival</text>
+      <!-- Gibbs -->
+      <circle cx="560" cy="170" r="24" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1"/>
+      <text x="560" y="167" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">J.W. Gibbs</text>
+      <text x="560" y="179" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Vector rival</text>
+      <!-- Clausius -->
+      <circle cx="140" cy="170" r="24" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1"/>
+      <text x="140" y="167" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">R. Clausius</text>
+      <text x="140" y="179" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Thermo. rival</text>
+      <!-- Knot theorists -->
+      <circle cx="350" cy="340" r="28" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1.5"/>
+      <text x="350" y="335" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">C.N. Little</text>
+      <text x="350" y="348" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Knot collaborator</text>
+      <!-- Relationship labels -->
+      <text x="230" y="110" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(-20,230,110)">Treatise &amp; energy physics</text>
+      <text x="470" y="110" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(20,470,110)">Lifelong correspondence</text>
+      <text x="225" y="225" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(30,225,225)">Quaternion legacy</text>
+    </svg>
+  </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+  <span class="section-number">11 / CONTROVERSIES</span>
+  <h2>Feuds and Fighting Words</h2>
+  <div class="separator"></div>
+  <p style="text-align:center; max-width:80%; margin:0.3em auto;">Tait was one of the most pugnacious scientists in Victorian Britain. He fought publicly, relentlessly, and often simultaneously on multiple fronts.</p>
+  <div class="card-grid cols-2" style="margin-top:0.5em;">
+    <div class="card">
+      <h4 class="accent-rose">Tait vs. Clausius</h4>
+      <p>In the 1860s&ndash;70s, Tait engaged in a bitter priority dispute with Rudolf Clausius over the history of thermodynamics. Tait insisted that the contributions of Scottish and British physicists &mdash; especially Joule and Thomson &mdash; had been undervalued by Continental writers. The exchange became so heated that other physicists refused to take sides publicly.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Tait vs. Tyndall</h4>
+      <p>John Tyndall's <em>Heat as a Mode of Motion</em> (1863) credited Julius Robert von Mayer with priority in discovering energy conservation. Tait furiously championed Joule's claim instead, publishing a series of polemical articles. The dispute dragged on for decades and involved personal attacks on both sides.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Tait vs. Gibbs &amp; Heaviside</h4>
+      <p>The quaternion wars (1890s) saw Tait trade barbs with Gibbs in the pages of <em>Nature</em>. Tait dismissed vector analysis as "a hermaphrodite monster." Heaviside replied with characteristic wit: "The only good quaternion is a dead quaternion." Gibbs responded with devastating precision, demonstrating that vectors were more practical for physics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Paradox of Combativeness</h4>
+      <p>Despite his ferocity in print, Tait was warm and generous in person. He was beloved by his Edinburgh students, deeply devoted to his family, and maintained tender friendships with Maxwell and Kelvin throughout his life. The contrast between the public warrior and the private gentleman puzzled his contemporaries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+  <span class="section-number">12 / LEGACY</span>
+  <h2>An Underappreciated Giant</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Peter Guthrie Tait died on <strong class="accent">4 July 1901</strong> in Edinburgh, devastated by the death of his eldest son Freddie in the Boer War just months earlier. He was 70 years old.</p>
+      <p>Tait's legacy has been paradoxical. In his own time, he was one of the most prominent scientists in Britain. Yet he is far less remembered today than his collaborators Kelvin and Maxwell. Several factors explain this:</p>
+      <ul>
+        <li>His championship of quaternions over vectors placed him on the "losing" side of the notation wars</li>
+        <li>The <em>Treatise</em> bears Thomson's name first, and Kelvin's fame eclipsed Tait's</li>
+        <li>His knot theory work was ahead of its time &mdash; its importance was not recognized until the late 20th century</li>
+      </ul>
+      <p>Yet modern scholars increasingly recognize Tait as a pivotal figure. His knot tabulations underpin modern topology. Quaternions are ubiquitous in computer science. And the energy-first approach of T&amp;T remains the foundation of theoretical physics.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.4em;">
+        <h4 class="accent">Honors &amp; Recognition</h4>
+        <p><strong>Fellow:</strong> Royal Society of Edinburgh (1860), Royal Society of London (1867)</p>
+        <p><strong>Secretary:</strong> RSE (1879&ndash;1901)</p>
+        <p><strong>Royal Medal:</strong> Royal Society, 1886</p>
+        <p><strong>Named after him:</strong> Tait conjectures, Tait coloring, Tait's "flyping" conjecture, Tait-Bryan angles</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-green">The Quaternion Vindication</h4>
+        <p>In 1985, Ken Shoemake introduced quaternion rotations to computer graphics. Today, every 3D game engine, every spacecraft attitude controller, and every robotics system uses quaternions &mdash; exactly as Tait always said they should be used.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+  <span class="section-number">13 / APPLICATIONS</span>
+  <h2>Where Tait's Work Lives Today</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent">3D Graphics &amp; Gaming</h4>
+      <p>Quaternion rotations are the standard for representing orientations in every modern 3D engine (Unity, Unreal, Blender). They avoid gimbal lock, interpolate smoothly, and are computationally efficient &mdash; all properties Tait emphasized.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Aerospace Navigation</h4>
+      <p>Spacecraft attitude determination systems (from Apollo to the ISS) use quaternions. The Tait-Bryan angle convention remains standard for describing aircraft orientations (pitch, yaw, roll).</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">DNA Topology</h4>
+      <p>Knot theory, founded by Tait, now describes how DNA strands tangle and untangle during replication. Topoisomerase enzymes perform "Tait moves" on genetic material, and the crossing number classifies DNA knot types.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Quantum Field Theory</h4>
+      <p>Knot invariants connect to quantum field theory through Witten's Chern-Simons theory (1988). The Jones polynomial, which proved Tait's conjectures, arises naturally from topological quantum field theories.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Robotics</h4>
+      <p>Robot kinematics relies on quaternions for smooth, efficient rotation calculations. Dual quaternions extend Tait's framework to handle both rotation and translation simultaneously.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Energy Physics</h4>
+      <p>The energy-first approach of Thomson and Tait's <em>Treatise</em> is the basis of Lagrangian and Hamiltonian mechanics as taught worldwide today. Every graduate physics course builds on the framework T&amp;T established.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+  <span class="section-number">14 / TIMELINE</span>
+  <h2>A Life in Science</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central timeline line -->
+      <line x1="80" y1="40" x2="80" y2="400" stroke="#2a2a3a" stroke-width="2"/>
+      <!-- Year markers and events -->
+      <circle cx="80" cy="42" r="4" fill="#e8b84b"/>
+      <text x="60" y="47" text-anchor="end" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1831</text>
+      <text x="100" y="42" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Born in Dalkeith, Scotland</text>
+      <text x="100" y="55" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Son of John Tait, secretary to the Duke of Buccleuch</text>
+
+      <circle cx="80" cy="87" r="4" fill="#4ecca3"/>
+      <text x="60" y="92" text-anchor="end" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1847</text>
+      <text x="100" y="87" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Enters University of Edinburgh</text>
+      <text x="100" y="100" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">After Edinburgh Academy with Maxwell</text>
+
+      <circle cx="80" cy="132" r="4" fill="#5b8cd4"/>
+      <text x="60" y="137" text-anchor="end" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1852</text>
+      <text x="100" y="132" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Senior Wrangler at Cambridge</text>
+      <text x="100" y="145" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Top mathematics graduate from Peterhouse</text>
+
+      <circle cx="80" cy="177" r="3" fill="#9a9a9a"/>
+      <text x="60" y="182" text-anchor="end" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1854</text>
+      <text x="100" y="177" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Professor of Mathematics, Queen's Belfast</text>
+
+      <circle cx="80" cy="212" r="4" fill="#e8b84b"/>
+      <text x="60" y="217" text-anchor="end" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1860</text>
+      <text x="100" y="212" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Chair of Natural Philosophy, Edinburgh</text>
+      <text x="100" y="225" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">A position he held for 41 years</text>
+
+      <circle cx="80" cy="257" r="5" fill="#e8b84b"/>
+      <text x="60" y="262" text-anchor="end" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1867</text>
+      <text x="100" y="257" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Treatise on Natural Philosophy published</text>
+      <text x="100" y="270" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">With Thomson (Kelvin) — transforms physics education</text>
+      <rect x="97" y="247" width="380" height="28" rx="3" fill="rgba(232,184,75,0.05)" stroke="none"/>
+
+      <circle cx="80" cy="302" r="4" fill="#9b72cf"/>
+      <text x="60" y="307" text-anchor="end" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1877</text>
+      <text x="100" y="302" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">First systematic knot tabulations published</text>
+      <text x="100" y="315" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Classifying knots up to 7 crossings; Tait conjectures formulated</text>
+
+      <circle cx="80" cy="347" r="3" fill="#cf7272"/>
+      <text x="60" y="352" text-anchor="end" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1890s</text>
+      <text x="100" y="347" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">The Great Vector Wars</text>
+      <text x="100" y="360" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Fierce public debate with Gibbs and Heaviside over quaternions vs. vectors</text>
+
+      <circle cx="80" cy="392" r="4" fill="#cf7272"/>
+      <text x="60" y="397" text-anchor="end" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1901</text>
+      <text x="100" y="392" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Dies in Edinburgh, aged 70</text>
+      <text x="100" y="405" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Shortly after the death of his son in the Boer War</text>
+    </svg>
+  </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+  <span class="section-number">15 / FURTHER READING</span>
+  <h2>Recommended Reading</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">Primary Sources</h4>
+      <p><strong>Thomson &amp; Tait,</strong> <em>Treatise on Natural Philosophy</em> (1867, 2nd ed. 1879&ndash;83). The foundational text. Available in reprint from Cambridge University Press.</p>
+      <p style="margin-top:0.3em;"><strong>Tait,</strong> <em>An Elementary Treatise on Quaternions</em> (1867, 3rd ed. 1890). Tait's passionate quaternion textbook, more accessible than Hamilton's own writings.</p>
+      <p style="margin-top:0.3em;"><strong>Tait,</strong> <em>Scientific Papers</em> (2 vols., Cambridge UP, 1898&ndash;1900). The collected works, compiled during his lifetime.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Secondary Sources</h4>
+      <p><strong>Crosbie Smith &amp; M. Norton Wise,</strong> <em>Energy and Empire: A Biographical Study of Lord Kelvin</em> (Cambridge UP, 1989). Essential for understanding the Thomson&ndash;Tait partnership.</p>
+      <p style="margin-top:0.3em;"><strong>Michael Crowe,</strong> <em>A History of Vector Analysis</em> (1967, Dover reprint). The definitive account of the quaternion wars.</p>
+      <p style="margin-top:0.3em;"><strong>Colin Adams,</strong> <em>The Knot Book</em> (AMS, 2004). Accessible introduction to knot theory, with extensive treatment of Tait's contributions.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">On Quaternions Today</h4>
+      <p><strong>Jack Kuipers,</strong> <em>Quaternions and Rotation Sequences</em> (Princeton UP, 1999). Modern applications of quaternion rotation, fulfilling Tait's vision.</p>
+      <p style="margin-top:0.3em;"><strong>Andrew Hanson,</strong> <em>Visualizing Quaternions</em> (Morgan Kaufmann, 2006). How Tait's beloved quaternions conquered computer graphics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">On Knot Theory</h4>
+      <p><strong>Dale Rolfsen,</strong> <em>Knots and Links</em> (AMS Chelsea, 2003). Classic graduate text that begins with Tait's tabulations.</p>
+      <p style="margin-top:0.3em;"><strong>Louis Kauffman,</strong> <em>Knots and Physics</em> (World Scientific, 4th ed. 2013). Connects Tait's knot theory to modern quantum field theory.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+  <span class="section-number">16 / CLOSING</span>
+  <h2>In His Own Words</h2>
+  <div class="separator"></div>
+  <div class="quote-box" style="margin-top:1.2em; max-width:70%;">
+    <p>"The whole course of nature is the plain result of the free working of infinite power, guided by infinite wisdom."</p>
+    <span class="attribution">&mdash; P.G. Tait, from the preface to <em>The Unseen Universe</em> (1875), co-authored with Balfour Stewart</span>
+  </div>
+  <div style="text-align:center; margin-top:1.5em;">
+    <p style="color:var(--text-muted); font-size:0.48em;">Peter Guthrie Tait (1831&ndash;1901)</p>
+    <p style="color:var(--text-muted); font-size:0.42em; margin-top:0.3em;">He rewrote mechanics around energy, fought for Hamilton's quaternions,<br>and tabulated the knots that would define a new mathematics.</p>
+    <div style="margin-top:0.8em;">
+      <span class="tag amber">Thomson &amp; Tait</span>
+      <span class="tag green">Quaternions</span>
+      <span class="tag">Knot Theory</span>
+      <span class="tag blue">Natural Philosophy</span>
+      <span class="tag rose">Edinburgh</span>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

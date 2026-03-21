@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J. Robert Oppenheimer — The American Prometheus</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #cf7272;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#cf7272"/><stop offset="100%" stop-color="#d4a053"/></linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#g1)" stroke-width="0.5" opacity="0.3"/>
+            <g fill="none" stroke="#cf7272" stroke-width="0.7" opacity="0.6">
+                <circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="50"/><circle cx="100" cy="100" r="30"/>
+                <path d="M100 10 L100 190 M10 100 L190 100 M30 30 L170 170 M170 30 L30 170"/>
+                <polygon points="100,20 165,55 180,130 140,185 60,185 20,130 35,55" stroke-width="0.8"/>
+                <polygon points="100,40 145,65 155,120 130,160 70,160 45,120 55,65" stroke-width="0.5" opacity="0.4"/>
+            </g>
+            <g fill="none" stroke="#cf7272" stroke-width="0.4" opacity="0.3">
+                <ellipse cx="100" cy="100" rx="85" ry="35"/><ellipse cx="100" cy="100" rx="35" ry="85"/>
+                <ellipse cx="100" cy="100" rx="85" ry="35" transform="rotate(60 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="35" transform="rotate(-60 100 100)"/>
+            </g>
+            <circle cx="100" cy="100" r="5" fill="#cf7272" opacity="0.8"/>
+        </svg>
+    </div>
+    <h1>J. Robert Oppenheimer</h1>
+    <p class="subtitle">1904 &ndash; 1967</p>
+    <div class="separator"></div>
+    <p style="max-width:70%; margin:0.5em auto; text-align:center;">The brilliant theoretical physicist who led the creation of the atomic bomb, then spent his remaining years grappling with its moral consequences and the fate of civilization.</p>
+    <div style="margin-top:0.6em;">
+        <span class="tag rose">Manhattan Project</span>
+        <span class="tag amber">Born-Oppenheimer</span>
+        <span class="tag green">Gravitational Collapse</span>
+        <span class="tag">Theoretical Physics</span>
+        <span class="tag blue">Los Alamos</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life &amp; Formation</h2>
+    <div class="two-col">
+        <div>
+            <p>Julius Robert Oppenheimer was born on April 22, 1904, in New York City to a wealthy German-Jewish immigrant family. His father, Julius, was a successful textile importer; his mother, Ella Friedman, was a painter. The family lived in a Manhattan apartment adorned with original Van Goghs.</p>
+            <p>A prodigious child, Oppenheimer was invited to lecture at the New York Mineralogical Club at age twelve after they mistook his erudite correspondence for that of an adult. He entered Harvard in 1922, completing his chemistry degree in three years while also studying physics, philosophy, literature, and Sanskrit.</p>
+            <p>At Cambridge's Cavendish Laboratory he struggled with experimental work but found his calling in theoretical physics. He moved to G&ouml;ttingen in 1926, where Max Born supervised his doctorate&mdash;a collaboration that would produce the Born-Oppenheimer approximation.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent">New York Privilege</h4>
+                <p>Raised on the Upper West Side among art and culture; attended the elite Ethical Culture School, which emphasized social responsibility alongside intellectual achievement.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-green">Harvard Polymath</h4>
+                <p>Completed a four-year degree in three years, graduating summa cum laude. Read the Bhagavad Gita in Sanskrit, studied French poetry, and mastered thermodynamics simultaneously.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">G&ouml;ttingen Transformation</h4>
+                <p>Under Born's supervision, Oppenheimer blossomed. His doctoral thesis on molecular quantum mechanics was completed in 1927 and established a framework still used universally in chemistry.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Berkeley Years <span class="tag rose">1929&ndash;1942</span></h4>
+            <p>Appointed simultaneously at Berkeley and Caltech, Oppenheimer built the first world-class theoretical physics program in the United States. His charismatic teaching style attracted brilliant students and transformed American physics from a backwater into a powerhouse.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Los Alamos Director <span class="tag blue">1943&ndash;1945</span></h4>
+            <p>At age 38, chosen by General Groves to lead the Manhattan Project's secret weapons laboratory. Against all odds, Oppenheimer managed thousands of scientists and engineers&mdash;many older and more experienced&mdash;to deliver the bomb in under three years.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">IAS Director <span class="tag green">1947&ndash;1966</span></h4>
+            <p>Appointed director of the Institute for Advanced Study at Princeton, joining Einstein. Made the IAS a center for theoretical physics, hosting conferences that shaped the development of quantum electrodynamics and particle physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Security Hearing <span class="tag amber">1954</span></h4>
+            <p>Subjected to a humiliating security hearing that stripped his clearance. Accused of Communist sympathies and opposition to the hydrogen bomb, Oppenheimer was effectively exiled from government influence at the height of the Cold War.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Atomic Age</h3>
+            <p>Oppenheimer's life arc tracked the most consequential period in modern history. He came of age during the quantum revolution of the 1920s, built American physics through the 1930s, and then found himself at the center of the most momentous scientific-military project ever undertaken.</p>
+            <p>The discovery of nuclear fission in December 1938 by Hahn and Strassner in Berlin sent shockwaves through the physics community. With Europe at war and the terrifying possibility that Nazi Germany might build an atomic weapon, refugee physicists in America lobbied Roosevelt to act. The result was the Manhattan Project.</p>
+            <p>After Hiroshima and Nagasaki, Oppenheimer became the most famous scientist in America&mdash;the "father of the atomic bomb." But the Cold War's paranoia, the hydrogen bomb debate, and McCarthyism would destroy his public career while elevating him into a tragic symbol of science's Faustian bargain with power.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-purple">The Political Scientist</h4>
+                <p>Unlike most physicists, Oppenheimer engaged deeply with politics. In the 1930s, he supported labor causes and had Communist friends&mdash;associations that would later be weaponized against him during the Red Scare.</p>
+            </div>
+            <div class="quote-box">
+                <p>"The physicists have known sin; and this is a knowledge which they cannot lose."</p>
+                <span class="attribution">&mdash; J. Robert Oppenheimer, 1947</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 — Manhattan Project -->
+<section>
+    <span class="section-number">04</span>
+    <h2>The Manhattan Project</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>Leading the Impossible</h3>
+            <p>Oppenheimer's greatest contribution was not a single equation but an act of scientific leadership without precedent. He coordinated the work of thousands&mdash;from Nobel laureates to Army engineers&mdash;to solve interconnected problems in nuclear physics, chemistry, metallurgy, and engineering.</p>
+            <p>The central physics challenge was achieving a sustained, supercritical fission chain reaction in a weapon. For uranium-235, a gun-type design sufficed. For plutonium-239, spontaneous fission made gun-assembly impossible; Oppenheimer championed the implosion design that required exquisitely precise explosive lenses.</p>
+            <p>The Trinity test on July 16, 1945, confirmed the implosion design worked. The yield was 21 kilotons&mdash;far exceeding predictions.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fission chain reaction diagram -->
+                    <text x="200" y="20" fill="#cf7272" font-size="12" text-anchor="middle" font-family="Playfair Display" font-weight="700">Fission Chain Reaction</text>
+                    <!-- Initial neutron -->
+                    <circle cx="60" cy="80" r="4" fill="#5b8cd4"/>
+                    <text x="60" y="68" fill="#5b8cd4" font-size="8" text-anchor="middle" font-family="JetBrains Mono">n</text>
+                    <line x1="64" y1="80" x2="105" y2="80" stroke="#5b8cd4" stroke-width="1" marker-end="url(#arrB)"/>
+                    <defs><marker id="arrB" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#5b8cd4"/></marker></defs>
+                    <!-- U-235 nucleus -->
+                    <circle cx="120" cy="80" r="14" fill="rgba(212,160,83,0.2)" stroke="#d4a053" stroke-width="1.5"/>
+                    <text x="120" y="84" fill="#d4a053" font-size="7" text-anchor="middle" font-family="JetBrains Mono">U-235</text>
+                    <!-- Fission event - starburst -->
+                    <g transform="translate(160,80)">
+                        <line x1="0" y1="0" x2="15" y2="-8" stroke="#cf7272" stroke-width="1.5"/><line x1="0" y1="0" x2="18" y2="3" stroke="#cf7272" stroke-width="1.5"/>
+                        <line x1="0" y1="0" x2="12" y2="14" stroke="#cf7272" stroke-width="1.5"/><line x1="0" y1="0" x2="-5" y2="15" stroke="#cf7272" stroke-width="1.5"/>
+                        <text x="0" y="-14" fill="#cf7272" font-size="7" text-anchor="middle" font-family="DM Sans">FISSION</text>
+                    </g>
+                    <!-- Daughter nuclei -->
+                    <circle cx="210" cy="55" r="10" fill="rgba(78,204,163,0.15)" stroke="#4ecca3" stroke-width="1"/>
+                    <text x="210" y="58" fill="#4ecca3" font-size="6" text-anchor="middle" font-family="JetBrains Mono">Ba</text>
+                    <circle cx="210" cy="110" r="8" fill="rgba(155,114,207,0.15)" stroke="#9b72cf" stroke-width="1"/>
+                    <text x="210" y="113" fill="#9b72cf" font-size="6" text-anchor="middle" font-family="JetBrains Mono">Kr</text>
+                    <!-- Released neutrons - generation 2 -->
+                    <circle cx="240" cy="40" r="3" fill="#5b8cd4"/><circle cx="245" cy="70" r="3" fill="#5b8cd4"/><circle cx="240" cy="125" r="3" fill="#5b8cd4"/>
+                    <text x="250" y="38" fill="#5b8cd4" font-size="7" font-family="JetBrains Mono">n</text>
+                    <text x="253" y="68" fill="#5b8cd4" font-size="7" font-family="JetBrains Mono">n</text>
+                    <text x="248" y="123" fill="#5b8cd4" font-size="7" font-family="JetBrains Mono">n</text>
+                    <!-- Arrows to next generation -->
+                    <line x1="245" y1="40" x2="280" y2="40" stroke="#5b8cd4" stroke-width="0.8" marker-end="url(#arrB)"/>
+                    <line x1="250" y1="70" x2="280" y2="70" stroke="#5b8cd4" stroke-width="0.8" marker-end="url(#arrB)"/>
+                    <line x1="245" y1="125" x2="280" y2="125" stroke="#5b8cd4" stroke-width="0.8" marker-end="url(#arrB)"/>
+                    <!-- Second generation nuclei -->
+                    <circle cx="295" cy="40" r="10" fill="rgba(212,160,83,0.15)" stroke="#d4a053" stroke-width="1"/>
+                    <circle cx="295" cy="70" r="10" fill="rgba(212,160,83,0.15)" stroke="#d4a053" stroke-width="1"/>
+                    <circle cx="295" cy="125" r="10" fill="rgba(212,160,83,0.15)" stroke="#d4a053" stroke-width="1"/>
+                    <text x="295" y="43" fill="#d4a053" font-size="6" text-anchor="middle" font-family="JetBrains Mono">U</text>
+                    <text x="295" y="73" fill="#d4a053" font-size="6" text-anchor="middle" font-family="JetBrains Mono">U</text>
+                    <text x="295" y="128" fill="#d4a053" font-size="6" text-anchor="middle" font-family="JetBrains Mono">U</text>
+                    <!-- Exponential growth annotation -->
+                    <g transform="translate(310,40)">
+                        <line x1="0" y1="0" x2="12" y2="-10" stroke="#cf7272" stroke-width="0.7"/>
+                        <line x1="0" y1="0" x2="15" y2="5" stroke="#cf7272" stroke-width="0.7"/>
+                    </g>
+                    <g transform="translate(310,70)">
+                        <line x1="0" y1="0" x2="12" y2="-10" stroke="#cf7272" stroke-width="0.7"/>
+                        <line x1="0" y1="0" x2="15" y2="5" stroke="#cf7272" stroke-width="0.7"/>
+                    </g>
+                    <g transform="translate(310,125)">
+                        <line x1="0" y1="0" x2="12" y2="-10" stroke="#cf7272" stroke-width="0.7"/>
+                        <line x1="0" y1="0" x2="15" y2="5" stroke="#cf7272" stroke-width="0.7"/>
+                    </g>
+                    <!-- Energy annotation -->
+                    <rect x="70" y="160" rx="4" width="260" height="50" fill="rgba(22,22,34,0.9)" stroke="#2a2a3a"/>
+                    <text x="200" y="178" fill="#cf7272" font-size="10" text-anchor="middle" font-family="Playfair Display">E = &Delta;m c&sup2;</text>
+                    <text x="200" y="198" fill="#9a9a9a" font-size="8" text-anchor="middle" font-family="DM Sans">Each fission: ~200 MeV &middot; Chain doubles each generation</text>
+                    <!-- Generation labels -->
+                    <text x="120" y="145" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">Gen 1</text>
+                    <text x="210" y="145" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">Products</text>
+                    <text x="295" y="145" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">Gen 2</text>
+                    <!-- Gamma rays -->
+                    <path d="M165,65 L175,58 L185,72 L195,60" fill="none" stroke="#d4a053" stroke-width="0.8"/>
+                    <text x="195" y="55" fill="#d4a053" font-size="7" font-family="JetBrains Mono">&gamma;</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Manhattan Project — Deeper Dive -->
+<section>
+    <span class="section-number">05</span>
+    <h2>The Manhattan Project — Deeper Dive</h2>
+    <p style="max-width:85%; margin:0.3em auto;">Oppenheimer's genius at Los Alamos was organizational as much as scientific. He created a flat hierarchy where Nobel laureates and young postdocs debated openly, and where problems flowed freely between divisions.</p>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">The Implosion Problem</h4>
+            <p>Plutonium-239 had too high a spontaneous fission rate for gun assembly. Oppenheimer pivoted the entire laboratory to the implosion design: symmetrically compressing a plutonium sphere using precisely shaped explosive charges. This required inventing new fields of shock-wave physics and high-speed diagnostics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Scientific Management</h4>
+            <p>Oppenheimer held weekly colloquia where all divisions shared results&mdash;a security risk that Groves reluctantly accepted. This open communication was critical: breakthroughs in one area (metallurgy, explosives, neutron physics) often solved bottlenecks in others.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Trinity Test</h4>
+            <p>July 16, 1945, 5:29 AM, Alamogordo, New Mexico. The world's first nuclear explosion yielded 21 kilotons. Oppenheimer recalled the Bhagavad Gita: "Now I am become Death, the destroyer of worlds." The blast was visible 200 miles away.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Moral Burden</h4>
+            <p>After Hiroshima, Oppenheimer told President Truman: "Mr. President, I feel I have blood on my hands." Truman was furious. But Oppenheimer's anguish was genuine, and it shaped his postwar advocacy for international arms control and against the hydrogen bomb.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 — Born-Oppenheimer -->
+<section>
+    <span class="section-number">06</span>
+    <h2>The Born-Oppenheimer Approximation</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>Separating Electrons from Nuclei</h3>
+            <p>In 1927, the 23-year-old Oppenheimer and his doctoral advisor Max Born published "Zur Quantentheorie der Molekeln"&mdash;a paper that would become the cornerstone of molecular physics.</p>
+            <p>The insight was physical: since nuclei are ~2000 times heavier than electrons, electrons respond almost instantaneously to nuclear motion. This allows the molecular wave function to be factored into electronic and nuclear parts.</p>
+            <p>The approximation reduces an intractable many-body problem into a sequence of solvable ones: first compute the electronic energy for fixed nuclei, then use that energy as the potential for nuclear motion.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <text x="200" y="20" fill="#cf7272" font-size="12" text-anchor="middle" font-family="Playfair Display" font-weight="700">Potential Energy Surface</text>
+                    <!-- Axes -->
+                    <line x1="50" y1="260" x2="380" y2="260" stroke="#6a6a7a" stroke-width="1"/>
+                    <line x1="50" y1="260" x2="50" y2="40" stroke="#6a6a7a" stroke-width="1"/>
+                    <text x="215" y="285" fill="#6a6a7a" font-size="10" text-anchor="middle" font-family="DM Sans">Nuclear separation R</text>
+                    <text x="18" y="150" fill="#6a6a7a" font-size="10" text-anchor="middle" font-family="DM Sans" transform="rotate(-90 18 150)">Energy E(R)</text>
+                    <!-- Ground state potential curve -->
+                    <path d="M70,100 Q100,240 160,200 Q200,180 240,190 Q300,210 360,230" fill="none" stroke="#d4a053" stroke-width="2.5"/>
+                    <text x="365" y="225" fill="#d4a053" font-size="9" font-family="JetBrains Mono">E&#8320;(R)</text>
+                    <!-- Excited state curve -->
+                    <path d="M70,60 Q120,130 170,120 Q220,110 270,130 Q320,160 360,180" fill="none" stroke="#5b8cd4" stroke-width="1.5" stroke-dasharray="4,3"/>
+                    <text x="365" y="175" fill="#5b8cd4" font-size="9" font-family="JetBrains Mono">E&#8321;(R)</text>
+                    <!-- Equilibrium point -->
+                    <circle cx="185" cy="188" r="4" fill="#4ecca3"/>
+                    <line x1="185" y1="192" x2="185" y2="260" stroke="#4ecca3" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <text x="185" y="275" fill="#4ecca3" font-size="8" text-anchor="middle" font-family="JetBrains Mono">R&#8342;</text>
+                    <!-- Vibrational levels in well -->
+                    <line x1="140" y1="202" x2="228" y2="202" stroke="#9b72cf" stroke-width="0.8" opacity="0.6"/>
+                    <line x1="148" y1="210" x2="222" y2="210" stroke="#9b72cf" stroke-width="0.8" opacity="0.6"/>
+                    <line x1="155" y1="218" x2="215" y2="218" stroke="#9b72cf" stroke-width="0.8" opacity="0.6"/>
+                    <line x1="160" y1="226" x2="210" y2="226" stroke="#9b72cf" stroke-width="0.8" opacity="0.6"/>
+                    <text x="235" y="215" fill="#9b72cf" font-size="8" font-family="JetBrains Mono">vibrational</text>
+                    <text x="235" y="225" fill="#9b72cf" font-size="8" font-family="JetBrains Mono">levels</text>
+                    <!-- Electron cloud annotation -->
+                    <ellipse cx="120" cy="80" rx="25" ry="12" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="0.8" stroke-dasharray="2,2"/>
+                    <text x="120" y="84" fill="#cf7272" font-size="7" text-anchor="middle" font-family="JetBrains Mono">e&minus; cloud</text>
+                    <!-- Formula -->
+                    <rect x="220" y="38" rx="4" width="165" height="30" fill="rgba(22,22,34,0.9)" stroke="#2a2a3a"/>
+                    <text x="302" y="58" fill="#d4a053" font-size="10" text-anchor="middle" font-family="Playfair Display">&Psi; &asymp; &psi;&#8342;(r;R) &middot; &chi;(R)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Born-Oppenheimer — Deeper Dive -->
+<section>
+    <span class="section-number">07</span>
+    <h2>Born-Oppenheimer — Deeper Dive</h2>
+    <div class="two-col">
+        <div>
+            <p>The Born-Oppenheimer approximation works because of the mass ratio m<sub>e</sub>/M<sub>N</sub> ~ 1/2000. The small parameter &kappa; = (m<sub>e</sub>/M<sub>N</sub>)<sup>1/4</sup> controls the expansion. To zeroth order, nuclei are fixed; to second order, they vibrate; to fourth order, they rotate.</p>
+            <p>This hierarchy explains molecular spectroscopy: electronic transitions produce visible/UV light, vibrational transitions produce infrared, and rotational transitions produce microwaves&mdash;each separated by powers of &kappa;.</p>
+            <p>The approximation breaks down at conical intersections, where two electronic potential surfaces touch. These crossings are critical in photochemistry&mdash;governing processes like vision, photosynthesis, and DNA photodamage.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-green">Oppenheimer's Thesis</h4>
+                <p>This was Oppenheimer's doctoral work at G&ouml;ttingen under Born. The mathematical treatment was primarily Oppenheimer's; Born contributed the physical concept. Born later noted Oppenheimer's "quite extraordinary" mathematical abilities.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">Universal Foundation</h4>
+                <p>Every quantum chemistry calculation&mdash;from simple molecular hydrogen to protein folding simulations&mdash;begins with this approximation. It is arguably the single most-used approximation in all of physical science.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Beyond Born-Oppenheimer</h4>
+                <p>Modern non-adiabatic dynamics methods go beyond B-O to treat coupled electron-nuclear motion, essential for understanding ultrafast chemistry, conical intersections, and light-harvesting systems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 — Oppenheimer-Snyder -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Gravitational Collapse &amp; Black Holes</h2>
+    <p style="max-width:85%; margin:0.3em auto;">In 1939, Oppenheimer and his student Hartland Snyder published "On Continued Gravitational Contraction"&mdash;the first rigorous theoretical prediction of what we now call black holes.</p>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">The Oppenheimer-Snyder Model</h4>
+            <p>They showed that a sufficiently massive star, having exhausted its nuclear fuel, would collapse under its own gravity without limit. No known force of nature could halt the collapse once the star exceeded a critical mass (roughly 3 solar masses). The star would contract to a singularity, forming what we now call a black hole.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Frozen Star Paradox</h4>
+            <p>For a distant observer, the collapsing surface appears to slow and freeze at the Schwarzschild radius due to gravitational time dilation. But for an observer falling with the matter, the collapse proceeds smoothly through the event horizon&mdash;a profound demonstration of general relativity's observer-dependence.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Ahead of Its Time</h4>
+            <p>The paper was largely ignored for decades. Einstein himself doubted such singularities could exist. It was not until the 1960s&mdash;with the work of Penrose, Hawking, and Wheeler (who coined "black hole" in 1967)&mdash;that Oppenheimer's prediction was taken seriously.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Modern Vindication</h4>
+            <p>The 2019 Event Horizon Telescope image of the black hole in M87, and the detection of gravitational waves from black hole mergers by LIGO (2015), spectacularly confirmed the reality of Oppenheimer-Snyder collapse. The objects he predicted are now observed routinely.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Oppenheimer's Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Synthesize Broadly</h4>
+            <p>Draw on physics, philosophy, literature, and human insight to frame the right question.</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-green">Identify the Core</h4>
+            <p>Strip a problem to its physical essence; discard complications that obscure the fundamental physics.</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Collaborate Intensely</h4>
+            <p>Work through dialogue&mdash;seminars, blackboard arguments, rapid-fire exchange with students and peers.</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-rose">Act on Implications</h4>
+            <p>Follow the physics wherever it leads, even into uncomfortable moral and political territory.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.4em;">
+        <div class="card">
+            <h4 class="accent-blue">The Berkeley Style</h4>
+            <p>Oppenheimer's seminars were legendary and terrifying. He could grasp a speaker's point before they finished, sometimes completing their sentences. Students found him simultaneously inspiring and intimidating. He smoked incessantly, paced the room, and drove discussion at a furious pace.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Breadth as Strength</h4>
+            <p>His reading in Sanskrit, French literature, and philosophy was not a distraction but a source of power. At Los Alamos, his ability to understand people&mdash;their motivations, fears, and egos&mdash;was as important as his physics. He managed Teller, Bethe, and Fermi with an almost literary sensibility.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node -->
+            <circle cx="350" cy="170" r="32" fill="rgba(207,114,114,0.15)" stroke="#cf7272" stroke-width="2"/>
+            <text x="350" y="164" fill="#cf7272" font-size="11" text-anchor="middle" font-family="Playfair Display" font-weight="700">Oppen-</text>
+            <text x="350" y="180" fill="#cf7272" font-size="11" text-anchor="middle" font-family="Playfair Display" font-weight="700">heimer</text>
+            <!-- Born -->
+            <line x1="318" y1="165" x2="140" y2="75" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <circle cx="120" cy="65" r="24" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="120" y="59" fill="#d4a053" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Born</text>
+            <text x="120" y="73" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">advisor/B-O</text>
+            <!-- Groves -->
+            <line x1="318" y1="175" x2="130" y2="180" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <circle cx="110" cy="180" r="24" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="110" y="174" fill="#cf7272" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Groves</text>
+            <text x="110" y="188" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">Manhattan Proj.</text>
+            <!-- Bethe -->
+            <line x1="350" y1="202" x2="200" y2="290" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <circle cx="185" cy="300" r="24" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="185" y="294" fill="#4ecca3" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Bethe</text>
+            <text x="185" y="308" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">theory div. head</text>
+            <!-- Einstein -->
+            <line x1="382" y1="165" x2="560" y2="60" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <circle cx="575" cy="50" r="24" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="575" y="44" fill="#9b72cf" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Einstein</text>
+            <text x="575" y="58" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">IAS colleague</text>
+            <!-- Teller -->
+            <line x1="382" y1="175" x2="570" y2="155" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <circle cx="590" cy="155" r="24" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="590" y="149" fill="#cf7272" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Teller</text>
+            <text x="590" y="163" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">rival / H-bomb</text>
+            <!-- Fermi -->
+            <line x1="380" y1="185" x2="560" y2="250" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <circle cx="570" cy="260" r="24" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="570" y="254" fill="#5b8cd4" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Fermi</text>
+            <text x="570" y="268" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">Los Alamos</text>
+            <!-- Snyder -->
+            <line x1="350" y1="202" x2="350" y2="310" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <circle cx="350" cy="325" r="24" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="350" y="319" fill="#4ecca3" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Snyder</text>
+            <text x="350" y="333" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">grav. collapse</text>
+            <!-- Dirac -->
+            <line x1="335" y1="140" x2="300" y2="55" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <circle cx="290" cy="40" r="24" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="290" y="34" fill="#d4a053" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Dirac</text>
+            <text x="290" y="48" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">positron theory</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">11</span>
+    <h2>The Security Hearing</h2>
+    <div class="two-col">
+        <div>
+            <h3>Trial of the Century</h3>
+            <p>In December 1953, Oppenheimer was informed that his security clearance was under review. The ensuing hearing in April-May 1954&mdash;before a three-member Personnel Security Board of the Atomic Energy Commission&mdash;became the most dramatic confrontation between science and politics in American history.</p>
+            <p>The charges centered on Oppenheimer's prewar Communist associations and his opposition to the hydrogen bomb. Edward Teller, his former colleague at Los Alamos, testified against him&mdash;a betrayal that split the physics community for decades.</p>
+            <p>The board voted 2-1 to revoke his clearance, finding him a "loyal citizen" but declaring his associations and conduct sufficient to deny access. The decision devastated Oppenheimer and sent a chilling message to scientists who might challenge government policy.</p>
+            <p>In 2022, the U.S. Department of Energy formally vacated the 1954 decision, acknowledging that the process had been flawed and driven by political animus.</p>
+        </div>
+        <div>
+            <div class="quote-box" style="margin-bottom:0.6em;">
+                <p>"In a great number of cases, I have seen Dr. Oppenheimer act&mdash;I understood that Dr. Oppenheimer acted&mdash;in a way which for me was exceedingly hard to understand. I thoroughly disagreed with him in numerous issues and his actions frankly appeared to me confused and complicated... I would like to see the vital interests of this country in hands which I understand better, and therefore trust more."</p>
+                <span class="attribution">&mdash; Edward Teller, testimony at the security hearing, 1954</span>
+            </div>
+            <div class="quote-box">
+                <p>"Now I am become Death, the destroyer of worlds."</p>
+                <span class="attribution">&mdash; J. Robert Oppenheimer, quoting the Bhagavad Gita, recalling the Trinity test</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Black Hole Astrophysics</h4>
+            <p>Oppenheimer's 1939 gravitational collapse paper is the direct ancestor of modern black hole physics. The Event Horizon Telescope, LIGO gravitational wave detections, and X-ray observations of accreting black holes all study objects whose theoretical existence Oppenheimer first demonstrated rigorously.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Quantum Chemistry</h4>
+            <p>The Born-Oppenheimer approximation remains the foundation of computational chemistry. Every drug design simulation, materials science calculation, and molecular dynamics study begins with the separation of electronic and nuclear degrees of freedom that Oppenheimer formalized in 1927.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Science Policy</h4>
+            <p>Oppenheimer's postwar advocacy established the template for scientist engagement with government. His vision of international arms control, though thwarted in his lifetime, influenced the Nuclear Non-Proliferation Treaty (1968) and continues to shape nuclear policy debates.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">American Physics</h4>
+            <p>Before Oppenheimer, European universities dominated theoretical physics. His Berkeley program trained an entire generation of American theorists&mdash;including Julian Schwinger, David Bohm, and Willis Lamb&mdash;who established the U.S. as the world leader in theoretical physics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Applications</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Nuclear Energy</h4>
+            <p>The fission physics developed at Los Alamos directly enabled civilian nuclear power, which today provides ~10% of global electricity with minimal carbon emissions.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Gravitational Waves</h4>
+            <p>LIGO's detection of merging black holes (2015) confirmed Oppenheimer-Snyder collapse predictions and opened an entirely new window on the universe.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Drug Design</h4>
+            <p>Born-Oppenheimer molecular dynamics simulations model protein-drug binding at the quantum level, accelerating pharmaceutical discovery and reducing costly clinical failures.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Nuclear Medicine</h4>
+            <p>Medical isotopes produced by nuclear reactors and accelerators&mdash;technologies born from Manhattan Project research&mdash;are used in millions of diagnostic and therapeutic procedures annually.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Neutron Stars</h4>
+            <p>Oppenheimer's 1939 work on the Tolman-Oppenheimer-Volkoff limit for neutron star mass guides modern observations of pulsars and neutron star mergers.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Arms Control</h4>
+            <p>Oppenheimer's advocacy for international control of atomic energy, though initially defeated, laid the intellectual groundwork for the IAEA, NPT, and modern non-proliferation regimes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Life &amp; Career Timeline</h2>
+    <div style="max-width:85%; margin:0.4em auto;">
+        <svg viewBox="0 0 700 30" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="15" x2="680" y2="15" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="20" cy="15" r="4" fill="#cf7272"/><circle cx="130" cy="15" r="3" fill="#d4a053"/>
+            <circle cx="250" cy="15" r="3" fill="#5b8cd4"/><circle cx="380" cy="15" r="3" fill="#cf7272"/>
+            <circle cx="480" cy="15" r="3" fill="#9b72cf"/><circle cx="570" cy="15" r="3" fill="#4ecca3"/>
+            <circle cx="680" cy="15" r="4" fill="#cf7272"/>
+            <text x="20" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1904</text>
+            <text x="250" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1929</text>
+            <text x="380" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1943</text>
+            <text x="480" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1954</text>
+            <text x="680" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1967</text>
+        </svg>
+        <div class="timeline-item">
+            <span class="year">1904</span>
+            <div class="event"><strong>Born in New York City</strong>Son of a wealthy textile importer; raised on the Upper West Side in a cultured, intellectual household.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1925</span>
+            <div class="event"><strong>Harvard, summa cum laude</strong>Completed chemistry degree in three years; moved to Cambridge, then G&ouml;ttingen for doctoral work.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1927</span>
+            <div class="event"><strong>Born-Oppenheimer approximation</strong>Doctoral thesis with Max Born; established the foundation of molecular quantum mechanics.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1929</span>
+            <div class="event"><strong>Berkeley &amp; Caltech</strong>Joint appointment; builds America's first great school of theoretical physics.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1939</span>
+            <div class="event"><strong>Oppenheimer-Snyder paper</strong>Predicts gravitational collapse to what we now call black holes; largely ignored for 25 years.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1943</span>
+            <div class="event"><strong>Director, Los Alamos</strong>Appointed to lead the secret atomic bomb laboratory in the New Mexico desert.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1945</span>
+            <div class="event"><strong>Trinity test &amp; Hiroshima</strong>First nuclear detonation July 16; Hiroshima bombed August 6; Japan surrenders August 15.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1947</span>
+            <div class="event"><strong>IAS Director</strong>Appointed director of the Institute for Advanced Study, Princeton; advises on nuclear policy.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1954</span>
+            <div class="event"><strong>Security clearance revoked</strong>Humiliating hearing strips his clearance; effectively exiled from government influence.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1963</span>
+            <div class="event"><strong>Enrico Fermi Award</strong>President Johnson presents the award as a gesture of rehabilitation; Oppenheimer accepts quietly.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1967</span>
+            <div class="event"><strong>Death in Princeton</strong>Dies of throat cancer on February 18, aged 62. His ashes are scattered at St. John, Virgin Islands.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">American Prometheus</h4>
+            <p>Kai Bird and Martin J. Sherwin. The definitive biography, based on 25 years of research. Winner of the Pulitzer Prize. Covers every dimension of Oppenheimer's life with extraordinary depth and nuance.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Making of the Atomic Bomb</h4>
+            <p>Richard Rhodes. The epic narrative of the Manhattan Project, from the discovery of fission to Hiroshima. Pulitzer Prize winner. Places Oppenheimer within the broader scientific and military context.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Robert Oppenheimer: Letters and Recollections</h4>
+            <p>Edited by Alice Kimball Smith and Charles Weiner. Oppenheimer's own words&mdash;letters from his student days through Los Alamos&mdash;revealing the private man behind the public figure.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">In the Matter of J. Robert Oppenheimer</h4>
+            <p>The complete transcript of the 1954 security hearing. A remarkable primary document that reads like a courtroom drama, revealing the collision of science, politics, and personal loyalty.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Born-Einstein Letters</h4>
+            <p>Edited by Max Born. Correspondence between Born and Einstein that reveals the G&ouml;ttingen milieu where Oppenheimer studied, and the quantum debates that shaped his early thinking.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Black Holes and Time Warps</h4>
+            <p>Kip Thorne. Accessible account of gravitational physics that gives proper credit to Oppenheimer's 1939 paper and traces its influence through to modern black hole astrophysics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <defs>
+                <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#cf7272"/><stop offset="100%" stop-color="#5b8cd4"/></linearGradient>
+            </defs>
+            <g fill="none" stroke="url(#g2)" stroke-width="0.5" opacity="0.5">
+                <circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="75"/><circle cx="100" cy="100" r="60"/>
+                <circle cx="100" cy="100" r="45"/><circle cx="100" cy="100" r="30"/>
+                <path d="M100 10 L100 190 M10 100 L190 100"/>
+                <path d="M30 30 L170 170 M170 30 L30 170"/>
+                <path d="M100 10 L170 170 M100 10 L30 170"/>
+                <path d="M10 100 L170 30 M10 100 L170 170"/>
+                <path d="M190 100 L30 30 M190 100 L30 170"/>
+            </g>
+            <circle cx="100" cy="100" r="5" fill="#cf7272" opacity="0.6"/>
+        </svg>
+    </div>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width:70%; margin:1em auto;">
+        <p>"Now I am become Death, the destroyer of worlds."</p>
+        <span class="attribution">&mdash; J. Robert Oppenheimer, quoting the Bhagavad Gita (XI.32), recalling the Trinity test, July 16, 1945</span>
+    </div>
+    <div class="separator"></div>
+    <p style="text-align:center; margin-top:0.8em;"><span class="accent" style="font-family:'Playfair Display',serif; font-size:0.7em;">J. Robert Oppenheimer</span></p>
+    <p style="text-align:center;" class="subtitle">1904 &ndash; 1967 &nbsp;&middot;&nbsp; New York &middot; Berkeley &middot; Los Alamos &middot; Princeton</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

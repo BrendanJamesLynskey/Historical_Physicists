@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heinrich Hertz — Proving the Invisible</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #e8b84b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.6">
+                <path d="M100 10 Q130 50 100 100 Q70 50 100 10"/>
+                <path d="M190 100 Q150 130 100 100 Q150 70 190 100"/>
+                <path d="M100 190 Q70 150 100 100 Q130 150 100 190"/>
+                <path d="M10 100 Q50 70 100 100 Q50 130 10 100"/>
+            </g>
+            <g fill="none" stroke="#e8b84b" stroke-width="0.6" opacity="0.4">
+                <path d="M36 36 Q70 70 100 100 Q70 36 36 36"/>
+                <path d="M164 36 Q130 70 100 100 Q164 70 164 36"/>
+                <path d="M164 164 Q130 130 100 100 Q164 130 164 164"/>
+                <path d="M36 164 Q70 130 100 100 Q36 130 36 164"/>
+            </g>
+            <!-- Wave symbol at center -->
+            <path d="M70 100 Q80 80 90 100 Q100 120 110 100 Q120 80 130 100" fill="none" stroke="#e8b84b" stroke-width="1.5" opacity="0.9"/>
+        </svg>
+    </div>
+    <h1>Heinrich Hertz</h1>
+    <p class="subtitle">1857 &mdash; 1894 &nbsp;|&nbsp; Hamburg &bull; Karlsruhe &bull; Bonn</p>
+    <div class="separator"></div>
+    <p style="max-width: 600px; margin: 0.5em auto; text-align: center;">The physicist who proved electromagnetic waves exist, transforming Maxwell's abstract equations into tangible reality and laying the foundation for all wireless communication.</p>
+    <div style="margin-top: 0.8em;">
+        <span class="tag amber">Electromagnetism</span>
+        <span class="tag green">Radio Waves</span>
+        <span class="tag blue">Photoelectric Effect</span>
+        <span class="tag rose">Experimental Physics</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life & Formation</h2>
+    <div class="two-col">
+        <div>
+            <p>Heinrich Rudolf Hertz was born on February 22, 1857, in <span class="accent">Hamburg</span>, then a sovereign city-state of the German Confederation. His father, Gustav Ferdinand Hertz, was a barrister and senator; his mother, Anna Elisabeth Pfefferkorn, came from a prosperous family.</p>
+            <p>Young Heinrich showed extraordinary mechanical aptitude, building instruments in his workshop and excelling in languages, mathematics, and the natural sciences. After completing the Gelehrtenschule des Johanneums, he studied engineering in Dresden and Munich before pivoting decisively to physics.</p>
+            <p>In 1878, he arrived in <span class="accent">Berlin</span> to study under the legendary <strong class="accent-amber">Hermann von Helmholtz</strong>, who recognized the young man's experimental genius and steered him toward the great unsolved problem of the age: proving Maxwell's electromagnetic theory.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">Hamburg Origins</h4>
+                <p>Born into a cultivated, converted Lutheran family of Jewish heritage. Grew up in a city of commerce and intellectual ambition.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-green">Mechanical Talent</h4>
+                <p>Built a spectroscope and other precision instruments as a teenager. Apprenticed briefly with a Frankfurt engineering firm before choosing pure physics.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Berlin & Helmholtz</h4>
+                <p>Won Helmholtz's prize competition in 1879 on electromagnetic induction. Earned his doctorate magna cum laude at age 23 with a thesis on rotating conductors.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career & Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Kiel &mdash; Privatdozent (1883)</h4>
+            <p>Became lecturer at the University of Kiel, beginning theoretical work on Maxwell's equations and publishing on electromagnetic energy. A quiet period of deep preparation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Karlsruhe Breakthrough (1886&ndash;1889)</h4>
+            <p>At the Technische Hochschule Karlsruhe, Hertz designed the spark gap experiment that detected electromagnetic waves, validating Maxwell's theory and stunning the scientific world.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Bonn Professorship (1889)</h4>
+            <p>Appointed full professor of physics at the University of Bonn at just 32. Continued wave research, investigated cathode rays, and began his influential theoretical reformulation of mechanics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Tragic End (1894)</h4>
+            <p>After years of declining health from granulomatosis with polyangiitis, Hertz died on January 1, 1894, at age 36. His work was far from finished&mdash;but what he accomplished was revolutionary.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Maxwell Question</h3>
+            <p>By the 1880s, James Clerk Maxwell's electromagnetic theory (1865) predicted the existence of transverse waves propagating at the speed of light. But <span class="accent-rose">no one had detected them</span>. Continental physicists favored action-at-a-distance models; British physicists championed Maxwell but lacked definitive proof.</p>
+            <p>Helmholtz in Berlin specifically designed a prize question to encourage experimental verification. The challenge was immense: generating waves of manageable wavelength and detecting them reliably across a laboratory.</p>
+            <p>Meanwhile, the <span class="accent-amber">second industrial revolution</span> was electrifying Europe. Telegraphs spanned continents, Edison and Swan were commercializing the light bulb, and electromagnetic science was poised to reshape civilization&mdash;if Maxwell was right.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-purple">Competing Theories</h4>
+                <p>Weber and Neumann's action-at-a-distance electrodynamics dominated in Germany. Maxwell's field theory was seen as elegant but unproven British speculation.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">The Helmholtz Program</h4>
+                <p>Helmholtz sought to reconcile continental and Maxwellian electrodynamics through experiments. Hertz would settle the debate decisively in Maxwell's favor.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Age of Electricity</h4>
+                <p>Siemens, AEG, and Westinghouse were building power systems. Hertz's discovery would soon add wireless communication to the electrical age.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 + SVG -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Electromagnetic Wave Detection</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>The Spark Gap Experiment</h3>
+            <p>In 1886, Hertz noticed that a spark in one circuit could induce a spark in a nearby unconnected circuit. This serendipitous observation led him to design a brilliant apparatus: a <span class="accent">transmitter</span> (an induction coil driving a spark gap between two metal spheres on a dipole) and a <span class="accent">receiver</span> (a simple loop of wire with its own tiny spark gap).</p>
+            <p>When the transmitter fired, electromagnetic waves propagated across the room. The receiver, tuned to resonate at the same frequency, produced a visible spark&mdash;proof that energy had traveled as a wave through empty space.</p>
+            <p>Hertz measured <span class="accent-green">reflection</span>, <span class="accent-blue">refraction</span>, <span class="accent-purple">polarization</span>, and <span class="accent-amber">interference</span>&mdash;all properties predicted by Maxwell for electromagnetic waves.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Transmitter -->
+                <text x="95" y="20" fill="#e8b84b" font-family="DM Sans" font-size="12" text-anchor="middle" font-weight="700">TRANSMITTER</text>
+                <!-- Induction coil -->
+                <rect x="55" y="30" width="80" height="30" rx="4" fill="none" stroke="#6a6a7a" stroke-width="1.5"/>
+                <text x="95" y="50" fill="#9a9a9a" font-family="DM Sans" font-size="9" text-anchor="middle">Induction Coil</text>
+                <!-- Wires down -->
+                <line x1="75" y1="60" x2="75" y2="90" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="115" y1="60" x2="115" y2="90" stroke="#6a6a7a" stroke-width="1"/>
+                <!-- Dipole arms -->
+                <rect x="20" y="90" width="55" height="8" rx="3" fill="none" stroke="#e8b84b" stroke-width="1.5"/>
+                <rect x="115" y="90" width="55" height="8" rx="3" fill="none" stroke="#e8b84b" stroke-width="1.5"/>
+                <!-- Spark gap -->
+                <circle cx="82" cy="94" r="5" fill="none" stroke="#e8b84b" stroke-width="1.5"/>
+                <circle cx="108" cy="94" r="5" fill="none" stroke="#e8b84b" stroke-width="1.5"/>
+                <!-- Spark -->
+                <line x1="87" y1="94" x2="103" y2="94" stroke="#e8b84b" stroke-width="2" stroke-dasharray="2,2" opacity="0.8"/>
+                <text x="95" y="120" fill="#6a6a7a" font-family="DM Sans" font-size="8" text-anchor="middle">Spark Gap</text>
+                <!-- EM Waves propagating -->
+                <g opacity="0.5">
+                    <path d="M170 94 Q185 70 200 94 Q215 118 230 94" fill="none" stroke="#e8b84b" stroke-width="1.2"/>
+                    <path d="M200 94 Q215 70 230 94 Q245 118 260 94" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.7"/>
+                    <path d="M230 94 Q245 70 260 94 Q275 118 290 94" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.5"/>
+                </g>
+                <text x="230" y="130" fill="#4ecca3" font-family="DM Sans" font-size="8" text-anchor="middle">EM Waves (~60 MHz)</text>
+                <!-- Receiver -->
+                <text x="330" y="50" fill="#5b8cd4" font-family="DM Sans" font-size="12" text-anchor="middle" font-weight="700">RECEIVER</text>
+                <!-- Loop antenna -->
+                <ellipse cx="330" cy="94" rx="30" ry="35" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+                <!-- Receiver spark gap -->
+                <circle cx="323" cy="60" r="3" fill="none" stroke="#5b8cd4" stroke-width="1"/>
+                <circle cx="337" cy="60" r="3" fill="none" stroke="#5b8cd4" stroke-width="1"/>
+                <line x1="326" y1="60" x2="334" y2="60" stroke="#5b8cd4" stroke-width="1.5" stroke-dasharray="1,1"/>
+                <text x="330" y="145" fill="#6a6a7a" font-family="DM Sans" font-size="8" text-anchor="middle">Resonant Loop</text>
+                <!-- Legend -->
+                <rect x="20" y="170" width="340" height="140" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+                <text x="190" y="190" fill="#e8e6e3" font-family="DM Sans" font-size="10" text-anchor="middle" font-weight="700">Key Measurements</text>
+                <circle cx="40" cy="210" r="4" fill="#e8b84b" opacity="0.7"/><text x="55" y="213" fill="#9a9a9a" font-family="DM Sans" font-size="9">Wavelength: ~66 cm (measured via standing waves)</text>
+                <circle cx="40" cy="232" r="4" fill="#4ecca3" opacity="0.7"/><text x="55" y="235" fill="#9a9a9a" font-family="DM Sans" font-size="9">Frequency: ~450 MHz in later experiments</text>
+                <circle cx="40" cy="254" r="4" fill="#5b8cd4" opacity="0.7"/><text x="55" y="257" fill="#9a9a9a" font-family="DM Sans" font-size="9">Speed: matched c within experimental error</text>
+                <circle cx="40" cy="276" r="4" fill="#9b72cf" opacity="0.7"/><text x="55" y="279" fill="#9a9a9a" font-family="DM Sans" font-size="9">Polarization: confirmed transverse wave nature</text>
+                <circle cx="40" cy="298" r="4" fill="#cf7272" opacity="0.7"/><text x="55" y="301" fill="#9a9a9a" font-family="DM Sans" font-size="9">Reflection & refraction: behaved like light</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deeper Dive -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Proving Maxwell Right</h2>
+    <p style="max-width: 85%; margin: 0.3em auto; text-align: center;">Hertz's experiments between 1886 and 1889 did not merely detect electromagnetic waves&mdash;they <span class="accent">systematically demonstrated every property</span> that Maxwell's equations predicted.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Standing Waves (1887)</h4>
+            <p>By reflecting waves off a zinc sheet, Hertz created standing wave patterns. Moving the receiver along the path, he identified nodes and antinodes, directly measuring the wavelength and computing the wave speed as equal to c.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Polarization (1888)</h4>
+            <p>Hertz placed a wire grid between transmitter and receiver. When the grid wires were parallel to the electric field, the wave was blocked; when perpendicular, it passed. This proved the waves were transverse, not longitudinal.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Refraction (1888)</h4>
+            <p>Using a large prism of pitch (asphalt), Hertz demonstrated that electromagnetic waves refract just like light, bending at angles consistent with Snell's law for the prism's refractive index.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Publication: "Electric Waves" (1893)</h4>
+            <p>Hertz compiled his results into the landmark book <em>Electric Waves</em>, which provided the definitive experimental evidence for Maxwell's theory and influenced an entire generation of physicists and engineers.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"The connection between light and electricity is now established... the theory of light can be pursued no further independently of the theory of electricity."</p>
+        <span class="attribution">&mdash; Heinrich Hertz, <em>Electric Waves</em>, 1893</span>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 + SVG -->
+<section>
+    <span class="section-number">06</span>
+    <h2>The Photoelectric Effect</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>An Accidental Discovery</h3>
+            <p>While performing his electromagnetic wave experiments in 1887, Hertz noticed something unexpected: the receiver spark was <span class="accent">easier to produce</span> when ultraviolet light from the transmitter spark illuminated the receiver gap.</p>
+            <p>Hertz systematically investigated this effect. He found that <span class="accent-purple">ultraviolet light</span> facilitated electrical discharge, while glass (which blocks UV) diminished it. He published his findings in "On an Effect of Ultraviolet Light upon the Electric Discharge" (1887).</p>
+            <p>Hertz did not explain the mechanism&mdash;that would require <span class="accent-amber">Einstein's quantum explanation</span> in 1905. But his careful observation opened one of the most important doors in modern physics.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg">
+                <!-- EM wave propagation diagram -->
+                <text x="170" y="20" fill="#e8b84b" font-family="DM Sans" font-size="12" text-anchor="middle" font-weight="700">EM Wave Propagation</text>
+                <!-- Axis -->
+                <line x1="30" y1="120" x2="310" y2="120" stroke="#6a6a7a" stroke-width="0.8"/>
+                <text x="320" y="123" fill="#6a6a7a" font-family="DM Sans" font-size="8">z</text>
+                <!-- E-field (vertical, gold) -->
+                <path d="M40 120 Q60 60 80 120 Q100 180 120 120 Q140 60 160 120 Q180 180 200 120 Q220 60 240 120 Q260 180 280 120" fill="none" stroke="#e8b84b" stroke-width="2"/>
+                <text x="290" y="80" fill="#e8b84b" font-family="DM Sans" font-size="10" font-weight="700">E</text>
+                <!-- B-field (represented as dashed, blue) -->
+                <path d="M40 120 Q60 90 80 120 Q100 150 120 120 Q140 90 160 120 Q180 150 200 120 Q220 90 240 120 Q260 150 280 120" fill="none" stroke="#5b8cd4" stroke-width="1.5" stroke-dasharray="4,3" transform="rotate(90 160 120) translate(0 0)" opacity="0.6"/>
+                <!-- B label with note -->
+                <text x="170" y="170" fill="#5b8cd4" font-family="DM Sans" font-size="10" text-anchor="middle" font-weight="700">B (perpendicular to page)</text>
+                <!-- Wavelength marker -->
+                <line x1="40" y1="195" x2="160" y2="195" stroke="#4ecca3" stroke-width="1"/>
+                <line x1="40" y1="190" x2="40" y2="200" stroke="#4ecca3" stroke-width="1"/>
+                <line x1="160" y1="190" x2="160" y2="200" stroke="#4ecca3" stroke-width="1"/>
+                <text x="100" y="210" fill="#4ecca3" font-family="DM Sans" font-size="9" text-anchor="middle">&#955; (wavelength)</text>
+                <!-- UV photoelectric note -->
+                <rect x="30" y="225" width="280" height="45" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+                <text x="170" y="243" fill="#9b72cf" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Photoelectric Observation (1887)</text>
+                <text x="170" y="260" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">UV light from spark &#8594; easier discharge at receiver &#8594; electrons liberated from metal</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deeper Dive -->
+<section>
+    <span class="section-number">07</span>
+    <h2>From Hertz to Einstein</h2>
+    <p style="max-width: 85%; margin: 0.3em auto; text-align: center;">Hertz's photoelectric observation was the seed of <span class="accent">quantum mechanics</span>. The chain of discovery it initiated reshaped our understanding of matter and energy.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Hertz's Observation (1887)</h4>
+            <p>UV light facilitates spark discharge. Hertz documents the effect carefully but offers no theoretical explanation. He notes glass blocks the effect, correctly identifying UV as the active agent.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Lenard's Experiments (1902)</h4>
+            <p>Hertz's student Philipp Lenard showed that the energy of emitted electrons depends on light frequency, not intensity&mdash;a result inexplicable by classical wave theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Einstein's Explanation (1905)</h4>
+            <p>Einstein proposed that light consists of discrete quanta (photons) with energy E = h&#957;. This explained Lenard's results and earned Einstein the 1921 Nobel Prize.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Quantum Revolution</h4>
+            <p>The photoelectric effect became a cornerstone of quantum theory, leading to Bohr's atomic model, wave-particle duality, and ultimately the full formalism of quantum mechanics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 -->
+<section>
+    <span class="section-number">08</span>
+    <h2>The Hertzian Dipole & Radio Foundations</h2>
+    <p style="max-width: 85%; margin: 0.3em auto; text-align: center;">Hertz's transmitter was the world's first <span class="accent">dipole antenna</span>&mdash;a design principle still central to every wireless device today.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Hertzian Dipole</h4>
+            <p>Two collinear conductors fed at a central gap form a half-wave dipole. When current oscillates, the accelerating charges radiate electromagnetic energy perpendicular to the dipole axis. This is the fundamental radiating element in antenna theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Radiation Pattern</h4>
+            <p>Hertz mapped the radiation pattern of his transmitter, showing maximum intensity perpendicular to the antenna axis and nulls along the axis&mdash;the classic "doughnut" pattern derived from Maxwell's equations for an oscillating charge.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Resonance & Tuning</h4>
+            <p>By adjusting the size of his receiver loop and gap, Hertz demonstrated frequency-selective reception&mdash;the principle of resonant tuning that would become essential to all radio engineering.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Wave Properties Catalogue</h4>
+            <p>Hertz's systematic study of reflection, refraction, diffraction, polarization, and interference created a complete catalogue of radio wave properties, establishing the experimental foundation for wireless science.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09</span>
+    <h2>The Method</h2>
+    <p style="text-align: center; max-width: 85%; margin: 0.3em auto;">Hertz combined <span class="accent">theoretical rigor</span> with <span class="accent-green">elegant experimental design</span>, building apparatus that could isolate and measure phenomena at the frontier of physics.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Theoretical<br>Prediction</h4>
+            <p>Derive expected behavior from Maxwell's equations</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Apparatus<br>Design</h4>
+            <p>Build transmitter & receiver tuned to testable frequencies</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-blue">Systematic<br>Measurement</h4>
+            <p>Map fields, standing waves, reflection angles</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Quantitative<br>Comparison</h4>
+            <p>Compare measured speed, polarization to theory</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card">
+            <h4 class="accent-amber">Craftsmanship</h4>
+            <p>Hertz built his own apparatus with meticulous care. His spark gap electrodes were polished spheres of precise diameter; his parabolic reflectors were fashioned from zinc sheet to focus the waves into beams.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Dark Room</h4>
+            <p>To detect the faint receiver sparks, Hertz worked in complete darkness, relying on dark-adapted eyes. The sparks were sometimes less than 0.01 mm&mdash;a testament to his patience and observational skill.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Connections & Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node: Hertz -->
+            <circle cx="350" cy="160" r="38" fill="#161622" stroke="#e8b84b" stroke-width="2"/>
+            <text x="350" y="157" fill="#e8b84b" font-family="Playfair Display" font-size="12" text-anchor="middle" font-weight="700">Heinrich</text>
+            <text x="350" y="172" fill="#e8b84b" font-family="Playfair Display" font-size="12" text-anchor="middle" font-weight="700">Hertz</text>
+            <!-- Helmholtz -->
+            <line x1="312" y1="155" x2="155" y2="80" stroke="#d4a053" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="130" cy="70" r="30" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="130" y="67" fill="#d4a053" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Helmholtz</text>
+            <text x="130" y="79" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Mentor, Berlin</text>
+            <!-- Maxwell (posthumous) -->
+            <line x1="350" y1="122" x2="350" y2="45" stroke="#5b8cd4" stroke-width="1.2" opacity="0.6" stroke-dasharray="4,3"/>
+            <circle cx="350" cy="30" r="28" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="350" y="28" fill="#5b8cd4" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Maxwell</text>
+            <text x="350" y="39" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Theory (d. 1879)</text>
+            <!-- Lenard -->
+            <line x1="388" y1="155" x2="540" y2="80" stroke="#9b72cf" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="560" cy="70" r="28" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="560" y="68" fill="#9b72cf" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Lenard</text>
+            <text x="560" y="79" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Student</text>
+            <!-- Marconi -->
+            <line x1="388" y1="170" x2="560" y2="220" stroke="#4ecca3" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="580" cy="230" r="28" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="580" y="228" fill="#4ecca3" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Marconi</text>
+            <text x="580" y="239" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Radio pioneer</text>
+            <!-- Lodge -->
+            <line x1="312" y1="170" x2="155" y2="220" stroke="#cf7272" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="130" cy="230" r="28" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="130" y="228" fill="#cf7272" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Lodge</text>
+            <text x="130" y="239" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Replicated expts</text>
+            <!-- Fitzgerald -->
+            <line x1="320" y1="190" x2="240" y2="280" stroke="#5b8cd4" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="225" cy="290" r="28" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="225" y="288" fill="#5b8cd4" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">FitzGerald</text>
+            <text x="225" y="299" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Maxwellian ally</text>
+            <!-- Tesla -->
+            <line x1="380" y1="190" x2="470" y2="290" stroke="#e8b84b" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="485" cy="295" r="28" fill="#161622" stroke="#e8b84b" stroke-width="1.5"/>
+            <text x="485" y="293" fill="#e8b84b" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Tesla</text>
+            <text x="485" y="304" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Wireless rival</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Rivalry & Controversy</h2>
+    <div class="two-col">
+        <div>
+            <h3>Priority & Interpretation</h3>
+            <p>Hertz's experiments settled the Maxwell debate, but they opened new disputes. <span class="accent-rose">Oliver Lodge</span> in Liverpool replicated Hertz's results and sometimes claimed priority for certain observations. The British Maxwellians had been searching for electromagnetic waves for years.</p>
+            <p>More consequentially, Hertz's famous dismissal of practical applications became ironic history. When asked about the utility of his waves, he reportedly said they had no practical use. Within a decade, <span class="accent-green">Marconi</span> was transmitting across the Atlantic.</p>
+            <p>There was also tension with <span class="accent-purple">Philipp Lenard</span>, who extended Hertz's photoelectric work. Lenard later claimed excessive credit and, under the Nazi regime, attempted to erase Hertz's Jewish heritage from the historical record.</p>
+        </div>
+        <div>
+            <div class="quote-box">
+                <p>"I do not think that the wireless waves I have discovered will have any practical application."</p>
+                <span class="attribution">&mdash; Heinrich Hertz (attributed), c. 1890</span>
+            </div>
+            <div class="card" style="margin-top: 0.6em;">
+                <h4 class="accent-rose">The Lenard Affair</h4>
+                <p>Philipp Lenard, who won the 1905 Nobel Prize partly for work building on Hertz's photoelectric discovery, became a prominent Nazi physicist. He promoted "Deutsche Physik" and tried to diminish Hertz's contributions due to Hertz's Jewish ancestry&mdash;a shameful chapter in the history of science.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Hertz (Hz)</h4>
+            <p>The SI unit of frequency was named in his honor in 1930. Every time we describe radio frequencies, clock speeds, or sound pitches in hertz, we invoke his legacy. A GHz processor oscillates a billion times per second&mdash;each cycle a tribute to his discovery.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Wireless Communication</h4>
+            <p>Hertz's experiments are the direct ancestor of radio, television, Wi-Fi, Bluetooth, cellular networks, and satellite communication. His spark gap transmitter was the prototype for all electromagnetic broadcasting.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Quantum Mechanics</h4>
+            <p>The photoelectric effect he discovered became the empirical foundation for Einstein's light quanta hypothesis, which in turn catalyzed the quantum revolution&mdash;transforming physics, chemistry, and technology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Antenna Theory</h4>
+            <p>The Hertzian dipole remains the fundamental element in antenna design. Every smartphone, radio tower, and satellite dish uses principles Hertz first demonstrated in his Karlsruhe laboratory.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Applications Today</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">5G & Beyond</h4>
+            <p>Modern cellular networks operating at frequencies up to 300 GHz trace directly to Hertz's proof that EM waves can be generated, directed, and received at specific frequencies.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Radar & Sensing</h4>
+            <p>Hertz demonstrated reflection of radio waves off metallic surfaces&mdash;the core principle behind radar, which transformed warfare, aviation, and weather forecasting.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Spectroscopy</h4>
+            <p>The understanding that EM waves span a continuous spectrum from radio to gamma rays began with Hertz's demonstration that "electric waves" were the same phenomenon as light.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Solar Cells</h4>
+            <p>The photoelectric effect Hertz discovered is the basis for photodetectors and photovoltaic cells. Modern solar panels convert sunlight to electricity via quantum processes he first observed.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Satellite Communication</h4>
+            <p>Hertz showed EM waves propagate through empty space. Today, geostationary satellites relay signals across continents using exactly the physics he demonstrated in a university lab.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Medical Imaging</h4>
+            <p>MRI machines, which rely on radio-frequency electromagnetic pulses to image the body, employ the same wave physics Hertz proved. His work underlies the entire RF engineering discipline.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Timeline</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 40" xmlns="http://www.w3.org/2000/svg">
+            <line x1="30" y1="20" x2="670" y2="20" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="50" cy="20" r="4" fill="#e8b84b"/>
+            <circle cx="160" cy="20" r="4" fill="#e8b84b"/>
+            <circle cx="270" cy="20" r="4" fill="#e8b84b"/>
+            <circle cx="370" cy="20" r="4" fill="#4ecca3"/>
+            <circle cx="450" cy="20" r="4" fill="#5b8cd4"/>
+            <circle cx="540" cy="20" r="4" fill="#9b72cf"/>
+            <circle cx="640" cy="20" r="4" fill="#cf7272"/>
+            <text x="50" y="12" fill="#e8b84b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1857</text>
+            <text x="160" y="12" fill="#e8b84b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1878</text>
+            <text x="270" y="12" fill="#e8b84b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1883</text>
+            <text x="370" y="12" fill="#4ecca3" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1887</text>
+            <text x="450" y="12" fill="#5b8cd4" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1889</text>
+            <text x="540" y="12" fill="#9b72cf" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1892</text>
+            <text x="640" y="12" fill="#cf7272" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1894</text>
+        </svg>
+    </div>
+    <div style="max-width: 85%; margin: 0.3em auto;">
+        <div class="timeline-item">
+            <div class="year">1857</div>
+            <div class="event"><strong>Born in Hamburg</strong>Son of a prosperous barrister and senator in the Free City of Hamburg.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1878</div>
+            <div class="event"><strong>Arrives in Berlin</strong>Begins study under Helmholtz. Wins prize for electromagnetic induction research within a year.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1880</div>
+            <div class="event"><strong>Doctorate earned</strong>Completes PhD magna cum laude; becomes Helmholtz's research assistant.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1883</div>
+            <div class="event"><strong>Kiel appointment</strong>Becomes Privatdozent. Begins theoretical work on Maxwell's equations.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1885</div>
+            <div class="event"><strong>Karlsruhe professorship</strong>Moves to the Technische Hochschule with a well-equipped laboratory.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1887</div>
+            <div class="event"><strong>Electromagnetic waves detected</strong>First successful generation and detection of radio waves. Also observes the photoelectric effect.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1889</div>
+            <div class="event"><strong>Bonn professorship</strong>Appointed full professor; publishes comprehensive wave measurements.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1892</div>
+            <div class="event"><strong>Principles of Mechanics</strong>Begins writing his theoretical reformulation of classical mechanics, published posthumously.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1894</div>
+            <div class="event"><strong>Dies in Bonn, age 36</strong>Succumbs to granulomatosis with polyangiitis. His work is carried forward by Lenard, Lodge, and Marconi.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Electric Waves</h4>
+            <p><strong>Heinrich Hertz</strong> (1893). The primary source: Hertz's own compilation of his electromagnetic experiments, translated into English by D.E. Jones. Essential reading for anyone studying the history of electromagnetism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Heinrich Hertz: Classical Physicist, Modern Philosopher</h4>
+            <p><strong>D. Baird, R.I.G. Hughes, A. Nordmann</strong> (1998). A scholarly collection examining Hertz as both experimentalist and philosophical thinker, including his influential mechanics reformulation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Maxwellians</h4>
+            <p><strong>Bruce Hunt</strong> (1991). The story of how FitzGerald, Lodge, Heaviside, and Hertz transformed Maxwell's difficult treatise into the foundations of modern electromagnetic theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Hertz and the Maxwellians</h4>
+            <p><strong>J.F. Mulligan</strong> (various articles). Detailed historical analysis of Hertz's experimental program and its reception among British and Continental physicists.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Principles of Mechanics</h4>
+            <p><strong>Heinrich Hertz</strong> (1894, posthumous). Hertz's reformulation of mechanics without the concept of force&mdash;admired by Wittgenstein and influential in the philosophy of science.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Thunderstruck</h4>
+            <p><strong>Erik Larson</strong> (2006). A popular narrative interweaving Marconi's development of wireless telegraphy&mdash;built on Hertz's discoveries&mdash;with the dramatic Crippen murder case.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="60" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="45" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#e8b84b" stroke-width="0.7" opacity="0.5">
+                <ellipse cx="100" cy="100" rx="85" ry="30"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(60 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(120 100 100)"/>
+            </g>
+            <!-- Wave at center -->
+            <path d="M65 100 Q75 80 85 100 Q95 120 105 100 Q115 80 125 100 Q135 120 140 100" fill="none" stroke="#e8b84b" stroke-width="1.5" opacity="0.9"/>
+        </svg>
+    </div>
+    <h2>Heinrich Hertz</h2>
+    <p class="subtitle">1857 &mdash; 1894</p>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width: 70%;">
+        <p>"It's of no use whatsoever. This is just an experiment that proves Maestro Maxwell was right&mdash;we just have these mysterious electromagnetic waves that we cannot see with the naked eye. But they are there."</p>
+        <span class="attribution">&mdash; Heinrich Hertz, when asked about the applications of his discovery</span>
+    </div>
+    <p style="text-align: center; margin-top: 1em; color: var(--text-muted); font-size: 0.42em;">He proved the invisible was real. The world built the future on it.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikola Tesla — Master of Alternating Current</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #9b72cf;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.6">
+                <path d="M100 10 Q140 55 100 100 Q60 55 100 10"/>
+                <path d="M190 100 Q145 140 100 100 Q145 60 190 100"/>
+                <path d="M100 190 Q60 145 100 100 Q140 145 100 190"/>
+                <path d="M10 100 Q55 60 100 100 Q55 140 10 100"/>
+            </g>
+            <g fill="none" stroke="#9b72cf" stroke-width="0.6" opacity="0.4">
+                <path d="M36 36 Q68 68 100 100 Q68 36 36 36"/>
+                <path d="M164 36 Q132 68 100 100 Q164 68 164 36"/>
+                <path d="M164 164 Q132 132 100 100 Q164 132 164 164"/>
+                <path d="M36 164 Q68 132 100 100 Q36 132 36 164"/>
+            </g>
+            <!-- Lightning bolt at center -->
+            <path d="M105 75 L95 98 L108 95 L98 125" fill="none" stroke="#9b72cf" stroke-width="2" opacity="0.9" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h1>Nikola Tesla</h1>
+    <p class="subtitle">1856 &mdash; 1943 &nbsp;|&nbsp; Smiljan &bull; Budapest &bull; New York</p>
+    <div class="separator"></div>
+    <p style="max-width: 600px; margin: 0.5em auto; text-align: center;">The visionary inventor who gave the world alternating current, pioneered radio technology, and dreamed of wireless power&mdash;reshaping civilization's relationship with electricity.</p>
+    <div style="margin-top: 0.8em;">
+        <span class="tag">Alternating Current</span>
+        <span class="tag amber">Tesla Coil</span>
+        <span class="tag green">Radio Transmission</span>
+        <span class="tag blue">Wireless Power</span>
+        <span class="tag rose">Polyphase Motors</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life & Formation</h2>
+    <div class="two-col">
+        <div>
+            <p>Nikola Tesla was born on July 10, 1856, in <span class="accent">Smiljan</span>, a village in the Military Frontier of the Austrian Empire (modern-day Croatia). His father, Milutin Tesla, was a Serbian Orthodox priest; his mother, Georgina (Djuka), though unschooled, was an inventive woman who built household tools and memorized Serbian epic poetry.</p>
+            <p>Tesla showed extraordinary mental abilities from childhood&mdash;he could perform integral calculus in his head and possessed an <span class="accent-amber">eidetic memory</span> so vivid he could visualize complete machines, rotate them, and test them mentally before building a single part.</p>
+            <p>After studying at the Austrian Polytechnic in <span class="accent-green">Graz</span> (where he first saw a Gramme dynamo and conceived the idea for AC motors) and the University of Prague, Tesla worked briefly for the Budapest Telephone Exchange before joining Edison's operations in Paris in 1882.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">Serbian Heritage</h4>
+                <p>Born into a family of Orthodox clergy and military officers on the Croatian frontier. His older brother Dane's death in childhood deeply affected the young Nikola.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-green">The Graz Revelation</h4>
+                <p>Watching a DC Gramme dynamo spark at its commutator, Tesla told his professor it could work without brushes. The professor called it impossible. Tesla would prove him wrong.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Budapest Epiphany (1882)</h4>
+                <p>While walking in a park, reciting Goethe's <em>Faust</em>, the complete design of the rotating magnetic field and AC induction motor appeared in Tesla's mind&mdash;fully formed.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career & Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Arrival in America (1884)</h4>
+            <p>Tesla arrived in New York with four cents, a letter of introduction to Edison, and a head full of AC designs. He worked for Edison briefly, but their visions clashed fundamentally&mdash;Edison was committed to DC, Tesla to AC.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Westinghouse Alliance (1888)</h4>
+            <p>George Westinghouse purchased Tesla's AC patents for $60,000 plus royalties. This partnership powered the War of Currents against Edison and would electrify the world with alternating current.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Colorado Springs (1899)</h4>
+            <p>Tesla built a massive experimental station to study high-voltage, high-frequency phenomena. He generated artificial lightning, claimed to receive extraterrestrial signals, and advanced his wireless power transmission theories.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Wardenclyffe & Decline (1901&ndash;1943)</h4>
+            <p>Tesla's ambitious Wardenclyffe Tower project, intended for transatlantic wireless communication and power transmission, lost funding when J.P. Morgan withdrew support. Tesla spent his final decades in increasing isolation, though never ceasing to invent.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The War of Currents</h3>
+            <p>The 1880s and 1890s saw one of the most consequential technological battles in history: <span class="accent-rose">DC vs. AC</span>. Thomas Edison had built an empire on direct current, constructing power stations that served small districts of Manhattan. But DC could not be transmitted efficiently over long distances.</p>
+            <p>Tesla and Westinghouse championed <span class="accent">alternating current</span>, which could be stepped up to high voltage via transformers for efficient long-distance transmission, then stepped back down for safe use. Edison fought back with a propaganda campaign, publicly electrocuting animals with AC to demonstrate its "danger."</p>
+            <p>The decisive victory came in 1893 when Westinghouse, using Tesla's polyphase system, won the contract to light the <span class="accent-amber">Chicago World's Fair</span>&mdash;and in 1896, when AC power from Niagara Falls reached Buffalo, 26 miles away.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-rose">Edison's Campaign</h4>
+                <p>Edison promoted the electric chair (using AC) and staged public electrocutions of animals. Harold Brown, Edison's associate, coined "Westinghoused" as a synonym for electrocution.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">The 1893 World's Fair</h4>
+                <p>Tesla's polyphase system illuminated the entire fair with 200,000 light bulbs. The spectacle proved AC's superiority to millions of visitors and sealed the outcome of the current war.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Niagara Falls (1896)</h4>
+                <p>Tesla's AC generators harnessed the falls' power and transmitted it to Buffalo&mdash;the first large-scale AC power system, proving that electricity could be delivered across distances economically.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 + SVG -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Alternating Current & Polyphase Motor</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>The AC Revolution</h3>
+            <p>Tesla's fundamental insight was that a <span class="accent">rotating magnetic field</span> could be created by multiple phases of alternating current, offset in time. This rotating field would drag a rotor along with it&mdash;no brushes, no commutator, no sparking.</p>
+            <p>His <span class="accent-green">polyphase AC system</span> included generators, transformers, transmission lines, and motors&mdash;a complete ecosystem for electrical power. The key innovation: using two or three phases of AC, each offset by 90 or 120 degrees, to create smooth, continuous rotation.</p>
+            <p>This was not merely an improvement over DC&mdash;it was a <span class="accent-amber">paradigm shift</span> that made long-distance power transmission practical and enabled the electrification of the world.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Title -->
+                <text x="190" y="20" fill="#9b72cf" font-family="DM Sans" font-size="12" text-anchor="middle" font-weight="700">AC vs DC Waveforms</text>
+                <!-- DC waveform -->
+                <text x="50" y="55" fill="#cf7272" font-family="DM Sans" font-size="10" font-weight="700">DC</text>
+                <line x1="70" y1="52" x2="350" y2="52" stroke="#cf7272" stroke-width="2"/>
+                <line x1="70" y1="72" x2="350" y2="72" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                <text x="360" y="56" fill="#cf7272" font-family="DM Sans" font-size="8">+V</text>
+                <text x="360" y="76" fill="#6a6a7a" font-family="DM Sans" font-size="8">0</text>
+                <!-- AC waveform - Phase A -->
+                <text x="50" y="120" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="700">AC</text>
+                <line x1="70" y1="130" x2="350" y2="130" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                <path d="M70 130 Q105 90 140 130 Q175 170 210 130 Q245 90 280 130 Q315 170 350 130" fill="none" stroke="#9b72cf" stroke-width="2"/>
+                <text x="360" y="134" fill="#9b72cf" font-family="DM Sans" font-size="8">&#966;A</text>
+                <!-- Three-phase section -->
+                <text x="190" y="195" fill="#e8e6e3" font-family="DM Sans" font-size="11" text-anchor="middle" font-weight="700">Three-Phase AC (Tesla's System)</text>
+                <line x1="70" y1="245" x2="350" y2="245" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                <!-- Phase A -->
+                <path d="M70 245 Q93 210 116 245 Q139 280 162 245 Q185 210 208 245 Q231 280 254 245 Q277 210 300 245 Q323 280 350 245" fill="none" stroke="#9b72cf" stroke-width="1.8"/>
+                <!-- Phase B (offset 120deg) -->
+                <path d="M70 260 Q93 225 116 260 Q139 295 162 260 Q185 225 208 260 Q231 295 254 260 Q277 225 300 260 Q323 295 350 260" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="translate(-30,0)"/>
+                <!-- Phase C (offset 240deg) -->
+                <path d="M70 230 Q93 195 116 230 Q139 265 162 230 Q185 195 208 230 Q231 265 254 230 Q277 195 300 230 Q323 265 350 230" fill="none" stroke="#d4a053" stroke-width="1.5" transform="translate(-60,0)"/>
+                <!-- Legend -->
+                <line x1="80" y1="300" x2="100" y2="300" stroke="#9b72cf" stroke-width="2"/>
+                <text x="108" y="304" fill="#9a9a9a" font-family="DM Sans" font-size="8">Phase A (0&#176;)</text>
+                <line x1="175" y1="300" x2="195" y2="300" stroke="#4ecca3" stroke-width="2"/>
+                <text x="203" y="304" fill="#9a9a9a" font-family="DM Sans" font-size="8">Phase B (120&#176;)</text>
+                <line x1="280" y1="300" x2="300" y2="300" stroke="#d4a053" stroke-width="2"/>
+                <text x="308" y="304" fill="#9a9a9a" font-family="DM Sans" font-size="8">Phase C (240&#176;)</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deeper Dive -->
+<section>
+    <span class="section-number">05</span>
+    <h2>The Polyphase System in Depth</h2>
+    <p style="max-width: 85%; margin: 0.3em auto; text-align: center;">Tesla's AC patents (filed 1887&ndash;1888) described not just a motor but an <span class="accent">entire power system</span>&mdash;generation, transformation, transmission, and utilization.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Induction Motor</h4>
+            <p>Tesla's polyphase induction motor uses a rotating magnetic field produced by stator windings carrying phase-shifted AC currents. The rotor, typically a squirrel cage, follows the field through electromagnetic induction&mdash;no electrical connection to the rotor is needed. Simple, robust, and efficient.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Transformer Principle</h4>
+            <p>AC can be stepped up to thousands of volts for transmission (reducing I&#178;R losses) and stepped back down for end use. This is impossible with DC. Tesla's system exploited this fully, making power delivery over hundreds of miles economically viable.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">40 Patents in 1888</h4>
+            <p>Tesla filed over 40 patents covering polyphase AC systems. His May 1888 lecture at the American Institute of Electrical Engineers presented the rotating magnetic field concept and demonstrated working motors, electrifying the engineering world.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Westinghouse at Niagara</h4>
+            <p>The 1896 Niagara Falls installation used Tesla's polyphase generators to produce 15,000 horsepower of electrical energy. Power reached Buffalo 26 miles away&mdash;a triumph of AC that ended the current war decisively.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"I have not only convinced myself of this but have also proved that alternating current is the only form of current by which electrification of the whole globe can be accomplished."</p>
+        <span class="attribution">&mdash; Nikola Tesla, lecture to the AIEE, 1888</span>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 + SVG -->
+<section>
+    <span class="section-number">06</span>
+    <h2>The Tesla Coil & High-Frequency Resonance</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>Resonant Transformers</h3>
+            <p>In 1891, Tesla invented the <span class="accent">Tesla coil</span>&mdash;a resonant transformer circuit that produces extremely high voltages at high frequencies. The device operates on a principle Tesla understood deeply: <span class="accent-amber">electrical resonance</span>.</p>
+            <p>A primary circuit (capacitor + spark gap + few-turn coil) drives a loosely coupled secondary coil with many turns. When the primary and secondary resonate at the same frequency, energy transfers efficiently, producing voltages of hundreds of thousands to millions of volts.</p>
+            <p>Tesla used these coils to study <span class="accent-green">high-frequency phenomena</span>, wireless energy transmission, fluorescent lighting, and X-rays&mdash;often years before others received credit for similar discoveries.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 310" xmlns="http://www.w3.org/2000/svg">
+                <!-- Title -->
+                <text x="190" y="20" fill="#9b72cf" font-family="DM Sans" font-size="12" text-anchor="middle" font-weight="700">Rotating Magnetic Field</text>
+                <text x="190" y="35" fill="#6a6a7a" font-family="DM Sans" font-size="9" text-anchor="middle">Polyphase Induction Motor Principle</text>
+                <!-- Motor cross-section -->
+                <circle cx="190" cy="150" r="90" fill="none" stroke="#2a2a3a" stroke-width="1.5"/>
+                <circle cx="190" cy="150" r="88" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3"/>
+                <!-- Stator windings - Phase A (top/bottom) -->
+                <rect x="178" y="58" width="24" height="14" rx="3" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+                <text x="190" y="69" fill="#9b72cf" font-family="DM Sans" font-size="8" text-anchor="middle">A</text>
+                <rect x="178" y="228" width="24" height="14" rx="3" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+                <text x="190" y="239" fill="#9b72cf" font-family="DM Sans" font-size="8" text-anchor="middle">A'</text>
+                <!-- Phase B (upper-right / lower-left) -->
+                <rect x="250" y="82" width="24" height="14" rx="3" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(30 262 89)"/>
+                <text x="266" y="92" fill="#4ecca3" font-family="DM Sans" font-size="8" text-anchor="middle">B</text>
+                <rect x="106" y="204" width="24" height="14" rx="3" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(30 118 211)"/>
+                <text x="114" y="214" fill="#4ecca3" font-family="DM Sans" font-size="8" text-anchor="middle">B'</text>
+                <!-- Phase C (upper-left / lower-right) -->
+                <rect x="106" y="82" width="24" height="14" rx="3" fill="none" stroke="#d4a053" stroke-width="1.5" transform="rotate(-30 118 89)"/>
+                <text x="114" y="92" fill="#d4a053" font-family="DM Sans" font-size="8" text-anchor="middle">C</text>
+                <rect x="250" y="204" width="24" height="14" rx="3" fill="none" stroke="#d4a053" stroke-width="1.5" transform="rotate(-30 262 211)"/>
+                <text x="266" y="214" fill="#d4a053" font-family="DM Sans" font-size="8" text-anchor="middle">C'</text>
+                <!-- Rotor -->
+                <circle cx="190" cy="150" r="45" fill="none" stroke="#e8e6e3" stroke-width="1" stroke-dasharray="4,2"/>
+                <text x="190" y="153" fill="#e8e6e3" font-family="DM Sans" font-size="9" text-anchor="middle">Rotor</text>
+                <!-- Rotating field arrow -->
+                <path d="M190 105 A45 45 0 0 1 230 135" fill="none" stroke="#cf7272" stroke-width="2"/>
+                <polygon points="232,132 228,140 236,138" fill="#cf7272"/>
+                <text x="245" y="118" fill="#cf7272" font-family="DM Sans" font-size="8">Rotating</text>
+                <text x="245" y="128" fill="#cf7272" font-family="DM Sans" font-size="8">Field</text>
+                <!-- Legend box -->
+                <rect x="30" y="258" width="320" height="45" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+                <text x="190" y="276" fill="#e8e6e3" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Three phases create a smoothly rotating field</text>
+                <text x="190" y="293" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">The rotor follows by induction &mdash; no brushes or commutator needed</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deeper Dive -->
+<section>
+    <span class="section-number">07</span>
+    <h2>High-Frequency Mastery</h2>
+    <p style="max-width: 85%; margin: 0.3em auto; text-align: center;">The Tesla coil was not a parlor trick&mdash;it was a <span class="accent">research instrument</span> that opened the door to radio, wireless power, and modern high-frequency electronics.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Resonance Principle</h4>
+            <p>Tesla deeply understood that electrical circuits, like mechanical systems, have natural frequencies. By matching the resonant frequency of his primary and secondary circuits (f = 1/2&#960;&#8730;LC), he achieved enormous voltage amplification with minimal input power.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Colorado Springs (1899)</h4>
+            <p>Tesla built a 60-foot Tesla coil that produced 12 million volts and artificial lightning bolts over 130 feet long. He used the facility to study Earth's electrical resonance and wireless transmission over distances.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Fluorescent Lighting</h4>
+            <p>Tesla demonstrated wireless fluorescent lamps powered by high-frequency fields years before commercial fluorescent lighting existed. He showed that high-frequency currents could safely pass through the human body.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">X-Ray Observations</h4>
+            <p>Tesla produced X-ray images as early as 1894, before Roentgen's 1895 announcement. A laboratory fire destroyed much of his evidence, and he graciously acknowledged Roentgen's independent discovery.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Radio Transmission & Wireless Power</h2>
+    <p style="max-width: 85%; margin: 0.3em auto; text-align: center;">Tesla was among the earliest pioneers of <span class="accent">radio communication</span>, demonstrating wireless transmission years before Marconi's famous transatlantic signal.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Radio Patents (1897&ndash;1900)</h4>
+            <p>Tesla filed fundamental radio patents in 1897 describing tuned circuits for wireless telegraphy. His 1898 demonstration of a radio-controlled boat at Madison Square Garden stunned audiences&mdash;it was the world's first remote-controlled device.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Tesla vs. Marconi</h4>
+            <p>Marconi's 1901 transatlantic transmission used technology covered by Tesla's patents. In 1943, the US Supreme Court posthumously restored Tesla's radio patent priority over Marconi, recognizing Tesla's foundational contributions.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Wardenclyffe Tower (1901)</h4>
+            <p>Tesla's most ambitious project: a 187-foot tower on Long Island designed for transatlantic wireless communication and, ultimately, wireless power distribution. J.P. Morgan funded construction, but withdrew support when Tesla revealed his power transmission ambitions.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Wireless Power Vision</h4>
+            <p>Tesla envisioned a global wireless power system using the Earth and ionosphere as conductors. While his specific scheme was physically impractical at scale, the concept of wireless power transfer has been realized in modern technologies like inductive charging.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09</span>
+    <h2>The Method</h2>
+    <p style="text-align: center; max-width: 85%; margin: 0.3em auto;">Tesla's creative process was extraordinary&mdash;he <span class="accent">visualized complete machines</span> in his mind, tested them mentally, then built them with astonishing precision.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Mental<br>Visualization</h4>
+            <p>Complete machine appears fully formed in imagination</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Mental<br>Testing</h4>
+            <p>Run the device mentally, note wear and performance</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-blue">Physical<br>Construction</h4>
+            <p>Build to exact mental specifications</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Dramatic<br>Demonstration</h4>
+            <p>Public spectacle to prove the concept</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.6em;">
+        <div class="card">
+            <h4 class="accent-amber">The Eidetic Engineer</h4>
+            <p>Tesla described his mental process in detail: he would conceive an idea, construct it entirely in his imagination, mentally operate it for weeks, then check for signs of wear. When he finally built the physical device, it worked as imagined&mdash;often on the first attempt.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Showmanship as Strategy</h4>
+            <p>Tesla was a master of public demonstration. His 1891 lecture at Columbia University, where he held glowing tubes of gas lit wirelessly by high-frequency fields, made him the most famous electrical inventor in America and attracted essential funding.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Connections & Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node: Tesla -->
+            <circle cx="350" cy="160" r="38" fill="#161622" stroke="#9b72cf" stroke-width="2"/>
+            <text x="350" y="155" fill="#9b72cf" font-family="Playfair Display" font-size="13" text-anchor="middle" font-weight="700">Nikola</text>
+            <text x="350" y="172" fill="#9b72cf" font-family="Playfair Display" font-size="13" text-anchor="middle" font-weight="700">Tesla</text>
+            <!-- Edison -->
+            <line x1="312" y1="150" x2="150" y2="70" stroke="#cf7272" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="125" cy="60" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="125" y="57" fill="#cf7272" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Edison</text>
+            <text x="125" y="69" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Rival (DC)</text>
+            <!-- Westinghouse -->
+            <line x1="315" y1="175" x2="130" y2="240" stroke="#4ecca3" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="110" cy="250" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="110" y="247" fill="#4ecca3" font-family="DM Sans" font-size="8" text-anchor="middle" font-weight="700">Westinghouse</text>
+            <text x="110" y="259" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Patron & ally</text>
+            <!-- Marconi -->
+            <line x1="388" y1="155" x2="550" y2="75" stroke="#d4a053" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="570" cy="65" r="28" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="570" y="63" fill="#d4a053" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Marconi</text>
+            <text x="570" y="74" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Radio rival</text>
+            <!-- J.P. Morgan -->
+            <line x1="385" y1="175" x2="560" y2="235" stroke="#5b8cd4" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="575" cy="245" r="28" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="575" y="243" fill="#5b8cd4" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">J.P. Morgan</text>
+            <text x="575" y="254" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Funder</text>
+            <!-- Mark Twain -->
+            <line x1="350" y1="198" x2="350" y2="275" stroke="#e8b84b" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="350" cy="290" r="28" fill="#161622" stroke="#e8b84b" stroke-width="1.5"/>
+            <text x="350" y="288" fill="#e8b84b" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Mark Twain</text>
+            <text x="350" y="299" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Close friend</text>
+            <!-- Hertz -->
+            <line x1="350" y1="122" x2="350" y2="45" stroke="#e8b84b" stroke-width="1.2" opacity="0.6" stroke-dasharray="4,3"/>
+            <circle cx="350" cy="30" r="28" fill="#161622" stroke="#e8b84b" stroke-width="1.5"/>
+            <text x="350" y="28" fill="#e8b84b" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Hertz</text>
+            <text x="350" y="39" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">EM wave pioneer</text>
+            <!-- Kelvin -->
+            <line x1="312" y1="145" x2="230" y2="55" stroke="#9b72cf" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="215" cy="42" r="25" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="215" y="40" fill="#9b72cf" font-family="DM Sans" font-size="8" text-anchor="middle" font-weight="700">Lord Kelvin</text>
+            <text x="215" y="50" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Admirer</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Rivalry & Controversy</h2>
+    <div class="two-col">
+        <div>
+            <h3>Edison, Marconi, and the Myth</h3>
+            <p>Tesla's rivalry with <span class="accent-rose">Edison</span> has become legendary&mdash;and somewhat mythologized. Edison genuinely opposed AC and fought its adoption through dubious means. But the personal animosity is often overstated; Tesla later expressed respect for Edison's work ethic, if not his methods.</p>
+            <p>The <span class="accent-amber">Marconi controversy</span> is more clear-cut. Marconi's Nobel Prize for radio (1909) relied on Tesla's patented tuned circuits. The US Supreme Court's 1943 decision in Tesla's favor came too late for Tesla himself, who had died months earlier.</p>
+            <p>In later life, Tesla made <span class="accent-purple">increasingly grandiose claims</span>&mdash;death rays, communication with Mars, unlimited free energy&mdash;which damaged his scientific credibility. Modern admirers sometimes struggle to separate Tesla's genuine brilliance from his more speculative assertions.</p>
+        </div>
+        <div>
+            <div class="quote-box">
+                <p>"The present is theirs; the future, for which I really worked, is mine."</p>
+                <span class="attribution">&mdash; Nikola Tesla</span>
+            </div>
+            <div class="card" style="margin-top: 0.6em;">
+                <h4 class="accent-rose">The $50,000 Question</h4>
+                <p>Tesla claimed Edison promised him $50,000 to improve his DC generators. Upon completion, Edison allegedly said, "Tesla, you don't understand our American humor." Whether strictly true, the anecdote captures their fundamental incompatibility.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em;">
+                <h4 class="accent-blue">The Royalty Sacrifice</h4>
+                <p>When Westinghouse faced financial difficulty, Tesla reportedly tore up his AC royalty contract&mdash;worth potentially millions. Whether entirely voluntary or negotiated, this decision left Tesla without the fortune his inventions deserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Legacy in Modern Physics & Engineering</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Tesla (T) &mdash; SI Unit</h4>
+            <p>The SI unit of magnetic flux density was named the tesla in 1960. MRI machines operate at 1.5&ndash;3 T; the Earth's magnetic field is about 50 &#956;T. Every measurement of magnetic field strength honors his name.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Global AC Power Grid</h4>
+            <p>Every power outlet in the world delivers alternating current using Tesla's polyphase system. The entire global electrical infrastructure&mdash;generation, transmission, distribution&mdash;operates on principles he patented in the 1880s.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Electric Motors Everywhere</h4>
+            <p>Tesla's induction motor design drives industrial machinery, electric vehicles, washing machines, HVAC systems, and countless other applications. It remains the most widely used electric motor type, prized for its simplicity and reliability.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Wireless Power Renaissance</h4>
+            <p>Tesla's dream of wireless power is being realized through resonant inductive coupling in smartphone chargers, electric vehicle pads, and medical implants&mdash;using the exact resonance principles he demonstrated over a century ago.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Applications Today</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Electric Vehicles</h4>
+            <p>Modern EVs use AC induction motors directly descended from Tesla's 1888 design. Tesla, Inc. chose its name in tribute. The motor's efficiency and simplicity make it ideal for automotive applications.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Wireless Charging</h4>
+            <p>Qi chargers for phones and inductive pads for EVs use resonant coupling&mdash;the same principle Tesla demonstrated when he lit wireless lamps across a room in the 1890s.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Power Transmission</h4>
+            <p>High-voltage AC transmission lines spanning continents carry power from remote generating stations to cities. Every transformer on every utility pole uses the AC voltage conversion Tesla championed.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Radio & Communications</h4>
+            <p>Tesla's tuned circuit patents underlie all radio technology. Modern cell towers, Wi-Fi routers, and Bluetooth devices use frequency-selective resonant circuits derived from his fundamental work.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Robotics & Remote Control</h4>
+            <p>Tesla's 1898 radio-controlled boat was the first teleautomaton. Modern drones, remote surgery robots, and autonomous vehicles trace their conceptual lineage to his Madison Square Garden demonstration.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">MRI & Medical Tech</h4>
+            <p>MRI scanners measure magnetic flux in tesla units, and their RF coils operate on resonance principles Tesla pioneered. Implantable medical devices increasingly use wireless power transfer he envisioned.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Timeline</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 40" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="20" x2="680" y2="20" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="40" cy="20" r="4" fill="#9b72cf"/>
+            <circle cx="130" cy="20" r="4" fill="#9b72cf"/>
+            <circle cx="210" cy="20" r="4" fill="#4ecca3"/>
+            <circle cx="300" cy="20" r="4" fill="#d4a053"/>
+            <circle cx="390" cy="20" r="4" fill="#5b8cd4"/>
+            <circle cx="480" cy="20" r="4" fill="#cf7272"/>
+            <circle cx="570" cy="20" r="4" fill="#e8b84b"/>
+            <circle cx="660" cy="20" r="4" fill="#cf7272"/>
+            <text x="40" y="12" fill="#9b72cf" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1856</text>
+            <text x="130" y="12" fill="#9b72cf" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1884</text>
+            <text x="210" y="12" fill="#4ecca3" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1888</text>
+            <text x="300" y="12" fill="#d4a053" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1893</text>
+            <text x="390" y="12" fill="#5b8cd4" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1899</text>
+            <text x="480" y="12" fill="#cf7272" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1901</text>
+            <text x="570" y="12" fill="#e8b84b" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1917</text>
+            <text x="660" y="12" fill="#cf7272" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1943</text>
+        </svg>
+    </div>
+    <div style="max-width: 85%; margin: 0.3em auto;">
+        <div class="timeline-item">
+            <div class="year">1856</div>
+            <div class="event"><strong>Born in Smiljan</strong>Son of a Serbian Orthodox priest in the Austrian Military Frontier (modern Croatia).</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1882</div>
+            <div class="event"><strong>Budapest epiphany</strong>The rotating magnetic field and AC motor design appear fully formed in Tesla's mind during a walk.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1884</div>
+            <div class="event"><strong>Arrives in New York</strong>Begins working for Edison; their partnership lasts only six months.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1888</div>
+            <div class="event"><strong>Westinghouse alliance</strong>Files 40+ AC patents. Delivers landmark AIEE lecture. Westinghouse purchases patent rights.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1891</div>
+            <div class="event"><strong>Tesla coil invented</strong>Demonstrates high-frequency phenomena and wireless lighting at Columbia University.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1893</div>
+            <div class="event"><strong>Chicago World's Fair</strong>Tesla's AC system illuminates the fair. Decisive victory in the War of Currents.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1898</div>
+            <div class="event"><strong>Radio-controlled boat</strong>Demonstrates the teleautomaton at Madison Square Garden&mdash;world's first remote control.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1899</div>
+            <div class="event"><strong>Colorado Springs</strong>Generates artificial lightning and studies wireless power transmission in a massive laboratory.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1901</div>
+            <div class="event"><strong>Wardenclyffe begins</strong>Construction starts on the wireless tower; Morgan funds then abandons the project.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">1943</div>
+            <div class="event"><strong>Dies in New York, age 86</strong>Found alone in his room at the Hotel New Yorker. The Supreme Court restores his radio patent priority that same year.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">My Inventions: The Autobiography of Nikola Tesla</h4>
+            <p><strong>Nikola Tesla</strong> (1919, serialized). Tesla's own account of his life and creative process, originally published in <em>Electrical Experimenter</em>. Vivid, eccentric, and essential primary source material.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Tesla: Inventor of the Electrical Age</h4>
+            <p><strong>W. Bernard Carlson</strong> (2013). The definitive modern biography, meticulously researched and balanced. Carlson examines Tesla's inventions in technical detail while placing them in social and economic context.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Wizard: The Life and Times of Nikola Tesla</h4>
+            <p><strong>Marc Seifer</strong> (1996). A comprehensive biography drawing on previously unavailable sources, covering Tesla's entire life from Smiljan to the Hotel New Yorker.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Empires of Light</h4>
+            <p><strong>Jill Jonnes</strong> (2003). The story of the War of Currents told through Edison, Tesla, and Westinghouse. Vivid narrative history of how AC triumphed and electrified America.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Nikola Tesla Patent Collection</h4>
+            <p><strong>Various editors</strong>. Collections of Tesla's 300+ patents reveal the depth and breadth of his inventive output&mdash;from AC power systems to radio to turbines to logic gates.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Tesla: Man Out of Time</h4>
+            <p><strong>Margaret Cheney</strong> (1981). An accessible popular biography that helped revive public interest in Tesla during the 1980s. Good introduction for general readers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="60" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="45" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#9b72cf" stroke-width="0.7" opacity="0.5">
+                <ellipse cx="100" cy="100" rx="85" ry="30"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(60 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(120 100 100)"/>
+            </g>
+            <!-- Lightning bolt at center -->
+            <path d="M105 75 L95 98 L108 95 L98 125" fill="none" stroke="#9b72cf" stroke-width="2" opacity="0.9" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h2>Nikola Tesla</h2>
+    <p class="subtitle">1856 &mdash; 1943</p>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width: 70%;">
+        <p>"The present is theirs; the future, for which I really worked, is mine."</p>
+        <span class="attribution">&mdash; Nikola Tesla</span>
+    </div>
+    <p style="text-align: center; margin-top: 1em; color: var(--text-muted); font-size: 0.42em;">He imagined machines in his mind, then built them to change the world. The current still flows.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

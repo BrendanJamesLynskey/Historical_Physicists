@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Josiah Willard Gibbs — The Quiet Architect of Physical Chemistry</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #4ecca3; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="60" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="70" cy="70" r="45" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.25"/>
+      <circle cx="70" cy="70" r="30" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.2"/>
+      <polygon points="70,15 120,95 20,95" fill="none" stroke="#4ecca3" stroke-width="0.6" opacity="0.35"/>
+      <polygon points="70,125 20,45 120,45" fill="none" stroke="#4ecca3" stroke-width="0.6" opacity="0.35"/>
+      <text x="70" y="74" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display,serif" font-size="16" font-weight="700">G</text>
+    </svg>
+  </div>
+  <h1>Josiah Willard Gibbs</h1>
+  <p class="subtitle">The Quiet Architect of Physical Chemistry &amp; Statistical Mechanics</p>
+  <div class="separator"></div>
+  <p style="text-align:center; color: var(--text-muted); font-size:0.44em;">1839 &ndash; 1903 &nbsp;|&nbsp; New Haven, Connecticut</p>
+  <div style="margin-top:0.8em; text-align:center;">
+    <span class="tag green">Thermodynamics</span>
+    <span class="tag">Statistical Mechanics</span>
+    <span class="tag amber">Vector Analysis</span>
+    <span class="tag blue">Signal Processing</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2: EARLY LIFE ============ -->
+<section>
+  <span class="section-number">01 &mdash; ORIGINS</span>
+  <h2>Early Life &amp; Education</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Josiah Willard Gibbs was born on February 11, 1839, in New Haven, Connecticut, into a family of deep intellectual lineage. His father, also Josiah Willard Gibbs, was a distinguished professor of sacred literature at Yale, known for his role in the Amistad trial where he helped identify the captives' Mende language.</p>
+      <p>The young Gibbs grew up in the rarefied atmosphere of Yale's academic community. He excelled as a student, winning prizes in both Latin and mathematics. He entered Yale College at fifteen and graduated in 1858, continuing directly into graduate studies. In 1863, he earned one of the first American doctorates in engineering, with a thesis on gear design that revealed his talent for combining rigorous mathematics with physical intuition.</p>
+      <p>Tragedy marked his early years: both parents and two sisters died during his youth, leaving him to care for his remaining sister Anna. Despite personal grief, Gibbs spent three formative years (1866&ndash;1869) studying in Paris, Berlin, and Heidelberg, absorbing the latest European advances in mathematics and physics from luminaries like Kirchhoff and Helmholtz.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent">Yale Roots</h4>
+        <p>Gibbs lived nearly his entire life within a few blocks of the Yale campus. He never married, sharing his family home with his sister Anna and her husband. His world was the life of the mind.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">European Sojourn</h4>
+        <p>In Paris, Berlin, and Heidelberg, Gibbs attended lectures by some of the greatest scientific minds in Europe. This immersion transformed a talented American engineer into a theoretical physicist of the first rank.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">The Quiet Scholar</h4>
+        <p>Returning to New Haven in 1869, Gibbs was appointed professor of mathematical physics at Yale in 1871 &mdash; a position he held without salary for nine years, living on his modest inheritance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3: CAREER ============ -->
+<section>
+  <span class="section-number">02 &mdash; CAREER</span>
+  <h2>Academic Life at Yale</h2>
+  <div class="separator"></div>
+  <div class="two-col wide-left">
+    <div>
+      <p>Gibbs's career was extraordinary in its quietude and its depth. He spent his entire professional life at Yale, from 1871 until his death in 1903, never seeking fame or wider recognition. He published his most revolutionary work in the <em>Transactions of the Connecticut Academy of Arts and Sciences</em> &mdash; an obscure local journal that few European scientists read.</p>
+      <p>His magnum opus, <em>"On the Equilibrium of Heterogeneous Substances"</em> (1876&ndash;1878), ran to over 300 pages and single-handedly founded chemical thermodynamics. Yet for years it remained virtually unknown outside a small circle. It was only when Wilhelm Ostwald translated it into German in 1892 and Le Chatelier into French that Europe awakened to the revolution Gibbs had wrought.</p>
+      <p>Yale nearly lost Gibbs in 1880 when Johns Hopkins offered him a position at $3,000 per year. Yale countered with $2,000 &mdash; Gibbs's first salary after nine unpaid years &mdash; and he stayed, choosing familiarity over fortune. He taught small graduate classes, mentored a handful of brilliant students including Edwin Bidwell Wilson and Lee De Forest, and lived a life of almost monastic devotion to thought.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent">Key Positions</h4>
+        <p>Professor of Mathematical Physics, Yale (1871&ndash;1903). The first such chair in America. He held it for 32 years.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-blue">Recognition</h4>
+        <p>Rumford Prize (1880), elected to the National Academy of Sciences, Foreign Member of the Royal Society, Copley Medal (1901) &mdash; the highest honor in British science.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-rose">Teaching Style</h4>
+        <p>Gibbs rarely had more than a handful of students. His lectures were dense, demanding, and brilliant &mdash; comprehensible only to those willing to follow his austere mathematical reasoning to its logical conclusions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4: HISTORICAL CONTEXT ============ -->
+<section>
+  <span class="section-number">03 &mdash; CONTEXT</span>
+  <h2>The Age of Thermodynamics</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Gibbs worked during the golden age of thermodynamics, when the laws discovered by Carnot, Clausius, and Lord Kelvin were being extended and refined. The industrial revolution had made steam engines ubiquitous, and the science of heat and energy was the most pressing frontier of physics.</p>
+      <p>Yet a profound gap existed between the macroscopic laws of thermodynamics and the emerging atomic hypothesis. Boltzmann in Vienna was building statistical mechanics from kinetic theory, but his work was fiercely contested by Mach, Ostwald, and the energeticists who denied the reality of atoms. Meanwhile, Maxwell in Cambridge was developing electromagnetic theory and kinetic gas theory simultaneously.</p>
+      <p>In America, theoretical physics barely existed. The nation was focused on practical engineering and westward expansion. Gibbs worked in near-isolation, creating a body of theory that was decades ahead of American scientific culture. His work bridged continents of thought: connecting French analytical mechanics, German thermodynamics, and British electromagnetic theory into a unified mathematical framework.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">The Thermodynamic Revolution</h4>
+        <p>Clausius formulated entropy (1865), Boltzmann developed the H-theorem (1872), and Maxwell's demon challenged the second law. Gibbs synthesized these threads into a complete theory of chemical equilibrium.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-purple">The Atomic Debate</h4>
+        <p>Were atoms real, or merely useful fictions? This question divided physics for decades. Gibbs's statistical mechanics was agnostic &mdash; it worked regardless, a testament to its mathematical power.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">American Science</h4>
+        <p>In the 1870s, America had virtually no tradition of theoretical physics. Gibbs was a singular figure, creating world-class theory in a culture that valued practical invention over abstract thought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5: CONTRIBUTION #1 + SVG ============ -->
+<section>
+  <span class="section-number">04 &mdash; THERMODYNAMICS</span>
+  <h2>Gibbs Free Energy &amp; Chemical Thermodynamics</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Gibbs's greatest single contribution was the concept of <strong class="accent">Gibbs free energy</strong>, <code>G = H - TS</code>, and the comprehensive framework of chemical thermodynamics built around it. In his monumental paper "On the Equilibrium of Heterogeneous Substances," he showed that chemical reactions proceed spontaneously when they decrease the Gibbs free energy of the system at constant temperature and pressure.</p>
+      <p>He introduced the <strong class="accent">chemical potential</strong> &mu;<sub>i</sub> &mdash; the partial molar Gibbs energy &mdash; and showed that equilibrium requires equal chemical potentials across all phases. This single insight unified the treatment of phase transitions, chemical reactions, surface phenomena, and electrochemistry.</p>
+      <p>The <strong class="accent">Gibbs phase rule</strong>, <code>F = C - P + 2</code>, elegantly relates the degrees of freedom (F) of a system to the number of components (C) and phases (P). It remains the foundational tool for understanding phase diagrams in metallurgy, geology, and chemical engineering.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- Gibbs free energy surface -->
+          <defs>
+            <linearGradient id="surfGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#4ecca3" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#4ecca3" stop-opacity="0.05"/>
+            </linearGradient>
+          </defs>
+          <!-- Axes -->
+          <line x1="40" y1="240" x2="300" y2="240" stroke="#2a2a3a" stroke-width="1.5"/>
+          <line x1="40" y1="240" x2="40" y2="20" stroke="#2a2a3a" stroke-width="1.5"/>
+          <text x="170" y="265" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="11">Temperature (T)</text>
+          <text x="15" y="130" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="11" transform="rotate(-90,15,130)">Gibbs Free Energy (G)</text>
+          <!-- G curves for two phases -->
+          <path d="M60,60 Q120,100 180,160 Q220,200 280,230" fill="none" stroke="#4ecca3" stroke-width="2"/>
+          <path d="M60,180 Q120,170 180,160 Q220,140 280,100" fill="none" stroke="#d4a053" stroke-width="2"/>
+          <!-- Intersection point -->
+          <circle cx="180" cy="160" r="5" fill="#4ecca3" stroke="#0a0a0f" stroke-width="2"/>
+          <!-- Labels -->
+          <text x="85" y="55" fill="#4ecca3" font-family="Playfair Display,serif" font-style="italic" font-size="12">G (solid)</text>
+          <text x="85" y="195" fill="#d4a053" font-family="Playfair Display,serif" font-style="italic" font-size="12">G (liquid)</text>
+          <text x="188" y="152" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="10">T_m</text>
+          <!-- Annotation -->
+          <line x1="180" y1="160" x2="180" y2="240" stroke="#4ecca3" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
+          <text x="160" y="17" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="9">GIBBS FREE ENERGY vs TEMPERATURE</text>
+          <!-- Shaded stability regions -->
+          <rect x="42" y="242" width="136" height="8" fill="#4ecca3" opacity="0.15" rx="2"/>
+          <rect x="182" y="242" width="116" height="8" fill="#d4a053" opacity="0.15" rx="2"/>
+          <text x="110" y="260" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono,monospace" font-size="8">SOLID STABLE</text>
+          <text x="240" y="260" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono,monospace" font-size="8">LIQUID STABLE</text>
+        </svg>
+      </div>
+      <p style="font-size:0.40em !important; text-align:center; color:var(--text-muted);">The phase with lower G is thermodynamically stable. At T<sub>m</sub>, both phases coexist in equilibrium.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 6: CONTRIBUTION #1 DEEP DIVE ============ -->
+<section>
+  <span class="section-number">04a &mdash; DEEP DIVE</span>
+  <h2>The Equilibrium of Heterogeneous Substances</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; margin:0 auto 0.5em auto;">Published in two parts (1876 and 1878) in the <em>Transactions of the Connecticut Academy</em>, this 300-page treatise is arguably the most important single work in the history of chemistry. Its consequences are still being explored today.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent">Chemical Potential</h4>
+      <p>Gibbs defined &mu;<sub>i</sub> = (&part;G/&part;n<sub>i</sub>)<sub>T,P</sub> and showed that matter flows from regions of high to low chemical potential, just as heat flows from high to low temperature. This gave chemistry its first rigorous driving force.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Phase Rule</h4>
+      <p>The deceptively simple equation F = C - P + 2 tells you exactly how many independent variables you can change while maintaining phase equilibrium. It governs every phase diagram in materials science, from steel to semiconductors.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Gibbs-Duhem Relation</h4>
+      <p>S dT - V dP + &Sigma; n<sub>i</sub> d&mu;<sub>i</sub> = 0. This constraint on intensive variables means that not all chemical potentials in a mixture are independent &mdash; a result fundamental to solution thermodynamics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Surface Thermodynamics</h4>
+      <p>Gibbs extended thermodynamics to interfaces, introducing the concept of surface excess and the Gibbs adsorption isotherm. This founded the entire field of surface chemistry and remains central to colloid science.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Electrochemistry</h4>
+      <p>By relating electrical work to Gibbs energy changes (&Delta;G = -nFE), Gibbs provided the theoretical basis for understanding galvanic cells, electrolysis, and corrosion. Every battery relies on his framework.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Geometric Vision</h4>
+      <p>Gibbs thought geometrically, visualizing thermodynamic surfaces in abstract spaces. His energy-entropy-volume surface for a pure substance was a breakthrough in scientific visualization, praised by Maxwell who built a physical model of it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 7: CONTRIBUTION #2 + SVG ============ -->
+<section>
+  <span class="section-number">05 &mdash; STATISTICAL MECHANICS</span>
+  <h2>Statistical Mechanics &amp; Ensemble Theory</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>In his 1902 masterwork <em>Elementary Principles in Statistical Mechanics</em>, Gibbs created the modern framework of statistical mechanics. While Boltzmann had pioneered the kinetic approach &mdash; tracking individual molecular trajectories &mdash; Gibbs took a radically different path: he considered <strong class="accent">ensembles</strong>, vast collections of hypothetical copies of a system.</p>
+      <p>He defined three fundamental ensembles: the <strong class="accent">microcanonical</strong> (fixed energy), the <strong class="accent">canonical</strong> (fixed temperature, exchanging energy with a heat bath), and the <strong class="accent">grand canonical</strong> (exchanging both energy and particles). Each corresponds to different physical constraints, and together they provide a complete statistical description of matter.</p>
+      <p>The <strong class="accent">partition function</strong> Z = &Sigma; exp(-E<sub>i</sub>/k<sub>B</sub>T) emerged as the central mathematical object: once you know Z, you can derive every thermodynamic property by differentiation. This elegant structure made statistical mechanics rigorous and generalizable far beyond ideal gases.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- Phase diagram -->
+          <text x="160" y="17" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="9">PHASE DIAGRAM (P-T)</text>
+          <!-- Axes -->
+          <line x1="50" y1="250" x2="300" y2="250" stroke="#2a2a3a" stroke-width="1.5"/>
+          <line x1="50" y1="250" x2="50" y2="30" stroke="#2a2a3a" stroke-width="1.5"/>
+          <text x="175" y="272" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="11">Temperature</text>
+          <text x="20" y="140" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="11" transform="rotate(-90,20,140)">Pressure</text>
+          <!-- Solid-Liquid boundary -->
+          <path d="M130,30 Q135,100 140,170" fill="none" stroke="#9b72cf" stroke-width="2"/>
+          <!-- Solid-Gas boundary -->
+          <path d="M60,245 Q90,220 140,170" fill="none" stroke="#4ecca3" stroke-width="2"/>
+          <!-- Liquid-Gas boundary -->
+          <path d="M140,170 Q190,145 240,120" fill="none" stroke="#d4a053" stroke-width="2"/>
+          <!-- Triple point -->
+          <circle cx="140" cy="170" r="5" fill="#cf7272" stroke="#0a0a0f" stroke-width="2"/>
+          <text x="155" y="185" fill="#cf7272" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">Triple Point</text>
+          <!-- Critical point -->
+          <circle cx="240" cy="120" r="5" fill="#5b8cd4" stroke="#0a0a0f" stroke-width="2"/>
+          <text x="248" y="115" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">Critical Point</text>
+          <!-- Phase labels -->
+          <text x="85" y="100" fill="#9b72cf" font-family="Playfair Display,serif" font-size="14" font-weight="700" opacity="0.8">Solid</text>
+          <text x="190" y="80" fill="#d4a053" font-family="Playfair Display,serif" font-size="14" font-weight="700" opacity="0.8">Liquid</text>
+          <text x="185" y="230" fill="#4ecca3" font-family="Playfair Display,serif" font-size="14" font-weight="700" opacity="0.8">Gas</text>
+          <!-- Supercritical region -->
+          <text x="268" y="72" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="9" opacity="0.7">Supercritical</text>
+          <text x="268" y="83" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="9" opacity="0.7">Fluid</text>
+          <!-- Phase rule annotation -->
+          <rect x="55" y="35" width="65" height="20" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+          <text x="87" y="49" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono,monospace" font-size="9">F = C-P+2</text>
+        </svg>
+      </div>
+      <p style="font-size:0.40em !important; text-align:center; color:var(--text-muted);">A single-component phase diagram illustrating the Gibbs phase rule. At the triple point (P=3, C=1), F=0: no degrees of freedom remain.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 8: CONTRIBUTION #2 DEEP DIVE ============ -->
+<section>
+  <span class="section-number">05a &mdash; DEEP DIVE</span>
+  <h2>Elementary Principles in Statistical Mechanics</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; margin:0 auto 0.5em auto;">Published just one year before his death, this book was Gibbs's final gift to physics. It recast statistical mechanics on foundations so solid that they remain essentially unchanged today.</p>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">The Canonical Ensemble</h4>
+      <p>A system in thermal contact with a reservoir at temperature T. The probability of microstate i is P<sub>i</sub> = exp(-E<sub>i</sub>/k<sub>B</sub>T)/Z. From this single formula flows all of equilibrium thermodynamics: internal energy, entropy, free energy, heat capacity &mdash; everything extracted from derivatives of ln(Z).</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Gibbs Entropy Formula</h4>
+      <p>S = -k<sub>B</sub> &Sigma; P<sub>i</sub> ln P<sub>i</sub>. This general expression for entropy in terms of probabilities is more fundamental than Boltzmann's S = k ln W, and it directly inspired Shannon's information entropy in 1948. It bridges physics and information theory.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Gibbs Paradox</h4>
+      <p>Gibbs identified a puzzle in the entropy of mixing identical gases &mdash; classical statistical mechanics gives a non-extensive entropy unless you divide by N! to account for particle indistinguishability. This correction anticipated quantum statistics by decades.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Grand Canonical Ensemble</h4>
+      <p>By allowing particle number to fluctuate, Gibbs created the framework essential for understanding open systems, chemical reactions in equilibrium, adsorption, and eventually quantum field theory where particle number is fundamentally variable.</p>
+    </div>
+  </div>
+  <div class="quote-box">
+    <p>"In the present state of science, it seems hardly possible to frame a dynamic theory of molecular action which shall embrace the phenomena of thermodynamics."</p>
+    <span class="attribution">&mdash; J. W. Gibbs, preface to <em>Elementary Principles</em> (1902)</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 9: CONTRIBUTION #3 ============ -->
+<section>
+  <span class="section-number">06 &mdash; VECTOR ANALYSIS &amp; SIGNAL PROCESSING</span>
+  <h2>Vector Analysis &amp; the Gibbs Phenomenon</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Liberating Physics from Quaternions</h3>
+      <p>In the 1880s, Gibbs independently developed <strong class="accent">vector analysis</strong> &mdash; the system of dot products, cross products, divergence, curl, and gradient that physicists and engineers use universally today. Working in parallel with Oliver Heaviside in England, Gibbs extracted the useful parts of Hamilton's quaternion algebra and discarded the rest.</p>
+      <p>He printed his vector notation as a private pamphlet for his students (1881&ndash;1884), which circulated among physicists and eventually triumphed over the quaternion system championed by Tait and others. His student E. B. Wilson formalized it in the textbook <em>Vector Analysis</em> (1901), which became the standard reference.</p>
+      <h3 style="margin-top:0.5em;">The Gibbs Phenomenon</h3>
+      <p>In signal processing, the <strong class="accent">Gibbs phenomenon</strong> describes the persistent overshoot (~9%) that occurs when a Fourier series is truncated near a discontinuity. Gibbs identified this in 1898 during a debate with Michelson over harmonic analyzers. It remains crucial in digital signal processing, explaining ringing artifacts in filtered signals and images, and motivating the use of window functions and sigma factors.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent">The Quaternion War</h4>
+        <p>Peter Guthrie Tait accused Gibbs of "mutilating" Hamilton's beautiful quaternions. Gibbs replied with characteristic calm that utility, not beauty, should determine notation. History sided with Gibbs and Heaviside.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Gibbs Phenomenon in DSP</h4>
+        <p>The ~9% overshoot at discontinuities persists no matter how many terms are added to a Fourier series. This insight is essential for understanding ringing in digital filters, JPEG compression artifacts, and spectral leakage in FFT analysis.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-blue">The Michelson Debate</h4>
+        <p>Albert Michelson built a mechanical harmonic analyzer and claimed Fourier theory was flawed when it showed overshoots. Gibbs proved the overshoot was real and inherent &mdash; a property of Fourier analysis itself, not a machine error.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Dyadic Notation</h4>
+        <p>Gibbs also invented dyadics &mdash; a precursor to tensor notation &mdash; giving physics the language to express stress, strain, and electromagnetic fields in coordinate-free form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 10: THE METHOD ============ -->
+<section>
+  <span class="section-number">07 &mdash; METHOD</span>
+  <h2>The Gibbsian Method</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; margin:0 auto 0.5em auto;">Gibbs's approach to physics was distinctive and deeply influential. He combined the rigor of pure mathematics with unfailing physical intuition, creating frameworks of such generality that they encompassed entire disciplines.</p>
+  <div class="process-flow">
+    <div class="process-step">
+      <h4 class="accent">Generalize</h4>
+      <p>Start from the most general case. Never restrict to special systems until forced by nature.</p>
+    </div>
+    <span class="process-arrow">&rarr;</span>
+    <div class="process-step">
+      <h4 class="accent-amber">Geometrize</h4>
+      <p>Think in terms of surfaces, spaces, and geometric constructions in abstract phase space.</p>
+    </div>
+    <span class="process-arrow">&rarr;</span>
+    <div class="process-step">
+      <h4 class="accent-purple">Economize</h4>
+      <p>Express results in the most compact, elegant mathematical form possible.</p>
+    </div>
+    <span class="process-arrow">&rarr;</span>
+    <div class="process-step">
+      <h4 class="accent-blue">Unify</h4>
+      <p>Reveal hidden connections between seemingly disparate phenomena through shared structure.</p>
+    </div>
+  </div>
+  <div class="card-grid cols-2" style="margin-top:0.6em;">
+    <div class="card">
+      <h4 class="accent-green">Mathematical Rigor</h4>
+      <p>Gibbs demanded mathematical precision that was unusual for his era. His proofs were complete, his definitions exact, his logic airtight. This made his work difficult to read but impossible to refute. Einstein later said Gibbs was "the greatest mind in American history."</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Physical Agnosticism</h4>
+      <p>Gibbs deliberately avoided assumptions about molecular structure. His statistical mechanics works whether atoms are real or not, whether they obey classical or quantum mechanics. This philosophical restraint gave his work extraordinary longevity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 11: CONNECTIONS SVG ============ -->
+<section>
+  <span class="section-number">08 &mdash; CONNECTIONS</span>
+  <h2>Gibbs's Intellectual Network</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- Connection lines -->
+      <line x1="350" y1="190" x2="140" y2="70" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="560" y2="70" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="100" y2="200" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="600" y2="200" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="140" y2="320" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="350" y2="340" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="560" y2="320" stroke="#2a2a3a" stroke-width="1.5"/>
+      <!-- Gibbs node -->
+      <circle cx="350" cy="190" r="32" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="2.5"/>
+      <text x="350" y="186" text-anchor="middle" fill="#4ecca3" font-family="Playfair Display,serif" font-size="11" font-weight="700">Gibbs</text>
+      <text x="350" y="200" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">1839-1903</text>
+      <!-- Maxwell -->
+      <circle cx="140" cy="70" r="26" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
+      <text x="140" y="67" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Maxwell</text>
+      <text x="140" y="79" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Thermo surface</text>
+      <!-- Boltzmann -->
+      <circle cx="560" cy="70" r="26" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+      <text x="560" y="67" text-anchor="middle" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Boltzmann</text>
+      <text x="560" y="79" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Stat. mech.</text>
+      <!-- Heaviside -->
+      <circle cx="100" cy="200" r="26" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+      <text x="100" y="197" text-anchor="middle" fill="#9b72cf" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Heaviside</text>
+      <text x="100" y="209" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Vectors</text>
+      <!-- Ostwald -->
+      <circle cx="600" cy="200" r="26" fill="var(--bg-card)" stroke="#cf7272" stroke-width="1.5"/>
+      <text x="600" y="197" text-anchor="middle" fill="#cf7272" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Ostwald</text>
+      <text x="600" y="209" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Translator</text>
+      <!-- Shannon -->
+      <circle cx="140" cy="320" r="26" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+      <text x="140" y="317" text-anchor="middle" fill="#4ecca3" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Shannon</text>
+      <text x="140" y="329" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Info entropy</text>
+      <!-- Wilson -->
+      <circle cx="350" cy="340" r="26" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
+      <text x="350" y="337" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">E.B. Wilson</text>
+      <text x="350" y="349" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Vector text</text>
+      <!-- De Forest -->
+      <circle cx="560" cy="320" r="26" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+      <text x="560" y="317" text-anchor="middle" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">De Forest</text>
+      <text x="560" y="329" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Radio pioneer</text>
+    </svg>
+  </div>
+  <p style="text-align:center; font-size:0.44em !important; color:var(--text-muted); max-width:80%; margin:0.3em auto;">Maxwell built a clay model of Gibbs's thermodynamic surface. Boltzmann and Gibbs developed statistical mechanics independently. Shannon's information entropy directly echoes the Gibbs entropy formula.</p>
+</section>
+
+<!-- ============ SLIDE 12: RIVALRY / CONTROVERSY ============ -->
+<section>
+  <span class="section-number">09 &mdash; CONTROVERSY</span>
+  <h2>The Quaternion War &amp; the Problem of Obscurity</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Gibbs vs. the Quaternionists</h3>
+      <p>The most public controversy of Gibbs's career was the <strong class="accent-rose">quaternion debate</strong> of the 1890s. William Rowan Hamilton had invented quaternions in 1843, and his followers &mdash; led by Peter Guthrie Tait in Edinburgh &mdash; insisted they were the natural language for physics. Gibbs (and independently Heaviside) stripped quaternions down to the vector algebra we use today, keeping dot and cross products while discarding the awkward quaternion multiplication rules.</p>
+      <p>Tait was furious, calling Gibbs's system a "hermaphrodite monster." Gibbs replied with devastating courtesy in <em>Nature</em>, arguing that notation should serve physics, not the memory of Hamilton. The debate raged in journals for years, but Gibbs's pragmatic vector system won decisively. By 1910, quaternions had retreated to pure mathematics (though they returned much later in computer graphics and spacecraft navigation).</p>
+      <h3 style="margin-top:0.5em;">The Problem of Obscurity</h3>
+      <p>Gibbs's choice to publish in the <em>Transactions of the Connecticut Academy</em> meant that his work took years to reach the scientists who needed it. Maxwell was one of the few who read the obscure journal. Had Gibbs published in European journals, the development of physical chemistry might have been accelerated by a decade.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-rose">Tait's Fury</h4>
+        <p>"Even Prof. Willard Gibbs must be ranked as one of the retarders of quaternion progress." &mdash; P. G. Tait. Yet Gibbs's calm, logical responses systematically dismantled every argument for quaternion superiority in physics.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Delayed Recognition</h4>
+        <p>Le Chatelier, upon reading Gibbs's thermodynamic work for the first time in 1899, exclaimed that Gibbs had anticipated virtually everything the European school had laboriously discovered over two decades.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-blue">Boltzmann vs. Gibbs?</h4>
+        <p>There was no rivalry. Boltzmann praised Gibbs generously. But their approaches were deeply different: Boltzmann was mechanical and molecular, Gibbs was abstract and ensemble-based. History proved both essential.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Gibbs's Modesty</h4>
+        <p>When urged to publicize his work, Gibbs reportedly said he had published it and that was sufficient. His diffidence cost American science dearly in international recognition during his lifetime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 13: LEGACY ============ -->
+<section>
+  <span class="section-number">10 &mdash; LEGACY</span>
+  <h2>Legacy &amp; Lasting Influence</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent">Chemical Engineering</h4>
+      <p>Every chemical plant, refinery, and pharmaceutical process relies on Gibbs's thermodynamic framework. The Gibbs free energy criterion determines whether reactions are spontaneous, what products form, and how to optimize yields.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Materials Science</h4>
+      <p>Phase diagrams &mdash; governed by the Gibbs phase rule &mdash; are the fundamental tools for designing alloys, ceramics, and semiconductors. The entire field of computational thermodynamics (CALPHAD) is built on Gibbs's ideas.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Information Theory</h4>
+      <p>Claude Shannon explicitly modeled his information entropy H = -&Sigma; p<sub>i</sub> log p<sub>i</sub> on the Gibbs entropy formula. The mathematical structure Gibbs created for physics became the foundation of communications engineering.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Quantum Mechanics</h4>
+      <p>Gibbs's ensemble approach translated directly into quantum statistical mechanics. The density matrix formalism, Fermi-Dirac and Bose-Einstein statistics, and modern many-body theory all rest on Gibbsian foundations.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Signal Processing</h4>
+      <p>The Gibbs phenomenon shapes the design of digital filters, window functions, and anti-aliasing algorithms. Understanding Fourier series convergence behavior near discontinuities remains essential in DSP, MRI imaging, and audio processing.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Machine Learning</h4>
+      <p>Gibbs sampling, a Markov chain Monte Carlo algorithm named in his honor, is a cornerstone of Bayesian inference and probabilistic machine learning. His partition function appears throughout modern energy-based models.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.6em;">
+    <p>"Gibbs did for statistical mechanics and thermodynamics what Laplace did for celestial mechanics and what Maxwell did for electrodynamics."</p>
+    <span class="attribution">&mdash; Henri Poincar&eacute;</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 14: APPLICATIONS ============ -->
+<section>
+  <span class="section-number">11 &mdash; APPLICATIONS</span>
+  <h2>Modern Applications of Gibbs's Work</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Industrial &amp; Engineering Applications</h3>
+      <ul>
+        <li><strong class="accent">Pharmaceutical design</strong> &mdash; Gibbs free energy calculations predict drug solubility, crystal polymorphs, and stability. Every drug formulation team uses his thermodynamics daily.</li>
+        <li><strong class="accent-amber">Battery technology</strong> &mdash; Lithium-ion batteries, fuel cells, and next-generation solid-state batteries are all designed using Gibbs energy diagrams and electrochemical potentials.</li>
+        <li><strong class="accent-purple">Climate modeling</strong> &mdash; Statistical mechanical ensembles model atmospheric chemistry and ocean thermodynamics. Gibbs's framework describes phase transitions in clouds.</li>
+        <li><strong class="accent-blue">Semiconductor fabrication</strong> &mdash; Phase diagrams govern crystal growth, doping, and thin-film deposition in chip manufacturing. The Gibbs phase rule determines process windows.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Signal Processing &amp; Computing</h3>
+      <ul>
+        <li><strong class="accent-green">Digital audio</strong> &mdash; The Gibbs phenomenon explains ringing at sharp transients in audio signals. Windowing functions (Hann, Hamming, Blackman) are designed specifically to mitigate this overshoot.</li>
+        <li><strong class="accent-rose">Medical imaging</strong> &mdash; MRI reconstruction uses Fourier techniques where Gibbs artifacts appear at tissue boundaries. Specialized filters suppress these overshoots for clearer diagnostic images.</li>
+        <li><strong class="accent">Deep learning</strong> &mdash; Boltzmann machines and restricted Boltzmann machines use the Gibbs distribution directly. Modern energy-based models and diffusion models trace their mathematical lineage to Gibbs's partition function.</li>
+        <li><strong class="accent-amber">Cryptography</strong> &mdash; The statistical mechanical concept of entropy, formalized by Gibbs and later Shannon, underpins modern measures of cryptographic key strength and randomness testing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 15: TIMELINE SVG ============ -->
+<section>
+  <span class="section-number">12 &mdash; TIMELINE</span>
+  <h2>Life &amp; Works of J. Willard Gibbs</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 340" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central timeline -->
+      <line x1="60" y1="170" x2="710" y2="170" stroke="#2a2a3a" stroke-width="2"/>
+      <!-- Year markers and events -->
+      <!-- 1839 -->
+      <circle cx="80" cy="170" r="5" fill="#4ecca3"/>
+      <text x="80" y="155" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1839</text>
+      <text x="80" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">Born in</text>
+      <text x="80" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">New Haven</text>
+      <!-- 1858 -->
+      <circle cx="160" cy="170" r="4" fill="#5b8cd4"/>
+      <text x="160" y="155" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1858</text>
+      <text x="160" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">Yale B.A.</text>
+      <!-- 1863 -->
+      <circle cx="220" cy="170" r="4" fill="#5b8cd4"/>
+      <text x="220" y="155" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1863</text>
+      <text x="220" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">Ph.D.</text>
+      <text x="220" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">Engineering</text>
+      <!-- 1866-69 -->
+      <circle cx="290" cy="170" r="4" fill="#d4a053"/>
+      <text x="290" y="155" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1866</text>
+      <text x="290" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">European</text>
+      <text x="290" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">studies</text>
+      <!-- 1871 -->
+      <circle cx="350" cy="170" r="4" fill="#9b72cf"/>
+      <text x="350" y="155" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1871</text>
+      <text x="350" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">Yale Prof.</text>
+      <text x="350" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">(unpaid)</text>
+      <!-- 1876 -->
+      <circle cx="420" cy="170" r="6" fill="#4ecca3" stroke="#0a0a0f" stroke-width="2"/>
+      <text x="420" y="150" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1876</text>
+      <text x="420" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">Equilibrium</text>
+      <text x="420" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">Part I</text>
+      <!-- 1881 -->
+      <circle cx="490" cy="170" r="4" fill="#d4a053"/>
+      <text x="490" y="155" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1881</text>
+      <text x="490" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">Vector</text>
+      <text x="490" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">Analysis</text>
+      <!-- 1898 -->
+      <circle cx="560" cy="170" r="4" fill="#cf7272"/>
+      <text x="560" y="155" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1898</text>
+      <text x="560" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">Gibbs</text>
+      <text x="560" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">phenomenon</text>
+      <!-- 1902 -->
+      <circle cx="630" cy="170" r="6" fill="#4ecca3" stroke="#0a0a0f" stroke-width="2"/>
+      <text x="630" y="150" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1902</text>
+      <text x="630" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">Statistical</text>
+      <text x="630" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">Mechanics</text>
+      <!-- 1903 -->
+      <circle cx="690" cy="170" r="5" fill="#cf7272"/>
+      <text x="690" y="155" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1903</text>
+      <text x="690" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="8">Dies in</text>
+      <text x="690" y="206" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="7">New Haven</text>
+      <!-- Era labels -->
+      <rect x="60" y="230" width="200" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+      <text x="160" y="244" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="8">Education &amp; Formation</text>
+      <rect x="310" y="230" width="200" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+      <text x="410" y="244" text-anchor="middle" fill="#4ecca3" font-family="DM Sans,sans-serif" font-size="8">Thermodynamic Revolution</text>
+      <rect x="520" y="230" width="180" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+      <text x="610" y="244" text-anchor="middle" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="8">Final Synthesis</text>
+      <!-- Copley Medal annotation -->
+      <line x1="660" y1="130" x2="660" y2="165" stroke="#d4a053" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="660" y="125" text-anchor="middle" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="7">Copley Medal 1901</text>
+    </svg>
+  </div>
+  <div class="card-grid cols-2" style="margin-top:0.3em;">
+    <div class="card">
+      <h4 class="accent">A Life in One Place</h4>
+      <p>Born, educated, worked, and died in New Haven. Gibbs's geographical stillness belied the vast intellectual distances he traveled, spanning thermodynamics, statistical physics, vector algebra, optics, and signal processing.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Posthumous Triumph</h4>
+      <p>Gibbs's influence grew enormously after his death. The 20th century &mdash; with its quantum mechanics, information theory, and computational chemistry &mdash; was built substantially on foundations he laid in quiet solitude at Yale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 16: FURTHER READING ============ -->
+<section>
+  <span class="section-number">13 &mdash; FURTHER READING</span>
+  <h2>Recommended Reading</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">Primary Sources</h4>
+      <p><strong><em>On the Equilibrium of Heterogeneous Substances</em></strong> (1876&ndash;1878) &mdash; The foundational text of chemical thermodynamics. Dense but rewarding. Available in the <em>Collected Works</em>.</p>
+      <p style="margin-top:0.4em;"><strong><em>Elementary Principles in Statistical Mechanics</em></strong> (1902) &mdash; Gibbs's final masterwork. Remarkably modern in its approach; graduate students still study it today.</p>
+      <p style="margin-top:0.4em;"><strong><em>Vector Analysis</em></strong> by E. B. Wilson (1901) &mdash; Based directly on Gibbs's lectures. The textbook that established modern vector notation in physics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Biographies &amp; Context</h4>
+      <p><strong><em>Josiah Willard Gibbs: The History of a Great Mind</em></strong> by Lynde Phelps Wheeler (1951) &mdash; The definitive biography, written by a Yale physicist who knew Gibbs's students.</p>
+      <p style="margin-top:0.4em;"><strong><em>The Scientific Papers of J. Willard Gibbs</em></strong>, 2 vols. (1906) &mdash; Complete collected works, including the thermodynamic papers, vector analysis, and electromagnetic theory of light.</p>
+      <p style="margin-top:0.4em;"><strong><em>Ludwig Boltzmann: The Man Who Trusted Atoms</em></strong> by Carlo Cercignani &mdash; Excellent companion reading for understanding the parallel development of statistical mechanics in Europe.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Gibbs Phenomenon</h4>
+      <p><strong><em>Fourier Analysis</em></strong> by Elias Stein &amp; Rami Shakarchi &mdash; Rigorous treatment of the Gibbs phenomenon in the context of modern harmonic analysis.</p>
+      <p style="margin-top:0.4em;"><strong>"Gibbs Phenomenon"</strong> in <em>The Princeton Companion to Mathematics</em> &mdash; Accessible overview of the mathematical issues and their resolution.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Modern Applications</h4>
+      <p><strong><em>Statistical Mechanics</em></strong> by R. K. Pathria &amp; Paul Beale &mdash; The standard graduate textbook, thoroughly Gibbsian in its ensemble approach.</p>
+      <p style="margin-top:0.4em;"><strong><em>Introduction to Modern Statistical Mechanics</em></strong> by David Chandler &mdash; Elegant and concise, showing how Gibbs's framework applies to liquids, polymers, and modern materials.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 17: CLOSING QUOTE ============ -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="60" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="70" cy="70" r="45" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.25"/>
+      <circle cx="70" cy="70" r="30" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.2"/>
+      <polygon points="70,15 120,95 20,95" fill="none" stroke="#4ecca3" stroke-width="0.6" opacity="0.35"/>
+      <polygon points="70,125 20,45 120,45" fill="none" stroke="#4ecca3" stroke-width="0.6" opacity="0.35"/>
+    </svg>
+  </div>
+  <div class="quote-box" style="max-width:70%; margin:0.5em auto;">
+    <p style="font-size:0.54em !important;">"A mathematician may say anything he pleases, but a physicist must be at least partially sane."</p>
+    <span class="attribution">&mdash; Josiah Willard Gibbs</span>
+  </div>
+  <div class="separator" style="margin:0.8em auto;"></div>
+  <h3 style="text-align:center; color:var(--text-muted); font-size:0.7em; font-weight:400;">Josiah Willard Gibbs</h3>
+  <p style="text-align:center; color:var(--text-muted); font-size:0.44em;">1839 &ndash; 1903</p>
+  <p style="text-align:center; font-size:0.48em; color:var(--text-secondary); max-width:60%; margin:0.4em auto;">He lived quietly, published obscurely, and reshaped the foundations of physical science. His mathematics became the language of chemistry, the architecture of statistical physics, and the grammar of information theory. The world caught up eventually.</p>
+  <div style="margin-top:0.8em; text-align:center;">
+    <span class="tag green">Thermodynamics</span>
+    <span class="tag">Statistical Mechanics</span>
+    <span class="tag amber">Vector Analysis</span>
+    <span class="tag blue">Signal Processing</span>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

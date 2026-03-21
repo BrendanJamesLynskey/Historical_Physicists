@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>André-Marie Ampère — Father of Electrodynamics</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #5b8cd4;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.6">
+                <path d="M100 10 Q130 50 100 100 Q70 50 100 10"/>
+                <path d="M190 100 Q150 130 100 100 Q150 70 190 100"/>
+                <path d="M100 190 Q70 150 100 100 Q130 150 100 190"/>
+                <path d="M10 100 Q50 70 100 100 Q50 130 10 100"/>
+            </g>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.6" opacity="0.4">
+                <path d="M36 36 Q70 70 100 100 Q70 70 36 36" transform="rotate(45 100 100)"/>
+                <path d="M164 36 Q130 70 100 100" transform="rotate(45 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(30 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(-30 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(90 100 100)"/>
+            </g>
+            <circle cx="100" cy="100" r="4" fill="#5b8cd4" opacity="0.8"/>
+        </svg>
+    </div>
+    <h1>André-Marie Ampère</h1>
+    <p class="subtitle">1775 &ndash; 1836 &ensp;|&ensp; Lyon &amp; Paris, France</p>
+    <div class="separator"></div>
+    <p style="max-width:70%;margin:0.4em auto;text-align:center;">The self-taught prodigy who unified electricity and magnetism into a single mathematical framework, founding the science he named <em>electrodynamics</em> and giving his name to the unit of electric current.</p>
+    <div style="margin-top:0.6em;">
+        <span class="tag blue">Electrodynamics</span>
+        <span class="tag green">Mathematical Physics</span>
+        <span class="tag amber">Ampère's Law</span>
+        <span class="tag rose">Solenoid Theory</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life</h2>
+    <div class="two-col">
+        <div>
+            <p>André-Marie Ampère was born on 20 January 1775 in the parish of Saint-Nizier, Lyon, into a prosperous silk-merchant family. His father, Jean-Jacques Ampère, was a devotee of Rousseau's philosophy and believed in education through direct experience rather than formal schooling.</p>
+            <p>The young André-Marie never attended school. Instead, he devoured his father's extensive library, reportedly teaching himself Latin at age twelve solely to read the works of Euler and Bernoulli. By fourteen he had consumed the entire <em>Encyclopédie</em> of Diderot and d'Alembert.</p>
+            <p>Tragedy struck in 1793 when his father was guillotined during the Reign of Terror in Lyon. The event plunged the eighteen-year-old into a deep depression lasting nearly two years, during which he barely spoke. His recovery began when he discovered Rousseau's botanical writings and, later, fell in love with Julie Carron, whom he married in 1799.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent">Self-Educated Genius</h4>
+                <p>Mastered calculus and celestial mechanics before age 18 with no formal instruction, relying entirely on books and self-directed study.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">Revolutionary Trauma</h4>
+                <p>His father's execution during the Terror left a permanent mark. Ampère carried a copy of the Psalms and a lock of his father's hair for the rest of his life.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Lyon's Intellectual Culture</h4>
+                <p>Lyon in the 1780s was France's second city of learning. The Ampère household hosted scientists and philosophers, immersing the boy in Enlightenment discourse.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Provincial Teacher (1799-1804)</h4>
+            <p>Taught mathematics at the École Centrale in Bourg-en-Bresse and then Lyon. Published a treatise on probability theory that caught the attention of Parisian mathematicians, including Delambre.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Paris Appointment (1804)</h4>
+            <p>Appointed répétiteur at the École Polytechnique. His wife Julie died of illness that same year, leaving him grief-stricken with an infant son, Jean-Jacques (later a noted historian).</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Pivotal Week of September 1820</h4>
+            <p>Heard of Ørsted's discovery that a current deflects a compass needle. Within seven days, Ampère demonstrated that parallel currents attract and anti-parallel currents repel — and presented a full mathematical theory to the Académie.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Elected to the Académie (1814)</h4>
+            <p>Became a member of the mathematics section. His interests ranged from chemistry (he independently proposed classifying elements similarly to Avogadro) to philosophy and taxonomy of the sciences.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>Post-Revolutionary France</h3>
+            <p>Ampère's scientific career unfolded during one of the most turbulent periods in European history. He lived through the Revolution, the Terror, the Napoleonic Empire, the Bourbon Restoration, and the July Monarchy.</p>
+            <p>Napoleon's reforms transformed French science. The École Polytechnique and the reorganised Académie des Sciences created an institutional framework that rewarded mathematical rigour. Ampère thrived in this environment, where skill mattered more than birth.</p>
+            <p>The early 19th century was also the era of Volta's pile (1800), which for the first time provided steady electric currents. Before the battery, electricity meant only static sparks. Volta's invention opened the door that Ampère would walk through in 1820.</p>
+        </div>
+        <div>
+            <h3>The Ørsted Shock</h3>
+            <p>In July 1820, Hans Christian Ørsted published his observation that a wire carrying current deflected a nearby compass needle. The news reached Paris in September and electrified the scientific community.</p>
+            <p>Most physicists — Biot, Savart, Laplace — tried to reduce the phenomenon to known Newtonian force laws. Ampère alone saw something deeper: that magnetism <em>itself</em> might be nothing more than electricity in motion. This radical insight became the foundation of electrodynamics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 — Ampère's Force Law -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Ampère's Force Law</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Ampère's first and most famous contribution was the discovery that two parallel wires carrying electric currents exert mechanical forces on each other. Parallel currents attract; anti-parallel currents repel.</p>
+            <p>He derived a precise mathematical formula for the force per unit length between two infinitely long parallel conductors:</p>
+            <p style="text-align:center;"><code>F/L = μ₀ I₁ I₂ / (2π d)</code></p>
+            <p>This relationship is so fundamental that it was used to define the ampere in the SI system until 2019.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+                <!-- Wire 1 -->
+                <line x1="80" y1="30" x2="80" y2="230" stroke="#5b8cd4" stroke-width="3"/>
+                <text x="80" y="20" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12" text-anchor="middle">Wire 1</text>
+                <!-- Current arrows wire 1 -->
+                <polygon points="80,60 74,78 86,78" fill="#5b8cd4"/>
+                <polygon points="80,120 74,138 86,138" fill="#5b8cd4"/>
+                <polygon points="80,180 74,198 86,198" fill="#5b8cd4"/>
+                <text x="55" y="130" fill="#9a9a9a" font-family="JetBrains Mono" font-size="11" text-anchor="end">I₁ ↓</text>
+                <!-- Wire 2 -->
+                <line x1="260" y1="30" x2="260" y2="230" stroke="#d4a053" stroke-width="3"/>
+                <text x="260" y="20" fill="#d4a053" font-family="JetBrains Mono" font-size="12" text-anchor="middle">Wire 2</text>
+                <!-- Current arrows wire 2 -->
+                <polygon points="260,60 254,78 266,78" fill="#d4a053"/>
+                <polygon points="260,120 254,138 266,138" fill="#d4a053"/>
+                <polygon points="260,180 254,198 266,198" fill="#d4a053"/>
+                <text x="285" y="130" fill="#9a9a9a" font-family="JetBrains Mono" font-size="11" text-anchor="start">I₂ ↓</text>
+                <!-- Attractive force arrows -->
+                <line x1="100" y1="90" x2="240" y2="90" stroke="#4ecca3" stroke-width="1" stroke-dasharray="4,3"/>
+                <polygon points="140,90 155,85 155,95" fill="#4ecca3"/>
+                <polygon points="200,90 185,85 185,95" fill="#4ecca3"/>
+                <text x="170" y="82" fill="#4ecca3" font-family="JetBrains Mono" font-size="11" text-anchor="middle">Attract</text>
+                <!-- Distance marker -->
+                <line x1="80" y1="248" x2="260" y2="248" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="80" y1="242" x2="80" y2="254" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="260" y1="242" x2="260" y2="254" stroke="#6a6a7a" stroke-width="1"/>
+                <text x="170" y="258" fill="#6a6a7a" font-family="JetBrains Mono" font-size="11" text-anchor="middle">d</text>
+                <!-- Formula -->
+                <text x="170" y="165" fill="#e8e6e3" font-family="JetBrains Mono" font-size="11" text-anchor="middle">F/L = μ₀I₁I₂ / 2πd</text>
+                <text x="170" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="10" text-anchor="middle">Parallel currents → attraction</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deeper Dive -->
+<section>
+    <span class="section-number">04b</span>
+    <h2>The Force Law — Deeper Dive</h2>
+    <p style="max-width:88%;margin:0 auto 0.4em;">Ampère's approach was remarkable for its generality. Rather than treating the wire experiment as a curiosity, he decomposed every current-carrying circuit into infinitesimal <em>current elements</em> and derived a force law between any two such elements. His formula — now called <strong class="accent">Ampère's force law</strong> — expresses the force between two current elements as an inverse-square law depending on their lengths, currents, separation, and the angles between them.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent-green">Experimental Apparatus</h4>
+            <p>Ampère designed an ingenious set of "astatic" needle devices and balanced circuits to isolate the forces. He used the null method — arranging conductors so forces cancel — to deduce the mathematical form of the law without needing precise force measurements.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Relation to Biot-Savart</h4>
+            <p>Biot and Savart independently measured the field of a long wire. Ampère's force law is fully consistent with theirs but more general: it gives force between arbitrary circuit elements, not just the field from a single wire.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The SI Definition of the Ampere</h4>
+            <p>From 1948 to 2019, the ampere was defined as the current that, flowing in two parallel wires one metre apart, produces a force of exactly 2 × 10⁻⁷ N per metre of length — a direct application of Ampère's formula.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Mathematical Elegance</h4>
+            <p>Ampère insisted on deriving the law from minimal assumptions. He showed that only four "equilibrium experiments" — null results from symmetry — sufficed to fix the mathematical form entirely. This axiomatic approach anticipated the style of 20th-century theoretical physics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 — Electrodynamics -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Founding Electrodynamics</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Ampère did not merely discover a new force — he founded an entirely new branch of physics, which he christened <span class="accent">électrodynamique</span>. His 1826 masterwork, <em>Mémoire sur la théorie mathématique des phénomènes électrodynamiques uniquement déduite de l'expérience</em>, laid out the complete theory.</p>
+            <p>The central insight was revolutionary: <strong>all magnetism is caused by electric currents</strong>. Permanent magnets, Ampère argued, contain tiny circular currents at the molecular level. This "Ampèrian current" hypothesis was confirmed a century later by quantum mechanics.</p>
+            <p>His circuital law states that the line integral of the magnetic field around any closed loop equals μ₀ times the current threading the loop — later generalised by Maxwell with the displacement current term.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg">
+                <!-- Solenoid body -->
+                <rect x="70" y="60" width="200" height="120" rx="10" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+                <!-- Coil windings -->
+                <ellipse cx="100" cy="120" rx="12" ry="50" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.7"/>
+                <ellipse cx="130" cy="120" rx="12" ry="50" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.7"/>
+                <ellipse cx="160" cy="120" rx="12" ry="50" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.7"/>
+                <ellipse cx="190" cy="120" rx="12" ry="50" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.7"/>
+                <ellipse cx="220" cy="120" rx="12" ry="50" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.7"/>
+                <ellipse cx="250" cy="120" rx="12" ry="50" fill="none" stroke="#5b8cd4" stroke-width="1.5" opacity="0.7"/>
+                <!-- Internal B field arrows -->
+                <line x1="85" y1="120" x2="255" y2="120" stroke="#4ecca3" stroke-width="2"/>
+                <polygon points="255,120 243,115 243,125" fill="#4ecca3"/>
+                <text x="170" y="112" fill="#4ecca3" font-family="JetBrains Mono" font-size="11" text-anchor="middle">B (uniform inside)</text>
+                <!-- External field lines -->
+                <path d="M265,105 C310,100 310,30 170,25 C30,20 30,100 75,105" fill="none" stroke="#d4a053" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+                <path d="M265,135 C310,140 310,210 170,215 C30,220 30,140 75,135" fill="none" stroke="#d4a053" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+                <!-- Labels -->
+                <text x="170" y="250" fill="#9a9a9a" font-family="DM Sans" font-size="10" text-anchor="middle">Solenoid: many loops → uniform internal field</text>
+                <text x="170" y="265" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" text-anchor="middle">B = μ₀ n I</text>
+                <!-- N and S poles -->
+                <text x="62" y="125" fill="#cf7272" font-family="JetBrains Mono" font-size="14" text-anchor="middle">S</text>
+                <text x="278" y="125" fill="#cf7272" font-family="JetBrains Mono" font-size="14" text-anchor="middle">N</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deeper Dive -->
+<section>
+    <span class="section-number">05b</span>
+    <h2>Electrodynamics — Deeper Dive</h2>
+    <p style="max-width:88%;margin:0 auto 0.4em;">The word <em>electrodynamics</em> itself was Ampère's coinage, distinguishing the study of forces between moving charges from <em>electrostatics</em> (forces between stationary charges). He saw that Coulomb had completed the static theory; now a dynamic theory was needed.</p>
+    <div class="two-col">
+        <div>
+            <h3>The Ampèrian Current Hypothesis</h3>
+            <p>Ampère proposed that every molecule of a permanent magnet contains a tiny closed current loop. The macroscopic magnetism arises from the alignment of these molecular currents. This was pure speculation in the 1820s, but it was essentially correct: the electron orbits and spins discovered a century later are precisely such currents.</p>
+            <p>This hypothesis allowed Ampère to reduce <em>all</em> magnetic phenomena to electrical ones, achieving a unification that profoundly influenced Maxwell's later work.</p>
+        </div>
+        <div>
+            <h3>Ampère's Circuital Law</h3>
+            <p>In integral form: the circulation of <strong>B</strong> around a closed path equals μ₀ times the total current enclosed. In modern notation:</p>
+            <p style="text-align:center;"><code>∮ B · dl = μ₀ I_enc</code></p>
+            <p>This law, together with Gauss's law for magnetism, Faraday's law, and Gauss's law for electricity, forms one of the four Maxwell equations. Maxwell's only modification was adding the displacement current term to handle time-varying electric fields.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Solenoid &amp; Electromagnet Theory</h2>
+    <p style="max-width:88%;margin:0 auto 0.4em;">Ampère invented the word <strong class="accent">solenoid</strong> (from Greek <em>solen</em>, tube) for a helical coil of wire. He showed mathematically that such a coil, when carrying current, behaves exactly like a bar magnet — a prediction immediately verified by experiment.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Equivalence Theorem</h4>
+            <p>Ampère proved that any magnetic shell (a surface covered with tiny current loops) produces the same external field as a current flowing around its boundary. This "equivalence theorem" is still taught in electromagnetic theory courses today and is the mathematical basis for understanding magnetic dipole fields.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Predicting the Electromagnet</h4>
+            <p>By showing that a solenoid replicates a bar magnet, Ampère implicitly predicted the electromagnet — a device that would be built by William Sturgeon in 1824 and perfected by Joseph Henry in the 1830s, transforming technology forever.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Magnetic Field Uniformity</h4>
+            <p>He demonstrated that the field inside a long solenoid is remarkably uniform, depending only on the current and the number of turns per unit length (B = μ₀nI). This result remains essential in designing MRI machines, particle accelerators, and laboratory magnets.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Earth as a Solenoid</h4>
+            <p>Ampère speculated that the Earth's magnetic field might be produced by vast electric currents circulating within the planet. While the details differ (it is a dynamo, not a simple solenoid), the core idea — geomagnetism is electrical in origin — was prophetic.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07</span>
+    <h2>The Method</h2>
+    <p style="max-width:88%;margin:0 auto 0.4em;">Ampère's scientific method combined rapid, brilliant experimentation with rigorous mathematical deduction — a style he described as deriving theory <em>uniquement de l'expérience</em> (solely from experiment).</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Observe</h4>
+            <p>Witness a new phenomenon (Ørsted's discovery)</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Hypothesise</h4>
+            <p>Propose a bold unifying principle (magnetism = current)</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Design Null Tests</h4>
+            <p>Build apparatus where forces cancel to constrain the law</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Derive Mathematically</h4>
+            <p>Deduce the force law from symmetry + null results</p>
+        </div>
+        <div class="process-arrow">&#8594;</div>
+        <div class="process-step">
+            <h4 class="accent-rose">Predict &amp; Verify</h4>
+            <p>Solenoid ≡ magnet confirmed by direct experiment</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-blue">Speed of Insight</h4>
+            <p>Ampère's response to Ørsted was astonishingly fast. He presented his first results to the Académie on 18 September 1820 — barely a week after learning of Ørsted's discovery. By the end of the year he had the complete theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Null Method</h4>
+            <p>Rather than measuring forces directly (which was inaccurate with 1820s instruments), Ampère arranged conductors so that forces exactly balanced. The vanishing of the net force then constrained the mathematical form of the law — an approach of remarkable sophistication.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node -->
+            <circle cx="350" cy="160" r="38" fill="#161622" stroke="#5b8cd4" stroke-width="2"/>
+            <text x="350" y="156" fill="#5b8cd4" font-family="Playfair Display" font-size="11" text-anchor="middle" font-weight="700">Ampère</text>
+            <text x="350" y="170" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">1775-1836</text>
+            <!-- Ørsted -->
+            <circle cx="140" cy="60" r="30" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="140" y="57" fill="#d4a053" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Ørsted</text>
+            <text x="140" y="69" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Inspiration</text>
+            <line x1="168" y1="76" x2="316" y2="140" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <!-- Faraday -->
+            <circle cx="560" cy="60" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="560" y="57" fill="#4ecca3" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Faraday</text>
+            <text x="560" y="69" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Influenced</text>
+            <line x1="384" y1="140" x2="534" y2="76" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <!-- Arago -->
+            <circle cx="140" cy="200" r="30" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="140" y="197" fill="#9b72cf" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Arago</text>
+            <text x="140" y="209" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Collaborator</text>
+            <line x1="168" y1="186" x2="316" y2="166" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <!-- Biot & Savart -->
+            <circle cx="560" cy="200" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="560" y="193" fill="#cf7272" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Biot &amp;</text>
+            <text x="560" y="205" fill="#cf7272" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Savart</text>
+            <text x="560" y="217" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Rivals</text>
+            <line x1="384" y1="175" x2="534" y2="192" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <!-- Maxwell -->
+            <circle cx="350" cy="300" r="30" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="350" y="297" fill="#5b8cd4" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Maxwell</text>
+            <text x="350" y="309" fill="#9a9a9a" font-family="DM Sans" font-size="7" text-anchor="middle">Heir</text>
+            <line x1="350" y1="198" x2="350" y2="270" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <!-- Laplace -->
+            <circle cx="80" cy="130" r="26" fill="#161622" stroke="#6a6a7a" stroke-width="1"/>
+            <text x="80" y="133" fill="#6a6a7a" font-family="DM Sans" font-size="9" text-anchor="middle">Laplace</text>
+            <line x1="104" y1="140" x2="314" y2="158" stroke="#6a6a7a" stroke-width="0.7" opacity="0.4"/>
+            <!-- Fresnel -->
+            <circle cx="620" cy="130" r="26" fill="#161622" stroke="#6a6a7a" stroke-width="1"/>
+            <text x="620" y="133" fill="#6a6a7a" font-family="DM Sans" font-size="9" text-anchor="middle">Fresnel</text>
+            <line x1="596" y1="140" x2="386" y2="158" stroke="#6a6a7a" stroke-width="0.7" opacity="0.4"/>
+        </svg>
+    </div>
+    <p style="text-align:center;max-width:80%;margin:0.3em auto;">Ampère's network spanned experimentalists and theorists. Arago first alerted him to Ørsted's discovery. His rivalry with Biot sharpened his arguments. Maxwell later called Ampère's work "one of the most brilliant achievements in science."</p>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Rivalry &amp; Controversy</h2>
+    <div class="two-col">
+        <div>
+            <h3>Ampère vs. Biot</h3>
+            <p>The most consequential scientific rivalry of the 1820s was between Ampère and Jean-Baptiste Biot. Both rushed to explain Ørsted's discovery, but their approaches differed fundamentally.</p>
+            <p>Biot, backed by Laplace, treated magnetism as primary and tried to write force laws resembling Coulomb's law for magnetic poles. Ampère insisted that magnetism was <em>reducible</em> to electricity — that there were no magnetic poles, only electric currents.</p>
+            <p>Biot had institutional power and political connections; Ampère had mathematical depth and physical insight. History sided with Ampère. Maxwell's equations vindicate the Ampèrian view completely: there are no magnetic monopoles, and all magnetic fields arise from currents (including displacement currents).</p>
+        </div>
+        <div>
+            <div class="quote-box">
+                <p>"The nature of the action that takes place between two voltaic conductors... cannot be deduced from the phenomena of magnets as usually considered... It constitutes a new order of phenomena."</p>
+                <span class="attribution">— André-Marie Ampère, 1820</span>
+            </div>
+            <div class="card" style="margin-top:0.6em;">
+                <h4 class="accent-rose">The Priority Dispute</h4>
+                <p>Biot accused Ampère of stealing ideas from his and Savart's wire experiments. Ampère countered that his framework was entirely independent and far more general. The dispute left lasting bitterness; Biot attacked Ampère's work for decades.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Maxwell's Equations</h4>
+            <p>Ampère's circuital law became one of the four Maxwell equations. Maxwell himself wrote that Ampère's memoir was "one of the most brilliant achievements in science... the whole, theory and experiment, seems as if it had leaped, full-grown, from the brain of the 'Newton of electricity.'"</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Ampere (Unit)</h4>
+            <p>The SI unit of electric current bears his name. Until 2019, it was defined directly from his force law. The new definition uses the elementary charge, but the ampere remains his permanent monument in physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Molecular Currents &amp; Quantum Mechanics</h4>
+            <p>Ampère's hypothesis that magnetism arises from molecular currents was spectacularly confirmed by quantum mechanics. Electron spin and orbital angular momentum generate exactly the microscopic current loops he envisioned.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Cybernetics</h4>
+            <p>Ampère coined the word "cybernétique" (from Greek <em>kubernetes</em>, steersman) in his 1834 classification of the sciences, to describe the art of governance. Norbert Wiener adopted the term a century later for his theory of control and communication.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Applications Today</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Electric Motors</h4>
+            <p>Every electric motor exploits Ampère's force between current-carrying conductors and magnetic fields. From industrial machines to the tiny motors in smartphones, his law is at work.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">MRI Scanners</h4>
+            <p>Magnetic resonance imaging requires powerful, uniform magnetic fields produced by superconducting solenoids — devices whose physics Ampère first described.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Transformers &amp; Power Grids</h4>
+            <p>The mutual induction between coils, governed by Ampère's law, is the basis of every transformer in the electrical grid.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Particle Accelerators</h4>
+            <p>The bending magnets in accelerators like the LHC use solenoids and dipole magnets designed using Ampère's circuital law to steer charged particles.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Electromagnetic Relays</h4>
+            <p>From early telegraphy to modern automotive systems, electromagnets — predicted by Ampère's solenoid theory — switch circuits on and off.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Wireless Charging</h4>
+            <p>Inductive charging pads use coils governed by Ampère's and Faraday's laws to transfer energy wirelessly to devices.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Timeline</h2>
+    <div class="two-col">
+        <div class="diagram-container">
+            <svg viewBox="0 0 60 400" xmlns="http://www.w3.org/2000/svg">
+                <line x1="30" y1="10" x2="30" y2="390" stroke="#2a2a3a" stroke-width="2"/>
+                <circle cx="30" cy="20" r="5" fill="#5b8cd4"/>
+                <circle cx="30" cy="65" r="5" fill="#5b8cd4"/>
+                <circle cx="30" cy="110" r="5" fill="#5b8cd4"/>
+                <circle cx="30" cy="155" r="5" fill="#5b8cd4"/>
+                <circle cx="30" cy="200" r="5" fill="#d4a053"/>
+                <circle cx="30" cy="245" r="5" fill="#4ecca3"/>
+                <circle cx="30" cy="290" r="5" fill="#4ecca3"/>
+                <circle cx="30" cy="335" r="5" fill="#9b72cf"/>
+                <circle cx="30" cy="380" r="5" fill="#cf7272"/>
+            </svg>
+        </div>
+        <div>
+            <div class="timeline-item"><span class="year">1775</span><span class="event"><strong>Born in Lyon</strong>Son of silk merchant Jean-Jacques Ampère</span></div>
+            <div class="timeline-item"><span class="year">1793</span><span class="event"><strong>Father guillotined</strong>Ampère falls into deep depression during the Terror</span></div>
+            <div class="timeline-item"><span class="year">1799</span><span class="event"><strong>Marries Julie Carron</strong>Begins teaching mathematics in Bourg-en-Bresse</span></div>
+            <div class="timeline-item"><span class="year">1804</span><span class="event"><strong>Moves to Paris</strong>Appointed to École Polytechnique; Julie dies</span></div>
+            <div class="timeline-item"><span class="year">1814</span><span class="event"><strong>Elected to the Académie des Sciences</strong>Mathematics section</span></div>
+            <div class="timeline-item"><span class="year">1820</span><span class="event"><strong>Discovers force between currents</strong>Founds electrodynamics in a single breathtaking week</span></div>
+            <div class="timeline-item"><span class="year">1826</span><span class="event"><strong>Publishes the Mémoire</strong>Complete mathematical theory of electrodynamics</span></div>
+            <div class="timeline-item"><span class="year">1834</span><span class="event"><strong>Coins "cybernétique"</strong>In his Essai sur la philosophie des sciences</span></div>
+            <div class="timeline-item"><span class="year">1836</span><span class="event"><strong>Dies in Marseille</strong>During an inspection tour, aged 61</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Ampère and the History of Electricity</h4>
+            <p><em>by Christine Blondel (1982)</em> — The definitive biography, examining Ampère's scientific work in the context of Parisian academic politics. Based on extensive archival research.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Force of Symmetry</h4>
+            <p><em>by Vincent Icke (1995)</em> — A beautifully written exploration of symmetry in physics, with a substantial discussion of Ampère's null-method experiments and their logical power.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">A History of the Theories of Aether and Electricity</h4>
+            <p><em>by E.T. Whittaker (1951)</em> — Classic two-volume history devoting detailed chapters to Ampère's electrodynamics and its transformation by Maxwell.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Mémoire sur la théorie mathématique des phénomènes électrodynamiques</h4>
+            <p><em>by André-Marie Ampère (1826)</em> — The original masterwork. Challenging but rewarding. Available in French and in English translation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Electricity and Magnetism</h4>
+            <p><em>by Edward Purcell &amp; David Morin (2013)</em> — Berkeley Physics Course Volume 2. The best modern textbook treatment of Ampère's law, with clear derivations and physical insight.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Experimental Foundations of Ampère's Electrodynamics</h4>
+            <p><em>by André Koch Torres Assis (2015)</em> — A modern reconstruction of Ampère's original experiments, showing how his null-method apparatus constrained the force law.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.6">
+                <path d="M100 10 Q130 50 100 100 Q70 50 100 10"/>
+                <path d="M190 100 Q150 130 100 100 Q150 70 190 100"/>
+                <path d="M100 190 Q70 150 100 100 Q130 150 100 190"/>
+                <path d="M10 100 Q50 70 100 100 Q50 130 10 100"/>
+            </g>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.6" opacity="0.4">
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(30 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(-30 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(90 100 100)"/>
+            </g>
+            <circle cx="100" cy="100" r="4" fill="#5b8cd4" opacity="0.8"/>
+        </svg>
+    </div>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width:70%;">
+        <p>"The future science of government should be called 'la cybernétique'."</p>
+        <span class="attribution">— André-Marie Ampère, <em>Essai sur la philosophie des sciences</em>, 1834</span>
+    </div>
+    <div class="separator" style="margin-top:1em;"></div>
+    <p style="text-align:center;color:var(--text-muted);font-size:0.42em;margin-top:0.5em;">André-Marie Ampère &ensp;·&ensp; 1775 – 1836 &ensp;·&ensp; The Newton of Electricity</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

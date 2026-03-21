@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oliver Lodge — Pioneer of Wireless and Champion of the Ether</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #c97b4b; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="60" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="70" cy="70" r="45" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.25"/>
+      <circle cx="70" cy="70" r="30" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.2"/>
+      <!-- Radio wave arcs -->
+      <path d="M70,40 Q90,55 70,70" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+      <path d="M70,40 Q50,55 70,70" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+      <path d="M55,30 Q90,50 55,70" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.3"/>
+      <path d="M85,30 Q50,50 85,70" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.3"/>
+      <text x="70" y="78" text-anchor="middle" fill="#c97b4b" font-family="Playfair Display,serif" font-size="14" font-weight="700">OJL</text>
+    </svg>
+  </div>
+  <h1>Oliver Lodge</h1>
+  <p class="subtitle">Pioneer of Wireless Telegraphy &amp; Champion of the Ether</p>
+  <div class="separator"></div>
+  <p style="text-align:center; color: var(--text-muted); font-size:0.44em;">1851 &ndash; 1940 &nbsp;|&nbsp; Staffordshire &bull; Liverpool &bull; Birmingham</p>
+  <div style="margin-top:0.8em; text-align:center;">
+    <span class="tag amber">Radio Waves</span>
+    <span class="tag green">Wireless Telegraphy</span>
+    <span class="tag">Electromagnetic Theory</span>
+    <span class="tag blue">Signal Processing</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2: EARLY LIFE ============ -->
+<section>
+  <span class="section-number">01 &mdash; ORIGINS</span>
+  <h2>Early Life &amp; Education</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Oliver Joseph Lodge was born on June 12, 1851, in Penkhull, Staffordshire, the eldest of nine children in a family of modest means. His father was a clay merchant and supplier to the Potteries &mdash; the great ceramic manufacturing district of England. Young Oliver received a patchy early education, attending a succession of small schools where he showed little academic distinction.</p>
+      <p>Everything changed when, at fourteen, Lodge began attending classes at nearby Wedgwood Institute and discovered a passion for science. He was largely self-taught, reading voraciously in physics and mathematics. At twenty, he enrolled at University College London, where he studied under the great experimenter Alexander Williamson and the mathematician Augustus De Morgan's successor, Olaus Henrici.</p>
+      <p>Lodge earned his BSc in 1875 and his DSc in 1877, both from the University of London. His doctoral work on electrolysis revealed the experimentalist's instinct that would define his career. By 1881, at just thirty, he was appointed the first professor of physics at the new University College Liverpool &mdash; a position that launched him into the heart of electromagnetic research.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent">Potteries Origins</h4>
+        <p>Growing up amid the industrial landscape of Staffordshire gave Lodge a lifelong feel for practical engineering. He never lost the ability to build apparatus with his own hands, a skill that distinguished him from more purely theoretical physicists.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Self-Made Scholar</h4>
+        <p>Unlike many Victorian scientists from privileged backgrounds, Lodge came from trade. His path to academic physics was unconventional, driven by curiosity rather than family tradition or elite schooling.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-purple">UCL Years</h4>
+        <p>At University College London, Lodge absorbed the Maxwellian tradition. He became convinced that electromagnetic waves were real physical phenomena propagating through the luminiferous ether &mdash; a conviction that shaped his entire career.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">Liverpool Appointment</h4>
+        <p>As Liverpool's first physics professor, Lodge built a department from scratch. He created teaching laboratories, attracted talented students, and established Liverpool as a center for electromagnetic research.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3: CAREER ============ -->
+<section>
+  <span class="section-number">02 &mdash; CAREER</span>
+  <h2>A Career Spanning Two Centuries</h2>
+  <div class="separator"></div>
+  <div class="two-col wide-left">
+    <div>
+      <p>Lodge's career bridged Victorian and modern physics across nearly six decades of active work. At Liverpool (1881&ndash;1900), he conducted his most important electromagnetic experiments, including demonstrations of radio wave transmission that predated Marconi's famous work. His laboratory became a proving ground for Maxwell's electromagnetic theory.</p>
+      <p>In 1900, Lodge moved to Birmingham as the first Principal of the newly chartered University of Birmingham &mdash; a role combining academic leadership with scientific research. He held this position until 1919, overseeing the university's growth into a major institution while continuing his own investigations into electromagnetic waves, the ether, and, increasingly controversially, psychical research.</p>
+      <p>Lodge was knighted in 1902, elected Fellow of the Royal Society in 1887, and served as president of the British Association for the Advancement of Science in 1913. He was a prolific writer, publishing over forty books and hundreds of papers on physics, philosophy, and what he called "the survival of personality after death." This dual commitment to rigorous physics and heterodox spiritual inquiry made him one of the most fascinating and polarizing figures in British science.</p>
+      <p>After retiring from Birmingham, Lodge continued researching and lecturing until well into his eighties. He died on August 22, 1940, at the age of eighty-nine, having witnessed the technology he helped pioneer transform the world through radio broadcasting, radar, and telecommunications.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent">Key Positions</h4>
+        <p>Professor of Physics, Liverpool (1881&ndash;1900). First Principal, University of Birmingham (1900&ndash;1919). President, British Association (1913). President, Physical Society (1899&ndash;1901).</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-green">Honors</h4>
+        <p>FRS (1887), knighted (1902), Rumford Medal (1898), Albert Medal of the RSA (1919), Faraday Medal (1932). Over 20 honorary degrees from universities worldwide.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-rose">Public Intellectual</h4>
+        <p>Lodge was one of the first great science communicators, giving public lectures, writing popular books, and engaging with the press. He believed scientists had a duty to explain their work to the public.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4: HISTORICAL CONTEXT ============ -->
+<section>
+  <span class="section-number">03 &mdash; CONTEXT</span>
+  <h2>The Electromagnetic Revolution</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Lodge worked during the most transformative period in the history of electromagnetism. James Clerk Maxwell had published his unified theory of electricity, magnetism, and light in 1865, but by the 1880s, electromagnetic waves remained undetected. Maxwell's equations predicted their existence; nobody had proven it in a laboratory.</p>
+      <p>The race to detect electromagnetic waves defined the physics of the 1880s. Heinrich Hertz in Germany succeeded first in 1887&ndash;88, using spark-gap transmitters and receivers to demonstrate that radio waves behaved exactly as Maxwell predicted &mdash; reflecting, refracting, and interfering like light. Lodge, working independently in Liverpool, had observed similar phenomena but had not published first.</p>
+      <p>The 1890s then saw the explosive transition from laboratory curiosity to practical technology. Marconi, Popov, Bose, and Lodge all contributed to making wireless telegraphy a reality. The British Empire's vast naval and commercial interests created enormous demand for communication across oceans, and the race for wireless patents became fierce. Lodge stood at the center of this revolution, contributing both the science and the engineering.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Maxwell's Legacy</h4>
+        <p>Maxwell died in 1879, never knowing if his predicted electromagnetic waves would be found. Lodge, Hertz, and FitzGerald were among the "Maxwellians" who dedicated themselves to experimental verification.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-purple">The Ether Question</h4>
+        <p>Victorian physicists believed electromagnetic waves propagated through a luminiferous ether. Lodge spent decades trying to detect Earth's motion through this medium. The ether would ultimately be abandoned after Einstein's 1905 special relativity.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-blue">The Patent Wars</h4>
+        <p>Wireless telegraphy meant money and military power. Marconi, Lodge, Tesla, and others fought bitter patent disputes. Lodge's 1897 syntonic tuning patent became central to the entire radio industry.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-green">The Maxwellians</h4>
+        <p>Lodge belonged to a small circle &mdash; including Heaviside, FitzGerald, and Hertz &mdash; who championed and extended Maxwell's work. They were united by faith in the field concept and the reality of electromagnetic waves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5: CONTRIBUTION #1 + SVG ============ -->
+<section>
+  <span class="section-number">04 &mdash; RADIO DETECTION</span>
+  <h2>Radio Wave Detection &amp; the Coherer</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Lodge's most historically significant contribution was his work on <strong class="accent">detecting radio waves</strong>. In 1894, he gave a landmark demonstration at the Royal Institution &mdash; the first public demonstration of radio wave transmission and reception in Britain, and possibly the world. He transmitted signals across a distance of about 60 meters using a refined version of the <strong class="accent">coherer</strong> as his detector.</p>
+      <p>The coherer was a tube of loosely packed metal filings whose electrical resistance dropped dramatically when struck by radio waves, causing the filings to "cohere." Lodge improved upon Edouard Branly's original device by adding an automatic tapping mechanism (a "decoherer") that reset the device after each detection, enabling continuous reception of signals.</p>
+      <p>This 1894 demonstration &mdash; given as a memorial lecture for Heinrich Hertz, who had died that January &mdash; showed that Hertzian waves could be used for practical communication. Lodge transmitted Morse code signals through walls and across the lecture hall. Crucially, he understood that this was not merely a physics experiment but the foundation of a new technology: <strong class="accent">wireless telegraphy</strong>.</p>
+      <p>Lodge's coherer-based receiver was a key signal processing device &mdash; a nonlinear detector that converted high-frequency electromagnetic oscillations into a DC signal suitable for activating a telegraph relay.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+          <text x="160" y="17" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="9">COHERER DETECTOR CIRCUIT</text>
+          <!-- Antenna -->
+          <line x1="60" y1="35" x2="60" y2="80" stroke="#c97b4b" stroke-width="2"/>
+          <line x1="40" y1="35" x2="80" y2="35" stroke="#c97b4b" stroke-width="2"/>
+          <line x1="40" y1="35" x2="50" y2="25" stroke="#c97b4b" stroke-width="1.5"/>
+          <line x1="60" y1="35" x2="60" y2="25" stroke="#c97b4b" stroke-width="1.5"/>
+          <line x1="80" y1="35" x2="70" y2="25" stroke="#c97b4b" stroke-width="1.5"/>
+          <text x="95" y="55" fill="#c97b4b" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Antenna</text>
+          <!-- Connection wire -->
+          <line x1="60" y1="80" x2="60" y2="110" stroke="#9a9a9a" stroke-width="1.2"/>
+          <!-- Coherer tube -->
+          <rect x="30" y="110" width="60" height="28" rx="14" fill="none" stroke="#c97b4b" stroke-width="2"/>
+          <!-- Metal filings inside -->
+          <circle cx="42" cy="124" r="2" fill="#c97b4b" opacity="0.6"/>
+          <circle cx="50" cy="120" r="1.5" fill="#c97b4b" opacity="0.5"/>
+          <circle cx="55" cy="126" r="2" fill="#c97b4b" opacity="0.7"/>
+          <circle cx="62" cy="121" r="1.5" fill="#c97b4b" opacity="0.5"/>
+          <circle cx="68" cy="125" r="2" fill="#c97b4b" opacity="0.6"/>
+          <circle cx="75" cy="122" r="1.5" fill="#c97b4b" opacity="0.4"/>
+          <text x="105" y="128" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Coherer</text>
+          <text x="105" y="140" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="7">(metal filings tube)</text>
+          <!-- Battery -->
+          <line x1="60" y1="138" x2="60" y2="165" stroke="#9a9a9a" stroke-width="1.2"/>
+          <line x1="48" y1="165" x2="72" y2="165" stroke="#4ecca3" stroke-width="2.5"/>
+          <line x1="53" y1="172" x2="67" y2="172" stroke="#4ecca3" stroke-width="1.5"/>
+          <text x="105" y="172" fill="#4ecca3" font-family="DM Sans,sans-serif" font-size="9">Battery</text>
+          <!-- Relay/Telegraph -->
+          <line x1="60" y1="172" x2="60" y2="200" stroke="#9a9a9a" stroke-width="1.2"/>
+          <rect x="35" y="200" width="50" height="30" rx="4" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
+          <text x="60" y="218" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">Relay</text>
+          <text x="105" y="218" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="9">Telegraph Relay</text>
+          <!-- Tapper (decoherer) -->
+          <line x1="30" y1="124" x2="10" y2="124" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="10" y1="124" x2="10" y2="200" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="3,2"/>
+          <rect x="-5" y="200" width="30" height="25" rx="4" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+          <text x="10" y="215" text-anchor="middle" fill="#9b72cf" font-family="DM Sans,sans-serif" font-size="7" font-weight="700">Tapper</text>
+          <text x="10" y="240" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="7">Decoherer</text>
+          <!-- Ground -->
+          <line x1="60" y1="230" x2="60" y2="260" stroke="#9a9a9a" stroke-width="1.2"/>
+          <line x1="45" y1="260" x2="75" y2="260" stroke="#9a9a9a" stroke-width="1.5"/>
+          <line x1="50" y1="265" x2="70" y2="265" stroke="#9a9a9a" stroke-width="1.2"/>
+          <line x1="55" y1="270" x2="65" y2="270" stroke="#9a9a9a" stroke-width="0.8"/>
+          <text x="85" y="265" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="8">Ground</text>
+          <!-- Radio wave indicators -->
+          <path d="M25,60 Q15,55 25,50" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.5"/>
+          <path d="M20,65 Q5,55 20,45" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+          <!-- Signal flow arrow -->
+          <text x="225" y="80" fill="#c97b4b" font-family="DM Sans,sans-serif" font-size="8">RF signal</text>
+          <text x="225" y="92" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="7">&darr; detected by coherer</text>
+          <text x="225" y="130" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="8">Resistance drops</text>
+          <text x="225" y="142" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="7">&darr; current flows</text>
+          <text x="225" y="180" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="8">Relay activates</text>
+          <text x="225" y="192" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="7">&darr; triggers tapper</text>
+          <text x="225" y="230" fill="#9b72cf" font-family="DM Sans,sans-serif" font-size="8">Tapper resets</text>
+          <text x="225" y="242" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="7">&darr; ready for next signal</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 6: CONTRIBUTION #1 DEEP DIVE ============ -->
+<section>
+  <span class="section-number">04a &mdash; DEEP DIVE</span>
+  <h2>The 1894 Royal Institution Demonstration</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; margin:0 auto 0.5em auto;">On June 1, 1894, Lodge delivered his memorial lecture for Heinrich Hertz at the Royal Institution. What began as a scientific tribute became the first public demonstration of wireless signaling in Britain &mdash; a watershed moment in communications history.</p>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent">The Demonstration</h4>
+      <p>Lodge transmitted Morse code characters from a spark-gap transmitter in one room to a coherer receiver in the lecture hall, a distance of about 60 meters. The audience watched as the telegraph sounder clicked out letters transmitted through walls without any wire connection.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Improved Coherer</h4>
+      <p>Lodge's key innovation was the self-restoring coherer with automatic tapping. Branly's original device needed manual resetting after each detection. Lodge's version could receive continuous sequences of dots and dashes, making practical telegraphy possible.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Signal Processing Insight</h4>
+      <p>The coherer was essentially a nonlinear <strong>envelope detector</strong> &mdash; it responded to the amplitude of incoming oscillations, not their frequency. This principle of detecting the envelope of a modulated carrier remains fundamental to all radio reception.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Priority Question</h4>
+      <p>Lodge demonstrated wireless signaling before Marconi's first experiments (1895) and before Popov's demonstrations in Russia. However, Lodge did not pursue commercial development, and it was Marconi who patented and commercialized the technology.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">The Hertz Memorial</h4>
+      <p>Lodge chose to honor Hertz by extending his work to its practical conclusion. "Hertz has shown us the waves," Lodge told his audience. "It remains to find uses for them." Within a decade, wireless telegraphy connected continents.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Lasting Impact</h4>
+      <p>The coherer principle &mdash; detecting radio waves through their effect on material properties &mdash; launched the entire field of radio reception. It was superseded by crystal detectors and vacuum tubes, but the concept of nonlinear detection endures in every modern receiver.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 7: CONTRIBUTION #2 + SVG ============ -->
+<section>
+  <span class="section-number">05 &mdash; SYNTONIC TUNING</span>
+  <h2>Syntonic Tuning &amp; Resonant Circuits</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <p>Lodge's second great contribution to radio was <strong class="accent">syntonic tuning</strong> &mdash; the principle that transmitter and receiver should be tuned to the same frequency to achieve selective communication. His 1897 patent (British Patent No. 11,575) described the use of <strong class="accent">resonant LC circuits</strong> to select specific frequencies from the electromagnetic spectrum.</p>
+      <p>Before syntonic tuning, wireless telegraphy was like everyone in a room shouting at once. Spark-gap transmitters produced broad, noisy signals that interfered with each other. Lodge recognized that by adding inductance (L) and capacitance (C) to both transmitter and receiver, you could create circuits that resonated at a specific frequency: <code>f = 1/(2&pi;&radic;LC)</code>.</p>
+      <p>This was a profound signal processing insight. A tuned circuit acts as a <strong class="accent">bandpass filter</strong>, selecting only signals at the resonant frequency and rejecting all others. Lodge called this "syntony" &mdash; from the Greek for "tuned together." Without it, radio broadcasting as we know it would be impossible: no separate channels, no frequency allocation, no selective reception.</p>
+      <p>Lodge's syntonic tuning patent was so fundamental that Marconi's company eventually had to purchase it in 1911 for a large sum, acknowledging that practical wireless telegraphy depended on Lodge's invention.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+          <text x="160" y="17" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="9">TUNED RESONANT CIRCUIT (LC)</text>
+          <!-- Circuit loop -->
+          <rect x="60" y="40" width="200" height="180" rx="8" fill="none" stroke="#2a2a3a" stroke-width="1.5"/>
+          <!-- Inductor (top) -->
+          <line x1="60" y1="70" x2="110" y2="70" stroke="#9a9a9a" stroke-width="1.2"/>
+          <path d="M110,70 Q118,55 126,70 Q134,85 142,70 Q150,55 158,70 Q166,85 174,70 Q182,55 190,70" fill="none" stroke="#c97b4b" stroke-width="2"/>
+          <line x1="190" y1="70" x2="260" y2="70" stroke="#9a9a9a" stroke-width="1.2"/>
+          <text x="150" y="55" text-anchor="middle" fill="#c97b4b" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">L</text>
+          <text x="150" y="95" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="8">Inductor</text>
+          <!-- Capacitor (bottom) -->
+          <line x1="60" y1="190" x2="140" y2="190" stroke="#9a9a9a" stroke-width="1.2"/>
+          <line x1="145" y1="175" x2="145" y2="205" stroke="#5b8cd4" stroke-width="2.5"/>
+          <line x1="155" y1="175" x2="155" y2="205" stroke="#5b8cd4" stroke-width="2.5"/>
+          <line x1="160" y1="190" x2="260" y2="190" stroke="#9a9a9a" stroke-width="1.2"/>
+          <text x="150" y="170" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">C</text>
+          <text x="150" y="222" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans,sans-serif" font-size="8">Capacitor</text>
+          <!-- Resonance formula -->
+          <rect x="75" y="125" width="170" height="28" rx="6" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+          <text x="160" y="143" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono,monospace" font-size="11" font-weight="500">f = 1 / (2&pi;&radic;LC)</text>
+          <!-- Energy oscillation arrows -->
+          <path d="M80,100 C100,130 100,130 80,160" fill="none" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowGreen)"/>
+          <path d="M230,160 C210,130 210,130 230,100" fill="none" stroke="#d4a053" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrowAmber)"/>
+          <defs>
+            <marker id="arrowGreen" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+              <path d="M0,0 L6,2 L0,4" fill="#4ecca3"/>
+            </marker>
+            <marker id="arrowAmber" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+              <path d="M0,0 L6,2 L0,4" fill="#d4a053"/>
+            </marker>
+          </defs>
+          <text x="55" y="135" text-anchor="end" fill="#4ecca3" font-family="DM Sans,sans-serif" font-size="7">E &rarr; B</text>
+          <text x="265" y="135" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="7">B &rarr; E</text>
+          <!-- Response curve below -->
+          <text x="160" y="252" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="8">FREQUENCY RESPONSE</text>
+          <line x1="60" y1="290" x2="260" y2="290" stroke="#2a2a3a" stroke-width="1"/>
+          <path d="M60,288 Q100,287 130,280 Q145,268 160,258 Q175,268 190,280 Q220,287 260,288" fill="none" stroke="#c97b4b" stroke-width="2"/>
+          <line x1="160" y1="258" x2="160" y2="290" stroke="#c97b4b" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+          <text x="160" y="300" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono,monospace" font-size="7">f&#8320;</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 8: CONTRIBUTION #2 DEEP DIVE ============ -->
+<section>
+  <span class="section-number">05a &mdash; DEEP DIVE</span>
+  <h2>The Science of Syntony</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; margin:0 auto 0.5em auto;">Lodge's syntonic tuning patent was arguably more important than any single wireless telegraphy demonstration, because it made <em>selective</em> communication possible. Without tuning, radio would have remained a curiosity; with it, radio became an industry.</p>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">The Selectivity Problem</h4>
+      <p>Early spark-gap transmitters produced energy spread across a wide frequency band. Any receiver in range picked up every transmission. Lodge realized that narrowband resonant circuits could isolate individual signals &mdash; the same principle that allows you to tune a radio dial to a specific station today.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Bandpass Filtering</h4>
+      <p>A tuned LC circuit has a characteristic response peaked at the resonant frequency. The <strong>quality factor Q</strong> determines how sharp the peak is: higher Q means better selectivity. Lodge understood that tight coupling and low resistance were key to achieving high Q.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The 1897 Patent</h4>
+      <p>British Patent 11,575 described syntonic tuning in complete detail: matched transmitter and receiver circuits, adjustable inductance and capacitance, and the principle of frequency-selective communication. Marconi's company bought this patent in 1911 for &pound;20,000 (plus substantial royalties).</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Foundation of Broadcasting</h4>
+      <p>Every radio station, every TV channel, every Wi-Fi network, every cellular band relies on the principle Lodge patented: tuned circuits that select specific frequencies from the electromagnetic spectrum. Frequency-division multiplexing is syntonic tuning at scale.</p>
+    </div>
+  </div>
+  <div class="quote-box">
+    <p>"The essence of the invention is the use of a resonant or syntonic system, whereby the transmitter and receiver are attuned to the same period of electrical oscillation."</p>
+    <span class="attribution">&mdash; Oliver Lodge, British Patent 11,575 (1897)</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 9: CONTRIBUTION #3 ============ -->
+<section>
+  <span class="section-number">06 &mdash; ETHER &amp; ELECTROMAGNETISM</span>
+  <h2>Ether Drift Experiments &amp; Electromagnetic Theory</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Hunting the Ether</h3>
+      <p>Lodge devoted enormous effort to detecting the <strong class="accent">luminiferous ether</strong> &mdash; the hypothetical medium through which electromagnetic waves were believed to propagate. In 1893, he conducted an ingenious experiment using rapidly rotating steel discs to see whether moving matter dragged the ether along with it, which would affect the speed of light passing nearby.</p>
+      <p>His experiment, while yielding a null result (no ether drag was detected), was remarkably sophisticated. Lodge placed an optical interferometer near massive rotating discs spinning at high speed. The null result was consistent with both the Michelson-Morley experiment (1887) and with Lorentz's later theoretical work, though Lodge interpreted it differently, believing the ether simply wasn't dragged by ordinary matter.</p>
+      <h3 style="margin-top:0.5em;">Lightning Protection</h3>
+      <p>Lodge made major practical contributions to <strong class="accent">lightning protection</strong> and electromagnetic shielding. He showed that lightning conductors worked not by "draining" atmospheric electricity, as previously believed, but by providing a low-impedance path to ground. His research on the oscillatory nature of lightning discharges &mdash; recognizing them as damped electromagnetic oscillations &mdash; led directly to improved protection systems for buildings and later for electrical infrastructure.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent">The Rotating Disc Experiment</h4>
+        <p>Lodge spun heavy steel discs at high speed between the arms of an interferometer. If the ether were dragged by moving matter, the light path would shift. No shift was detected &mdash; an important null result that constrained ether theories.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Lodge vs. Einstein</h4>
+        <p>Lodge never fully accepted special relativity. He believed in the ether until his death in 1940. While this put him on the wrong side of history, his experimental work on ether detection was rigorous and contributed to the evidence that ultimately undermined his own beliefs.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-blue">Electromagnetic Shielding</h4>
+        <p>Lodge demonstrated that a conducting enclosure could block electromagnetic waves &mdash; work that anticipated the Faraday cage's application to radio-frequency shielding. This principle protects sensitive electronics in every modern device.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-green">Oscillatory Discharge</h4>
+        <p>Lodge's recognition that lightning and spark discharges are oscillatory &mdash; not unidirectional &mdash; was a key insight linking natural phenomena to the electromagnetic oscillations Hertz was studying in the laboratory.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 10: THE METHOD ============ -->
+<section>
+  <span class="section-number">07 &mdash; METHOD</span>
+  <h2>Lodge's Experimental Philosophy</h2>
+  <div class="separator"></div>
+  <p style="max-width:85%; margin:0 auto 0.5em auto;">Lodge combined bold physical intuition with meticulous experimental craft. He was a Maxwellian through and through &mdash; believing that the mathematical structure of electromagnetic theory reflected deep physical reality, and that experiment was the ultimate arbiter.</p>
+  <div class="process-flow">
+    <div class="process-step">
+      <h4 class="accent">Theorize</h4>
+      <p>Start from Maxwell's equations and physical intuition about the ether.</p>
+    </div>
+    <span class="process-arrow">&rarr;</span>
+    <div class="process-step">
+      <h4 class="accent-amber">Build</h4>
+      <p>Design and construct apparatus to test predictions directly.</p>
+    </div>
+    <span class="process-arrow">&rarr;</span>
+    <div class="process-step">
+      <h4 class="accent-purple">Demonstrate</h4>
+      <p>Show results publicly, making science tangible and accessible.</p>
+    </div>
+    <span class="process-arrow">&rarr;</span>
+    <div class="process-step">
+      <h4 class="accent-blue">Apply</h4>
+      <p>Pursue practical applications &mdash; wireless, lightning protection, tuning.</p>
+    </div>
+  </div>
+  <div class="card-grid cols-2" style="margin-top:0.6em;">
+    <div class="card">
+      <h4 class="accent-green">The Experimentalist's Touch</h4>
+      <p>Lodge was renowned for his ability to build elegant apparatus from simple materials. His coherer improvements, his interferometric ether experiments, and his syntonic circuits all reflected a craftsman's skill combined with a physicist's insight. He could make equipment sing.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">The Public Scientist</h4>
+      <p>Lodge believed passionately in public engagement with science. He gave hundreds of public lectures, wrote popular books, and championed scientific education. His 1894 Royal Institution demonstration was as much an act of communication as of physics &mdash; he wanted the public to understand the electromagnetic revolution unfolding around them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 11: CONNECTIONS SVG ============ -->
+<section>
+  <span class="section-number">08 &mdash; CONNECTIONS</span>
+  <h2>Lodge's Scientific Network</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+      <!-- Connection lines -->
+      <line x1="350" y1="190" x2="140" y2="70" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="350" y2="55" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="560" y2="70" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="100" y2="200" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="600" y2="200" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="140" y2="320" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="350" y2="340" stroke="#2a2a3a" stroke-width="1.5"/>
+      <line x1="350" y1="190" x2="560" y2="320" stroke="#2a2a3a" stroke-width="1.5"/>
+      <!-- Lodge node -->
+      <circle cx="350" cy="190" r="32" fill="var(--bg-card)" stroke="#c97b4b" stroke-width="2.5"/>
+      <text x="350" y="186" text-anchor="middle" fill="#c97b4b" font-family="Playfair Display,serif" font-size="11" font-weight="700">Lodge</text>
+      <text x="350" y="200" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">1851-1940</text>
+      <!-- Maxwell -->
+      <circle cx="140" cy="70" r="26" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
+      <text x="140" y="67" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Maxwell</text>
+      <text x="140" y="79" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">EM theory</text>
+      <!-- Hertz -->
+      <circle cx="350" cy="55" r="26" fill="var(--bg-card)" stroke="#cf7272" stroke-width="1.5"/>
+      <text x="350" y="52" text-anchor="middle" fill="#cf7272" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Hertz</text>
+      <text x="350" y="64" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Radio waves</text>
+      <!-- FitzGerald -->
+      <circle cx="560" cy="70" r="26" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+      <text x="560" y="67" text-anchor="middle" fill="#4ecca3" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">FitzGerald</text>
+      <text x="560" y="79" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Maxwellian</text>
+      <!-- Heaviside -->
+      <circle cx="100" cy="200" r="26" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+      <text x="100" y="197" text-anchor="middle" fill="#9b72cf" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Heaviside</text>
+      <text x="100" y="209" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">EM math</text>
+      <!-- Marconi -->
+      <circle cx="600" cy="200" r="26" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+      <text x="600" y="197" text-anchor="middle" fill="#d4a053" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Marconi</text>
+      <text x="600" y="209" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Wireless co.</text>
+      <!-- Branly -->
+      <circle cx="140" cy="320" r="26" fill="var(--bg-card)" stroke="#c97b4b" stroke-width="1.5"/>
+      <text x="140" y="317" text-anchor="middle" fill="#c97b4b" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Branly</text>
+      <text x="140" y="329" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Coherer</text>
+      <!-- Lorentz -->
+      <circle cx="350" cy="340" r="26" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
+      <text x="350" y="337" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Lorentz</text>
+      <text x="350" y="349" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Ether theory</text>
+      <!-- J.J. Thomson -->
+      <circle cx="560" cy="320" r="26" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+      <text x="560" y="317" text-anchor="middle" fill="#4ecca3" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">J.J. Thomson</text>
+      <text x="560" y="329" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono,monospace" font-size="7">Electron</text>
+    </svg>
+  </div>
+  <p style="text-align:center; font-size:0.44em !important; color:var(--text-muted); max-width:80%; margin:0.3em auto;">Lodge was central to the "Maxwellian" circle that included FitzGerald and Heaviside. His relationship with Marconi was complex &mdash; part collaborator, part rival, ultimately linked by the syntonic tuning patent that Marconi's company was forced to purchase.</p>
+</section>
+
+<!-- ============ SLIDE 12: RIVALRY / CONTROVERSY ============ -->
+<section>
+  <span class="section-number">09 &mdash; CONTROVERSY</span>
+  <h2>Marconi, Priority, and the Spirits</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Lodge vs. Marconi</h3>
+      <p>The question of who "invented radio" is complex, but the Lodge-Marconi relationship encapsulates the central tension. Lodge demonstrated wireless signaling in 1894, a year before Marconi's first experiments. Lodge patented syntonic tuning in 1897, a concept essential to all practical radio. Yet it was Marconi who secured the major patents, attracted investment, formed a company, and achieved transatlantic wireless communication in 1901.</p>
+      <p>Lodge was a university professor, not an entrepreneur. He published his results in scientific journals and gave public lectures; Marconi filed patents and built a business empire. When Marconi received the 1909 Nobel Prize in Physics (shared with Karl Ferdinand Braun), Lodge's contributions were largely overlooked. The eventual purchase of Lodge's syntonic tuning patent in 1911 was a tacit acknowledgment of his priority, but it came too late to change the public narrative.</p>
+      <h3 style="margin-top:0.5em;">The Spiritualism Controversy</h3>
+      <p>From the 1880s onward, Lodge was deeply involved in <strong class="accent-rose">psychical research</strong>. He served as president of the Society for Psychical Research and, after the death of his son Raymond in World War I (1915), published a book claiming to have communicated with Raymond's spirit through mediums. This damaged his scientific reputation severely, though Lodge insisted he applied the same rigorous standards to psychical investigation as to physics.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-rose">The Priority Dispute</h4>
+        <p>Lodge, Marconi, Popov, Bose, and Tesla all contributed to early wireless. Lodge's 1894 demonstration preceded Marconi, but Marconi's relentless commercial development won the public credit. The patent purchase in 1911 was Lodge's belated vindication.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-amber">Raymond (1916)</h4>
+        <p>Lodge's book <em>Raymond, or Life and Death</em> became a bestseller but horrified many colleagues. He described conversations with his dead son through spirit mediums. The scientific establishment largely shunned him, though the grieving public embraced the book.</p>
+      </div>
+      <div class="card" style="margin-bottom:0.45em;">
+        <h4 class="accent-purple">The Ether to the End</h4>
+        <p>Lodge defended the luminiferous ether long after most physicists had abandoned it. His 1925 book <em>Ether and Reality</em> argued that the ether was essential. While wrong, his arguments forced relativists to sharpen their explanations.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-blue">A Complex Legacy</h4>
+        <p>Lodge's willingness to investigate the paranormal alongside mainstream physics makes him a polarizing figure. He was either a courageous explorer of forbidden territory or a brilliant man led astray by grief and credulity, depending on your perspective.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 13: LEGACY ============ -->
+<section>
+  <span class="section-number">10 &mdash; LEGACY</span>
+  <h2>Legacy &amp; Lasting Influence</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent">Radio Broadcasting</h4>
+      <p>Lodge's syntonic tuning made selective radio communication possible. Every radio station, every frequency band, every channel on your television exists because Lodge showed how to tune transmitter and receiver to the same frequency.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Wireless Telegraphy</h4>
+      <p>Lodge's 1894 demonstration proved that Hertzian waves could carry information. His improved coherer was the first practical radio receiver. These achievements place him among the founding figures of telecommunications.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Filter Theory</h4>
+      <p>Lodge's resonant circuits were among the first practical bandpass filters. The concept of frequency selectivity through LC resonance became the foundation of analog filter design, from radio IF stages to telephone trunk lines.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Lightning Protection</h4>
+      <p>Lodge's research on oscillatory discharges and lightning conductors improved protection standards worldwide. His understanding of high-frequency transient behavior in conductors anticipated modern electromagnetic compatibility (EMC) engineering.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Science Communication</h4>
+      <p>Lodge pioneered public science communication in Britain. His popular books, lectures, and media appearances set a model that scientists from Eddington to Sagan would follow. He believed the public deserved to understand the science transforming their world.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Spark Plug Patent</h4>
+      <p>Lodge also invented the electric spark plug for internal combustion engines (1903), founding Lodge Plugs Ltd. This practical invention, based on his understanding of electrical discharges, powered British automobiles and aircraft for decades.</p>
+    </div>
+  </div>
+  <div class="quote-box" style="margin-top:0.6em;">
+    <p>"Lodge was one of the true pioneers of wireless communication. Without his work on syntonic tuning, the radio age could not have begun."</p>
+    <span class="attribution">&mdash; Sungook Hong, <em>Wireless: From Marconi's Black-Box to the Audion</em></span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 14: APPLICATIONS ============ -->
+<section>
+  <span class="section-number">11 &mdash; APPLICATIONS</span>
+  <h2>Modern Applications of Lodge's Work</h2>
+  <div class="separator"></div>
+  <div class="two-col">
+    <div>
+      <h3>Telecommunications &amp; Signal Processing</h3>
+      <ul>
+        <li><strong class="accent">Frequency-division multiplexing</strong> &mdash; Lodge's syntonic principle scaled up. Every cellular network, Wi-Fi router, and satellite transponder uses frequency selectivity to separate channels, directly descended from Lodge's 1897 patent.</li>
+        <li><strong class="accent-amber">RF filter design</strong> &mdash; Modern surface acoustic wave (SAW) filters, ceramic resonators, and crystal filters are sophisticated descendants of Lodge's LC tuned circuits. They select desired frequencies in every radio receiver and transmitter.</li>
+        <li><strong class="accent-purple">Radar systems</strong> &mdash; Radar relies on precisely tuned transmitters and receivers &mdash; syntonic systems. Lodge's wartime-era contemporaries built directly on his tuning principles to develop the technology that won the Battle of Britain.</li>
+        <li><strong class="accent-blue">Software-defined radio</strong> &mdash; Even digital receivers implement tuning algorithms that are mathematical equivalents of Lodge's physical LC circuits, using digital bandpass filters to select channels.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Engineering &amp; Infrastructure</h3>
+      <ul>
+        <li><strong class="accent-green">EMC engineering</strong> &mdash; Lodge's electromagnetic shielding work underpins every modern EMC standard. The shielded enclosures protecting sensitive electronics in phones, cars, and medical devices follow principles he demonstrated.</li>
+        <li><strong class="accent-rose">Lightning protection</strong> &mdash; Modern lightning protection standards (IEC 62305) incorporate Lodge's insight that conductors must handle oscillatory, not merely DC, currents. His work on surge impedance remains relevant to power grid protection.</li>
+        <li><strong class="accent">Automotive ignition</strong> &mdash; Lodge's spark plug patent (1903) established the basic design used in billions of internal combustion engines. The principle of controlled electrical discharge in a confined gap remains unchanged.</li>
+        <li><strong class="accent-amber">5G and beyond</strong> &mdash; Modern 5G systems use massive MIMO antenna arrays with precisely tuned resonant elements. The fundamental challenge is still syntony: matching transmitter and receiver frequencies with extreme precision across many simultaneous channels.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 15: TIMELINE SVG ============ -->
+<section>
+  <span class="section-number">12 &mdash; TIMELINE</span>
+  <h2>Life &amp; Works of Oliver Lodge</h2>
+  <div class="separator"></div>
+  <div class="diagram-container">
+    <svg viewBox="0 0 750 340" xmlns="http://www.w3.org/2000/svg">
+      <!-- Central timeline -->
+      <line x1="40" y1="170" x2="720" y2="170" stroke="#2a2a3a" stroke-width="2"/>
+      <!-- 1851 -->
+      <circle cx="55" cy="170" r="5" fill="#c97b4b"/>
+      <text x="55" y="155" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1851</text>
+      <text x="55" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Born in</text>
+      <text x="55" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">Staffordshire</text>
+      <!-- 1875 -->
+      <circle cx="125" cy="170" r="4" fill="#5b8cd4"/>
+      <text x="125" y="155" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1875</text>
+      <text x="125" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">BSc London</text>
+      <!-- 1881 -->
+      <circle cx="185" cy="170" r="4" fill="#9b72cf"/>
+      <text x="185" y="155" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1881</text>
+      <text x="185" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Liverpool</text>
+      <text x="185" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">Professor</text>
+      <!-- 1887 -->
+      <circle cx="240" cy="170" r="4" fill="#4ecca3"/>
+      <text x="240" y="155" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1887</text>
+      <text x="240" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">FRS</text>
+      <!-- 1893 -->
+      <circle cx="300" cy="170" r="4" fill="#d4a053"/>
+      <text x="300" y="155" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1893</text>
+      <text x="300" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Ether drift</text>
+      <text x="300" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">experiment</text>
+      <!-- 1894 -->
+      <circle cx="345" cy="170" r="6" fill="#c97b4b" stroke="#0a0a0f" stroke-width="2"/>
+      <text x="345" y="150" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1894</text>
+      <text x="345" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7" font-weight="700">Radio demo</text>
+      <text x="345" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">Royal Inst.</text>
+      <!-- 1897 -->
+      <circle cx="400" cy="170" r="6" fill="#c97b4b" stroke="#0a0a0f" stroke-width="2"/>
+      <text x="400" y="150" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1897</text>
+      <text x="400" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7" font-weight="700">Syntonic</text>
+      <text x="400" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">patent</text>
+      <!-- 1900 -->
+      <circle cx="455" cy="170" r="4" fill="#9b72cf"/>
+      <text x="455" y="155" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1900</text>
+      <text x="455" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Birmingham</text>
+      <text x="455" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">Principal</text>
+      <!-- 1902 -->
+      <circle cx="500" cy="170" r="4" fill="#d4a053"/>
+      <text x="500" y="155" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1902</text>
+      <text x="500" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Knighted</text>
+      <!-- 1911 -->
+      <circle cx="555" cy="170" r="4" fill="#4ecca3"/>
+      <text x="555" y="155" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1911</text>
+      <text x="555" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Patent sold</text>
+      <text x="555" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">to Marconi</text>
+      <!-- 1916 -->
+      <circle cx="610" cy="170" r="4" fill="#cf7272"/>
+      <text x="610" y="155" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1916</text>
+      <text x="610" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Raymond</text>
+      <text x="610" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">published</text>
+      <!-- 1940 -->
+      <circle cx="690" cy="170" r="5" fill="#cf7272"/>
+      <text x="690" y="155" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono,monospace" font-size="8" font-weight="500">1940</text>
+      <text x="690" y="195" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans,sans-serif" font-size="7">Dies aged 89</text>
+      <text x="690" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans,sans-serif" font-size="6">Wilsford</text>
+      <!-- Era labels -->
+      <rect x="40" y="225" width="175" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+      <text x="127" y="239" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans,sans-serif" font-size="8">Education &amp; Liverpool</text>
+      <rect x="230" y="225" width="215" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+      <text x="337" y="239" text-anchor="middle" fill="#c97b4b" font-family="DM Sans,sans-serif" font-size="8">Radio Pioneering Era</text>
+      <rect x="460" y="225" width="260" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
+      <text x="590" y="239" text-anchor="middle" fill="#9b72cf" font-family="DM Sans,sans-serif" font-size="8">Birmingham &amp; Later Years</text>
+    </svg>
+  </div>
+  <div class="card-grid cols-2" style="margin-top:0.3em;">
+    <div class="card">
+      <h4 class="accent">A Long Life in Science</h4>
+      <p>Lodge lived from the age of the telegraph to the age of radar. He witnessed the technology he helped create transform from laboratory curiosity to world-spanning communications infrastructure, from maritime distress signals to radio broadcasting to the first television transmissions.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">The Tragedy of Almost</h4>
+      <p>Lodge almost invented radio before Marconi, almost detected ether drift before Michelson, and almost achieved the recognition his contributions deserved. His story is a study in how scientific priority, commercial instinct, and public communication shape legacy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 16: FURTHER READING ============ -->
+<section>
+  <span class="section-number">13 &mdash; FURTHER READING</span>
+  <h2>Recommended Reading</h2>
+  <div class="separator"></div>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">Primary Sources</h4>
+      <p><strong><em>Signalling Across Space Without Wires</em></strong> (1897) &mdash; Lodge's own account of his wireless experiments, published just three years after his Royal Institution demonstration. A fascinating primary document.</p>
+      <p style="margin-top:0.4em;"><strong><em>Past Years: An Autobiography</em></strong> (1931) &mdash; Lodge's reflections on his life in science, written at eighty. Candid, revealing, and elegantly written. Essential reading for understanding the man behind the physics.</p>
+      <p style="margin-top:0.4em;"><strong><em>Modern Views of Electricity</em></strong> (1889) &mdash; Lodge's popular account of electromagnetic theory. Shows his remarkable ability to explain complex physics to general audiences, and reveals his deep commitment to the ether.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Biographies &amp; History</h4>
+      <p><strong><em>Wireless: From Marconi's Black-Box to the Audion</em></strong> by Sungook Hong (2001) &mdash; Excellent scholarly history of early radio that gives Lodge due credit for his contributions, particularly syntonic tuning.</p>
+      <p style="margin-top:0.4em;"><strong><em>Oliver Lodge and the Invention of Radio</em></strong> by Peter Rowlands &amp; J. Patrick Wilson (1994) &mdash; Focused study of Lodge's electromagnetic work and his priority claims in wireless telegraphy.</p>
+      <p style="margin-top:0.4em;"><strong><em>The Maxwellians</em></strong> by Bruce Hunt (1991) &mdash; Brilliant account of Lodge, Heaviside, and FitzGerald's campaign to extend and popularize Maxwell's electromagnetic theory. Essential context for Lodge's scientific world.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Ether &amp; Psychical Research</h4>
+      <p><strong><em>Ether and Reality</em></strong> by Oliver Lodge (1925) &mdash; Lodge's last major defense of the ether concept. A window into how a first-rate scientific mind could maintain beliefs that mainstream physics had abandoned.</p>
+      <p style="margin-top:0.4em;"><strong><em>Raymond, or Life and Death</em></strong> (1916) &mdash; Lodge's controversial account of spirit communication with his dead son. Whatever one thinks of the claims, it is a profoundly moving document of wartime grief.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Signal Processing Context</h4>
+      <p><strong><em>A History of the Marconi Company</em></strong> by W. J. Baker (1970) &mdash; Gives the commercial context for Lodge's patent disputes and the development of radio technology.</p>
+      <p style="margin-top:0.4em;"><strong><em>Empire of the Air</em></strong> by Tom Lewis (1991) &mdash; Broader history of radio's development, placing Lodge's work in the context of the inventors and entrepreneurs who followed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 17: CLOSING QUOTE ============ -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="60" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="70" cy="70" r="45" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.25"/>
+      <circle cx="70" cy="70" r="30" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.2"/>
+      <path d="M70,40 Q90,55 70,70" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+      <path d="M70,40 Q50,55 70,70" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+      <path d="M55,30 Q90,50 55,70" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.3"/>
+      <path d="M85,30 Q50,50 85,70" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.3"/>
+    </svg>
+  </div>
+  <div class="quote-box" style="max-width:70%; margin:0.5em auto;">
+    <p style="font-size:0.54em !important;">"Wireless telegraphy is one of those things which people don't believe until they've seen it."</p>
+    <span class="attribution">&mdash; Sir Oliver Lodge</span>
+  </div>
+  <div class="separator" style="margin:0.8em auto;"></div>
+  <h3 style="text-align:center; color:var(--text-muted); font-size:0.7em; font-weight:400;">Sir Oliver Joseph Lodge, FRS</h3>
+  <p style="text-align:center; color:var(--text-muted); font-size:0.44em;">1851 &ndash; 1940</p>
+  <p style="text-align:center; font-size:0.48em; color:var(--text-secondary); max-width:60%; margin:0.4em auto;">He demonstrated wireless communication before Marconi, patented the tuning that made radio possible, and spent a lifetime championing Maxwell's vision of an electromagnetic universe. His science endures in every tuned circuit, every radio channel, every filtered signal. The ether he believed in was an illusion; the waves he detected were real.</p>
+  <div style="margin-top:0.8em; text-align:center;">
+    <span class="tag amber">Radio Waves</span>
+    <span class="tag green">Wireless Telegraphy</span>
+    <span class="tag">Electromagnetic Theory</span>
+    <span class="tag blue">Signal Processing</span>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

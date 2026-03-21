@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Max Born — Architect of Quantum Probability</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #d4a053;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4a053"/><stop offset="100%" stop-color="#9b72cf"/></linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#g1)" stroke-width="0.5" opacity="0.3"/>
+            <g fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.6">
+                <circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="50"/><circle cx="100" cy="100" r="30"/>
+                <path d="M100 10 L100 190 M10 100 L190 100 M30 30 L170 170 M170 30 L30 170"/>
+                <polygon points="100,15 145,60 145,140 100,185 55,140 55,60" stroke-width="0.8"/>
+                <polygon points="100,35 130,65 130,135 100,165 70,135 70,65" stroke-width="0.5" opacity="0.4"/>
+            </g>
+            <g fill="none" stroke="#d4a053" stroke-width="0.4" opacity="0.35">
+                <ellipse cx="100" cy="100" rx="85" ry="40"/><ellipse cx="100" cy="100" rx="40" ry="85"/>
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(45 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="40" transform="rotate(-45 100 100)"/>
+            </g>
+            <circle cx="100" cy="100" r="4" fill="#d4a053" opacity="0.8"/>
+        </svg>
+    </div>
+    <h1>Max Born</h1>
+    <p class="subtitle">1882 &ndash; 1970</p>
+    <div class="separator"></div>
+    <p style="max-width:70%; margin:0.5em auto; text-align:center;">The mathematician who gave quantum mechanics its probabilistic soul, transforming Schr&ouml;dinger's wave function from abstraction into measurable reality.</p>
+    <div style="margin-top:0.6em;">
+        <span class="tag amber">Quantum Mechanics</span>
+        <span class="tag green">Born Rule</span>
+        <span class="tag">Scattering Theory</span>
+        <span class="tag blue">Nobel Prize 1954</span>
+        <span class="tag rose">G&ouml;ttingen School</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life &amp; Formation</h2>
+    <div class="two-col">
+        <div>
+            <p>Max Born was born on December 11, 1882, in Breslau, Silesia (now Wroc&#322;aw, Poland), into a prosperous academic family. His father, Gustav Born, was a professor of anatomy at the University of Breslau, and young Max grew up immersed in intellectual culture.</p>
+            <p>After his mother's early death when he was four, Born was raised largely by his grandmother. He studied at the University of Breslau, then G&ouml;ttingen, Z&uuml;rich, and Cambridge. At G&ouml;ttingen, he fell under the influence of the great mathematicians Felix Klein, David Hilbert, and Hermann Minkowski.</p>
+            <p>His doctoral thesis on the stability of elastic wires and tapes (1906) already showed his gift for applying rigorous mathematics to physical problems&mdash;a trait that would define his career.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent">Breslau Roots</h4>
+                <p>Son of an anatomy professor; grew up surrounded by scientific discourse and the cultural richness of Silesian academic life.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-green">Mathematical Training</h4>
+                <p>Studied under Hilbert and Minkowski at G&ouml;ttingen&mdash;the mathematical capital of the world&mdash;gaining tools that would prove essential for quantum theory.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Early Career</h4>
+                <p>Habilitation in 1909 on relativistic electron theory; quickly recognized as a bridge-builder between pure mathematics and theoretical physics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">G&ouml;ttingen Professorship <span class="tag amber">1921</span></h4>
+            <p>Appointed director of the Institute for Theoretical Physics at G&ouml;ttingen, transforming it into the world's leading center for quantum research. His seminars attracted Heisenberg, Pauli, Jordan, Fermi, Dirac, and Oppenheimer.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Matrix Mechanics <span class="tag blue">1925</span></h4>
+            <p>Recognized that Heisenberg's quantum calculation tables were matrices. With Pascual Jordan, formalized Heisenberg's breakthrough into the rigorous "matrix mechanics" framework&mdash;the first complete formulation of quantum mechanics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Born Rule <span class="tag green">1926</span></h4>
+            <p>Published the statistical interpretation of the wave function: |&psi;|&sup2; gives the probability density of finding a particle. A single footnote in this paper would earn him the Nobel Prize&mdash;28 years later.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Exile &amp; Edinburgh <span class="tag rose">1933&ndash;1953</span></h4>
+            <p>Dismissed from G&ouml;ttingen by Nazi racial laws. After brief stays in Cambridge and Bangalore, settled at the University of Edinburgh, where he continued productive research and trained a new generation of British physicists.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Quantum Revolution</h3>
+            <p>The 1920s were the most transformative decade in the history of physics. Between 1925 and 1927, the entire framework of classical determinism was overturned. Heisenberg's matrix mechanics (1925), Schr&ouml;dinger's wave equation (1926), and Born's probability interpretation (1926) arrived in rapid succession.</p>
+            <p>G&ouml;ttingen, under Born's leadership, was the epicenter. The question that consumed everyone: what does the wave function <em>mean</em>? Schr&ouml;dinger believed &psi; described a literal matter wave. Born's radical answer&mdash;that &psi; encodes only <em>probabilities</em>&mdash;split the physics community and disturbed Einstein deeply.</p>
+            <p>Meanwhile, the Weimar Republic's fragile democracy was crumbling, and many of these breakthroughs occurred under the shadow of rising antisemitism that would soon scatter G&ouml;ttingen's brilliant community across the globe.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-purple">The G&ouml;ttingen Circle</h4>
+                <p>Born's institute was uniquely collaborative. Morning seminars, afternoon hikes, evening debates&mdash;ideas moved freely between professor and students in a way unprecedented in European academia.</p>
+            </div>
+            <div class="quote-box">
+                <p>"Physics as we know it will be over in six months."</p>
+                <span class="attribution">&mdash; Max Born to a colleague, 1928, on the rapid pace of quantum discoveries</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 — Born Rule -->
+<section>
+    <span class="section-number">04</span>
+    <h2>The Born Rule</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>Probability Enters Physics</h3>
+            <p>In June 1926, Born proposed that the square modulus of the wave function, |&psi;(x)|&sup2;, gives the <em>probability density</em> of finding a particle at position x. This was not a statement of ignorance but a fundamental feature of nature.</p>
+            <p>The key insight came from studying electron scattering. Born realized that &psi; itself was not directly observable&mdash;only |&psi;|&sup2; had physical meaning as a probability.</p>
+            <p>This interpretation became a pillar of the Copenhagen interpretation and remains the standard link between quantum formalism and experimental measurement.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Axes -->
+                    <line x1="50" y1="240" x2="380" y2="240" stroke="#6a6a7a" stroke-width="1"/>
+                    <line x1="50" y1="240" x2="50" y2="20" stroke="#6a6a7a" stroke-width="1"/>
+                    <text x="210" y="270" fill="#6a6a7a" font-size="11" text-anchor="middle" font-family="DM Sans">Position x</text>
+                    <text x="15" y="130" fill="#6a6a7a" font-size="11" text-anchor="middle" font-family="DM Sans" transform="rotate(-90 15 130)">Amplitude</text>
+                    <!-- Wave function psi -->
+                    <path d="M60,180 Q110,40 160,140 Q200,220 240,100 Q270,20 310,160 Q340,230 370,180" fill="none" stroke="#5b8cd4" stroke-width="2" opacity="0.7"/>
+                    <text x="375" y="175" fill="#5b8cd4" font-size="11" font-family="JetBrains Mono">&psi;(x)</text>
+                    <!-- |psi|^2 filled -->
+                    <path d="M60,220 Q110,130 160,195 Q200,240 240,165 Q270,100 310,210 Q340,238 370,220" fill="rgba(212,160,83,0.15)" stroke="#d4a053" stroke-width="2.5"/>
+                    <text x="375" y="218" fill="#d4a053" font-size="11" font-family="JetBrains Mono">|&psi;|&sup2;</text>
+                    <!-- Annotation -->
+                    <rect x="100" y="5" rx="4" width="200" height="28" fill="rgba(22,22,34,0.9)" stroke="#2a2a3a"/>
+                    <text x="200" y="24" fill="#d4a053" font-size="12" text-anchor="middle" font-family="Playfair Display">P(x) = |&psi;(x)|&sup2; dx</text>
+                    <!-- Shaded region -->
+                    <rect x="220" y="165" width="40" height="75" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <text x="240" y="158" fill="#d4a053" font-size="9" text-anchor="middle" font-family="JetBrains Mono">dx</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Born Rule — Deeper Dive -->
+<section>
+    <span class="section-number">05</span>
+    <h2>The Born Rule — Deeper Dive</h2>
+    <p style="max-width:85%; margin:0.3em auto;">Born's 1926 paper "Zur Quantenmechanik der Stossvorg&auml;nge" (On the Quantum Mechanics of Collision Processes) introduced the probability interpretation almost as an aside&mdash;in a footnote. Yet this footnote rewrote the foundations of physics.</p>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">The Radical Claim</h4>
+            <p>Unlike classical probability (which reflects ignorance of hidden details), Born's probability was <em>irreducible</em>. Nature itself is fundamentally stochastic at the quantum level. Even with perfect knowledge of &psi;, one cannot predict individual outcomes&mdash;only their statistics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Einstein's Objection</h4>
+            <p>"God does not play dice," Einstein protested in a 1926 letter to Born. Their correspondence on this topic spanned decades, yet Born never wavered. He replied that perhaps God <em>did</em> play dice&mdash;and the evidence supported it.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Experimental Vindication</h4>
+            <p>Every quantum experiment since has confirmed Born's rule. Bell's theorem (1964) and its experimental tests (Aspect, 1982) showed that no deterministic hidden-variable theory can reproduce quantum statistics, vindicating Born's intuition.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Delayed Nobel</h4>
+            <p>Born received the Nobel Prize in 1954&mdash;28 years after his discovery. The committee cited "his fundamental research in quantum mechanics, especially his statistical interpretation of the wave function." Many felt the delay was unconscionable.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 — Born Approximation -->
+<section>
+    <span class="section-number">06</span>
+    <h2>The Born Approximation</h2>
+    <div class="two-col wide-right">
+        <div>
+            <h3>Scattering Made Solvable</h3>
+            <p>When a quantum particle encounters a potential (an atom, a nucleus), exact solutions are usually impossible. Born developed a perturbative method: treat the scattering potential as a small perturbation and expand the solution iteratively.</p>
+            <p>The first Born approximation relates the scattering amplitude directly to the Fourier transform of the potential&mdash;an elegant result that made countless scattering problems tractable.</p>
+            <p>This technique became the backbone of nuclear and particle physics, enabling experimentalists to extract information about potentials from measured cross-sections.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Incoming plane wave -->
+                    <g stroke="#5b8cd4" stroke-width="1.5" opacity="0.6">
+                        <line x1="30" y1="100" x2="30" y2="180"/><line x1="60" y1="90" x2="60" y2="190"/>
+                        <line x1="90" y1="85" x2="90" y2="195"/><line x1="120" y1="80" x2="120" y2="200"/>
+                    </g>
+                    <text x="75" y="75" fill="#5b8cd4" font-size="10" text-anchor="middle" font-family="JetBrains Mono">e^(ikx)</text>
+                    <!-- Arrow -->
+                    <line x1="30" y1="140" x2="145" y2="140" stroke="#5b8cd4" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+                    <defs><marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#5b8cd4"/></marker></defs>
+                    <!-- Scattering center -->
+                    <circle cx="200" cy="140" r="35" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="2"/>
+                    <circle cx="200" cy="140" r="8" fill="#d4a053" opacity="0.6"/>
+                    <text x="200" y="195" fill="#d4a053" font-size="10" text-anchor="middle" font-family="JetBrains Mono">V(r)</text>
+                    <!-- Scattered spherical waves -->
+                    <g fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5">
+                        <circle cx="200" cy="140" r="60"/><circle cx="200" cy="140" r="80"/><circle cx="200" cy="140" r="100"/>
+                        <circle cx="200" cy="140" r="120"/>
+                    </g>
+                    <!-- Scattered arrows -->
+                    <line x1="240" y1="110" x2="320" y2="60" stroke="#4ecca3" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+                    <line x1="235" y1="140" x2="340" y2="140" stroke="#4ecca3" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+                    <line x1="240" y1="170" x2="320" y2="220" stroke="#4ecca3" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+                    <line x1="220" y1="175" x2="260" y2="250" stroke="#4ecca3" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
+                    <defs><marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#4ecca3"/></marker></defs>
+                    <text x="345" y="138" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">f(&theta;)</text>
+                    <!-- Cross section label -->
+                    <rect x="240" y="5" rx="4" width="155" height="28" fill="rgba(22,22,34,0.9)" stroke="#2a2a3a"/>
+                    <text x="317" y="24" fill="#d4a053" font-size="11" text-anchor="middle" font-family="Playfair Display">d&sigma;/d&Omega; = |f(&theta;)|&sup2;</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Born Approximation — Deeper Dive -->
+<section>
+    <span class="section-number">07</span>
+    <h2>Born Approximation — Deeper Dive</h2>
+    <div class="two-col">
+        <div>
+            <p>The Born approximation works by replacing the exact scattered wave with a series expansion. The first term assumes the incident wave is unmodified by the potential&mdash;a "single scattering" approximation. Higher-order terms account for multiple scattering events.</p>
+            <p>Mathematically, the scattering amplitude in the first Born approximation is:</p>
+            <p><code>f(&theta;) ~ &int; V(r) e^(i q&middot;r) d&sup3;r</code></p>
+            <p>where <strong>q</strong> is the momentum transfer. This is simply the Fourier transform of the potential evaluated at the momentum transfer&mdash;a beautifully simple result.</p>
+            <p>The approximation is valid when the potential is weak compared to the kinetic energy of the incoming particle, making it ideal for high-energy scattering experiments.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-green">Applications</h4>
+                <p>Used in X-ray crystallography, electron diffraction, nuclear scattering, and particle physics. Rutherford's classical scattering formula emerges as a special case of Born's quantum treatment.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-purple">The Born Series</h4>
+                <p>Higher-order terms form the "Born series"&mdash;each term representing an additional scattering event. The series converges when the potential is sufficiently weak, providing systematic corrections.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Modern Extensions</h4>
+                <p>The distorted-wave Born approximation (DWBA) extends the method to stronger potentials by using a known solution as the starting point, rather than a free plane wave.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 — Born-Oppenheimer -->
+<section>
+    <span class="section-number">08</span>
+    <h2>The Born-Oppenheimer Approximation</h2>
+    <p style="max-width:85%; margin:0.3em auto;">In 1927, Born and his young doctoral student J. Robert Oppenheimer published a paper that would become the foundation of all molecular physics and quantum chemistry.</p>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">The Core Idea</h4>
+            <p>Nuclei are thousands of times heavier than electrons. This means electrons adjust almost instantaneously to nuclear positions. Born and Oppenheimer showed that the molecular wave function can be separated: solve for electron motion first (treating nuclei as fixed), then solve for nuclear motion on the resulting "potential energy surface."</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Mathematical Elegance</h4>
+            <p>&Psi;(r,R) &asymp; &psi;<sub>e</sub>(r;R) &middot; &chi;<sub>n</sub>(R). The total wave function factors into an electronic part (parametrically dependent on nuclear positions R) and a nuclear part. This separation reduces an impossible coupled problem into two tractable ones.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Potential Energy Surfaces</h4>
+            <p>The electronic energy as a function of nuclear coordinates defines a "potential energy surface"&mdash;the landscape on which nuclei move. These surfaces govern molecular geometry, vibration, chemical reactions, and spectroscopy.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Universal Application</h4>
+            <p>Nearly every calculation in computational chemistry and molecular physics begins with this approximation. Without it, quantum chemistry as a practical discipline would not exist. It remains valid for the vast majority of molecular systems.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Born's Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Identify the Physics</h4>
+            <p>Start from the concrete experimental situation: scattering, molecular spectra, crystal lattices.</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-green">Find the Mathematics</h4>
+            <p>Apply the most rigorous mathematical framework: matrices, Fourier transforms, perturbation theory.</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Extract Meaning</h4>
+            <p>Insist on physical interpretation: what do the mathematical objects <em>mean</em> for observation?</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-rose">Confront Reality</h4>
+            <p>Demand agreement with experiment; revise interpretation if needed, but trust the formalism.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.4em;">
+        <div class="card">
+            <h4 class="accent-blue">The G&ouml;ttingen Style</h4>
+            <p>Born championed a collaborative, seminar-driven approach. His institute ran on open debate: no idea was too radical, no student too junior to challenge the professor. This culture produced more Nobel laureates per square meter than any other institution in history.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Mathematical Rigor</h4>
+            <p>Trained by Hilbert, Born insisted on mathematical precision. When Heisenberg presented his multiplication tables, Born alone recognized them as matrices&mdash;a crucial step that elevated quantum mechanics from inspired guesswork to a complete mathematical theory.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central node -->
+            <circle cx="350" cy="170" r="30" fill="rgba(212,160,83,0.15)" stroke="#d4a053" stroke-width="2"/>
+            <text x="350" y="174" fill="#d4a053" font-size="12" text-anchor="middle" font-family="Playfair Display" font-weight="700">Born</text>
+            <!-- Connections -->
+            <line x1="320" y1="170" x2="140" y2="80" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <circle cx="120" cy="70" r="24" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="120" y="64" fill="#5b8cd4" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Heisenberg</text>
+            <text x="120" y="78" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">matrix mech.</text>
+
+            <line x1="320" y1="160" x2="160" y2="170" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <circle cx="140" cy="170" r="24" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="140" y="164" fill="#4ecca3" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Jordan</text>
+            <text x="140" y="178" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">matrix mech.</text>
+
+            <line x1="350" y1="200" x2="180" y2="280" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <circle cx="160" cy="290" r="28" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="160" y="284" fill="#cf7272" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Oppenheimer</text>
+            <text x="160" y="298" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">B-O approx.</text>
+
+            <line x1="380" y1="170" x2="540" y2="70" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <circle cx="560" cy="60" r="24" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="560" y="54" fill="#9b72cf" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Einstein</text>
+            <text x="560" y="68" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">lifelong debate</text>
+
+            <line x1="380" y1="160" x2="560" y2="150" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <circle cx="580" cy="150" r="24" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="580" y="144" fill="#d4a053" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Pauli</text>
+            <text x="580" y="158" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">student/critic</text>
+
+            <line x1="380" y1="180" x2="560" y2="240" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <circle cx="570" cy="250" r="24" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="570" y="244" fill="#5b8cd4" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Fermi</text>
+            <text x="570" y="258" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">G&ouml;ttingen visitor</text>
+
+            <line x1="350" y1="200" x2="350" y2="300" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <circle cx="350" cy="320" r="24" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="350" y="314" fill="#4ecca3" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Dirac</text>
+            <text x="350" y="328" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">visitor 1927</text>
+
+            <line x1="330" y1="145" x2="290" y2="60" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <circle cx="280" cy="45" r="24" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="280" y="39" fill="#cf7272" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Hilbert</text>
+            <text x="280" y="53" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="DM Sans">mentor</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">11</span>
+    <h2>The Great Debate with Einstein</h2>
+    <div class="two-col">
+        <div>
+            <h3>Probability vs. Determinism</h3>
+            <p>The Born-Einstein correspondence, spanning from 1916 to 1955, is one of the most remarkable exchanges in the history of science. Two close friends, who had supported each other through world wars and exile, found themselves on opposite sides of physics' deepest question.</p>
+            <p>Einstein could never accept that quantum mechanics was <em>complete</em>. He believed hidden variables must underlie the apparent randomness. Born, who had introduced that very randomness, defended it with equal conviction.</p>
+            <p>Their disagreement was never bitter&mdash;always respectful, often affectionate. Einstein called Born "you lucky rascal" in one letter; Born addressed Einstein as "Dear Einstein" even in their sharpest exchanges. History ultimately sided with Born.</p>
+        </div>
+        <div>
+            <div class="quote-box" style="margin-bottom:0.6em;">
+                <p>"Quantum mechanics is certainly imposing. But an inner voice tells me that it is not yet the real thing."</p>
+                <span class="attribution">&mdash; Albert Einstein, letter to Born, 1926</span>
+            </div>
+            <div class="quote-box">
+                <p>"I believe that ideas such as absolute certitude, absolute exactness, final truth, etc. are figments of the imagination which should not be admissible in any field of science."</p>
+                <span class="attribution">&mdash; Max Born, Nobel lecture, 1954</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Quantum Information</h4>
+            <p>The Born rule is the axiom that links quantum states to measurement outcomes. Quantum computing, quantum cryptography, and quantum teleportation all rely fundamentally on Born's probability interpretation to predict and verify results.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Computational Chemistry</h4>
+            <p>The Born-Oppenheimer approximation underpins every modern quantum chemistry code&mdash;Gaussian, VASP, Quantum ESPRESSO. Without it, calculating molecular properties would remain computationally impossible.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Scattering Theory</h4>
+            <p>The Born approximation remains the first tool physicists reach for when analyzing scattering data from particle accelerators. CERN's analysis pipelines still use Born-level calculations as baseline predictions.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Foundations of QM</h4>
+            <p>Modern debates about quantum foundations&mdash;many-worlds, QBism, relational QM&mdash;all grapple with <em>why</em> the Born rule works. Deriving |&psi;|&sup2; from deeper principles remains an open problem, underscoring Born's insight's profundity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Applications</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Semiconductor Design</h4>
+            <p>Born's probability interpretation governs electron behavior in transistors. Every smartphone chip is designed using quantum mechanics rooted in |&psi;|&sup2;.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Drug Discovery</h4>
+            <p>Born-Oppenheimer molecular dynamics simulations model protein-ligand interactions, accelerating pharmaceutical research and drug design.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Materials Science</h4>
+            <p>Density functional theory calculations, built on Born-Oppenheimer, predict properties of novel materials&mdash;superconductors, battery electrodes, catalysts.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Nuclear Reactors</h4>
+            <p>Born approximation cross-sections are used in neutron transport calculations essential for reactor design and nuclear safety analysis.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Medical Imaging</h4>
+            <p>PET and SPECT scanners rely on scattering cross-sections derived from Born-type calculations to reconstruct images from detected radiation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Quantum Sensors</h4>
+            <p>Quantum magnetometers and gravimeters exploit Born's rule to extract measurement precision at the fundamental quantum limit.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Life &amp; Career Timeline</h2>
+    <div style="max-width:85%; margin:0.4em auto;">
+        <svg viewBox="0 0 700 30" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="15" x2="680" y2="15" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="20" cy="15" r="4" fill="#d4a053"/><circle cx="170" cy="15" r="3" fill="#5b8cd4"/>
+            <circle cx="310" cy="15" r="3" fill="#4ecca3"/><circle cx="400" cy="15" r="3" fill="#cf7272"/>
+            <circle cx="510" cy="15" r="3" fill="#9b72cf"/><circle cx="610" cy="15" r="3" fill="#d4a053"/>
+            <circle cx="680" cy="15" r="4" fill="#d4a053"/>
+            <text x="20" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1882</text>
+            <text x="310" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1925</text>
+            <text x="400" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1933</text>
+            <text x="610" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1954</text>
+            <text x="680" y="10" fill="#6a6a7a" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1970</text>
+        </svg>
+        <div class="timeline-item">
+            <span class="year">1882</span>
+            <div class="event"><strong>Born in Breslau, Silesia</strong>Son of anatomy professor Gustav Born; raised in a cultured academic household.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1906</span>
+            <div class="event"><strong>Doctorate at G&ouml;ttingen</strong>Thesis on elasticity under Felix Klein; influenced by Hilbert and Minkowski.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1921</span>
+            <div class="event"><strong>Professor at G&ouml;ttingen</strong>Takes chair of theoretical physics; builds the world's premier quantum physics institute.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1925</span>
+            <div class="event"><strong>Matrix mechanics</strong>With Heisenberg and Jordan, formalizes quantum mechanics in matrix form.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1926</span>
+            <div class="event"><strong>The Born Rule</strong>Proposes |&psi;|&sup2; as probability density&mdash;the statistical interpretation of quantum mechanics.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1927</span>
+            <div class="event"><strong>Born-Oppenheimer approximation</strong>With Oppenheimer, separates electronic and nuclear motion in molecules.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1933</span>
+            <div class="event"><strong>Exile from Germany</strong>Dismissed under Nazi racial laws; emigrates to Cambridge, then Edinburgh.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1954</span>
+            <div class="event"><strong>Nobel Prize in Physics</strong>Awarded for the statistical interpretation of the wave function, 28 years after the discovery.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1970</span>
+            <div class="event"><strong>Death in G&ouml;ttingen</strong>Returns to Germany in retirement; dies January 5 at age 87.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Born-Einstein Letters</h4>
+            <p>Edited by Max Born. The complete correspondence between Born and Einstein (1916&ndash;1955), with Born's commentary. Essential reading for understanding the quantum interpretation debate from the inside.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">My Life: Recollections of a Nobel Laureate</h4>
+            <p>Max Born's autobiography, published posthumously. A warm, reflective account of his scientific journey, his colleagues, and the tumultuous era that shaped modern physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Atomic Physics</h4>
+            <p>Max Born. First published in 1935, this textbook went through eight editions and trained generations of physicists. Remarkably clear exposition of quantum mechanics from one of its creators.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Principles of Optics</h4>
+            <p>Max Born and Emil Wolf. The definitive treatise on classical optics, still in print after seven editions. A monument to Born's range&mdash;he was a master of classical physics as well as quantum theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Quantum Theory and Measurement</h4>
+            <p>Edited by J.A. Wheeler and W.H. Zurek. Contains Born's original 1926 papers alongside other foundational documents. Provides context for Born's contribution within the broader quantum revolution.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Making of the Atomic Bomb</h4>
+            <p>Richard Rhodes. While focused on the bomb, this Pulitzer-winning narrative vividly portrays the G&ouml;ttingen milieu and Born's role in training the generation that would split the atom.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <defs>
+                <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4a053"/><stop offset="100%" stop-color="#4ecca3"/></linearGradient>
+            </defs>
+            <g fill="none" stroke="url(#g2)" stroke-width="0.5" opacity="0.5">
+                <circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="75"/><circle cx="100" cy="100" r="60"/>
+                <circle cx="100" cy="100" r="45"/><circle cx="100" cy="100" r="30"/>
+                <path d="M100 10 L100 190 M10 100 L190 100"/>
+                <path d="M30 30 L170 170 M170 30 L30 170"/>
+                <path d="M100 10 L170 170 M100 10 L30 170"/>
+                <path d="M10 100 L170 30 M10 100 L170 170"/>
+                <path d="M190 100 L30 30 M190 100 L30 170"/>
+            </g>
+            <circle cx="100" cy="100" r="5" fill="#d4a053" opacity="0.6"/>
+        </svg>
+    </div>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width:70%; margin:1em auto;">
+        <p>"I believe that ideas such as absolute certitude, absolute exactness, final truth, etc. are figments of the imagination which should not be admissible in any field of science."</p>
+        <span class="attribution">&mdash; Max Born, Nobel Lecture, December 11, 1954</span>
+    </div>
+    <div class="separator"></div>
+    <p style="text-align:center; margin-top:0.8em;"><span class="accent" style="font-family:'Playfair Display',serif; font-size:0.7em;">Max Born</span></p>
+    <p style="text-align:center;" class="subtitle">1882 &ndash; 1970 &nbsp;&middot;&nbsp; Breslau &middot; G&ouml;ttingen &middot; Edinburgh</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

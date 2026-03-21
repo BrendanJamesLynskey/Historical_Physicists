@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roger Penrose — Mathematical Physics &amp; the Nature of Reality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #3ec9b0; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+        .reveal-viewport { background: var(--bg-primary); }
+        .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+        .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+        .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+        .reveal h3 { font-size: 1.15em; font-weight: 700; }
+        .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+        .reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+        .reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+        .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+        .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+        .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+        .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+        .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+        .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+        .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+        .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+        .card:hover { border-color: var(--accent); }
+        .card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+        .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+        .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+        .timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+        .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+        .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+        .diagram-container { margin: 0.6em auto; max-width: 85%; }
+        .two-col .diagram-container { max-width: 100%; margin: 0; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+        .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+        .tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+        .tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+        .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+        .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+        .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+        .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+        @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+        .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+        .process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+        .process-step p { font-size: 0.40em !important; margin: 0; }
+        .process-arrow { color: var(--accent); font-size: 1.0em; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+        .reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+        .reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+        .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+        .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: Title -->
+            <section>
+                <div class="mandala-container">
+                    <svg viewBox="0 0 140 140">
+                        <polygon points="70,10 82,50 120,50 88,72 98,112 70,88 42,112 52,72 20,50 58,50" fill="none" stroke="#3ec9b0" stroke-width="1" opacity="0.5"/>
+                        <polygon points="70,25 78,52 108,52 84,68 92,98 70,82 48,98 56,68 32,52 62,52" fill="none" stroke="#3ec9b0" stroke-width="0.8" opacity="0.35"/>
+                        <circle cx="70" cy="70" r="55" fill="none" stroke="#3ec9b0" stroke-width="0.6" opacity="0.25"/>
+                        <circle cx="70" cy="70" r="35" fill="none" stroke="#3ec9b0" stroke-width="0.6" opacity="0.2"/>
+                        <circle cx="70" cy="70" r="4" fill="#3ec9b0" opacity="0.6"/>
+                    </svg>
+                </div>
+                <h1>Roger Penrose</h1>
+                <div class="separator"></div>
+                <p class="subtitle">Geometry, Gravity &amp; the Fabric of Reality</p>
+                <p style="font-size: 0.38em; color: var(--text-muted); margin-top: 1.2em;">
+                    <span class="accent">b. 1931</span> &nbsp;&middot;&nbsp; Mathematician &amp; Physicist &nbsp;&middot;&nbsp; Nobel Prize 2020
+                </p>
+                <div style="margin-top: 0.8em;">
+                    <span class="tag green">General Relativity</span>
+                    <span class="tag">Twistor Theory</span>
+                    <span class="tag amber">Aperiodic Tilings</span>
+                    <span class="tag blue">Mathematical Physics</span>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: Early Life -->
+            <section>
+                <span class="section-number">01 &mdash; ORIGINS</span>
+                <h2>A Family of Minds</h2>
+                <div class="separator"></div>
+                <div class="two-col wide-left">
+                    <div>
+                        <p>Roger Penrose was born on <span class="accent">8 August 1931</span> in Colchester, Essex, into a family of formidable intellects. His father, <strong>Lionel Penrose</strong>, was a distinguished human geneticist; his mother, Margaret Leathes, trained as a physician. The household hummed with puzzles, games, and scientific conversation.</p>
+                        <p>Roger's older brother <strong>Oliver</strong> became a mathematician, while his younger brother <strong>Jonathan</strong> would become a ten-time British chess champion. During the war years, the family relocated to Canada, where Lionel held a position at the Ontario Hospital in London, Ontario.</p>
+                        <p>Returning to England, the young Penrose attended <span class="accent">University College School</span> in London, where his mathematical talents were already conspicuous. He recalled being fascinated by geometry from an early age &mdash; constructing polyhedra and exploring the visual logic of shapes before he had any formal training.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent">Academic Lineage</h4>
+                            <p>Father: Lionel Penrose, FRS &mdash; psychiatric genetics pioneer. Mother: Margaret Leathes &mdash; physician. Brother Oliver: statistical mechanics. Brother Jonathan: chess grandmaster.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-amber">The Impossible Triangle</h4>
+                            <p>In the 1950s, Roger and Lionel co-authored a paper on "impossible objects" &mdash; the Penrose triangle and staircase &mdash; which directly inspired M.C. Escher's iconic lithographs <em>Waterfall</em> and <em>Ascending and Descending</em>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: Career -->
+            <section>
+                <span class="section-number">02 &mdash; CAREER</span>
+                <h2>From Cambridge to the Cosmos</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Penrose read mathematics at <span class="accent">University College London</span> (BSc, 1952), then moved to <span class="accent">St John's College, Cambridge</span>, where he completed his PhD in algebraic geometry under the supervision of <strong>John A. Todd</strong> in 1957. His thesis concerned tensor methods in algebraic geometry, but even then his thoughts were drifting toward physics.</p>
+                        <p>A pivotal year came in 1963 when he spent time in Texas, attending a lecture by <strong>David Finkelstein</strong> on the nature of the event horizon. This ignited his deep engagement with general relativity. In 1964, Penrose took up a readership at <span class="accent">Birkbeck College, London</span>, where just a year later he published his celebrated singularity theorem.</p>
+                        <p>In 1973, he was appointed <span class="accent">Rouse Ball Professor of Mathematics</span> at the University of Oxford, a chair he held until his retirement in 1998 and beyond as emeritus. He has held visiting positions at numerous institutions worldwide.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent-purple">Key Positions</h4>
+                            <p>Bedford College London (1956&ndash;57), Cambridge Research Fellow (1957&ndash;60), King's College London (1961&ndash;63), Birkbeck College (1964&ndash;73), Rouse Ball Professor at Oxford (1973&ndash;98).</p>
+                        </div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent-green">Honours</h4>
+                            <p>Wolf Prize in Physics (1988, with Hawking), Eddington Medal, Royal Medal, Copley Medal (2008), Knight Bachelor (1994), Order of Merit (2000), Nobel Prize in Physics (2020).</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-amber">The Penrose Style</h4>
+                            <p>Uniquely visual among theorists. Penrose thinks in pictures, diagrams, and geometric constructions &mdash; a style that produced conformal diagrams, spin networks, and twistor theory alike.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: Historical Context -->
+            <section>
+                <span class="section-number">03 &mdash; CONTEXT</span>
+                <h2>The Golden Age of General Relativity</h2>
+                <div class="separator"></div>
+                <p style="max-width: 80%; margin: 0 auto 0.5em auto; text-align: center;">When Penrose entered the field in the early 1960s, general relativity was undergoing a dramatic renaissance &mdash; from an elegant but physically marginal theory to a central pillar of modern physics.</p>
+                <div class="card-grid cols-3">
+                    <div class="card">
+                        <h4 class="accent">The "Low-Water Mark"</h4>
+                        <p>In the 1950s, GR was considered a mathematical curiosity. Few physicists worked on it seriously. Even the reality of gravitational waves was debated. Key questions &mdash; do singularities really form? &mdash; remained open.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">The Renaissance</h4>
+                        <p>The 1960s saw the discovery of quasars (1963), the cosmic microwave background (1965), and pulsars (1967). Suddenly GR was astrophysically vital. New mathematical tools were urgently needed.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">The Singularity Question</h4>
+                        <p>Schwarzschild's 1916 solution hinted at singularities, but were they real or artifacts of symmetry? Oppenheimer &amp; Snyder (1939) showed collapse for perfectly spherical dust, but no one knew what happened in the general case.</p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <p>"The problem was that all known solutions showing singularities were highly symmetric. Nobody knew whether a small perturbation might cause the collapsing matter to bounce or swirl around the singular point."</p>
+                    <span class="attribution">&mdash; Kip Thorne, on the state of the field before Penrose</span>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: Contribution #1 + SVG -->
+            <section>
+                <span class="section-number">04 &mdash; SINGULARITY THEOREM</span>
+                <h2>The Penrose Singularity Theorem</h2>
+                <div class="separator"></div>
+                <div class="two-col wide-right">
+                    <div>
+                        <p>In <span class="accent">1965</span>, Penrose published a three-page paper that transformed gravitational physics. He proved that once a <strong>trapped surface</strong> forms during gravitational collapse, the formation of a singularity is <em>inevitable</em> &mdash; regardless of symmetry.</p>
+                        <p>The key insight was topological: Penrose introduced the concept of a <strong>closed trapped surface</strong> &mdash; a two-dimensional surface where both inward and outward-directed light rays converge. If such a surface exists, and certain energy conditions hold, geodesic incompleteness (a singularity) must follow.</p>
+                        <p>This was revolutionary because it required <em>no assumption of spherical symmetry</em>. The theorem applied to any realistic collapse scenario. It was this work that earned him the <span class="accent">2020 Nobel Prize in Physics</span>, cited as showing "that black hole formation is a robust prediction of the general theory of relativity."</p>
+                    </div>
+                    <div>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:320px; display:block; margin:0 auto;">
+                                <!-- Penrose diagram: conformal diagram with trapped surface and singularity -->
+                                <!-- Outer diamond -->
+                                <line x1="160" y1="20" x2="300" y2="190" stroke="#2a2a3a" stroke-width="1.5"/>
+                                <line x1="160" y1="20" x2="20" y2="190" stroke="#2a2a3a" stroke-width="1.5"/>
+                                <line x1="20" y1="190" x2="160" y2="360" stroke="#2a2a3a" stroke-width="1.5"/>
+                                <line x1="300" y1="190" x2="160" y2="360" stroke="#2a2a3a" stroke-width="1.5"/>
+                                <!-- Singularity wavy line at top -->
+                                <path d="M80,80 Q100,65 120,80 Q140,95 160,80 Q180,65 200,80 Q220,95 240,80" stroke="#cf7272" stroke-width="2.5" fill="none"/>
+                                <text x="160" y="60" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="11" font-weight="700">SINGULARITY</text>
+                                <!-- Event horizon -->
+                                <line x1="80" y1="80" x2="160" y2="360" stroke="#3ec9b0" stroke-width="1.8" stroke-dasharray="6,3"/>
+                                <line x1="240" y1="80" x2="160" y2="360" stroke="#3ec9b0" stroke-width="1.8" stroke-dasharray="6,3"/>
+                                <text x="58" y="200" text-anchor="middle" fill="#3ec9b0" font-family="JetBrains Mono" font-size="9" transform="rotate(-55,58,200)">event horizon</text>
+                                <!-- Trapped surface -->
+                                <ellipse cx="160" cy="160" rx="45" ry="12" fill="rgba(62,201,176,0.15)" stroke="#3ec9b0" stroke-width="2"/>
+                                <text x="160" y="145" text-anchor="middle" fill="#3ec9b0" font-family="DM Sans" font-size="10" font-weight="600">trapped surface</text>
+                                <!-- Light cones from trapped surface -->
+                                <path d="M115,160 L130,120" stroke="#d4a053" stroke-width="1.2" marker-end="url(#arrowAmber)"/>
+                                <path d="M205,160 L190,120" stroke="#d4a053" stroke-width="1.2" marker-end="url(#arrowAmber)"/>
+                                <text x="105" y="118" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="8">light</text>
+                                <text x="218" y="118" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="8">light</text>
+                                <!-- Labels -->
+                                <text x="160" y="375" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">past timelike infinity</text>
+                                <text x="310" y="190" text-anchor="start" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">i+</text>
+                                <text x="8" y="190" text-anchor="end" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">i+</text>
+                                <!-- Collapsing matter -->
+                                <path d="M120,280 Q140,220 160,160 Q180,220 200,280" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.2"/>
+                                <text x="160" y="260" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10">collapsing matter</text>
+                                <!-- Arrow markers -->
+                                <defs>
+                                    <marker id="arrowAmber" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#d4a053"/></marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p style="text-align:center; font-size:0.36em !important; color:var(--text-muted);">Penrose conformal diagram: both light cones from the trapped surface point inward toward the singularity</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: Deep Dive on Singularity Theorem -->
+            <section>
+                <span class="section-number">05 &mdash; DEEP DIVE</span>
+                <h2>Inside the Proof</h2>
+                <div class="separator"></div>
+                <p style="max-width: 80%; margin: 0 auto 0.4em auto; text-align: center;">Penrose's argument fused differential geometry, topology, and causality theory in an entirely novel way. The proof proceeds in three essential steps.</p>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <h4 class="accent">Step 1</h4>
+                        <p>Assume a trapped surface exists and energy conditions hold (null convergence condition).</p>
+                    </div>
+                    <div class="process-arrow">&rarr;</div>
+                    <div class="process-step">
+                        <h4 class="accent-amber">Step 2</h4>
+                        <p>Show that all null geodesics from the surface must converge &mdash; they develop conjugate points in finite affine parameter.</p>
+                    </div>
+                    <div class="process-arrow">&rarr;</div>
+                    <div class="process-step">
+                        <h4 class="accent-purple">Step 3</h4>
+                        <p>Use a topological argument (the Cauchy surface is non-compact) to show geodesic incompleteness follows.</p>
+                    </div>
+                </div>
+                <div class="card-grid cols-2" style="margin-top: 0.5em;">
+                    <div class="card">
+                        <h4 class="accent-green">The Role of Topology</h4>
+                        <p>The crux is a proof by contradiction: if all geodesics were complete, the boundary of the future of the trapped surface would be a compact, smooth manifold without boundary &mdash; but this contradicts the non-compactness of the Cauchy surface. Hence at least one geodesic must be incomplete.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-rose">Physical Significance</h4>
+                        <p>The theorem does not tell us the <em>nature</em> of the singularity &mdash; whether curvature diverges or spacetime simply ends. It proves only geodesic incompleteness. This distinction motivated decades of further work, including the strong cosmic censorship conjecture.</p>
+                    </div>
+                </div>
+                <div class="quote-box" style="margin-top: 0.5em;">
+                    <p>"The point of my theorem was that you didn't need to solve Einstein's equations exactly. You could use global topological arguments to deduce that something catastrophic must occur."</p>
+                    <span class="attribution">&mdash; Roger Penrose</span>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: Contribution #2 + SVG -->
+            <section>
+                <span class="section-number">06 &mdash; TWISTOR THEORY</span>
+                <h2>Twistor Theory</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>Beginning in <span class="accent">1967</span>, Penrose proposed a radical reformulation of the foundations of physics. In <strong>twistor theory</strong>, the fundamental objects are not points in spacetime but rather elements of a complex projective space called <em>twistor space</em>.</p>
+                        <p>A twistor is a pair <code>(omega^A, pi_{A'})</code> of two-component spinors satisfying an incidence relation. A point in Minkowski spacetime corresponds not to a point in twistor space but to a <strong>line</strong> (a complex projective line, or Riemann sphere). Conversely, a point in twistor space corresponds to a null geodesic (a light ray) in spacetime.</p>
+                        <p>The goal was ambitious: to build a framework where <span class="accent">complex geometry</span> and <span class="accent">holomorphic structures</span> replace differential equations as the primary language of physics. Massless field equations, including Maxwell's equations, emerge naturally as cohomological conditions in twistor space.</p>
+                        <p>In 2003, <strong>Edward Witten</strong> showed that perturbative gauge-theory scattering amplitudes could be computed far more efficiently using twistor methods, reviving intense interest in the theory.</p>
+                    </div>
+                    <div>
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:300px; display:block; margin:0 auto;">
+                                <!-- Twistor correspondence diagram -->
+                                <!-- Spacetime side -->
+                                <rect x="10" y="20" width="120" height="130" rx="8" fill="none" stroke="#2a2a3a" stroke-width="1.2"/>
+                                <text x="70" y="15" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11" font-weight="600">Spacetime M</text>
+                                <!-- Point in spacetime -->
+                                <circle cx="70" cy="75" r="4" fill="#3ec9b0"/>
+                                <text x="82" y="73" fill="#3ec9b0" font-family="JetBrains Mono" font-size="9">point x</text>
+                                <!-- Light cone from point -->
+                                <line x1="70" y1="75" x2="40" y2="40" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+                                <line x1="70" y1="75" x2="100" y2="40" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+                                <line x1="70" y1="75" x2="40" y2="110" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+                                <line x1="70" y1="75" x2="100" y2="110" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+                                <!-- Null geodesic -->
+                                <line x1="30" y1="130" x2="110" y2="40" stroke="#9b72cf" stroke-width="1.5"/>
+                                <circle cx="55" cy="100" r="3" fill="#9b72cf"/>
+                                <text x="115" y="125" fill="#9b72cf" font-family="JetBrains Mono" font-size="9">null ray</text>
+                                <!-- Twistor space side -->
+                                <rect x="170" y="20" width="120" height="130" rx="8" fill="none" stroke="#2a2a3a" stroke-width="1.2"/>
+                                <text x="230" y="15" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11" font-weight="600">Twistor Space T</text>
+                                <!-- Line in twistor space (CP1) for spacetime point -->
+                                <path d="M195,55 Q230,40 265,70 Q240,95 195,80" fill="none" stroke="#3ec9b0" stroke-width="1.8"/>
+                                <text x="235" y="50" fill="#3ec9b0" font-family="JetBrains Mono" font-size="9">line (CP1)</text>
+                                <!-- Point in twistor space for null ray -->
+                                <circle cx="220" cy="115" r="4" fill="#9b72cf"/>
+                                <text x="232" y="118" fill="#9b72cf" font-family="JetBrains Mono" font-size="9">point Z</text>
+                                <!-- Correspondence arrows -->
+                                <path d="M132,65 Q150,55 168,65" stroke="#3ec9b0" stroke-width="1.2" fill="none" marker-end="url(#arrowTeal)"/>
+                                <path d="M132,110 Q150,120 168,110" stroke="#9b72cf" stroke-width="1.2" fill="none" marker-end="url(#arrowPurple)"/>
+                                <text x="150" y="52" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">point &harr; line</text>
+                                <text x="150" y="135" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">ray &harr; point</text>
+                                <!-- Incidence relation box -->
+                                <rect x="30" y="180" width="240" height="60" rx="8" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="1"/>
+                                <text x="150" y="200" text-anchor="middle" fill="#e8e6e3" font-family="Playfair Display" font-size="12" font-weight="700">Incidence Relation</text>
+                                <text x="150" y="225" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="12">&#969;<tspan baseline-shift="super" font-size="8">A</tspan> = i x<tspan baseline-shift="super" font-size="8">AA'</tspan> &#960;<tspan baseline-shift="sub" font-size="8">A'</tspan></text>
+                                <!-- Key insight -->
+                                <rect x="30" y="260" width="240" height="65" rx="8" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="1"/>
+                                <text x="150" y="280" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="600">The Penrose Transform</text>
+                                <text x="150" y="300" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">Massless field equations become</text>
+                                <text x="150" y="315" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="9">sheaf cohomology in twistor space</text>
+                                <defs>
+                                    <marker id="arrowTeal" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#3ec9b0"/></marker>
+                                    <marker id="arrowPurple" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#9b72cf"/></marker>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: Deep Dive on Twistor Theory -->
+            <section>
+                <span class="section-number">07 &mdash; DEEP DIVE</span>
+                <h2>Twistors and Scattering Amplitudes</h2>
+                <div class="separator"></div>
+                <div class="two-col wide-left">
+                    <div>
+                        <p>For decades, twistor theory remained an elegant but somewhat isolated framework within mathematical physics. That changed dramatically in <span class="accent">December 2003</span>, when Edward Witten published a paper connecting twistor geometry to perturbative string theory.</p>
+                        <p>Witten showed that tree-level gluon scattering amplitudes in Yang-Mills theory could be computed as integrals over curves in twistor space. The notorious complexity of Feynman diagram calculations &mdash; where thousands of diagrams might be needed for a single process &mdash; collapsed into simple geometric objects.</p>
+                        <p>This led to the discovery of the <strong>amplituhedron</strong> by Arkani-Hamed and Trnka (2013), a geometric object in a generalized twistor space whose volume directly encodes scattering amplitudes. The implication is profound: <span class="accent-amber">locality and unitarity</span> &mdash; traditionally fundamental postulates &mdash; may be emergent properties of a deeper geometric structure.</p>
+                        <p>Penrose's original vision of replacing spacetime with complex geometry turned out to be prescient, though the applications came from an unexpected direction.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent">Parke-Taylor Formula</h4>
+                            <p>The MHV (maximally helicity violating) amplitude for n gluons reduces to a single compact expression in spinor-helicity variables &mdash; directly derivable from twistor geometry. What took pages of Feynman diagrams becomes one line.</p>
+                        </div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent-purple">The BCFW Recursion</h4>
+                            <p>Britto, Cachazo, Feng, and Witten (2005) showed that all tree-level amplitudes can be built recursively using complex shifts in twistor variables. This "on-shell" approach bypasses virtual particles entirely.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-green">Open Questions</h4>
+                            <p>Can the full non-perturbative content of quantum gravity be captured in twistor space? Penrose believes twistor theory may ultimately resolve the tension between quantum mechanics and general relativity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: Contribution #3 -->
+            <section>
+                <span class="section-number">08 &mdash; APERIODIC TILINGS</span>
+                <h2>Penrose Tilings &amp; Forbidden Symmetry</h2>
+                <div class="separator"></div>
+                <div class="two-col">
+                    <div>
+                        <p>In <span class="accent">1974</span>, Penrose discovered sets of tiles that can cover the infinite plane but <em>only non-periodically</em>. The most famous version uses just two shapes &mdash; the <strong>kite</strong> and <strong>dart</strong> (or equivalently, two rhombi) &mdash; with matching rules that enforce aperiodicity.</p>
+                        <p>These tilings exhibit <span class="accent-amber">five-fold rotational symmetry</span>, which is impossible in any periodic crystal. They are self-similar: the same patterns recur at every scale, governed by the <strong>golden ratio</strong> &phi; = (1+&radic;5)/2. Every finite patch appears infinitely often, yet the overall pattern never repeats.</p>
+                        <p>In <span class="accent">1982</span>, Dan Shechtman discovered <strong>quasicrystals</strong> &mdash; real materials with diffraction patterns showing five-fold symmetry, long thought impossible in crystallography. Penrose tilings provided the mathematical framework to understand these materials. Shechtman received the Nobel Prize in Chemistry in 2011.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent">Beyond Tilings</h4>
+                            <p>Penrose's other major contributions include: the <strong>Penrose process</strong> for extracting energy from rotating black holes, the <strong>cosmic censorship conjectures</strong> (weak and strong), <strong>conformal cyclic cosmology</strong> (CCC), and <strong>spin networks</strong> &mdash; later adopted in loop quantum gravity.</p>
+                        </div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent-purple">The Penrose Process</h4>
+                            <p>A particle entering the ergosphere of a Kerr black hole can split, with one fragment falling in and the other escaping with more energy than the original. The black hole loses angular momentum. This set the stage for Hawking radiation.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-rose">CCC: Cycles of Creation</h4>
+                            <p>In conformal cyclic cosmology, the heat death of one "aeon" conformally matches the Big Bang of the next. Penrose has searched for evidence of previous aeons in the cosmic microwave background &mdash; the "Hawking points" hypothesis.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: Method -->
+            <section>
+                <span class="section-number">09 &mdash; METHOD</span>
+                <h2>Geometric Imagination</h2>
+                <div class="separator"></div>
+                <p style="max-width: 80%; margin: 0 auto 0.5em auto; text-align: center;">Penrose's methodology is unique among theoretical physicists. He works by <em>visual and geometric reasoning</em>, constructing pictures that encode deep mathematical structure.</p>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Conformal Diagrams</h4>
+                        <p>Penrose invented conformal (Carter-Penrose) diagrams that map infinite spacetimes onto finite diagrams while preserving the causal structure. Light rays always travel at 45 degrees. These are now standard tools in general relativity, used to visualize black holes, cosmological horizons, and causal relationships at a glance.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">Spin Networks &amp; Diagrams</h4>
+                        <p>In the early 1970s, Penrose introduced spin networks &mdash; combinatorial diagrams encoding the quantum mechanics of angular momentum. These later became the basis for the state space of loop quantum gravity, developed by Rovelli and Smolin in the 1990s.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Abstract Index Notation</h4>
+                        <p>Penrose developed the abstract index notation for tensors, which combines the clarity of coordinate-free methods with the computational convenience of component notation. Together with Wolfgang Rindler, he wrote the definitive two-volume treatise <em>Spinors and Space-Time</em>.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">The Visual Thinker</h4>
+                        <p>His popular books &mdash; <em>The Emperor's New Mind</em>, <em>The Road to Reality</em> &mdash; are filled with hand-drawn illustrations. He thinks geometrically first, translating pictures into algebra only after the structure is clear. This has led him to insights inaccessible to purely algebraic approaches.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 11: Connections SVG -->
+            <section>
+                <span class="section-number">10 &mdash; CONNECTIONS</span>
+                <h2>An Intellectual Web</h2>
+                <div class="separator"></div>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:700px; display:block; margin:0 auto;">
+                        <!-- Central node: Penrose -->
+                        <circle cx="350" cy="190" r="36" fill="var(--bg-card)" stroke="#3ec9b0" stroke-width="2.5"/>
+                        <text x="350" y="186" text-anchor="middle" fill="#3ec9b0" font-family="Playfair Display" font-size="13" font-weight="700">Roger</text>
+                        <text x="350" y="202" text-anchor="middle" fill="#3ec9b0" font-family="Playfair Display" font-size="13" font-weight="700">Penrose</text>
+
+                        <!-- Hawking -->
+                        <circle cx="150" cy="100" r="30" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.8"/>
+                        <text x="150" y="96" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="11" font-weight="600">Stephen</text>
+                        <text x="150" y="110" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="11" font-weight="600">Hawking</text>
+                        <line x1="178" y1="116" x2="318" y2="174" stroke="#d4a053" stroke-width="1.2" opacity="0.5"/>
+                        <text x="230" y="132" fill="#9a9a9a" font-family="DM Sans" font-size="9" transform="rotate(-14,230,132)">singularity theorems</text>
+
+                        <!-- Sciama -->
+                        <circle cx="140" cy="270" r="30" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.8"/>
+                        <text x="140" y="266" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="11" font-weight="600">Dennis</text>
+                        <text x="140" y="280" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="11" font-weight="600">Sciama</text>
+                        <line x1="168" y1="256" x2="322" y2="206" stroke="#9b72cf" stroke-width="1.2" opacity="0.5"/>
+                        <text x="220" y="246" fill="#9a9a9a" font-family="DM Sans" font-size="9" transform="rotate(16,220,246)">PhD supervisor</text>
+
+                        <!-- Escher -->
+                        <circle cx="560" cy="90" r="30" fill="var(--bg-card)" stroke="#cf7272" stroke-width="1.8"/>
+                        <text x="560" y="86" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="11" font-weight="600">M.C.</text>
+                        <text x="560" y="100" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="11" font-weight="600">Escher</text>
+                        <line x1="534" y1="108" x2="382" y2="176" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
+                        <text x="470" y="128" fill="#9a9a9a" font-family="DM Sans" font-size="9" transform="rotate(26,470,128)">impossible objects</text>
+
+                        <!-- Witten -->
+                        <circle cx="570" cy="270" r="30" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.8"/>
+                        <text x="570" y="266" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="11" font-weight="600">Edward</text>
+                        <text x="570" y="280" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="11" font-weight="600">Witten</text>
+                        <line x1="542" y1="256" x2="380" y2="204" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
+                        <text x="478" y="244" fill="#9a9a9a" font-family="DM Sans" font-size="9" transform="rotate(-18,478,244)">twistor string theory</text>
+
+                        <!-- Hawking-Penrose connection note -->
+                        <rect x="20" y="140" width="130" height="45" rx="6" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="0.8"/>
+                        <text x="85" y="157" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="8" font-weight="600">Hawking-Penrose 1970</text>
+                        <text x="85" y="172" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7.5">joint singularity theorem</text>
+                        <text x="85" y="182" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7.5">including cosmological case</text>
+
+                        <!-- Hameroff -->
+                        <circle cx="350" cy="340" r="28" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+                        <text x="350" y="336" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="600">Stuart</text>
+                        <text x="350" y="349" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="600">Hameroff</text>
+                        <line x1="350" y1="312" x2="350" y2="226" stroke="#4ecca3" stroke-width="1.2" opacity="0.5"/>
+                        <text x="365" y="270" fill="#9a9a9a" font-family="DM Sans" font-size="9">Orch-OR theory</text>
+
+                        <!-- Shechtman -->
+                        <circle cx="80" cy="185" r="26" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.2"/>
+                        <text x="80" y="181" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="600">Dan</text>
+                        <text x="80" y="193" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="600">Shechtman</text>
+                        <line x1="106" y1="185" x2="314" y2="190" stroke="#4ecca3" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,3"/>
+                        <text x="200" y="178" fill="#6a6a7a" font-family="DM Sans" font-size="8">quasicrystals</text>
+                    </svg>
+                </div>
+                <p style="text-align:center; font-size:0.38em !important; color:var(--text-muted);">Penrose's work connects to an extraordinarily diverse network of collaborators and fields &mdash; from pure mathematics to consciousness research</p>
+            </section>
+
+            <!-- SLIDE 12: Rivalry / Controversy -->
+            <section>
+                <span class="section-number">11 &mdash; CONTROVERSY</span>
+                <h2>The Consciousness Question</h2>
+                <div class="separator"></div>
+                <div class="two-col wide-left">
+                    <div>
+                        <p>Penrose's most controversial contribution lies outside physics proper. In <em>The Emperor's New Mind</em> (1989) and <em>Shadows of the Mind</em> (1994), he argued that human consciousness is <span class="accent-rose">non-computable</span> &mdash; that no algorithmic process can replicate it.</p>
+                        <p>His argument draws on <strong>Godel's incompleteness theorems</strong>: mathematicians can perceive the truth of statements that no formal system can prove, suggesting (Penrose claims) that the mind transcends Turing computation. Most logicians and computer scientists dispute this inference, arguing it conflates different senses of "understanding."</p>
+                        <p>With anaesthesiologist <strong>Stuart Hameroff</strong>, Penrose developed <strong>Orchestrated Objective Reduction (Orch-OR)</strong>, proposing that quantum gravity effects in microtubules within neurons give rise to conscious experience. The theory has been widely criticized: most neuroscientists argue that quantum coherence cannot be maintained at brain temperatures, and that classical neural computation suffices to explain cognition.</p>
+                        <p>Yet Penrose persists. He sees consciousness as a window into physics beyond current understanding &mdash; a place where quantum mechanics and gravity must be unified in ways we do not yet comprehend.</p>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom: 0.4em; border-color: var(--accent-rose);">
+                            <h4 class="accent-rose">The Critics</h4>
+                            <p>Max Tegmark calculated that quantum decoherence in microtubules occurs on timescales of ~10<sup>-13</sup> seconds &mdash; far too fast for neural processes. Most physicists consider Orch-OR unfounded, though not all dismiss the general idea of quantum effects in biology.</p>
+                        </div>
+                        <div class="card" style="margin-bottom: 0.4em;">
+                            <h4 class="accent-amber">The Godelian Argument</h4>
+                            <p>Critics (including Hilary Putnam and Solomon Feferman) argue Penrose's use of Godel is flawed: Godel's theorem applies to consistent formal systems, but we have no proof that human mathematicians are consistent.</p>
+                        </div>
+                        <div class="card">
+                            <h4 class="accent-green">A Minority View?</h4>
+                            <p>Despite the skepticism, Penrose's work has stimulated serious interdisciplinary discussion. His question &mdash; whether consciousness requires new physics &mdash; remains genuinely open, even if his specific answer is not widely accepted.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 13: Legacy -->
+            <section>
+                <span class="section-number">12 &mdash; LEGACY</span>
+                <h2>A Legacy Written in Geometry</h2>
+                <div class="separator"></div>
+                <p style="max-width: 80%; margin: 0 auto 0.5em auto; text-align: center;">Penrose's influence extends across mathematics, physics, philosophy, and art. His tools and ideas have become part of the permanent infrastructure of theoretical physics.</p>
+                <div class="card-grid cols-3">
+                    <div class="card">
+                        <h4 class="accent">Singularity Theorems</h4>
+                        <p>Established that black holes are inevitable consequences of general relativity, not mathematical curiosities. The Penrose-Hawking theorems remain cornerstones of gravitational physics, underpinning our understanding of the universe's most extreme objects.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">Conformal Diagrams</h4>
+                        <p>Every textbook on general relativity uses Penrose diagrams to visualize causal structure. They have become as fundamental to the field as Feynman diagrams are to particle physics &mdash; indispensable tools for thought.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Twistor Programme</h4>
+                        <p>Twistor theory inspired the amplituhedron programme, revolutionizing how we compute scattering amplitudes. It offers a potential route to quantum gravity and has deep connections to algebraic geometry and string theory.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Quasicrystals</h4>
+                        <p>Penrose tilings anticipated the discovery of quasicrystalline materials by a decade. They are now central to the mathematical theory of aperiodic order and have practical applications in materials science.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-blue">Spin Networks</h4>
+                        <p>Penrose's combinatorial approach to quantum angular momentum became the kinematical foundation of loop quantum gravity. The idea that space itself has a discrete, graph-like structure at the Planck scale traces directly to his work.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-rose">Art &amp; Imagination</h4>
+                        <p>From impossible objects to Escher's prints, from the Penrose staircase to <em>The Road to Reality</em>'s 1,000+ pages of illustrated physics &mdash; Penrose has shown that mathematical beauty and physical truth are inseparable.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 14: Applications -->
+            <section>
+                <span class="section-number">13 &mdash; APPLICATIONS</span>
+                <h2>Where Penrose's Ideas Live Today</h2>
+                <div class="separator"></div>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Black Hole Imaging</h4>
+                        <p>The Event Horizon Telescope's 2019 image of M87* confirmed the existence of the structures Penrose's theorems predict. The shadow's geometry is a direct consequence of the trapped surfaces and horizons his work formalized. The theoretical framework for interpreting these images rests on Penrose diagrams and conformal techniques.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-amber">Gravitational Wave Astronomy</h4>
+                        <p>LIGO's detection of black hole mergers (2015 onwards) depends on numerical relativity simulations that use Penrose's conformal compactification to handle boundary conditions at infinity. The very concept that merging black holes must produce singularities relies on his theorem.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Scattering Amplitudes</h4>
+                        <p>The twistor revolution in amplitude calculations has practical consequences for the LHC. Computing background processes for Higgs boson searches uses methods descended from twistor-inspired recursion relations. What once took weeks of Feynman diagram algebra now takes hours.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-green">Materials Science</h4>
+                        <p>Quasicrystalline alloys based on Penrose tiling principles are used in non-stick coatings (e.g., certain Teflon-alternative frying pans), surgical instruments, and LED light technology. Their unusual thermal and mechanical properties derive from the aperiodic order Penrose first explored on paper.</p>
+                    </div>
+                </div>
+                <div class="quote-box" style="margin-top: 0.5em;">
+                    <p>"Penrose's work is unusual in that it has simultaneously advanced pure mathematics, mathematical physics, and our understanding of the real universe."</p>
+                    <span class="attribution">&mdash; The Nobel Committee, 2020</span>
+                </div>
+            </section>
+
+            <!-- SLIDE 15: Timeline SVG -->
+            <section>
+                <span class="section-number">14 &mdash; TIMELINE</span>
+                <h2>A Life in Spacetime</h2>
+                <div class="separator"></div>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 750 420" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:750px; display:block; margin:0 auto;">
+                        <!-- Central timeline line -->
+                        <line x1="60" y1="210" x2="710" y2="210" stroke="#2a2a3a" stroke-width="2"/>
+                        <!-- Decade markers -->
+                        <circle cx="90" cy="210" r="4" fill="#3ec9b0"/>
+                        <text x="90" y="235" text-anchor="middle" fill="#3ec9b0" font-family="JetBrains Mono" font-size="10" font-weight="500">1931</text>
+                        <text x="90" y="248" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Born in</text>
+                        <text x="90" y="259" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Colchester</text>
+
+                        <circle cx="180" cy="210" r="4" fill="#d4a053"/>
+                        <text x="180" y="195" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1957</text>
+                        <text x="180" y="182" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">PhD, Cambridge</text>
+                        <text x="180" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">(algebraic geometry)</text>
+
+                        <circle cx="270" cy="210" r="6" fill="#cf7272"/>
+                        <text x="270" y="235" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="10" font-weight="500">1965</text>
+                        <text x="270" y="248" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="600">Singularity</text>
+                        <text x="270" y="259" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="600">Theorem</text>
+                        <text x="270" y="272" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">(Nobel Prize work)</text>
+
+                        <circle cx="340" cy="210" r="5" fill="#9b72cf"/>
+                        <text x="340" y="195" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" font-weight="500">1967</text>
+                        <text x="340" y="182" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Twistor theory</text>
+                        <text x="340" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">introduced</text>
+
+                        <circle cx="400" cy="210" r="4" fill="#5b8cd4"/>
+                        <text x="400" y="235" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="500">1969</text>
+                        <text x="400" y="248" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Cosmic censorship</text>
+                        <text x="400" y="259" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">&amp; Penrose process</text>
+
+                        <circle cx="460" cy="210" r="5" fill="#d4a053"/>
+                        <text x="460" y="195" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1974</text>
+                        <text x="460" y="182" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Penrose tilings</text>
+                        <text x="460" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">discovered</text>
+
+                        <circle cx="530" cy="210" r="4" fill="#4ecca3"/>
+                        <text x="530" y="235" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="500">1989</text>
+                        <text x="530" y="248" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Emperor's New</text>
+                        <text x="530" y="259" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Mind published</text>
+
+                        <circle cx="600" cy="210" r="4" fill="#d4a053"/>
+                        <text x="600" y="195" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">2004</text>
+                        <text x="600" y="182" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">The Road to</text>
+                        <text x="600" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Reality published</text>
+
+                        <circle cx="675" cy="210" r="7" fill="#3ec9b0"/>
+                        <text x="675" y="235" text-anchor="middle" fill="#3ec9b0" font-family="JetBrains Mono" font-size="10" font-weight="500">2020</text>
+                        <text x="675" y="248" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Nobel Prize</text>
+                        <text x="675" y="259" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8">in Physics</text>
+                        <text x="675" y="272" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">(age 89)</text>
+
+                        <!-- Decorative connecting arcs -->
+                        <path d="M270,204 Q305,160 340,204" fill="none" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="3,3"/>
+                        <text x="305" y="150" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">topology &rarr; complex geometry</text>
+
+                        <!-- Hawking-Penrose 1970 -->
+                        <circle cx="310" cy="310" r="3" fill="#d4a053" opacity="0.7"/>
+                        <text x="310" y="330" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="9">1970</text>
+                        <text x="310" y="345" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">Hawking-Penrose theorem</text>
+                        <line x1="310" y1="306" x2="300" y2="216" stroke="#d4a053" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/>
+
+                        <!-- Wolf Prize -->
+                        <circle cx="560" cy="310" r="3" fill="#9b72cf" opacity="0.7"/>
+                        <text x="560" y="330" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="9">1988</text>
+                        <text x="560" y="345" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">Wolf Prize (with Hawking)</text>
+                        <line x1="560" y1="306" x2="540" y2="216" stroke="#9b72cf" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/>
+
+                        <!-- Era labels -->
+                        <rect x="70" y="380" width="200" height="22" rx="4" fill="rgba(62,201,176,0.08)"/>
+                        <text x="170" y="395" text-anchor="middle" fill="#3ec9b0" font-family="DM Sans" font-size="8">Pure Mathematics Phase</text>
+                        <rect x="280" y="380" width="200" height="22" rx="4" fill="rgba(155,114,207,0.08)"/>
+                        <text x="380" y="395" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="8">Mathematical Physics Phase</text>
+                        <rect x="490" y="380" width="200" height="22" rx="4" fill="rgba(212,160,83,0.08)"/>
+                        <text x="590" y="395" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="8">Popular Science &amp; Philosophy</text>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- SLIDE 16: Reading -->
+            <section>
+                <span class="section-number">15 &mdash; FURTHER READING</span>
+                <h2>Into the Penrose Universe</h2>
+                <div class="separator"></div>
+                <div class="card-grid cols-2">
+                    <div class="card">
+                        <h4 class="accent">Primary Works</h4>
+                        <p><strong>The Road to Reality</strong> (2004) &mdash; Penrose's magnum opus: a 1,099-page journey from basic arithmetic to the frontiers of theoretical physics. Uncompromising yet illuminating. Essential for anyone serious about understanding modern physics.</p>
+                        <p style="margin-top: 0.3em;"><strong>The Emperor's New Mind</strong> (1989) &mdash; The controversial work on consciousness, Godel, and the limits of computation. A brilliant tour through physics even if you reject its central thesis.</p>
+                        <p style="margin-top: 0.3em;"><strong>Spinors and Space-Time</strong>, Vols. 1 &amp; 2 (with W. Rindler, 1984/1986) &mdash; The definitive technical treatment of spinor methods in general relativity and twistor theory.</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="accent-purple">Secondary Sources</h4>
+                        <p><strong>Cycles of Time</strong> (2010) &mdash; Penrose's own accessible account of conformal cyclic cosmology and the deep connection between cosmology and the second law of thermodynamics.</p>
+                        <p style="margin-top: 0.3em;"><strong>Fashion, Faith, and Fantasy</strong> (2016) &mdash; A penetrating critique of string theory, quantum foundations, and cosmological inflation from Penrose's characteristically independent perspective.</p>
+                        <p style="margin-top: 0.3em;"><strong>"Gravitational Collapse and Space-Time Singularities"</strong> (Phys. Rev. Lett. 14, 57, 1965) &mdash; The original three-page singularity theorem paper. One of the most important papers in 20th-century physics.</p>
+                        <p style="margin-top: 0.3em;"><strong>Huggett &amp; Tod, <em>An Introduction to Twistor Theory</em></strong> (1994) &mdash; The most accessible entry point into the mathematical structure of twistors.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 17: Closing Quote -->
+            <section>
+                <div style="margin-top: 2em;"></div>
+                <div class="mandala-container">
+                    <svg viewBox="0 0 140 140">
+                        <polygon points="70,10 82,50 120,50 88,72 98,112 70,88 42,112 52,72 20,50 58,50" fill="none" stroke="#3ec9b0" stroke-width="1" opacity="0.5"/>
+                        <polygon points="70,25 78,52 108,52 84,68 92,98 70,82 48,98 56,68 32,52 62,52" fill="none" stroke="#3ec9b0" stroke-width="0.8" opacity="0.35"/>
+                        <circle cx="70" cy="70" r="55" fill="none" stroke="#3ec9b0" stroke-width="0.6" opacity="0.25"/>
+                        <circle cx="70" cy="70" r="35" fill="none" stroke="#3ec9b0" stroke-width="0.6" opacity="0.2"/>
+                        <circle cx="70" cy="70" r="4" fill="#3ec9b0" opacity="0.6"/>
+                    </svg>
+                </div>
+                <div class="quote-box" style="max-width: 70%; margin: 1em auto;">
+                    <p style="font-size: 0.58em !important;">"Mathematics is not there for us to discover, but it is there, and we find it."</p>
+                    <span class="attribution">&mdash; Roger Penrose</span>
+                </div>
+                <div class="separator" style="margin: 1em auto;"></div>
+                <h3 style="font-size: 0.9em; color: var(--text-primary); margin-bottom: 0.2em;">Roger Penrose</h3>
+                <p style="font-size: 0.42em; color: var(--text-muted); margin: 0;">1931 &ndash; present &nbsp;&middot;&nbsp; Knight Bachelor &nbsp;&middot;&nbsp; Order of Merit &nbsp;&middot;&nbsp; Nobel Laureate</p>
+                <p style="font-size: 0.38em; color: var(--text-muted); margin-top: 0.8em;">He showed us that the geometry of the mind and the geometry of the cosmos may be one and the same.</p>
+                <div style="margin-top: 1em;">
+                    <span class="tag green">Singularities</span>
+                    <span class="tag">Twistors</span>
+                    <span class="tag amber">Tilings</span>
+                    <span class="tag rose">Consciousness</span>
+                    <span class="tag blue">Beauty</span>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+    <script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+    <script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>
