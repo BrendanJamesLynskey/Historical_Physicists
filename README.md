@@ -74,7 +74,8 @@ signal processing, electronics, and telecommunications pioneers who shaped the m
 | 33 | [John Stewart Bell — Bell's Theorem & Quantum Non-Locality](Bell/) | 17 | Complete |
 | 34 | [Roger Penrose — Singularities, Twistors & Aperiodic Tilings](Penrose/) | 17 | Complete |
 | 35 | [Peter Higgs — The Mechanism, the Boson & Symmetry Breaking](Higgs/) | 17 | Complete |
-| 36 | [Stephen Hawking — Black Holes, Singularities & A Brief History](Hawking/) | 17 | Complete |
+| 36 | [David Deutsch — Quantum Computation, Constructor Theory & the Multiverse](Deutsch/) | 17 | Complete |
+| 37 | [Stephen Hawking — Black Holes, Singularities & A Brief History](Hawking/) | 17 | Complete |
 
 ## Historical Lineages
 
@@ -177,12 +178,13 @@ Historical_Physicists/
 ├── Bell/index.html
 ├── Penrose/index.html
 ├── Higgs/index.html
+├── Deutsch/index.html
 └── Hawking/index.html
 ```
 
 ## Design
 
-Dark theme with consistent visual language across all 36 presentations:
+Dark theme with consistent visual language across all 37 presentations:
 
 - **Fonts:** Playfair Display (headings) · DM Sans (body) · JetBrains Mono (code/labels)
 - **Background:** `#0a0a0f`

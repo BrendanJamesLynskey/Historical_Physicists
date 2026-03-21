@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Deutsch — Pioneer of Quantum Computation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #5b8cd4; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#5b8cd4;stop-opacity:0.9"/>
+          <stop offset="100%" style="stop-color:#9b72cf;stop-opacity:0.6"/>
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="90" fill="none" stroke="url(#mg1)" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+      <!-- Quantum branching pattern -->
+      <g opacity="0.6">
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
+        <line x1="70" y1="80" x2="50" y2="120" stroke="#5b8cd4" stroke-width="0.5"/>
+        <line x1="70" y1="80" x2="85" y2="120" stroke="#4ecca3" stroke-width="0.5"/>
+        <line x1="130" y1="80" x2="115" y2="120" stroke="#9b72cf" stroke-width="0.5"/>
+        <line x1="130" y1="80" x2="150" y2="120" stroke="#d4a053" stroke-width="0.5"/>
+      </g>
+      <!-- Rotational symmetry copies -->
+      <g opacity="0.5" transform="rotate(90,100,100)">
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
+        <line x1="70" y1="80" x2="50" y2="120" stroke="#5b8cd4" stroke-width="0.5"/>
+        <line x1="130" y1="80" x2="150" y2="120" stroke="#d4a053" stroke-width="0.5"/>
+      </g>
+      <g opacity="0.4" transform="rotate(180,100,100)">
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
+      </g>
+      <g opacity="0.3" transform="rotate(270,100,100)">
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
+      </g>
+      <!-- Central node -->
+      <circle cx="100" cy="100" r="4" fill="#5b8cd4" opacity="0.8"/>
+      <circle cx="100" cy="100" r="8" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+      <!-- Corner decorative nodes -->
+      <circle cx="50" cy="120" r="2" fill="#4ecca3" opacity="0.6"/>
+      <circle cx="150" cy="120" r="2" fill="#d4a053" opacity="0.6"/>
+      <circle cx="85" cy="120" r="2" fill="#9b72cf" opacity="0.5"/>
+      <circle cx="115" cy="120" r="2" fill="#cf7272" opacity="0.5"/>
+    </svg>
+  </div>
+  <h1>David Deutsch</h1>
+  <p class="subtitle">born 1953 &mdash; Haifa, Israel</p>
+  <div class="separator"></div>
+  <p style="max-width: 70%; margin: 0.5em auto; text-align: center;">The father of quantum computation, constructor theory pioneer, and foremost champion of the many-worlds interpretation. A thinker who has reshaped our understanding of physics, computation, and the nature of reality itself.</p>
+  <div style="margin-top: 0.6em;">
+    <span class="tag blue">Quantum Computing</span>
+    <span class="tag">Constructor Theory</span>
+    <span class="tag green">Many-Worlds</span>
+    <span class="tag amber">Epistemology</span>
+    <span class="tag rose">Oxford Physics</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2: EARLY LIFE ============ -->
+<section>
+  <span class="section-number">01</span>
+  <h2>Early Life & Formation</h2>
+  <div class="two-col">
+    <div>
+      <p>David Deutsch was born in 1953 in Haifa, Israel, and grew up in a household that valued intellectual inquiry. His family moved to England during his youth, and he was drawn to fundamental questions about the nature of reality from an early age. Even as a student, Deutsch was dissatisfied with the Copenhagen interpretation's refusal to describe what actually happens between measurements.</p>
+      <p style="margin-top: 0.5em;">He studied natural sciences at Cambridge, where he encountered the work of Hugh Everett for the first time. The many-worlds interpretation struck him as the only honest reading of quantum mechanics &mdash; an insight that would shape his entire career. He went on to pursue his doctorate at the University of Oxford under <span class="accent">Dennis Sciama</span>, one of the great mentors of British theoretical physics (Sciama also supervised Stephen Hawking and Roger Penrose).</p>
+      <p style="margin-top: 0.5em;">At Oxford, Deutsch found a rare freedom to pursue deep foundational questions without pressure to publish incrementally. This environment suited his temperament perfectly: he would rather spend years on a single transformative idea than produce a steady stream of conventional papers.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent">Cambridge Years</h4>
+        <p>Read natural sciences at Clare College, Cambridge. First encountered Everett's relative-state formulation and Karl Popper's philosophy of science &mdash; two influences that became lifelong intellectual commitments.</p>
+      </div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-amber">Doctoral Work at Oxford</h4>
+        <p>Supervised by Dennis Sciama at the Clarendon Laboratory. Deutsch worked on quantum field theory in curved spacetime, but was already drawn toward foundational questions about quantum mechanics and computation.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-green">Intellectual Character</h4>
+        <p>Famously reclusive and deeply independent. Deutsch works from his home in Oxford, rarely travels or attends conferences, and publishes infrequently &mdash; but each publication tends to reshape its field. A true example of depth over breadth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3: CAREER & KEY MOMENTS ============ -->
+<section>
+  <span class="section-number">02</span>
+  <h2>Career & Key Moments</h2>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">The 1985 Paper</h4>
+      <p>Published "Quantum theory, the Church-Turing principle and the universal quantum computer" in the <em>Proceedings of the Royal Society</em>. This single paper founded the field of quantum computation by showing that a quantum Turing machine could efficiently simulate any finite physical system &mdash; something no classical machine can do.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Oxford's Quantum Hub</h4>
+      <p>Became a member of the Centre for Quantum Computation at the Clarendon Laboratory, Oxford. Though he holds no formal teaching position, his presence attracted a generation of quantum information scientists to Oxford, including Artur Ekert who founded the centre.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">The Fabric of Reality (1997)</h4>
+      <p>Published his first book, weaving quantum physics, epistemology, computation, and evolution into a single worldview. It became a landmark of popular science writing, acclaimed for its intellectual ambition and clarity. Won the Institute of Physics book prize.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">The Beginning of Infinity (2011)</h4>
+      <p>His second book extended the framework into a philosophy of knowledge, progress, and explanation. Central thesis: all problems are soluble given the right knowledge, and the growth of knowledge has no inherent limits. Influenced technologists, scientists, and philosophers worldwide.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Constructor Theory (2012&ndash;present)</h4>
+      <p>Proposed a fundamentally new mode of explanation in physics, shifting from dynamical laws to statements about which transformations are possible and impossible. Developed in collaboration with Chiara Marletto, with papers in information theory, thermodynamics, and the theory of life.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Honors & Recognition</h4>
+      <p>Fellow of the Royal Society (FRS, 2008). Dirac Prize (1998). Awarded the Isaac Newton Medal and Prize (2023) by the Institute of Physics. Edge Foundation contributor. Recognized as the founder of the entire field of quantum computation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4: HISTORICAL CONTEXT ============ -->
+<section>
+  <span class="section-number">03</span>
+  <h2>Historical Context</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="margin-bottom: 0.3em;">The Landscape of the 1980s</h3>
+      <p>When Deutsch began his foundational work, quantum mechanics was nearly sixty years old but its implications for computation were entirely unexplored. The Church-Turing thesis (1936) stated that any computable function could be computed by a Turing machine, but this was formulated without regard to the laws of physics.</p>
+      <p style="margin-top: 0.4em;">In 1982, <span class="accent-amber">Richard Feynman</span> gave a prescient talk suggesting that simulating quantum systems might require a quantum computer. But Feynman did not formalize this &mdash; he sketched an intuition. It was Deutsch who, in 1985, provided the rigorous theoretical foundation: a formal model of a universal quantum computer and a proof that it could simulate any physical system.</p>
+      <p style="margin-top: 0.4em;">The philosophical backdrop mattered too. Most physicists treated quantum mechanics instrumentally &mdash; as a recipe for making predictions. Deutsch insisted on taking the formalism literally. If quantum theory says a particle takes all paths, then it takes all paths, in <span class="accent-green">parallel universes</span>. This realist stance was what led him to quantum computation in the first place.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent">Pre-Deutsch Computing</h4>
+        <p>Before 1985, computation theory was entirely classical. Turing machines, lambda calculus, and circuit models all assumed classical physics. Nobody had asked whether the Church-Turing thesis was consistent with quantum mechanics.</p>
+      </div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-purple">Feynman's Intuition</h4>
+        <p>Feynman's 1982 lecture "Simulating physics with computers" identified the problem: classical computers seem unable to efficiently simulate quantum systems. But he offered no formal model of quantum computation.</p>
+      </div>
+      <div class="quote-box">
+        <p>"The quantum theory of computation must be the fundamental theory of computation, because the universe is quantum-mechanical."</p>
+        <span class="attribution">&mdash; David Deutsch, 1985</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5: CONTRIBUTION #1 + SVG ============ -->
+<section>
+  <span class="section-number">04</span>
+  <h2>Quantum Computation</h2>
+  <div class="two-col wide-right">
+    <div>
+      <h3 style="margin-bottom: 0.3em;">The Universal Quantum Computer</h3>
+      <p>In his landmark 1985 paper, Deutsch proposed the quantum Turing machine and proved that a universal quantum computer could simulate any finite physical system to arbitrary accuracy. This was not merely an extension of classical computing &mdash; it was a fundamentally new computational paradigm rooted in the physics of quantum superposition and interference.</p>
+      <p style="margin-top: 0.4em;">He also introduced the <span class="accent">Deutsch algorithm</span>, the first quantum algorithm to demonstrate a computational speedup over any classical algorithm. Given a function f:{0,1}&rarr;{0,1}, the algorithm determines whether f is constant or balanced in a single query &mdash; whereas any classical algorithm requires two.</p>
+      <p style="margin-top: 0.4em;">This was later generalized with <span class="accent-purple">Richard Jozsa</span> to the Deutsch-Jozsa algorithm (1992) for n-bit functions, providing an exponential speedup.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <!-- Deutsch Algorithm Quantum Circuit -->
+        <svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(10,10,15,0.5); border-radius: 8px; padding: 10px;">
+          <!-- Labels -->
+          <text x="15" y="72" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="13">|0&rang;</text>
+          <text x="15" y="152" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="13">|1&rang;</text>
+          <!-- Qubit lines -->
+          <line x1="50" y1="70" x2="430" y2="70" stroke="#2a2a3a" stroke-width="1.5"/>
+          <line x1="50" y1="150" x2="430" y2="150" stroke="#2a2a3a" stroke-width="1.5"/>
+          <!-- Hadamard gate 1 (top) -->
+          <rect x="75" y="50" width="40" height="40" rx="4" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+          <text x="95" y="76" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
+          <!-- Hadamard gate 1 (bottom) -->
+          <rect x="75" y="130" width="40" height="40" rx="4" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+          <text x="95" y="156" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
+          <!-- Oracle Uf box -->
+          <rect x="155" y="42" width="80" height="136" rx="6" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.5"/>
+          <text x="195" y="100" fill="#9b72cf" font-family="Playfair Display, serif" font-size="18" text-anchor="middle" font-style="italic">U</text>
+          <text x="210" y="108" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">f</text>
+          <!-- Oracle internal connections -->
+          <circle cx="195" cy="70" r="3" fill="#9b72cf" opacity="0.7"/>
+          <circle cx="195" cy="150" r="3" fill="#9b72cf" opacity="0.7"/>
+          <line x1="195" y1="73" x2="195" y2="147" stroke="#9b72cf" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+          <!-- Hadamard gate 2 (top) -->
+          <rect x="275" y="50" width="40" height="40" rx="4" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+          <text x="295" y="76" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
+          <!-- Measurement (top) -->
+          <rect x="355" y="50" width="40" height="40" rx="4" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+          <path d="M 365 80 Q 375 62 385 80" fill="none" stroke="#d4a053" stroke-width="1.2"/>
+          <line x1="375" y1="60" x2="375" y2="78" stroke="#d4a053" stroke-width="1.2"/>
+          <!-- Output label -->
+          <text x="440" y="74" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="11">f(0)&oplus;f(1)</text>
+          <!-- Stage labels -->
+          <text x="95" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Prepare</text>
+          <text x="195" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Query</text>
+          <text x="295" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Interfere</text>
+          <text x="375" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Measure</text>
+          <!-- Title -->
+          <text x="230" y="22" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="12" text-anchor="middle" font-weight="700">Deutsch Algorithm Circuit</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 6: CONTRIBUTION #1 DEEPER DIVE ============ -->
+<section>
+  <span class="section-number">04.1</span>
+  <h2>Quantum Computation: Deeper Dive</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="margin-bottom: 0.3em;">Why It Matters</h3>
+      <p>The Deutsch algorithm seems simple &mdash; determining one bit of information about a function. But its conceptual significance is enormous. It was the first rigorous proof that quantum mechanics allows computational shortcuts impossible in any classical model. Deutsch argued that the speedup is explained by computation occurring across <span class="accent-green">multiple parallel universes</span> simultaneously.</p>
+      <p style="margin-top: 0.4em;">This foundational work directly inspired the breakthroughs that followed. <span class="accent-purple">Peter Shor</span> (1994) discovered his factoring algorithm by building on Deutsch's quantum computational framework. <span class="accent-amber">Lov Grover</span> (1996) found his search algorithm. The entire field of quantum information science &mdash; quantum error correction, quantum cryptography, quantum complexity theory &mdash; grew from the seed Deutsch planted in 1985.</p>
+      <p style="margin-top: 0.4em;">Deutsch's key philosophical insight was that the Church-Turing thesis, properly understood, is a claim about physics, not just mathematics. The correct version &mdash; what he called the <span class="accent">Church-Turing-Deutsch principle</span> &mdash; states that every finitely realizable physical system can be perfectly simulated by a universal quantum computer.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-blue">Church-Turing-Deutsch Principle</h4>
+        <p>"Every finitely realizable physical system can be perfectly simulated by a universal model computing machine operating by finite means." This is stronger than the classical Church-Turing thesis because it accounts for quantum parallelism.</p>
+      </div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-green">Deutsch-Jozsa (1992)</h4>
+        <p>Generalized the single-bit Deutsch algorithm to n-bit functions. Given a function promised to be either constant or balanced, the quantum algorithm determines which in one query, versus 2^(n-1)+1 queries classically. The first exponential quantum speedup.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-rose">Quantum Parallelism</h4>
+        <p>Deutsch coined the term. A quantum computer evaluates f(x) for all possible inputs x simultaneously by preparing a superposition of inputs. Interference then extracts global properties of f that no single classical evaluation could reveal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 7: CONTRIBUTION #2 + SVG ============ -->
+<section>
+  <span class="section-number">05</span>
+  <h2>Constructor Theory</h2>
+  <div class="two-col wide-right">
+    <div>
+      <h3 style="margin-bottom: 0.3em;">A New Mode of Explanation</h3>
+      <p>Beginning around 2012, Deutsch proposed <span class="accent">constructor theory</span> as a new fundamental framework for all of physics. Rather than describing what happens (trajectories, wavefunctions, dynamical laws), constructor theory describes which physical transformations are <em>possible</em>, which are <em>impossible</em>, and <em>why</em>.</p>
+      <p style="margin-top: 0.4em;">A <span class="accent-amber">constructor</span> is any entity that causes a transformation and retains the ability to cause it again. An enzyme is a constructor for a chemical reaction. A heat engine is a constructor for converting thermal energy to work. A computer is a constructor for computations.</p>
+      <p style="margin-top: 0.4em;">The theory expresses laws as statements of the form: "Task T is possible" or "Task T is impossible." The laws of thermodynamics, information theory, and computation are all naturally expressible in this language. Developed with <span class="accent-purple">Chiara Marletto</span>, it has been applied to information, thermodynamics, and biology.</p>
+    </div>
+    <div>
+      <div class="diagram-container">
+        <!-- Constructor Theory Diagram -->
+        <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(10,10,15,0.5); border-radius: 8px; padding: 10px;">
+          <text x="200" y="22" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="12" text-anchor="middle" font-weight="700">Constructor Theory: Possible vs Impossible</text>
+          <!-- Possible region -->
+          <rect x="20" y="38" width="170" height="230" rx="8" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="105" y="58" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle" font-weight="700">POSSIBLE</text>
+          <!-- Impossible region -->
+          <rect x="210" y="38" width="170" height="230" rx="8" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="295" y="58" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle" font-weight="700">IMPOSSIBLE</text>
+          <!-- Possible tasks -->
+          <g transform="translate(105, 90)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(78,204,163,0.12)" stroke="#4ecca3" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Copying information</text>
+          </g>
+          <g transform="translate(105, 130)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(91,140,212,0.12)" stroke="#5b8cd4" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Heat &rarr; Work (with waste)</text>
+          </g>
+          <g transform="translate(105, 170)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(212,160,83,0.12)" stroke="#d4a053" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Quantum computation</text>
+          </g>
+          <g transform="translate(105, 210)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(155,114,207,0.12)" stroke="#9b72cf" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Biological replication</text>
+          </g>
+          <!-- Impossible tasks -->
+          <g transform="translate(295, 90)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Perpetual motion</text>
+          </g>
+          <g transform="translate(295, 130)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Cloning quantum states</text>
+          </g>
+          <g transform="translate(295, 170)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Superluminal signaling</text>
+          </g>
+          <g transform="translate(295, 210)">
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Decreasing total entropy</text>
+          </g>
+          <!-- Constructor arrow in center -->
+          <line x1="105" y1="240" x2="105" y2="252" stroke="#4ecca3" stroke-width="1"/>
+          <text x="105" y="264" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Constructor retains ability</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 8: CONTRIBUTION #2 DEEPER DIVE ============ -->
+<section>
+  <span class="section-number">05.1</span>
+  <h2>Constructor Theory: Deeper Dive</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="margin-bottom: 0.3em;">Beyond Dynamics</h3>
+      <p>Traditional physics expresses laws as equations of motion: given initial conditions, predict the future. Constructor theory operates at a deeper level, expressing <em>principles</em> that constrain what is physically possible, independent of any particular dynamics.</p>
+      <p style="margin-top: 0.4em;">Consider the second law of thermodynamics. In standard physics, it's awkwardly expressed as a statistical tendency. In constructor theory, it becomes a clean statement: "The task of converting thermal energy entirely into work, with no other effect, is impossible." This is not a statistical approximation &mdash; it's an exact law about which transformations a constructor can and cannot perform.</p>
+      <p style="margin-top: 0.4em;">Marletto and Deutsch have shown that <span class="accent-green">information</span> can be precisely defined within constructor theory as a set of attributes that can be copied (but not necessarily measured without disturbance). This unifies classical and quantum information in a single framework and provides new foundations for the theory of life &mdash; defined as entities that contain knowledge and can cause their own reproduction.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent">Constructor Theory of Information</h4>
+        <p>Published with Marletto in 2014. Distinguishes "information media" (whose states can be copied) from "quantum information media" (which additionally cannot be fully measured without disturbance). Derives the no-cloning theorem as a consequence, not a postulate.</p>
+      </div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-amber">Constructor Theory of Life</h4>
+        <p>Marletto (2015) applied the framework to biology. Living entities are "self-reproducing constructors carrying knowledge" &mdash; a definition that's precise, substrate-independent, and explanatory rather than merely descriptive.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-purple">Testable Predictions</h4>
+        <p>Constructor-theoretic information distinguishes between "superinformation" media (quantum) and classical media in ways testable by experiment. The framework also predicts constraints on what physical systems can store biological information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 9: CONTRIBUTION #3 ============ -->
+<section>
+  <span class="section-number">06</span>
+  <h2>Many-Worlds & The Fabric of Reality</h2>
+  <div class="two-col">
+    <div>
+      <p>Deutsch is the most prominent living advocate of <span class="accent">Hugh Everett's many-worlds interpretation</span> of quantum mechanics. Where most physicists remain agnostic about interpretation, Deutsch argues forcefully that many-worlds is not merely one option among many &mdash; it is the only interpretation that takes quantum theory seriously as a description of physical reality.</p>
+      <p style="margin-top: 0.4em;">His 1997 book <em>The Fabric of Reality</em> wove four great intellectual strands into a unified worldview: <span class="accent-blue">quantum physics</span> (via Everett's many-worlds), <span class="accent-amber">epistemology</span> (via Popper's critical rationalism), <span class="accent-green">computation</span> (via Turing's universal machine), and <span class="accent-rose">evolution</span> (via Dawkins's gene-centered view). Deutsch argued these four theories together form the best current understanding of the "fabric of reality."</p>
+      <p style="margin-top: 0.4em;">His 2011 book <em>The Beginning of Infinity</em> extended this into a sweeping philosophy of knowledge. Its central thesis: explanatory knowledge &mdash; the kind found by science &mdash; has unlimited reach, and every problem that is interesting is also soluble. Progress is not guaranteed, but it has no inherent limits.</p>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-blue">Four Strands of Reality</h4>
+        <p><strong style="color: var(--accent-blue);">Quantum physics:</strong> Reality consists of a vast multiverse of parallel universes. <strong style="color: var(--accent-amber);">Epistemology:</strong> Knowledge grows through conjecture and criticism. <strong style="color: var(--accent-green);">Computation:</strong> Universal computers can simulate any physical process. <strong style="color: var(--accent-rose);">Evolution:</strong> Adaptation arises through variation and selection.</p>
+      </div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-purple">The Quantum Multiverse Argument</h4>
+        <p>Deutsch argues: quantum interference experiments prove that entities we cannot directly see are performing computations alongside our visible particles. These "shadow particles" are particles in other universes. Quantum computation exploits this parallelism across the multiverse.</p>
+      </div>
+      <div class="quote-box">
+        <p>"Quantum computation is computation performed in collaboration between parallel universes."</p>
+        <span class="attribution">&mdash; David Deutsch, The Fabric of Reality</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 10: THE METHOD ============ -->
+<section>
+  <span class="section-number">07</span>
+  <h2>The Method: Explanation-First Physics</h2>
+  <div class="process-flow">
+    <div class="process-step">
+      <h4 class="accent">Identify</h4>
+      <p>Find a deep problem at the foundations of physics</p>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <h4 class="accent-amber">Conjecture</h4>
+      <p>Propose a bold explanatory theory</p>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <h4 class="accent-green">Criticize</h4>
+      <p>Subject to rigorous criticism and alternatives</p>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <h4 class="accent-purple">Prove</h4>
+      <p>Demonstrate with mathematical or physical argument</p>
+    </div>
+    <div class="process-arrow">&rarr;</div>
+    <div class="process-step">
+      <h4 class="accent-rose">Unify</h4>
+      <p>Connect to the deepest structure of reality</p>
+    </div>
+  </div>
+  <div class="card-grid cols-2" style="margin-top: 0.5em;">
+    <div class="card">
+      <h4 class="accent">Popperian Epistemology</h4>
+      <p>Deutsch is the foremost scientific advocate of Karl Popper's philosophy: knowledge grows through bold conjectures subjected to severe criticism. There are no authoritative sources of knowledge &mdash; only good and bad explanations. A good explanation is one that is hard to vary without losing its explanatory power.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Depth Over Volume</h4>
+      <p>Deutsch's publication record is thin by conventional standards &mdash; a handful of papers, two books, a new theory. But each contribution reshapes its field. He exemplifies the principle that in fundamental science, one transformative idea outweighs a thousand incremental ones.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Realism as Method</h4>
+      <p>By insisting that quantum mechanics describes something real &mdash; not just a prediction machine &mdash; Deutsch was led to discoveries that instrumentalists missed entirely. Taking the theory literally revealed that reality supports quantum computation.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Seeking Deeper Principles</h4>
+      <p>Constructor theory exemplifies Deutsch's method: rather than adding to existing frameworks, ask whether there is a deeper mode of explanation. Laws about what is possible and impossible are more fundamental than any particular equations of motion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 11: CONNECTIONS & COLLABORATIONS ============ -->
+<section>
+  <span class="section-number">08</span>
+  <h2>Connections & Collaborations</h2>
+  <div class="diagram-container">
+    <!-- Network Diagram SVG -->
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(10,10,15,0.5); border-radius: 8px;">
+      <!-- Connection lines -->
+      <line x1="350" y1="185" x2="140" y2="80" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="560" y2="80" stroke="#9b72cf" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="140" y2="185" stroke="#d4a053" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="560" y2="185" stroke="#4ecca3" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="140" y2="300" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="560" y2="300" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="350" y2="50" stroke="#9b72cf" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="350" y2="340" stroke="#d4a053" stroke-width="1.2" opacity="0.5"/>
+      <!-- Secondary connections -->
+      <line x1="140" y1="80" x2="350" y2="50" stroke="#2a2a3a" stroke-width="0.8" opacity="0.3"/>
+      <line x1="560" y1="80" x2="560" y2="185" stroke="#2a2a3a" stroke-width="0.8" opacity="0.3"/>
+      <line x1="140" y1="185" x2="140" y2="80" stroke="#2a2a3a" stroke-width="0.8" opacity="0.3"/>
+      <!-- Central node: Deutsch -->
+      <circle cx="350" cy="185" r="28" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="2"/>
+      <text x="350" y="182" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="11" text-anchor="middle" font-weight="700">David</text>
+      <text x="350" y="196" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="11" text-anchor="middle" font-weight="700">Deutsch</text>
+      <!-- Feynman -->
+      <circle cx="140" cy="80" r="22" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+      <text x="140" y="77" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Richard</text>
+      <text x="140" y="89" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Feynman</text>
+      <text x="140" y="112" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Parallel QC ideas</text>
+      <!-- Shor -->
+      <circle cx="560" cy="80" r="22" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+      <text x="560" y="77" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Peter</text>
+      <text x="560" y="89" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Shor</text>
+      <text x="560" y="112" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Built on Deutsch's model</text>
+      <!-- Popper -->
+      <circle cx="140" cy="185" r="22" fill="var(--bg-card)" stroke="#cf7272" stroke-width="1.5"/>
+      <text x="140" y="182" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Karl</text>
+      <text x="140" y="194" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Popper</text>
+      <text x="140" y="217" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Epistemology</text>
+      <!-- Ekert -->
+      <circle cx="560" cy="185" r="22" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+      <text x="560" y="182" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Artur</text>
+      <text x="560" y="194" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Ekert</text>
+      <text x="560" y="217" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Quantum cryptography</text>
+      <!-- Everett -->
+      <circle cx="140" cy="300" r="22" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
+      <text x="140" y="297" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Hugh</text>
+      <text x="140" y="309" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Everett</text>
+      <text x="140" y="332" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Many-worlds</text>
+      <!-- Marletto -->
+      <circle cx="560" cy="300" r="22" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+      <text x="560" y="297" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Chiara</text>
+      <text x="560" y="309" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Marletto</text>
+      <text x="560" y="332" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Constructor theory</text>
+      <!-- Bennett -->
+      <circle cx="350" cy="50" r="22" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+      <text x="350" y="47" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Charles</text>
+      <text x="350" y="59" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Bennett</text>
+      <text x="350" y="28" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Quantum information</text>
+      <!-- Sciama -->
+      <circle cx="350" cy="340" r="22" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+      <text x="350" y="337" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Dennis</text>
+      <text x="350" y="349" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Sciama</text>
+      <text x="350" y="370" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">PhD supervisor</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ SLIDE 12: RIVALRY/CONTROVERSY ============ -->
+<section>
+  <span class="section-number">09</span>
+  <h2>Controversy & Debate</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="margin-bottom: 0.3em;">The Many-Worlds Divide</h3>
+      <p>Deutsch's most provocative stance is his fierce advocacy of the many-worlds interpretation. Most physicists remain agnostic about quantum interpretation, or default to some version of the Copenhagen view. Deutsch considers this intellectually dishonest &mdash; a refusal to take seriously what the equations plainly say.</p>
+      <p style="margin-top: 0.4em;">His argument is distinctive: quantum computation itself is evidence for many worlds. When a quantum computer solves a problem that would require exponential classical resources, <em>where is the computation happening?</em> Deutsch's answer: in an exponentially large number of parallel universes, all contributing to the result. Critics like <span class="accent-rose">Christopher Fuchs</span> (QBism) and proponents of decoherence-without-many-worlds argue this is a metaphysical extrapolation, not a physical conclusion.</p>
+      <p style="margin-top: 0.4em;"><span class="accent-amber">Constructor theory</span> has also attracted skepticism. Some physicists ask whether it adds genuine predictive power beyond existing physical theories, or whether it is merely a reformulation of known results in a new language. Deutsch and Marletto argue it enables formulations of principles that cannot be expressed in standard physics at all.</p>
+    </div>
+    <div>
+      <div class="quote-box" style="margin-bottom: 0.6em;">
+        <p>"To those who still cling to a single-universe worldview, I issue this challenge: explain how Shor's algorithm works. Where was the number factored? There weren't enough resources in the universe to factor it classically."</p>
+        <span class="attribution">&mdash; David Deutsch, The Fabric of Reality</span>
+      </div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-rose">The Copenhagen Response</h4>
+        <p>Copenhagen adherents argue that quantum theory is about observations, not ontology. Asking "where does quantum computation happen" is, in their view, a category error. The mathematics works without invoking parallel universes.</p>
+      </div>
+      <div class="card" style="margin-bottom: 0.45em;">
+        <h4 class="accent-amber">Constructor Theory Critiques</h4>
+        <p>Critics note that constructor theory has so far not made novel testable predictions that distinguish it from standard quantum mechanics. Supporters counter that its value lies in unifying disparate principles and enabling new formulations of problems like the nature of life and information.</p>
+      </div>
+      <div class="card">
+        <h4 class="accent-green">Deutsch's Style of Argument</h4>
+        <p>Known for calm, relentless logical precision. He does not rely on authority or consensus but on the quality of explanations. This Popperian approach makes his arguments compelling to many, infuriating to some, and impossible to dismiss.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 13: LEGACY IN MODERN PHYSICS ============ -->
+<section>
+  <span class="section-number">10</span>
+  <h2>Legacy in Modern Physics</h2>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">Founding Quantum Computing</h4>
+      <p>The entire field of quantum computation &mdash; now a multi-billion-dollar global enterprise involving Google, IBM, Microsoft, and dozens of startups &mdash; traces directly back to Deutsch's 1985 paper. Every quantum algorithm, every quantum error-correcting code, every quantum programming language exists because Deutsch asked what computation means in a quantum universe.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Quantum Information Science</h4>
+      <p>The broader field of quantum information theory &mdash; encompassing quantum cryptography, quantum communication, quantum complexity theory, and quantum thermodynamics &mdash; was catalyzed by the framework Deutsch established. The quantum circuit model, now standard, descends from his quantum Turing machine.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Philosophy of Science</h4>
+      <p>Through his books and interviews, Deutsch has revived serious engagement with the philosophy of explanation in physics. His emphasis on good explanations, the reach of knowledge, and the illegitimacy of "shut up and calculate" has influenced a generation of physicists and philosophers including Sam Harris, Naval Ravikant, and Brett Hall.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Constructor Theory's Future</h4>
+      <p>Though still young, constructor theory has the potential to become a new foundation for physics if it continues to yield novel insights. Its application to the origin of life, to thermodynamics, and to information theory opens research directions that did not exist before Deutsch proposed it.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Multiverse Advocacy</h4>
+      <p>Deutsch has done more than anyone to make the many-worlds interpretation a serious contender in mainstream physics. Whether or not it ultimately prevails, his arguments have permanently raised the standard of debate about quantum foundations and forced instrumentalists to defend their position.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Intellectual Independence</h4>
+      <p>Deutsch's career is a model for independent thinking in science. By refusing to follow trends and instead pursuing the deepest questions, he created an entirely new field. His example inspires researchers who prioritize understanding over publication metrics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 14: APPLICATIONS ============ -->
+<section>
+  <span class="section-number">11</span>
+  <h2>Applications & Impact</h2>
+  <div class="card-grid cols-3">
+    <div class="card">
+      <h4 class="accent">Quantum Cryptography</h4>
+      <p>Deutsch's framework underpins quantum key distribution (QKD). The BB84 protocol and Ekert's entanglement-based E91 protocol both rely on the quantum computational model Deutsch formalized. Secure communication guaranteed by the laws of physics.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">Drug Discovery</h4>
+      <p>Molecular simulation is the quintessential application of quantum computing. Deutsch's original motivation &mdash; that quantum systems require quantum computers to simulate &mdash; directly inspires pharmaceutical companies building quantum algorithms for drug design.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">Materials Science</h4>
+      <p>Understanding superconductors, catalysts, and novel materials requires simulating quantum many-body systems. Quantum computers following Deutsch's computational model promise to unlock materials impossible to design classically.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Optimization</h4>
+      <p>Quantum algorithms inspired by Deutsch's work &mdash; including quantum annealing and variational methods &mdash; are being applied to logistics, finance, and machine learning. Quantum parallelism across the multiverse enables search through vast solution spaces.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">Foundations of Biology</h4>
+      <p>Constructor theory's application to life offers a new framework for understanding what living systems are and how they arise. This could transform astrobiology and the search for life elsewhere &mdash; by providing a substrate-independent definition of "alive."</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Quantum Error Correction</h4>
+      <p>The theory of quantum error correction &mdash; essential for building practical quantum computers &mdash; grew from the quantum computational model Deutsch created. Without his universal quantum computer concept, the question of protecting quantum information would never have arisen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 15: TIMELINE ============ -->
+<section>
+  <span class="section-number">12</span>
+  <h2>Timeline</h2>
+  <div class="two-col wide-right">
+    <div>
+      <!-- Timeline SVG -->
+      <div class="diagram-container" style="max-width: 100%;">
+        <svg viewBox="0 0 120 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+          <!-- Central line -->
+          <line x1="40" y1="15" x2="40" y2="405" stroke="#2a2a3a" stroke-width="2"/>
+          <!-- Dots -->
+          <circle cx="40" cy="20" r="4" fill="#5b8cd4"/>
+          <circle cx="40" cy="70" r="4" fill="#d4a053"/>
+          <circle cx="40" cy="120" r="4" fill="#9b72cf"/>
+          <circle cx="40" cy="165" r="4" fill="#4ecca3"/>
+          <circle cx="40" cy="210" r="4" fill="#cf7272"/>
+          <circle cx="40" cy="255" r="4" fill="#5b8cd4"/>
+          <circle cx="40" cy="300" r="4" fill="#d4a053"/>
+          <circle cx="40" cy="345" r="4" fill="#9b72cf"/>
+          <circle cx="40" cy="395" r="4" fill="#4ecca3"/>
+          <!-- Years -->
+          <text x="60" y="24" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10">1953</text>
+          <text x="60" y="74" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10">1975</text>
+          <text x="60" y="124" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">1985</text>
+          <text x="60" y="169" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10">1992</text>
+          <text x="60" y="214" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10">1997</text>
+          <text x="60" y="259" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10">1998</text>
+          <text x="60" y="304" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10">2011</text>
+          <text x="60" y="349" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">2013</text>
+          <text x="60" y="399" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10">2023</text>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <div class="timeline-item">
+        <span class="year">1953</span>
+        <div class="event"><strong>Born in Haifa, Israel</strong>Grows up to become fascinated by the deepest questions in physics and the nature of reality.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">~1975</span>
+        <div class="event"><strong>Studies at Cambridge & Oxford</strong>Reads natural sciences at Cambridge, then pursues doctoral work at Oxford under Dennis Sciama. Encounters Everett's many-worlds interpretation.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">1985</span>
+        <div class="event"><strong>Founds Quantum Computation</strong>Publishes the landmark paper proposing the universal quantum computer and demonstrating the first quantum algorithm (the Deutsch algorithm) in the Proceedings of the Royal Society.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">1992</span>
+        <div class="event"><strong>Deutsch-Jozsa Algorithm</strong>With Richard Jozsa, generalizes the Deutsch algorithm to n-bit functions. First demonstration of exponential quantum speedup over classical computation.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">1997</span>
+        <div class="event"><strong>The Fabric of Reality</strong>Publishes his first book, unifying quantum physics, epistemology, computation, and evolution into a single worldview. Wins the Institute of Physics book prize.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">1998</span>
+        <div class="event"><strong>Dirac Prize</strong>Awarded the Dirac Prize by the Institute of Physics for foundational contributions to quantum computation.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2011</span>
+        <div class="event"><strong>The Beginning of Infinity</strong>Publishes his second book, a philosophy of knowledge creation arguing that progress has no inherent limits and every interesting problem is soluble.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2013</span>
+        <div class="event"><strong>Constructor Theory Launched</strong>Publishes the foundational paper on constructor theory. With Chiara Marletto, begins developing applications to information, thermodynamics, and biology.</div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2023</span>
+        <div class="event"><strong>Isaac Newton Medal</strong>Awarded the Isaac Newton Medal and Prize by the Institute of Physics, recognizing his lifetime of transformative contributions to physics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 16: RECOMMENDED READING ============ -->
+<section>
+  <span class="section-number">13</span>
+  <h2>Recommended Reading</h2>
+  <div class="card-grid cols-2">
+    <div class="card">
+      <h4 class="accent">The Fabric of Reality</h4>
+      <p><strong style="color: var(--text-primary);">David Deutsch (1997)</strong><br/>The foundational text weaving quantum physics, epistemology, computation, and evolution into a single worldview. Essential for understanding Deutsch's vision of the multiverse and the nature of explanation. Accessible to general readers with some scientific curiosity.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-amber">The Beginning of Infinity</h4>
+      <p><strong style="color: var(--text-primary);">David Deutsch (2011)</strong><br/>Extends the worldview of <em>The Fabric of Reality</em> into a sweeping philosophy of knowledge, progress, and explanation. One of the most intellectually ambitious science books of the 21st century. Changes how you think about thinking.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-green">Quantum Computation and Quantum Information</h4>
+      <p><strong style="color: var(--text-primary);">Michael Nielsen & Isaac Chuang (2000)</strong><br/>The definitive textbook of quantum information science. Covers the Deutsch algorithm, quantum circuits, error correction, and more. Technical but pedagogically excellent. Essential for anyone entering the field Deutsch created.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-purple">The Science of Can and Can't</h4>
+      <p><strong style="color: var(--text-primary);">Chiara Marletto (2021)</strong><br/>Marletto, Deutsch's collaborator on constructor theory, explains the framework in accessible terms. Covers applications to information, life, and thermodynamics. The best introduction to constructor theory for a general audience.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-rose">The Many Worlds of Hugh Everett III</h4>
+      <p><strong style="color: var(--text-primary);">Peter Byrne (2010)</strong><br/>A biography of Hugh Everett, whose many-worlds interpretation Deutsch champions. Provides the historical context for Deutsch's philosophical commitments and the decades-long struggle to take Everett seriously.</p>
+    </div>
+    <div class="card">
+      <h4 class="accent-blue">Quantum Computing Since Democritus</h4>
+      <p><strong style="color: var(--text-primary);">Scott Aaronson (2013)</strong><br/>A wide-ranging exploration of quantum computing, complexity theory, and philosophy by one of the field's most brilliant communicators. Engages extensively with Deutsch's ideas and places them in the broader landscape of theoretical computer science.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 17: CLOSING QUOTE ============ -->
+<section>
+  <div class="mandala-container">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mg2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#5b8cd4;stop-opacity:0.8"/>
+          <stop offset="50%" style="stop-color:#9b72cf;stop-opacity:0.6"/>
+          <stop offset="100%" style="stop-color:#4ecca3;stop-opacity:0.4"/>
+        </linearGradient>
+      </defs>
+      <!-- Outer rings -->
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#mg2)" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="100" cy="100" r="78" fill="none" stroke="#5b8cd4" stroke-width="0.4" opacity="0.3"/>
+      <circle cx="100" cy="100" r="62" fill="none" stroke="#9b72cf" stroke-width="0.4" opacity="0.4"/>
+      <!-- Infinity-like pattern -->
+      <g opacity="0.5">
+        <ellipse cx="75" cy="100" rx="30" ry="18" fill="none" stroke="#5b8cd4" stroke-width="0.8" transform="rotate(-20,75,100)"/>
+        <ellipse cx="125" cy="100" rx="30" ry="18" fill="none" stroke="#9b72cf" stroke-width="0.8" transform="rotate(20,125,100)"/>
+      </g>
+      <!-- Branching patterns radiating outward -->
+      <g opacity="0.4">
+        <line x1="100" y1="100" x2="100" y2="20" stroke="#5b8cd4" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="170" y2="50" stroke="#4ecca3" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="185" y2="115" stroke="#d4a053" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="150" y2="178" stroke="#cf7272" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="50" y2="178" stroke="#9b72cf" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="15" y2="115" stroke="#5b8cd4" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="30" y2="50" stroke="#4ecca3" stroke-width="0.6"/>
+      </g>
+      <!-- Endpoint nodes -->
+      <circle cx="100" cy="20" r="2.5" fill="#5b8cd4" opacity="0.6"/>
+      <circle cx="170" cy="50" r="2.5" fill="#4ecca3" opacity="0.6"/>
+      <circle cx="185" cy="115" r="2.5" fill="#d4a053" opacity="0.6"/>
+      <circle cx="150" cy="178" r="2.5" fill="#cf7272" opacity="0.6"/>
+      <circle cx="50" cy="178" r="2.5" fill="#9b72cf" opacity="0.6"/>
+      <circle cx="15" cy="115" r="2.5" fill="#5b8cd4" opacity="0.6"/>
+      <circle cx="30" cy="50" r="2.5" fill="#4ecca3" opacity="0.6"/>
+      <!-- Central glow -->
+      <circle cx="100" cy="100" r="6" fill="#5b8cd4" opacity="0.7"/>
+      <circle cx="100" cy="100" r="10" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+    </svg>
+  </div>
+  <div class="separator"></div>
+  <div class="quote-box" style="max-width: 70%; margin: 1em auto;">
+    <p>"Every problem that is interesting is also soluble. The knowledge for solving it does not yet exist, but it is accessible, given the right approach."</p>
+    <span class="attribution">&mdash; David Deutsch, The Beginning of Infinity</span>
+  </div>
+  <p style="text-align: center; margin-top: 1em; font-size: 0.48em !important; color: var(--text-muted);">David Deutsch &middot; Born 1953 &middot; Haifa, Israel</p>
+  <p style="text-align: center; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.2em;">Father of quantum computation &middot; Constructor theorist &middot; Champion of many-worlds</p>
+  <div style="margin-top: 0.6em;">
+    <span class="tag blue">Quantum Computing</span>
+    <span class="tag">Constructor Theory</span>
+    <span class="tag green">Many-Worlds</span>
+    <span class="tag amber">Epistemology</span>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>
