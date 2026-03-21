@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johannes Kepler - Lawgiver of the Heavens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #c97b4b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Elliptical orbit motif -->
+            <ellipse cx="100" cy="100" rx="85" ry="55" fill="none" stroke="#c97b4b" stroke-width="1.5" transform="rotate(-20, 100, 100)"/>
+            <ellipse cx="100" cy="100" rx="60" ry="35" fill="none" stroke="#c97b4b" stroke-width="1" opacity="0.5" transform="rotate(-20, 100, 100)"/>
+            <ellipse cx="100" cy="100" rx="40" ry="22" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.3" transform="rotate(-20, 100, 100)"/>
+            <!-- Sun at focus -->
+            <circle cx="80" cy="108" r="8" fill="#c97b4b" opacity="0.8"/>
+            <circle cx="80" cy="108" r="12" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.4"/>
+            <!-- Planet on orbit -->
+            <circle cx="178" cy="78" r="5" fill="#5b8cd4" opacity="0.8"/>
+            <!-- Radius vector line -->
+            <line x1="80" y1="108" x2="178" y2="78" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+            <!-- Stars -->
+            <circle cx="30" cy="30" r="1.5" fill="#c97b4b" opacity="0.5"/>
+            <circle cx="170" cy="25" r="1" fill="#c97b4b" opacity="0.4"/>
+            <circle cx="175" cy="170" r="1.5" fill="#c97b4b" opacity="0.6"/>
+            <circle cx="25" cy="165" r="1" fill="#c97b4b" opacity="0.3"/>
+            <circle cx="100" cy="18" r="1.2" fill="#c97b4b" opacity="0.5"/>
+            <!-- Platonic solid hint - pentagon -->
+            <polygon points="100,45 145,78 130,125 70,125 55,78" fill="none" stroke="#9b72cf" stroke-width="0.6" opacity="0.25"/>
+        </svg>
+    </div>
+    <h1>Johannes Kepler</h1>
+    <div class="separator"></div>
+    <p class="subtitle">Lawgiver of the Heavens &middot; 1571 &ndash; 1630</p>
+    <div style="margin-top: 0.8em;">
+        <span class="tag amber">Planetary Motion</span>
+        <span class="tag green">Optics</span>
+        <span class="tag blue">Astronomia Nova</span>
+        <span class="tag rose">Rudolphine Tables</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Early Life in W&uuml;rttemberg</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Johannes Kepler was born on <span class="accent">27 December 1571</span> in Weil der Stadt, a small town in the Duchy of W&uuml;rttemberg. His father Heinrich was a mercenary soldier who abandoned the family when Kepler was five and likely died in the Netherlands. His mother Katharina was an herbalist who would later be tried for witchcraft.</p>
+            <p>Born prematurely, Kepler was sickly throughout his childhood. His eyesight was permanently damaged by smallpox at age four, an ironic affliction for a man who would transform our understanding of vision and planetary observation.</p>
+            <p>A scholarship from the Duke of W&uuml;rttemberg sent Kepler to the <span class="accent-green">University of T&uuml;bingen</span> in 1589, where he studied theology. There, the astronomer <span class="accent-amber">Michael M&auml;stlin</span> quietly introduced him to Copernican astronomy &mdash; taught privately, since the university's official curriculum was Ptolemaic.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent">A Theological Mind</h4>
+                <p>Kepler originally intended to become a Lutheran minister. His entire astronomical career was driven by the conviction that God had created the cosmos according to a mathematical plan, and that discovering it was a form of worship.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">M&auml;stlin's Influence</h4>
+                <p>Michael M&auml;stlin was one of the few university professors in Europe who genuinely accepted the Copernican system. His private instruction transformed Kepler from a theology student into an astronomer who would spend his life seeking the mathematical harmonies of creation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>From Graz to Prague to Linz</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In 1594, Kepler was appointed mathematics teacher at the Protestant seminary in <span class="accent">Graz</span>, a position he accepted reluctantly. While teaching, he experienced a classroom epiphany in 1595: the spacings of the six known planets might correspond to the five <span class="accent-purple">Platonic solids</span> nested between their orbital spheres. This became <em>Mysterium Cosmographicum</em> (1596).</p>
+            <p>Counter-Reformation pressure forced Kepler from Graz in 1600. He traveled to Prague to work with <span class="accent-amber">Tycho Brahe</span>, the greatest observational astronomer of the age. When Tycho died in October 1601, Kepler inherited his position as Imperial Mathematician to Emperor Rudolf II &mdash; and, crucially, access to Tycho's unmatched observational data.</p>
+            <p>Kepler spent the rest of his career in <span class="accent-green">Prague</span> (1600&ndash;1612) and <span class="accent-blue">Linz</span> (1612&ndash;1626), battling poverty, religious persecution, and personal tragedy while producing the most transformative work in the history of astronomy.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent">Prague: 1600 &ndash; 1612</h4>
+                <p>As Imperial Mathematician, Kepler was chronically underpaid. Rudolf II owed him years of back salary. Yet Prague gave him Tycho's data and the freedom to pursue his research, producing <em>Astronomia Nova</em> and <em>Optics</em>.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-blue">Linz: 1612 &ndash; 1626</h4>
+                <p>As provincial mathematician in Linz, Kepler completed the <em>Harmonices Mundi</em> and the <em>Epitome of Copernican Astronomy</em>. He was excommunicated by the Lutheran church for his unorthodox views on the Eucharist.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">Personal Hardship</h4>
+                <p>Kepler's first wife died in 1611. Three of his children died in infancy. From 1615 to 1621, he defended his mother Katharina against charges of witchcraft, eventually winning her acquittal after she spent fourteen months in prison.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The World Kepler Inhabited</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">The Thirty Years' War</h4>
+            <p>Europe's most devastating conflict (1618&ndash;1648) engulfed Kepler's world. Religious violence, forced migrations, and economic ruin shaped his later years. Linz was besieged, and Kepler's library was threatened by soldiers.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Tycho's Revolution</h4>
+            <p>Tycho Brahe's observations, accurate to one arcminute, were an order of magnitude better than any before. Without this precision, the eight-arcminute discrepancy that led Kepler to elliptical orbits would have been invisible.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Copernicus to Kepler</h4>
+            <p>Copernicus had moved the Sun to the center but retained circular orbits and epicycles. The Copernican system was no simpler than the Ptolemaic. Kepler would make it both simpler and accurate.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-amber">Neo-Platonic Mysticism</h4>
+            <p>Kepler's conviction that the universe embodies mathematical harmony drew from Pythagorean and Neo-Platonic traditions. His search for geometric order was as much theological as scientific &mdash; yet it produced rigorous physical laws.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Birth of Modern Optics</h4>
+            <p>The invention of the telescope (1608) and Kepler's own investigations of light, vision, and lenses helped establish optics as a mathematical science. Kepler's work on refraction and the pinhole camera was foundational.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 - Three Laws + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>The Three Laws of Planetary Motion</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <p>Kepler's three laws demolished two millennia of circular dogma and gave the solar system its true geometry. They are the first quantitative laws of celestial mechanics.</p>
+            <p><span class="accent">First Law (1609):</span> Planets orbit the Sun in ellipses, with the Sun at one focus.</p>
+            <p><span class="accent-green">Second Law (1609):</span> A line from the Sun to a planet sweeps out equal areas in equal times.</p>
+            <p><span class="accent-purple">Third Law (1619):</span> The square of a planet's orbital period is proportional to the cube of its semi-major axis: <code>T^2 = k * a^3</code></p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg">
+                    <text x="190" y="20" fill="#e8e6e3" font-size="13" font-family="DM Sans" text-anchor="middle">Kepler's First &amp; Second Laws</text>
+                    <!-- Elliptical orbit -->
+                    <ellipse cx="190" cy="155" rx="160" ry="110" fill="none" stroke="#c97b4b" stroke-width="2"/>
+                    <!-- Sun at focus -->
+                    <circle cx="120" cy="155" r="10" fill="#c97b4b" opacity="0.9"/>
+                    <text x="120" y="180" fill="#c97b4b" font-size="10" font-family="DM Sans" text-anchor="middle">Sun (focus)</text>
+                    <!-- Other focus -->
+                    <circle cx="260" cy="155" r="3" fill="none" stroke="#6a6a7a" stroke-width="1" stroke-dasharray="2,2"/>
+                    <text x="260" y="175" fill="#6a6a7a" font-size="9" font-family="DM Sans" text-anchor="middle">empty focus</text>
+                    <!-- Planet at perihelion -->
+                    <circle cx="30" cy="155" r="6" fill="#5b8cd4"/>
+                    <text x="30" y="143" fill="#5b8cd4" font-size="9" font-family="DM Sans" text-anchor="middle">Perihelion</text>
+                    <!-- Planet at aphelion -->
+                    <circle cx="350" cy="155" r="6" fill="#5b8cd4" opacity="0.5"/>
+                    <text x="350" y="143" fill="#5b8cd4" font-size="9" font-family="DM Sans" text-anchor="middle" opacity="0.7">Aphelion</text>
+                    <!-- Equal area sectors -->
+                    <!-- Sector near perihelion (fast, narrow) -->
+                    <path d="M 120 155 L 30 155 A 160 110 0 0 0 45 100 Z" fill="#c97b4b" opacity="0.15" stroke="#c97b4b" stroke-width="0.5"/>
+                    <text x="55" y="125" fill="#d4a053" font-size="9" font-family="JetBrains Mono">A1</text>
+                    <!-- Sector near aphelion (slow, wide) -->
+                    <path d="M 120 155 L 340 110 A 160 110 0 0 0 350 155 Z" fill="#4ecca3" opacity="0.12" stroke="#4ecca3" stroke-width="0.5"/>
+                    <text x="300" y="140" fill="#4ecca3" font-size="9" font-family="JetBrains Mono">A2</text>
+                    <!-- Label: A1 = A2 -->
+                    <text x="190" y="280" fill="#e8e6e3" font-size="12" font-family="JetBrains Mono" text-anchor="middle">A1 = A2 (equal areas in equal times)</text>
+                    <!-- Semi-major axis -->
+                    <line x1="30" y1="155" x2="350" y2="155" stroke="#6a6a7a" stroke-width="0.8" stroke-dasharray="4,3"/>
+                    <text x="190" y="168" fill="#6a6a7a" font-size="9" font-family="JetBrains Mono" text-anchor="middle">2a (major axis)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deep Dive -->
+<section>
+    <span class="section-number">04a &mdash; DEEP DIVE</span>
+    <h2>The War on Mars</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>The discovery of elliptical orbits was no flash of intuition. It was the result of nearly <span class="accent">six years of grueling calculation</span> focused on the orbit of Mars, documented in <em>Astronomia Nova</em> (1609). Kepler called it his "war on Mars."</p>
+            <p>Using Tycho's observations, Kepler tried over seventy different combinations of circular orbits and equants. His best circular model still deviated from Tycho's data by <span class="accent-rose">eight arcminutes</span>. Most astronomers would have accepted this &mdash; but Kepler trusted Tycho's data absolutely.</p>
+            <p>Those eight arcminutes, he wrote, "have led to a total reformation of astronomy." He tried an ovoid shape, then an ellipse &mdash; and found it fit perfectly. The <span class="accent-green">area law</span> (second law) actually came first, as Kepler sought a physical mechanism to explain why planets move faster at perihelion.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent">Why Mars?</h4>
+                <p>Tycho had assigned Kepler to work on Mars because its orbit has the highest eccentricity of any planet visible to the naked eye (e = 0.093). This made Mars the only planet where the deviation from a circle was large enough to detect with Tycho's instruments.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-purple">Physical Astronomy</h4>
+                <p>Kepler was the first to insist that a physical force emanating from the Sun drives planetary motion. He imagined a magnetic or quasi-magnetic force, anticipating Newton's gravitational dynamics by seventy years.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">The Third Law</h4>
+                <p>Published in <em>Harmonices Mundi</em> (1619), the harmonic law T^2 proportional to a^3 was Kepler's proudest discovery. He announced the exact date he found it: 15 May 1618. Newton later derived it from the inverse-square law of gravity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 - Astronomia Nova + SVG -->
+<section>
+    <span class="section-number">05 &mdash; CONTRIBUTION II</span>
+    <h2>Astronomia Nova</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <p>Published in 1609, <em>Astronomia Nova</em> (New Astronomy) is one of the most important books in the history of science. Its full title reveals its ambition: <em>New Astronomy Based upon Causes, or Celestial Physics.</em></p>
+            <p>Unlike any previous astronomical work, Kepler presented his <span class="accent">false starts and failures</span> alongside his successes. The reader follows his reasoning step by step, watching him discard cherished assumptions when they fail to match data.</p>
+            <p>The book introduced the first two laws of planetary motion and, equally important, the revolutionary idea that <span class="accent-green">celestial physics</span> should replace celestial geometry &mdash; that the Sun physically causes planetary motion, not merely sits at the center.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
+                    <text x="190" y="20" fill="#e8e6e3" font-size="13" font-family="DM Sans" text-anchor="middle">From Circles to Ellipses: Kepler's Journey</text>
+                    <!-- Circular orbit (wrong) -->
+                    <circle cx="130" cy="155" r="80" fill="none" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="5,3"/>
+                    <text x="130" y="250" fill="#cf7272" font-size="10" font-family="DM Sans" text-anchor="middle">Circular model</text>
+                    <text x="130" y="263" fill="#cf7272" font-size="9" font-family="JetBrains Mono" text-anchor="middle">(8' error)</text>
+                    <!-- Elliptical orbit (correct) -->
+                    <ellipse cx="130" cy="155" rx="80" ry="68" fill="none" stroke="#4ecca3" stroke-width="2"/>
+                    <text x="130" y="85" fill="#4ecca3" font-size="10" font-family="DM Sans" text-anchor="middle">Elliptical orbit</text>
+                    <!-- Sun -->
+                    <circle cx="95" cy="155" r="7" fill="#c97b4b" opacity="0.9"/>
+                    <text x="95" y="175" fill="#c97b4b" font-size="9" font-family="DM Sans" text-anchor="middle">Sun</text>
+                    <!-- Arrow showing gap between circle and ellipse -->
+                    <line x1="130" y1="75" x2="130" y2="87" stroke="#e8e6e3" stroke-width="1"/>
+                    <text x="155" y="80" fill="#e8e6e3" font-size="9" font-family="JetBrains Mono">gap = 8'</text>
+                    <!-- Process on right side -->
+                    <text x="290" y="65" fill="#c97b4b" font-size="11" font-family="DM Sans" text-anchor="middle" font-weight="700">Kepler's Process</text>
+                    <rect x="240" y="80" width="100" height="30" rx="4" fill="#161622" stroke="#cf7272" stroke-width="1"/>
+                    <text x="290" y="100" fill="#cf7272" font-size="9" font-family="DM Sans" text-anchor="middle">70+ circular models</text>
+                    <line x1="290" y1="110" x2="290" y2="125" stroke="#6a6a7a" stroke-width="1"/>
+                    <text x="295" y="120" fill="#6a6a7a" font-size="10">&darr;</text>
+                    <rect x="240" y="125" width="100" height="30" rx="4" fill="#161622" stroke="#d4a053" stroke-width="1"/>
+                    <text x="290" y="145" fill="#d4a053" font-size="9" font-family="DM Sans" text-anchor="middle">Ovoid attempts</text>
+                    <line x1="290" y1="155" x2="290" y2="170" stroke="#6a6a7a" stroke-width="1"/>
+                    <text x="295" y="165" fill="#6a6a7a" font-size="10">&darr;</text>
+                    <rect x="240" y="170" width="100" height="30" rx="4" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+                    <text x="290" y="190" fill="#4ecca3" font-size="9" font-family="DM Sans" text-anchor="middle" font-weight="700">ELLIPSE</text>
+                    <line x1="290" y1="200" x2="290" y2="215" stroke="#6a6a7a" stroke-width="1"/>
+                    <text x="295" y="210" fill="#6a6a7a" font-size="10">&darr;</text>
+                    <rect x="240" y="215" width="100" height="30" rx="4" fill="#161622" stroke="#c97b4b" stroke-width="1.5"/>
+                    <text x="290" y="235" fill="#c97b4b" font-size="9" font-family="DM Sans" text-anchor="middle" font-weight="700">Perfect fit!</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deep Dive -->
+<section>
+    <span class="section-number">05a &mdash; DEEP DIVE</span>
+    <h2>The Physics Behind the Geometry</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>What made <em>Astronomia Nova</em> truly revolutionary was not just the ellipse, but Kepler's insistence on finding <span class="accent">physical causes</span> for planetary motion. He rejected the ancient tradition of "saving the phenomena" with geometric devices and demanded a causal explanation.</p>
+            <p>Kepler proposed that the Sun emits a <span class="accent-amber">motive force</span> (anima motrix) that sweeps the planets around, weakening with distance. This explained the area law: closer planets receive more force and move faster. Though his mechanism was wrong (he imagined something like magnetism), the conceptual framework was correct.</p>
+            <p>He also introduced the concept of <span class="accent-green">inertia as resistance to motion</span> &mdash; planets tend to stay at rest and must be pushed. Combined with his distance-dependent force, this gave a qualitative dynamics that Newton would make exact.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-blue">The Vicarious Hypothesis</h4>
+                <p>Kepler first constructed a circular orbit that matched Tycho's data for longitude but failed for latitude and distances. He called it the "vicarious hypothesis" because it worked by accident rather than physical truth &mdash; then spent years finding the real answer.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-purple">The Area Law's Origin</h4>
+                <p>Kepler arrived at the area law through an approximation: summing the distance from the Sun at each point of the orbit. He recognized this sum equaled the area swept out &mdash; essentially performing a crude integration decades before calculus existed.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">A Book Ahead of Its Time</h4>
+                <p>Few contemporaries could follow <em>Astronomia Nova</em>'s dense mathematics. Even Galileo never adopted Kepler's ellipses, preferring circular orbits. It took Newton's <em>Principia</em> (1687) to demonstrate the full power of Kepler's laws.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 - Rudolphine Tables -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION III</span>
+    <h2>The Rudolphine Tables</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Published in 1627 after twenty-six years of labor, the <em>Tabulae Rudolphinae</em> were the most accurate astronomical tables ever produced. Named in honor of Emperor Rudolf II, they were based on Tycho's observations and Kepler's elliptical theory.</p>
+            <p>Previous planetary tables (the Alfonsine and Prutenic) typically erred by <span class="accent-rose">several degrees</span>. The Rudolphine Tables were accurate to within <span class="accent">one to two arcminutes</span> &mdash; a thirtyfold improvement that provided the most compelling practical argument for Kepler's system.</p>
+            <p>The tables included a <span class="accent-green">star catalogue</span> of 1,005 stars, logarithmic tables (recently invented by Napier), instructions for computing planetary positions, and predictions of transits of Mercury and Venus across the Sun. Kepler's prediction of a <span class="accent-amber">Mercury transit in 1631</span> was confirmed by Gassendi, vindicating the tables posthumously.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent">Twenty-Six Years</h4>
+                <p>Kepler began the tables in 1601 at Tycho's deathbed request. Wars, poverty, legal disputes with Tycho's heirs, and the sheer computational burden delayed completion until 1627. Kepler had to pay for the printing himself.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-purple">Logarithms</h4>
+                <p>Kepler was among the first astronomers to adopt Napier's logarithms (published 1614). He computed his own logarithmic tables and included them in the Rudolphine Tables, vastly simplifying the trigonometric calculations needed for planetary positions.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">The Frontispiece</h4>
+                <p>The famous engraved frontispiece depicts a temple of astronomy with pillars representing Hipparchus, Ptolemy, Copernicus, and Tycho. Kepler placed himself modestly at the base, working at a table &mdash; but the temple's roof is held up by his elliptical orbits.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 &mdash; METHOD</span>
+    <h2>Kepler's Method</h2>
+    <div class="separator"></div>
+    <p style="text-align: center; max-width: 75%; margin: 0 auto 0.3em auto;">Kepler combined <span class="accent">metaphysical conviction</span>, <span class="accent-green">mathematical rigor</span>, and <span class="accent-amber">unflinching respect for data</span> in a method uniquely his own.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Hypothesize</h4>
+            <p>Propose a physical cause or geometric archetype</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Calculate</h4>
+            <p>Derive quantitative predictions from the hypothesis</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Compare</h4>
+            <p>Test against Tycho's observations without compromise</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-rose">Discard & Retry</h4>
+            <p>Abandon even beautiful theories when they fail</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"If I had believed that we could ignore these eight minutes, I would have patched up my hypothesis accordingly. But since it was not permissible to ignore them, those eight minutes point the road to a complete reformation of astronomy."</p>
+        <span class="attribution">&mdash; Kepler, <em>Astronomia Nova</em> (1609)</span>
+    </div>
+</section>
+
+<!-- Slide 11: Connections -->
+<section>
+    <span class="section-number">08 &mdash; CONNECTIONS</span>
+    <h2>Intellectual Network</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Tycho Brahe</h4>
+            <p>The tumultuous partnership between Tycho and Kepler &mdash; the greatest observer and the greatest theorist of their age &mdash; produced modern astronomy. Tycho guarded his data jealously; only his sudden death gave Kepler full access.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Galileo</h4>
+            <p>Kepler enthusiastically supported Galileo's telescopic discoveries, publishing <em>Dissertatio cum Nuncio Sidereo</em> (1610) in response. Galileo, however, never reciprocated by adopting Kepler's elliptical laws, a missed connection that slowed progress.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Copernicus</h4>
+            <p>Kepler was Copernicus's true intellectual heir. Where Copernicus kept circular orbits and epicycles, Kepler completed the revolution by making the heliocentric system both geometrically simple and observationally accurate.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-amber">Newton</h4>
+            <p>Newton's <em>Principia</em> (1687) demonstrated that all three of Kepler's laws follow from a single inverse-square gravitational force. When asked how he discovered gravity, Newton replied: "By thinking on it continually" &mdash; but he was thinking about Kepler's laws.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">William Gilbert</h4>
+            <p>Gilbert's <em>De Magnete</em> (1600) inspired Kepler's idea that the Sun moves the planets by a quasi-magnetic force. Though physically wrong, this magnetic analogy was Kepler's bridge from geometry to physics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">09 &mdash; CONTROVERSY</span>
+    <h2>Battles and Disputes</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Kepler's life was shaped by conflict &mdash; with Tycho, with Tycho's heirs, with religious authorities, and with fate itself. His relationship with <span class="accent">Tycho Brahe</span> was profoundly complicated: mutual intellectual admiration mixed with suspicion, secrecy, and temperamental clashes.</p>
+            <p>Tycho wanted Kepler to validate the <span class="accent-rose">Tychonic system</span> (Earth-centered, with planets orbiting the Sun which orbits the Earth). Kepler intended all along to prove Copernicus right. Their eighteen-month collaboration was tense, with Tycho doling out data in fragments to maintain control.</p>
+            <p>After Tycho's death, his heirs &mdash; particularly son-in-law <span class="accent-amber">Franz Tengnagel</span> &mdash; fought Kepler for years over the data and demanded editorial control over <em>Astronomia Nova</em>. The resulting legal battles delayed publication significantly.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-rose">The Witch Trial</h4>
+                <p>In 1615, Kepler's mother Katharina was accused of witchcraft by a former friend. Kepler spent six years building her legal defense, writing briefs, traveling repeatedly to W&uuml;rttemberg. She was imprisoned and threatened with torture but never confessed. Acquitted in 1621, she died six months later.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-purple">Religious Exile</h4>
+                <p>Neither fully Lutheran nor Catholic, Kepler was excommunicated by Lutherans in 1612 for refusing to sign the Formula of Concord. A man of deep faith, he was denied communion by his own church for the last eighteen years of his life.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Ursus Priority Dispute</h4>
+                <p>Nicolaus Reimers Ursus, Imperial Mathematician before Tycho, published a version of the Tychonic system he claimed as his own. Both Tycho and Kepler were drawn into a bitter priority dispute that colored Kepler's early years in Prague.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Kepler's Laws &rarr; Newtonian Gravity</h4>
+            <p>Newton showed that Kepler's three laws are mathematical consequences of a universal inverse-square gravitational force. The third law, T^2 proportional to a^3, directly yields the force law F proportional to 1/r^2. Kepler's empirical laws became the proving ground of Newtonian mechanics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Exoplanet Detection</h4>
+            <p>NASA's Kepler Space Telescope (2009&ndash;2018) discovered over 2,600 confirmed exoplanets using the transit method &mdash; detecting the tiny dimming of starlight as a planet crosses its star's face. Kepler himself predicted such transits in the Rudolphine Tables.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Orbital Mechanics</h4>
+            <p>Every spacecraft trajectory is computed using Kepler's laws as the starting point. The Kepler equation, relating orbital position to time, remains fundamental to astrodynamics. Mission planning from Apollo to Mars rovers begins with Keplerian orbits.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Optics &amp; Vision Science</h4>
+            <p>Kepler's <em>Astronomiae Pars Optica</em> (1604) correctly explained how the eye forms images via an inverted projection on the retina. His <em>Dioptrice</em> (1611) established the theory of lenses and designed the astronomical telescope that bears his name.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 &mdash; APPLICATIONS</span>
+    <h2>Applications &amp; Influence</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Satellite Orbits</h4>
+            <p>All artificial satellites obey Kepler's laws. Geostationary orbits, GPS constellations, and transfer orbits are calculated using his equations. The Hohmann transfer orbit is an elliptical path between two Keplerian circles.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Kepler Telescope</h4>
+            <p>The Keplerian telescope design (two convex lenses) replaced Galileo's design and remains the basis of modern refracting telescopes. Its wider field of view and ability to use a crosshair made it superior for precise measurements.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Binary Star Systems</h4>
+            <p>Kepler's laws generalize to any two-body gravitational system. Astronomers use deviations from Keplerian orbits in binary stars to infer the presence of unseen companions, including black holes and neutron stars.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-blue">Kepler's Conjecture</h4>
+            <p>In 1611, Kepler conjectured that the densest packing of equal spheres is the face-centered cubic arrangement &mdash; the way a grocer stacks oranges. This remained unproven until Thomas Hales's computer-assisted proof in 1998.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Cosmological Principle</h4>
+            <p>Kepler was among the first to consider that the universe might be infinite and that stars are distant suns. His analysis of why the night sky is dark (Olbers' paradox, anticipated by Kepler) raised questions that cosmology addresses to this day.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">12 &mdash; TIMELINE</span>
+    <h2>Life &amp; Works</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main timeline line -->
+            <line x1="50" y1="190" x2="860" y2="190" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- Birth -->
+            <circle cx="70" cy="190" r="5" fill="#c97b4b"/>
+            <text x="70" y="175" fill="#c97b4b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1571</text>
+            <text x="70" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Born in Weil</text>
+            <text x="70" y="227" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">der Stadt</text>
+            <!-- Tubingen -->
+            <circle cx="160" cy="190" r="4" fill="#4ecca3"/>
+            <text x="160" y="175" fill="#4ecca3" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1589</text>
+            <text x="160" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">T&uuml;bingen</text>
+            <!-- Mysterium -->
+            <circle cx="240" cy="190" r="4" fill="#9b72cf"/>
+            <text x="240" y="175" fill="#9b72cf" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1596</text>
+            <text x="240" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Mysterium</text>
+            <text x="240" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Cosmographicum</text>
+            <!-- Prague -->
+            <circle cx="320" cy="190" r="5" fill="#c97b4b"/>
+            <text x="320" y="175" fill="#c97b4b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1600</text>
+            <text x="320" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Joins Tycho</text>
+            <text x="320" y="227" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">in Prague</text>
+            <!-- Optics -->
+            <circle cx="400" cy="190" r="4" fill="#5b8cd4"/>
+            <text x="400" y="175" fill="#5b8cd4" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1604</text>
+            <text x="400" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Optics</text>
+            <!-- Astronomia Nova -->
+            <circle cx="480" cy="190" r="5" fill="#c97b4b"/>
+            <text x="480" y="175" fill="#c97b4b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1609</text>
+            <text x="480" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Astronomia</text>
+            <text x="480" y="227" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Nova</text>
+            <!-- Harmonices -->
+            <circle cx="580" cy="190" r="5" fill="#9b72cf"/>
+            <text x="580" y="175" fill="#9b72cf" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1619</text>
+            <text x="580" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Harmonices</text>
+            <text x="580" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Mundi</text>
+            <!-- Rudolphine Tables -->
+            <circle cx="700" cy="190" r="5" fill="#d4a053"/>
+            <text x="700" y="175" fill="#d4a053" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1627</text>
+            <text x="700" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Rudolphine</text>
+            <text x="700" y="227" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Tables</text>
+            <!-- Death -->
+            <circle cx="810" cy="190" r="5" fill="#c97b4b"/>
+            <text x="810" y="175" fill="#c97b4b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1630</text>
+            <text x="810" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Dies in</text>
+            <text x="810" y="227" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Regensburg</text>
+            <!-- Era labels -->
+            <rect x="130" y="260" width="140" height="25" rx="4" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <text x="200" y="277" fill="#4ecca3" font-size="10" font-family="DM Sans" text-anchor="middle">Graz &amp; T&uuml;bingen</text>
+            <rect x="300" y="260" width="210" height="25" rx="4" fill="none" stroke="#c97b4b" stroke-width="1" opacity="0.5"/>
+            <text x="405" y="277" fill="#c97b4b" font-size="10" font-family="DM Sans" text-anchor="middle">Prague: The Great Discoveries</text>
+            <rect x="550" y="260" width="200" height="25" rx="4" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <text x="650" y="277" fill="#d4a053" font-size="10" font-family="DM Sans" text-anchor="middle">Linz &amp; Wandering Years</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">13 &mdash; READING</span>
+    <h2>Recommended Reading</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Sources</h4>
+            <ul>
+                <li><em>Mysterium Cosmographicum</em> (1596) &mdash; Kepler's first cosmological work on the Platonic solids</li>
+                <li><em>Astronomia Nova</em> (1609) &mdash; The epochal discovery of elliptical orbits and the area law</li>
+                <li><em>Harmonices Mundi</em> (1619) &mdash; The third law and Kepler's theory of cosmic harmony</li>
+                <li><em>Somnium</em> (1634, posthumous) &mdash; A proto-science-fiction tale of a journey to the Moon</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Secondary Sources</h4>
+            <ul>
+                <li>Max Caspar, <em>Kepler</em> (1959) &mdash; The standard scholarly biography, deeply researched</li>
+                <li>Arthur Koestler, <em>The Sleepwalkers</em> (1959) &mdash; Vivid narrative of Kepler and the Copernican revolution</li>
+                <li>James Voelkel, <em>The Composition of Kepler's Astronomia Nova</em> (2001) &mdash; Reconstruction of Kepler's working process</li>
+                <li>Kitty Ferguson, <em>Tycho &amp; Kepler</em> (2002) &mdash; Accessible dual biography of the great partnership</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"Kepler's life was one long struggle against poverty, illness, and misunderstanding. But through it all he maintained an unshakable conviction that the universe was built on mathematical harmonies waiting to be discovered."</p>
+        <span class="attribution">&mdash; Max Caspar</span>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 70vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Nested elliptical orbits -->
+                <ellipse cx="100" cy="100" rx="85" ry="55" fill="none" stroke="#c97b4b" stroke-width="1" opacity="0.4" transform="rotate(-15, 100, 100)"/>
+                <ellipse cx="100" cy="100" rx="60" ry="40" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.3" transform="rotate(-15, 100, 100)"/>
+                <ellipse cx="100" cy="100" rx="35" ry="25" fill="none" stroke="#c97b4b" stroke-width="0.6" opacity="0.25" transform="rotate(-15, 100, 100)"/>
+                <!-- Sun -->
+                <circle cx="85" cy="104" r="6" fill="#c97b4b" opacity="0.7"/>
+                <!-- Planets -->
+                <circle cx="60" cy="88" r="3" fill="#5b8cd4" opacity="0.6"/>
+                <circle cx="155" cy="85" r="4" fill="#4ecca3" opacity="0.5"/>
+                <circle cx="30" cy="120" r="3.5" fill="#cf7272" opacity="0.5"/>
+                <!-- Stars -->
+                <circle cx="25" cy="35" r="1.5" fill="#c97b4b" opacity="0.4"/>
+                <circle cx="175" cy="30" r="1" fill="#c97b4b" opacity="0.3"/>
+                <circle cx="170" cy="170" r="1.5" fill="#c97b4b" opacity="0.5"/>
+                <circle cx="30" cy="170" r="1" fill="#c97b4b" opacity="0.3"/>
+            </svg>
+        </div>
+        <h2 style="margin-bottom: 0.3em; font-size: 1.3em;">Mensus eram coelos, nunc terrae metior umbras</h2>
+        <p class="subtitle" style="margin-bottom: 1em;">"I used to measure the heavens, now I measure the shadows of Earth"</p>
+        <div class="quote-box" style="max-width: 60%;">
+            <p>"The diversity of the phenomena of Nature is so great, and the treasures hidden in the heavens so rich, precisely in order that the human mind shall never be lacking in fresh nourishment."</p>
+            <span class="attribution">&mdash; Johannes Kepler (1571 &ndash; 1630)</span>
+        </div>
+        <div style="margin-top: 1.2em;">
+            <span class="tag amber">Weil der Stadt</span>
+            <span class="tag green">T&uuml;bingen</span>
+            <span class="tag blue">Prague</span>
+            <span class="tag rose">Linz</span>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

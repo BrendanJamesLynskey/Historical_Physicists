@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richard Feynman - The Great Explainer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #e8b84b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="70" cy="70" r="30" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.15"/>
+            <g opacity="0.4">
+                <line x1="70" y1="10" x2="70" y2="130" stroke="#e8b84b" stroke-width="0.3"/>
+                <line x1="10" y1="70" x2="130" y2="70" stroke="#e8b84b" stroke-width="0.3"/>
+                <line x1="27" y1="27" x2="113" y2="113" stroke="#e8b84b" stroke-width="0.3"/>
+                <line x1="113" y1="27" x2="27" y2="113" stroke="#e8b84b" stroke-width="0.3"/>
+            </g>
+            <circle cx="70" cy="70" r="4" fill="#e8b84b" opacity="0.6"/>
+        </svg>
+    </div>
+    <h1>Richard Feynman</h1>
+    <div class="separator"></div>
+    <p class="subtitle">The Great Explainer &middot; 1918&ndash;1988</p>
+    <p style="text-align:center; margin-top:0.8em;">Quantum electrodynamics, path integrals, and the art of finding things out</p>
+    <div style="margin-top:1em;">
+        <span class="tag amber">Nobel Prize 1965</span>
+        <span class="tag green">Caltech</span>
+        <span class="tag blue">Theoretical Physics</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Far Rockaway, Queens</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p>Richard Phillips Feynman was born on May 11, 1918, in Queens, New York, to Melville and Lucille Feynman. His father, a uniform salesman of Belarusian Jewish descent, kindled his curiosity by posing questions rather than giving answers. "He taught me to notice things," Feynman later recalled.</p>
+            <p>By age 11, Richard had set up a home laboratory and was repairing radios in his neighbourhood&mdash;earning a reputation as "the boy who fixes radios by thinking." He learned calculus at 15, and by the time he entered MIT in 1935, he had independently developed much of the mathematical machinery he would later need.</p>
+            <p>At MIT, he shifted from mathematics to physics, drawn by the subject's insistence on connecting abstraction to reality. His undergraduate thesis, on the forces in molecules, introduced what is now called the <span class="accent">Hellmann-Feynman theorem</span>.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Key Dates</h4>
+                <p><strong>1918</strong> &mdash; Born in Queens, NY<br>
+                <strong>1935</strong> &mdash; Enters MIT<br>
+                <strong>1939</strong> &mdash; Graduates, enters Princeton<br>
+                <strong>1942</strong> &mdash; PhD under John Wheeler</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Family Influence</h4>
+                <p>Melville Feynman never finished a science degree himself but passed on a habit of questioning that shaped Richard's entire approach to physics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>From Los Alamos to Caltech</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>At just 24, Feynman joined the Manhattan Project at Los Alamos, where he led a computing group and became the youngest group leader in the theoretical division under Hans Bethe. He earned a reputation as a brilliant, irreverent problem-solver&mdash;and a notorious safe-cracker.</p>
+            <p>After the war he moved to Cornell (1945&ndash;1950), where he did his most transformative work on quantum electrodynamics. In 1950, he accepted a position at Caltech, where he would remain for the rest of his career. Caltech suited his temperament: informal, direct, and intensely focused on science.</p>
+            <p>His legendary <span class="accent">Feynman Lectures on Physics</span> (1961&ndash;1963) became the gold standard of physics pedagogy, still in print and freely available online more than sixty years later.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Los Alamos</h4>
+                <p>1943&ndash;1945. Youngest group leader. Worked on the implosion lens problem and developed computational methods for the bomb's yield calculations.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-blue">Cornell</h4>
+                <p>1945&ndash;1950. Developed QED formulation. Emerged from a post-war depression by returning to physics "for fun."</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">Caltech</h4>
+                <p>1950&ndash;1988. Delivered the Feynman Lectures, worked on superfluidity, partons, weak decay, quantum computing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The Crisis in Quantum Field Theory</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:85%; margin:0.4em auto;">By the late 1930s, quantum electrodynamics was plagued by infinities. Every calculation of basic quantities&mdash;the electron's mass, its magnetic moment&mdash;produced divergent results. Many physicists, including Dirac himself, believed the theory was fundamentally broken.</p>
+    <div class="card-grid cols-3" style="margin-top:0.6em;">
+        <div class="card">
+            <h4 class="accent-rose">The Infinity Problem</h4>
+            <p>Self-energy calculations diverged. An electron interacting with its own electromagnetic field yielded infinite mass and charge&mdash;clearly unphysical.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Lamb Shift (1947)</h4>
+            <p>Willis Lamb measured a tiny energy difference between two hydrogen levels that Dirac's equation predicted should be identical. QED had to explain it.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Anomalous Moment</h4>
+            <p>Polykarp Kusch measured the electron's magnetic moment to be slightly larger than Dirac's prediction. A new calculational framework was needed.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top:0.6em;">
+        <p>"It is not a matter of being able to calculate; it is a matter of having a theory which is consistent."</p>
+        <span class="attribution">&mdash; Paul Dirac, on the failures of early QED</span>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>Feynman Diagrams &amp; QED</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Feynman's greatest single contribution was a complete reformulation of quantum electrodynamics. Working independently of Julian Schwinger and Sin-Itiro Tomonaga, he developed an intuitive, diagrammatic approach to calculating particle interactions.</p>
+            <p><span class="accent">Feynman diagrams</span> replaced pages of integrals with simple pictures: straight lines for fermions, wavy lines for photons, vertices for interactions. Each diagram encoded precise mathematical rules&mdash;propagators and vertex factors&mdash;that could be written down by inspection.</p>
+            <p>Combined with <span class="accent">renormalization</span>&mdash;a systematic procedure for absorbing infinities into redefined physical constants&mdash;this framework made QED the most precisely tested theory in all of science.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg">
+                <text x="140" y="18" text-anchor="middle" font-size="11" fill="#6a6a7a" font-family="JetBrains Mono, monospace">Electron-Electron Scattering</text>
+                <!-- Incoming electrons -->
+                <line x1="30" y1="60" x2="110" y2="100" stroke="#e8e6e3" stroke-width="2"/>
+                <line x1="30" y1="180" x2="110" y2="140" stroke="#e8e6e3" stroke-width="2"/>
+                <!-- Photon exchange (wavy) -->
+                <path d="M110,100 Q120,108 130,100 Q140,92 150,100 Q160,108 170,100" fill="none" stroke="#e8b84b" stroke-width="2"/>
+                <path d="M110,140 Q120,132 130,140 Q140,148 150,140 Q160,132 170,140" fill="none" stroke="#e8b84b" stroke-width="2"/>
+                <!-- Virtual photon -->
+                <path d="M110,100 Q125,120 110,140" fill="none" stroke="#e8b84b" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="90" y="124" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">&#947;</text>
+                <!-- Outgoing electrons -->
+                <line x1="110" y1="100" x2="190" y2="60" stroke="#e8e6e3" stroke-width="2"/>
+                <line x1="110" y1="140" x2="190" y2="180" stroke="#e8e6e3" stroke-width="2"/>
+                <!-- Vertices -->
+                <circle cx="110" cy="100" r="4" fill="#e8b84b"/>
+                <circle cx="110" cy="140" r="4" fill="#e8b84b"/>
+                <!-- Labels -->
+                <text x="20" y="58" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
+                <text x="20" y="185" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
+                <text x="194" y="58" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
+                <text x="194" y="185" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
+                <!-- Arrows -->
+                <polygon points="75,82 80,78 78,84" fill="#e8e6e3"/>
+                <polygon points="75,158 80,162 78,156" fill="#e8e6e3"/>
+                <!-- Legend -->
+                <line x1="30" y1="218" x2="60" y2="218" stroke="#e8e6e3" stroke-width="2"/>
+                <text x="65" y="221" font-size="8" fill="#9a9a9a" font-family="DM Sans">Fermion</text>
+                <path d="M130,218 Q140,210 150,218 Q160,226 170,218" fill="none" stroke="#e8b84b" stroke-width="2"/>
+                <text x="175" y="221" font-size="8" fill="#9a9a9a" font-family="DM Sans">Photon</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deep Dive -->
+<section>
+    <span class="section-number">05 &mdash; QED IN DEPTH</span>
+    <h2>The Most Precise Theory</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:85%; margin:0.3em auto;">The anomalous magnetic moment of the electron, <code>g-2</code>, is QED's crowning achievement. Theory and experiment agree to more than <span class="accent">10 significant figures</span>&mdash;the most accurate prediction in the history of science.</p>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">Renormalization</h4>
+            <p>Feynman, Schwinger, and Tomonaga independently showed that infinities could be systematically absorbed into redefinitions of mass and charge. The "bare" parameters are infinite, but all observable quantities are finite and calculable.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Diagrammatic Rules</h4>
+            <p>Each line, vertex, and loop in a Feynman diagram maps to a specific integral. Summing diagrams order by order in the fine-structure constant <code>&alpha; &approx; 1/137</code> gives systematically improvable predictions.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The 1965 Nobel Prize</h4>
+            <p>Feynman shared the prize with Schwinger and Tomonaga. All three had solved the same problem independently&mdash;Feynman with diagrams, Schwinger with operator methods, Tomonaga with a covariant formalism. Freeman Dyson proved they were equivalent.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Impact on Particle Physics</h4>
+            <p>Feynman diagrams became the universal language of quantum field theory. Every subsequent advance&mdash;the electroweak theory, QCD, the Standard Model&mdash;was formulated and calculated using Feynman's diagrammatic method.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 + SVG -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION II</span>
+    <h2>Path Integral Formulation</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In his 1942 PhD thesis under John Wheeler, Feynman proposed a radical new formulation of quantum mechanics. Instead of the Schrodinger equation or Heisenberg matrices, he described a particle's evolution by summing over <span class="accent">all possible paths</span> between two points.</p>
+            <p>Each path contributes a phase proportional to the classical action <code>S = &int; L dt</code>. Paths near the classical trajectory reinforce; wildly different paths cancel out. The classical world emerges as a saddle-point approximation.</p>
+            <p>This "sum over histories" approach unified quantum mechanics and classical mechanics in a single framework and provided the natural language for quantum field theory, statistical mechanics, and even quantum gravity.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
+                <text x="130" y="16" text-anchor="middle" font-size="10" fill="#6a6a7a" font-family="JetBrains Mono, monospace">Sum Over All Paths</text>
+                <!-- Start and end points -->
+                <circle cx="40" cy="110" r="6" fill="#e8b84b" opacity="0.8"/>
+                <circle cx="220" cy="110" r="6" fill="#e8b84b" opacity="0.8"/>
+                <text x="40" y="132" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">A</text>
+                <text x="220" y="132" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">B</text>
+                <!-- Classical path (bold) -->
+                <path d="M40,110 Q130,108 220,110" fill="none" stroke="#e8e6e3" stroke-width="2.5"/>
+                <!-- Quantum paths (various) -->
+                <path d="M40,110 Q90,40 140,70 Q190,100 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.4"/>
+                <path d="M40,110 Q80,160 130,150 Q180,140 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.35"/>
+                <path d="M40,110 Q70,30 130,50 Q190,70 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.25"/>
+                <path d="M40,110 Q90,190 150,170 Q200,150 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.2"/>
+                <path d="M40,110 Q60,80 100,60 Q160,40 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.3"/>
+                <path d="M40,110 Q100,180 160,160 Q200,140 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.28"/>
+                <path d="M40,110 Q80,90 130,95 Q180,100 220,110" fill="none" stroke="#e8b84b" stroke-width="1.0" opacity="0.5"/>
+                <path d="M40,110 Q80,130 130,125 Q180,120 220,110" fill="none" stroke="#e8b84b" stroke-width="1.0" opacity="0.5"/>
+                <!-- Formula -->
+                <text x="130" y="200" text-anchor="middle" font-size="11" fill="#e8e6e3" font-family="JetBrains Mono, monospace">K(B,A) = &Sigma; e<tspan baseline-shift="super" font-size="8">iS[path]/&hbar;</tspan></text>
+                <!-- Legend -->
+                <line x1="30" y1="178" x2="55" y2="178" stroke="#e8e6e3" stroke-width="2.5"/>
+                <text x="60" y="181" font-size="8" fill="#9a9a9a" font-family="DM Sans">Classical</text>
+                <line x1="120" y1="178" x2="145" y2="178" stroke="#e8b84b" stroke-width="0.8" opacity="0.4"/>
+                <text x="150" y="181" font-size="8" fill="#9a9a9a" font-family="DM Sans">Quantum paths</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deep Dive -->
+<section>
+    <span class="section-number">07 &mdash; PATH INTEGRALS IN DEPTH</span>
+    <h2>A New Language for Physics</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:85%; margin:0.3em auto;">The path integral is not just an alternative&mdash;it is often the <em>only</em> practical approach to problems in modern physics.</p>
+    <div class="card-grid cols-3" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-blue">Quantum Field Theory</h4>
+            <p>Path integrals generalize naturally from particles to fields. The "sum over histories" becomes a sum over all field configurations&mdash;the foundation of the Standard Model.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Statistical Mechanics</h4>
+            <p>A Wick rotation (t &rarr; i&tau;) transforms the quantum path integral into the partition function of statistical mechanics, unifying quantum and thermal physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Quantum Gravity</h4>
+            <p>The path integral over geometries is the starting point for most approaches to quantum gravity, from Euclidean quantum gravity to string theory's worldsheet integrals.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top:0.5em;">
+        <p>"There is a pleasure in recognizing old things from a new point of view."</p>
+        <span class="attribution">&mdash; Richard Feynman, Nobel Lecture (1965)</span>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 -->
+<section>
+    <span class="section-number">08 &mdash; CONTRIBUTION III</span>
+    <h2>Superfluidity &amp; the Parton Model</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <h3 style="margin-top:0;">Liquid Helium</h3>
+            <p>In the early 1950s, Feynman applied path integrals to explain the bizarre behaviour of helium-4 below 2.17 K. He showed that superfluidity&mdash;flow without viscosity&mdash;arises from Bose-Einstein statistics constraining the allowed quantum states. His theory of quantized vortex lines explained the <span class="accent">lambda transition</span> and predicted roton excitations observed experimentally.</p>
+            <h3 style="margin-top:0.5em;">Partons</h3>
+            <p>In 1969, Feynman proposed that protons and neutrons are composed of point-like constituents he called <span class="accent">partons</span>. This model explained the scaling behaviour seen in deep inelastic scattering experiments at SLAC. Partons were soon identified with quarks (proposed by Gell-Mann) and gluons, and the parton model became the practical calculational tool of QCD.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Superfluidity Key Insight</h4>
+                <p>At low temperatures, the quantum paths of helium atoms become entangled across the entire fluid. Individual atoms lose their identity&mdash;the fluid moves as a single quantum object.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-amber">Deep Inelastic Scattering</h4>
+                <p>High-energy electrons "see" individual partons inside the proton. Bjorken scaling&mdash;the structure functions depending only on the ratio x = Q&sup2;/2M&nu;&mdash;confirmed point-like constituents.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">Also Notable</h4>
+                <p>Feynman made major contributions to the theory of weak interactions (V&minus;A theory with Gell-Mann), quantum computing, and nanotechnology ("There's Plenty of Room at the Bottom," 1959).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09 &mdash; THE METHOD</span>
+    <h2>Thinking Like Feynman</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:80%; margin:0.3em auto;">Feynman's approach was distinctive: he distrusted authority, insisted on deriving everything from scratch, and valued physical intuition over mathematical elegance.</p>
+    <div class="process-flow" style="margin-top:0.6em;">
+        <div class="process-step">
+            <h4 class="accent">Question</h4>
+            <p>Strip the problem to its essentials. Ignore notation.</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-green">Visualize</h4>
+            <p>Draw pictures. Think in images, not symbols.</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Calculate</h4>
+            <p>Use the simplest method. Approximate freely.</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-rose">Explain</h4>
+            <p>If you can't explain it simply, you don't understand it.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">The Notebook Method</h4>
+            <p>Feynman kept a notebook labelled "Things I Don't Know." He would periodically work through unsolved problems from first principles, often finding novel approaches that others had missed.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Teaching as Understanding</h4>
+            <p>"If I could not reduce it to the freshman level, that means we don't really understand it." He used undergraduate teaching as a test of genuine comprehension.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections SVG -->
+<section>
+    <span class="section-number">10 &mdash; CONNECTIONS</span>
+    <h2>Feynman's Intellectual Network</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="350" y1="140" x2="140" y2="60" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="560" y2="60" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="100" y2="180" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="600" y2="180" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="180" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="350" y2="290" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="520" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="140" y1="60" x2="560" y2="60" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+            <line x1="180" y1="280" x2="520" y2="280" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+            <!-- Center: Feynman -->
+            <circle cx="350" cy="140" r="28" fill="#161622" stroke="#e8b84b" stroke-width="2"/>
+            <text x="350" y="136" text-anchor="middle" font-size="10" fill="#e8b84b" font-weight="bold" font-family="DM Sans">Feynman</text>
+            <text x="350" y="148" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">1918&ndash;1988</text>
+            <!-- Wheeler -->
+            <circle cx="140" cy="60" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="140" y="57" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="DM Sans">Wheeler</text>
+            <text x="140" y="68" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">PhD advisor</text>
+            <!-- Schwinger -->
+            <circle cx="560" cy="60" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="560" y="57" text-anchor="middle" font-size="9" fill="#cf7272" font-family="DM Sans">Schwinger</text>
+            <text x="560" y="68" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Nobel co-laureate</text>
+            <!-- Bethe -->
+            <circle cx="100" cy="180" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="100" y="177" text-anchor="middle" font-size="9" fill="#4ecca3" font-family="DM Sans">Bethe</text>
+            <text x="100" y="188" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Los Alamos</text>
+            <!-- Dyson -->
+            <circle cx="600" cy="180" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="600" y="177" text-anchor="middle" font-size="9" fill="#d4a053" font-family="DM Sans">Dyson</text>
+            <text x="600" y="188" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Unified QED</text>
+            <!-- Gell-Mann -->
+            <circle cx="180" cy="280" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="180" y="277" text-anchor="middle" font-size="9" fill="#9b72cf" font-family="DM Sans">Gell-Mann</text>
+            <text x="180" y="288" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Caltech rival</text>
+            <!-- Tomonaga -->
+            <circle cx="350" cy="290" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="350" y="287" text-anchor="middle" font-size="9" fill="#cf7272" font-family="DM Sans">Tomonaga</text>
+            <text x="350" y="298" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Nobel co-laureate</text>
+            <!-- Dirac -->
+            <circle cx="520" cy="280" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="520" y="277" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="DM Sans">Dirac</text>
+            <text x="520" y="288" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Inspiration</text>
+        </svg>
+    </div>
+    <p style="text-align:center; font-size:0.48em !important; color:var(--text-muted);">Dashed lines indicate independent parallel work; solid lines indicate direct collaboration or mentorship.</p>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">11 &mdash; RIVALRY</span>
+    <h2>Feynman vs. Schwinger, and the Gell-Mann Tension</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <h3 style="margin-top:0;">Two Styles of Genius</h3>
+            <p>Feynman and Julian Schwinger solved QED independently but with diametrically opposite styles. Schwinger was formal, mathematically rigorous, and presented polished lectures in immaculate suits. Feynman was intuitive, visual, and famously informal. At the 1948 Pocono Conference, Schwinger's marathon presentation was received with admiration; Feynman's diagrammatic approach was met with confusion and scepticism&mdash;even Bohr and Dirac were unconvinced.</p>
+            <p>It took Freeman Dyson's 1949 proof that the two approaches were mathematically equivalent to establish Feynman's method on firm ground.</p>
+        </div>
+        <div>
+            <h3 style="margin-top:0;">Gell-Mann at Caltech</h3>
+            <p>Murray Gell-Mann, Feynman's colleague at Caltech for decades, was his intellectual equal and frequent sparring partner. Their collaboration on V&minus;A weak interaction theory was productive but tense. Gell-Mann was meticulous about credit and priority; Feynman was cavalier.</p>
+            <div class="card" style="margin-top:0.4em;">
+                <h4 class="accent-rose">The Challenger Commission</h4>
+                <p>In 1986, Feynman's famous O-ring demonstration on the Rogers Commission investigating the Challenger disaster showcased his commitment to honesty over politics&mdash;dipping rubber in ice water on live television to demonstrate NASA's management failures.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+    <span class="section-number">12 &mdash; LEGACY</span>
+    <h2>An Enduring Influence</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Physics Pedagogy</h4>
+            <p>The Feynman Lectures on Physics transformed how the subject is taught. His emphasis on understanding over memorization, on asking "why" before "how," reshaped science education worldwide.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Quantum Computing</h4>
+            <p>In a visionary 1981 lecture, Feynman argued that simulating quantum systems requires quantum computers. This insight launched an entirely new field of research and technology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Nanotechnology</h4>
+            <p>"There's Plenty of Room at the Bottom" (1959) anticipated molecular-scale engineering decades before it became practical. He offered prizes for miniaturization that were eventually claimed.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Cultural Icon</h4>
+            <p>Through "Surely You're Joking" and "What Do You Care What Other People Think?", Feynman became the rare physicist who was also a beloved public figure&mdash;bongo player, artist, raconteur.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Standard Model</h4>
+            <p>Every calculation in the Standard Model of particle physics uses Feynman diagrams. His formalism is not just a contribution to physics&mdash;it is the language of modern particle theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Scientific Integrity</h4>
+            <p>His 1974 Caltech commencement address on "Cargo Cult Science" remains the definitive statement on intellectual honesty in research&mdash;a warning against self-deception that resonates today.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13 &mdash; APPLICATIONS</span>
+    <h2>Where Feynman's Ideas Live Today</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Particle Colliders</h4>
+            <p>Every experiment at CERN's Large Hadron Collider relies on Feynman diagram calculations to predict cross-sections, branching ratios, and backgrounds. The discovery of the Higgs boson in 2012 was verified against QFT predictions built on Feynman's framework.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Quantum Computing Hardware</h4>
+            <p>Feynman's 1981 insight drives a multi-billion-dollar industry. Google, IBM, and others build quantum processors that realize his vision of simulating quantum systems with quantum machines.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Condensed Matter Physics</h4>
+            <p>Path integrals and Feynman diagrams are essential tools in condensed matter theory&mdash;superconductivity, the fractional quantum Hall effect, and topological phases all use his formalism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Precision Metrology</h4>
+            <p>The QED prediction of the electron's g-factor underpins the most precise determination of the fine-structure constant, fundamental to the SI system of units redefined in 2019.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">14 &mdash; TIMELINE</span>
+    <h2>A Life in Physics</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main timeline line -->
+            <line x1="60" y1="180" x2="740" y2="180" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- Year markers and events -->
+            <circle cx="80" cy="180" r="5" fill="#e8b84b"/>
+            <text x="80" y="200" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">1918</text>
+            <text x="80" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Born in</text>
+            <text x="80" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Queens, NY</text>
+
+            <circle cx="175" cy="180" r="5" fill="#5b8cd4"/>
+            <text x="175" y="200" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="JetBrains Mono">1939</text>
+            <text x="175" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">MIT to Princeton</text>
+
+            <circle cx="250" cy="180" r="5" fill="#cf7272"/>
+            <text x="250" y="200" text-anchor="middle" font-size="9" fill="#cf7272" font-family="JetBrains Mono">1943</text>
+            <text x="250" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Los Alamos</text>
+            <text x="250" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Manhattan Project</text>
+
+            <circle cx="340" cy="180" r="5" fill="#4ecca3"/>
+            <text x="340" y="200" text-anchor="middle" font-size="9" fill="#4ecca3" font-family="JetBrains Mono">1948</text>
+            <text x="340" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">QED formulation</text>
+            <text x="340" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Pocono Conference</text>
+
+            <circle cx="430" cy="180" r="5" fill="#d4a053"/>
+            <text x="430" y="200" text-anchor="middle" font-size="9" fill="#d4a053" font-family="JetBrains Mono">1950</text>
+            <text x="430" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Moves to Caltech</text>
+
+            <circle cx="520" cy="180" r="5" fill="#9b72cf"/>
+            <text x="520" y="200" text-anchor="middle" font-size="9" fill="#9b72cf" font-family="JetBrains Mono">1965</text>
+            <text x="520" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Nobel Prize</text>
+            <text x="520" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">in Physics</text>
+
+            <circle cx="610" cy="180" r="5" fill="#5b8cd4"/>
+            <text x="610" y="200" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="JetBrains Mono">1969</text>
+            <text x="610" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Parton model</text>
+
+            <circle cx="680" cy="180" r="5" fill="#cf7272"/>
+            <text x="680" y="200" text-anchor="middle" font-size="9" fill="#cf7272" font-family="JetBrains Mono">1986</text>
+            <text x="680" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Challenger</text>
+            <text x="680" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Commission</text>
+
+            <circle cx="720" cy="180" r="5" fill="#e8b84b"/>
+            <text x="720" y="200" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">1988</text>
+            <text x="720" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Dies in</text>
+            <text x="720" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Los Angeles</text>
+
+            <!-- Era brackets -->
+            <rect x="65" y="260" width="150" height="30" rx="4" fill="rgba(232,184,75,0.08)" stroke="#e8b84b" stroke-width="0.5"/>
+            <text x="140" y="280" text-anchor="middle" font-size="8" fill="#e8b84b" font-family="DM Sans">Formation</text>
+
+            <rect x="230" y="260" width="130" height="30" rx="4" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="0.5"/>
+            <text x="295" y="280" text-anchor="middle" font-size="8" fill="#cf7272" font-family="DM Sans">War &amp; Revolution</text>
+
+            <rect x="380" y="260" width="270" height="30" rx="4" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="0.5"/>
+            <text x="515" y="280" text-anchor="middle" font-size="8" fill="#4ecca3" font-family="DM Sans">Caltech &amp; Public Life</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Reading -->
+<section>
+    <span class="section-number">15 &mdash; FURTHER READING</span>
+    <h2>Essential Sources</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Works</h4>
+            <p><strong>The Feynman Lectures on Physics</strong> (1964) &mdash; The definitive undergraduate physics course, freely available at feynmanlectures.caltech.edu.</p>
+            <p style="margin-top:0.3em;"><strong>QED: The Strange Theory of Light and Matter</strong> (1985) &mdash; Feynman's masterful popular account of quantum electrodynamics, requiring no mathematics.</p>
+            <p style="margin-top:0.3em;"><strong>"Space-Time Approach to Quantum Electrodynamics"</strong> (1949) &mdash; The foundational paper introducing Feynman diagrams, published in Physical Review.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Biographies &amp; Memoirs</h4>
+            <p><strong>Surely You're Joking, Mr. Feynman!</strong> (1985) &mdash; Anecdotal autobiography, enormously entertaining and revealing of his character.</p>
+            <p style="margin-top:0.3em;"><strong>Genius: The Life and Science of Richard Feynman</strong> by James Gleick (1992) &mdash; The authoritative biography, placing Feynman's work in its full scientific context.</p>
+            <p style="margin-top:0.3em;"><strong>The Character of Physical Law</strong> (1965) &mdash; Feynman's Messenger Lectures at Cornell, exploring the nature of scientific understanding.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Technical References</h4>
+            <p><strong>Quantum Mechanics and Path Integrals</strong> by Feynman &amp; Hibbs (1965) &mdash; The definitive textbook on the path integral approach.</p>
+            <p style="margin-top:0.3em;"><strong>Statistical Mechanics: A Set of Lectures</strong> (1972) &mdash; Feynman's distinctive approach to thermal physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Multimedia</h4>
+            <p><strong>The Pleasure of Finding Things Out</strong> (1981 BBC) &mdash; The finest filmed interview with Feynman, covering science, beauty, and doubt.</p>
+            <p style="margin-top:0.3em;"><strong>Fun to Imagine</strong> (1983 BBC) &mdash; Six short films of Feynman explaining everyday physics with infectious enthusiasm.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 140 140">
+                <circle cx="70" cy="70" r="55" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.2"/>
+                <circle cx="70" cy="70" r="40" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.15"/>
+                <circle cx="70" cy="70" r="25" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.1"/>
+                <path d="M70,15 L78,55 L120,40 L85,70 L120,100 L78,85 L70,125 L62,85 L20,100 L55,70 L20,40 L62,55 Z" fill="none" stroke="#e8b84b" stroke-width="0.6" opacity="0.3"/>
+                <circle cx="70" cy="70" r="3" fill="#e8b84b" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="quote-box" style="max-width:70%; border-left-width:4px;">
+            <p style="font-size:0.58em !important;">"What I cannot create, I do not understand."</p>
+            <span class="attribution">&mdash; Richard Feynman, written on his blackboard at the time of his death, February 15, 1988</span>
+        </div>
+        <div class="separator" style="margin-top:1.2em;"></div>
+        <p class="subtitle" style="margin-top:0.8em;">Richard Phillips Feynman &middot; 1918&ndash;1988</p>
+        <p style="text-align:center; font-size:0.44em !important; color:var(--text-muted); margin-top:0.5em;">Physicist &middot; Teacher &middot; Storyteller &middot; Bongo Player</p>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

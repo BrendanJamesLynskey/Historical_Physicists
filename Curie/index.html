@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marie Curie - Pioneer of Radioactivity</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #9b72cf;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#9b72cf;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#5b8cd4;stop-opacity:0.4"/></linearGradient></defs>
+            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#g1)" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <!-- Radiation rays -->
+            <g opacity="0.5">
+                <line x1="100" y1="30" x2="100" y2="10" stroke="#9b72cf" stroke-width="1.5"/><line x1="100" y1="190" x2="100" y2="170" stroke="#9b72cf" stroke-width="1.5"/>
+                <line x1="30" y1="100" x2="10" y2="100" stroke="#9b72cf" stroke-width="1.5"/><line x1="190" y1="100" x2="170" y2="100" stroke="#9b72cf" stroke-width="1.5"/>
+                <line x1="50" y1="50" x2="36" y2="36" stroke="#5b8cd4" stroke-width="1"/><line x1="150" y1="50" x2="164" y2="36" stroke="#5b8cd4" stroke-width="1"/>
+                <line x1="50" y1="150" x2="36" y2="164" stroke="#5b8cd4" stroke-width="1"/><line x1="150" y1="150" x2="164" y2="164" stroke="#5b8cd4" stroke-width="1"/>
+            </g>
+            <!-- Atom symbol -->
+            <ellipse cx="100" cy="100" rx="35" ry="12" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.6" transform="rotate(0,100,100)"/>
+            <ellipse cx="100" cy="100" rx="35" ry="12" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.6" transform="rotate(60,100,100)"/>
+            <ellipse cx="100" cy="100" rx="35" ry="12" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.6" transform="rotate(120,100,100)"/>
+            <circle cx="100" cy="100" r="5" fill="#9b72cf" opacity="0.7"/>
+            <text x="100" y="103" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="5" fill="#e8e6e3" opacity="0.9">Ra</text>
+        </svg>
+    </div>
+    <h1>Marie Curie</h1>
+    <p class="subtitle">1867 &ndash; 1934 &nbsp;|&nbsp; Warsaw &amp; Paris</p>
+    <div class="separator"></div>
+    <p style="max-width:70%; margin:0.5em auto; text-align:center;">Born Maria Sk&#322;odowska in Russian-occupied Poland, she became the first woman to win a Nobel Prize, the first person to win two Nobel Prizes, and the only person ever honoured in two different sciences &mdash; all while pioneering the entirely new field of radioactivity under conditions of extraordinary personal and institutional adversity.</p>
+    <div style="margin-top:0.6em;">
+        <span class="tag">Radioactivity</span>
+        <span class="tag amber">Nobel Laureate</span>
+        <span class="tag green">Polonium &amp; Radium</span>
+        <span class="tag rose">Nuclear Physics</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life</h2>
+    <div class="two-col">
+        <div>
+            <p>Maria Salomea Sk&#322;odowska was born on November 7, 1867, in Warsaw, then part of the Russian Empire. Her father, W&#322;adys&#322;aw, was a physics and mathematics teacher; her mother, Bronis&#322;awa, ran a prestigious boarding school.</p>
+            <p>The family suffered under Russian repression of Polish culture. Maria excelled academically but women were barred from the University of Warsaw. She attended the clandestine "Flying University" &mdash; illegal study circles that moved between private homes to evade the Russian authorities.</p>
+            <p>To fund her sister Bronis&#322;awa's medical studies in Paris, Maria worked as a governess for years. In 1891, at age 24, she finally moved to Paris and enrolled at the Sorbonne, studying physics, chemistry, and mathematics under punishing financial constraints &mdash; sometimes fainting from hunger in the lecture halls.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">Born</h4>
+                <p>November 7, 1867 &mdash; Warsaw, Congress Poland, Russian Empire</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-amber">Education</h4>
+                <p>Sorbonne (University of Paris). Licence in physics (1893, 1st in class) and mathematics (1894, 2nd in class).</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Family</h4>
+                <p>Married Pierre Curie in 1895. Two daughters: Ir&egrave;ne (later a Nobel laureate herself) and &Egrave;ve (journalist and biographer).</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Character</h4>
+                <p>Described as intensely focused, shy in public but warm with intimates, and possessed of an iron determination. She refused to patent radium extraction, insisting the discovery belonged to humanity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent-purple">Thesis Research Begins (1897)</h4>
+            <p>Marie chose Becquerel's newly discovered "uranic rays" as her thesis topic &mdash; a subject others considered a minor curiosity. Using Pierre's piezoelectric electrometer, she began systematic measurements of uranium's radiation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Discovery of Radioactivity as Atomic (1898)</h4>
+            <p>Marie demonstrated that radiation intensity depended only on the quantity of uranium, not its chemical form or conditions. This proved radioactivity was an atomic property &mdash; a revolutionary insight that reframed the entire phenomenon.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Polonium &amp; Radium (1898)</h4>
+            <p>Working with Pierre, she identified two new elements in pitchblende: polonium (named for Poland) in July and radium in December. Four years of gruelling refinement followed to isolate pure radium from tonnes of ore.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Two Nobel Prizes (1903 &amp; 1911)</h4>
+            <p>Shared the 1903 Nobel Prize in Physics with Pierre and Becquerel for radioactivity research. Won the 1911 Nobel Prize in Chemistry, solo, for isolating radium and polonium and determining radium's atomic weight.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="accent-purple">The State of Physics</h3>
+            <p>The 1890s were a period of extraordinary discovery. R&ouml;ntgen discovered X-rays in 1895; Becquerel found that uranium emitted its own penetrating rays in 1896; J.J. Thomson identified the electron in 1897.</p>
+            <p>The atom, long thought indivisible, was suddenly revealing inner structure. But the nature of Becquerel's rays remained mysterious &mdash; were they a form of phosphorescence, a new type of radiation, or something entirely unprecedented? Marie Curie's work would answer this question and open the door to nuclear physics.</p>
+        </div>
+        <div>
+            <h3 class="accent-amber">The Broader World</h3>
+            <p>Belle &Eacute;poque Paris was the cultural capital of Europe, yet the French scientific establishment was deeply conservative and hostile to women. Marie was the first woman to earn a doctorate in physics in France, the first female professor at the Sorbonne &mdash; each milestone achieved against explicit institutional resistance.</p>
+            <p>Meanwhile, Poland remained partitioned. Marie's patriotism was lifelong: she named her first discovery polonium as a deliberate political statement, and during World War I she drove mobile X-ray units to the front lines, serving the French and Polish causes simultaneously.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 - Radioactivity -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Radioactivity: An Atomic Property</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Marie Curie's first great insight was recognising that <span class="accent">radioactivity originates within the atom itself</span>. By measuring the ionisation current produced by various uranium compounds, she showed that radiation intensity was strictly proportional to the amount of uranium present.</p>
+            <p>Chemical form, physical state, temperature, and light exposure had no effect. This meant radioactivity was not a chemical or surface phenomenon but an <span class="accent-amber">intrinsic atomic property</span> &mdash; the first experimental evidence that the atom had internal structure and energy.</p>
+            <p>She coined the term <span class="accent-green">"radioactivity"</span> itself, giving the phenomenon both its name and its conceptual framework.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="360" height="280" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+                <text x="190" y="35" text-anchor="middle" font-family="'Playfair Display', serif" font-size="14" fill="#9b72cf" font-weight="700">Curie's Electrometer Measurements</text>
+                <!-- Axes -->
+                <line x1="60" y1="240" x2="340" y2="240" stroke="#2a2a3a" stroke-width="1"/>
+                <line x1="60" y1="50" x2="60" y2="240" stroke="#2a2a3a" stroke-width="1"/>
+                <text x="50" y="48" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9b72cf">Current</text>
+                <text x="340" y="255" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9a9a9a">Uranium quantity</text>
+                <!-- Linear relationship -->
+                <line x1="70" y1="230" x2="320" y2="65" stroke="#9b72cf" stroke-width="2.5"/>
+                <!-- Data points -->
+                <circle cx="95" cy="213" r="4" fill="#9b72cf" opacity="0.8"/>
+                <circle cx="130" cy="190" r="4" fill="#9b72cf" opacity="0.8"/>
+                <circle cx="170" cy="165" r="4" fill="#9b72cf" opacity="0.8"/>
+                <circle cx="210" cy="137" r="4" fill="#9b72cf" opacity="0.8"/>
+                <circle cx="250" cy="110" r="4" fill="#9b72cf" opacity="0.8"/>
+                <circle cx="290" cy="83" r="4" fill="#9b72cf" opacity="0.8"/>
+                <!-- Labels for compounds -->
+                <text x="95" y="228" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="7" fill="#6a6a7a">UO&#x2082;</text>
+                <text x="170" y="180" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="7" fill="#6a6a7a">U&#x2083;O&#x2088;</text>
+                <text x="250" y="125" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="7" fill="#6a6a7a">UCl&#x2084;</text>
+                <text x="290" y="75" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="7" fill="#6a6a7a">Pure U</text>
+                <!-- Key insight box -->
+                <rect x="180" y="195" width="170" height="40" rx="6" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="0.8"/>
+                <text x="265" y="212" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">Linear relationship proves:</text>
+                <text x="265" y="226" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9b72cf">Radiation = f(atoms only)</text>
+                <!-- Electrometer sketch -->
+                <rect x="80" y="258" width="220" height="24" rx="4" fill="rgba(91,140,212,0.06)" stroke="#5b8cd4" stroke-width="0.5"/>
+                <text x="190" y="274" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="8" fill="#5b8cd4">Instrument: Pierre Curie's piezoelectric electrometer</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deeper Dive -->
+<section>
+    <span class="section-number">05</span>
+    <h2>The Meaning of Radioactivity</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="accent-purple">A New Physics</h3>
+            <p>Before Curie, the prevailing view was that atoms were inert, indivisible billiard balls. Her demonstration that atoms could spontaneously emit energetic radiation implied they contained vast internal energy &mdash; an idea with no precedent in classical physics.</p>
+            <p>This insight was the conceptual foundation for everything that followed: Rutherford's nuclear model, the discovery of isotopes, nuclear fission, and our understanding of stellar energy. Marie Curie did not merely discover a phenomenon; she identified the gateway to nuclear physics.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Thorium Too</h4>
+                <p>Marie independently discovered that thorium was also radioactive, extending the phenomenon beyond uranium. (Gerhard Schmidt published the same finding slightly earlier, but Marie's work was independent and more systematic.)</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-amber">The Pitchblende Anomaly</h4>
+                <p>Crucially, she found that pitchblende ore was more radioactive than pure uranium. This could only mean it contained unknown, highly radioactive elements &mdash; leading directly to the discovery of polonium and radium.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Naming the Field</h4>
+                <p>The term "radioactivity" (radioactivit&eacute;), coined by Marie in 1898, defined not just a phenomenon but an entire branch of physics. The word itself shaped how scientists conceptualised atomic emissions for the next century.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 - Polonium & Radium -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Discovery of Polonium &amp; Radium</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>In 1898, working in a leaky converted shed at the &Eacute;cole de Physique, the Curies began the systematic chemical separation of pitchblende fractions, testing each for radioactivity.</p>
+            <p>In July 1898, they announced <span class="accent">polonium</span> (Po, Z=84), isolated from the bismuth fraction. In December, they announced <span class="accent-amber">radium</span> (Ra, Z=88), found in the barium fraction and roughly a million times more radioactive than uranium.</p>
+            <p>To prove radium was a true element, Marie spent four years processing <span class="accent-green">tonnes of pitchblende residue</span> by hand, eventually isolating one-tenth of a gram of pure radium chloride and determining its atomic weight as 225.93.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="360" height="280" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+                <text x="190" y="35" text-anchor="middle" font-family="'Playfair Display', serif" font-size="14" fill="#9b72cf" font-weight="700">Separation of Pitchblende</text>
+                <!-- Pitchblende at top -->
+                <rect x="130" y="48" width="120" height="30" rx="6" fill="rgba(155,114,207,0.12)" stroke="#9b72cf" stroke-width="1"/>
+                <text x="190" y="67" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Pitchblende Ore</text>
+                <!-- Arrows down -->
+                <line x1="150" y1="78" x2="100" y2="110" stroke="#9b72cf" stroke-width="1" marker-end="url(#arrowP)"/>
+                <line x1="230" y1="78" x2="280" y2="110" stroke="#d4a053" stroke-width="1" marker-end="url(#arrowA)"/>
+                <defs><marker id="arrowP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#9b72cf"/></marker><marker id="arrowA" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#d4a053"/></marker></defs>
+                <!-- Bismuth fraction -->
+                <rect x="40" y="112" width="120" height="30" rx="6" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="0.8"/>
+                <text x="100" y="131" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#9a9a9a">Bismuth fraction</text>
+                <!-- Barium fraction -->
+                <rect x="220" y="112" width="120" height="30" rx="6" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="0.8"/>
+                <text x="280" y="131" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#9a9a9a">Barium fraction</text>
+                <!-- Arrows to elements -->
+                <line x1="100" y1="142" x2="100" y2="170" stroke="#9b72cf" stroke-width="1" marker-end="url(#arrowP)"/>
+                <line x1="280" y1="142" x2="280" y2="170" stroke="#d4a053" stroke-width="1" marker-end="url(#arrowA)"/>
+                <!-- Polonium -->
+                <rect x="50" y="172" width="100" height="50" rx="8" fill="rgba(155,114,207,0.15)" stroke="#9b72cf" stroke-width="1.5"/>
+                <text x="100" y="192" text-anchor="middle" font-family="'Playfair Display', serif" font-size="16" fill="#9b72cf" font-weight="700">Po</text>
+                <text x="100" y="210" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="8" fill="#9a9a9a">Polonium (Z=84)</text>
+                <!-- Radium -->
+                <rect x="230" y="172" width="100" height="50" rx="8" fill="rgba(212,160,83,0.15)" stroke="#d4a053" stroke-width="1.5"/>
+                <text x="280" y="192" text-anchor="middle" font-family="'Playfair Display', serif" font-size="16" fill="#d4a053" font-weight="700">Ra</text>
+                <text x="280" y="210" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="8" fill="#9a9a9a">Radium (Z=88)</text>
+                <!-- Stats -->
+                <text x="190" y="248" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#4ecca3">1 tonne ore &rarr; 0.1 g RaCl&#x2082;</text>
+                <text x="190" y="265" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#6a6a7a">4 years of manual chemical separation</text>
+                <text x="190" y="280" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#6a6a7a">in a converted shed with no proper ventilation</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deeper Dive -->
+<section>
+    <span class="section-number">07</span>
+    <h2>The Heroic Isolation</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="accent-purple">A Laboratory Like No Other</h3>
+            <p>The Curies' laboratory was a former dissection shed at the &Eacute;cole de Physique et Chimie. The roof leaked; in winter it was freezing; in summer, stifling. There was no proper ventilation for the vast quantities of corrosive chemicals used.</p>
+            <p>Marie performed the physical labour of stirring boiling cauldrons of pitchblende residue, precipitating, filtering, and recrystallising &mdash; operations that would normally be done by teams of industrial chemists. The work was backbreaking, toxic, and ultimately fatal: the chronic radiation exposure would cause her death decades later.</p>
+        </div>
+        <div>
+            <h3 class="accent-amber">Scientific Significance</h3>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Proof by Isolation</h4>
+                <p>The chemistry establishment would not accept radium as a new element based on radioactivity alone. Marie's determination of its atomic weight (225.93, remarkably close to the modern value of 226.03) silenced all doubt.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-blue">Open Science</h4>
+                <p>The Curies deliberately refused to patent their radium extraction process, publishing all methods openly. Marie believed scientific knowledge should be freely shared &mdash; a decision that cost them a fortune but accelerated global research.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">Spectral Confirmation</h4>
+                <p>Eug&egrave;ne Demar&ccedil;ay confirmed radium's unique spectral lines, providing independent verification. The element's brilliant blue-white glow became legendary &mdash; Marie kept a vial on her bedside table.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Two Nobel Prizes</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent-purple">Nobel Prize in Physics, 1903</h4>
+            <p>Shared with Pierre Curie and Henri Becquerel "in recognition of the extraordinary services they have rendered by their joint researches on the radiation phenomena discovered by Professor Henri Becquerel." Marie was nearly excluded &mdash; the original nomination mentioned only Pierre and Becquerel. Pierre insisted she be included.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Nobel Prize in Chemistry, 1911</h4>
+            <p>Awarded solely to Marie Curie "in recognition of her services to the advancement of chemistry by the discovery of the elements radium and polonium, by the isolation of radium and the study of the nature and compounds of this remarkable element."</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Breaking Every Barrier</h4>
+            <p>First woman to win a Nobel Prize. First person (and still only woman) to win Nobel Prizes in two different sciences. First female professor at the Sorbonne (appointed 1906 after Pierre's death). Each achievement was a first, each fought for against deep institutional sexism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Scandal of 1911</h4>
+            <p>Her second Nobel was overshadowed by a press campaign over her relationship with physicist Paul Langevin. The Nobel committee suggested she not attend the ceremony. Marie refused, collected her prize in person, and delivered a brilliant lecture on radium chemistry.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Curie's Experimental Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent-purple">Quantitative Measurement</h4>
+            <p>Use piezoelectric electrometer for precise ionisation currents</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-amber">Systematic Survey</h4>
+            <p>Test every available compound and mineral for radiation</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-green">Chemical Separation</h4>
+            <p>Fractional crystallisation to isolate radioactive components</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-blue">Spectral Confirmation</h4>
+            <p>Atomic weight and spectral lines prove new elements</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.4em;">
+        <div class="card">
+            <h4 class="accent-rose">Precision as Power</h4>
+            <p>Marie's genius lay in quantitative rigour. While others treated Becquerel's rays as a curiosity to be qualitatively described, she measured ionisation currents with unprecedented precision, revealing patterns invisible to less careful observers. The proportionality between radiation and uranium content was only detectable through meticulous measurement.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Partnership with Pierre</h4>
+            <p>Pierre contributed the electrometer technology and his expertise in crystal physics. Marie brought the chemical programme and the extraordinary persistence needed for the separation work. Their collaboration was genuinely complementary: Pierre's instrumentation skill combined with Marie's chemical endurance and analytical precision.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connections -->
+            <line x1="350" y1="160" x2="130" y2="60" stroke="#9b72cf" stroke-width="1.5" opacity="0.5"/>
+            <line x1="350" y1="160" x2="570" y2="60" stroke="#d4a053" stroke-width="1.5" opacity="0.5"/>
+            <line x1="350" y1="160" x2="130" y2="260" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
+            <line x1="350" y1="160" x2="570" y2="260" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
+            <line x1="350" y1="160" x2="130" y2="160" stroke="#cf7272" stroke-width="1.5" opacity="0.5"/>
+            <line x1="350" y1="160" x2="570" y2="160" stroke="#9b72cf" stroke-width="1.5" opacity="0.4"/>
+            <line x1="350" y1="160" x2="350" y2="40" stroke="#d4a053" stroke-width="1.5" opacity="0.4"/>
+            <line x1="350" y1="160" x2="350" y2="300" stroke="#4ecca3" stroke-width="1.5" opacity="0.4"/>
+            <!-- Central node -->
+            <circle cx="350" cy="160" r="30" fill="rgba(155,114,207,0.15)" stroke="#9b72cf" stroke-width="2"/>
+            <text x="350" y="155" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="10" fill="#e8e6e3" font-weight="700">Marie Curie</text>
+            <text x="350" y="170" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#9b72cf">1867-1934</text>
+            <!-- Surrounding nodes -->
+            <circle cx="130" cy="60" r="22" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1"/><text x="130" y="57" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">Pierre Curie</text><text x="130" y="69" text-anchor="middle" font-size="7" fill="#9a9a9a">Husband &amp; Partner</text>
+            <circle cx="570" cy="60" r="22" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1"/><text x="570" y="57" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">H. Becquerel</text><text x="570" y="69" text-anchor="middle" font-size="7" fill="#9a9a9a">Co-laureate</text>
+            <circle cx="130" cy="260" r="22" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1"/><text x="130" y="257" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">Ir&egrave;ne Curie</text><text x="130" y="269" text-anchor="middle" font-size="7" fill="#9a9a9a">Daughter &amp; Heir</text>
+            <circle cx="570" cy="260" r="22" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1"/><text x="570" y="257" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">E. Rutherford</text><text x="570" y="269" text-anchor="middle" font-size="7" fill="#9a9a9a">Colleague</text>
+            <circle cx="130" cy="160" r="22" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1"/><text x="130" y="157" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">P. Langevin</text><text x="130" y="169" text-anchor="middle" font-size="7" fill="#9a9a9a">Collaborator</text>
+            <circle cx="570" cy="160" r="22" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1" opacity="0.7"/><text x="570" y="157" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">A. Einstein</text><text x="570" y="169" text-anchor="middle" font-size="7" fill="#9a9a9a">Friend &amp; Ally</text>
+            <circle cx="350" cy="40" r="22" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1"/><text x="350" y="37" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">G. Lippmann</text><text x="350" y="49" text-anchor="middle" font-size="7" fill="#9a9a9a">Thesis Advisor</text>
+            <circle cx="350" cy="300" r="22" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1"/><text x="350" y="297" text-anchor="middle" font-family="'DM Sans', sans-serif" font-size="9" fill="#e8e6e3">F. Joliot</text><text x="350" y="309" text-anchor="middle" font-size="7" fill="#9a9a9a">Son-in-law</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Gender, Prejudice &amp; the Acad&eacute;mie</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="accent-purple">Denied by the Acad&eacute;mie</h3>
+            <p>In January 1911, Marie Curie stood for election to the French Acad&eacute;mie des Sciences &mdash; already a double Nobel laureate. She lost by two votes to &Eacute;douard Branly, a competent but far less distinguished physicist. The campaign against her was explicitly xenophobic and sexist: newspapers decried the idea of a Polish-born woman in the august institution.</p>
+            <p>Later that year, the Langevin affair provided ammunition for a press campaign of staggering viciousness. Nationalist newspapers called her a "foreign home-wrecker." A mob gathered outside her house. Through it all, she continued working, collecting her second Nobel, and running her laboratory.</p>
+            <p>Einstein wrote to her: "If the rabble continues to occupy itself with you, then simply don't read that hogwash. Leave it to the reptile for whom it has been fabricated."</p>
+        </div>
+        <div>
+            <div class="quote-box" style="margin-bottom:0.6em;">
+                <p>"There are sadistic souls who take pleasure in the sufferings of others. They are the majority. I have been offered many occasions to verify this."</p>
+                <span class="attribution">&mdash; Marie Curie, in a letter during the 1911 press campaign</span>
+            </div>
+            <div class="quote-box" style="margin-bottom:0.6em;">
+                <p>"I am among those who think that science has great beauty. A scientist in his laboratory is not only a technician: he is also a child placed before natural phenomena which impress him like a fairy tale."</p>
+                <span class="attribution">&mdash; Marie Curie</span>
+            </div>
+            <div class="card" style="margin-top:0.4em;">
+                <h4 class="accent-amber">The Acad&eacute;mie's Shame</h4>
+                <p>The Acad&eacute;mie des Sciences did not elect its first female member until Yvette Cauchois in 1962 &mdash; more than half a century after rejecting the most decorated scientist of the age. The institution's treatment of Curie remains a landmark case of institutional sexism in science.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent-purple">Nuclear Physics Founded</h4>
+            <p>Curie's discovery that radioactivity is an atomic property opened the entire field of nuclear physics. Rutherford's alpha-scattering experiments, the neutron's discovery, and nuclear fission all followed directly from the research programme she initiated.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Curie Dynasty</h4>
+            <p>Daughter Ir&egrave;ne and son-in-law Fr&eacute;d&eacute;ric Joliot-Curie won the 1935 Nobel Prize in Chemistry for discovering artificial radioactivity. Granddaughter H&eacute;l&egrave;ne Langevin-Joliot became a nuclear physicist. The family produced four Nobel laureates across two generations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Radiation Safety</h4>
+            <p>Curie's own death from aplastic anaemia, caused by radiation exposure, catalysed the development of radiation protection standards. The unit of radioactivity was originally named the curie (Ci) in her honour; it defined 3.7 &times; 10&#xB9;&#x2070; disintegrations per second.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Women in Science</h4>
+            <p>Curie's example has been an enduring inspiration for women in STEM fields. The Curie Institute in Paris, which she founded, continues as one of the world's leading cancer research centres. Element 96, curium (Cm), is named in honour of both Marie and Pierre.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Applications Today</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent-purple">Cancer Radiotherapy</h4>
+            <p>Marie herself pioneered therapeutic uses of radium. Modern radiotherapy &mdash; using targeted radiation to destroy tumours &mdash; descends directly from her work and saves millions of lives annually.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Nuclear Energy</h4>
+            <p>Understanding radioactive decay and transmutation, initiated by Curie's discoveries, underpins nuclear power generation that provides roughly 10% of the world's electricity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Medical Imaging</h4>
+            <p>PET scans, SPECT imaging, and radiotracer diagnostics all rely on radioactive isotopes. The conceptual framework originates in Curie's demonstration that radiation is an atomic property.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Radiometric Dating</h4>
+            <p>Carbon-14 and uranium-lead dating, which revolutionised archaeology and geology, depend on the radioactive decay principles Curie helped establish.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Mobile X-Ray Units</h4>
+            <p>During WWI, Marie developed "petites Curies" &mdash; mobile radiography units that X-rayed wounded soldiers near the front. She trained 150 women as X-ray operators. This was the birth of battlefield radiology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Industrial Radiography</h4>
+            <p>Non-destructive testing of welds, pipelines, and structural components using gamma radiation descends from the radioactive sources Curie's work made available.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Life &amp; Works Timeline</h2>
+    <div class="two-col wide-right">
+        <div class="diagram-container">
+            <svg viewBox="0 0 120 420" xmlns="http://www.w3.org/2000/svg">
+                <line x1="60" y1="10" x2="60" y2="410" stroke="#2a2a3a" stroke-width="2"/>
+                <circle cx="60" cy="20" r="5" fill="#9b72cf"/><text x="75" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9b72cf">1867</text>
+                <circle cx="60" cy="60" r="4" fill="#d4a053"/><text x="75" y="64" font-family="'JetBrains Mono', monospace" font-size="9" fill="#d4a053">1891</text>
+                <circle cx="60" cy="100" r="4" fill="#4ecca3"/><text x="75" y="104" font-family="'JetBrains Mono', monospace" font-size="9" fill="#4ecca3">1895</text>
+                <circle cx="60" cy="140" r="4" fill="#5b8cd4"/><text x="75" y="144" font-family="'JetBrains Mono', monospace" font-size="9" fill="#5b8cd4">1898</text>
+                <circle cx="60" cy="180" r="4" fill="#cf7272"/><text x="75" y="184" font-family="'JetBrains Mono', monospace" font-size="9" fill="#cf7272">1903</text>
+                <circle cx="60" cy="220" r="4" fill="#9b72cf"/><text x="75" y="224" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9b72cf">1906</text>
+                <circle cx="60" cy="260" r="4" fill="#d4a053"/><text x="75" y="264" font-family="'JetBrains Mono', monospace" font-size="9" fill="#d4a053">1911</text>
+                <circle cx="60" cy="300" r="4" fill="#4ecca3"/><text x="75" y="304" font-family="'JetBrains Mono', monospace" font-size="9" fill="#4ecca3">1914</text>
+                <circle cx="60" cy="340" r="4" fill="#5b8cd4"/><text x="75" y="344" font-family="'JetBrains Mono', monospace" font-size="9" fill="#5b8cd4">1921</text>
+                <circle cx="60" cy="395" r="5" fill="#9b72cf"/><text x="75" y="399" font-family="'JetBrains Mono', monospace" font-size="9" fill="#9b72cf">1934</text>
+            </svg>
+        </div>
+        <div>
+            <div class="timeline-item"><span class="year">1867</span><div class="event"><strong>Born in Warsaw</strong>Maria Sk&#322;odowska, under Russian occupation of Poland.</div></div>
+            <div class="timeline-item"><span class="year">1891</span><div class="event"><strong>Moves to Paris</strong>Enrolls at the Sorbonne; studies physics and mathematics.</div></div>
+            <div class="timeline-item"><span class="year">1895</span><div class="event"><strong>Marries Pierre Curie</strong>Begins research on Becquerel's rays for her doctoral thesis.</div></div>
+            <div class="timeline-item"><span class="year">1898</span><div class="event"><strong>Discovers Polonium &amp; Radium</strong>Coins the term "radioactivity"; proves it is an atomic property.</div></div>
+            <div class="timeline-item"><span class="year">1903</span><div class="event"><strong>Nobel Prize in Physics</strong>Shared with Pierre Curie and Henri Becquerel. First woman Nobel laureate.</div></div>
+            <div class="timeline-item"><span class="year">1906</span><div class="event"><strong>Pierre killed in accident</strong>Marie takes his Sorbonne chair &mdash; the first female professor there.</div></div>
+            <div class="timeline-item"><span class="year">1911</span><div class="event"><strong>Nobel Prize in Chemistry</strong>Solo award for isolating radium and discovering polonium.</div></div>
+            <div class="timeline-item"><span class="year">1914</span><div class="event"><strong>World War I Service</strong>Develops mobile X-ray units ("petites Curies") for battlefield surgery.</div></div>
+            <div class="timeline-item"><span class="year">1921</span><div class="event"><strong>Tour of America</strong>Received 1 gram of radium from U.S. women's fundraising campaign.</div></div>
+            <div class="timeline-item"><span class="year">1934</span><div class="event"><strong>Death at Sancellemoz</strong>Died July 4 of aplastic anaemia caused by radiation exposure. Buried in the Panth&eacute;on.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent-purple">Madame Curie: A Biography</h4>
+            <p><strong>&Egrave;ve Curie (1937)</strong> &mdash; Written by Marie's younger daughter, this intimate biography remains the definitive personal account. Beautifully written, it captures both the science and the human story.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Marie Curie: A Life</h4>
+            <p><strong>Susan Quinn (1995)</strong> &mdash; The first biography with full access to the Curie archives, including the Langevin correspondence. A nuanced, scholarly portrait that places Curie in full historical context.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Radioactive: Marie &amp; Pierre Curie, A Tale of Love and Fallout</h4>
+            <p><strong>Lauren Redniss (2010)</strong> &mdash; A visually stunning illustrated account combining biography, science, and art. Winner of a National Book Award. Accessible and evocative.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Marie Curie and the Science of Radioactivity</h4>
+            <p><strong>Naomi Pasachoff (1996)</strong> &mdash; An excellent scientific biography that carefully explains the physics and chemistry behind Curie's discoveries. Ideal for readers wanting more technical depth.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#9b72cf;stop-opacity:0.9"/><stop offset="100%" style="stop-color:#5b8cd4;stop-opacity:0.3"/></linearGradient></defs>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="url(#g2)" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="65" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.35"/>
+            <circle cx="100" cy="100" r="45" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.4"/>
+            <!-- Radiation symbol -->
+            <g opacity="0.4">
+                <path d="M100 55 A45 45 0 0 1 139 80 L100 100 Z" fill="#9b72cf" opacity="0.3"/>
+                <path d="M139 120 A45 45 0 0 1 100 145 L100 100 Z" fill="#9b72cf" opacity="0.3"/>
+                <path d="M61 80 A45 45 0 0 1 100 55 L100 100 Z" fill="#5b8cd4" opacity="0.3"/>
+                <path d="M100 145 A45 45 0 0 1 61 120 L100 100 Z" fill="#5b8cd4" opacity="0.3"/>
+                <path d="M139 80 A45 45 0 0 1 139 120 L100 100 Z" fill="#d4a053" opacity="0.3"/>
+                <path d="M61 120 A45 45 0 0 1 61 80 L100 100 Z" fill="#d4a053" opacity="0.3"/>
+            </g>
+            <circle cx="100" cy="100" r="10" fill="none" stroke="#9b72cf" stroke-width="1.5" opacity="0.6"/>
+            <circle cx="100" cy="100" r="3" fill="#9b72cf" opacity="0.8"/>
+            <!-- Orbital rings -->
+            <ellipse cx="100" cy="100" rx="30" ry="8" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3" transform="rotate(30,100,100)"/>
+            <ellipse cx="100" cy="100" rx="30" ry="8" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3" transform="rotate(90,100,100)"/>
+            <ellipse cx="100" cy="100" rx="30" ry="8" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3" transform="rotate(150,100,100)"/>
+        </svg>
+    </div>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width:70%; margin:0.8em auto;">
+        <p>"Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less."</p>
+        <span class="attribution">&mdash; Marie Curie</span>
+    </div>
+    <div class="quote-box" style="max-width:70%; margin:0.6em auto;">
+        <p>"I was taught that the way of progress was neither swift nor easy."</p>
+        <span class="attribution">&mdash; Marie Curie</span>
+    </div>
+    <p style="text-align:center; margin-top:0.8em; font-size:0.5em; color:var(--text-muted);">Marie Sk&#322;odowska Curie &nbsp;&bull;&nbsp; 1867 &ndash; 1934 &nbsp;&bull;&nbsp; Interred in the Panth&eacute;on, Paris</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ernest Rutherford - The Father of Nuclear Physics</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #c97b4b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="55" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="70" cy="70" r="8" fill="#c97b4b" opacity="0.15"/>
+            <circle cx="70" cy="70" r="4" fill="#c97b4b" opacity="0.6"/>
+            <!-- orbiting particles -->
+            <circle cx="70" cy="15" r="2.5" fill="#4ecca3" opacity="0.7"/>
+            <circle cx="118" cy="94" r="2.5" fill="#5b8cd4" opacity="0.7"/>
+            <circle cx="22" cy="94" r="2.5" fill="#cf7272" opacity="0.7"/>
+            <ellipse cx="70" cy="70" rx="55" ry="20" fill="none" stroke="#c97b4b" stroke-width="0.3" opacity="0.2" transform="rotate(0,70,70)"/>
+            <ellipse cx="70" cy="70" rx="55" ry="20" fill="none" stroke="#c97b4b" stroke-width="0.3" opacity="0.2" transform="rotate(60,70,70)"/>
+            <ellipse cx="70" cy="70" rx="55" ry="20" fill="none" stroke="#c97b4b" stroke-width="0.3" opacity="0.2" transform="rotate(120,70,70)"/>
+        </svg>
+    </div>
+    <h1>Ernest Rutherford</h1>
+    <div class="separator"></div>
+    <p class="subtitle">The Father of Nuclear Physics &middot; 1871&ndash;1937</p>
+    <p style="text-align:center; margin-top:0.8em;">A New Zealand farm boy who split the atom,<br>discovered the proton, and revealed the nuclear heart of matter</p>
+    <div style="margin-top:1em;">
+        <span class="tag amber">Nuclear Physics</span>
+        <span class="tag green">Radioactivity</span>
+        <span class="tag rose">Nobel Prize 1908</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>From Brightwater to Cambridge</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Ernest Rutherford was born on August 30, 1871, near Nelson, New Zealand, the fourth of twelve children of James Rutherford, a flax miller, and Martha Thompson, an English schoolteacher. He grew up in rural Brightwater and Foxhill, where practical ingenuity was a necessity of frontier life.</p>
+            <p>He won scholarships at every stage: Nelson College, Canterbury College (now the University of Canterbury) in Christchurch, and finally the prestigious 1851 Exhibition Scholarship that took him to the Cavendish Laboratory at Cambridge in 1895. Legend has it that when the telegram arrived, he was digging potatoes on the family farm; he threw down his spade and declared, "That's the last potato I'll ever dig."</p>
+            <p>At Canterbury, he had already built a magnetic detector for radio waves&mdash;among the first in the world&mdash;demonstrating the hands-on experimental genius that would define his career.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Born</h4>
+                <p>August 30, 1871, Brightwater, near Nelson, New Zealand</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">Family</h4>
+                <p>Father: James Rutherford, flax processor and farmer. Mother: Martha Thompson, schoolteacher from Essex, England</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Education</h4>
+                <p>Canterbury College (BA 1892, MA 1893), University of Cambridge under J.J. Thomson (1895&ndash;1898)</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Early Talent</h4>
+                <p>Built a radio wave detector before Marconi's fame; one of the first research students admitted to Cambridge without a Cambridge degree</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>A Transatlantic Career</h2>
+    <div class="separator"></div>
+    <p>Rutherford's career spanned three countries and two continents. At each institution, he built research schools of extraordinary productivity, mentoring a generation of physicists who would go on to reshape the discipline.</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Cambridge I (1895&ndash;98)</h4>
+            <p>Arrived at the Cavendish under J.J. Thomson. Initially studied radio waves, then pivoted to the newly discovered phenomenon of radioactivity after Becquerel's 1896 discovery. Identified alpha and beta radiation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">McGill, Montreal (1898&ndash;07)</h4>
+            <p>At age 27, appointed Macdonald Professor of Physics. Collaborated with Frederick Soddy to formulate the theory of radioactive transmutation, proving that elements could change identity. Won the Nobel Prize in Chemistry (1908) for this work.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Manchester (1907&ndash;19)</h4>
+            <p>Performed the gold foil experiment (1909&ndash;11), discovering the atomic nucleus. Also welcomed Niels Bohr, whose quantum model of the atom was born here. Led wartime submarine detection research.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.3em;">
+        <div class="card">
+            <h4 class="accent-blue">Cambridge II: Cavendish Director (1919&ndash;37)</h4>
+            <p>Succeeded J.J. Thomson as Cavendish Professor. Oversaw Chadwick's discovery of the neutron (1932), Cockcroft and Walton's first artificial nuclear disintegration, and the lab's golden age of nuclear physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Honours</h4>
+            <p>Knighted 1914. Order of Merit 1925. Baron Rutherford of Nelson 1931. President of the Royal Society 1925&ndash;30. Upon his death in 1937, his ashes were interred in Westminster Abbey near Newton and Kelvin.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The Age of Radioactivity</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p>Rutherford entered physics at a moment of extraordinary upheaval. In rapid succession came R&ouml;ntgen's X-rays (1895), Becquerel's discovery of uranium radiation (1896), J.J. Thomson's identification of the electron (1897), and the Curies' isolation of radium (1898).</p>
+            <p>The atom was no longer the indivisible particle of Dalton's imagination. Thomson proposed the <span class="accent-rose">"plum pudding" model</span>: a uniform sphere of positive charge with electrons embedded like raisins. This was the accepted picture when Rutherford began probing atomic structure with alpha particles.</p>
+            <p>The concept of <span class="accent">radioactive transmutation</span>&mdash;elements spontaneously changing into other elements&mdash;was deeply radical. It echoed the discredited dreams of medieval alchemy. When Rutherford and Soddy first proposed it, Rutherford reportedly quipped, "For Mike's sake, Soddy, don't call it transmutation. They'll have our heads off as alchemists."</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 260 230" width="100%">
+                    <text x="130" y="18" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">Atomic Models Evolution</text>
+                    <!-- Thomson model -->
+                    <g transform="translate(65,70)">
+                        <circle cx="0" cy="0" r="35" fill="#cf7272" opacity="0.08" stroke="#cf7272" stroke-width="1"/>
+                        <circle cx="-12" cy="-10" r="4" fill="#5b8cd4" opacity="0.7"/>
+                        <circle cx="10" cy="-15" r="4" fill="#5b8cd4" opacity="0.7"/>
+                        <circle cx="15" cy="8" r="4" fill="#5b8cd4" opacity="0.7"/>
+                        <circle cx="-8" cy="14" r="4" fill="#5b8cd4" opacity="0.7"/>
+                        <circle cx="0" cy="0" r="4" fill="#5b8cd4" opacity="0.7"/>
+                        <text x="0" y="50" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="8">Thomson (1897)</text>
+                        <text x="0" y="62" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">"Plum pudding"</text>
+                    </g>
+                    <!-- Arrow -->
+                    <text x="130" y="73" text-anchor="middle" fill="#c97b4b" font-size="16">&rarr;</text>
+                    <!-- Rutherford model -->
+                    <g transform="translate(195,70)">
+                        <circle cx="0" cy="0" r="35" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="2,2"/>
+                        <circle cx="0" cy="0" r="7" fill="#c97b4b" opacity="0.4" stroke="#c97b4b" stroke-width="1"/>
+                        <text x="0" y="3" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="5">+</text>
+                        <circle cx="0" cy="-32" r="3" fill="#4ecca3" opacity="0.8"/>
+                        <circle cx="28" cy="16" r="3" fill="#4ecca3" opacity="0.8"/>
+                        <circle cx="-28" cy="16" r="3" fill="#4ecca3" opacity="0.8"/>
+                        <ellipse cx="0" cy="0" rx="32" ry="12" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3" transform="rotate(-30)"/>
+                        <ellipse cx="0" cy="0" rx="32" ry="12" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3" transform="rotate(30)"/>
+                        <ellipse cx="0" cy="0" rx="32" ry="12" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3" transform="rotate(90)"/>
+                        <text x="0" y="50" text-anchor="middle" fill="#c97b4b" font-family="DM Sans" font-size="8">Rutherford (1911)</text>
+                        <text x="0" y="62" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Nuclear model</text>
+                    </g>
+                    <text x="130" y="185" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Most of the atom is empty space;</text>
+                    <text x="130" y="198" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">mass concentrated in a tiny nucleus</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 + SVG (Gold Foil) -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>The Nuclear Model of the Atom</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In 1909, Rutherford directed Hans Geiger and Ernest Marsden to fire <span class="accent">alpha particles</span> at a thin gold foil and observe how they scattered. Under Thomson's plum pudding model, all particles should pass through with only slight deflections.</p>
+            <p>Instead, while most particles did pass through, about <span class="accent-rose">1 in 8,000</span> bounced back at angles greater than 90 degrees. Rutherford later recalled: "It was quite the most incredible event that has ever happened to me in my life. It was almost as incredible as if you fired a 15-inch shell at a piece of tissue paper and it came back and hit you."</p>
+            <p>By 1911, Rutherford had worked out the mathematics. The atom must contain a tiny, dense, positively charged <span class="accent">nucleus</span>&mdash;roughly 10,000 times smaller than the atom itself&mdash;surrounded by orbiting electrons in mostly empty space.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 280 260" width="100%">
+                    <text x="140" y="18" text-anchor="middle" fill="#c97b4b" font-family="Playfair Display" font-size="10">Gold Foil Experiment</text>
+                    <!-- Alpha source -->
+                    <rect x="15" y="105" width="40" height="30" rx="4" fill="#161622" stroke="#c97b4b" stroke-width="1"/>
+                    <text x="35" y="123" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="7">&alpha;</text>
+                    <!-- Beam lines -->
+                    <line x1="55" y1="120" x2="130" y2="120" stroke="#c97b4b" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="55" y1="115" x2="130" y2="115" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+                    <line x1="55" y1="125" x2="130" y2="125" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+                    <!-- Gold foil -->
+                    <rect x="133" y="55" width="4" height="130" rx="1" fill="#e8b84b" opacity="0.3" stroke="#e8b84b" stroke-width="0.5"/>
+                    <text x="135" y="48" text-anchor="middle" fill="#e8b84b" font-family="DM Sans" font-size="7">Au foil</text>
+                    <!-- Nucleus in foil -->
+                    <circle cx="135" cy="120" r="4" fill="#c97b4b" opacity="0.7"/>
+                    <!-- Transmitted particles (most) -->
+                    <line x1="137" y1="115" x2="240" y2="110" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                    <line x1="137" y1="120" x2="245" y2="120" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                    <line x1="137" y1="125" x2="240" y2="130" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                    <!-- Deflected -->
+                    <path d="M120,120 Q133,118 160,90" fill="none" stroke="#cf7272" stroke-width="1.5" opacity="0.7"/>
+                    <circle cx="163" cy="86" r="2.5" fill="#cf7272" opacity="0.7"/>
+                    <!-- Backscattered! -->
+                    <path d="M120,125 Q132,124 115,155" fill="none" stroke="#cf7272" stroke-width="2" opacity="0.9"/>
+                    <circle cx="113" cy="160" r="3" fill="#cf7272"/>
+                    <text x="95" y="175" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="7">Backscattered!</text>
+                    <!-- Detector arc -->
+                    <path d="M240,80 A60,60 0 0,1 240,160" fill="none" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="3,2"/>
+                    <text x="255" y="120" fill="#6a6a7a" font-family="DM Sans" font-size="7">Detector</text>
+                    <!-- Labels -->
+                    <text x="200" y="100" fill="#4ecca3" font-family="DM Sans" font-size="7">Most pass through</text>
+                    <text x="140" y="220" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">~1 in 8,000 alpha particles reflected back</text>
+                    <text x="140" y="235" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="8">r_nucleus / r_atom &asymp; 1 / 10,000</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deep Dive -->
+<section>
+    <span class="section-number">04a &mdash; DEEP DIVE</span>
+    <h2>The Scattering Formula and Its Impact</h2>
+    <div class="separator"></div>
+    <p>Rutherford derived a mathematical formula for the angular distribution of scattered alpha particles, assuming a point-like central charge. The <span class="accent">Rutherford scattering formula</span> predicted the number of particles at angle &theta; as proportional to <code>1/sin&sup4;(&theta;/2)</code>. Geiger and Marsden's measurements confirmed this over several orders of magnitude.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Mathematics</h4>
+            <p>The differential cross-section <code>d&sigma;/d&Omega; = (Z&sub;1;Z&sub;2;e&sup2;/4E)&sup2; / sin&sup4;(&theta;/2)</code> depends on atomic numbers Z, particle energy E, and scattering angle &theta;. This Coulomb scattering formula remains fundamental in nuclear and particle physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">What It Overturned</h4>
+            <p>Thomson's plum pudding model predicted only small-angle scattering. The observation of large-angle backscattering was physically impossible under Thomson's model. No distributed charge arrangement could produce such violent deflections.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Size of the Nucleus</h4>
+            <p>By analyzing the maximum angle at which the formula broke down (indicating the alpha had "touched" the nucleus), Rutherford estimated nuclear radii of order 10&supmin;&sup1;&sup4; m&mdash;astonishingly small compared to atomic radii of ~10&supmin;&sup1;&deg; m.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">A Problem Created</h4>
+            <p>The nuclear atom was classically unstable: orbiting electrons should continuously radiate energy and spiral inward. This crisis was resolved only by Bohr's 1913 quantum model of the atom, developed while Bohr was visiting Rutherford in Manchester.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 + SVG (Proton) -->
+<section>
+    <span class="section-number">05 &mdash; CONTRIBUTION II</span>
+    <h2>Discovery of the Proton</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In 1917&ndash;1919, Rutherford performed a series of experiments that achieved what alchemists had dreamed of for centuries: the <span class="accent">artificial transmutation of one element into another</span>.</p>
+            <p>By bombarding nitrogen gas with alpha particles from a radium source, he observed that hydrogen nuclei were ejected. The nuclear reaction was:</p>
+            <p style="text-align:center;"><code>&sup1;&sup4;N + &sup4;He &rarr; &sup1;&sup7;O + &sup1;H</code></p>
+            <p>The nitrogen atom had been broken apart, producing oxygen and a hydrogen nucleus. Rutherford recognized that this hydrogen nucleus was a <span class="accent">fundamental constituent of all nuclei</span> and named it the <span class="accent-amber">proton</span> (from the Greek <em>protos</em>, "first"). This was the first artificially induced nuclear reaction in history.</p>
+            <p>The discovery was published in 1919, the same year Rutherford succeeded J.J. Thomson as Cavendish Professor, returning triumphantly to Cambridge.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 260 250" width="100%">
+                    <text x="130" y="18" text-anchor="middle" fill="#c97b4b" font-family="Playfair Display" font-size="10">Nuclear Transmutation</text>
+                    <!-- Nitrogen nucleus -->
+                    <circle cx="100" cy="100" r="28" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+                    <text x="100" y="95" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="9">&sup1;&sup4;N</text>
+                    <text x="100" y="108" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="6">7p + 7n</text>
+                    <!-- Alpha incoming -->
+                    <circle cx="25" cy="100" r="12" fill="#161622" stroke="#c97b4b" stroke-width="1.5"/>
+                    <text x="25" y="103" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="7">&alpha;</text>
+                    <line x1="40" y1="100" x2="70" y2="100" stroke="#c97b4b" stroke-width="1.5" marker-end="url(#arrowC)"/>
+                    <defs><marker id="arrowC" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#c97b4b"/></marker></defs>
+                    <!-- Arrow down -->
+                    <text x="100" y="148" text-anchor="middle" fill="#c97b4b" font-size="14">&darr;</text>
+                    <!-- Products -->
+                    <circle cx="75" cy="195" r="25" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+                    <text x="75" y="190" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="9">&sup1;&sup7;O</text>
+                    <text x="75" y="203" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="6">8p + 9n</text>
+                    <text x="120" y="195" text-anchor="middle" fill="#c97b4b" font-size="14">+</text>
+                    <circle cx="165" cy="195" r="14" fill="#161622" stroke="#e8b84b" stroke-width="2"/>
+                    <text x="165" y="198" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="9">p</text>
+                    <text x="165" y="220" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="7">Proton!</text>
+                    <!-- Energy note -->
+                    <line x1="180" y1="195" x2="230" y2="175" stroke="#e8b84b" stroke-width="0.8" opacity="0.5"/>
+                    <text x="235" y="170" fill="#6a6a7a" font-family="DM Sans" font-size="6">First artificial</text>
+                    <text x="235" y="180" fill="#6a6a7a" font-family="DM Sans" font-size="6">nuclear reaction</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deep Dive -->
+<section>
+    <span class="section-number">05a &mdash; DEEP DIVE</span>
+    <h2>The Proton and Nuclear Composition</h2>
+    <div class="separator"></div>
+    <p>Rutherford's identification of the proton as a fundamental nuclear particle opened the door to understanding nuclear structure. But it also created a puzzle: the mass of a nucleus was always roughly twice the number of protons it contained. Something else had to be lurking inside.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Missing Mass</h4>
+            <p>Helium has mass 4 but charge 2; nitrogen has mass 14 but charge 7. Rutherford hypothesized in 1920 that an electrically neutral particle with mass close to the proton's must exist. He called it the "neutron." It took 12 years for his student James Chadwick to find it.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Experimental Method</h4>
+            <p>Rutherford used scintillation detection: alpha particles hitting a zinc sulfide screen produced tiny flashes counted by eye in a darkened room. Marsden and others spent hours counting individual flashes&mdash;heroic experimental patience in the pre-electronic age.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Proton-Electron Model</h4>
+            <p>Before the neutron's discovery, physicists assumed nuclei contained protons and electrons (to account for the mass-charge discrepancy). This model had deep theoretical problems, eventually resolved by Chadwick's 1932 neutron discovery.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Naming Rights</h4>
+            <p>Rutherford's coinage of "proton" followed his pattern of naming: he had earlier named alpha, beta, and gamma radiation. His talent for clear, memorable nomenclature shaped the vocabulary of nuclear physics permanently.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION III</span>
+    <h2>Radioactive Decay Law and Half-Life</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p>Working with Frederick Soddy at McGill University (1900&ndash;1903), Rutherford established that radioactivity involves the spontaneous <span class="accent">transmutation of elements</span>. Atoms of one element could disintegrate into atoms of entirely different elements, emitting alpha or beta particles in the process.</p>
+            <p>They formulated the <span class="accent-amber">exponential decay law</span>:</p>
+            <p style="text-align:center;"><code>N(t) = N&sub;0; e^(-&lambda;t)</code></p>
+            <p>where &lambda; is the decay constant. Rutherford introduced the concept of <span class="accent">half-life</span>&mdash;the time for half of a radioactive sample to decay. This quantity varies enormously: from microseconds for some isotopes to billions of years for uranium-238.</p>
+            <p>This work was revolutionary because it showed that atoms were not permanent, immutable entities. The most fundamental "building blocks" of matter had lifetimes&mdash;they were born, they lived, and they died. It earned Rutherford the <span class="accent-rose">1908 Nobel Prize in Chemistry</span>, which amused him greatly: the physicist had been classified as a chemist.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Decay Series</h4>
+                <p>Rutherford and Soddy mapped the uranium and thorium decay series&mdash;chains of successive transmutations ending in stable lead. This untangled confusion over dozens of "new elements" that were actually intermediate decay products.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">Alpha, Beta, Gamma</h4>
+                <p>Rutherford classified three types of radiation by their penetrating power and charge: alpha (+2, stopped by paper), beta (-1, stopped by aluminum), gamma (neutral, penetrates lead). This naming scheme persists unchanged.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Age of the Earth</h4>
+                <p>Rutherford realized radioactive decay could date geological samples. In a 1904 lecture with Lord Kelvin present, he showed the Earth was far older than Kelvin's thermodynamic estimate of 20&ndash;40 million years.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 &mdash; METHOD</span>
+    <h2>The Rutherford Style</h2>
+    <div class="separator"></div>
+    <p>Rutherford was the supreme experimentalist of the atomic age. His approach was characterized by physical intuition, ingenious simplicity, and a booming personality that filled every laboratory he entered.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Observe</h4>
+            <p>Begin with anomalous experimental data</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Simplify</h4>
+            <p>Design the cleanest possible experiment</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Model</h4>
+            <p>Build a physical picture, then calculate</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Verify</h4>
+            <p>Test predictions with further experiments</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-blue">String and Sealing Wax</h4>
+            <p>Rutherford famously favored simple, inexpensive apparatus. He distrusted complex equipment, believing the best experiments used "string and sealing wax." His gold foil experiment used a radioactive source, a thin foil, and a zinc sulfide screen&mdash;elegant in its simplicity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Mentor</h4>
+            <p>Eleven of Rutherford's students and collaborators won Nobel Prizes, an unmatched record. He had an extraordinary ability to identify talent and give young researchers challenging problems. His lab at Cambridge was a proving ground for the twentieth century's greatest experimentalists.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections (SVG Network) -->
+<section>
+    <span class="section-number">08 &mdash; NETWORK</span>
+    <h2>Intellectual Connections</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" width="100%">
+            <!-- Rutherford center -->
+            <circle cx="350" cy="170" r="34" fill="#161622" stroke="#c97b4b" stroke-width="2"/>
+            <text x="350" y="167" text-anchor="middle" fill="#c97b4b" font-family="Playfair Display" font-size="10" font-weight="700">Rutherford</text>
+            <text x="350" y="180" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="6">1871&ndash;1937</text>
+            <!-- J.J. Thomson (mentor) -->
+            <circle cx="130" cy="80" r="26" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="130" y="77" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="8">J.J.</text>
+            <text x="130" y="88" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="8">Thomson</text>
+            <line x1="158" y1="95" x2="318" y2="158" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <text x="215" y="110" fill="#5b8cd4" font-family="JetBrains Mono" font-size="6" opacity="0.7">mentor</text>
+            <!-- Bohr -->
+            <circle cx="570" cy="80" r="26" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="570" y="84" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9">Bohr</text>
+            <line x1="542" y1="95" x2="382" y2="158" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <text x="475" y="105" fill="#4ecca3" font-family="JetBrains Mono" font-size="6" opacity="0.7">quantum atom</text>
+            <!-- Soddy -->
+            <circle cx="130" cy="210" r="26" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="130" y="214" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="9">Soddy</text>
+            <line x1="158" y1="205" x2="318" y2="178" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <text x="215" y="202" fill="#d4a053" font-family="JetBrains Mono" font-size="6" opacity="0.7">transmutation</text>
+            <!-- Chadwick -->
+            <circle cx="570" cy="210" r="26" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="570" y="214" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="9">Chadwick</text>
+            <line x1="542" y1="205" x2="382" y2="178" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <text x="475" y="205" fill="#cf7272" font-family="JetBrains Mono" font-size="6" opacity="0.7">neutron</text>
+            <!-- Geiger -->
+            <circle cx="210" cy="300" r="24" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="210" y="304" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="9">Geiger</text>
+            <line x1="230" y1="282" x2="338" y2="200" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <!-- Marsden -->
+            <circle cx="350" cy="300" r="24" fill="#161622" stroke="#6a6a7a" stroke-width="1"/>
+            <text x="350" y="304" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">Marsden</text>
+            <line x1="350" y1="276" x2="350" y2="204" stroke="#6a6a7a" stroke-width="1" opacity="0.4"/>
+            <!-- Cockcroft & Walton -->
+            <circle cx="490" cy="300" r="24" fill="#161622" stroke="#6a6a7a" stroke-width="1"/>
+            <text x="490" y="297" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Cockcroft</text>
+            <text x="490" y="308" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">&amp; Walton</text>
+            <line x1="472" y1="280" x2="368" y2="200" stroke="#6a6a7a" stroke-width="1" opacity="0.4"/>
+            <!-- Curie -->
+            <circle cx="350" cy="45" r="22" fill="#161622" stroke="#cf7272" stroke-width="1"/>
+            <text x="350" y="49" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="8">M. Curie</text>
+            <line x1="350" y1="67" x2="350" y2="136" stroke="#cf7272" stroke-width="1" opacity="0.3"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">09 &mdash; CONTROVERSY</span>
+    <h2>Rivalries, Debates, and the Chemist's Nobel</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <h3>The Chemistry Nobel</h3>
+            <p>Rutherford's 1908 Nobel Prize was awarded in <span class="accent-rose">Chemistry</span>, not Physics&mdash;for his work on the disintegration of elements and radioactive substances. The irony was not lost on him. In his acceptance speech, he joked that he had "dealt with many different transformations with various periods of time, but the quickest he had met was his own transformation from a physicist to a chemist."</p>
+            <p>This classification reflected the Nobel Committee's view that transmutation of elements belonged to chemistry. Rutherford, who openly disdained non-physics sciences (as his famous "stamp collecting" quip reveals), found it deeply amusing but also slightly galling.</p>
+            <h3 style="margin-top:0.6em;">Kelvin and the Age of the Earth</h3>
+            <p>Lord Kelvin had calculated the Earth's age at 20&ndash;40 million years based on cooling rates. In a dramatic 1904 lecture at the Royal Institution, Rutherford showed that radioactive heating invalidated Kelvin's calculation. The elderly Kelvin was in the audience, initially dozing, and Rutherford diplomatically credited Kelvin's foresight in allowing for unknown energy sources.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">The Stamp Collecting Remark</h4>
+                <p>"All science is either physics or stamp collecting." This offhand remark infuriated chemists and biologists for decades. Ironically, Rutherford received his own Nobel in chemistry. The quote captures both his supreme confidence and his blunt colonial directness.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-blue">Nuclear Energy Skepticism</h4>
+                <p>In 1933, Rutherford publicly declared that anyone who talked about extracting energy from atomic transformations was talking "moonshine." Within 12 years, the atomic bomb proved him spectacularly wrong. Leo Szilard, who read the quote in The Times, conceived the nuclear chain reaction that same day.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Priority with Becquerel</h4>
+                <p>While Becquerel discovered radioactivity, Rutherford transformed it from a curiosity into a systematic science. The two had a cordial but competitive relationship, with Rutherford's experimental rigor ultimately providing the definitive understanding of radioactive phenomena.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>The Crocodile's Legacy</h2>
+    <div class="separator"></div>
+    <p>Rutherford was nicknamed "The Crocodile" by Pyotr Kapitsa&mdash;because, like the crocodile, he always moved forward and never looked back. His legacy is nothing less than the foundation of nuclear physics and the experimental tradition that shaped the twentieth century.</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Nobel Tree</h4>
+            <p>Eleven of his students and associates won Nobel Prizes: Soddy, Chadwick, Appleton, Cockcroft, Walton, Blackett, Powell, Bohr (worked with him), Kapitsa, Hahn, and others. No other physicist mentored so many laureates.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Element 104</h4>
+            <p>Rutherfordium (Rf), element 104, is named in his honor. It is a transactinide element, fittingly produced by the nuclear reactions he pioneered. He also has a crater on the Moon and one on Mars named after him.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">New Zealand Icon</h4>
+            <p>Rutherford appears on the New Zealand $100 note. The Rutherford Medal is New Zealand's highest science honor. He remains the country's most celebrated scientist and a symbol of what determination and talent can achieve from humble origins.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"He was a man who never made a mistake on the things that mattered. He saw clearly the things that mattered."</p>
+        <span class="attribution">&mdash; Mark Oliphant, Rutherford's student and collaborator</span>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 &mdash; APPLICATIONS</span>
+    <h2>From the Nucleus to the Modern World</h2>
+    <div class="separator"></div>
+    <p>Rutherford's discoveries underpin technologies and sciences that touch every aspect of modern life, from energy production to medical diagnostics to our understanding of cosmic history.</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Nuclear Power</h4>
+            <p>Nuclear fission reactors generate ~10% of global electricity. The chain reactions they exploit were made conceivable by Rutherford's demonstration that nuclei could be broken apart and transmuted.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Medical Imaging</h4>
+            <p>PET scans, radiation therapy, and nuclear medicine all trace lineage to Rutherford's classification of radiation types and understanding of radioactive decay. Alpha, beta, and gamma rays are tools of modern oncology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Radiometric Dating</h4>
+            <p>Carbon-14 dating, uranium-lead dating, and potassium-argon dating&mdash;all based on the exponential decay law Rutherford formulated&mdash;allow us to date everything from ancient artifacts to the age of the Earth itself (4.54 billion years).</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Particle Physics</h4>
+            <p>Rutherford scattering remains a standard technique at particle accelerators. The LHC at CERN is a direct descendant of his approach: fire particles at targets and analyze what comes out. His logic scales from gold foil to the Higgs boson.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Smoke Detectors</h4>
+            <p>Ionization smoke detectors use americium-241, an alpha emitter. The device works by detecting disruption of an alpha particle stream&mdash;a direct, everyday application of the radiation Rutherford first characterized.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Nuclear Security</h4>
+            <p>Nuclear non-proliferation monitoring, spent fuel analysis, and nuclear forensics all rely on understanding decay chains and nuclear structure that Rutherford and Soddy first mapped out at McGill.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">12 &mdash; TIMELINE</span>
+    <h2>A Life of Discovery</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 750 310" width="100%">
+            <line x1="40" y1="150" x2="720" y2="150" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- 1871 Birth -->
+            <circle cx="60" cy="150" r="5" fill="#c97b4b"/><text x="60" y="138" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="8" font-weight="700">1871</text><text x="60" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Born in NZ</text>
+            <!-- 1895 Cambridge -->
+            <circle cx="145" cy="150" r="4" fill="#5b8cd4"/><text x="145" y="130" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="8">1895</text><text x="145" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Cambridge</text>
+            <!-- 1898 McGill -->
+            <circle cx="210" cy="150" r="4" fill="#9b72cf"/><text x="210" y="138" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">1898</text><text x="210" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">McGill</text>
+            <!-- 1903 Transmutation -->
+            <circle cx="280" cy="150" r="5" fill="#d4a053"/><text x="280" y="130" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="8">1903</text><text x="280" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Decay law</text>
+            <!-- 1908 Nobel -->
+            <circle cx="350" cy="150" r="6" fill="#cf7272" stroke="#cf7272" stroke-width="1"/><text x="350" y="130" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="8" font-weight="700">1908</text><text x="350" y="170" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="7" font-weight="700">Nobel Prize</text>
+            <!-- 1911 Nucleus -->
+            <circle cx="420" cy="150" r="7" fill="#c97b4b" stroke="#c97b4b" stroke-width="2"/><text x="420" y="130" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="9" font-weight="700">1911</text><text x="420" y="172" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Nuclear model</text>
+            <!-- 1919 Proton -->
+            <circle cx="500" cy="150" r="6" fill="#4ecca3"/><text x="500" y="130" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8" font-weight="700">1919</text><text x="500" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Proton found</text>
+            <!-- 1932 Lab -->
+            <circle cx="590" cy="150" r="4" fill="#5b8cd4"/><text x="590" y="138" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="8">1932</text><text x="590" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Neutron (lab)</text>
+            <!-- 1937 Death -->
+            <circle cx="670" cy="150" r="5" fill="#6a6a7a"/><text x="670" y="130" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">1937</text><text x="670" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Dies, Cambridge</text>
+            <!-- Location bars -->
+            <rect x="55" y="210" width="90" height="16" rx="3" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="100" y="221" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">New Zealand</text>
+            <rect x="145" y="210" width="65" height="16" rx="3" fill="#161622" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <text x="177" y="221" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="7" opacity="0.7">Cambridge I</text>
+            <rect x="210" y="210" width="120" height="16" rx="3" fill="#161622" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <text x="270" y="221" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="7" opacity="0.7">McGill, Montreal</text>
+            <rect x="335" y="210" width="165" height="16" rx="3" fill="#161622" stroke="#c97b4b" stroke-width="1" opacity="0.5"/>
+            <text x="417" y="221" text-anchor="middle" fill="#c97b4b" font-family="DM Sans" font-size="7" opacity="0.7">Manchester</text>
+            <rect x="500" y="210" width="175" height="16" rx="3" fill="#161622" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <text x="587" y="221" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="7" opacity="0.7">Cavendish Director</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Further Reading -->
+<section>
+    <span class="section-number">13 &mdash; READING</span>
+    <h2>Further Reading</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Sources</h4>
+            <p><strong>"The Scattering of &alpha; and &beta; Particles by Matter and the Structure of the Atom"</strong> (1911) &mdash; Rutherford's landmark paper proposing the nuclear model, published in Philosophical Magazine.</p>
+            <p style="margin-top:0.3em;"><strong>"Collision of &alpha; Particles with Light Atoms"</strong> (1919) &mdash; The four-part paper series announcing the discovery of the proton through artificial nuclear disintegration.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Biographies</h4>
+            <p><strong>John Campbell, <em>Rutherford: Scientist Supreme</em></strong> (1999) &mdash; A comprehensive biography by a fellow New Zealander, rich in personal detail and scientific context.</p>
+            <p style="margin-top:0.3em;"><strong>Richard Reeves, <em>A Force of Nature: The Frontier Genius of Ernest Rutherford</em></strong> (2008) &mdash; An accessible account emphasizing Rutherford's personality and leadership.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Historical Context</h4>
+            <p><strong>Brian Cathcart, <em>The Fly in the Cathedral</em></strong> (2004) &mdash; The story of how Rutherford's Cavendish team split the atom in 1932, blending human drama with nuclear physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Technical</h4>
+            <p><strong>Abraham Pais, <em>Inward Bound: Of Matter and Forces in the Physical World</em></strong> (1986) &mdash; A masterful history of subatomic physics from the electron to quarks, with extensive coverage of Rutherford's contributions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 140 140">
+                <circle cx="70" cy="70" r="50" fill="none" stroke="#c97b4b" stroke-width="0.4" opacity="0.15"/>
+                <circle cx="70" cy="70" r="10" fill="#c97b4b" opacity="0.1" stroke="#c97b4b" stroke-width="0.5" />
+                <circle cx="70" cy="70" r="4" fill="#c97b4b" opacity="0.5"/>
+                <ellipse cx="70" cy="70" rx="50" ry="18" fill="none" stroke="#c97b4b" stroke-width="0.3" opacity="0.15" transform="rotate(0,70,70)"/>
+                <ellipse cx="70" cy="70" rx="50" ry="18" fill="none" stroke="#c97b4b" stroke-width="0.3" opacity="0.15" transform="rotate(60,70,70)"/>
+                <ellipse cx="70" cy="70" rx="50" ry="18" fill="none" stroke="#c97b4b" stroke-width="0.3" opacity="0.15" transform="rotate(120,70,70)"/>
+                <circle cx="70" cy="20" r="2" fill="#4ecca3" opacity="0.5"/>
+                <circle cx="113" cy="95" r="2" fill="#5b8cd4" opacity="0.5"/>
+                <circle cx="27" cy="95" r="2" fill="#cf7272" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="quote-box" style="max-width:70%;">
+            <p style="font-size:0.58em !important;">"All science is either physics or stamp collecting."</p>
+            <span class="attribution">&mdash; Ernest Rutherford, reportedly upon receiving the Nobel Prize in Chemistry, 1908</span>
+        </div>
+        <div class="separator" style="margin-top:1em;"></div>
+        <p class="subtitle" style="margin-top:0.5em;">The greatest experimentalist since Michael Faraday</p>
+        <p style="font-size:0.48em; color:var(--text-muted); margin-top:1.5em;">Ernest Rutherford, 1st Baron Rutherford of Nelson &middot; 1871&ndash;1937</p>
+        <p style="font-size:0.40em; color:var(--text-muted); margin-top:0.3em;">Interred in Westminster Abbey, near Isaac Newton and Lord Kelvin</p>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

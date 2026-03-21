@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaac Newton - Laws of Motion &amp; Universal Gravitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #d4a053;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="100" cy="100" r="30" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.6"/>
+            <!-- Orbital paths -->
+            <ellipse cx="100" cy="100" rx="85" ry="40" fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.3" transform="rotate(30 100 100)"/>
+            <ellipse cx="100" cy="100" rx="85" ry="40" fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.3" transform="rotate(90 100 100)"/>
+            <ellipse cx="100" cy="100" rx="85" ry="40" fill="none" stroke="#d4a053" stroke-width="0.7" opacity="0.3" transform="rotate(150 100 100)"/>
+            <!-- Prism rays -->
+            <g opacity="0.4">
+                <line x1="100" y1="10" x2="100" y2="100" stroke="#d4a053" stroke-width="0.8"/>
+                <line x1="100" y1="100" x2="170" y2="30" stroke="#cf7272" stroke-width="0.6"/>
+                <line x1="100" y1="100" x2="185" y2="55" stroke="#d4a053" stroke-width="0.6"/>
+                <line x1="100" y1="100" x2="190" y2="85" stroke="#4ecca3" stroke-width="0.6"/>
+                <line x1="100" y1="100" x2="185" y2="115" stroke="#5b8cd4" stroke-width="0.6"/>
+                <line x1="100" y1="100" x2="170" y2="140" stroke="#9b72cf" stroke-width="0.6"/>
+            </g>
+            <!-- Force arrows -->
+            <g opacity="0.35">
+                <line x1="100" y1="190" x2="100" y2="100" stroke="#d4a053" stroke-width="0.8"/>
+                <line x1="10" y1="100" x2="100" y2="100" stroke="#d4a053" stroke-width="0.8"/>
+                <line x1="30" y1="170" x2="100" y2="100" stroke="#d4a053" stroke-width="0.8"/>
+                <line x1="30" y1="30" x2="100" y2="100" stroke="#d4a053" stroke-width="0.8"/>
+            </g>
+            <circle cx="100" cy="100" r="6" fill="#d4a053" opacity="0.8"/>
+        </svg>
+    </div>
+    <h1>Isaac Newton</h1>
+    <p class="subtitle">1642 &ndash; 1727 &nbsp;|&nbsp; England</p>
+    <div class="separator"></div>
+    <p style="max-width: 600px; margin: 0.4em auto; text-align: center;">The man who unified terrestrial and celestial mechanics, decomposed white light into its spectrum, and forged the mathematical language of force and motion that governed physics for two centuries.</p>
+    <div style="margin-top: 0.6em;">
+        <span class="tag amber">Classical Mechanics</span>
+        <span class="tag green">Gravitation</span>
+        <span class="tag rose">Optics</span>
+        <span class="tag">Mathematics</span>
+        <span class="tag blue">Astronomy</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Early Life</h2>
+    <div class="two-col">
+        <div>
+            <p>Born on <span class="accent">25 December 1642</span> (Old Style) in Woolsthorpe Manor, Lincolnshire &mdash; the same year Galileo died. Premature and fatherless, his mother remarried when he was three, leaving him with his grandmother.</p>
+            <p>This early abandonment left deep psychological scars. Newton was solitary, suspicious, and fiercely competitive throughout his life &mdash; traits that fueled both his genius and his feuds.</p>
+            <p>At the King's School in Grantham, he showed more interest in building mechanical models &mdash; sundials, windmills, water clocks &mdash; than in farming, which his mother had intended for him. An uncle recognized his talent and secured his place at <span class="accent">Trinity College, Cambridge</span> in 1661.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">The Plague Years (1665-1667)</h4>
+                <p>When plague closed Cambridge, Newton retreated to Woolsthorpe. In this <em>annus mirabilis</em>, he developed the calculus, began his work on gravitation, and performed his prism experiments &mdash; the most productive isolation in scientific history.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-purple">Self-Taught Radical</h4>
+                <p>The Cambridge curriculum was still Aristotelian. Newton taught himself Descartes, Kepler, and Galileo from books, filling notebooks with questions that would reshape physics. He was, in essence, an autodidact working inside an institution.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Lucasian Professor</h4>
+                <p>In 1669, at just 26, Newton succeeded Isaac Barrow as Lucasian Professor of Mathematics &mdash; a chair later held by Stokes, Dirac, and Hawking.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Reflecting Telescope <span class="accent-purple">(1668)</span></h4>
+            <p>Newton built the first practical reflecting telescope, using a curved mirror instead of lenses to eliminate chromatic aberration. The Royal Society was so impressed they elected him a Fellow in 1672, launching his public career.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Principia Mathematica <span class="accent-purple">(1687)</span></h4>
+            <p>Prompted by Halley's visit in 1684, Newton composed the <em>Principia</em> in eighteen astonishing months. It unified Kepler's laws, Galileo's kinematics, and terrestrial mechanics under three laws of motion and universal gravitation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Opticks <span class="accent-purple">(1704)</span></h4>
+            <p>Published after Hooke's death, this work detailed Newton's experiments with prisms, thin films, and "Newton's rings." It championed the corpuscular theory of light and proposed "Queries" that guided optical research for a century.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Warden &amp; Master of the Mint <span class="accent-purple">(1696-1727)</span></h4>
+            <p>Newton left Cambridge for London, overseeing the Great Recoinage. He pursued counterfeiters with the same intensity he brought to physics, and was knighted by Queen Anne in 1705 &mdash; the first scientist so honored.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>State of Physics</h3>
+            <p>Galileo had established kinematics &mdash; the description of motion &mdash; but lacked a theory of <em>why</em> objects move. Descartes filled the gap with his vortex theory: planets were swept around by swirling matter.</p>
+            <p>Kepler had discovered three empirical laws of planetary motion but could not explain their cause. The inverse-square law of gravity was "in the air" &mdash; Hooke, Halley, and Wren all suspected it &mdash; but no one could derive Kepler's ellipses from it.</p>
+            <p>The concept of <span class="accent">force</span> itself was murky. Impetus theory lingered; the distinction between velocity and acceleration was not yet sharp. Physics needed a unifying framework.</p>
+        </div>
+        <div>
+            <h3>World Context</h3>
+            <p>The <span class="accent-rose">English Civil War</span> (1642-1651) and Interregnum shaped Newton's childhood. The Restoration (1660) brought stability and the founding of the <span class="accent-blue">Royal Society</span>.</p>
+            <p>The <span class="accent-purple">Glorious Revolution</span> (1688) cemented parliamentary power. Newton served as MP for Cambridge and aligned with the new Whig order.</p>
+            <p>England was rising as a naval and commercial power. Navigation demanded better astronomy and timekeeping, creating institutional demand for exactly Newton's kind of mathematical physics.</p>
+            <p>The <span class="accent-amber">Scientific Revolution</span> was reaching its climax: Boyle's chemistry, Hooke's microscopy, Huygens' optics, and Leibniz's calculus all overlapped with Newton's career.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 - Laws of Motion -->
+<section>
+    <span class="section-number">04 &mdash; LAWS OF MOTION</span>
+    <h2>The Three Laws of Motion</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Newton's three laws, stated in the <em>Principia</em>, transformed physics from a descriptive science into a <span class="accent">predictive, mathematical framework</span>.</p>
+            <p><strong class="accent">Law I (Inertia):</strong> A body remains at rest or in uniform straight-line motion unless acted upon by a force.</p>
+            <p><strong class="accent">Law II (F=ma):</strong> The rate of change of momentum is proportional to the applied force and occurs in the direction of that force.</p>
+            <p><strong class="accent">Law III (Action-Reaction):</strong> For every action, there is an equal and opposite reaction.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 300" style="width:100%;">
+                    <!-- Law I: object in motion -->
+                    <text x="20" y="25" fill="#d4a053" font-size="12" font-family="DM Sans" font-weight="700">Law I: Inertia</text>
+                    <rect x="40" y="40" width="40" height="30" rx="3" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+                    <line x1="90" y1="55" x2="180" y2="55" stroke="#d4a053" stroke-width="1" stroke-dasharray="4,3"/>
+                    <line x1="160" y1="55" x2="200" y2="55" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrowN)"/>
+                    <text x="200" y="50" fill="#6a6a7a" font-size="9" font-family="JetBrains Mono">v = const</text>
+                    <!-- Law II: F=ma -->
+                    <text x="20" y="115" fill="#d4a053" font-size="12" font-family="DM Sans" font-weight="700">Law II: F = ma</text>
+                    <rect x="100" y="130" width="40" height="30" rx="3" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+                    <line x1="150" y1="145" x2="230" y2="145" stroke="#cf7272" stroke-width="2" marker-end="url(#arrowR)"/>
+                    <text x="240" y="142" fill="#cf7272" font-size="11" font-family="JetBrains Mono">F</text>
+                    <line x1="170" y1="170" x2="230" y2="170" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#arrowG)"/>
+                    <text x="240" y="173" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">a = F/m</text>
+                    <!-- Law III: action-reaction -->
+                    <text x="20" y="215" fill="#d4a053" font-size="12" font-family="DM Sans" font-weight="700">Law III: Action-Reaction</text>
+                    <rect x="80" y="230" width="40" height="30" rx="3" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+                    <rect x="190" y="230" width="40" height="30" rx="3" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+                    <line x1="125" y1="245" x2="185" y2="245" stroke="#5b8cd4" stroke-width="1.5" marker-end="url(#arrowB)"/>
+                    <line x1="185" y1="250" x2="125" y2="250" stroke="#9b72cf" stroke-width="1.5" marker-end="url(#arrowP)"/>
+                    <text x="135" y="275" fill="#6a6a7a" font-size="9" font-family="JetBrains Mono">F_AB = -F_BA</text>
+                    <defs>
+                        <marker id="arrowN" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#d4a053"/></marker>
+                        <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#cf7272"/></marker>
+                        <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#4ecca3"/></marker>
+                        <marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#5b8cd4"/></marker>
+                        <marker id="arrowP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#9b72cf"/></marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Laws of Motion Deeper Dive -->
+<section>
+    <span class="section-number">05 &mdash; LAWS DEEPER DIVE</span>
+    <h2>From Laws to a System of the World</h2>
+    <div class="two-col">
+        <div>
+            <h3>Conceptual Revolution</h3>
+            <p>Before Newton, "force" was a vague metaphysical concept. He made it <span class="accent">quantitative and operational</span>: force is what changes momentum. This seemingly simple move made all of mechanics calculable.</p>
+            <p>The second law, <code>F = dp/dt</code>, is actually more general than <code>F = ma</code>. It handles variable-mass systems (rockets, chains) and became the template for every force law in physics.</p>
+            <p>The third law was the most radical: it meant the Earth is pulled toward a falling apple as surely as the apple toward the Earth. It democratized force &mdash; no privileged movers, no Aristotelian hierarchy.</p>
+        </div>
+        <div>
+            <h3>Immediate Consequences</h3>
+            <p>From these three laws plus his law of gravitation, Newton derived: <span class="accent-green">Kepler's three laws</span> of planetary motion, the <span class="accent-blue">precession of equinoxes</span>, the <span class="accent-purple">shape of the Earth</span> (oblate spheroid), <span class="accent-amber">tidal theory</span>, and the orbits of comets.</p>
+            <p>He showed that the same force pulling an apple to the ground keeps the Moon in orbit &mdash; the famous "<span class="accent">Moon test</span>" that unified terrestrial and celestial physics for the first time in human history.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.4em;">
+        <p>"Every body continues in its state of rest, or of uniform motion in a right line, unless it is compelled to change that state by forces impressed upon it."</p>
+        <span class="attribution">&mdash; Isaac Newton, Principia Mathematica, Law I (1687)</span>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 - Universal Gravitation -->
+<section>
+    <span class="section-number">06 &mdash; UNIVERSAL GRAVITATION</span>
+    <h2>The Law of Universal Gravitation</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Newton proposed that every particle of matter attracts every other particle with a force proportional to the product of their masses and inversely proportional to the square of the distance between them:</p>
+            <p style="text-align: center; font-size: 0.7em; color: var(--accent); margin: 0.4em 0;"><code>F = G(m1 m2)/r&sup2;</code></p>
+            <p>This single equation explained falling apples, orbiting moons, planetary ellipses, ocean tides, and cometary paths. It was the first truly <span class="accent">universal</span> physical law.</p>
+            <p>The key insight: gravity is not unique to Earth. The same <code>1/r&sup2;</code> force that produces weight at Earth's surface holds the solar system together.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 300" style="width:100%;">
+                    <!-- Sun -->
+                    <circle cx="150" cy="150" r="30" fill="none" stroke="#d4a053" stroke-width="2"/>
+                    <text x="150" y="154" text-anchor="middle" fill="#d4a053" font-size="12" font-family="DM Sans" font-weight="700">M</text>
+                    <!-- Orbital ellipse -->
+                    <ellipse cx="170" cy="150" rx="150" ry="100" fill="none" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+                    <!-- Planet -->
+                    <circle cx="310" cy="100" r="10" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+                    <text x="310" y="104" text-anchor="middle" fill="#4ecca3" font-size="9" font-family="DM Sans">m</text>
+                    <!-- Force vector toward sun -->
+                    <line x1="298" y1="104" x2="220" y2="130" stroke="#cf7272" stroke-width="2" marker-end="url(#arrowF)"/>
+                    <text x="240" y="108" fill="#cf7272" font-size="10" font-family="JetBrains Mono">F = GMm/r&sup2;</text>
+                    <!-- Velocity vector tangent -->
+                    <line x1="310" y1="88" x2="340" y2="60" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#arrowV)"/>
+                    <text x="345" y="58" fill="#4ecca3" font-size="9" font-family="JetBrains Mono">v</text>
+                    <!-- Distance r -->
+                    <line x1="155" y1="148" x2="300" y2="102" stroke="#6a6a7a" stroke-width="0.8" stroke-dasharray="3,3"/>
+                    <text x="225" y="140" fill="#6a6a7a" font-size="10" font-family="JetBrains Mono">r</text>
+                    <!-- Second orbit position -->
+                    <circle cx="50" cy="200" r="7" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+                    <!-- Kepler equal areas hint -->
+                    <path d="M150 150 L310 100 L320 80" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.3"/>
+                    <text x="20" y="280" fill="#6a6a7a" font-size="10" font-family="DM Sans">Equal areas in equal times (Kepler II)</text>
+                    <defs>
+                        <marker id="arrowF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#cf7272"/></marker>
+                        <marker id="arrowV" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#4ecca3"/></marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Gravitation Deeper Dive -->
+<section>
+    <span class="section-number">07 &mdash; GRAVITATION DEEPER DIVE</span>
+    <h2>The Principia &amp; Its Architecture</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Shell Theorem</h4>
+            <p>Newton proved that a uniform spherical shell attracts an external particle as if all its mass were concentrated at the center. This was essential: without it, treating planets as point masses would be unjustified. The proof required his newly invented calculus.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The Moon Test</h4>
+            <p>Newton compared the Moon's centripetal acceleration (<code>v&sup2;/r</code>) with the acceleration of gravity at Earth's surface, accounting for the inverse-square falloff over 60 Earth radii. The numbers matched &mdash; terrestrial and celestial gravity were one and the same.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Three-Body Problem</h4>
+            <p>Newton recognized that the Sun's pull perturbs the Moon's orbit around Earth. He developed perturbation methods to approximate these effects, founding a tradition that occupied Euler, Lagrange, Laplace, and Poincar&eacute; for the next two centuries.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Cometary Orbits</h4>
+            <p>In Book III, Newton showed that Halley's comet followed a parabolic (nearly elliptical) orbit under the same gravitational law. This prediction &mdash; Halley's comet returned in 1758 as predicted &mdash; was the ultimate triumph of Newtonian gravity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 - Optics -->
+<section>
+    <span class="section-number">08 &mdash; OPTICS</span>
+    <h2>Optics &amp; the Nature of Light</h2>
+    <div class="two-col">
+        <div>
+            <h3>Prism Experiments</h3>
+            <p>In his <em>experimentum crucis</em> (1666), Newton passed sunlight through a prism and showed it decomposed into a <span class="accent">spectrum of colors</span>. A second prism could recombine them into white light.</p>
+            <p>The crucial insight: white light is <span class="accent-amber">not pure</span>. It is a mixture of rays with different "refrangibilities" (refractive indices). Colors are not modifications of white light, as Aristotle and Descartes believed &mdash; they are its <em>constituents</em>.</p>
+            <p>Newton's rings &mdash; interference patterns in thin films &mdash; hinted at wave behavior, but Newton interpreted them through his corpuscular framework using "fits of easy reflection and transmission."</p>
+        </div>
+        <div>
+            <h3>The Reflecting Telescope</h3>
+            <p>Newton showed that chromatic aberration is inherent to lenses: different colors focus at different points. His solution was radical &mdash; replace the objective lens with a <span class="accent-green">concave mirror</span>, which reflects all colors identically.</p>
+            <p>His 1668 prototype, just 6 inches long, outperformed refracting telescopes many times its size. The design principle endures in the Hubble Space Telescope, the James Webb Space Telescope, and every major observatory on Earth.</p>
+            <div style="margin-top: 0.3em;">
+                <span class="tag rose">Corpuscular Theory</span>
+                <span class="tag green">Spectroscopy</span>
+                <span class="tag blue">Telescope Design</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09 &mdash; METHOD</span>
+    <h2>The Newtonian Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Experiment</h4>
+            <p>Precise, controlled<br/>observations</p>
+        </div>
+        <div class="process-arrow">&rsaquo;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Mathematize</h4>
+            <p>Express as laws<br/>in precise language</p>
+        </div>
+        <div class="process-arrow">&rsaquo;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Deduce</h4>
+            <p>Derive consequences<br/>via calculus</p>
+        </div>
+        <div class="process-arrow">&rsaquo;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Predict</h4>
+            <p>Test predictions<br/>against nature</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent">Hypotheses Non Fingo</h4>
+            <p>"I do not feign hypotheses." Newton refused to speculate about gravity's mechanism. He described <em>what</em> gravity does with exact mathematics and left the <em>why</em> for future generations &mdash; a methodological revolution as important as any specific discovery.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Geometric Synthesis</h4>
+            <p>Though Newton invented the calculus, the <em>Principia</em> is written in the language of Greek geometry. He translated his analytical results into synthetic proofs, making the work both more rigorous and more difficult to follow.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10 &mdash; CONNECTIONS</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" style="width:100%;">
+            <!-- Central node -->
+            <circle cx="350" cy="170" r="32" fill="none" stroke="#d4a053" stroke-width="2.5"/>
+            <text x="350" y="167" text-anchor="middle" fill="#d4a053" font-size="12" font-family="Playfair Display" font-weight="700">Isaac</text>
+            <text x="350" y="182" text-anchor="middle" fill="#d4a053" font-size="12" font-family="Playfair Display" font-weight="700">Newton</text>
+            <!-- Halley -->
+            <line x1="382" y1="160" x2="540" y2="70" stroke="#4ecca3" stroke-width="1.5"/>
+            <circle cx="560" cy="62" r="24" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="560" y="65" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Halley</text>
+            <text x="615" y="52" fill="#6a6a7a" font-size="8" font-family="DM Sans">Funded Principia</text>
+            <!-- Hooke -->
+            <line x1="382" y1="175" x2="545" y2="170" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,3"/>
+            <circle cx="565" cy="170" r="24" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="565" y="173" text-anchor="middle" fill="#cf7272" font-size="10" font-family="DM Sans">Hooke</text>
+            <text x="615" y="185" fill="#6a6a7a" font-size="8" font-family="DM Sans">Bitter rival</text>
+            <!-- Leibniz -->
+            <line x1="382" y1="185" x2="545" y2="275" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,3"/>
+            <circle cx="560" cy="285" r="24" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="560" y="288" text-anchor="middle" fill="#cf7272" font-size="10" font-family="DM Sans">Leibniz</text>
+            <text x="610" y="305" fill="#6a6a7a" font-size="8" font-family="DM Sans">Calculus priority war</text>
+            <!-- Barrow -->
+            <line x1="318" y1="155" x2="150" y2="70" stroke="#5b8cd4" stroke-width="1.2"/>
+            <circle cx="130" cy="62" r="24" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="130" y="65" text-anchor="middle" fill="#5b8cd4" font-size="10" font-family="DM Sans">Barrow</text>
+            <text x="50" y="48" fill="#6a6a7a" font-size="8" font-family="DM Sans">Mentor at Cambridge</text>
+            <!-- Huygens -->
+            <line x1="318" y1="170" x2="148" y2="170" stroke="#9b72cf" stroke-width="1" stroke-dasharray="4,3"/>
+            <circle cx="128" cy="170" r="24" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="128" y="173" text-anchor="middle" fill="#9b72cf" font-size="10" font-family="DM Sans">Huygens</text>
+            <text x="40" y="195" fill="#6a6a7a" font-size="8" font-family="DM Sans">Rival on light &amp; gravity</text>
+            <!-- Flamsteed -->
+            <line x1="318" y1="185" x2="148" y2="275" stroke="#d4a053" stroke-width="1"/>
+            <circle cx="130" cy="285" r="24" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="130" y="288" text-anchor="middle" fill="#d4a053" font-size="10" font-family="DM Sans">Flamsteed</text>
+            <text x="40" y="310" fill="#6a6a7a" font-size="8" font-family="DM Sans">Astronomer Royal, data source</text>
+            <!-- Kepler (influence) -->
+            <line x1="350" y1="202" x2="350" y2="295" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,3"/>
+            <circle cx="350" cy="315" r="24" fill="none" stroke="#4ecca3" stroke-width="1"/>
+            <text x="350" y="318" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Kepler</text>
+            <text x="400" y="318" fill="#6a6a7a" font-size="8" font-family="DM Sans">Predecessor</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">11 &mdash; CONTROVERSY</span>
+    <h2>Feuds &amp; Priority Wars</h2>
+    <div class="two-col">
+        <div>
+            <h3>Newton vs. Hooke</h3>
+            <p>Robert Hooke claimed he had suggested the inverse-square law first and accused Newton of stealing his ideas. Newton, furious, nearly withheld Book III of the <em>Principia</em> entirely.</p>
+            <p>The famous line about "standing on the shoulders of giants" may itself have been a barb &mdash; Hooke was notably short. Newton systematically removed references to Hooke from later editions of the Principia.</p>
+            <h3 style="margin-top: 0.5em;">Newton vs. Leibniz</h3>
+            <p>The calculus priority dispute consumed the last decades of both men's lives. Newton developed his "fluxions" first (1665-1666) but published late. Leibniz published first (1684) with independent notation. Newton, as Royal Society president, stacked the committee that ruled in his own favor.</p>
+        </div>
+        <div>
+            <div class="quote-box">
+                <p>"I have not been able to discover the cause of those properties of gravity from phenomena, and I frame no hypotheses."</p>
+                <span class="attribution">&mdash; Newton, Principia, General Scholium (1713)</span>
+            </div>
+            <div class="card" style="margin-top: 0.5em;">
+                <h4 class="accent-rose">The Cost of Genius</h4>
+                <p>Newton's feuds damaged British mathematics for a century. By clinging to his dot notation over Leibniz's superior <code>dy/dx</code>, British mathematicians fell behind their Continental peers until the 19th-century reforms of Babbage and Herschel.</p>
+            </div>
+            <div class="card" style="margin-top: 0.45em;">
+                <h4 class="accent-purple">Action at a Distance</h4>
+                <p>Continental philosophers (Huygens, Leibniz, Bernoulli) attacked gravity as "occult." How could the Sun pull the Earth across empty space? Newton admitted he had no mechanism but insisted the mathematics worked. This tension was only resolved by Einstein's general relativity in 1915.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12 &mdash; LEGACY</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Classical Mechanics</h4>
+            <p>Lagrange, Hamilton, and Jacobi reformulated Newton's mechanics into increasingly powerful forms. Every engineering structure, vehicle, and machine on Earth is still designed using Newtonian mechanics. It fails only at extreme speeds, scales, or gravitational fields.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Gateway to Relativity</h4>
+            <p>Einstein's general relativity (1915) replaced Newton's gravity with spacetime curvature, but Newtonian gravity is the weak-field, slow-speed limit of Einstein's equations. GPS satellites correct for both Newtonian and relativistic effects.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Celestial Mechanics</h4>
+            <p>Every space mission from Apollo to the Mars rovers uses Newtonian mechanics for trajectory calculations. Perturbation theory, born in Book III of the Principia, remains the basis of modern orbital mechanics and n-body simulations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Newtonian Paradigm</h4>
+            <p>Newton established the pattern that all physics follows: express natural law as differential equations, solve them to predict phenomena, and test predictions against experiment. Maxwell, Schr&ouml;dinger, and Einstein all worked within this framework.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13 &mdash; APPLICATIONS</span>
+    <h2>Applications in Science &amp; Engineering</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Aerospace Engineering</h4>
+            <p>Rocket trajectories, satellite orbits, and interplanetary transfers all use Newton's laws and gravitation directly. The Tsiolkovsky rocket equation is a direct consequence of the second and third laws.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Structural Engineering</h4>
+            <p>Every bridge, building, and dam is designed using Newtonian statics and dynamics. Force equilibrium, moments, and stress analysis all flow directly from Newton's framework.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Spectroscopy</h4>
+            <p>Newton's decomposition of white light into a spectrum founded the field. Today, spectroscopy determines the composition of stars, identifies chemicals, and drives analytical chemistry.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Telescope Design</h4>
+            <p>The Newtonian reflector remains the most popular amateur telescope design. Professional descendants include the Cassegrain, Gregorian, and the 6.5m mirrors of the James Webb Space Telescope.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Fluid Dynamics</h4>
+            <p>Newton defined viscosity and initiated the study of fluid resistance. The Navier-Stokes equations, governing weather prediction and aircraft design, extend Newton's second law to continuous media.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Ballistics &amp; Navigation</h4>
+            <p>Military ballistics, ocean navigation, and GPS all depend on Newtonian mechanics. The gravitational constant G, implicit in Newton's law, is measured to guide submarines and map Earth's density.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14 &mdash; TIMELINE</span>
+    <h2>Life &amp; Work</h2>
+    <div style="max-width: 85%; margin: 0.3em auto;">
+        <svg viewBox="0 0 700 30" style="width:100%; margin-bottom: 0.3em;">
+            <line x1="20" y1="15" x2="680" y2="15" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="40" cy="15" r="4" fill="#d4a053"/>
+            <circle cx="140" cy="15" r="4" fill="#cf7272"/>
+            <circle cx="240" cy="15" r="4" fill="#4ecca3"/>
+            <circle cx="340" cy="15" r="4" fill="#d4a053"/>
+            <circle cx="440" cy="15" r="4" fill="#9b72cf"/>
+            <circle cx="540" cy="15" r="4" fill="#5b8cd4"/>
+            <circle cx="640" cy="15" r="4" fill="#d4a053"/>
+            <text x="40" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1642</text>
+            <text x="140" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1665</text>
+            <text x="240" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1668</text>
+            <text x="340" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1687</text>
+            <text x="440" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1696</text>
+            <text x="540" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1704</text>
+            <text x="640" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1727</text>
+        </svg>
+        <div class="timeline-item">
+            <span class="year">1642</span>
+            <div class="event"><strong>Born at Woolsthorpe Manor</strong>Premature, fatherless child in rural Lincolnshire. Raised by grandmother after mother's remarriage.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1665</span>
+            <div class="event"><strong>Annus Mirabilis</strong>Plague closes Cambridge. Newton develops calculus, begins gravitational theory, and performs prism experiments at Woolsthorpe.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1668</span>
+            <div class="event"><strong>Reflecting Telescope</strong>Builds the first practical Newtonian reflector, solving chromatic aberration. Elected FRS in 1672.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1687</span>
+            <div class="event"><strong>Principia Published</strong>Three books unifying mechanics and gravitation. Funded by Halley. Transforms natural philosophy into mathematical physics.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1696</span>
+            <div class="event"><strong>Warden of the Royal Mint</strong>Leaves Cambridge for London. Oversees the Great Recoinage and pursues counterfeiters with relentless zeal.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1704</span>
+            <div class="event"><strong>Opticks Published</strong>Comprehensive work on light, color, and thin-film interference. The influential "Queries" guide experimental physics for a century.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1727</span>
+            <div class="event"><strong>Death in Kensington</strong>Dies 20 March, aged 84. Given a state funeral at Westminster Abbey &mdash; unprecedented for a scientist.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15 &mdash; FURTHER READING</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Never at Rest</h4>
+            <p><span class="accent-amber">Richard S. Westfall</span> &mdash; The definitive biography. Exhaustive, scholarly, and deeply human, covering Newton's science, theology, alchemy, and feuds in over 900 pages. The standard against which all Newton biographies are measured.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">The Principia: A New Translation</h4>
+            <p><span class="accent-amber">Isaac Newton (trans. I.B. Cohen &amp; A. Whitman)</span> &mdash; The authoritative modern English translation with extensive commentary. Essential for anyone wanting to engage with Newton's actual arguments.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Isaac Newton</h4>
+            <p><span class="accent-amber">James Gleick</span> &mdash; An elegant, concise biography that captures Newton's genius and strangeness without oversimplifying the science. Ideal as an accessible introduction.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Priest of Nature</h4>
+            <p><span class="accent-amber">Rob Iliffe</span> &mdash; Focuses on Newton's religious thought and its deep connection to his natural philosophy. Reveals how theology and physics were inseparable in Newton's mind.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Newton and the Counterfeiter</h4>
+            <p><span class="accent-amber">Thomas Levenson</span> &mdash; A gripping narrative of Newton's years at the Mint, tracking his pursuit of master counterfeiter William Chaloner. Shows Newton's ruthless practical intelligence.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">The Optical Papers of Isaac Newton</h4>
+            <p><span class="accent-amber">ed. Alan Shapiro</span> &mdash; Scholarly edition of Newton's optical manuscripts and lectures, revealing the experimental foundations of the Opticks in greater detail than the published work.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.4"/>
+            <!-- Orbital ellipses -->
+            <ellipse cx="100" cy="100" rx="80" ry="35" fill="none" stroke="#d4a053" stroke-width="0.6" opacity="0.3" transform="rotate(0 100 100)"/>
+            <ellipse cx="100" cy="100" rx="80" ry="35" fill="none" stroke="#d4a053" stroke-width="0.6" opacity="0.3" transform="rotate(60 100 100)"/>
+            <ellipse cx="100" cy="100" rx="80" ry="35" fill="none" stroke="#d4a053" stroke-width="0.6" opacity="0.3" transform="rotate(120 100 100)"/>
+            <!-- Spectral rays -->
+            <g opacity="0.3">
+                <line x1="100" y1="100" x2="100" y2="15" stroke="#d4a053" stroke-width="0.7"/>
+                <line x1="100" y1="100" x2="160" y2="30" stroke="#cf7272" stroke-width="0.5"/>
+                <line x1="100" y1="100" x2="185" y2="75" stroke="#d4a053" stroke-width="0.5"/>
+                <line x1="100" y1="100" x2="185" y2="130" stroke="#4ecca3" stroke-width="0.5"/>
+                <line x1="100" y1="100" x2="155" y2="175" stroke="#5b8cd4" stroke-width="0.5"/>
+                <line x1="100" y1="100" x2="100" y2="185" stroke="#9b72cf" stroke-width="0.5"/>
+            </g>
+            <circle cx="100" cy="100" r="6" fill="#d4a053" opacity="0.8"/>
+        </svg>
+    </div>
+    <div class="quote-box" style="max-width: 65%;">
+        <p>"If I have seen further, it is by standing on the shoulders of giants."</p>
+        <span class="attribution">&mdash; Isaac Newton, letter to Robert Hooke (1675)</span>
+    </div>
+    <div class="separator" style="margin-top: 1em;"></div>
+    <p class="subtitle" style="margin-top: 0.6em;">1642 &ndash; 1727 &nbsp;&bull;&nbsp; England</p>
+    <p style="text-align: center; font-size: 0.42em; color: var(--text-muted); margin-top: 0.5em;">He gave motion its laws, gravity its equation, and light its spectrum.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

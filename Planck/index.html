@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Max Planck - Father of Quantum Theory</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #e8b84b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="70" cy="70" r="30" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="70" cy="70" r="4" fill="#e8b84b" opacity="0.8"/>
+            <g opacity="0.3"><line x1="70" y1="10" x2="70" y2="130" stroke="#e8b84b" stroke-width="0.3"/><line x1="10" y1="70" x2="130" y2="70" stroke="#e8b84b" stroke-width="0.3"/><line x1="27" y1="27" x2="113" y2="113" stroke="#e8b84b" stroke-width="0.3"/><line x1="113" y1="27" x2="27" y2="113" stroke="#e8b84b" stroke-width="0.3"/></g>
+            <text x="70" y="73" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="7" opacity="0.6">h</text>
+        </svg>
+    </div>
+    <h1>Max Planck</h1>
+    <div class="separator"></div>
+    <p class="subtitle">The Reluctant Revolutionary &middot; 1858&ndash;1947</p>
+    <p style="text-align:center; margin-top:0.8em;">The conservative physicist who shattered classical physics<br>by introducing the quantum of action</p>
+    <div style="margin-top:1em;">
+        <span class="tag amber">Quantum Theory</span>
+        <span class="tag green">Thermodynamics</span>
+        <span class="tag blue">Nobel Prize 1918</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Early Life in Kiel and Munich</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Born on April 23, 1858, in Kiel, Schleswig-Holstein, Max Karl Ernst Ludwig Planck came from a line of theologians, pastors, and jurists. His family embodied Prussian intellectual tradition: disciplined, devout, and deeply committed to public service.</p>
+            <p>At the Maximilian Gymnasium in Munich, young Planck excelled in mathematics and music. His teacher Philipp von Jolly famously warned him against pursuing physics, claiming the field was essentially complete&mdash;only minor details remained. Planck replied that he did not wish to discover new things, only to understand existing foundations.</p>
+            <p>He studied at the University of Munich and briefly at Berlin under Helmholtz and Kirchhoff, absorbing the rigorous thermodynamic tradition that would define his career.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Born</h4>
+                <p>April 23, 1858, Kiel, Holstein</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">Family</h4>
+                <p>Father: Julius Wilhelm Planck, professor of constitutional law at Kiel and Munich</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Education</h4>
+                <p>University of Munich (1874), University of Berlin (1877&ndash;78), PhD 1879 on the second law of thermodynamics</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Early Passion</h4>
+                <p>An accomplished pianist who considered a music career; chose physics for its universal truths</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>The Academic Path</h2>
+    <div class="separator"></div>
+    <p>Planck's career was marked by patient, methodical work on thermodynamics&mdash;a field many considered settled. His steady ascent through the German academic system belied the revolutionary implications of his later discoveries.</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Munich &amp; Kiel</h4>
+            <p>Habilitation in Munich (1880), then associate professor at Kiel (1885). Worked on entropy and the second law, struggling for recognition against the Boltzmann-dominated energetics debate.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Berlin Chair</h4>
+            <p>Appointed to the University of Berlin in 1889, succeeding Kirchhoff. This placed him at the heart of German physics, alongside Helmholtz. Here he tackled black-body radiation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Elder Statesman</h4>
+            <p>Secretary of the Prussian Academy of Sciences (1912&ndash;38). President of the Kaiser Wilhelm Society (1930&ndash;37). Navigated German science through two world wars and the Nazi regime.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"Planck was by nature a conservative man; he was by no means predisposed to make revolutionary discoveries."</p>
+        <span class="attribution">&mdash; Max Born</span>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The Ultraviolet Catastrophe</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p>By the 1890s, classical physics reigned supreme. Maxwell's electrodynamics, Newtonian mechanics, and Boltzmann's statistical mechanics seemed to explain nearly everything. Yet one stubborn problem remained: <span class="accent">black-body radiation</span>.</p>
+            <p>When a cavity is heated, it emits electromagnetic radiation across all frequencies. The <span class="accent-rose">Rayleigh-Jeans law</span>, derived from classical equipartition, predicted that energy radiated should increase without bound at higher frequencies&mdash;the "ultraviolet catastrophe." Meanwhile, <span class="accent-blue">Wien's law</span> fit the high-frequency data but failed at low frequencies.</p>
+            <p>The Physikalisch-Technische Reichsanstalt in Berlin was making precision measurements of black-body spectra, providing data that demanded a theoretical explanation. This was the experimental backdrop against which Planck worked.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 280 220" width="100%">
+                    <text x="140" y="15" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">Black-Body Radiation Curves</text>
+                    <line x1="40" y1="190" x2="260" y2="190" stroke="#2a2a3a" stroke-width="1"/>
+                    <line x1="40" y1="190" x2="40" y2="30" stroke="#2a2a3a" stroke-width="1"/>
+                    <text x="150" y="210" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">Frequency</text>
+                    <text x="15" y="110" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8" transform="rotate(-90,15,110)">Intensity</text>
+                    <path d="M50,185 Q100,170 130,100 Q150,55 170,40 Q200,30 230,25 L250,24" fill="none" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="4,3"/>
+                    <text x="252" y="28" fill="#cf7272" font-family="JetBrains Mono" font-size="7">Rayleigh-Jeans</text>
+                    <path d="M50,185 Q90,150 120,90 Q140,55 160,70 Q190,120 220,155 L250,175" fill="none" stroke="#5b8cd4" stroke-width="1.5" stroke-dasharray="4,3"/>
+                    <text x="252" y="178" fill="#5b8cd4" font-family="JetBrains Mono" font-size="7">Wien</text>
+                    <path d="M50,185 Q90,155 120,90 Q145,48 165,55 Q195,90 225,140 L250,168" fill="none" stroke="#e8b84b" stroke-width="2"/>
+                    <text x="252" y="155" fill="#e8b84b" font-family="JetBrains Mono" font-size="7">Planck</text>
+                    <circle cx="145" cy="48" r="3" fill="#e8b84b" opacity="0.6"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>The Quantum Hypothesis: E = h&nu;</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>On December 14, 1900&mdash;a date now regarded as the birthday of quantum physics&mdash;Planck presented his derivation to the German Physical Society. To fit the experimental black-body spectrum, he proposed that energy is emitted and absorbed not continuously, but in discrete packets: <span class="accent">quanta</span>.</p>
+            <p>Each quantum carries energy proportional to its frequency:</p>
+            <p style="text-align:center; font-size:0.7em !important;"><code>E = h&nu;</code></p>
+            <p>where <code>h = 6.626 &times; 10&supmin;&sup3;&sup4; J&middot;s</code> is Planck's constant. This was an "act of desperation," as Planck later called it&mdash;a mathematical trick he hoped would eventually yield to a classical explanation. It never did.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 260 240" width="100%">
+                    <text x="130" y="18" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display" font-size="10">Energy Quantization</text>
+                    <g transform="translate(30,35)">
+                        <text x="50" y="0" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Classical</text>
+                        <rect x="10" y="8" width="80" height="100" rx="4" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+                        <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#cf7272" stop-opacity="0.4"/><stop offset="100%" stop-color="#cf7272" stop-opacity="0.05"/></linearGradient></defs>
+                        <rect x="11" y="9" width="78" height="98" rx="3" fill="url(#cg)"/>
+                        <text x="50" y="125" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Continuous</text>
+                    </g>
+                    <g transform="translate(140,35)">
+                        <text x="50" y="0" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Quantum</text>
+                        <rect x="10" y="8" width="80" height="100" rx="4" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+                        <line x1="15" y1="100" x2="85" y2="100" stroke="#e8b84b" stroke-width="1.5" opacity="0.9"/>
+                        <line x1="15" y1="80" x2="85" y2="80" stroke="#e8b84b" stroke-width="1.5" opacity="0.75"/>
+                        <line x1="15" y1="60" x2="85" y2="60" stroke="#e8b84b" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="15" y1="40" x2="85" y2="40" stroke="#e8b84b" stroke-width="1.5" opacity="0.45"/>
+                        <line x1="15" y1="20" x2="85" y2="20" stroke="#e8b84b" stroke-width="1.5" opacity="0.3"/>
+                        <text x="92" y="103" fill="#e8b84b" font-family="JetBrains Mono" font-size="6">h&nu;</text>
+                        <text x="92" y="83" fill="#e8b84b" font-family="JetBrains Mono" font-size="6">2h&nu;</text>
+                        <text x="92" y="63" fill="#e8b84b" font-family="JetBrains Mono" font-size="6">3h&nu;</text>
+                        <text x="92" y="43" fill="#e8b84b" font-family="JetBrains Mono" font-size="6">4h&nu;</text>
+                        <text x="50" y="125" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Discrete levels</text>
+                    </g>
+                    <text x="130" y="185" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="12" font-weight="700">E = nh&nu;</text>
+                    <text x="130" y="200" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">n = 0, 1, 2, 3, ...</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deep Dive -->
+<section>
+    <span class="section-number">04a &mdash; DEEP DIVE</span>
+    <h2>The Derivation and Its Meaning</h2>
+    <div class="separator"></div>
+    <p>Planck's derivation was a masterful blend of thermodynamics and combinatorics. He modeled the cavity walls as electromagnetic oscillators, then counted the number of ways to distribute energy quanta among them&mdash;borrowing Boltzmann's combinatorial method, which he had previously opposed.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Key Steps</h4>
+            <p>1. Assume oscillators exchange energy in multiples of <code>h&nu;</code>. 2. Use Boltzmann's entropy formula <code>S = k log W</code> to find the equilibrium distribution. 3. Derive the spectral energy density that interpolates between Wien's law and the Rayleigh-Jeans law.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Irony</h4>
+            <p>Planck had spent years opposing Boltzmann's statistical interpretation of thermodynamics, insisting on a purely thermodynamic derivation of the second law. His quantum derivation forced him to embrace the very statistical methods he had resisted.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Two Constants</h4>
+            <p>The derivation yielded two new fundamental constants: <code>h</code> (Planck's constant) and <code>k</code> (Boltzmann's constant). The latter was named by Planck in honor of Boltzmann, though Boltzmann himself never isolated it.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Reception</h4>
+            <p>The physics community was slow to grasp the revolutionary implications. Most saw it as an elegant interpolation formula. It took Einstein's 1905 paper on the photoelectric effect to show that quanta were physically real, not merely mathematical.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 + SVG -->
+<section>
+    <span class="section-number">05 &mdash; CONTRIBUTION II</span>
+    <h2>Planck's Radiation Law</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>The <span class="accent">Planck radiation law</span> gives the spectral radiance of a black body as a function of frequency and temperature:</p>
+            <p style="text-align:center;"><code>B(&nu;,T) = (2h&nu;&sup3;/c&sup2;) &middot; 1/(e^(h&nu;/kT) - 1)</code></p>
+            <p>This single formula unifies the previously irreconcilable Wien and Rayleigh-Jeans approximations. At low frequencies, it reduces to Rayleigh-Jeans; at high frequencies, to Wien's law.</p>
+            <p>The formula matched experimental data from the PTR laboratories with extraordinary precision, lending immediate credibility. It explained why heated objects glow red, then orange, then white as temperature increases&mdash;the peak wavelength shifts according to <span class="accent-amber">Wien's displacement law</span>, which falls out naturally from Planck's formula.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 260 230" width="100%">
+                    <text x="130" y="15" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display" font-size="9">Planck Spectra at Different Temperatures</text>
+                    <line x1="35" y1="195" x2="245" y2="195" stroke="#2a2a3a" stroke-width="1"/>
+                    <line x1="35" y1="195" x2="35" y2="30" stroke="#2a2a3a" stroke-width="1"/>
+                    <path d="M45,192 Q70,188 90,160 Q110,110 125,90 Q145,78 165,100 Q195,145 225,175" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+                    <text x="228" y="178" fill="#cf7272" font-family="JetBrains Mono" font-size="6">3000K</text>
+                    <path d="M45,190 Q65,175 80,120 Q95,60 110,42 Q130,35 155,60 Q185,110 220,155" fill="none" stroke="#e8b84b" stroke-width="1.5"/>
+                    <text x="223" y="158" fill="#e8b84b" font-family="JetBrains Mono" font-size="6">4000K</text>
+                    <path d="M45,188 Q60,160 70,90 Q80,38 92,28 Q110,25 140,50 Q175,100 210,140" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+                    <text x="213" y="143" fill="#5b8cd4" font-family="JetBrains Mono" font-size="6">5500K</text>
+                    <text x="140" y="215" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">Wavelength &rarr;</text>
+                    <text x="12" y="112" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7" transform="rotate(-90,12,112)">Spectral Radiance</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deep Dive -->
+<section>
+    <span class="section-number">05a &mdash; DEEP DIVE</span>
+    <h2>The Black-Body Spectrum Decoded</h2>
+    <div class="separator"></div>
+    <p>The Planck distribution has far-reaching implications beyond the laboratory. It describes any system of bosons in thermal equilibrium and is foundational to modern astrophysics, cosmology, and photonics.</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent-amber">Stefan-Boltzmann Law</h4>
+            <p>Integrating Planck's formula over all frequencies yields the total radiated power: <code>P = &sigma;T&sup4;</code>. This had been known empirically; Planck provided the first derivation from first principles.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Wien Displacement</h4>
+            <p>The peak wavelength satisfies <code>&lambda;_max T = b</code>. This determines the color of stars: our Sun at 5778K peaks in the visible range&mdash;no coincidence in evolutionary biology.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Cosmic Microwave Background</h4>
+            <p>The CMB measured by COBE and Planck satellite is a near-perfect Planck spectrum at T = 2.725K, confirming the hot Big Bang model with astonishing precision.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"The Planck spectrum is the most perfect black-body spectrum ever measured. The theoretical curve and the data are indistinguishable."</p>
+        <span class="attribution">&mdash; John Mather, Nobel Lecture 2006</span>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION III</span>
+    <h2>Planck Units: Nature's Own System</h2>
+    <div class="separator"></div>
+    <p>Planck recognized that his constant, combined with the gravitational constant <code>G</code> and the speed of light <code>c</code>, defined a set of natural units. These <span class="accent">Planck units</span> mark the scales where quantum gravity effects are expected to dominate.</p>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Planck Length</h4>
+            <p><code>l_P = &radic;(&hbar;G/c&sup3;) &asymp; 1.616 &times; 10&supmin;&sup3;&sup5; m</code><br>The smallest meaningful length scale. Below this, the fabric of spacetime itself is expected to be quantized.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Planck Time</h4>
+            <p><code>t_P = l_P/c &asymp; 5.39 &times; 10&supmin;&sup4;&sup4; s</code><br>The time light takes to traverse one Planck length. The earliest moment after the Big Bang that physics can currently describe.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Planck Mass</h4>
+            <p><code>m_P = &radic;(&hbar;c/G) &asymp; 2.18 &times; 10&supmin;&sup8; kg</code><br>Roughly the mass of a grain of sand. The mass scale where a particle's Compton wavelength equals its Schwarzschild radius.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Planck Temperature</h4>
+            <p><code>T_P = m_P c&sup2;/k &asymp; 1.42 &times; 10&sup3;&sup2; K</code><br>The temperature of the universe at one Planck time after the Big Bang. Above this, our current physics frameworks break down entirely.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 &mdash; METHOD</span>
+    <h2>The Planck Approach</h2>
+    <div class="separator"></div>
+    <p>Planck's methodology was distinctive among his contemporaries: thermodynamic reasoning anchored by absolute principles, reluctantly supplemented by statistical methods only when all else failed.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Principle</h4>
+            <p>Start from the second law as absolute truth</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Model</h4>
+            <p>Construct minimal oscillator model</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Entropy</h4>
+            <p>Maximize entropy under constraints</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Verify</h4>
+            <p>Test against precision experiments</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-blue">Conservative Radicalism</h4>
+            <p>Planck did not seek revolution. He sought to save classical physics by finding the correct radiation formula. The quantum emerged not from boldness but from mathematical necessity&mdash;he exhausted every classical avenue before accepting discreteness.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Role of Experiment</h4>
+            <p>Unlike theoretical dreamers, Planck worked in close contact with the experimentalists at the PTR (Lummer, Pringsheim, Rubens, Kurlbaum). The evening Rubens telephoned him with new infrared data, Planck derived his interpolation formula within hours.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections (SVG Network) -->
+<section>
+    <span class="section-number">08 &mdash; NETWORK</span>
+    <h2>Intellectual Connections</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" width="100%">
+            <!-- Planck center -->
+            <circle cx="350" cy="170" r="32" fill="#161622" stroke="#e8b84b" stroke-width="2"/>
+            <text x="350" y="174" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display" font-size="11" font-weight="700">Planck</text>
+            <!-- Boltzmann -->
+            <circle cx="140" cy="80" r="26" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="140" y="84" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="9">Boltzmann</text>
+            <line x1="170" y1="95" x2="320" y2="158" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <!-- Einstein -->
+            <circle cx="560" cy="80" r="26" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="560" y="84" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="9">Einstein</text>
+            <line x1="530" y1="95" x2="380" y2="158" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <!-- Kirchhoff -->
+            <circle cx="130" cy="200" r="26" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="130" y="204" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="9">Kirchhoff</text>
+            <line x1="158" y1="195" x2="318" y2="175" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <!-- Helmholtz -->
+            <circle cx="200" cy="290" r="26" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="200" y="294" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="9">Helmholtz</text>
+            <line x1="222" y1="275" x2="335" y2="198" stroke="#5b8cd4" stroke-width="1" opacity="0.5"/>
+            <!-- Bohr -->
+            <circle cx="560" cy="200" r="26" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="560" y="204" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="9">Bohr</text>
+            <line x1="532" y1="195" x2="382" y2="175" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <!-- Wien -->
+            <circle cx="350" cy="50" r="22" fill="#161622" stroke="#6a6a7a" stroke-width="1"/>
+            <text x="350" y="54" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">Wien</text>
+            <line x1="350" y1="72" x2="350" y2="138" stroke="#6a6a7a" stroke-width="1" opacity="0.4"/>
+            <!-- Rayleigh -->
+            <circle cx="480" cy="290" r="26" fill="#161622" stroke="#6a6a7a" stroke-width="1"/>
+            <text x="480" y="294" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="9">Rayleigh</text>
+            <line x1="460" y1="272" x2="370" y2="198" stroke="#6a6a7a" stroke-width="1" opacity="0.4"/>
+            <!-- Labels -->
+            <text x="230" y="65" fill="#9b72cf" font-family="JetBrains Mono" font-size="6" opacity="0.7">statistical methods</text>
+            <text x="430" y="68" fill="#4ecca3" font-family="JetBrains Mono" font-size="6" opacity="0.7">quanta made real</text>
+            <text x="200" y="180" fill="#d4a053" font-family="JetBrains Mono" font-size="6" opacity="0.7">teacher / predecessor</text>
+            <text x="440" y="185" fill="#cf7272" font-family="JetBrains Mono" font-size="6" opacity="0.7">atomic model</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">09 &mdash; CONTROVERSY</span>
+    <h2>Tragedy and Moral Complexity</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <h3>The Nazi Years</h3>
+            <p>Planck's relationship with the Nazi regime is one of the most agonizing chapters in the history of science. As president of the Kaiser Wilhelm Society, he tried to preserve German science while accommodating the regime&mdash;a position that has drawn both sympathy and criticism.</p>
+            <p>In 1933, Planck met personally with Hitler to plead for Jewish colleagues. Hitler flew into a rage; the meeting was a failure. Planck chose to remain in Germany, believing he could protect institutions from within. He made public statements calling for political restraint but never openly defied the regime.</p>
+            <p>His son <span class="accent-rose">Erwin Planck</span> was executed in January 1945 for his involvement in the July 20 plot to assassinate Hitler&mdash;a devastating personal loss that haunted Planck's final years.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-rose">Personal Losses</h4>
+                <p>First wife Marie died 1909. Son Karl killed in WWI (1916). Twin daughters Grete and Emma both died in childbirth (1917, 1919). Son Erwin executed 1945. His Berlin home was destroyed by Allied bombing in 1944.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">The Planck-Einstein Debate</h4>
+                <p>While Planck introduced energy quanta for oscillators, he resisted Einstein's 1905 light-quantum hypothesis for years. Planck's 1913 recommendation letter for Einstein praised everything except the photon concept, calling it an overreach.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Boltzmann Dispute</h4>
+                <p>Planck opposed Boltzmann's statistical mechanics for two decades, only to find himself forced to adopt Boltzmann's combinatorial methods in his own greatest work. He later named the constant <code>k</code> after Boltzmann as partial restitution.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>The Reluctant Father of a Revolution</h2>
+    <div class="separator"></div>
+    <p>Planck's quantum hypothesis was the seed from which all of modern quantum physics grew. Though he himself remained ambivalent about the revolution he had started, his intellectual courage in following mathematics where it led&mdash;even against his own philosophical instincts&mdash;changed physics forever.</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Nobel Prize (1918)</h4>
+            <p>Awarded "in recognition of the services he rendered to the advancement of Physics by his discovery of energy quanta." The prize was delayed by WWI and presented in 1919.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Max Planck Society</h4>
+            <p>The Kaiser Wilhelm Society was renamed the Max Planck Society in 1948. Today it operates 86 institutes and is Germany's premier research organization, a living monument to his vision.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Planck Satellite</h4>
+            <p>ESA's Planck space observatory (2009&ndash;2013) mapped the cosmic microwave background with unprecedented precision, using the very radiation law its namesake discovered.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"He was, by nature, a conservative mind; he had nothing of the revolutionary and was thoroughly skeptical about speculations. Yet his openness to the facts and depth of intuition forced him along a road that would have repelled any sober mind."</p>
+        <span class="attribution">&mdash; Albert Einstein, eulogy for Planck, 1948</span>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 &mdash; APPLICATIONS</span>
+    <h2>From Quanta to Technology</h2>
+    <div class="separator"></div>
+    <p>Planck's seemingly abstract insight that energy comes in packets undergirds virtually all modern technology. Every device that exploits quantum mechanics traces its conceptual lineage to December 14, 1900.</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Semiconductors</h4>
+            <p>Transistors, LEDs, and solar cells all rely on quantized energy levels in solid-state materials. The global semiconductor industry ($600B) is built on quantum foundations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Lasers</h4>
+            <p>Stimulated emission&mdash;predicted by Einstein using Planck's radiation law&mdash;enables lasers used in telecommunications, surgery, manufacturing, and data storage.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Thermal Imaging</h4>
+            <p>Infrared cameras directly apply Planck's radiation law to detect temperature distributions, used in military, medical, and industrial applications.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Quantum Computing</h4>
+            <p>Qubits exploit discrete energy levels&mdash;Planck's quantization made manifest. Companies like IBM and Google race to build machines that harness quantum superposition.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Stellar Astrophysics</h4>
+            <p>Planck's law determines stellar classification, temperature measurement, and luminosity calculations. It is the primary tool for characterizing every star in the universe.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Precision Metrology</h4>
+            <p>Since 2019, the kilogram is defined via Planck's constant through the Kibble balance, making <code>h</code> a pillar of the international system of units.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">12 &mdash; TIMELINE</span>
+    <h2>A Life in Physics</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 750 300" width="100%">
+            <line x1="50" y1="150" x2="710" y2="150" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- 1858 Birth -->
+            <circle cx="80" cy="150" r="5" fill="#e8b84b"/><text x="80" y="140" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="8" font-weight="700">1858</text><text x="80" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Born in Kiel</text>
+            <!-- 1879 PhD -->
+            <circle cx="170" cy="150" r="4" fill="#9b72cf"/><text x="170" y="130" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">1879</text><text x="170" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">PhD, Munich</text>
+            <!-- 1889 Berlin -->
+            <circle cx="260" cy="150" r="4" fill="#5b8cd4"/><text x="260" y="140" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="8">1889</text><text x="260" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Berlin chair</text>
+            <!-- 1900 Quantum -->
+            <circle cx="360" cy="150" r="7" fill="#e8b84b" stroke="#e8b84b" stroke-width="2"/><text x="360" y="130" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono" font-size="9" font-weight="700">1900</text><text x="360" y="172" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Quantum hypothesis</text>
+            <!-- 1918 Nobel -->
+            <circle cx="470" cy="150" r="5" fill="#d4a053"/><text x="470" y="140" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="8">1918</text><text x="470" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Nobel Prize</text>
+            <!-- 1930 KWS -->
+            <circle cx="550" cy="150" r="4" fill="#4ecca3"/><text x="550" y="130" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="8">1930</text><text x="550" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">KWS President</text>
+            <!-- 1945 Erwin -->
+            <circle cx="630" cy="150" r="4" fill="#cf7272"/><text x="630" y="140" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="8">1945</text><text x="630" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Son executed</text>
+            <!-- 1947 Death -->
+            <circle cx="690" cy="150" r="5" fill="#6a6a7a"/><text x="690" y="130" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">1947</text><text x="690" y="170" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Dies in</text><text x="690" y="180" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="7">Goettingen</text>
+            <!-- Era bars -->
+            <rect x="75" y="210" width="185" height="16" rx="3" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="167" y="221" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">German Empire</text>
+            <rect x="260" y="210" width="190" height="16" rx="3" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="355" y="221" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Weimar &amp; Imperial Science</text>
+            <rect x="450" y="210" width="200" height="16" rx="3" fill="#161622" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <text x="550" y="221" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="7" opacity="0.7">Nazi Era &amp; WWII</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Further Reading -->
+<section>
+    <span class="section-number">13 &mdash; READING</span>
+    <h2>Further Reading</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Sources</h4>
+            <p><strong>"On the Law of Distribution of Energy in the Normal Spectrum"</strong> (1901) &mdash; Planck's foundational paper introducing the quantum of action.</p>
+            <p style="margin-top:0.3em;"><strong>Scientific Autobiography and Other Papers</strong> (1949) &mdash; Planck's own account of his intellectual journey, translated by Frank Gaynor.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Biographies</h4>
+            <p><strong>Brandon R. Brown, <em>Planck: Driven by Vision, Broken by War</em></strong> (2015) &mdash; The definitive modern biography, balancing scientific achievement with personal tragedy.</p>
+            <p style="margin-top:0.3em;"><strong>John L. Heilbron, <em>The Dilemmas of an Upright Man</em></strong> (2000) &mdash; Examines Planck's moral struggles under the Nazi regime with nuance and rigor.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Historical Context</h4>
+            <p><strong>Thomas Kuhn, <em>Black-Body Theory and the Quantum Discontinuity, 1894&ndash;1912</em></strong> (1978) &mdash; A meticulous history of how the quantum concept evolved from Planck through Einstein.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Technical</h4>
+            <p><strong>Abraham Pais, <em>Subtle is the Lord</em></strong> (1982) &mdash; While focused on Einstein, chapters 19&ndash;20 provide the best technical account of Planck's derivation and its reception.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 140 140">
+                <circle cx="70" cy="70" r="55" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.2"/>
+                <circle cx="70" cy="70" r="40" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.15"/>
+                <circle cx="70" cy="70" r="25" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.2"/>
+                <circle cx="70" cy="70" r="3" fill="#e8b84b" opacity="0.6"/>
+                <g opacity="0.15"><line x1="70" y1="15" x2="70" y2="125" stroke="#e8b84b" stroke-width="0.3"/><line x1="15" y1="70" x2="125" y2="70" stroke="#e8b84b" stroke-width="0.3"/></g>
+            </svg>
+        </div>
+        <div class="quote-box" style="max-width:70%;">
+            <p style="font-size:0.58em !important;">"A new scientific truth does not triumph by convincing its opponents and making them see the light, but rather because its opponents eventually die, and a new generation grows up that is familiar with it."</p>
+            <span class="attribution">&mdash; Max Planck, Scientific Autobiography, 1949</span>
+        </div>
+        <div class="separator" style="margin-top:1em;"></div>
+        <p class="subtitle" style="margin-top:0.5em;">Science advances one funeral at a time</p>
+        <p style="font-size:0.48em; color:var(--text-muted); margin-top:1.5em;">Max Karl Ernst Ludwig Planck &middot; 1858&ndash;1947</p>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

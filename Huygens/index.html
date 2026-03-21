@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christiaan Huygens - Wave Theory Pioneer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #3ec9b0;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#3ec9b0" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="100" cy="100" r="30" fill="none" stroke="#3ec9b0" stroke-width="1" opacity="0.6"/>
+            <!-- Wave pattern petals -->
+            <g opacity="0.4">
+                <path d="M100 10 Q130 50 100 100 Q70 50 100 10" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M190 100 Q150 130 100 100 Q150 70 190 100" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M100 190 Q70 150 100 100 Q130 150 100 190" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M10 100 Q50 70 100 100 Q50 130 10 100" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M30 30 Q70 60 100 100 Q60 70 30 30" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M170 30 Q140 60 100 100 Q130 70 170 30" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M170 170 Q140 140 100 100 Q130 130 170 170" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M30 170 Q60 140 100 100 Q70 130 30 170" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+            </g>
+            <!-- Wavefront arcs -->
+            <path d="M40 100 A60 60 0 0 1 100 40" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <path d="M160 100 A60 60 0 0 1 100 160" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <circle cx="100" cy="100" r="5" fill="#3ec9b0" opacity="0.8"/>
+        </svg>
+    </div>
+    <h1>Christiaan Huygens</h1>
+    <p class="subtitle">1629 &ndash; 1695 &nbsp;|&nbsp; The Hague &amp; Paris</p>
+    <div class="separator"></div>
+    <p style="max-width: 600px; margin: 0.4em auto; text-align: center;">The polymath who revealed light as a wave, gave humanity its most precise clock, and unveiled the true nature of Saturn's rings &mdash; bridging the gap between Galileo and Newton.</p>
+    <div style="margin-top: 0.6em;">
+        <span class="tag green">Wave Optics</span>
+        <span class="tag amber">Horology</span>
+        <span class="tag blue">Astronomy</span>
+        <span class="tag">Mechanics</span>
+        <span class="tag rose">Mathematics</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Early Life</h2>
+    <div class="two-col">
+        <div>
+            <p>Born on <span class="accent">14 April 1629</span> in The Hague to Constantijn Huygens, a diplomat, poet, and close friend of Descartes. Christiaan grew up in one of the most intellectually stimulating households in the Dutch Republic.</p>
+            <p>Educated privately alongside his brother, he showed extraordinary mathematical talent by age 13. His father's connections meant the young Huygens corresponded with Mersenne's circle of savants in Paris from his teenage years.</p>
+            <p>He studied law and mathematics at the University of Leiden (1645-1647) under Frans van Schooten, who introduced him to Descartes' analytical geometry. He then continued at the Collegium Auriacum in Breda.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent">Privileged Upbringing</h4>
+                <p>The Huygens family was among the Dutch elite. Constantijn served three Princes of Orange and hosted Descartes at their home, exposing young Christiaan to cutting-edge philosophy.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.45em;">
+                <h4 class="accent-amber">Mathematical Prodigy</h4>
+                <p>By age 16, Huygens had mastered Archimedes and Apollonius. Mersenne called him "the new Archimedes" after seeing his early work on quadratures and falling bodies.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Dutch Golden Age</h4>
+                <p>Huygens came of age during the zenith of Dutch trade, science, and art &mdash; a culture that prized practical invention as much as theoretical elegance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Saturn's Rings Revealed <span class="accent-amber">(1655-1659)</span></h4>
+            <p>Using lenses he ground himself, Huygens discovered Titan and correctly identified Saturn's "appendages" as a thin, flat ring inclined to the ecliptic &mdash; solving a puzzle that had baffled astronomers since Galileo.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">The Pendulum Clock <span class="accent-amber">(1656-1673)</span></h4>
+            <p>Patented the first practical pendulum clock in 1656. His masterwork <em>Horologium Oscillatorium</em> (1673) derived the mathematics of cycloidal motion and centrifugal force, revolutionizing timekeeping and mechanics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Paris Years <span class="accent-amber">(1666-1681)</span></h4>
+            <p>Appointed founding member of the Acad&eacute;mie Royale des Sciences by Louis XIV with a generous pension. Led French scientific life for fifteen years, mentoring Leibniz and collaborating with Cassini at the Paris Observatory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Trait&eacute; de la Lumi&egrave;re <span class="accent-amber">(1690)</span></h4>
+            <p>Published his wave theory of light, explaining reflection, refraction, and the extraordinary refraction of Iceland spar through the elegant principle that every point on a wavefront acts as a new source of secondary wavelets.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>State of Physics</h3>
+            <p>Huygens worked in the transition from Galileo's kinematics to Newton's dynamics. The mechanical philosophy of Descartes dominated Continental thinking, treating all physical phenomena as matter in motion &mdash; no action at a distance allowed.</p>
+            <p>Optics was hotly contested: was light a stream of particles (as Descartes and later Newton argued) or a pulse through a medium? Snell and Descartes had described refraction, but the underlying mechanism remained mysterious.</p>
+            <p>Precision measurement was primitive. Navigators desperately needed accurate clocks for longitude at sea, and astronomers needed them to time celestial events.</p>
+        </div>
+        <div>
+            <h3>World Context</h3>
+            <p>The <span class="accent-amber">Dutch Golden Age</span> made the Republic Europe's wealthiest nation. Leiden and Amsterdam were centers of lens-grinding, printing, and free inquiry.</p>
+            <p>The <span class="accent-purple">Thirty Years' War</span> ended in 1648, reshaping Europe. France under Louis XIV rose to dominance and invested in science as a tool of prestige.</p>
+            <p>The <span class="accent-rose">Revocation of the Edict of Nantes</span> (1685) drove Huygens, a Protestant, back to The Hague from Paris, ending his most productive collaborative period.</p>
+            <p>The <span class="accent-blue">Royal Society</span> (1660) and <span class="accent-blue">Acad&eacute;mie</span> (1666) institutionalized science for the first time.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Core Contribution #1 - Wave Theory -->
+<section>
+    <span class="section-number">04 &mdash; WAVE THEORY OF LIGHT</span>
+    <h2>Huygens' Principle</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Huygens proposed that light propagates as a <span class="accent">wave through a luminiferous aether</span>, with every point on an advancing wavefront serving as a source of secondary spherical wavelets.</p>
+            <p>The new wavefront is the <span class="accent">envelope</span> (tangent surface) of all these secondary wavelets. This elegantly explains both reflection and refraction without invoking particles.</p>
+            <p>Critically, it predicted that light travels <em>slower</em> in denser media &mdash; the opposite of Newton's corpuscular prediction &mdash; a claim vindicated by Foucault in 1850.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 400 280" style="width:100%;">
+                    <!-- Incident wavefronts -->
+                    <line x1="20" y1="40" x2="20" y2="240" stroke="#3ec9b0" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="60" y1="40" x2="60" y2="240" stroke="#3ec9b0" stroke-width="1.5" opacity="0.5"/>
+                    <line x1="100" y1="40" x2="100" y2="240" stroke="#3ec9b0" stroke-width="1.5" opacity="0.7"/>
+                    <!-- Source points on wavefront -->
+                    <circle cx="100" cy="80" r="3" fill="#3ec9b0"/>
+                    <circle cx="100" cy="140" r="3" fill="#3ec9b0"/>
+                    <circle cx="100" cy="200" r="3" fill="#3ec9b0"/>
+                    <!-- Secondary wavelets -->
+                    <circle cx="100" cy="80" r="50" fill="none" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+                    <circle cx="100" cy="140" r="50" fill="none" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+                    <circle cx="100" cy="200" r="50" fill="none" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+                    <!-- Envelope / new wavefront -->
+                    <line x1="150" y1="30" x2="150" y2="250" stroke="#d4a053" stroke-width="2.5"/>
+                    <!-- Arrow showing propagation -->
+                    <line x1="180" y1="140" x2="250" y2="140" stroke="#3ec9b0" stroke-width="1.5" marker-end="url(#arrowH)"/>
+                    <defs><marker id="arrowH" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3ec9b0"/></marker></defs>
+                    <!-- Labels -->
+                    <text x="30" y="265" fill="#6a6a7a" font-size="11" font-family="DM Sans">Wavefronts</text>
+                    <text x="108" y="265" fill="#4ecca3" font-size="11" font-family="DM Sans">Secondary wavelets</text>
+                    <text x="260" y="145" fill="#d4a053" font-size="11" font-family="DM Sans">New wavefront</text>
+                    <text x="260" y="162" fill="#d4a053" font-size="10" font-family="DM Sans">(envelope)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Wave Theory Deeper Dive -->
+<section>
+    <span class="section-number">05 &mdash; WAVE THEORY DEEPER DIVE</span>
+    <h2>Refraction &amp; Double Refraction</h2>
+    <div class="two-col">
+        <div>
+            <h3>Snell's Law Derived</h3>
+            <p>By assuming wavefronts travel slower in denser media, Huygens derived <code>n1 sin&theta;1 = n2 sin&theta;2</code> geometrically. Each wavelet on the boundary propagates at the new medium's speed, tilting the envelope and bending the ray.</p>
+            <p>This was the first <em>mechanistic</em> explanation of refraction, replacing Descartes' flawed tennis-ball analogy.</p>
+        </div>
+        <div>
+            <h3>Iceland Spar Mystery</h3>
+            <p>Calcite crystals produce two refracted images. Huygens modeled the "ordinary" ray with spherical wavelets and the <span class="accent">"extraordinary" ray with ellipsoidal wavelets</span>, correctly predicting the geometry of both.</p>
+            <p>This was arguably the first hint of <span class="accent-purple">polarization</span>, though Huygens lacked the concept. It would take Young and Fresnel, over a century later, to complete the picture with transverse waves.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"Each particle of the matter in which a wave proceeds not only communicates its motion to the next particle but also to all the others which touch it and resist its movement."</p>
+        <span class="attribution">&mdash; Christiaan Huygens, Trait&eacute; de la Lumi&egrave;re (1690)</span>
+    </div>
+</section>
+
+<!-- Slide 7: Core Contribution #2 - Pendulum Clock -->
+<section>
+    <span class="section-number">06 &mdash; PENDULUM CLOCK</span>
+    <h2>Horologium Oscillatorium</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Galileo recognized the pendulum's isochrony, but <span class="accent">Huygens built it</span>. His 1656 clock achieved accuracy of <span class="accent">10 seconds per day</span> &mdash; a tenfold improvement over existing mechanisms.</p>
+            <p>He proved that a circular pendulum is <em>not</em> truly isochronous &mdash; its period varies with amplitude. The perfect curve is the <span class="accent-amber">cycloid</span>: the path traced by a point on a rolling circle.</p>
+            <p>He showed that the evolute of a cycloid is another cycloid, enabling him to constrain the pendulum between cycloidal "cheeks" for perfect timekeeping.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 300" style="width:100%;">
+                    <!-- Pivot -->
+                    <rect x="175" y="15" width="30" height="8" rx="2" fill="#2a2a3a" stroke="#3ec9b0" stroke-width="1"/>
+                    <!-- Cycloidal cheeks -->
+                    <path d="M190 23 Q170 60 160 100 Q155 120 160 100" fill="none" stroke="#d4a053" stroke-width="2" stroke-dasharray="4,3"/>
+                    <path d="M190 23 Q210 60 220 100 Q225 120 220 100" fill="none" stroke="#d4a053" stroke-width="2" stroke-dasharray="4,3"/>
+                    <!-- String / pendulum arm -->
+                    <line x1="190" y1="23" x2="190" y2="220" stroke="#9a9a9a" stroke-width="1.5"/>
+                    <!-- Cycloidal path of bob -->
+                    <path d="M120 200 Q155 250 190 260 Q225 250 260 200" fill="none" stroke="#3ec9b0" stroke-width="1.5" opacity="0.5"/>
+                    <!-- Bob positions -->
+                    <circle cx="135" cy="210" r="6" fill="none" stroke="#3ec9b0" stroke-width="1" opacity="0.3"/>
+                    <circle cx="190" cy="260" r="6" fill="none" stroke="#3ec9b0" stroke-width="1" opacity="0.3"/>
+                    <circle cx="190" cy="220" r="12" fill="#3ec9b0" opacity="0.8"/>
+                    <!-- Labels -->
+                    <text x="228" y="80" fill="#d4a053" font-size="11" font-family="DM Sans">Cycloidal cheeks</text>
+                    <text x="265" y="210" fill="#3ec9b0" font-size="11" font-family="DM Sans">Cycloidal path</text>
+                    <text x="140" y="290" fill="#6a6a7a" font-size="10" font-family="JetBrains Mono">T = 2&pi;&radic;(l/g)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Pendulum Clock Deeper Dive -->
+<section>
+    <span class="section-number">07 &mdash; HOROLOGY DEEPER DIVE</span>
+    <h2>Mechanics &amp; the Longitude Problem</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Centrifugal Force</h4>
+            <p>In <em>Horologium Oscillatorium</em>, Huygens derived the formula for centrifugal force: <code>F = mv&sup2;/r</code>. This was the first correct quantitative treatment of circular motion, and Newton later used it as a foundation for his derivation of gravitational force.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Longitude Quest</h4>
+            <p>Huygens designed marine pendulum clocks for the Dutch East India Company, tested on Atlantic voyages in the 1660s. Though the sea's motion defeated the pendulum, the attempt drove innovation that eventually led to Harrison's chronometer a century later.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Center of Oscillation</h4>
+            <p>He solved the compound pendulum problem: how to find the equivalent simple pendulum length for any rigid body. This required summing moments of inertia &mdash; a concept he essentially invented before the term existed.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Collision Laws</h4>
+            <p>Huygens formulated correct laws of elastic collision in 1656, including conservation of kinetic energy (vis viva). Published posthumously, these preceded Leibniz's systematic treatment and contradicted Descartes' incorrect rules.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Core Contribution #3 - Saturn -->
+<section>
+    <span class="section-number">08 &mdash; ASTRONOMY</span>
+    <h2>Saturn's Rings &amp; Titan</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Ring Hypothesis</h3>
+            <p>Since Galileo's first observation in 1610, Saturn's changing appearance mystified astronomers. Some saw "ears," others saw nothing at all when the rings were edge-on.</p>
+            <p>In <em>Systema Saturnium</em> (1659), Huygens declared: Saturn is <span class="accent">"surrounded by a thin, flat ring, nowhere touching, inclined to the ecliptic."</span> He showed how the ring's tilt explained every observed configuration.</p>
+        </div>
+        <div>
+            <h3>Discovery of Titan</h3>
+            <p>On <span class="accent-amber">25 March 1655</span>, using a 50-power telescope with lenses he ground himself, Huygens spotted a bright point near Saturn that moved with the planet &mdash; the first moon discovered since Galileo's four Jovian satellites.</p>
+            <p>He named it simply "Saturni Luna." It was the <span class="accent-blue">largest moon in the solar system known at the time</span>, and remains the only moon with a dense atmosphere, as the Cassini-Huygens mission confirmed in 2005.</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 0.3em;">
+        <span class="tag green">Telescopy</span>
+        <span class="tag amber">Lens Grinding</span>
+        <span class="tag blue">Planetary Science</span>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09 &mdash; METHOD</span>
+    <h2>The Huygens Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Observe</h4>
+            <p>Grind lenses,<br/>build instruments</p>
+        </div>
+        <div class="process-arrow">&rsaquo;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Hypothesize</h4>
+            <p>Mechanical model<br/>of the phenomenon</p>
+        </div>
+        <div class="process-arrow">&rsaquo;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Mathematize</h4>
+            <p>Derive quantitative<br/>predictions</p>
+        </div>
+        <div class="process-arrow">&rsaquo;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Build</h4>
+            <p>Construct devices<br/>that embody the theory</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.5em;">
+        <div class="card">
+            <h4 class="accent">Cartesian Mechanism</h4>
+            <p>Huygens insisted on contact-action explanations: no mysterious forces at a distance. Light waves, collisions, centrifugal force &mdash; all explained by matter pushing matter. This put him at odds with Newton's gravity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Craftsman-Scientist</h4>
+            <p>Unlike many contemporaries who relied on instrument-makers, Huygens ground his own lenses, built his own clocks, and designed his own telescopes. Theory and practice were inseparable for him.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10 &mdash; CONNECTIONS</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" style="width:100%;">
+            <!-- Central node -->
+            <circle cx="350" cy="170" r="32" fill="none" stroke="#3ec9b0" stroke-width="2.5"/>
+            <text x="350" y="167" text-anchor="middle" fill="#3ec9b0" font-size="11" font-family="Playfair Display" font-weight="700">Christiaan</text>
+            <text x="350" y="182" text-anchor="middle" fill="#3ec9b0" font-size="11" font-family="Playfair Display" font-weight="700">Huygens</text>
+            <!-- Nodes and connections -->
+            <!-- Newton -->
+            <line x1="382" y1="170" x2="530" y2="80" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,3"/>
+            <circle cx="550" cy="72" r="24" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="550" y="75" text-anchor="middle" fill="#cf7272" font-size="10" font-family="DM Sans">Newton</text>
+            <text x="610" y="60" fill="#6a6a7a" font-size="8" font-family="DM Sans">Rival on light</text>
+            <!-- Leibniz -->
+            <line x1="382" y1="170" x2="540" y2="170" stroke="#9b72cf" stroke-width="1.2"/>
+            <circle cx="560" cy="170" r="24" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="560" y="173" text-anchor="middle" fill="#9b72cf" font-size="10" font-family="DM Sans">Leibniz</text>
+            <text x="610" y="185" fill="#6a6a7a" font-size="8" font-family="DM Sans">Mentored in Paris</text>
+            <!-- Descartes -->
+            <line x1="318" y1="170" x2="150" y2="80" stroke="#5b8cd4" stroke-width="1.2"/>
+            <circle cx="130" cy="72" r="24" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="130" y="75" text-anchor="middle" fill="#5b8cd4" font-size="10" font-family="DM Sans">Descartes</text>
+            <text x="50" y="55" fill="#6a6a7a" font-size="8" font-family="DM Sans">Family friend, influence</text>
+            <!-- Cassini -->
+            <line x1="350" y1="202" x2="350" y2="290" stroke="#d4a053" stroke-width="1.2"/>
+            <circle cx="350" cy="310" r="24" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="350" y="313" text-anchor="middle" fill="#d4a053" font-size="10" font-family="DM Sans">Cassini</text>
+            <text x="410" y="310" fill="#6a6a7a" font-size="8" font-family="DM Sans">Paris Observatory colleague</text>
+            <!-- Hooke -->
+            <line x1="382" y1="185" x2="540" y2="265" stroke="#4ecca3" stroke-width="1"/>
+            <circle cx="555" cy="275" r="24" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="555" y="278" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Hooke</text>
+            <text x="605" y="275" fill="#6a6a7a" font-size="8" font-family="DM Sans">Wave ally</text>
+            <!-- Mersenne -->
+            <line x1="318" y1="155" x2="155" y2="170" stroke="#d4a053" stroke-width="1"/>
+            <circle cx="135" cy="170" r="24" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="135" y="173" text-anchor="middle" fill="#d4a053" font-size="10" font-family="DM Sans">Mersenne</text>
+            <text x="55" y="195" fill="#6a6a7a" font-size="8" font-family="DM Sans">Early patron</text>
+            <!-- Papin -->
+            <line x1="318" y1="185" x2="160" y2="270" stroke="#9a9a9a" stroke-width="1"/>
+            <circle cx="145" cy="280" r="24" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+            <text x="145" y="283" text-anchor="middle" fill="#9a9a9a" font-size="10" font-family="DM Sans">Papin</text>
+            <text x="65" y="305" fill="#6a6a7a" font-size="8" font-family="DM Sans">Assistant in Paris</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">11 &mdash; CONTROVERSY</span>
+    <h2>Waves vs. Corpuscles</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Great Debate</h3>
+            <p>Newton's <em>Opticks</em> (1704) championed a corpuscular theory of light, backed by his immense authority. Huygens' wave model, published 14 years earlier, was largely sidelined in England for over a century.</p>
+            <p>Newton argued that light's straight-line propagation proved it was made of particles &mdash; waves should bend around corners. Huygens had no satisfactory answer, lacking the concept of wavelength being far smaller than obstacles.</p>
+            <p>Huygens also rejected Newton's gravitational theory as invoking <span class="accent-rose">"occult qualities"</span> &mdash; action at a distance violated the mechanical philosophy he held sacred. He proposed vortex mechanisms instead.</p>
+        </div>
+        <div>
+            <div class="quote-box">
+                <p>"I am not at all satisfied with his theory of the cause of colours... nor with the way he treats gravity as an innate quality of matter."</p>
+                <span class="attribution">&mdash; Huygens on Newton's Principia, letter to Leibniz (1690)</span>
+            </div>
+            <div class="card" style="margin-top: 0.5em;">
+                <h4 class="accent-green">Vindication</h4>
+                <p>Young's double-slit experiment (1801) and Fresnel's diffraction theory (1818) decisively proved light's wave nature. Foucault (1850) confirmed light slows in water. Huygens was right &mdash; though the "aether" he invoked was not.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12 &mdash; LEGACY</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Huygens-Fresnel Principle</h4>
+            <p>Fresnel added interference to Huygens' wavelet construction, creating the full theory of diffraction. This Huygens-Fresnel principle remains the basis of physical optics and is used in antenna design, seismology, and holography.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Foundation of Horology</h4>
+            <p>Every mechanical clock since 1656 descends from Huygens' design. His analysis of harmonic oscillation prefigured the concept of simple harmonic motion central to all of physics, from quantum mechanics to electrical engineering.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Centripetal Mechanics</h4>
+            <p>His quantitative treatment of circular motion provided Newton with the mathematical tool needed to connect orbital motion to gravitational force. Without <code>F = mv&sup2;/r</code>, the Principia would lack its keystone argument.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Titan &amp; Planetary Science</h4>
+            <p>The ESA's Huygens probe, carried by Cassini, landed on Titan in 2005 &mdash; the most distant landing in history. It revealed methane lakes and a nitrogen atmosphere, vindicating Huygens' discovery 350 years later.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13 &mdash; APPLICATIONS</span>
+    <h2>Applications in Science &amp; Engineering</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Fiber Optics</h4>
+            <p>Huygens' principle governs how light propagates in optical fibers, enabling the telecommunications infrastructure that carries the modern internet.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Seismic Imaging</h4>
+            <p>Geophysicists use wavefront reconstruction based on Huygens' wavelets to image subsurface structures for oil exploration and earthquake study.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Acoustic Design</h4>
+            <p>Concert hall acoustics, ultrasound imaging, and sonar all employ wavelet superposition directly descended from Huygens' construction.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Precision Timekeeping</h4>
+            <p>From GPS satellites to particle accelerators, precision timing traces its lineage through Harrison's chronometer back to Huygens' pendulum.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Holography</h4>
+            <p>Gabor's holography (Nobel 1971) reconstructs wavefronts using Huygens' principle, enabling 3D imaging in security, art, and data storage.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Antenna Arrays</h4>
+            <p>Phased array radars and 5G beamforming steer radio waves by controlling the phase of secondary sources &mdash; a direct application of Huygens' wavelets at radio frequencies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14 &mdash; TIMELINE</span>
+    <h2>Life &amp; Work</h2>
+    <div style="max-width: 85%; margin: 0.3em auto;">
+        <svg viewBox="0 0 700 30" style="width:100%; margin-bottom: 0.3em;">
+            <line x1="20" y1="15" x2="680" y2="15" stroke="#2a2a3a" stroke-width="2"/>
+            <circle cx="40" cy="15" r="4" fill="#3ec9b0"/>
+            <circle cx="140" cy="15" r="4" fill="#3ec9b0"/>
+            <circle cx="240" cy="15" r="4" fill="#d4a053"/>
+            <circle cx="340" cy="15" r="4" fill="#3ec9b0"/>
+            <circle cx="440" cy="15" r="4" fill="#9b72cf"/>
+            <circle cx="540" cy="15" r="4" fill="#5b8cd4"/>
+            <circle cx="640" cy="15" r="4" fill="#cf7272"/>
+            <text x="40" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1629</text>
+            <text x="140" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1645</text>
+            <text x="240" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1655</text>
+            <text x="340" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1666</text>
+            <text x="440" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1673</text>
+            <text x="540" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1690</text>
+            <text x="640" y="10" text-anchor="middle" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">1695</text>
+        </svg>
+        <div class="timeline-item">
+            <span class="year">1629</span>
+            <div class="event"><strong>Born in The Hague</strong>Son of diplomat Constantijn Huygens; childhood steeped in art, music, and natural philosophy.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1645</span>
+            <div class="event"><strong>University of Leiden</strong>Studies mathematics under van Schooten; masters Cartesian geometry and Archimedean methods.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1655</span>
+            <div class="event"><strong>Discovers Titan &amp; Saturn's Ring</strong>Grinds superior lenses, identifies Saturn's moon and correctly explains the ring system.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1666</span>
+            <div class="event"><strong>Joins Acad&eacute;mie Royale</strong>Moves to Paris as the institution's leading foreign member with a royal pension from Louis XIV.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1673</span>
+            <div class="event"><strong>Horologium Oscillatorium Published</strong>Masterwork on pendulum theory, centrifugal force, and the evolute of curves.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1690</span>
+            <div class="event"><strong>Trait&eacute; de la Lumi&egrave;re</strong>Publishes the wave theory of light, including explanations of reflection, refraction, and double refraction.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1695</span>
+            <div class="event"><strong>Death in The Hague</strong>Dies on 8 July, largely isolated after returning from Paris. His wave theory awaits vindication.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15 &mdash; FURTHER READING</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Huygens: The Man Behind the Principle</h4>
+            <p><span class="accent-amber">C.D. Andriesse</span> &mdash; The definitive modern biography, tracing Huygens' life from Dutch aristocracy through Paris glory to final isolation. Rich in scientific and personal detail.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Pendulum: L&eacute;on Foucault and the Triumph of Science</h4>
+            <p><span class="accent-amber">Amir Aczel</span> &mdash; Explores the lineage from Huygens' pendulum clock to Foucault's famous demonstration, connecting horology to the proof of Earth's rotation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Treatise on Light</h4>
+            <p><span class="accent-amber">Christiaan Huygens (trans. S.P. Thompson)</span> &mdash; Huygens' own masterwork in English translation. Remarkably clear and readable, a model of scientific reasoning.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">The Longitude Prize</h4>
+            <p><span class="accent-amber">Dava Sobel</span> &mdash; While focused on Harrison, this bestseller gives essential context on the longitude problem that Huygens' marine clocks first attempted to solve.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Titan Unveiled</h4>
+            <p><span class="accent-amber">Ralph Lorenz &amp; Jacqueline Mitton</span> &mdash; The story of the Cassini-Huygens mission to Titan, connecting 21st-century planetary science to Huygens' 1655 discovery.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">A History of the Theories of Aether and Electricity</h4>
+            <p><span class="accent-amber">E.T. Whittaker</span> &mdash; Classic history tracing the evolution from Huygens' wave pulses through the electromagnetic theory of Maxwell. Essential context for Huygens' place in optics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#3ec9b0" stroke-width="0.8" opacity="0.4"/>
+            <g opacity="0.35">
+                <path d="M100 10 Q115 55 100 100 Q85 55 100 10" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M190 100 Q145 115 100 100 Q145 85 190 100" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M100 190 Q85 145 100 100 Q115 145 100 190" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M10 100 Q55 85 100 100 Q55 115 10 100" fill="none" stroke="#3ec9b0" stroke-width="0.8"/>
+                <path d="M36 36 Q68 68 100 100 Q68 68 36 36" fill="none" stroke="#4ecca3" stroke-width="0.6"/>
+                <path d="M164 36 Q132 68 100 100 Q132 68 164 36" fill="none" stroke="#4ecca3" stroke-width="0.6"/>
+                <path d="M164 164 Q132 132 100 100 Q132 132 164 164" fill="none" stroke="#4ecca3" stroke-width="0.6"/>
+                <path d="M36 164 Q68 132 100 100 Q68 132 36 164" fill="none" stroke="#4ecca3" stroke-width="0.6"/>
+            </g>
+            <!-- Wavefront rings -->
+            <circle cx="100" cy="100" r="25" fill="none" stroke="#3ec9b0" stroke-width="1" opacity="0.5"/>
+            <circle cx="100" cy="100" r="5" fill="#3ec9b0" opacity="0.7"/>
+        </svg>
+    </div>
+    <div class="quote-box" style="max-width: 65%;">
+        <p>"The world is my country, science my religion."</p>
+        <span class="attribution">&mdash; Christiaan Huygens</span>
+    </div>
+    <div class="separator" style="margin-top: 1em;"></div>
+    <p class="subtitle" style="margin-top: 0.6em;">1629 &ndash; 1695 &nbsp;&bull;&nbsp; The Hague &amp; Paris</p>
+    <p style="text-align: center; font-size: 0.42em; color: var(--text-muted); margin-top: 0.5em;">He gave light its wave, time its precision, and Saturn its ring.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

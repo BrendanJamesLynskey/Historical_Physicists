@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Faraday - The Father of Electromagnetism</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #4ecca3;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.6">
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(0 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(30 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(60 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(90 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(120 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(150 100 100)"/>
+            </g>
+            <circle cx="100" cy="100" r="8" fill="#4ecca3" opacity="0.7"/>
+        </svg>
+    </div>
+    <h1>Michael Faraday</h1>
+    <p class="subtitle">1791 &ndash; 1867 &middot; London, England</p>
+    <div class="separator"></div>
+    <p style="max-width:70%;margin:0.4em auto;text-align:center;">Self-taught experimentalist who transformed our understanding of electricity and magnetism, introducing the field concept that would reshape all of physics.</p>
+    <div style="margin-top:0.6em;text-align:center;">
+        <span class="tag green">Electromagnetic Induction</span>
+        <span class="tag amber">Electrolysis</span>
+        <span class="tag blue">Field Theory</span>
+        <span class="tag rose">Diamagnetism</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life</h2>
+    <div class="two-col">
+        <div>
+            <p>Born on 22 September 1791 in Newington Butts, Surrey, to a poor blacksmith family. Faraday received only the most basic formal education, learning to read, write, and do simple arithmetic at a local church school.</p>
+            <p>At age 14, he was apprenticed to bookbinder George Riebau, where he spent seven years. During this time, he read voraciously, particularly drawn to Jane Marcet's <em>Conversations on Chemistry</em> and the electricity articles in the <em>Encyclopaedia Britannica</em>.</p>
+            <p>In 1812, a customer gave him tickets to attend lectures by Sir Humphry Davy at the Royal Institution. Faraday took meticulous notes, bound them, and sent them to Davy as a job application. By March 1813, he was hired as Davy's laboratory assistant.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent">Humble Origins</h4>
+                <p>Son of a blacksmith, third of four children. The family often struggled to afford food; Faraday later recalled being given a single loaf of bread to last an entire week.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">The Bookbinder's Workshop</h4>
+                <p>His apprenticeship (1805-1812) was his true university. He built a simple electrostatic generator and a Leyden jar from household materials.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Sandemanian Faith</h4>
+                <p>A devout member of the Sandemanian Church, a small Christian sect. His faith shaped his conviction that nature's laws must be unified and elegant.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Royal Institution (1813-1867)</h4>
+            <p>Rose from laboratory assistant to Fullerian Professor of Chemistry. The RI became Faraday's lifelong scientific home, where he delivered his famous Friday Evening Discourses and Christmas Lectures for children.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">European Tour (1813-1815)</h4>
+            <p>Traveled with Humphry Davy across France, Italy, and Switzerland as his assistant. Met Volta, Amp&egrave;re, and other leading scientists, though Davy's wife treated him as a servant.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Electromagnetic Rotation (1821)</h4>
+            <p>Demonstrated the first device converting electrical energy into continuous mechanical motion &mdash; the principle behind the electric motor. This strained his relationship with Davy, who suspected plagiarism from William Wollaston.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Great Experimental Period (1831-1845)</h4>
+            <p>Published the landmark <em>Experimental Researches in Electricity</em> in three volumes, documenting over 16,000 meticulously numbered experiments across thirty series of papers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>The Age of Electricity</h3>
+            <p>Faraday worked during the first Industrial Revolution, when Britain was transforming from an agrarian society into a manufacturing powerhouse. Gas lighting was replacing candles; steam engines powered factories and railways.</p>
+            <p>In electricity, Volta's pile (1800) had opened entirely new possibilities. &Oslash;rsted discovered in 1820 that a current-carrying wire deflected a compass needle, and Amp&egrave;re quickly developed a mathematical theory of electrodynamics. The challenge was: could magnetism produce electricity?</p>
+            <p>The scientific establishment was dominated by mathematically trained gentlemen. Faraday, with no formal mathematics, was a radical outsider whose geometric, intuitive approach was initially dismissed by Continental theorists.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-blue">Key Predecessors</h4>
+                <p>&Oslash;rsted (1820): current produces magnetism. Amp&egrave;re: mathematical force law between currents. Arago: magnetization by current.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">Social Barriers</h4>
+                <p>No university degree, working-class origins. Faraday navigated a world where birth and education determined scientific credibility.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">Victorian Science</h4>
+                <p>The Royal Society and Royal Institution were central hubs. Patronage, public lectures, and demonstrations were key to funding and reputation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 - Electromagnetic Induction -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Electromagnetic Induction</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>On 29 August 1831, Faraday discovered that a changing magnetic field induces an electromotive force (EMF) in a conductor. Using an iron ring with two coils, he observed a transient current in one coil when current was switched on or off in the other.</p>
+            <p>The key insight: it is the <span class="accent">change</span> in magnetic flux, not the mere presence of magnetism, that produces electricity. This principle, later formalized as Faraday's law, is the foundation of all electrical generators and transformers.</p>
+            <p>Within weeks, he demonstrated induction with a bar magnet thrust into a solenoid, and with a spinning copper disc between magnetic poles (the "Faraday disc"), creating the first homopolar generator.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Iron ring (toroid) -->
+                    <ellipse cx="160" cy="120" rx="100" ry="70" fill="none" stroke="#6a6a7a" stroke-width="12" opacity="0.3"/>
+                    <!-- Coil A (left) -->
+                    <g stroke="#4ecca3" stroke-width="2" fill="none">
+                        <path d="M70,70 Q55,80 55,100 Q55,120 70,130 Q85,140 85,120 Q85,100 70,90 Q55,100 55,120"/>
+                        <path d="M80,65 Q65,75 65,95 Q65,115 80,125"/>
+                    </g>
+                    <text x="60" y="165" fill="#4ecca3" font-family="DM Sans" font-size="12" text-anchor="middle">Coil A</text>
+                    <text x="60" y="180" fill="#9a9a9a" font-family="DM Sans" font-size="9" text-anchor="middle">(Primary)</text>
+                    <!-- Coil B (right) -->
+                    <g stroke="#d4a053" stroke-width="2" fill="none">
+                        <path d="M250,70 Q235,80 235,100 Q235,120 250,130 Q265,140 265,120 Q265,100 250,90 Q235,100 235,120"/>
+                        <path d="M240,65 Q255,75 255,95 Q255,115 240,125"/>
+                    </g>
+                    <text x="250" y="165" fill="#d4a053" font-family="DM Sans" font-size="12" text-anchor="middle">Coil B</text>
+                    <text x="250" y="180" fill="#9a9a9a" font-family="DM Sans" font-size="9" text-anchor="middle">(Secondary)</text>
+                    <!-- Magnetic flux arrows -->
+                    <g fill="#9b72cf" opacity="0.7">
+                        <polygon points="130,80 140,76 138,82"/>
+                        <polygon points="190,80 200,76 198,82"/>
+                        <polygon points="190,160 180,164 182,158"/>
+                        <polygon points="130,160 120,164 122,158"/>
+                    </g>
+                    <text x="160" y="105" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" text-anchor="middle">Magnetic Flux</text>
+                    <!-- Battery/switch -->
+                    <line x1="45" y1="55" x2="45" y2="30" stroke="#4ecca3" stroke-width="1.5"/>
+                    <line x1="45" y1="30" x2="20" y2="30" stroke="#4ecca3" stroke-width="1.5"/>
+                    <rect x="10" y="25" width="15" height="10" fill="none" stroke="#4ecca3" stroke-width="1"/>
+                    <text x="18" y="50" fill="#4ecca3" font-family="DM Sans" font-size="8">Switch</text>
+                    <!-- Galvanometer -->
+                    <line x1="265" y1="55" x2="295" y2="55" stroke="#d4a053" stroke-width="1.5"/>
+                    <circle cx="300" cy="55" r="12" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+                    <text x="300" y="59" fill="#d4a053" font-family="DM Sans" font-size="9" text-anchor="middle">G</text>
+                    <!-- Label -->
+                    <text x="160" y="220" fill="#e8e6e3" font-family="Playfair Display" font-size="13" text-anchor="middle">Faraday's Iron Ring Experiment (1831)</text>
+                    <text x="160" y="240" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle">EMF = -d&Phi;/dt</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Induction Deeper Dive -->
+<section>
+    <span class="section-number">05</span>
+    <h2>Induction: The Deeper Picture</h2>
+    <div class="quote-box">
+        <p>"I have long held an opinion, almost amounting to conviction... that the various forms under which the forces of matter are made manifest have one common origin."</p>
+        <span class="attribution">&mdash; Michael Faraday, Experimental Researches in Electricity, 1831</span>
+    </div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Faraday's Law</h4>
+            <p>The induced EMF in a closed loop equals the negative rate of change of magnetic flux through the loop: <code>EMF = -d&Phi;/dt</code>. The negative sign (Lenz's law) ensures the induced current opposes the change causing it, conserving energy.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The Faraday Disc</h4>
+            <p>A copper disc rotating between magnetic poles produced a continuous (DC) current &mdash; the first homopolar generator. Unlike modern generators, it produces low voltage but can deliver enormous currents.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Mutual Induction</h4>
+            <p>Two circuits are coupled: changing current in one induces EMF in the other. This is the operating principle of every transformer, from power grid step-up units to the charger in your phone.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Self-Induction</h4>
+            <p>Faraday noticed a spark when disconnecting a long coil. The coil's own changing field induces a "back-EMF" in itself. Joseph Henry independently discovered this property, leading to the unit of inductance (the henry).</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 - Laws of Electrolysis -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Laws of Electrolysis</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Between 1833 and 1834, Faraday established that the amount of chemical change at an electrode is directly proportional to the quantity of electricity passed, and that for a given quantity of charge, different substances are deposited in proportion to their chemical equivalent weights.</p>
+            <p>He coined the terminology still used today: <span class="accent">electrode</span>, <span class="accent-amber">anode</span>, <span class="accent-rose">cathode</span>, <span class="accent-purple">ion</span>, and <span class="accent-blue">electrolyte</span> &mdash; terms suggested by William Whewell.</p>
+            <p>These laws hinted powerfully at the atomic nature of electric charge, decades before the electron was discovered.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Electrolysis vessel -->
+                    <rect x="60" y="60" width="180" height="130" rx="6" fill="rgba(78,204,163,0.05)" stroke="#2a2a3a" stroke-width="2"/>
+                    <text x="150" y="52" fill="#6a6a7a" font-family="DM Sans" font-size="10" text-anchor="middle">Electrolytic Cell</text>
+                    <!-- Solution -->
+                    <rect x="62" y="90" width="176" height="98" fill="rgba(91,140,212,0.08)" rx="4"/>
+                    <text x="150" y="185" fill="#5b8cd4" font-family="JetBrains Mono" font-size="9" text-anchor="middle">Electrolyte Solution</text>
+                    <!-- Anode -->
+                    <rect x="90" y="70" width="12" height="100" fill="#d4a053" opacity="0.7" rx="2"/>
+                    <text x="96" y="198" fill="#d4a053" font-family="DM Sans" font-size="10" text-anchor="middle">Anode (+)</text>
+                    <!-- Cathode -->
+                    <rect x="198" y="70" width="12" height="100" fill="#cf7272" opacity="0.7" rx="2"/>
+                    <text x="204" y="198" fill="#cf7272" font-family="DM Sans" font-size="10" text-anchor="middle">Cathode (-)</text>
+                    <!-- Ions moving -->
+                    <g font-family="JetBrains Mono" font-size="9">
+                        <text x="135" y="110" fill="#4ecca3">Cu2+</text>
+                        <text x="155" y="135" fill="#4ecca3">Cu2+</text>
+                        <text x="140" y="160" fill="#9b72cf">SO4 2-</text>
+                    </g>
+                    <!-- Arrows -->
+                    <line x1="145" y1="112" x2="170" y2="112" stroke="#4ecca3" stroke-width="1" marker-end="url(#arrowG)"/>
+                    <line x1="170" y1="157" x2="130" y2="157" stroke="#9b72cf" stroke-width="1" marker-end="url(#arrowP)"/>
+                    <defs>
+                        <marker id="arrowG" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><path d="M0,0 L6,2 L0,4" fill="#4ecca3"/></marker>
+                        <marker id="arrowP" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><path d="M0,0 L6,2 L0,4" fill="#9b72cf"/></marker>
+                    </defs>
+                    <!-- Battery connection -->
+                    <line x1="96" y1="70" x2="96" y2="35" stroke="#d4a053" stroke-width="1.5"/>
+                    <line x1="204" y1="70" x2="204" y2="35" stroke="#cf7272" stroke-width="1.5"/>
+                    <line x1="96" y1="35" x2="140" y2="35" stroke="#d4a053" stroke-width="1.5"/>
+                    <line x1="204" y1="35" x2="160" y2="35" stroke="#cf7272" stroke-width="1.5"/>
+                    <rect x="140" y="28" width="20" height="14" rx="3" fill="none" stroke="#e8e6e3" stroke-width="1.5"/>
+                    <text x="150" y="39" fill="#e8e6e3" font-family="DM Sans" font-size="8" text-anchor="middle">V</text>
+                    <!-- Laws -->
+                    <text x="150" y="225" fill="#e8e6e3" font-family="JetBrains Mono" font-size="9" text-anchor="middle">m = (Q/F) &times; (M/z)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Electrolysis Deeper Dive -->
+<section>
+    <span class="section-number">07</span>
+    <h2>Electrolysis: Quantifying Chemistry</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">First Law</h4>
+            <p>The mass of substance deposited at an electrode is directly proportional to the quantity of electric charge passed: <code>m &prop; Q</code>. This established a precise, quantitative link between electricity and chemical change.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Second Law</h4>
+            <p>For the same quantity of charge, different substances are deposited in proportion to their equivalent weights: <code>m &prop; M/z</code>, where M is molar mass and z is the valence number.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The Faraday Constant</h4>
+            <p>F &asymp; 96,485 C/mol. The charge needed to deposit one mole of a monovalent substance. When later combined with Avogadro's number, it yields the elementary charge <code>e = F/N_A</code>.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Atomicity of Charge</h4>
+            <p>Faraday's laws implied that electricity comes in discrete, indivisible packets associated with atoms. This was among the earliest evidence for what we now call the electron, discovered by J.J. Thomson in 1897.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 - Field Concept -->
+<section>
+    <span class="section-number">08</span>
+    <h2>The Field Concept: Lines of Force</h2>
+    <p style="max-width:85%;margin:0.3em auto;text-align:center;">Faraday's most revolutionary and far-reaching idea: physical forces are not transmitted instantaneously across empty space (action at a distance), but propagate through a <span class="accent">field</span> that fills all of space and carries energy.</p>
+    <div class="diagram-container" style="max-width:60%;">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Bar magnet -->
+            <rect x="160" y="80" width="80" height="40" rx="4" fill="none" stroke="#e8e6e3" stroke-width="1.5"/>
+            <rect x="160" y="80" width="40" height="40" rx="4 0 0 4" fill="rgba(207,114,114,0.2)"/>
+            <rect x="200" y="80" width="40" height="40" rx="0 4 4 0" fill="rgba(91,140,212,0.2)"/>
+            <text x="180" y="105" fill="#cf7272" font-family="DM Sans" font-size="14" font-weight="700" text-anchor="middle">N</text>
+            <text x="220" y="105" fill="#5b8cd4" font-family="DM Sans" font-size="14" font-weight="700" text-anchor="middle">S</text>
+            <!-- Field lines -->
+            <g fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.6">
+                <path d="M160,100 Q100,100 80,60 Q70,30 120,20 Q200,5 280,20 Q330,30 320,60 Q300,100 240,100"/>
+                <path d="M160,100 Q110,100 95,75 Q80,45 130,35 Q200,20 270,35 Q320,45 305,75 Q290,100 240,100"/>
+                <path d="M160,100 Q120,100 110,85 Q100,70 140,60 Q200,45 260,60 Q300,70 290,85 Q280,100 240,100"/>
+                <path d="M160,100 Q120,100 110,115 Q100,130 140,140 Q200,155 260,140 Q300,130 290,115 Q280,100 240,100"/>
+                <path d="M160,100 Q110,100 95,125 Q80,155 130,165 Q200,180 270,165 Q320,155 305,125 Q290,100 240,100"/>
+                <path d="M160,100 Q100,100 80,140 Q70,170 120,180 Q200,195 280,180 Q330,170 320,140 Q300,100 240,100"/>
+            </g>
+        </svg>
+    </div>
+    <div class="card-grid cols-2" style="max-width:80%;">
+        <div class="card">
+            <h4 class="accent">Lines of Force</h4>
+            <p>Faraday visualized fields as bundles of lines stretching through space. The density of lines represents field strength; their direction shows the force on a test charge or pole. Iron filings on paper famously reveal these patterns.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">From Geometry to Physics</h4>
+            <p>Maxwell would later translate Faraday's geometric intuitions into precise differential equations. Einstein credited Faraday's field concept as the most profound change in physics since Newton.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09</span>
+    <h2>The Experimental Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Observe</h4>
+            <p>Notice a phenomenon with meticulous care</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-amber">Hypothesize</h4>
+            <p>Form an intuitive, geometric picture</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Design</h4>
+            <p>Build apparatus to isolate the effect</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-rose">Test</h4>
+            <p>Vary one parameter at a time, record everything</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-blue">Generalize</h4>
+            <p>Extract universal principle from specifics</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">The Laboratory Notebook</h4>
+            <p>Faraday numbered every experiment sequentially (over 16,000 entries across 30 years). His Diary is one of the great documents of science &mdash; precise, honest about failures, and filled with brilliant asides.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">No Mathematics</h4>
+            <p>Faraday thought in pictures, not equations. He compensated with extraordinary physical intuition. His non-mathematical field concept was initially dismissed by Continental physicists, until Maxwell proved it rigorous.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container" style="max-width:70%;">
+        <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="250" y1="100" x2="100" y2="50" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="250" y1="100" x2="400" y2="50" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="250" y1="100" x2="80" y2="180" stroke="#4ecca3" stroke-width="2" opacity="0.5"/>
+            <line x1="250" y1="100" x2="420" y2="180" stroke="#5b8cd4" stroke-width="2" opacity="0.5"/>
+            <line x1="250" y1="100" x2="150" y2="260" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="250" y1="100" x2="350" y2="260" stroke="#9b72cf" stroke-width="2" opacity="0.5"/>
+            <line x1="250" y1="100" x2="250" y2="260" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- Central node: Faraday -->
+            <circle cx="250" cy="100" r="28" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="2.5"/>
+            <text x="250" y="96" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700" text-anchor="middle">Michael</text>
+            <text x="250" y="108" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700" text-anchor="middle">Faraday</text>
+            <!-- Davy -->
+            <circle cx="100" cy="50" r="22" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="100" y="46" fill="#d4a053" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Humphry</text>
+            <text x="100" y="57" fill="#d4a053" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Davy</text>
+            <!-- Ampere -->
+            <circle cx="400" cy="50" r="22" fill="var(--bg-card)" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="400" y="46" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Andr&eacute;-Marie</text>
+            <text x="400" y="57" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Amp&egrave;re</text>
+            <!-- Whewell -->
+            <circle cx="80" cy="180" r="22" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="80" y="176" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">William</text>
+            <text x="80" y="187" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Whewell</text>
+            <!-- Maxwell -->
+            <circle cx="420" cy="180" r="22" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="2"/>
+            <text x="420" y="176" fill="#5b8cd4" font-family="DM Sans" font-size="9" font-weight="700" text-anchor="middle">James C.</text>
+            <text x="420" y="187" fill="#5b8cd4" font-family="DM Sans" font-size="9" font-weight="700" text-anchor="middle">Maxwell</text>
+            <!-- Thomson (Lord Kelvin) -->
+            <circle cx="150" cy="260" r="22" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="1.5"/>
+            <text x="150" y="256" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Lord</text>
+            <text x="150" y="267" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Kelvin</text>
+            <!-- Ada Lovelace -->
+            <circle cx="250" cy="260" r="22" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="1.5"/>
+            <text x="250" y="256" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Ada</text>
+            <text x="250" y="267" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Lovelace</text>
+            <!-- Thomson JJ -->
+            <circle cx="350" cy="260" r="22" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="350" y="256" fill="#9b72cf" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">J.J.</text>
+            <text x="350" y="267" fill="#9b72cf" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Thomson</text>
+        </svg>
+    </div>
+    <p style="text-align:center;max-width:80%;margin:0.2em auto;font-size:0.5em !important;">Whewell coined Faraday's terminology; Maxwell formalized the field concept; Thomson's electron vindicated electrolysis laws.</p>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Rivalry &amp; Controversy</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="accent-rose">Faraday vs. the Establishment</h3>
+            <p>Faraday's relationship with his mentor Humphry Davy became strained after the electromagnetic rotation discovery of 1821. Davy accused Faraday of stealing ideas from William Wollaston, and when Faraday was nominated for the Royal Society in 1824, Davy cast the sole opposing vote.</p>
+            <p>On the Continent, mathematical physicists like Amp&egrave;re and Weber favored action-at-a-distance theories. They viewed Faraday's "lines of force" as a qualitative fantasy, lacking rigorous mathematical foundation. It took Maxwell's genius to vindicate Faraday's vision.</p>
+            <p>Faraday also clashed with the priority claims of Joseph Henry, who independently discovered self-induction. Though both men handled the dispute graciously, it highlighted the competitive nature of 19th-century science.</p>
+        </div>
+        <div>
+            <div class="quote-box" style="margin-top:0.3em;">
+                <p>"The greatest discovery Davy ever made was Michael Faraday."</p>
+                <span class="attribution">&mdash; Often attributed to various contemporaries</span>
+            </div>
+            <div class="card" style="margin-top:0.5em;">
+                <h4 class="accent-amber">Refused Honours</h4>
+                <p>Faraday twice declined the presidency of the Royal Society and refused a knighthood. He wished to remain "plain Mr. Faraday to the last," consistent with his Sandemanian beliefs about worldly honours.</p>
+            </div>
+            <div class="card" style="margin-top:0.45em;">
+                <h4 class="accent-purple">Action at a Distance</h4>
+                <p>The dominant Newtonian paradigm held that forces act instantaneously across empty space. Faraday's field concept &mdash; that space itself carries forces &mdash; was radical and would only triumph with Maxwell and Einstein.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Maxwell's Equations</h4>
+            <p>Maxwell translated Faraday's field concept into four differential equations that unified electricity, magnetism, and optics. Without Faraday's physical intuition, Maxwell had no foundation on which to build.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">General Relativity</h4>
+            <p>Einstein's curved spacetime is a direct descendant of Faraday's field concept. Einstein kept a portrait of Faraday on his study wall alongside Newton and Maxwell.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Quantum Field Theory</h4>
+            <p>Modern particle physics describes all fundamental forces as fields. The electromagnetic field, photons, and QED all trace their conceptual ancestry to Faraday's lines of force.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Faraday Cage</h4>
+            <p>His demonstration that a hollow conductor shields its interior from external electric fields is essential in electronics, MRI machines, and electromagnetic shielding everywhere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Applications Today</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Electric Generators</h4>
+            <p>Every power station on Earth uses Faraday's principle of electromagnetic induction to convert mechanical energy to electrical energy.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Transformers</h4>
+            <p>Mutual induction enables voltage conversion across the power grid, from generation at 25 kV to transmission at 400 kV to household 240V.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Electric Motors</h4>
+            <p>Faraday's 1821 electromagnetic rotation principle powers everything from industrial machinery to electric vehicles to laptop cooling fans.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Electroplating</h4>
+            <p>His electrolysis laws underpin metal plating for corrosion resistance, jewelry, electronics manufacturing, and decorative coatings.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">MRI Machines</h4>
+            <p>Faraday cages shield MRI scanners from external electromagnetic interference. Induction coils detect the nuclear magnetic resonance signals.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Wireless Charging</h4>
+            <p>Inductive coupling between coils transfers energy wirelessly to smartphones, electric toothbrushes, and increasingly, electric vehicles.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Life &amp; Work Timeline</h2>
+    <div style="max-width:85%;margin:0.4em auto;">
+        <div class="timeline-item">
+            <span class="year">1791</span>
+            <div class="event"><strong>Born in Newington Butts, Surrey</strong>Son of a blacksmith, into a family of modest means.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1805</span>
+            <div class="event"><strong>Apprenticed to bookbinder George Riebau</strong>Begins seven years of voracious self-education through books.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1813</span>
+            <div class="event"><strong>Hired by Humphry Davy at the Royal Institution</strong>Begins as laboratory assistant; accompanies Davy on European tour.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1821</span>
+            <div class="event"><strong>Demonstrates electromagnetic rotation</strong>First device converting electrical energy into continuous motion.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1831</span>
+            <div class="event"><strong>Discovers electromagnetic induction</strong>The iron ring experiment opens the age of electrical power generation.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1834</span>
+            <div class="event"><strong>Publishes laws of electrolysis</strong>Quantitative link between electricity and chemical change established.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1845</span>
+            <div class="event"><strong>Discovers diamagnetism and the Faraday effect</strong>Rotation of polarized light by a magnetic field; links light and magnetism.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1855</span>
+            <div class="event"><strong>Health declines; reduces public activities</strong>Memory loss, possibly from chronic chemical exposure. Retires from lecturing.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1867</span>
+            <div class="event"><strong>Dies at Hampton Court on 25 August</strong>Buried in Highgate Cemetery; declined burial in Westminster Abbey.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Electric Life of Michael Faraday</h4>
+            <p><em>Alan Hirshfeld</em> (2006). An accessible, beautifully written biography that captures both the science and the man behind it.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Faraday, Maxwell, and the Electromagnetic Field</h4>
+            <p><em>Nancy Forbes &amp; Basil Mahon</em> (2014). Dual biography tracing how Faraday's intuitions became Maxwell's equations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Experimental Researches in Electricity</h4>
+            <p><em>Michael Faraday</em> (1839-1855). Faraday's own magnum opus in three volumes. Dense but rewarding primary source.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Faraday's Diary</h4>
+            <p><em>Ed. Thomas Martin</em> (1932-36). The complete laboratory notebooks, seven volumes of meticulously recorded experiments.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Philosopher's Tree</h4>
+            <p><em>Ed. Peter Day</em> (1999). Selected letters revealing Faraday's personality, friendships, and scientific reasoning.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Michael Faraday: A Very Short Introduction</h4>
+            <p><em>Frank A.J.L. James</em> (2010). Concise overview by the leading Faraday scholar and editor of his correspondence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container" style="margin-top:2em;">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.6">
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(0 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(30 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(60 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(90 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(120 100 100)"/>
+                <ellipse cx="100" cy="100" rx="85" ry="30" transform="rotate(150 100 100)"/>
+            </g>
+            <circle cx="100" cy="100" r="8" fill="#4ecca3" opacity="0.7"/>
+        </svg>
+    </div>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width:70%;margin:1em auto;">
+        <p>"Nothing is too wonderful to be true, if it be consistent with the laws of nature."</p>
+        <span class="attribution">&mdash; Michael Faraday, Laboratory Diary, 19 March 1849</span>
+    </div>
+    <div class="separator"></div>
+    <p class="subtitle" style="margin-top:1em;">Michael Faraday &middot; 1791&ndash;1867</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

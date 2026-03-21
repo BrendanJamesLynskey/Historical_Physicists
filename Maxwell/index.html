@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>James Clerk Maxwell - Architect of Modern Physics</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #5b8cd4;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.6">
+                <path d="M100,10 L190,100 L100,190 L10,100 Z"/>
+                <path d="M100,25 L175,100 L100,175 L25,100 Z"/>
+                <rect x="30" y="30" width="140" height="140" rx="0" transform="rotate(45 100 100)"/>
+                <circle cx="100" cy="100" r="60"/>
+                <line x1="100" y1="10" x2="100" y2="190"/>
+                <line x1="10" y1="100" x2="190" y2="100"/>
+                <line x1="36" y1="36" x2="164" y2="164"/>
+                <line x1="164" y1="36" x2="36" y2="164"/>
+            </g>
+            <circle cx="100" cy="100" r="8" fill="#5b8cd4" opacity="0.7"/>
+        </svg>
+    </div>
+    <h1>James Clerk Maxwell</h1>
+    <p class="subtitle">1831 &ndash; 1879 &middot; Edinburgh &amp; Cambridge</p>
+    <div class="separator"></div>
+    <p style="max-width:70%;margin:0.4em auto;text-align:center;">The physicist who unified electricity, magnetism, and light into a single theoretical framework, laying the foundation for modern physics from radio waves to relativity.</p>
+    <div style="margin-top:0.6em;text-align:center;">
+        <span class="tag blue">Maxwell's Equations</span>
+        <span class="tag amber">Electromagnetic Waves</span>
+        <span class="tag green">Kinetic Theory</span>
+        <span class="tag rose">Statistical Mechanics</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01</span>
+    <h2>Early Life</h2>
+    <div class="two-col">
+        <div>
+            <p>Born on 13 June 1831 at 14 India Street, Edinburgh, into a prosperous Scottish family. His father, John Clerk Maxwell, was an advocate with a deep interest in practical science and technology.</p>
+            <p>Young James showed extraordinary curiosity from infancy. At age three, his constant refrain was "What's the go o' that?" &mdash; demanding to know how everything worked. His mother Frances began his education, but she died of abdominal cancer in 1839 when he was just eight.</p>
+            <p>After an unhappy period with a tutor, he entered Edinburgh Academy at age 10. Initially mocked as "Dafty" for his rural accent and homemade shoes, he soon excelled, winning the school's mathematics medal at 13. That same year, he wrote his first scientific paper &mdash; on methods of drawing oval curves &mdash; presented to the Royal Society of Edinburgh.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent">Glenlair Estate</h4>
+                <p>The family's country estate in Kirkcudbrightshire was Maxwell's lifelong sanctuary. He designed improvements to the house and conducted experiments in its grounds throughout his life.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">Prodigious Youth</h4>
+                <p>At 14, his paper on ovals generalized the definition of an ellipse using pins and string to multi-focal curves. The method was novel enough to be read before the Royal Society of Edinburgh.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Edinburgh &amp; Cambridge</h4>
+                <p>Studied at Edinburgh University (1847-50) under Forbes and Kelland, then Trinity College, Cambridge (1850-54), graduating Second Wrangler and winning the Smith's Prize.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career & Key Moments -->
+<section>
+    <span class="section-number">02</span>
+    <h2>Career &amp; Key Moments</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Marischal College, Aberdeen (1856-1860)</h4>
+            <p>His first professorship. Here he proved mathematically that Saturn's rings must consist of myriad small particles &mdash; confirmed by Voyager spacecraft 120 years later. Married Katherine Mary Dewar, daughter of the college principal.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">King's College, London (1860-1865)</h4>
+            <p>His most productive period. Published "On Physical Lines of Force" (1861-62) and the landmark "A Dynamical Theory of the Electromagnetic Field" (1865), unifying electricity, magnetism, and optics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Glenlair Retreat (1865-1871)</h4>
+            <p>Retired to his estate to write the <em>Treatise on Electricity and Magnetism</em> (1873), the monumental two-volume work that systematized the entire field and introduced the four equations in their modern form.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Cavendish Laboratory (1871-1879)</h4>
+            <p>Appointed first Cavendish Professor of Physics at Cambridge. Designed and oversaw construction of the laboratory that would become the world's leading physics research center for the next century.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03</span>
+    <h2>Historical Context</h2>
+    <div class="two-col">
+        <div>
+            <h3>Victorian Theoretical Physics</h3>
+            <p>Maxwell worked at the apex of classical physics. Thermodynamics was being formalized by Clausius and Thomson. Faraday had established the experimental foundations of electromagnetism but lacked mathematical formulation. Continental physicists like Weber and Neumann used action-at-a-distance models.</p>
+            <p>The question of the age: are electric and magnetic forces transmitted instantaneously, or do they propagate through some medium? Faraday believed in a medium (the field); the German school did not. Maxwell's genius was to take Faraday's physical intuition seriously and express it in the language of mathematics.</p>
+            <p>Britain's industrial supremacy demanded better understanding of electricity. Submarine telegraph cables were being laid across the Atlantic, and Thomson (Lord Kelvin) had shown that cable theory required field-based analysis.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-blue">The Faraday-Maxwell Bridge</h4>
+                <p>Maxwell visited the aging Faraday in 1860. The young mathematician revered the old experimentalist. Maxwell wrote: "I was almost scared by the whole nature of his suggestions."</p>
+            </div>
+            <div class="card" style="margin-bottom:0.45em;">
+                <h4 class="accent-amber">Competing Theories</h4>
+                <p>Weber's force law (action at a distance between charges) vs. Faraday-Maxwell field theory. The debate was not settled until Hertz detected electromagnetic waves in 1887.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">The Scottish Enlightenment Legacy</h4>
+                <p>Maxwell inherited a tradition of combining mathematical rigour with physical intuition. Scottish natural philosophy, from Hume to Hamilton, shaped his philosophical approach to science.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 - Maxwell's Equations -->
+<section>
+    <span class="section-number">04</span>
+    <h2>Maxwell's Equations</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Maxwell synthesized all known laws of electricity and magnetism into four elegant equations. His crucial addition was the <span class="accent">displacement current</span>: a changing electric field produces a magnetic field, just as a changing magnetic field produces an electric field (Faraday's law).</p>
+            <p>This symmetry meant that oscillating electric and magnetic fields could sustain each other, propagating through space as a wave. Maxwell calculated the wave speed from purely electrical and magnetic measurements &mdash; it matched the speed of light.</p>
+            <p>His conclusion was revolutionary: <span class="accent-amber">light itself is an electromagnetic wave</span>. With one stroke, optics became a branch of electromagnetism.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Equation boxes -->
+                    <rect x="20" y="15" width="300" height="55" rx="6" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
+                    <text x="170" y="35" fill="#5b8cd4" font-family="JetBrains Mono" font-size="11" text-anchor="middle">Gauss's Law (Electric)</text>
+                    <text x="170" y="55" fill="#e8e6e3" font-family="JetBrains Mono" font-size="13" text-anchor="middle">&nabla; &middot; E = &rho; / &epsilon;&#8320;</text>
+
+                    <rect x="20" y="80" width="300" height="55" rx="6" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+                    <text x="170" y="100" fill="#9b72cf" font-family="JetBrains Mono" font-size="11" text-anchor="middle">Gauss's Law (Magnetic)</text>
+                    <text x="170" y="120" fill="#e8e6e3" font-family="JetBrains Mono" font-size="13" text-anchor="middle">&nabla; &middot; B = 0</text>
+
+                    <rect x="20" y="145" width="300" height="55" rx="6" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
+                    <text x="170" y="165" fill="#4ecca3" font-family="JetBrains Mono" font-size="11" text-anchor="middle">Faraday's Law</text>
+                    <text x="170" y="185" fill="#e8e6e3" font-family="JetBrains Mono" font-size="13" text-anchor="middle">&nabla; &times; E = -&part;B/&part;t</text>
+
+                    <rect x="20" y="210" width="300" height="55" rx="6" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+                    <text x="170" y="230" fill="#d4a053" font-family="JetBrains Mono" font-size="11" text-anchor="middle">Amp&egrave;re-Maxwell Law</text>
+                    <text x="170" y="250" fill="#e8e6e3" font-family="JetBrains Mono" font-size="13" text-anchor="middle">&nabla; &times; B = &mu;&#8320;J + &mu;&#8320;&epsilon;&#8320; &part;E/&part;t</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Equations Deeper Dive -->
+<section>
+    <span class="section-number">05</span>
+    <h2>The Equations: A Deeper Look</h2>
+    <div class="quote-box">
+        <p>"From a long view of the history of mankind, seen from, say, ten thousand years from now, there can be little doubt that the most significant event of the 19th century will be judged as Maxwell's discovery of the laws of electrodynamics."</p>
+        <span class="attribution">&mdash; Richard Feynman, The Feynman Lectures on Physics</span>
+    </div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Displacement Current</h4>
+            <p>Maxwell's key insight: a time-varying electric field (<code>&part;E/&part;t</code>) acts like a current, producing a magnetic field. Without this term, the equations would be inconsistent &mdash; charge conservation would be violated. It completed the symmetry between E and B.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Prediction of EM Waves</h4>
+            <p>Combining the curl equations yields a wave equation: <code>c = 1/&radic;(&mu;&#8320;&epsilon;&#8320;)</code>. Using lab-measured values of &mu;&#8320; and &epsilon;&#8320;, Maxwell obtained 3.1 &times; 10&sup8; m/s &mdash; within 1% of the known speed of light. Coincidence was inconceivable.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Unification of Optics</h4>
+            <p>Reflection, refraction, polarization, and diffraction all became consequences of electromagnetic wave behavior at boundaries and apertures. A century of optical phenomena was subsumed into four equations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Road to Relativity</h4>
+            <p>Maxwell's equations are already Lorentz-invariant &mdash; they do not change form under the transformations of special relativity. Einstein realized this in 1905: it is Newtonian mechanics, not Maxwell's electrodynamics, that needed revision.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 - Electromagnetic Waves -->
+<section>
+    <span class="section-number">06</span>
+    <h2>Electromagnetic Waves &amp; the Spectrum</h2>
+    <div class="two-col wide-right">
+        <div>
+            <p>Maxwell predicted that electromagnetic disturbances propagate as transverse waves at the speed of light. He further predicted that waves of any frequency could exist &mdash; not just visible light, but waves far below and above the optical range.</p>
+            <p>This prediction was spectacularly confirmed by <span class="accent-amber">Heinrich Hertz</span> in 1887, eight years after Maxwell's death. Hertz generated and detected radio waves, showing they exhibited reflection, refraction, and polarization just like light.</p>
+            <p>Maxwell's theory thus predicted the existence of radio waves, microwaves, infrared, ultraviolet, X-rays, and gamma rays &mdash; the entire electromagnetic spectrum &mdash; as manifestations of a single phenomenon.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Wave propagation diagram -->
+                    <text x="170" y="18" fill="#e8e6e3" font-family="Playfair Display" font-size="12" text-anchor="middle">Electromagnetic Wave Propagation</text>
+                    <!-- Propagation axis -->
+                    <line x1="30" y1="120" x2="320" y2="120" stroke="#6a6a7a" stroke-width="1" stroke-dasharray="4,3"/>
+                    <text x="330" y="124" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">z</text>
+                    <!-- E-field wave (vertical) -->
+                    <path d="M30,120 Q60,50 90,120 Q120,190 150,120 Q180,50 210,120 Q240,190 270,120 Q300,50 320,100" fill="none" stroke="#5b8cd4" stroke-width="2"/>
+                    <text x="30" y="48" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10">E (electric)</text>
+                    <!-- B-field wave (perspective, horizontal-ish) -->
+                    <path d="M30,120 Q60,120 70,105 Q80,90 90,120 Q100,150 110,135 Q120,120 130,120 Q140,120 150,105 Q160,90 170,120 Q180,150 190,135 Q200,120 210,120 Q220,120 230,105 Q240,90 250,120 Q260,150 270,135 Q280,120 290,120 Q300,120 310,108" fill="none" stroke="#cf7272" stroke-width="2" opacity="0.7"/>
+                    <text x="30" y="160" fill="#cf7272" font-family="JetBrains Mono" font-size="10">B (magnetic)</text>
+                    <!-- Labels -->
+                    <text x="170" y="190" fill="#9a9a9a" font-family="DM Sans" font-size="10" text-anchor="middle">E &perp; B &perp; direction of propagation</text>
+                    <!-- Speed label -->
+                    <text x="170" y="210" fill="#4ecca3" font-family="JetBrains Mono" font-size="11" text-anchor="middle">c = 1/&radic;(&mu;&#8320;&epsilon;&#8320;) &asymp; 3 &times; 10&sup8; m/s</text>
+                    <!-- Spectrum bar -->
+                    <text x="170" y="235" fill="#e8e6e3" font-family="DM Sans" font-size="9" text-anchor="middle">The Electromagnetic Spectrum</text>
+                    <rect x="30" y="242" width="40" height="10" fill="#cf7272" rx="2" opacity="0.7"/>
+                    <rect x="72" y="242" width="40" height="10" fill="#d4a053" rx="2" opacity="0.7"/>
+                    <rect x="114" y="242" width="40" height="10" fill="#d4d453" rx="2" opacity="0.7"/>
+                    <rect x="156" y="242" width="40" height="10" fill="#4ecca3" rx="2" opacity="0.7"/>
+                    <rect x="198" y="242" width="40" height="10" fill="#5b8cd4" rx="2" opacity="0.7"/>
+                    <rect x="240" y="242" width="40" height="10" fill="#9b72cf" rx="2" opacity="0.7"/>
+                    <rect x="282" y="242" width="40" height="10" fill="#cf72cf" rx="2" opacity="0.7"/>
+                    <text x="50" y="262" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7" text-anchor="middle">Radio</text>
+                    <text x="92" y="262" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7" text-anchor="middle">Micro</text>
+                    <text x="134" y="262" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7" text-anchor="middle">IR</text>
+                    <text x="176" y="262" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7" text-anchor="middle">Visible</text>
+                    <text x="218" y="262" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7" text-anchor="middle">UV</text>
+                    <text x="260" y="262" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7" text-anchor="middle">X-ray</text>
+                    <text x="302" y="262" fill="#6a6a7a" font-family="JetBrains Mono" font-size="7" text-anchor="middle">Gamma</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: EM Waves Deeper Dive -->
+<section>
+    <span class="section-number">07</span>
+    <h2>Electromagnetic Waves: Deeper Dive</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Hertz's Confirmation (1887)</h4>
+            <p>Using spark-gap oscillators and dipole antennas, Hertz generated EM waves, measured their wavelength and speed, and demonstrated reflection, refraction, and polarization &mdash; exactly as Maxwell predicted. "Maxwell was right," Hertz concluded.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Energy &amp; Momentum</h4>
+            <p>Maxwell showed EM waves carry energy (the Poynting vector <code>S = E &times; B/&mu;&#8320;</code>) and exert radiation pressure. This was confirmed experimentally and is the basis of solar sails and laser cooling.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The Luminiferous Aether</h4>
+            <p>Maxwell believed waves needed a medium: the "aether." The Michelson-Morley experiment (1887) found no evidence for it. Einstein resolved the puzzle: EM waves propagate through empty space; the field itself is the physical reality.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">From Spark to Smartphone</h4>
+            <p>Marconi's radio (1895), television, radar, Wi-Fi, cellular networks, satellite communications &mdash; the entire wireless revolution stems directly from Maxwell's prediction that oscillating charges radiate EM waves.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 - Kinetic Theory -->
+<section>
+    <span class="section-number">08</span>
+    <h2>Kinetic Theory &amp; Statistical Mechanics</h2>
+    <p style="max-width:85%;margin:0.3em auto;text-align:center;">Maxwell was a founder of statistical physics. He introduced probability distributions into fundamental physics, showing that macroscopic properties like temperature and pressure emerge from the statistical behavior of vast numbers of molecules.</p>
+    <div class="diagram-container" style="max-width:55%;">
+        <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line x1="50" y1="170" x2="330" y2="170" stroke="#6a6a7a" stroke-width="1.5"/>
+            <line x1="50" y1="170" x2="50" y2="20" stroke="#6a6a7a" stroke-width="1.5"/>
+            <text x="190" y="195" fill="#9a9a9a" font-family="DM Sans" font-size="10" text-anchor="middle">Molecular Speed (v)</text>
+            <text x="22" y="95" fill="#9a9a9a" font-family="DM Sans" font-size="10" text-anchor="middle" transform="rotate(-90 22 95)">f(v)</text>
+            <!-- Low temperature curve (blue) -->
+            <path d="M50,170 Q80,168 100,140 Q120,80 140,40 Q155,30 170,50 Q190,90 210,140 Q230,165 260,170" fill="none" stroke="#5b8cd4" stroke-width="2"/>
+            <text x="155" y="25" fill="#5b8cd4" font-family="JetBrains Mono" font-size="9">T = 300K</text>
+            <!-- Medium temperature curve (green) -->
+            <path d="M50,170 Q90,168 120,155 Q150,120 180,85 Q200,70 215,75 Q240,100 270,145 Q300,168 320,170" fill="none" stroke="#4ecca3" stroke-width="2"/>
+            <text x="220" y="62" fill="#4ecca3" font-family="JetBrains Mono" font-size="9">T = 600K</text>
+            <!-- High temperature curve (rose) -->
+            <path d="M50,170 Q100,167 140,158 Q180,140 210,118 Q240,100 260,96 Q280,100 300,120 Q320,150 340,168" fill="none" stroke="#cf7272" stroke-width="2"/>
+            <text x="275" y="88" fill="#cf7272" font-family="JetBrains Mono" font-size="9">T = 1200K</text>
+            <text x="190" y="15" fill="#e8e6e3" font-family="Playfair Display" font-size="11" text-anchor="middle">Maxwell-Boltzmann Speed Distribution</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-2" style="max-width:80%;">
+        <div class="card">
+            <h4 class="accent">Maxwell Distribution (1860)</h4>
+            <p>Derived the probability distribution for molecular speeds in a gas: <code>f(v) &prop; v&sup2; exp(-mv&sup2;/2kT)</code>. The first application of statistical reasoning to physics, predating Boltzmann's generalization.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Maxwell's Demon (1867)</h4>
+            <p>A thought experiment: a tiny being who sorts fast and slow molecules could apparently violate the second law of thermodynamics. This paradox stimulated over a century of work connecting thermodynamics to information theory.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09</span>
+    <h2>Maxwell's Method</h2>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Physical Analogy</h4>
+            <p>Map unfamiliar system onto a known one</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-amber">Mathematical Model</h4>
+            <p>Translate analogy into precise equations</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Derive Predictions</h4>
+            <p>Extract consequences beyond the original analogy</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-rose">Test &amp; Refine</h4>
+            <p>Compare with experiment, discard scaffolding</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-blue">Abstract Theory</h4>
+            <p>Final form stands free of mechanical model</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">Mechanical Vortices</h4>
+            <p>Maxwell initially modeled electromagnetic fields as rotating vortex tubes in an elastic medium, with idle wheel particles between them carrying current. Crude as this sounds, it led him directly to the displacement current and the prediction of EM waves.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Dimensional Analysis</h4>
+            <p>Maxwell was a master of dimensional reasoning. His comparison of electrostatic and electromagnetic units &mdash; showing their ratio had dimensions of velocity &mdash; was the critical clue linking electromagnetism to light.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections & Collaborations -->
+<section>
+    <span class="section-number">10</span>
+    <h2>Connections &amp; Collaborations</h2>
+    <div class="diagram-container" style="max-width:70%;">
+        <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="250" y1="110" x2="90" y2="50" stroke="#4ecca3" stroke-width="2" opacity="0.6"/>
+            <line x1="250" y1="110" x2="410" y2="50" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="250" y1="110" x2="70" y2="190" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="250" y1="110" x2="430" y2="190" stroke="#d4a053" stroke-width="2" opacity="0.5"/>
+            <line x1="250" y1="110" x2="140" y2="270" stroke="#9b72cf" stroke-width="2" opacity="0.5"/>
+            <line x1="250" y1="110" x2="360" y2="270" stroke="#cf7272" stroke-width="2" opacity="0.5"/>
+            <line x1="250" y1="110" x2="250" y2="270" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- Central node -->
+            <circle cx="250" cy="110" r="28" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="2.5"/>
+            <text x="250" y="106" fill="#5b8cd4" font-family="DM Sans" font-size="10" font-weight="700" text-anchor="middle">James C.</text>
+            <text x="250" y="118" fill="#5b8cd4" font-family="DM Sans" font-size="10" font-weight="700" text-anchor="middle">Maxwell</text>
+            <!-- Faraday -->
+            <circle cx="90" cy="50" r="22" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="2"/>
+            <text x="90" y="46" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="700" text-anchor="middle">Michael</text>
+            <text x="90" y="57" fill="#4ecca3" font-family="DM Sans" font-size="9" font-weight="700" text-anchor="middle">Faraday</text>
+            <!-- Thomson (Kelvin) -->
+            <circle cx="410" cy="50" r="22" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="1.5"/>
+            <text x="410" y="46" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Lord</text>
+            <text x="410" y="57" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Kelvin</text>
+            <!-- Stokes -->
+            <circle cx="70" cy="190" r="22" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="1.5"/>
+            <text x="70" y="186" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">George G.</text>
+            <text x="70" y="197" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Stokes</text>
+            <!-- Boltzmann -->
+            <circle cx="430" cy="190" r="22" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="430" y="186" fill="#d4a053" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Ludwig</text>
+            <text x="430" y="197" fill="#d4a053" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Boltzmann</text>
+            <!-- Hertz -->
+            <circle cx="140" cy="270" r="22" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="140" y="266" fill="#9b72cf" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Heinrich</text>
+            <text x="140" y="277" fill="#9b72cf" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Hertz</text>
+            <!-- Tait -->
+            <circle cx="250" cy="270" r="22" fill="var(--bg-card)" stroke="#2a2a3a" stroke-width="1.5"/>
+            <text x="250" y="266" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Peter G.</text>
+            <text x="250" y="277" fill="#9a9a9a" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Tait</text>
+            <!-- Einstein -->
+            <circle cx="360" cy="270" r="22" fill="var(--bg-card)" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="360" y="266" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Albert</text>
+            <text x="360" y="277" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="500" text-anchor="middle">Einstein</text>
+        </svg>
+    </div>
+    <p style="text-align:center;max-width:80%;margin:0.2em auto;font-size:0.5em !important;">Faraday inspired the field concept; Boltzmann extended the kinetic theory; Hertz confirmed EM waves; Einstein built relativity on Maxwell's foundation.</p>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">11</span>
+    <h2>Rivalry &amp; Controversy</h2>
+    <div class="two-col">
+        <div>
+            <h3 class="accent-rose">Field vs. Action at a Distance</h3>
+            <p>The central controversy of Maxwell's era was the nature of electromagnetic interaction. The German school &mdash; Weber, Neumann, Helmholtz &mdash; described forces between charges as instantaneous, action-at-a-distance laws analogous to Newton's gravity.</p>
+            <p>Maxwell's field theory proposed instead that forces propagate through space at finite speed via the electromagnetic field. The two approaches gave identical predictions for static situations, but differed for rapidly changing fields. Maxwell predicted transverse electromagnetic waves; Weber's theory did not.</p>
+            <p>The debate was resolved decisively by Hertz in 1887, but Maxwell did not live to see his vindication. Even after Hertz, some holdouts like Lord Kelvin remained skeptical of Maxwell's displacement current, calling it the one part of the theory he could never accept.</p>
+        </div>
+        <div>
+            <div class="quote-box" style="margin-top:0.3em;">
+                <p>"He achieved greatness unequalled. His name stands magnificently over the portal of classical physics, and we can say this of no other man except, perhaps, Faraday."</p>
+                <span class="attribution">&mdash; Max Planck, on Maxwell</span>
+            </div>
+            <div class="card" style="margin-top:0.5em;">
+                <h4 class="accent-amber">The Treatise's Difficulty</h4>
+                <p>Maxwell's <em>Treatise on Electricity and Magnetism</em> was notoriously hard to read. Oliver Heaviside and Willard Gibbs reformulated the twenty original equations into the four vector equations we use today.</p>
+            </div>
+            <div class="card" style="margin-top:0.45em;">
+                <h4 class="accent-purple">Priority Disputes</h4>
+                <p>Heaviside, FitzGerald, Lodge, and Hertz all contributed to making Maxwell's theory understandable and testable. Credit allocation among the "Maxwellians" was sometimes contentious.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">12</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Special Relativity</h4>
+            <p>Einstein's 1905 paper begins by noting an asymmetry in Maxwell's electrodynamics. The Lorentz invariance already embedded in Maxwell's equations became the cornerstone of special relativity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Quantum Electrodynamics</h4>
+            <p>QED is the quantum version of Maxwell's theory. Feynman, Schwinger, and Tomonaga showed it is the most precisely tested theory in all of science, accurate to 12 decimal places.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Gauge Theory</h4>
+            <p>Maxwell's equations exhibit U(1) gauge symmetry. This principle, generalized to SU(2) and SU(3), underlies the Standard Model of particle physics and the unification of all fundamental forces.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Information Theory</h4>
+            <p>Maxwell's demon foreshadowed the deep connection between thermodynamics and information. Landauer and Bennett showed that erasing information dissipates energy &mdash; resolving the paradox and founding the thermodynamics of computation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13</span>
+    <h2>Applications Today</h2>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Radio &amp; Television</h4>
+            <p>Directly predicted by Maxwell's theory. All wireless broadcasting exploits the generation and detection of EM waves at specific frequencies.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Fiber Optics</h4>
+            <p>Maxwell's wave equations govern how light propagates through glass fibers, enabling the internet backbone that carries 95% of intercontinental data.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Radar &amp; GPS</h4>
+            <p>Radar uses EM wave reflection; GPS relies on precise timing of signals at light speed. Both are direct applications of Maxwell's electromagnetic theory.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Medical Imaging</h4>
+            <p>X-rays, CT scans, and MRI all exploit different parts of the EM spectrum. Maxwell's equations describe how these waves interact with biological tissue.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Semiconductor Design</h4>
+            <p>Chip design requires solving Maxwell's equations for EM fields in nanoscale structures. Signal integrity, antenna design, and EMI shielding all depend on Maxwellian analysis.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Climate Science</h4>
+            <p>The Maxwell-Boltzmann distribution underlies atmospheric physics. Radiative transfer models solving Maxwell's equations predict how greenhouse gases trap infrared radiation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline -->
+<section>
+    <span class="section-number">14</span>
+    <h2>Life &amp; Work Timeline</h2>
+    <div style="max-width:85%;margin:0.4em auto;">
+        <div class="timeline-item">
+            <span class="year">1831</span>
+            <div class="event"><strong>Born in Edinburgh on 13 June</strong>Into a well-off Scottish family with deep intellectual traditions.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1847</span>
+            <div class="event"><strong>Enters Edinburgh University</strong>Studies under James Forbes and Philip Kelland; publishes papers on elastic solids.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1854</span>
+            <div class="event"><strong>Graduates from Cambridge (Second Wrangler)</strong>Wins Smith's Prize; begins work on Faraday's lines of force.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1855</span>
+            <div class="event"><strong>"On Faraday's Lines of Force" published</strong>First mathematical translation of Faraday's field concept using fluid flow analogies.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1860</span>
+            <div class="event"><strong>Derives the Maxwell speed distribution</strong>First statistical law in physics; foundation of kinetic theory of gases.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1861</span>
+            <div class="event"><strong>"On Physical Lines of Force"</strong>Introduces displacement current; predicts electromagnetic waves travel at speed of light.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1865</span>
+            <div class="event"><strong>"A Dynamical Theory of the Electromagnetic Field"</strong>The definitive paper: light is an electromagnetic phenomenon. Resigns King's College.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1871</span>
+            <div class="event"><strong>Appointed first Cavendish Professor at Cambridge</strong>Designs the Cavendish Laboratory; edits Cavendish's unpublished electrical researches.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1873</span>
+            <div class="event"><strong>Publishes <em>A Treatise on Electricity and Magnetism</em></strong>The comprehensive two-volume masterwork that defined the field for generations.</div>
+        </div>
+        <div class="timeline-item">
+            <span class="year">1879</span>
+            <div class="event"><strong>Dies in Cambridge on 5 November, aged 48</strong>Of abdominal cancer, the same disease that killed his mother at the same age.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">15</span>
+    <h2>Recommended Reading</h2>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Man Who Changed Everything</h4>
+            <p><em>Basil Mahon</em> (2003). The definitive popular biography, covering Maxwell's life, personality, and scientific achievements with clarity and depth.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Faraday, Maxwell, and the Electromagnetic Field</h4>
+            <p><em>Nancy Forbes &amp; Basil Mahon</em> (2014). Traces the intellectual relay race from Faraday's experiments to Maxwell's equations to Hertz's confirmation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">A Treatise on Electricity and Magnetism</h4>
+            <p><em>James Clerk Maxwell</em> (1873). The original masterwork. Dense and demanding, but repays careful study with profound physical insight.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Innovation and Its Enemies</h4>
+            <p><em>Bruce Hunt, The Maxwellians</em> (1991). How Heaviside, FitzGerald, Lodge, and Hertz developed and propagated Maxwell's theory after his death.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Scientific Letters and Papers of James Clerk Maxwell</h4>
+            <p><em>Ed. P.M. Harman</em> (1990-2002). Three volumes of Maxwell's correspondence and manuscripts, revealing his thought process in extraordinary detail.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Professor Maxwell's Duplicitous Demon</h4>
+            <p><em>Brian Clegg</em> (2019). An accessible account focused on Maxwell's thought experiments and their continuing influence on information theory and quantum computing.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div class="mandala-container" style="margin-top:2em;">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+            <g fill="none" stroke="#5b8cd4" stroke-width="0.8" opacity="0.6">
+                <path d="M100,10 L190,100 L100,190 L10,100 Z"/>
+                <path d="M100,25 L175,100 L100,175 L25,100 Z"/>
+                <rect x="30" y="30" width="140" height="140" rx="0" transform="rotate(45 100 100)"/>
+                <circle cx="100" cy="100" r="60"/>
+                <line x1="100" y1="10" x2="100" y2="190"/>
+                <line x1="10" y1="100" x2="190" y2="100"/>
+                <line x1="36" y1="36" x2="164" y2="164"/>
+                <line x1="164" y1="36" x2="36" y2="164"/>
+            </g>
+            <circle cx="100" cy="100" r="8" fill="#5b8cd4" opacity="0.7"/>
+        </svg>
+    </div>
+    <div class="separator"></div>
+    <div class="quote-box" style="max-width:70%;margin:1em auto;">
+        <p>"The special theory of relativity owes more to Maxwell than to anyone else."</p>
+        <span class="attribution">&mdash; Attributed reflection on Maxwell's profound legacy; Einstein kept a photograph of Maxwell on his study wall alongside Newton</span>
+    </div>
+    <div class="separator"></div>
+    <p class="subtitle" style="margin-top:1em;">James Clerk Maxwell &middot; 1831&ndash;1879</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

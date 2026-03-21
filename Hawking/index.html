@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stephen Hawking - Master of Black Holes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #3ec9b0;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 140 140">
+            <!-- Black hole visualization -->
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.15"/>
+            <circle cx="70" cy="70" r="30" fill="none" stroke="#3ec9b0" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="70" cy="70" r="15" fill="#0a0a0f" stroke="#3ec9b0" stroke-width="1" opacity="0.5"/>
+            <ellipse cx="70" cy="70" rx="55" ry="18" fill="none" stroke="#3ec9b0" stroke-width="0.4" opacity="0.25" transform="rotate(30,70,70)"/>
+            <ellipse cx="70" cy="70" rx="55" ry="18" fill="none" stroke="#3ec9b0" stroke-width="0.4" opacity="0.25" transform="rotate(-30,70,70)"/>
+            <circle cx="70" cy="70" r="5" fill="#3ec9b0" opacity="0.4"/>
+        </svg>
+    </div>
+    <h1>Stephen Hawking</h1>
+    <div class="separator"></div>
+    <p class="subtitle">Master of Black Holes &middot; 1942&ndash;2018</p>
+    <p style="text-align:center; margin-top:0.8em;">Hawking radiation, singularity theorems, and the quest to understand the universe</p>
+    <div style="margin-top:1em;">
+        <span class="tag green">Cambridge</span>
+        <span class="tag amber">Lucasian Professor</span>
+        <span class="tag blue">Cosmology</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Oxford and the Diagnosis</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p>Stephen William Hawking was born on January 8, 1942&mdash;exactly 300 years after the death of Galileo&mdash;in Oxford, England. His parents, Frank and Isobel Hawking, were both Oxford graduates; Frank was a medical researcher specializing in tropical diseases, and the household was famously eccentric and intellectual.</p>
+            <p>At Oxford, Hawking studied physics with what he later admitted was remarkably little effort. The culture of the time disdained visible hard work, and he estimated spending about an hour a day on his studies. Yet his natural brilliance was obvious: his final exam placed him on the borderline between first- and second-class honours, and his viva convinced the examiners to award a first.</p>
+            <p>He moved to Cambridge in 1962 to study cosmology under Dennis Sciama. Within months, at age 21, he was diagnosed with <span class="accent">amyotrophic lateral sclerosis (ALS)</span> and given two years to live. The prognosis was devastating, but it galvanized him: "When you are faced with the possibility of an early death, it makes you realize that life is worth living."</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Key Dates</h4>
+                <p><strong>1942</strong> &mdash; Born in Oxford<br>
+                <strong>1959</strong> &mdash; Enters University College, Oxford<br>
+                <strong>1962</strong> &mdash; Begins PhD at Cambridge<br>
+                <strong>1963</strong> &mdash; Diagnosed with ALS</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Dennis Sciama</h4>
+                <p>Hawking's PhD supervisor was one of the founders of modern British cosmology. Sciama directed Hawking toward the problem of singularities in general relativity&mdash;a decision that shaped the rest of his career.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>Cambridge and the World Stage</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Despite his worsening condition, Hawking's scientific output accelerated through the 1960s and 1970s. He completed his PhD in 1966 with a thesis on "Properties of Expanding Universes" and became a Research Fellow at Gonville and Caius College, Cambridge.</p>
+            <p>His collaboration with Roger Penrose on singularity theorems (1966&ndash;1970) established him as one of the world's leading relativists. Then, in 1974, his discovery that black holes emit thermal radiation stunned the physics community and made him internationally famous.</p>
+            <p>In 1979, Hawking was appointed <span class="accent">Lucasian Professor of Mathematics</span> at Cambridge&mdash;a chair once held by Newton, Babbage, and Dirac. He held the position for 30 years. By the 1980s, as his ability to speak deteriorated, he began using a speech synthesizer that became his iconic voice.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Lucasian Professor</h4>
+                <p>1979&ndash;2009. The most prestigious chair in mathematics at Cambridge, held previously by Isaac Newton (1669&ndash;1702) and Paul Dirac (1932&ndash;1969).</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-blue">Awards</h4>
+                <p>Albert Einstein Medal, Wolf Prize, Copley Medal, Presidential Medal of Freedom, Fundamental Physics Prize. Notably, never the Nobel&mdash;Hawking radiation has not yet been observed directly.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">The Voice</h4>
+                <p>His DECtalk synthesizer, with its distinctive American accent, became inseparable from his public identity. He refused upgrades, saying "It has become my voice."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The Golden Age of General Relativity</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:85%; margin:0.4em auto;">After decades of being treated as a mathematical curiosity, general relativity underwent a renaissance in the 1960s. New mathematical tools, radio astronomy, and the discovery of quasars and the cosmic microwave background brought Einstein's theory back to the forefront of physics.</p>
+    <div class="card-grid cols-3" style="margin-top:0.6em;">
+        <div class="card">
+            <h4 class="accent-rose">Black Hole Renaissance</h4>
+            <p>The term "black hole" was coined by John Wheeler in 1967. Kerr had found the rotating solution in 1963. Penrose proved that gravitational collapse inevitably produces singularities. The question: what happens at these singularities?</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">The CMB Discovery (1965)</h4>
+            <p>Penzias and Wilson's detection of the cosmic microwave background confirmed the Big Bang model. The universe had a beginning&mdash;and that beginning looked disturbingly like a singularity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Quantum Gravity Gap</h4>
+            <p>General relativity and quantum mechanics remained stubbornly incompatible. Black holes sat precisely at the intersection&mdash;requiring both strong gravity and quantum effects. They became the testing ground for new physics.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top:0.6em;">
+        <p>"Black holes are where God divided by zero."</p>
+        <span class="attribution">&mdash; Popular saying in 1970s physics, capturing the singularity problem</span>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>Hawking Radiation</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In 1974, Hawking made the most surprising theoretical discovery in general relativity since Einstein: <span class="accent">black holes are not black</span>. They emit thermal radiation at a temperature inversely proportional to their mass.</p>
+            <p>The mechanism is quantum-mechanical. Near the event horizon, vacuum fluctuations constantly produce particle-antiparticle pairs. Normally these annihilate instantly, but at the horizon, one particle can fall in while the other escapes. The escaping particle carries positive energy; the infalling particle effectively carries negative energy, reducing the black hole's mass.</p>
+            <p>Over immense timescales, this process causes black holes to <span class="accent">evaporate completely</span>&mdash;a stunning conclusion that implied black holes have a finite lifetime and raised the profound <span class="accent-rose">information paradox</span>: what happens to information that falls into a black hole?</p>
+            <p>The Hawking temperature is: <code>T = &hbar;c&sup3; / 8&pi;GMk</code></p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
+                <text x="140" y="18" text-anchor="middle" font-size="11" fill="#6a6a7a" font-family="JetBrains Mono, monospace">Hawking Radiation</text>
+                <!-- Black hole -->
+                <circle cx="140" cy="140" r="50" fill="#0a0a0f" stroke="#3ec9b0" stroke-width="2"/>
+                <circle cx="140" cy="140" r="55" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,3"/>
+                <text x="140" y="143" text-anchor="middle" font-size="9" fill="#3ec9b0" font-family="JetBrains Mono">Singularity</text>
+                <!-- Event horizon label -->
+                <text x="210" y="100" font-size="8" fill="#6a6a7a" font-family="DM Sans">Event Horizon</text>
+                <line x1="195" y1="100" x2="182" y2="108" stroke="#6a6a7a" stroke-width="0.5"/>
+                <!-- Virtual pair 1 -->
+                <circle cx="196" cy="130" r="4" fill="#cf7272" opacity="0.8"/>
+                <circle cx="204" cy="122" r="4" fill="#5b8cd4" opacity="0.8"/>
+                <line x1="196" y1="130" x2="204" y2="122" stroke="#e8e6e3" stroke-width="0.5" stroke-dasharray="2,2"/>
+                <!-- Escaping particle (arrow outward) -->
+                <line x1="204" y1="122" x2="240" y2="90" stroke="#5b8cd4" stroke-width="1.5"/>
+                <polygon points="240,90 232,94 236,100" fill="#5b8cd4"/>
+                <text x="248" y="88" font-size="8" fill="#5b8cd4" font-family="DM Sans">Escapes!</text>
+                <!-- Infalling particle (arrow inward) -->
+                <line x1="196" y1="130" x2="170" y2="135" stroke="#cf7272" stroke-width="1.5"/>
+                <polygon points="170,135 178,132 176,138" fill="#cf7272"/>
+                <text x="156" y="130" font-size="7" fill="#cf7272" font-family="DM Sans" text-anchor="end">Falls in</text>
+                <!-- Virtual pair 2 -->
+                <circle cx="155" cy="196" r="4" fill="#cf7272" opacity="0.8"/>
+                <circle cx="168" cy="200" r="4" fill="#5b8cd4" opacity="0.8"/>
+                <line x1="155" y1="196" x2="168" y2="200" stroke="#e8e6e3" stroke-width="0.5" stroke-dasharray="2,2"/>
+                <line x1="168" y1="200" x2="210" y2="225" stroke="#5b8cd4" stroke-width="1.5"/>
+                <polygon points="210,225 203,220 205,226" fill="#5b8cd4"/>
+                <!-- Radiation glow -->
+                <circle cx="140" cy="140" r="65" fill="none" stroke="#3ec9b0" stroke-width="0.3" opacity="0.15"/>
+                <circle cx="140" cy="140" r="72" fill="none" stroke="#3ec9b0" stroke-width="0.3" opacity="0.1"/>
+                <!-- Legend -->
+                <circle cx="40" cy="245" r="3" fill="#5b8cd4"/>
+                <text x="48" y="248" font-size="8" fill="#9a9a9a" font-family="DM Sans">Escaping particle</text>
+                <circle cx="160" cy="245" r="3" fill="#cf7272"/>
+                <text x="168" y="248" font-size="8" fill="#9a9a9a" font-family="DM Sans">Infalling (negative E)</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deep Dive -->
+<section>
+    <span class="section-number">05 &mdash; HAWKING RADIATION IN DEPTH</span>
+    <h2>Black Holes Have Entropy</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:85%; margin:0.3em auto;">Hawking radiation unified general relativity, quantum mechanics, and thermodynamics in a single equation. It implied that black holes obey the laws of thermodynamics&mdash;they have temperature, entropy, and eventually die.</p>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent">Bekenstein-Hawking Entropy</h4>
+            <p>Jacob Bekenstein proposed in 1972 that black holes carry entropy proportional to their horizon area. Hawking initially resisted, but his own radiation calculation confirmed it: <code>S = A/4</code> (in Planck units). A stellar-mass black hole has more entropy than every star in the observable universe combined.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The Information Paradox</h4>
+            <p>If a black hole evaporates completely into featureless thermal radiation, the quantum information of everything that fell in is destroyed&mdash;violating a fundamental principle of quantum mechanics (unitarity). This paradox remains one of the deepest open questions in theoretical physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Black Hole Thermodynamics</h4>
+            <p>The four laws of black hole mechanics, formulated by Bardeen, Carter, and Hawking in 1973, are exact analogues of the laws of thermodynamics. Hawking radiation proved this was not merely an analogy&mdash;it is real thermodynamics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Observational Status</h4>
+            <p>For astrophysical black holes, the Hawking temperature is far below the CMB temperature (~10&minus;&sup2; K for stellar-mass holes). Direct detection remains beyond current technology, though analogue experiments in fluids and Bose-Einstein condensates have confirmed the underlying physics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 + SVG -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION II</span>
+    <h2>Singularity Theorems</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Between 1965 and 1970, Hawking and Roger Penrose proved a series of theorems showing that singularities&mdash;points of infinite density and curvature&mdash;are <span class="accent">unavoidable</span> in general relativity under physically reasonable conditions.</p>
+            <p>Penrose had shown in 1965 that gravitational collapse of a sufficiently massive star inevitably produces a singularity. Hawking's breakthrough was to apply the same mathematical techniques <em>in reverse</em>: if the universe is expanding today, it must have begun in a singularity&mdash;the <span class="accent">Big Bang</span>.</p>
+            <p>Their joint 1970 paper proved that any spacetime satisfying the strong energy condition and containing enough matter must be geodesically incomplete&mdash;meaning that the paths of particles and light rays must have a beginning or an end. This established that classical general relativity predicts its own breakdown.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg">
+                <text x="130" y="16" text-anchor="middle" font-size="10" fill="#6a6a7a" font-family="JetBrains Mono, monospace">Penrose Diagram: Black Hole</text>
+                <!-- Penrose diagram -->
+                <polygon points="130,30 230,130 130,230 30,130" fill="none" stroke="#2a2a3a" stroke-width="1.5"/>
+                <!-- Singularity (top, wavy) -->
+                <path d="M75,75 Q90,68 105,75 Q120,82 135,75 Q150,68 165,75 Q180,82 185,75" fill="none" stroke="#cf7272" stroke-width="2"/>
+                <text x="130" y="62" text-anchor="middle" font-size="8" fill="#cf7272" font-family="JetBrains Mono">Singularity (r=0)</text>
+                <!-- Event horizon -->
+                <line x1="130" y1="30" x2="130" y2="230" stroke="#3ec9b0" stroke-width="1.5" stroke-dasharray="5,3"/>
+                <text x="148" y="135" font-size="8" fill="#3ec9b0" font-family="DM Sans">Event</text>
+                <text x="148" y="145" font-size="8" fill="#3ec9b0" font-family="DM Sans">Horizon</text>
+                <!-- Timelike infinity labels -->
+                <text x="130" y="25" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="JetBrains Mono">i+</text>
+                <text x="130" y="242" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="JetBrains Mono">i&minus;</text>
+                <text x="240" y="133" font-size="7" fill="#9a9a9a" font-family="JetBrains Mono">i0</text>
+                <!-- Infalling worldline -->
+                <path d="M90,190 Q100,160 110,130 Q120,100 130,80" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+                <polygon points="130,80 126,90 132,88" fill="#d4a053"/>
+                <text x="78" y="195" font-size="7" fill="#d4a053" font-family="DM Sans">Infalling</text>
+                <text x="78" y="204" font-size="7" fill="#d4a053" font-family="DM Sans">observer</text>
+                <!-- Null infinity labels -->
+                <text x="188" y="72" font-size="7" fill="#6a6a7a" font-family="JetBrains Mono" transform="rotate(45,188,72)">J+</text>
+                <text x="188" y="195" font-size="7" fill="#6a6a7a" font-family="JetBrains Mono" transform="rotate(-45,188,195)">J&minus;</text>
+                <!-- Interior shading -->
+                <polygon points="130,30 185,75 130,130 75,75" fill="#3ec9b0" opacity="0.04"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deep Dive -->
+<section>
+    <span class="section-number">07 &mdash; SINGULARITIES IN DEPTH</span>
+    <h2>The Beginning of Time</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:85%; margin:0.3em auto;">The singularity theorems did not tell us what happens at the singularity&mdash;they told us that general relativity <em>cannot</em> tell us. This was their deepest lesson: a call for quantum gravity.</p>
+    <div class="card-grid cols-3" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-blue">Penrose's Contribution</h4>
+            <p>Penrose introduced the concept of "trapped surfaces" and proved that collapse past a certain point inevitably leads to a singularity. His 1965 theorem earned him the 2020 Nobel Prize in Physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Hawking's Extension</h4>
+            <p>Hawking reversed the time direction: if collapse leads to singularities, then expansion must have originated from one. His 1966 PhD thesis applied Penrose's methods to the Big Bang.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The No-Boundary Proposal</h4>
+            <p>In 1983, Hawking and James Hartle proposed that the universe has no boundary in imaginary time&mdash;it is finite but unbounded, like the surface of a sphere. This eliminated the singularity at the origin.</p>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top:0.5em;">
+        <p>"The singularity theorems of Penrose and Hawking were the first major results in general relativity in decades. They changed our understanding of what the theory actually says."</p>
+        <span class="attribution">&mdash; Kip Thorne, on the impact of the singularity theorems</span>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 -->
+<section>
+    <span class="section-number">08 &mdash; CONTRIBUTION III</span>
+    <h2>A Brief History of Time &amp; Science Communication</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <h3 style="margin-top:0;">The Unexpected Bestseller</h3>
+            <p>Published in 1988, <span class="accent">A Brief History of Time</span> became one of the most successful science books ever written&mdash;selling over 25 million copies in 40 languages. It spent 237 weeks on the Sunday Times bestseller list, a record at the time.</p>
+            <p>Hawking wrote the book because he wanted the public to understand the great questions of cosmology: How did the universe begin? Will it end? What is the nature of time? He deliberately included only one equation (<code>E = mc&sup2;</code>), having been told each equation would halve his readership.</p>
+            <h3 style="margin-top:0.5em;">Beyond the Book</h3>
+            <p>Hawking became the most recognizable scientist since Einstein. He appeared on Star Trek, The Simpsons, and The Big Bang Theory. His ability to communicate wonder about the universe from a wheelchair, through a synthetic voice, made him a powerful symbol of the triumph of the human mind over physical limitation.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-amber">Publication Impact</h4>
+                <p>A Brief History of Time introduced millions to black holes, the Big Bang, and quantum mechanics. It demonstrated that the public's appetite for deep science was far greater than publishers had assumed.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Subsequent Works</h4>
+                <p><strong>The Universe in a Nutshell</strong> (2001), <strong>A Briefer History of Time</strong> (2005, with Leonard Mlodinow), and <strong>The Grand Design</strong> (2010) continued his public mission.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">Cultural Significance</h4>
+                <p>Hawking proved that theoretical physics could capture public imagination. His success opened doors for a generation of science communicators and popularizers, from Brian Cox to Neil deGrasse Tyson.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">09 &mdash; THE METHOD</span>
+    <h2>Thinking Like Hawking</h2>
+    <div class="separator"></div>
+    <p style="text-align:center; max-width:80%; margin:0.3em auto;">Hawking's physical limitations forced a distinctive working style. Unable to write equations, he developed an extraordinary ability to think in geometric and visual terms, holding entire calculations in his head.</p>
+    <div class="process-flow" style="margin-top:0.6em;">
+        <div class="process-step">
+            <h4 class="accent">Visualize</h4>
+            <p>Think in pictures and spacetime diagrams.</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-green">Simplify</h4>
+            <p>Strip to the essential physics. Ignore details.</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Provoke</h4>
+            <p>Make bold claims. Bet against colleagues.</p>
+        </div>
+        <span class="process-arrow">&rarr;</span>
+        <div class="process-step">
+            <h4 class="accent-rose">Communicate</h4>
+            <p>If it matters, the public should know.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-amber">Mental Geometry</h4>
+            <p>Kip Thorne described Hawking's ability as "thinking in shapes." Where other physicists manipulated equations on paper, Hawking visualized the geometry of spacetime directly, an ability that only sharpened as his physical constraints tightened.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Scientific Bets</h4>
+            <p>Hawking was famous for wagers with colleagues. He bet Kip Thorne that Cygnus X-1 was not a black hole (he lost, and paid with a magazine subscription). He bet John Preskill that information is destroyed in black holes (he later conceded in 2004).</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections SVG -->
+<section>
+    <span class="section-number">10 &mdash; CONNECTIONS</span>
+    <h2>Hawking's Intellectual Network</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="350" y1="140" x2="140" y2="60" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="560" y2="60" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="100" y2="180" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="600" y2="180" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="180" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="350" y2="290" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="520" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
+            <!-- Cross connections -->
+            <line x1="140" y1="60" x2="560" y2="60" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+            <line x1="100" y1="180" x2="600" y2="180" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+            <line x1="180" y1="280" x2="520" y2="280" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+            <!-- Center: Hawking -->
+            <circle cx="350" cy="140" r="28" fill="#161622" stroke="#3ec9b0" stroke-width="2"/>
+            <text x="350" y="136" text-anchor="middle" font-size="10" fill="#3ec9b0" font-weight="bold" font-family="DM Sans">Hawking</text>
+            <text x="350" y="148" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">1942&ndash;2018</text>
+            <!-- Penrose -->
+            <circle cx="140" cy="60" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="140" y="57" text-anchor="middle" font-size="9" fill="#d4a053" font-family="DM Sans">Penrose</text>
+            <text x="140" y="68" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Singularities</text>
+            <!-- Sciama -->
+            <circle cx="560" cy="60" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="560" y="57" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="DM Sans">Sciama</text>
+            <text x="560" y="68" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">PhD supervisor</text>
+            <!-- Thorne -->
+            <circle cx="100" cy="180" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="100" y="177" text-anchor="middle" font-size="9" fill="#cf7272" font-family="DM Sans">Thorne</text>
+            <text x="100" y="188" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Collaborator</text>
+            <!-- Bekenstein -->
+            <circle cx="600" cy="180" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="600" y="177" text-anchor="middle" font-size="9" fill="#9b72cf" font-family="DM Sans">Bekenstein</text>
+            <text x="600" y="188" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">BH entropy</text>
+            <!-- Hartle -->
+            <circle cx="180" cy="280" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="180" y="277" text-anchor="middle" font-size="9" fill="#4ecca3" font-family="DM Sans">Hartle</text>
+            <text x="180" y="288" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">No-boundary</text>
+            <!-- Ellis -->
+            <circle cx="350" cy="290" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="350" y="287" text-anchor="middle" font-size="9" fill="#d4a053" font-family="DM Sans">Ellis</text>
+            <text x="350" y="298" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Large Scale Structure</text>
+            <!-- Preskill -->
+            <circle cx="520" cy="280" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="520" y="277" text-anchor="middle" font-size="9" fill="#cf7272" font-family="DM Sans">Preskill</text>
+            <text x="520" y="288" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Info paradox bet</text>
+        </svg>
+    </div>
+    <p style="text-align:center; font-size:0.48em !important; color:var(--text-muted);">Dashed lines indicate independent parallel work or intellectual rivalry; solid lines indicate direct collaboration or mentorship.</p>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">11 &mdash; CONTROVERSY</span>
+    <h2>The Information Paradox &amp; Scientific Bets</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <h3 style="margin-top:0;">The Deepest Paradox</h3>
+            <p>Hawking's 1974 radiation result implied that black holes destroy information&mdash;a claim that put him at odds with nearly the entire quantum mechanics community. In quantum theory, information is never truly lost; processes are reversible in principle. But if a black hole evaporates into featureless thermal radiation, the detailed quantum state of everything that fell in is erased.</p>
+            <p>In 1997, Hawking and Kip Thorne bet John Preskill that information is indeed destroyed. The wager stood for seven years. In 2004, at a conference in Dublin, Hawking publicly conceded, presenting a new calculation suggesting that quantum correlations in the radiation preserve information after all. He gave Preskill a baseball encyclopedia.</p>
+            <p>The paradox, however, remains unsettled. It has driven major advances including the <span class="accent">holographic principle</span>, the AdS/CFT correspondence, and the recent "island" formula for entanglement entropy.</p>
+        </div>
+        <div>
+            <h3 style="margin-top:0;">Bekenstein Tension</h3>
+            <p>When Jacob Bekenstein first proposed black hole entropy in 1972, Hawking resisted the idea vigorously. He argued that if black holes have temperature, they must radiate&mdash;which seemed absurd. When his own calculation showed they <em>do</em> radiate, it vindicated Bekenstein and became Hawking's greatest discovery. Hawking acknowledged Bekenstein's priority, though the relationship remained complex.</p>
+            <div class="card" style="margin-top:0.4em;">
+                <h4 class="accent-amber">The Thorne-Hawking Bet</h4>
+                <p>Hawking bet Thorne that Cygnus X-1 was not a black hole. He later explained this as "insurance"&mdash;if black holes didn't exist, at least he'd win the bet. He conceded in 1990 after overwhelming evidence accumulated.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+    <span class="section-number">12 &mdash; LEGACY</span>
+    <h2>A Mind Beyond Measure</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Quantum Gravity</h4>
+            <p>Hawking radiation remains the single most important clue about quantum gravity. Any successful theory&mdash;string theory, loop quantum gravity, or something yet unknown&mdash;must reproduce Hawking's result as a limiting case.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Black Hole Thermodynamics</h4>
+            <p>The laws of black hole thermodynamics, cemented by Hawking's work, are now a cornerstone of theoretical physics. They connect gravity, quantum mechanics, and information theory in ways we are still exploring.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Cosmological Thinking</h4>
+            <p>The no-boundary proposal changed how physicists think about the origin of the universe. Even where it falls short, it set the standard for asking quantum-cosmological questions rigorously.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Science Communication</h4>
+            <p>A Brief History of Time proved that the public wants to engage with deep science. Hawking's example inspired a new generation of physicists to take communication seriously.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Disability Advocacy</h4>
+            <p>Hawking's life demonstrated that extraordinary intellectual achievement is possible with severe physical disability. He became a global symbol of resilience and the primacy of the mind.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Ongoing Research</h4>
+            <p>The information paradox he identified continues to drive cutting-edge research. The 2019 "island" rule, the ER=EPR conjecture, and holographic entanglement all trace their motivation to Hawking's 1974 paper.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">13 &mdash; APPLICATIONS</span>
+    <h2>Where Hawking's Ideas Live Today</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Event Horizon Telescope</h4>
+            <p>The 2019 image of the black hole in M87 and the 2022 image of Sagittarius A* confirmed the reality of event horizons. The theoretical framework that predicted what these images should look like was built on foundations Hawking helped lay.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Gravitational Wave Astronomy</h4>
+            <p>LIGO's detection of black hole mergers (2015 onward) has opened a new window on the universe. The singularity theorems guarantee that the objects producing these waves are indeed black holes with the properties Hawking and Penrose described.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Analogue Gravity Experiments</h4>
+            <p>Laboratories have created sonic analogues of black holes in Bose-Einstein condensates and flowing water, observing the analogue of Hawking radiation. Jeff Steinhauer's 2016 experiment at the Technion was a landmark confirmation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Quantum Information Theory</h4>
+            <p>The information paradox stimulated the development of holography, quantum error correction in gravity, and the deep connection between entanglement and spacetime geometry now being explored in "It from Qubit" programs worldwide.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">14 &mdash; TIMELINE</span>
+    <h2>A Life Beyond Limits</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main timeline line -->
+            <line x1="50" y1="180" x2="750" y2="180" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- Year markers and events -->
+            <circle cx="70" cy="180" r="5" fill="#3ec9b0"/>
+            <text x="70" y="200" text-anchor="middle" font-size="9" fill="#3ec9b0" font-family="JetBrains Mono">1942</text>
+            <text x="70" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Born in</text>
+            <text x="70" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Oxford</text>
+
+            <circle cx="155" cy="180" r="5" fill="#cf7272"/>
+            <text x="155" y="200" text-anchor="middle" font-size="9" fill="#cf7272" font-family="JetBrains Mono">1963</text>
+            <text x="155" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">ALS diagnosis</text>
+
+            <circle cx="230" cy="180" r="5" fill="#d4a053"/>
+            <text x="230" y="200" text-anchor="middle" font-size="9" fill="#d4a053" font-family="JetBrains Mono">1966</text>
+            <text x="230" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">PhD thesis</text>
+
+            <circle cx="310" cy="180" r="5" fill="#5b8cd4"/>
+            <text x="310" y="200" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="JetBrains Mono">1970</text>
+            <text x="310" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Singularity theorems</text>
+            <text x="310" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">with Penrose</text>
+
+            <circle cx="400" cy="180" r="5" fill="#3ec9b0"/>
+            <text x="400" y="200" text-anchor="middle" font-size="9" fill="#3ec9b0" font-family="JetBrains Mono">1974</text>
+            <text x="400" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Hawking</text>
+            <text x="400" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">radiation</text>
+
+            <circle cx="480" cy="180" r="5" fill="#9b72cf"/>
+            <text x="480" y="200" text-anchor="middle" font-size="9" fill="#9b72cf" font-family="JetBrains Mono">1979</text>
+            <text x="480" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Lucasian Professor</text>
+
+            <circle cx="560" cy="180" r="5" fill="#d4a053"/>
+            <text x="560" y="200" text-anchor="middle" font-size="9" fill="#d4a053" font-family="JetBrains Mono">1988</text>
+            <text x="560" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">A Brief History</text>
+            <text x="560" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">of Time</text>
+
+            <circle cx="640" cy="180" r="5" fill="#cf7272"/>
+            <text x="640" y="200" text-anchor="middle" font-size="9" fill="#cf7272" font-family="JetBrains Mono">2004</text>
+            <text x="640" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Concedes info</text>
+            <text x="640" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">paradox bet</text>
+
+            <circle cx="720" cy="180" r="5" fill="#3ec9b0"/>
+            <text x="720" y="200" text-anchor="middle" font-size="9" fill="#3ec9b0" font-family="JetBrains Mono">2018</text>
+            <text x="720" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Dies in</text>
+            <text x="720" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Cambridge</text>
+
+            <!-- Era brackets -->
+            <rect x="55" y="260" width="200" height="30" rx="4" fill="rgba(62,201,176,0.08)" stroke="#3ec9b0" stroke-width="0.5"/>
+            <text x="155" y="280" text-anchor="middle" font-size="8" fill="#3ec9b0" font-family="DM Sans">Formation &amp; Singularities</text>
+
+            <rect x="270" y="260" width="230" height="30" rx="4" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="0.5"/>
+            <text x="385" y="280" text-anchor="middle" font-size="8" fill="#d4a053" font-family="DM Sans">Black Holes &amp; Radiation</text>
+
+            <rect x="515" y="260" width="220" height="30" rx="4" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="0.5"/>
+            <text x="625" y="280" text-anchor="middle" font-size="8" fill="#9b72cf" font-family="DM Sans">Public Science &amp; Legacy</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Reading -->
+<section>
+    <span class="section-number">15 &mdash; FURTHER READING</span>
+    <h2>Essential Sources</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Works</h4>
+            <p><strong>A Brief History of Time</strong> (1988) &mdash; The landmark popular science book that brought cosmology to millions of readers.</p>
+            <p style="margin-top:0.3em;"><strong>"Particle Creation by Black Holes"</strong> (1975) &mdash; The foundational paper on Hawking radiation, published in Communications in Mathematical Physics. Technically demanding but beautifully clear.</p>
+            <p style="margin-top:0.3em;"><strong>The Large Scale Structure of Space-Time</strong> (1973, with G.F.R. Ellis) &mdash; The definitive technical monograph on singularities and causal structure in general relativity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Biographies</h4>
+            <p><strong>Stephen Hawking: A Memoir</strong> by Leonard Mlodinow (2020) &mdash; An intimate portrait by a close collaborator and friend, revealing the human behind the icon.</p>
+            <p style="margin-top:0.3em;"><strong>Travelling to Infinity</strong> by Jane Hawking (2007) &mdash; A candid memoir by his first wife, later adapted as the film "The Theory of Everything" (2014).</p>
+            <p style="margin-top:0.3em;"><strong>My Brief History</strong> by Stephen Hawking (2013) &mdash; Hawking's own autobiography, characteristically concise and witty.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Technical References</h4>
+            <p><strong>"The Singularities of Gravitational Collapse and Cosmology"</strong> (1970, with Penrose) &mdash; The definitive joint paper on singularity theorems.</p>
+            <p style="margin-top:0.3em;"><strong>"Wave Function of the Universe"</strong> (1983, with Hartle) &mdash; The no-boundary proposal, published in Physical Review D.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Multimedia</h4>
+            <p><strong>The Theory of Everything</strong> (2014) &mdash; Eddie Redmayne's Oscar-winning portrayal of Hawking's early life and scientific breakthroughs.</p>
+            <p style="margin-top:0.3em;"><strong>Hawking</strong> (2013 documentary) &mdash; A personal documentary featuring Hawking's own narration over his life story, with unprecedented access.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 140 140">
+                <!-- Black hole inspired mandala -->
+                <circle cx="70" cy="70" r="55" fill="none" stroke="#3ec9b0" stroke-width="0.4" opacity="0.15"/>
+                <circle cx="70" cy="70" r="42" fill="none" stroke="#3ec9b0" stroke-width="0.5" opacity="0.2"/>
+                <circle cx="70" cy="70" r="28" fill="none" stroke="#3ec9b0" stroke-width="0.6" opacity="0.25"/>
+                <circle cx="70" cy="70" r="14" fill="#0a0a0f" stroke="#3ec9b0" stroke-width="0.8" opacity="0.35"/>
+                <ellipse cx="70" cy="70" rx="50" ry="15" fill="none" stroke="#3ec9b0" stroke-width="0.4" opacity="0.2"/>
+                <ellipse cx="70" cy="70" rx="50" ry="15" fill="none" stroke="#3ec9b0" stroke-width="0.4" opacity="0.2" transform="rotate(60,70,70)"/>
+                <ellipse cx="70" cy="70" rx="50" ry="15" fill="none" stroke="#3ec9b0" stroke-width="0.4" opacity="0.2" transform="rotate(120,70,70)"/>
+                <circle cx="70" cy="70" r="3" fill="#3ec9b0" opacity="0.4"/>
+            </svg>
+        </div>
+        <div class="quote-box" style="max-width:70%; border-left-width:4px;">
+            <p style="font-size:0.54em !important;">"However difficult life may seem, there is always something you can do and succeed at."</p>
+            <span class="attribution">&mdash; Stephen Hawking, lecture at the Royal Albert Hall, 2016</span>
+        </div>
+        <div class="separator" style="margin-top:1.2em;"></div>
+        <p class="subtitle" style="margin-top:0.8em;">Stephen William Hawking &middot; 1942&ndash;2018</p>
+        <p style="text-align:center; font-size:0.44em !important; color:var(--text-muted); margin-top:0.5em;">Physicist &middot; Cosmologist &middot; Author &middot; Explorer of the Infinite</p>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

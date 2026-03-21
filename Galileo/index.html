@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galileo Galilei - Father of Modern Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #e8b84b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Telescope motif -->
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+            <circle cx="100" cy="100" r="60" fill="none" stroke="#2a2a3a" stroke-width="0.5"/>
+            <!-- Telescope body -->
+            <rect x="55" y="92" width="90" height="16" rx="3" fill="none" stroke="#e8b84b" stroke-width="2" transform="rotate(-15, 100, 100)"/>
+            <rect x="40" y="88" width="20" height="24" rx="4" fill="none" stroke="#e8b84b" stroke-width="2" transform="rotate(-15, 100, 100)"/>
+            <circle cx="148" cy="87" r="6" fill="none" stroke="#e8b84b" stroke-width="1.5" transform="rotate(-15, 100, 100)"/>
+            <!-- Pendulum -->
+            <line x1="100" y1="30" x2="120" y2="75" stroke="#d4a053" stroke-width="1.5"/>
+            <circle cx="120" cy="78" r="5" fill="#d4a053" opacity="0.6"/>
+            <line x1="100" y1="30" x2="80" y2="75" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.3"/>
+            <circle cx="80" cy="78" r="5" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+            <!-- Stars -->
+            <circle cx="30" cy="40" r="2" fill="#e8b84b" opacity="0.7"/>
+            <circle cx="170" cy="35" r="1.5" fill="#e8b84b" opacity="0.5"/>
+            <circle cx="160" cy="160" r="2" fill="#e8b84b" opacity="0.6"/>
+            <circle cx="35" cy="155" r="1.5" fill="#e8b84b" opacity="0.4"/>
+            <!-- Jupiter and moons -->
+            <circle cx="165" cy="70" r="8" fill="none" stroke="#e8b84b" stroke-width="1.2"/>
+            <circle cx="150" cy="68" r="1.5" fill="#e8b84b" opacity="0.8"/>
+            <circle cx="178" cy="72" r="1.2" fill="#e8b84b" opacity="0.6"/>
+            <circle cx="158" cy="60" r="1" fill="#e8b84b" opacity="0.5"/>
+            <circle cx="172" cy="78" r="1.3" fill="#e8b84b" opacity="0.7"/>
+        </svg>
+    </div>
+    <h1>Galileo Galilei</h1>
+    <div class="separator"></div>
+    <p class="subtitle">Father of Modern Observational Science &middot; 1564 &ndash; 1642</p>
+    <div style="margin-top: 0.8em;">
+        <span class="tag amber">Kinematics</span>
+        <span class="tag green">Telescopic Astronomy</span>
+        <span class="tag blue">Scientific Method</span>
+        <span class="tag rose">Heliocentrism</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>Early Life in Pisa</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Galileo Galilei was born on <span class="accent">15 February 1564</span> in Pisa, Duchy of Florence, to Vincenzo Galilei, a lutenist and music theorist, and Giulia Ammannati. His father's careful experiments on the relationship between string tension and musical pitch would profoundly shape Galileo's own empirical temperament.</p>
+            <p>Enrolled at the <span class="accent-amber">University of Pisa</span> in 1581 to study medicine at his father's urging, Galileo soon found himself drawn to mathematics after attending a geometry lecture by Ostilio Ricci. He left without a degree in 1585, but his mind was already alight with the quantitative study of nature.</p>
+            <p>Legend holds that the young Galileo, watching a chandelier swing in the Pisa Cathedral, timed its oscillations against his own pulse and discovered the <span class="accent-green">isochronism of the pendulum</span> &mdash; that the period of a pendulum is independent of its amplitude for small swings.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent">Family & Influences</h4>
+                <p>Vincenzo Galilei's treatise <em>Dialogue on Ancient and Modern Music</em> (1581) challenged the authority of received tradition in favor of empirical experiment &mdash; a disposition his son would carry into natural philosophy.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Education</h4>
+                <p>Though Galileo never completed his medical degree, he studied Euclid and Archimedes privately. By 1588, he had earned enough reputation to lecture on the dimensions and geography of Dante's <em>Inferno</em> at the Florentine Academy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>From Pisa to Padua to Florence</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In 1589, Galileo secured a chair in mathematics at the <span class="accent">University of Pisa</span>, where he began his studies of falling bodies. His salary was meager, and his contrarian temperament won him few friends among Aristotelian faculty. He moved to the <span class="accent-green">University of Padua</span> in 1592, where he spent the most productive eighteen years of his life.</p>
+            <p>At Padua, under the protection of the Venetian Republic, Galileo enjoyed intellectual freedom. He built instruments, took private students, and developed his understanding of mechanics. He constructed his own <span class="accent-amber">military compass</span> and sold it with an instruction manual &mdash; an early example of scientific entrepreneurship.</p>
+            <p>In 1610, following his telescopic discoveries, Galileo was appointed <span class="accent-rose">Chief Mathematician and Philosopher</span> to Grand Duke Cosimo II de' Medici, returning to Florence. It was a fateful choice: unlike Venice, Florence could not shield him from Rome.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-blue">Padua: 1592 &ndash; 1610</h4>
+                <p>Galileo called his years at Padua "the best eighteen years of my life." The university's proximity to the Venetian Arsenal &mdash; a vast shipyard &mdash; gave him practical problems in mechanics and material science to study.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">Florence: 1610 &ndash; 1642</h4>
+                <p>As court philosopher, Galileo gained prestige but lost the protection of republican Venice. His increasingly public advocacy of Copernicanism put him on a collision course with the Roman Inquisition.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The World Galileo Inhabited</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Counter-Reformation</h4>
+            <p>The Council of Trent (1545&ndash;1563) had reasserted Catholic authority over Biblical interpretation. Any challenge to Scripture's literal meaning &mdash; including the motion of the Earth &mdash; fell under theological scrutiny.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Copernican Question</h4>
+            <p>Copernicus's <em>De revolutionibus</em> (1543) had proposed a heliocentric cosmos but lacked decisive physical evidence. Most astronomers treated it as a mathematical convenience, not physical reality.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Aristotelian Physics</h4>
+            <p>Universities taught Aristotle's physics as settled truth: heavy bodies fall faster, celestial spheres are perfect, the Earth is stationary. Galileo would systematically dismantle each claim.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-amber">Invention of the Telescope</h4>
+            <p>Dutch spectacle makers (Lippershey, Janssen) developed the first telescopes around 1608. Galileo, hearing reports, constructed his own improved version in 1609, eventually reaching 20x magnification.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Patronage Culture</h4>
+            <p>Scientific careers depended on noble patrons. Galileo's naming of Jupiter's moons the "Medicean Stars" was a calculated bid for Medici patronage &mdash; one that succeeded brilliantly.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 - Kinematics + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>Kinematics of Falling Bodies</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <p>Galileo overturned the Aristotelian doctrine that heavier objects fall faster. Through experiments with <span class="accent">inclined planes</span>, he established that all bodies accelerate uniformly under gravity, regardless of their weight.</p>
+            <p>His key insight: by rolling balls down inclined planes, he could "dilute" gravity, slowing the motion enough to measure with water clocks and musical beats. He found that distances traveled grow as the <span class="accent-green">sequence of odd numbers</span>: 1, 3, 5, 7... meaning total distance is proportional to the square of elapsed time.</p>
+            <p><code>d = 1/2 g t^2</code></p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Inclined plane -->
+                    <line x1="40" y1="240" x2="340" y2="60" stroke="#e8b84b" stroke-width="2.5"/>
+                    <line x1="40" y1="240" x2="340" y2="240" stroke="#2a2a3a" stroke-width="1"/>
+                    <line x1="340" y1="60" x2="340" y2="240" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+                    <!-- Angle arc -->
+                    <path d="M 80 240 A 40 40 0 0 0 66 218" fill="none" stroke="#d4a053" stroke-width="1.2"/>
+                    <text x="85" y="228" fill="#d4a053" font-size="12" font-family="JetBrains Mono">θ</text>
+                    <!-- Balls at intervals showing acceleration -->
+                    <circle cx="80" cy="216" r="9" fill="#e8b84b" opacity="0.9"/>
+                    <circle cx="130" cy="186" r="9" fill="#e8b84b" opacity="0.75"/>
+                    <circle cx="200" cy="144" r="9" fill="#e8b84b" opacity="0.6"/>
+                    <circle cx="290" cy="90" r="9" fill="#e8b84b" opacity="0.45"/>
+                    <!-- Distance markers -->
+                    <text x="90" y="210" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=1</text>
+                    <text x="140" y="180" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=4</text>
+                    <text x="210" y="138" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=9</text>
+                    <text x="300" y="84" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=16</text>
+                    <!-- Time markers -->
+                    <text x="68" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=1</text>
+                    <text x="118" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=2</text>
+                    <text x="188" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=3</text>
+                    <text x="278" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=4</text>
+                    <!-- Title -->
+                    <text x="190" y="25" fill="#e8e6e3" font-size="13" font-family="DM Sans" text-anchor="middle">Uniformly Accelerated Motion on Inclined Plane</text>
+                    <!-- g sin theta label -->
+                    <text x="180" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" transform="rotate(-25, 180, 175)">a = g sin θ</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deep Dive -->
+<section>
+    <span class="section-number">04a &mdash; DEEP DIVE</span>
+    <h2>The Law of Free Fall</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Galileo's experiments, described in <em>Two New Sciences</em> (1638), established that freely falling bodies accelerate at a constant rate. He defined <span class="accent">uniformly accelerated motion</span> as motion where equal increments of velocity are gained in equal intervals of time.</p>
+            <p>This was revolutionary because it replaced Aristotle's qualitative categories (natural vs. violent motion) with <span class="accent-green">quantitative laws</span>. Galileo showed that the trajectory of a projectile is a parabola &mdash; the composition of uniform horizontal motion and uniformly accelerated vertical motion.</p>
+            <p>He also recognized the principle of <span class="accent-amber">inertia</span>: a body in motion on a frictionless horizontal surface would continue indefinitely. This proto-Newtonian insight demolished the Aristotelian need for a continuous mover.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent">The Mean Speed Theorem</h4>
+                <p>Galileo proved that the distance covered by a uniformly accelerating body equals the distance covered by a body moving at the mean speed for the same duration: <code>d = v_avg * t</code>. This geometric proof was central to his kinematics.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-purple">Parabolic Trajectories</h4>
+                <p>By composing horizontal and vertical motions independently, Galileo demonstrated that projectiles follow parabolic paths &mdash; a result with immediate military applications for artillery tables.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">The Tower of Pisa Myth</h4>
+                <p>The famous story of Galileo dropping balls from the Leaning Tower likely never happened. It was reported by his student Viviani years after Galileo's death. The inclined plane experiments were his true method.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 - Telescopic Astronomy + SVG -->
+<section>
+    <span class="section-number">05 &mdash; CONTRIBUTION II</span>
+    <h2>Telescopic Astronomy</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <p>In late 1609, Galileo turned a telescope of his own construction to the night sky and forever changed humanity's understanding of the cosmos. Published in <em>Sidereus Nuncius</em> (1610), his observations demolished the Aristotelian distinction between the perfect heavens and the corrupt Earth.</p>
+            <p>He discovered four moons orbiting <span class="accent">Jupiter</span>, proving that not everything orbits the Earth. He observed the <span class="accent-green">phases of Venus</span>, which could only be explained if Venus orbited the Sun. He saw mountains on the Moon, sunspots, and the Milky Way resolved into countless stars.</p>
+        </div>
+        <div>
+            <div class="diagram-container">
+                <svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+                    <text x="190" y="20" fill="#e8e6e3" font-size="13" font-family="DM Sans" text-anchor="middle">Galilean Moons of Jupiter</text>
+                    <!-- Jupiter -->
+                    <circle cx="190" cy="130" r="35" fill="none" stroke="#e8b84b" stroke-width="2"/>
+                    <ellipse cx="190" cy="120" rx="30" ry="4" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
+                    <ellipse cx="190" cy="135" rx="32" ry="5" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.4"/>
+                    <text x="190" y="175" fill="#e8b84b" font-size="11" font-family="DM Sans" text-anchor="middle">Jupiter</text>
+                    <!-- Io -->
+                    <circle cx="80" cy="130" r="5" fill="#cf7272" opacity="0.8"/>
+                    <text x="80" y="150" fill="#cf7272" font-size="10" font-family="DM Sans" text-anchor="middle">Io</text>
+                    <!-- Europa -->
+                    <circle cx="115" cy="130" r="4.5" fill="#5b8cd4" opacity="0.8"/>
+                    <text x="115" y="150" fill="#5b8cd4" font-size="10" font-family="DM Sans" text-anchor="middle">Europa</text>
+                    <!-- Ganymede -->
+                    <circle cx="275" cy="130" r="6" fill="#4ecca3" opacity="0.8"/>
+                    <text x="275" y="150" fill="#4ecca3" font-size="10" font-family="DM Sans" text-anchor="middle">Ganymede</text>
+                    <!-- Callisto -->
+                    <circle cx="330" cy="130" r="5.5" fill="#d4a053" opacity="0.8"/>
+                    <text x="330" y="150" fill="#d4a053" font-size="10" font-family="DM Sans" text-anchor="middle">Callisto</text>
+                    <!-- Orbital paths -->
+                    <circle cx="190" cy="130" r="110" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <circle cx="190" cy="130" r="75" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <circle cx="190" cy="130" r="85" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <circle cx="190" cy="130" r="140" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <!-- Phases of Venus below -->
+                    <text x="190" y="200" fill="#e8e6e3" font-size="12" font-family="DM Sans" text-anchor="middle">Phases of Venus</text>
+                    <!-- Phase circles -->
+                    <circle cx="60" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
+                    <path d="M 60 218 A 12 12 0 0 1 60 242" fill="#e8b84b" opacity="0.8"/>
+                    <text x="60" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Full</text>
+                    <circle cx="130" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
+                    <path d="M 130 218 A 12 12 0 0 1 130 242 A 6 12 0 0 1 130 218" fill="#e8b84b" opacity="0.8"/>
+                    <text x="130" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Gibbous</text>
+                    <circle cx="200" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
+                    <path d="M 200 218 A 12 12 0 0 1 200 242" fill="#e8b84b" opacity="0.7"/>
+                    <text x="200" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Half</text>
+                    <circle cx="270" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
+                    <path d="M 270 218 A 12 12 0 0 1 270 242 A 4 12 0 0 0 270 218" fill="#e8b84b" opacity="0.6"/>
+                    <text x="270" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Crescent</text>
+                    <circle cx="340" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
+                    <text x="340" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">New</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deep Dive -->
+<section>
+    <span class="section-number">05a &mdash; DEEP DIVE</span>
+    <h2>Sidereus Nuncius & Beyond</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p><em>Sidereus Nuncius</em> (Starry Messenger, March 1610) was the first published scientific work based on telescopic observation. It made Galileo famous throughout Europe virtually overnight.</p>
+            <p>The <span class="accent">phases of Venus</span> were decisive. In the Ptolemaic system, Venus always stays between Earth and Sun and should only show crescent phases. Galileo observed Venus going through a <span class="accent-green">full cycle</span> of phases, from crescent to gibbous to full &mdash; only possible if Venus orbits the Sun.</p>
+            <p>His observations of <span class="accent-amber">sunspots</span> (published 1613) showed that the Sun itself was imperfect and rotating, further eroding the Aristotelian heavenly/earthly divide. His priority dispute with Christoph Scheiner over sunspots earned him a powerful enemy.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-blue">The Lunar Mountains</h4>
+                <p>By analyzing light and shadow patterns on the Moon, Galileo estimated lunar mountain heights using geometry. He calculated peaks of about four miles &mdash; remarkably close to modern values. The Moon was not a perfect sphere but a world with topography.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-green">Saturn's "Ears"</h4>
+                <p>Galileo observed Saturn's rings but his telescope was too weak to resolve them. He described Saturn as having "ears" or appearing as a triple body. The mystery would not be solved until Huygens in 1655.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">The Milky Way Resolved</h4>
+                <p>Through his telescope, Galileo resolved the diffuse band of the Milky Way into "a mass of innumerable stars planted together in clusters," dismantling its status as a celestial vapor.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 - The Dialogue -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION III</span>
+    <h2>Dialogue on the Two Chief World Systems</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Published in 1632, the <em>Dialogue Concerning the Two Chief World Systems</em> is Galileo's masterwork of scientific argument and literary art. Written in Italian (not Latin) to reach the widest possible audience, it presents a four-day conversation among three characters.</p>
+            <p><span class="accent">Salviati</span> argues for the Copernican system and represents Galileo's own views. <span class="accent-rose">Simplicio</span> defends the Ptolemaic-Aristotelian view and is often made to appear foolish. <span class="accent-blue">Sagredo</span> is the intelligent layman who mediates but consistently finds Salviati's arguments more persuasive.</p>
+            <p>The <em>Dialogue</em> dismantles objections to Earth's motion: why we don't feel it move, why objects don't fly off, why dropped stones land at our feet. Galileo introduces a <span class="accent-green">relativity of motion</span> principle &mdash; below decks on a ship, you cannot tell if the ship is moving.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent">The Tides Argument</h4>
+                <p>Galileo believed tides were caused by the Earth's combined rotation and revolution, like water sloshing in a moving bowl. This was his attempted "proof" of Earth's motion &mdash; but it was wrong. Kepler's lunar theory of tides was closer to the truth.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-purple">Galilean Relativity</h4>
+                <p>The ship's cabin thought experiment anticipates Einstein by centuries: no mechanical experiment performed in a uniformly moving reference frame can detect that motion. This is the founding principle of classical relativity.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">The Political Disaster</h4>
+                <p>Pope Urban VIII, a former friend, believed his own arguments had been placed in the mouth of the bumbling Simplicio. The book was banned, and Galileo was summoned to Rome for trial in 1633.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 &mdash; METHOD</span>
+    <h2>The Galilean Method</h2>
+    <div class="separator"></div>
+    <p style="text-align: center; max-width: 75%; margin: 0 auto 0.3em auto;">Galileo pioneered a new way of interrogating nature: <span class="accent">idealization</span>, <span class="accent-green">mathematical description</span>, and <span class="accent-amber">experimental verification</span>.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Idealize</h4>
+            <p>Strip away friction, air resistance, imperfections</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Mathematize</h4>
+            <p>Express relationships in geometric or algebraic form</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Experiment</h4>
+            <p>Test predictions against carefully controlled measurements</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-purple">Generalize</h4>
+            <p>Extend the law beyond the specific experimental setup</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"The book of Nature is written in the language of mathematics, and its characters are triangles, circles, and other geometric figures."</p>
+        <span class="attribution">&mdash; Galileo, <em>The Assayer</em> (1623)</span>
+    </div>
+</section>
+
+<!-- Slide 11: Connections -->
+<section>
+    <span class="section-number">08 &mdash; CONNECTIONS</span>
+    <h2>Intellectual Network</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Kepler</h4>
+            <p>Kepler eagerly endorsed Galileo's telescopic discoveries and sent him a copy of his <em>Astronomia Nova</em>. Galileo, unfortunately, never adopted Kepler's elliptical orbits, clinging to circular motion throughout his life.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Archimedes</h4>
+            <p>Galileo revered Archimedes above all other thinkers. His approach to mechanics &mdash; geometric, quantitative, focused on equilibrium and motion &mdash; was deeply Archimedean. He called Archimedes "superhuman."</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Copernicus</h4>
+            <p>Galileo provided the first strong observational evidence for the Copernican system. Yet he went beyond Copernicus by developing the physics needed to explain why we cannot feel the Earth's motion.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-amber">Newton</h4>
+            <p>Born the year Galileo died (1642), Newton built directly on Galileo's kinematics, inertia, and relativity. Newton's first law is Galileo's inertia principle formalized; his second law extends Galileo's acceleration concept.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Torricelli & Viviani</h4>
+            <p>Galileo's last students carried his work forward. Torricelli extended his fluid mechanics, invented the barometer, and further developed the theory of projectile motion. Viviani wrote the first biography of Galileo.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">09 &mdash; CONTROVERSY</span>
+    <h2>The Trial of 1633</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>The trial of Galileo before the Roman Inquisition is the most famous collision between science and religious authority in history. In 1616, the Church had declared heliocentrism "formally heretical," and Cardinal Bellarmine had warned Galileo not to hold or defend it.</p>
+            <p>When the <em>Dialogue</em> was published in 1632, Galileo's enemies convinced Pope Urban VIII that the book violated the 1616 injunction. Galileo was summoned to Rome, interrogated, and under threat of torture compelled to <span class="accent-rose">abjure</span> heliocentrism.</p>
+            <p>He was sentenced to <span class="accent">house arrest</span> for the remainder of his life, confined to his villa at Arcetri near Florence. Remarkably, it was during this imprisonment that he wrote <em>Two New Sciences</em>, his most important scientific work, smuggled to a publisher in Protestant Leiden.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-rose">The Abjuration</h4>
+                <p>"I, Galileo... kneeling before you... swear that I have always believed, do believe, and with God's help will in the future believe all that is held, preached, and taught by the Holy Catholic and Apostolic Church."</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.4em;">
+                <h4 class="accent-amber">Scheiner & the Jesuits</h4>
+                <p>Christoph Scheiner, whose sunspot priority Galileo had attacked in <em>The Assayer</em>, became a bitter enemy. The Jesuit order, once Galileo's ally, turned against him &mdash; a political catastrophe.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-green">Rehabilitation</h4>
+                <p>In 1992, Pope John Paul II formally acknowledged the Church's error in condemning Galileo, declaring that his judges had failed to distinguish between Scripture and its interpretation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy in Modern Physics -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>Legacy in Modern Physics</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Galilean Relativity &rarr; Special Relativity</h4>
+            <p>Galileo's ship-cabin thought experiment is the direct ancestor of Einstein's relativity postulate. Einstein's innovation was extending this principle from mechanics to electrodynamics. The Galilean transformation is the low-velocity limit of the Lorentz transformation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Equivalence Principle</h4>
+            <p>Galileo's demonstration that all bodies fall at the same rate &mdash; regardless of composition &mdash; is the empirical basis for Einstein's equivalence principle. This became the conceptual foundation of general relativity.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">The Galileo Spacecraft</h4>
+            <p>NASA's Galileo mission (1989&ndash;2003) orbited Jupiter and studied the very moons Galileo discovered. It deployed a probe into Jupiter's atmosphere and confirmed the presence of subsurface oceans on Europa.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Experimental Physics</h4>
+            <p>Galileo's insistence that nature must be interrogated through controlled experiment, not deduced from first principles, established the methodology that all of modern physics follows. He is, justly, called the father of experimental science.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 &mdash; APPLICATIONS</span>
+    <h2>Applications & Influence</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Pendulum Clocks</h4>
+            <p>Galileo's discovery of pendulum isochronism led directly to Huygens's invention of the pendulum clock (1656), which revolutionized timekeeping and navigation for two centuries.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Ballistics</h4>
+            <p>His parabolic trajectory theory transformed artillery science. Military engineers could now calculate range and elevation mathematically rather than by pure trial and error.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Telescope Design</h4>
+            <p>Galileo's refracting telescope design (convex objective, concave eyepiece) remained the standard for decades. He pushed magnification from 3x to 20x through careful lens grinding.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top: 0.3em;">
+        <div class="card">
+            <h4 class="accent-blue">Galileo Navigation System</h4>
+            <p>The European Union's global satellite navigation system is named after Galileo. With 30 satellites, it provides positioning accuracy to within one meter &mdash; a fitting tribute to the man who measured the heavens.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Strength of Materials</h4>
+            <p>In <em>Two New Sciences</em>, Galileo founded the science of material strength, analyzing why structures cannot be simply scaled up. His square-cube law explains why a giant would collapse under its own weight.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">12 &mdash; TIMELINE</span>
+    <h2>Life & Works</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main timeline line -->
+            <line x1="50" y1="190" x2="860" y2="190" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- Birth -->
+            <circle cx="80" cy="190" r="5" fill="#e8b84b"/>
+            <text x="80" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1564</text>
+            <text x="80" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Born in Pisa</text>
+            <!-- Pisa chair -->
+            <circle cx="180" cy="190" r="4" fill="#d4a053"/>
+            <text x="180" y="175" fill="#d4a053" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1589</text>
+            <text x="180" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Pisa Chair</text>
+            <!-- Padua -->
+            <circle cx="250" cy="190" r="4" fill="#4ecca3"/>
+            <text x="250" y="175" fill="#4ecca3" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1592</text>
+            <text x="250" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Padua</text>
+            <!-- Telescope -->
+            <circle cx="370" cy="190" r="5" fill="#e8b84b"/>
+            <text x="370" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1609</text>
+            <text x="370" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">First Telescope</text>
+            <!-- Sidereus Nuncius -->
+            <circle cx="430" cy="190" r="5" fill="#5b8cd4"/>
+            <text x="430" y="165" fill="#5b8cd4" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1610</text>
+            <text x="430" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Sidereus</text>
+            <text x="430" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Nuncius</text>
+            <!-- 1616 warning -->
+            <circle cx="520" cy="190" r="4" fill="#cf7272"/>
+            <text x="520" y="175" fill="#cf7272" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1616</text>
+            <text x="520" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Church Warning</text>
+            <!-- Dialogue -->
+            <circle cx="640" cy="190" r="5" fill="#e8b84b"/>
+            <text x="640" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1632</text>
+            <text x="640" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Dialogue</text>
+            <!-- Trial -->
+            <circle cx="700" cy="190" r="5" fill="#cf7272"/>
+            <text x="700" y="175" fill="#cf7272" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1633</text>
+            <text x="700" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Trial &amp; House</text>
+            <text x="700" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Arrest</text>
+            <!-- Two New Sciences -->
+            <circle cx="775" cy="190" r="5" fill="#9b72cf"/>
+            <text x="775" y="175" fill="#9b72cf" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1638</text>
+            <text x="775" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Two New</text>
+            <text x="775" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Sciences</text>
+            <!-- Death -->
+            <circle cx="840" cy="190" r="5" fill="#e8b84b"/>
+            <text x="840" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1642</text>
+            <text x="840" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Dies at Arcetri</text>
+            <!-- Era labels -->
+            <rect x="160" y="260" width="120" height="25" rx="4" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <text x="220" y="277" fill="#4ecca3" font-size="10" font-family="DM Sans" text-anchor="middle">Padua Years</text>
+            <rect x="400" y="260" width="140" height="25" rx="4" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.5"/>
+            <text x="470" y="277" fill="#e8b84b" font-size="10" font-family="DM Sans" text-anchor="middle">Telescopic Revolution</text>
+            <rect x="620" y="260" width="220" height="25" rx="4" fill="none" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <text x="730" y="277" fill="#cf7272" font-size="10" font-family="DM Sans" text-anchor="middle">Conflict &amp; Confinement</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Recommended Reading -->
+<section>
+    <span class="section-number">13 &mdash; READING</span>
+    <h2>Recommended Reading</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Sources</h4>
+            <ul>
+                <li><em>Sidereus Nuncius</em> (1610) &mdash; The Starry Messenger, Galileo's first telescopic reports</li>
+                <li><em>Dialogue Concerning the Two Chief World Systems</em> (1632) &mdash; The masterwork that led to his trial</li>
+                <li><em>Two New Sciences</em> (1638) &mdash; His foundational treatise on mechanics and material science</li>
+                <li><em>The Assayer</em> (1623) &mdash; His polemic on scientific methodology and comets</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Secondary Sources</h4>
+            <ul>
+                <li>Stillman Drake, <em>Galileo at Work</em> (1978) &mdash; The definitive scholarly biography</li>
+                <li>Dava Sobel, <em>Galileo's Daughter</em> (1999) &mdash; Galileo's life through his correspondence with his daughter, Sister Maria Celeste</li>
+                <li>J.L. Heilbron, <em>Galileo</em> (2010) &mdash; A comprehensive modern biography</li>
+                <li>Pietro Redondi, <em>Galileo: Heretic</em> (1987) &mdash; Provocative reinterpretation of the trial</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quote-box" style="margin-top: 0.5em;">
+        <p>"Galileo's contribution to physics was not just discoveries but a new way of thinking: the insistence that nature speaks the language of mathematics, and that experiment, not authority, is the arbiter of truth."</p>
+        <span class="attribution">&mdash; Stillman Drake</span>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 70vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="50" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.2"/>
+                <!-- Earth -->
+                <circle cx="100" cy="100" r="8" fill="#5b8cd4" opacity="0.6"/>
+                <!-- Sun orbit path -->
+                <circle cx="100" cy="100" r="30" fill="none" stroke="#e8b84b" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4"/>
+                <!-- Sun -->
+                <circle cx="130" cy="100" r="5" fill="#e8b84b" opacity="0.8"/>
+                <!-- Stars scattered -->
+                <circle cx="40" cy="50" r="1.5" fill="#e8b84b" opacity="0.5"/>
+                <circle cx="160" cy="40" r="1" fill="#e8b84b" opacity="0.4"/>
+                <circle cx="150" cy="160" r="1.5" fill="#e8b84b" opacity="0.6"/>
+                <circle cx="50" cy="150" r="1" fill="#e8b84b" opacity="0.3"/>
+                <circle cx="100" cy="25" r="1.2" fill="#e8b84b" opacity="0.5"/>
+                <circle cx="175" cy="100" r="1" fill="#e8b84b" opacity="0.4"/>
+            </svg>
+        </div>
+        <h2 style="margin-bottom: 0.3em;">E pur si muove</h2>
+        <p class="subtitle" style="margin-bottom: 1em;">"And yet it moves"</p>
+        <div class="quote-box" style="max-width: 60%;">
+            <p>"In questions of science, the authority of a thousand is not worth the humble reasoning of a single individual."</p>
+            <span class="attribution">&mdash; Galileo Galilei (1564 &ndash; 1642)</span>
+        </div>
+        <div style="margin-top: 1.2em;">
+            <span class="tag amber">Pisa</span>
+            <span class="tag green">Padua</span>
+            <span class="tag blue">Florence</span>
+            <span class="tag rose">Arcetri</span>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

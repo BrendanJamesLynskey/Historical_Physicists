@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrico Fermi - The Last Universal Physicist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #c97b4b;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag.copper { background: rgba(201,123,75,0.12); color: #c97b4b; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="70" cy="70" r="30" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.15"/>
+            <!-- Atom-like orbits -->
+            <ellipse cx="70" cy="70" rx="55" ry="20" fill="none" stroke="#c97b4b" stroke-width="0.6" opacity="0.25" transform="rotate(0,70,70)"/>
+            <ellipse cx="70" cy="70" rx="55" ry="20" fill="none" stroke="#c97b4b" stroke-width="0.6" opacity="0.25" transform="rotate(60,70,70)"/>
+            <ellipse cx="70" cy="70" rx="55" ry="20" fill="none" stroke="#c97b4b" stroke-width="0.6" opacity="0.25" transform="rotate(120,70,70)"/>
+            <circle cx="70" cy="70" r="6" fill="#c97b4b" opacity="0.6"/>
+        </svg>
+    </div>
+    <h1>Enrico Fermi</h1>
+    <div class="separator"></div>
+    <p class="subtitle">The Last Universal Physicist &middot; 1901&ndash;1954</p>
+    <div style="margin-top:1em;">
+        <span class="tag copper">Nuclear Reactor</span>
+        <span class="tag green">Fermi-Dirac Statistics</span>
+        <span class="tag blue">Beta Decay</span>
+        <span class="tag rose">Manhattan Project</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>A Roman Prodigy</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>Enrico Fermi was born on 29 September 1901 in Rome, the third child of Alberto Fermi, a railway ministry official, and Ida de Gattis, a schoolteacher. The family was solidly middle-class, unremarkable in every way except for the extraordinary mind of their youngest son.</p>
+            <p>The defining tragedy of Fermi's youth was the sudden death of his older brother Giulio during minor surgery in 1915. The fourteen-year-old Enrico, devastated, threw himself into physics with an intensity that never relented. He bought used physics textbooks from the Campo de' Fiori market and taught himself advanced mathematics from Latin texts.</p>
+            <p>His talent was recognized by Adolfo Amidei, a colleague of his father, who guided his reading and arranged his admission to the Scuola Normale Superiore in Pisa in 1918. Fermi arrived at age 17 already knowing more physics than most of his professors. His doctoral examiner reportedly found the thesis on X-ray diffraction beyond his own understanding.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Rome, 1900s</h4>
+                <p>Italy lagged behind Germany and Britain in theoretical physics. There was no tradition of quantum theory, no Sommerfeld seminar, no Cavendish Laboratory. Fermi would have to build Italian physics almost from nothing.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-amber">Scuola Normale, Pisa</h4>
+                <p>Italy's most elite academic institution. Fermi earned his doctorate in 1922 at age 21, with a thesis using general relativity to analyze crystal diffraction&mdash;remarkable for a self-taught student in a country with no relativity tradition.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">The Amidei Connection</h4>
+                <p>Adolfo Amidei recognized Fermi's genius and lent him books on analytical mechanics, mathematical physics, and astronomy. Amidei later recalled that the teenager returned each book quickly, having mastered its contents, and never needed to read anything twice.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>From Rome to Chicago</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>After postdoctoral work in G&ouml;ttingen (with Max Born) and Leiden (with Paul Ehrenfest), Fermi returned to Italy in 1926 to take up the first chair in theoretical physics at the University of Rome. He was 25 years old.</p>
+            <p>In Rome, Fermi assembled the legendary "Via Panisperna boys"&mdash;a group of young physicists including Emilio Segr&egrave;, Edoardo Amaldi, Franco Rasetti, and Bruno Pontecorvo. Together they conducted groundbreaking experiments on neutron bombardment that earned Fermi the 1938 Nobel Prize.</p>
+            <p>The Nobel trip to Stockholm became an escape: Fermi's wife Laura was Jewish, and Mussolini's racial laws made Italy dangerous. The family sailed directly from Sweden to New York in January 1939. Within four years, Fermi would build the world's first nuclear reactor under the stands of a squash court at the University of Chicago.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Via Panisperna Boys</h4>
+                <p>Named after the street address of Rome's Physics Institute. This group discovered the effectiveness of slow neutrons in inducing nuclear reactions&mdash;a finding that made nuclear reactors possible.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">Nobel Prize, 1938</h4>
+                <p>"For his demonstrations of the existence of new radioactive elements produced by neutron irradiation, and for his related discovery of nuclear reactions brought about by slow neutrons."</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">The American Years</h4>
+                <p>Columbia University (1939&ndash;42) &rarr; University of Chicago / Manhattan Project (1942&ndash;45) &rarr; Institute for Nuclear Studies, Chicago (1946&ndash;54). Fermi became a U.S. citizen in 1944.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The Nuclear Age Takes Shape</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent-amber">Italian Physics Reborn</h4>
+            <p>When Fermi arrived in Rome, Italian physics was a backwater focused on classical spectroscopy. Within a decade, he had created a world-class research group and established Italy as a player in nuclear science&mdash;a transformation without parallel in European science.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">The Neutron Revolution</h4>
+            <p>Chadwick's discovery of the neutron in 1932 changed everything. Unlike protons, neutrons had no electric charge and could penetrate atomic nuclei easily. Fermi immediately grasped the experimental possibilities and began systematically bombarding every element he could find.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Fission Discovered</h4>
+            <p>In December 1938, Hahn and Strassmann in Berlin discovered nuclear fission. Meitner and Frisch provided the theoretical explanation weeks later. The world suddenly realized that splitting the atom could release enormous energy&mdash;and that Fermi's slow neutron technique was the key.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"The Italian navigator has just landed in the new world."</p>
+        <span class="attribution">&mdash; Arthur Compton's coded phone message to James Conant announcing the success of Chicago Pile-1, 2 December 1942</span>
+    </div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent-rose">Fascism and Flight</h4>
+            <p>Mussolini's 1938 racial laws directly threatened Fermi's family. His departure was neither purely scientific nor purely political&mdash;it was survival. Italy lost its greatest physicist; America gained the architect of the nuclear age.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">The Manhattan Project</h4>
+            <p>From 1942, the largest scientific-industrial project in history mobilized over 125,000 people. Fermi was one of a handful of physicists who understood both the theory and the engineering. His reactor proved that a controlled chain reaction was possible.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 - Chicago Pile-1 + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>Chicago Pile-1: The First Nuclear Reactor</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>On 2 December 1942, beneath the west stands of Stagg Field at the University of Chicago, Fermi's team achieved the first self-sustaining nuclear chain reaction. Chicago Pile-1 (CP-1) was a roughly spherical lattice of uranium and graphite blocks, 25 feet wide, assembled by hand over 17 days.</p>
+            <p>The principle was elegant: uranium-235 nuclei split when struck by neutrons, releasing energy and more neutrons. Graphite slowed (moderated) the neutrons to increase fission probability. Cadmium control rods absorbed neutrons to regulate the reaction rate.</p>
+            <p>At 3:25 PM, Fermi ordered the last control rod withdrawn. The neutron intensity rose on a self-sustaining exponential curve. Fermi let the reaction run for 28 minutes, calmly monitoring his instruments, then ordered the rods reinserted. The nuclear age had begun&mdash;in a converted squash court with no radiation shielding.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="pileGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#c97b4b" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#c97b4b" stop-opacity="0.05"/>
+                    </linearGradient>
+                </defs>
+                <text x="160" y="18" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">Chicago Pile-1 Schematic (Cross-Section)</text>
+                <!-- Pile outline - elliptical cross section -->
+                <ellipse cx="160" cy="170" rx="120" ry="100" fill="url(#pileGrad)" stroke="#c97b4b" stroke-width="1.5" opacity="0.8"/>
+                <!-- Graphite block grid -->
+                <rect x="80" y="100" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="105" y="100" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="130" y="100" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="155" y="100" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="180" y="100" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="205" y="100" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="80" y="120" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="105" y="120" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="130" y="120" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="155" y="120" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="180" y="120" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <rect x="205" y="120" width="20" height="15" fill="#2a2a3a" stroke="#3a3a4a" stroke-width="0.5" rx="1"/>
+                <!-- Uranium slugs (dots in graphite) -->
+                <circle cx="90" cy="108" r="3" fill="#c97b4b" opacity="0.7"/>
+                <circle cx="140" cy="108" r="3" fill="#c97b4b" opacity="0.7"/>
+                <circle cx="190" cy="108" r="3" fill="#c97b4b" opacity="0.7"/>
+                <circle cx="115" cy="128" r="3" fill="#c97b4b" opacity="0.7"/>
+                <circle cx="165" cy="128" r="3" fill="#c97b4b" opacity="0.7"/>
+                <circle cx="215" cy="128" r="3" fill="#c97b4b" opacity="0.7"/>
+                <!-- Control rod -->
+                <rect x="155" y="35" width="10" height="130" fill="#5b8cd4" opacity="0.5" rx="2"/>
+                <text x="175" y="55" fill="#5b8cd4" font-family="DM Sans" font-size="8">Control Rod (Cd)</text>
+                <!-- Neutron paths -->
+                <circle cx="140" cy="155" r="2" fill="#4ecca3"/>
+                <line x1="142" y1="155" x2="165" y2="168" stroke="#4ecca3" stroke-width="0.8" stroke-dasharray="3 2"/>
+                <circle cx="167" cy="170" r="2" fill="#4ecca3"/>
+                <line x1="169" y1="170" x2="195" y2="158" stroke="#4ecca3" stroke-width="0.8" stroke-dasharray="3 2"/>
+                <line x1="169" y1="172" x2="150" y2="195" stroke="#4ecca3" stroke-width="0.8" stroke-dasharray="3 2"/>
+                <!-- Fission burst -->
+                <circle cx="167" cy="170" r="8" fill="none" stroke="#c97b4b" stroke-width="0.8" opacity="0.4"/>
+                <circle cx="167" cy="170" r="14" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.2"/>
+                <!-- Labels -->
+                <text x="60" y="150" fill="#9a9a9a" font-family="DM Sans" font-size="8">Graphite</text>
+                <text x="60" y="160" fill="#9a9a9a" font-family="DM Sans" font-size="8">moderator</text>
+                <text x="230" y="175" fill="#c97b4b" font-family="DM Sans" font-size="8">U slugs</text>
+                <text x="110" y="205" fill="#4ecca3" font-family="DM Sans" font-size="8">Neutron chain reaction</text>
+                <!-- Stats -->
+                <text x="160" y="250" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">385 tons graphite | 6 tons uranium metal</text>
+                <text x="160" y="265" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">50 tons uranium oxide | 0.5 watt output</text>
+                <text x="160" y="280" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="9">k = 1.0006 (barely critical)</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Chicago Pile-1 Deep Dive -->
+<section>
+    <span class="section-number">04a &mdash; DEEP DIVE</span>
+    <h2>Engineering the Chain Reaction</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Multiplication Factor</h4>
+            <p>The key parameter was k, the effective neutron multiplication factor. If k &lt; 1, the reaction dies; if k = 1, it is self-sustaining (critical); if k &gt; 1, it grows exponentially. Fermi's meticulous measurements of k at each layer of construction allowed him to predict exactly when criticality would be reached. CP-1 achieved k = 1.0006&mdash;barely critical, by design.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Slow Neutron Discovery</h4>
+            <p>In 1934, Fermi's Rome group found that passing neutrons through paraffin wax (rich in hydrogen) dramatically increased their ability to induce nuclear reactions. Legend has it that Fermi tried paraffin on a hunch, replacing a lead filter. In truth, he had a theoretical intuition: lighter nuclei would slow neutrons more effectively through elastic collisions, like billiard balls of similar mass.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">No Shielding</h4>
+            <p>CP-1 had no radiation shielding and no cooling system. This was possible only because the power output was minuscule (half a watt). Fermi calculated that at this power level, radiation exposure would be negligible. He was right&mdash;but it was a calculated risk taken in wartime, under a football stadium in the middle of Chicago.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">The Safety System</h4>
+            <p>A young physicist named Norman Hilberry stood above the pile with an axe, ready to cut a rope holding an emergency control rod. Another rod was weighted to drop automatically if neutron levels exceeded a threshold. Fermi called this the "SCRAM" system&mdash;one origin story for the term still used in nuclear engineering.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"Fermi's face was impassive. He computed and waited. At exactly the moment he had predicted, the counters began clicking faster and faster."</p>
+        <span class="attribution">&mdash; Herbert Anderson, eyewitness account of CP-1 going critical</span>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 - Fermi-Dirac Statistics + SVG -->
+<section>
+    <span class="section-number">05 &mdash; CONTRIBUTION II</span>
+    <h2>Fermi-Dirac Statistics</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In 1926, independently of Paul Dirac, the 24-year-old Fermi developed the quantum statistics governing particles with half-integer spin&mdash;now called fermions. This was his first major theoretical contribution and one of the foundations of modern physics.</p>
+            <p>The key insight: identical particles obeying the Pauli exclusion principle (no two can occupy the same quantum state) follow a distinctive energy distribution. At zero temperature, fermions fill energy levels from the bottom up to a sharp cutoff called the <span class="accent-green">Fermi energy</span>.</p>
+            <p>The Fermi-Dirac distribution function is: <code>f(E) = 1/(e^((E-&mu;)/kT) + 1)</code>, where &mu; is the chemical potential and kT is the thermal energy. Unlike classical particles, fermions resist compression&mdash;this "degeneracy pressure" holds up white dwarf stars against gravitational collapse and gives metals their distinctive electronic properties.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+                <text x="160" y="18" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">Fermi-Dirac Distribution</text>
+                <!-- Axes -->
+                <line x1="50" y1="240" x2="290" y2="240" stroke="#2a2a3a" stroke-width="1"/>
+                <line x1="50" y1="240" x2="50" y2="35" stroke="#2a2a3a" stroke-width="1"/>
+                <text x="170" y="265" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="10">Energy (E)</text>
+                <text x="25" y="140" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="10" transform="rotate(-90,25,140)">f(E)</text>
+                <!-- f(E) = 1 line -->
+                <line x1="50" y1="55" x2="290" y2="55" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="4 3"/>
+                <text x="295" y="58" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">1.0</text>
+                <!-- f(E) = 0.5 line -->
+                <line x1="50" y1="147" x2="290" y2="147" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="4 3"/>
+                <text x="295" y="150" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">0.5</text>
+                <!-- Fermi energy marker -->
+                <line x1="170" y1="240" x2="170" y2="35" stroke="#c97b4b" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+                <text x="170" y="252" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="9">E_F</text>
+                <!-- T=0 step function -->
+                <path d="M 50 55 L 168 55 L 168 240 L 290 240" fill="none" stroke="#5b8cd4" stroke-width="2.5"/>
+                <text x="100" y="78" fill="#5b8cd4" font-family="DM Sans" font-size="9">T = 0</text>
+                <!-- T > 0 smooth curve -->
+                <path d="M 50 57 Q 80 57 110 58 Q 130 60 145 68 Q 155 80 162 100 Q 167 125 170 147 Q 173 170 178 190 Q 185 210 200 225 Q 220 235 250 238 Q 270 239 290 240" fill="none" stroke="#4ecca3" stroke-width="2"/>
+                <text x="225" y="200" fill="#4ecca3" font-family="DM Sans" font-size="9">T &gt; 0</text>
+                <!-- T >> 0 broader curve -->
+                <path d="M 50 65 Q 80 70 100 80 Q 120 95 140 115 Q 155 135 170 147 Q 185 160 200 175 Q 220 195 240 215 Q 260 230 290 238" fill="none" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="5 3"/>
+                <text x="250" y="175" fill="#cf7272" font-family="DM Sans" font-size="9">T &gt;&gt; 0</text>
+                <!-- Shaded filled states at T=0 -->
+                <rect x="50" y="55" width="118" height="185" fill="#5b8cd4" opacity="0.06"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Fermi-Dirac Deep Dive -->
+<section>
+    <span class="section-number">05a &mdash; DEEP DIVE</span>
+    <h2>The Sea of Electrons</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <h3>Why Fermions Matter</h3>
+            <p>All matter is made of fermions: electrons, protons, neutrons, and quarks. The Pauli exclusion principle&mdash;which Fermi-Dirac statistics formalize&mdash;is why the periodic table exists, why chemistry works, and why solid matter does not collapse.</p>
+            <p>In metals, the "Fermi sea" of electrons fills energy states up to the Fermi energy (typically several electron volts). Only electrons near this surface participate in conduction, which explains why metals have finite resistivity despite containing vast numbers of free electrons&mdash;a puzzle that classical physics could not resolve.</p>
+            <h3>Astrophysical Consequences</h3>
+            <p>Electron degeneracy pressure (a direct consequence of Fermi-Dirac statistics) supports white dwarf stars against gravitational collapse. Subrahmanyan Chandrasekhar showed in 1930 that this pressure has an upper mass limit&mdash;the Chandrasekhar limit of about 1.4 solar masses. Beyond this, the star collapses to a neutron star (supported by neutron degeneracy pressure) or a black hole.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Fermi vs. Dirac</h4>
+                <p>Fermi published first (February 1926); Dirac independently (August 1926). Dirac's derivation was more general, connecting the statistics to wave function antisymmetry. Both names are attached, fairly: Fermi had the physical insight, Dirac the deeper mathematical framework.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Fermi Surfaces</h4>
+                <p>In real crystals, the Fermi energy defines a surface in momentum space&mdash;the Fermi surface. Its shape determines a metal's electrical, thermal, and magnetic properties. Mapping Fermi surfaces became a central activity of condensed matter physics.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-purple">Fermi Liquid Theory</h4>
+                <p>Lev Landau later showed (1956) that even in strongly interacting systems, fermions near the Fermi surface behave as weakly interacting "quasiparticles." This Fermi liquid theory explains why the free-electron model works so well for metals, despite the strong Coulomb repulsion between electrons.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 - Beta Decay -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION III</span>
+    <h2>Beta Decay and the Weak Interaction</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Problem</h4>
+            <p>By 1933, beta decay was a crisis. When a nucleus emitted an electron, the energy spectrum was continuous, not discrete. This seemed to violate energy conservation. Pauli had proposed (in a famous 1930 letter) that an undetected neutral particle carried away the missing energy. He called it the "neutron"&mdash;Fermi renamed it the "neutrino" (little neutral one) after Chadwick's neutron claimed the name.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Fermi's Theory</h4>
+            <p>In late 1933, Fermi constructed a complete quantum field theory of beta decay: a neutron transforms into a proton by emitting an electron and a neutrino via a new fundamental force. He modeled it on quantum electrodynamics, introducing a coupling constant G (now called the Fermi constant, <code>G_F</code>). The theory predicted the electron energy spectrum, decay rates, and selection rules with remarkable accuracy.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">A New Force of Nature</h4>
+            <p>Fermi's theory was the first description of the weak nuclear force&mdash;one of the four fundamental interactions. It was a "contact" interaction (point-like, no mediating particle), which worked at low energies but predicted its own breakdown at high energies. Decades later, Glashow, Weinberg, and Salam showed the weak force is mediated by massive W and Z bosons.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Rejected by Nature</h4>
+            <p>Fermi submitted his beta decay paper to the journal <em>Nature</em> in 1934. The editors rejected it as "too speculative" and "too remote from physical reality." He published instead in Italian (<em>Nuovo Cimento</em>) and German (<em>Zeitschrift f&uuml;r Physik</em>). It became one of the most cited papers in physics history.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"Fermi's theory of beta decay was the first successful application of quantum field theory to a process other than electromagnetism. It opened the door to all modern particle physics."</p>
+        <span class="attribution">&mdash; T.D. Lee, Nobel Lecture, 1957</span>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 &mdash; METHOD</span>
+    <h2>The Fermi Method</h2>
+    <div class="separator"></div>
+    <p style="max-width:85%;margin:0 auto 0.5em auto;">Fermi was famous for his ability to estimate any physical quantity from first principles using back-of-the-envelope calculations. "Fermi problems" and "Fermi estimates" are now standard tools in physics education and Silicon Valley alike.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Simplify</h4>
+            <p>Reduce the problem to its essential physics. Ignore complications that change the answer by less than a factor of 2.</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-amber">Estimate</h4>
+            <p>Assign rough numerical values to each factor. Use known physical scales as anchors.</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-green">Multiply</h4>
+            <p>Combine the estimates. Errors in different factors tend to cancel when multiplied.</p>
+        </div>
+        <div class="process-arrow">&rarr;</div>
+        <div class="process-step">
+            <h4 class="accent-blue">Validate</h4>
+            <p>Check: is the answer physically reasonable? Does it have the right units, the right order of magnitude?</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.5em;">
+        <div class="card">
+            <h4 class="accent-purple">The Trinity Test</h4>
+            <p>At the first nuclear explosion (16 July 1945), Fermi dropped scraps of paper as the blast wave arrived. From their displacement, he estimated the yield at roughly 10 kilotons&mdash;remarkably close to the actual 21 kilotons, achieved in seconds with zero instruments.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Theory and Experiment United</h4>
+            <p>Fermi was unique among 20th-century physicists in being equally brilliant as a theorist and an experimentalist. He could derive the theory, design the experiment, build the apparatus, and analyze the data. Freeman Dyson called him "the last universal physicist."</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections - SVG Network -->
+<section>
+    <span class="section-number">08 &mdash; CONNECTIONS</span>
+    <h2>Fermi's Network</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="350" y1="60" x2="140" y2="140" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="560" y2="140" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="350" y2="180" stroke="#c97b4b" stroke-width="2" opacity="0.6"/>
+            <line x1="350" y1="60" x2="100" y2="260" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="600" y2="260" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="250" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="470" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="140" y1="140" x2="100" y2="260" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="350" y1="180" x2="250" y2="280" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="560" y1="140" x2="600" y2="260" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="560" y1="140" x2="470" y2="280" stroke="#2a2a3a" stroke-width="1"/>
+            <!-- Fermi (center) -->
+            <circle cx="350" cy="60" r="28" fill="#161622" stroke="#c97b4b" stroke-width="2.5"/>
+            <text x="350" y="64" text-anchor="middle" fill="#c97b4b" font-family="DM Sans" font-size="11" font-weight="700">Fermi</text>
+            <!-- Oppenheimer -->
+            <circle cx="140" cy="140" r="24" fill="#161622" stroke="#cf7272" stroke-width="2"/>
+            <text x="140" y="136" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="600">Oppen-</text>
+            <text x="140" y="148" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="9" font-weight="600">heimer</text>
+            <!-- Dirac -->
+            <circle cx="560" cy="140" r="24" fill="#161622" stroke="#9b72cf" stroke-width="2"/>
+            <text x="560" y="144" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="600">Dirac</text>
+            <!-- Segr&egrave; -->
+            <circle cx="350" cy="180" r="22" fill="#161622" stroke="#4ecca3" stroke-width="2"/>
+            <text x="350" y="184" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="600">Segr&egrave;</text>
+            <!-- Born -->
+            <circle cx="100" cy="260" r="22" fill="#161622" stroke="#d4a053" stroke-width="2"/>
+            <text x="100" y="264" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="600">Born</text>
+            <!-- Teller -->
+            <circle cx="600" cy="260" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <text x="600" y="264" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="10">Teller</text>
+            <!-- Pontecorvo -->
+            <circle cx="250" cy="280" r="20" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="250" y="276" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="8" font-weight="600">Ponte-</text>
+            <text x="250" y="288" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="8" font-weight="600">corvo</text>
+            <!-- Heisenberg -->
+            <circle cx="470" cy="280" r="20" fill="#161622" stroke="#cf7272" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <text x="470" y="276" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="8">Heisen-</text>
+            <text x="470" y="288" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="8">berg</text>
+            <!-- Legend -->
+            <line x1="30" y1="320" x2="55" y2="320" stroke="#2a2a3a" stroke-width="1.5"/>
+            <text x="60" y="324" fill="#6a6a7a" font-family="DM Sans" font-size="9">Collaboration</text>
+            <line x1="180" y1="320" x2="205" y2="320" stroke="#2a2a3a" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <text x="210" y="324" fill="#6a6a7a" font-family="DM Sans" font-size="9">Counterpart/Rival</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry/Controversy -->
+<section>
+    <span class="section-number">09 &mdash; CONTROVERSY</span>
+    <h2>The Moral Weight of the Atom</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <h3>Fermi and the Bomb</h3>
+            <p>Unlike Oppenheimer, who agonized publicly over the bomb, Fermi approached nuclear weapons with the same pragmatic clarity he brought to all physics problems. He served on the Target Committee that selected Japanese cities for atomic bombing and later worked on the hydrogen bomb.</p>
+            <ul>
+                <li><strong class="accent">The Target Committee:</strong> Fermi was one of four scientists who advised on target selection. The committee recommended Hiroshima and Nagasaki. Fermi did not express moral reservations in the official record&mdash;though colleagues recalled private ambivalence.</li>
+                <li><strong class="accent-blue">The H-Bomb Debate:</strong> In 1949, when Teller pushed for a crash program to build the hydrogen bomb, a committee including Fermi and Oppenheimer advised against it on both technical and moral grounds. Fermi called it "a weapon which in practical effect is almost one of genocide." Yet when Truman overruled them, Fermi returned to Los Alamos to help with the calculations.</li>
+                <li><strong class="accent-rose">The Oppenheimer Hearing:</strong> In the 1954 security hearing that stripped Oppenheimer of his clearance, Fermi testified in Oppenheimer's defense. He died of stomach cancer that same year, possibly caused by radiation exposure during his experimental work.</li>
+            </ul>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-purple">The Near-Miss</h4>
+                <p>In 1934, Fermi's Rome group bombarded uranium with neutrons and believed they had created transuranic elements (elements heavier than uranium). They were wrong&mdash;they had actually achieved nuclear fission, four years before Hahn and Strassmann. Ida Noddack pointed this out in a published critique, but was ignored. Had Fermi recognized fission in 1934, the nuclear age might have begun under fascism.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Pontecorvo's Defection</h4>
+                <p>Bruno Pontecorvo, one of Fermi's closest Rome students, defected to the Soviet Union in 1950. He had worked on the British nuclear program and may have passed secrets to the Soviets. Fermi was reportedly shocked but characteristically said little publicly.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">The Fermi Paradox</h4>
+                <p>At a 1950 Los Alamos lunch, Fermi famously asked: "Where is everybody?"&mdash;meaning, if intelligent extraterrestrial civilizations are probable, why have we seen no evidence of them? This casual question became one of the most productive unsolved problems in astrobiology.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>The Fermi Imprint</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Nuclear Power</h4>
+            <p>Every nuclear reactor on Earth descends from CP-1. As of 2025, roughly 440 reactors in 32 countries generate about 10% of the world's electricity. The principles Fermi established&mdash;moderation, criticality control, multiplication factor&mdash;remain the foundation of reactor physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Particle Physics</h4>
+            <p>Fermi's beta decay theory was the prototype for all quantum field theories of the weak interaction. The Standard Model's electroweak theory (Glashow-Weinberg-Salam) is a direct descendant. The "Fermi constant" G_F remains a fundamental parameter of particle physics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Condensed Matter</h4>
+            <p>Fermi-Dirac statistics underpin the theory of metals, semiconductors, and superconductors. Fermi surfaces, Fermi liquids, and Fermi gases are central concepts. Modern electronics&mdash;from transistors to LEDs&mdash;depend on understanding fermion behavior in solids.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.3em;">
+        <div class="card">
+            <h4 class="accent-amber">Named in His Honor</h4>
+            <p>Element 100 (fermium), Fermilab (the premier U.S. particle physics laboratory), the Fermi Gamma-ray Space Telescope, the Enrico Fermi Award, the fermi (unit of length = 10&#8315;&sup1;&#8309; m), and the Fermi surface, Fermi energy, Fermi level, Fermi temperature, Fermi momentum, and Fermi constant. No physicist has more things named after them.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Pedagogical Legacy</h4>
+            <p>Fermi trained a generation of physicists who went on to win six Nobel Prizes (T.D. Lee, C.N. Yang, Jack Steinberger, Owen Chamberlain, Jerome Friedman, and James Cronin). His lecture notes, compiled as the "Fermi Lectures," remain influential. His problem-solving style&mdash;relentlessly practical, order-of-magnitude first&mdash;shaped how physics is taught worldwide.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 &mdash; APPLICATIONS</span>
+    <h2>Fermi's Physics in the Modern World</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent-green">Nuclear Medicine</h4>
+            <p>Neutron activation analysis (a direct descendant of Fermi's Rome experiments) is used to produce medical isotopes for cancer treatment and diagnostic imaging. Technetium-99m, the most widely used medical isotope, is produced in nuclear reactors.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Semiconductor Industry</h4>
+            <p>Fermi-Dirac statistics govern the behavior of electrons and holes in semiconductors. The Fermi level determines whether a material conducts, insulates, or behaves as a semiconductor. Every transistor, solar cell, and LED is designed using Fermi's statistics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Nuclear Submarines</h4>
+            <p>The U.S. Navy's nuclear submarine fleet traces directly to Fermi's reactor work. Admiral Rickover's team adapted CP-1's principles into compact pressurized water reactors. Today, over 150 nuclear-powered vessels operate worldwide.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Neutrino Astronomy</h4>
+            <p>Fermi's beta decay theory predicted the neutrino, finally detected in 1956 by Cowan and Reines. Today, neutrino observatories (IceCube, Super-Kamiokande) use neutrinos to study supernovae, the sun's core, and physics beyond the Standard Model.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">White Dwarf Physics</h4>
+            <p>The Chandrasekhar mass limit for white dwarfs&mdash;a direct consequence of Fermi-Dirac statistics&mdash;is used as a "standard candle" in cosmology. Type Ia supernovae (exploding white dwarfs at the Chandrasekhar limit) led to the discovery of dark energy in 1998.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Estimation Culture</h4>
+            <p>"Fermi estimation" is now taught in physics, engineering, and business schools worldwide. Tech companies use Fermi problems in interviews. The skill of making useful estimates from minimal data remains one of Fermi's most accessible legacies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">12 &mdash; TIMELINE</span>
+    <h2>A Life of Creation</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central timeline line -->
+            <line x1="40" y1="180" x2="760" y2="180" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- Year markers and events -->
+            <circle cx="60" cy="180" r="5" fill="#c97b4b"/>
+            <text x="60" y="170" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="10" font-weight="600">1901</text>
+            <text x="60" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Born in</text>
+            <text x="60" y="215" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Rome</text>
+
+            <circle cx="145" cy="180" r="5" fill="#d4a053"/>
+            <text x="145" y="155" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="600">1922</text>
+            <text x="145" y="140" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Doctorate, Pisa</text>
+
+            <circle cx="220" cy="180" r="6" fill="#c97b4b"/>
+            <text x="220" y="205" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="11" font-weight="700">1926</text>
+            <text x="220" y="220" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="9" font-weight="600">Fermi-Dirac</text>
+            <text x="220" y="232" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="9" font-weight="600">Statistics</text>
+
+            <circle cx="305" cy="180" r="6" fill="#c97b4b"/>
+            <text x="305" y="155" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="11" font-weight="700">1933</text>
+            <text x="305" y="138" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="9" font-weight="600">Beta Decay</text>
+            <text x="305" y="128" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="9" font-weight="600">Theory</text>
+
+            <circle cx="380" cy="180" r="5" fill="#4ecca3"/>
+            <text x="380" y="205" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="600">1934</text>
+            <text x="380" y="220" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Slow Neutron</text>
+            <text x="380" y="230" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Discovery</text>
+
+            <circle cx="450" cy="180" r="6" fill="#9b72cf"/>
+            <text x="450" y="155" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" font-weight="600">1938</text>
+            <text x="450" y="138" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Nobel Prize &amp;</text>
+            <text x="450" y="128" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Escape to U.S.</text>
+
+            <circle cx="540" cy="180" r="7" fill="#c97b4b"/>
+            <text x="540" y="205" text-anchor="middle" fill="#c97b4b" font-family="JetBrains Mono" font-size="11" font-weight="700">1942</text>
+            <text x="540" y="222" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="9" font-weight="600">Chicago Pile-1</text>
+
+            <circle cx="620" cy="180" r="5" fill="#cf7272"/>
+            <text x="620" y="155" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="10" font-weight="600">1945</text>
+            <text x="620" y="138" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Trinity Test</text>
+
+            <circle cx="690" cy="180" r="5" fill="#5b8cd4"/>
+            <text x="690" y="205" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="600">1950</text>
+            <text x="690" y="220" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Fermi Paradox</text>
+
+            <circle cx="740" cy="180" r="4" fill="#6a6a7a"/>
+            <text x="740" y="155" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono" font-size="10">1954</text>
+            <text x="740" y="138" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">Dies in</text>
+            <text x="740" y="128" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="8">Chicago</text>
+
+            <!-- Era brackets -->
+            <rect x="45" y="260" width="230" height="22" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="160" y="275" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="9">Italian Period: Theory &amp; Discovery</text>
+            <rect x="290" y="260" width="180" height="22" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="380" y="275" text-anchor="middle" fill="#c97b4b" font-family="DM Sans" font-size="9">Rome Experiments &amp; Flight</text>
+            <rect x="490" y="260" width="260" height="22" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
+            <text x="620" y="275" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="9">American Period: Reactor &amp; Manhattan</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Reading -->
+<section>
+    <span class="section-number">13 &mdash; FURTHER READING</span>
+    <h2>Essential Sources</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Works</h4>
+            <ul>
+                <li><em>Collected Papers (Note e Memorie)</em>, 2 volumes (1962) &mdash; The complete scientific papers with commentary by colleagues</li>
+                <li><em>Thermodynamics</em> (1937) &mdash; Fermi's textbook, still a model of clarity and physical insight</li>
+                <li><em>Nuclear Physics</em> (1950) &mdash; Lecture notes from his Chicago course, compiled by students</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Biographies</h4>
+            <ul>
+                <li>David N. Schwartz, <em>The Last Man Who Knew Everything</em> (2017) &mdash; The most comprehensive modern biography</li>
+                <li>Gino Segr&egrave;, <em>Enrico Fermi: Physicist</em> (2012) &mdash; By the son of Fermi's close colleague Emilio Segr&egrave;</li>
+                <li>Laura Fermi, <em>Atoms in the Family</em> (1954) &mdash; A vivid memoir by Fermi's wife</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Historical Context</h4>
+            <ul>
+                <li>Richard Rhodes, <em>The Making of the Atomic Bomb</em> (1986) &mdash; The definitive account of the Manhattan Project, with Fermi as a central figure</li>
+                <li>Emilio Segr&egrave;, <em>Enrico Fermi, Physicist</em> (1970) &mdash; A personal and scientific portrait by his closest collaborator</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Specialized Topics</h4>
+            <ul>
+                <li>Jim Al-Khalili, <em>The World According to Physics</em> (2020) &mdash; Accessible context for Fermi's contributions to modern physics</li>
+                <li>Stephen Webb, <em>If the Universe Is Teeming with Aliens... WHERE IS EVERYBODY?</em> (2015) &mdash; Seventy-five solutions to the Fermi Paradox</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;">
+        <div class="mandala-container">
+            <svg viewBox="0 0 140 140">
+                <circle cx="70" cy="70" r="55" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.2"/>
+                <circle cx="70" cy="70" r="40" fill="none" stroke="#c97b4b" stroke-width="0.5" opacity="0.15"/>
+                <ellipse cx="70" cy="70" rx="50" ry="18" fill="none" stroke="#c97b4b" stroke-width="0.4" opacity="0.2" transform="rotate(30,70,70)"/>
+                <ellipse cx="70" cy="70" rx="50" ry="18" fill="none" stroke="#c97b4b" stroke-width="0.4" opacity="0.2" transform="rotate(90,70,70)"/>
+                <ellipse cx="70" cy="70" rx="50" ry="18" fill="none" stroke="#c97b4b" stroke-width="0.4" opacity="0.2" transform="rotate(150,70,70)"/>
+                <circle cx="70" cy="70" r="5" fill="#c97b4b" opacity="0.5"/>
+            </svg>
+        </div>
+        <div class="quote-box" style="max-width:70%;border-left-width:4px;">
+            <p style="font-size:0.50em !important;">"There are two possible outcomes: if the result confirms the hypothesis, then you've made a measurement. If the result is contrary to the hypothesis, then you've made a discovery."</p>
+            <span class="attribution">&mdash; Enrico Fermi</span>
+        </div>
+        <div class="separator" style="margin-top:1.2em;"></div>
+        <p class="subtitle" style="margin-top:0.8em;">Enrico Fermi &middot; 1901&ndash;1954</p>
+        <p style="font-size:0.38em;color:var(--text-muted);margin-top:0.3em;">Rome &middot; Pisa &middot; G&ouml;ttingen &middot; Leiden &middot; New York &middot; Chicago &middot; Los Alamos</p>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>

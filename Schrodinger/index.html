@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erwin Schrodinger — Wave Mechanics and the Nature of Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent: #4ecca3;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
+.reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent); }
+.reveal .progress span { background: var(--accent); }
+.accent { color: var(--accent); }
+.accent-amber { color: var(--accent-amber); }
+.accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); }
+.accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
+.card:hover { border-color: var(--accent); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.two-col .diagram-container { max-width: 100%; margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
+.two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
+.mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
+.mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
+@keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
+.process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
+.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step p { font-size: 0.40em !important; margin: 0; }
+.process-arrow { color: var(--accent); font-size: 1.0em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Slide 1: Title -->
+<section>
+    <div class="mandala-container">
+        <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="70" cy="70" r="30" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.5"/>
+            <path d="M70 10 Q100 40 70 70 Q40 100 70 130" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.6"/>
+            <path d="M10 70 Q40 40 70 70 Q100 100 130 70" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.6"/>
+            <path d="M25 25 Q70 50 115 25" fill="none" stroke="#4ecca3" stroke-width="0.4" opacity="0.3"/>
+            <path d="M25 115 Q70 90 115 115" fill="none" stroke="#4ecca3" stroke-width="0.4" opacity="0.3"/>
+        </svg>
+    </div>
+    <h1>Erwin Schrodinger</h1>
+    <div class="separator"></div>
+    <p class="subtitle">Wave Mechanics, Quantum Paradoxes, and the Code of Life</p>
+    <p style="font-size:0.38em; color:var(--text-muted); margin-top:1.2em;">1887 &ndash; 1961 &nbsp;|&nbsp; Vienna &bull; Zurich &bull; Berlin &bull; Dublin</p>
+    <div style="margin-top:0.8em;">
+        <span class="tag green">Wave Equation</span>
+        <span class="tag">Cat Paradox</span>
+        <span class="tag amber">What Is Life?</span>
+    </div>
+</section>
+
+<!-- Slide 2: Early Life -->
+<section>
+    <span class="section-number">01 &mdash; ORIGINS</span>
+    <h2>A Viennese Polymath in the Making</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p>Erwin Rudolf Josef Alexander Schrodinger was born on August 12, 1887, in Vienna, the only child of Rudolf Schrodinger, a botanist and cerecloth manufacturer, and Georgine Emilia Brenda, whose father was a chemistry professor. Raised in an intellectually rich household, young Erwin was educated at home until age eleven, absorbing languages, poetry, and natural history with equal enthusiasm.</p>
+            <p>He entered the Akademisches Gymnasium in 1898, where he excelled in mathematics and physics but also developed a deep love for ancient Greek lyric poetry. His teacher Fritz Hasenohrl, successor to Boltzmann at the University of Vienna, became a formative influence, introducing Schrodinger to the elegance of theoretical physics. By the time he earned his doctorate in 1910, he had already demonstrated the rare ability to move fluidly between mathematical abstraction and physical intuition.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent">Family Legacy</h4>
+                <p>His father Rudolf combined business with serious botanical research, publishing papers on Italian plant phylogeny &mdash; modeling the synthesis of practical and intellectual life that Erwin would emulate.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">Languages &amp; Letters</h4>
+                <p>Fluent in German, English, French, and Spanish. He read ancient Greek and Latin with ease, and wrote poetry throughout his life, viewing physics and literature as complementary expressions of truth.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 3: Career -->
+<section>
+    <span class="section-number">02 &mdash; CAREER</span>
+    <h2>An Itinerant Scholar Across Europe</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Vienna &amp; War</h4>
+            <p>After his doctorate, Schrodinger served as an artillery officer in World War I, stationed on the Italian front. He continued reading physics in the trenches, studying Einstein's general relativity as shells fell. He returned to Vienna as a Privatdozent in 1920.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">The Wandering Years</h4>
+            <p>Between 1920 and 1926 he held posts in Jena, Stuttgart, Breslau, and finally Zurich, where he succeeded Peter Debye. Each move deepened his exposure to statistical mechanics, color theory, and the emerging quantum puzzles of atomic spectra.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Zurich Breakthrough</h4>
+            <p>It was at the University of Zurich, during the Christmas holiday of 1925, that Schrodinger achieved his greatest work. Retreating to the Alpine resort of Arosa with a mysterious companion, he formulated wave mechanics in a burst of creative intensity.</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.3em;">
+        <div class="card">
+            <h4 class="accent-purple">Berlin &amp; Flight</h4>
+            <p>Succeeding Planck in Berlin in 1927, he enjoyed the most prestigious chair in theoretical physics. When the Nazis rose to power in 1933, he left Germany voluntarily &mdash; one of the few non-Jewish academics to do so on principle. He won the Nobel Prize that same year.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Dublin Refuge</h4>
+            <p>After brief stints in Oxford and Graz, he accepted de Valera's invitation to join the new Dublin Institute for Advanced Studies in 1940. He remained for seventeen productive years, publishing <em>What Is Life?</em> and working on unified field theory.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 4: Historical Context -->
+<section>
+    <span class="section-number">03 &mdash; CONTEXT</span>
+    <h2>The Quantum Revolution of the 1920s</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>By 1925, classical physics had reached a crisis. Bohr's atomic model, while successful for hydrogen, could not explain multi-electron atoms. The "old quantum theory" was a patchwork of ad hoc rules grafted onto classical mechanics. Two radically different paths forward emerged almost simultaneously.</p>
+            <p>In Gottingen, Werner Heisenberg developed <span class="accent-rose">matrix mechanics</span> &mdash; an abstract algebraic formalism that deliberately abandoned any picture of electron orbits. Meanwhile, in Zurich, Schrodinger pursued the opposite instinct: he wanted a <span class="accent">wave picture</span> that preserved continuity and visualization.</p>
+            <p>The intellectual tension between these two approaches &mdash; one emphasizing discontinuity and abstraction, the other continuity and imagery &mdash; shaped the entire future of quantum theory and continues to echo in foundational debates today.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-rose">The Crisis Points</h4>
+                <p>Black-body radiation, the photoelectric effect, atomic spectra, and the Compton effect all defied classical explanation, demanding a fundamentally new mechanics.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-blue">De Broglie's Hint</h4>
+                <p>Louis de Broglie's 1924 thesis proposed that particles have wave properties, with wavelength lambda = h/p. This was the seed from which Schrodinger grew his entire theory.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-amber">Debye's Challenge</h4>
+                <p>When Schrodinger presented de Broglie's ideas at a Zurich seminar, Peter Debye reportedly remarked: "If there are waves, there must be a wave equation." Schrodinger took this challenge literally.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 5: Contribution #1 — Schrodinger Equation + SVG -->
+<section>
+    <span class="section-number">04 &mdash; CONTRIBUTION I</span>
+    <h2>The Schrodinger Equation</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <p>In a remarkable series of six papers published in 1926 under the title <em>Quantisierung als Eigenwertproblem</em>, Schrodinger introduced a wave equation that described quantum phenomena through continuous, deterministic evolution of a wave function.</p>
+            <p>The time-independent form solves for stationary states: energy eigenvalues emerge naturally as boundary conditions on the wave function, replacing Bohr's arbitrary quantum rules with mathematical necessity.</p>
+            <p>The time-dependent equation governs how quantum states evolve, providing the fundamental dynamical law of non-relativistic quantum mechanics &mdash; as central to the quantum world as Newton's second law is to classical mechanics.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Potential well -->
+                <rect x="50" y="20" width="300" height="280" fill="none" stroke="#2a2a3a" stroke-width="1" rx="4"/>
+                <line x1="80" y1="270" x2="320" y2="270" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="80" y1="270" x2="80" y2="40" stroke="#6a6a7a" stroke-width="1"/>
+                <!-- Well walls -->
+                <line x1="130" y1="270" x2="130" y2="80" stroke="#4ecca3" stroke-width="2"/>
+                <line x1="270" y1="270" x2="270" y2="80" stroke="#4ecca3" stroke-width="2"/>
+                <line x1="80" y1="270" x2="130" y2="270" stroke="#4ecca3" stroke-width="2"/>
+                <line x1="270" y1="270" x2="320" y2="270" stroke="#4ecca3" stroke-width="2"/>
+                <!-- n=1 wave -->
+                <path d="M130 230 Q200 190 270 230" fill="none" stroke="#d4a053" stroke-width="2"/>
+                <text x="280" y="225" fill="#d4a053" font-family="JetBrains Mono" font-size="11">n=1</text>
+                <!-- n=2 wave -->
+                <path d="M130 180 Q165 155 200 180 Q235 205 270 180" fill="none" stroke="#5b8cd4" stroke-width="2"/>
+                <text x="280" y="180" fill="#5b8cd4" font-family="JetBrains Mono" font-size="11">n=2</text>
+                <!-- n=3 wave -->
+                <path d="M130 130 Q153 110 177 130 Q200 150 223 130 Q247 110 270 130" fill="none" stroke="#9b72cf" stroke-width="2"/>
+                <text x="280" y="130" fill="#9b72cf" font-family="JetBrains Mono" font-size="11">n=3</text>
+                <!-- Labels -->
+                <text x="75" y="35" fill="#9a9a9a" font-family="JetBrains Mono" font-size="10">E</text>
+                <text x="190" y="290" fill="#9a9a9a" font-family="JetBrains Mono" font-size="10">x</text>
+                <text x="100" y="310" fill="#4ecca3" font-family="JetBrains Mono" font-size="10">Particle in a Box: Quantized Wave Functions</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 6: Contribution #1 Deep Dive -->
+<section>
+    <span class="section-number">04a &mdash; DEEP DIVE</span>
+    <h2>Wave Mechanics: The Inner Architecture</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">The Wave Function &psi;</h4>
+            <p>Schrodinger's central object is &psi;(x,t), a complex-valued function whose squared modulus |&psi;|&sup2; gives the probability density of finding a particle at position x. The wave function contains all knowable information about a quantum system, encoding superposition and interference naturally.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Eigenvalue Structure</h4>
+            <p>Applying the equation to the hydrogen atom, Schrodinger recovered Bohr's energy levels exactly &mdash; but now they emerged as eigenvalues of a differential operator, not postulates. Quantum numbers arose from boundary conditions, giving the theory a compelling mathematical inevitability.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Equivalence Proof</h4>
+            <p>Schrodinger himself proved in 1926 that his wave mechanics and Heisenberg's matrix mechanics were mathematically equivalent &mdash; different representations of the same abstract structure. This was later formalized by von Neumann in the language of Hilbert spaces.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Interpretive Struggle</h4>
+            <p>Schrodinger initially hoped &psi; represented a real, physical wave &mdash; a smeared-out charge density. Born's probabilistic interpretation, which Schrodinger resisted, ultimately prevailed. This tension drove Schrodinger to formulate his famous cat paradox nine years later.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"I don't like it, and I'm sorry I ever had anything to do with it."</p>
+        <span class="attribution">&mdash; Schrodinger, on the probabilistic interpretation of quantum mechanics</span>
+    </div>
+</section>
+
+<!-- Slide 7: Contribution #2 — Cat Paradox + SVG -->
+<section>
+    <span class="section-number">05 &mdash; CONTRIBUTION II</span>
+    <h2>Schrodinger's Cat</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>In 1935, in a paper responding to the Einstein-Podolsky-Rosen paradox, Schrodinger introduced the most famous thought experiment in physics. A cat is placed in a sealed box with a radioactive atom, a Geiger counter, and a vial of poison. If the atom decays, the counter triggers, the vial breaks, and the cat dies.</p>
+            <p>According to the Copenhagen interpretation, before measurement the atom is in a <span class="accent">superposition</span> of decayed and undecayed states. The entanglement chain means the cat is simultaneously alive and dead &mdash; a manifest absurdity when applied to macroscopic objects.</p>
+            <p>Schrodinger intended this as a <span class="accent-rose">reductio ad absurdum</span>, not a celebration of quantum weirdness. He was attacking the Copenhagen interpretation's refusal to explain how quantum superpositions resolve into definite classical outcomes.</p>
+        </div>
+        <div class="diagram-container">
+            <svg viewBox="0 0 340 320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Box -->
+                <rect x="40" y="40" width="260" height="200" rx="8" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="170" y="30" fill="#6a6a7a" font-family="JetBrains Mono" font-size="10" text-anchor="middle">SEALED BOX</text>
+                <!-- Atom -->
+                <circle cx="90" cy="90" r="18" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
+                <circle cx="90" cy="90" r="4" fill="#9b72cf"/>
+                <ellipse cx="90" cy="90" rx="18" ry="8" fill="none" stroke="#9b72cf" stroke-width="0.8" transform="rotate(45 90 90)"/>
+                <text x="90" y="120" fill="#9b72cf" font-family="JetBrains Mono" font-size="9" text-anchor="middle">Atom</text>
+                <!-- Arrow -->
+                <line x1="115" y1="90" x2="140" y2="90" stroke="#6a6a7a" stroke-width="1" marker-end="url(#arrowS)"/>
+                <defs><marker id="arrowS" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#6a6a7a"/></marker></defs>
+                <!-- Geiger counter -->
+                <rect x="145" y="75" width="40" height="30" rx="3" fill="none" stroke="#d4a053" stroke-width="1.2"/>
+                <text x="165" y="95" fill="#d4a053" font-family="JetBrains Mono" font-size="7" text-anchor="middle">Geiger</text>
+                <!-- Arrow -->
+                <line x1="190" y1="90" x2="215" y2="90" stroke="#6a6a7a" stroke-width="1" marker-end="url(#arrowS)"/>
+                <!-- Vial -->
+                <rect x="220" y="78" width="15" height="25" rx="3" fill="none" stroke="#cf7272" stroke-width="1.2"/>
+                <rect x="222" y="88" width="11" height="13" rx="1" fill="#cf7272" opacity="0.3"/>
+                <text x="227" y="120" fill="#cf7272" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Poison</text>
+                <!-- Cat (alive) -->
+                <g transform="translate(100,155)">
+                    <ellipse cx="30" cy="20" rx="28" ry="16" fill="none" stroke="#4ecca3" stroke-width="1.2"/>
+                    <circle cx="10" cy="8" r="10" fill="none" stroke="#4ecca3" stroke-width="1.2"/>
+                    <polygon points="3,-2 6,-10 12,-4" fill="none" stroke="#4ecca3" stroke-width="0.8"/>
+                    <polygon points="8,-2 14,-10 18,-4" fill="none" stroke="#4ecca3" stroke-width="0.8"/>
+                    <circle cx="7" cy="7" r="1.5" fill="#4ecca3"/>
+                    <circle cx="13" cy="7" r="1.5" fill="#4ecca3"/>
+                    <text x="30" y="48" fill="#4ecca3" font-family="JetBrains Mono" font-size="9" text-anchor="middle">Alive?</text>
+                </g>
+                <!-- Superposition symbol -->
+                <text x="195" y="175" fill="#d4a053" font-family="JetBrains Mono" font-size="16" text-anchor="middle">+</text>
+                <!-- Cat (dead) -->
+                <g transform="translate(210,155)">
+                    <ellipse cx="30" cy="20" rx="28" ry="16" fill="none" stroke="#cf7272" stroke-width="1.2" stroke-dasharray="4,3"/>
+                    <circle cx="10" cy="8" r="10" fill="none" stroke="#cf7272" stroke-width="1.2" stroke-dasharray="4,3"/>
+                    <line x1="4" y1="5" x2="10" y2="11" stroke="#cf7272" stroke-width="1"/>
+                    <line x1="10" y1="5" x2="4" y2="11" stroke="#cf7272" stroke-width="1"/>
+                    <line x1="14" y1="5" x2="20" y2="11" stroke="#cf7272" stroke-width="1"/>
+                    <line x1="20" y1="5" x2="14" y2="11" stroke="#cf7272" stroke-width="1"/>
+                    <text x="30" y="48" fill="#cf7272" font-family="JetBrains Mono" font-size="9" text-anchor="middle">Dead?</text>
+                </g>
+                <!-- Bottom label -->
+                <text x="170" y="270" fill="#4ecca3" font-family="Playfair Display" font-size="11" text-anchor="middle" font-style="italic">|&psi;&rang; = &alpha;|alive&rang; + &beta;|dead&rang;</text>
+                <text x="170" y="295" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9" text-anchor="middle">The Measurement Problem, Visualized</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 8: Contribution #2 Deep Dive -->
+<section>
+    <span class="section-number">05a &mdash; DEEP DIVE</span>
+    <h2>Entanglement and the Measurement Problem</h2>
+    <div class="separator"></div>
+    <p style="max-width:85%; margin:0 auto 0.4em auto;">The cat paradox was not an isolated provocation. It emerged from a rich correspondence between Schrodinger and Einstein in 1935, during which Schrodinger coined the term <span class="accent">Verschrankung</span> (entanglement) &mdash; a concept he called "the characteristic trait of quantum mechanics."</p>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent-purple">EPR Connection</h4>
+            <p>Einstein, Podolsky, and Rosen argued quantum mechanics was incomplete. Schrodinger's cat pushed further: not just incomplete, but incoherent if taken literally at the macroscopic scale without a theory of measurement.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent">Decoherence (Modern Answer)</h4>
+            <p>Today, decoherence theory explains how environmental entanglement rapidly suppresses macroscopic superpositions, giving an effective appearance of collapse without modifying the equation &mdash; partly vindicating Schrodinger's unease.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Many-Worlds</h4>
+            <p>Everett's 1957 interpretation takes the wave function literally: the cat is alive in one branch and dead in another. Schrodinger might have appreciated the mathematical purity, if not the ontological extravagance.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"I would not call entanglement one but rather the characteristic trait of quantum mechanics, the one that enforces its entire departure from classical lines of thought."</p>
+        <span class="attribution">&mdash; Erwin Schrodinger, 1935</span>
+    </div>
+</section>
+
+<!-- Slide 9: Contribution #3 -->
+<section>
+    <span class="section-number">06 &mdash; CONTRIBUTION III</span>
+    <h2>What Is Life?</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p>In February 1943, Schrodinger delivered a series of lectures at Trinity College Dublin that would profoundly influence the course of biology. Published as <em>What Is Life?</em> in 1944, the slim book asked how the laws of physics could account for the stability and complexity of living organisms.</p>
+            <p>His central insight was that genetic information must be stored in an <span class="accent">"aperiodic crystal"</span> &mdash; a molecule with an irregular but precisely ordered structure, capable of encoding vast information in relatively few atoms. This was a remarkably prescient description of DNA, nine years before Watson and Crick's discovery.</p>
+            <p>Schrodinger also introduced the concept of <span class="accent-amber">negative entropy</span> (negentropy) &mdash; the idea that living organisms maintain order by feeding on free energy from their environment, exporting entropy to sustain their internal organization.</p>
+            <p>The book directly inspired both Watson and Crick, as well as Maurice Wilkins, to pursue the structure of DNA. Francis Crick later wrote that <em>What Is Life?</em> was a key motivation for his shift from physics to biology.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-green">Key Predictions</h4>
+                <p>Genetic code stored in molecular structure. Gene as aperiodic crystal. Quantum stability explains mutation rates. Organisms as open thermodynamic systems.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-blue">Impact on Biology</h4>
+                <p>Watson, Crick, and Wilkins all cited this book as decisive in their careers. It launched the field of molecular biology by giving physicists permission to think about life.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-rose">Philosophical Depth</h4>
+                <p>The final chapter, "On Determinism and Free Will," ventured into Vedantic philosophy, arguing for a unity of consciousness &mdash; a theme Schrodinger explored throughout his later years.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 10: The Method -->
+<section>
+    <span class="section-number">07 &mdash; METHOD</span>
+    <h2>The Art of Physical Intuition</h2>
+    <div class="separator"></div>
+    <p style="max-width:85%; margin:0 auto 0.3em auto;">Schrodinger's method was distinctive among quantum pioneers. While Heisenberg trusted algebra and Dirac pursued abstract elegance, Schrodinger insisted on <span class="accent">visualization</span> and <span class="accent-amber">classical analogy</span>.</p>
+    <div class="process-flow">
+        <div class="process-step">
+            <h4 class="accent">Analogy</h4>
+            <p>Begin with classical<br/>wave theory</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-amber">Variational</h4>
+            <p>Apply Hamilton's<br/>principle</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-purple">Quantization</h4>
+            <p>Boundary conditions<br/>yield eigenvalues</p>
+        </div>
+        <span class="process-arrow">&rsaquo;</span>
+        <div class="process-step">
+            <h4 class="accent-blue">Interpretation</h4>
+            <p>Seek physical<br/>meaning relentlessly</p>
+        </div>
+    </div>
+    <div class="card-grid cols-2" style="margin-top:0.4em;">
+        <div class="card">
+            <h4 class="accent">The Optics-Mechanics Analogy</h4>
+            <p>Schrodinger exploited Hamilton's 19th-century insight that classical mechanics and ray optics share a mathematical structure. If ray optics is the limit of wave optics, perhaps classical mechanics is the limit of a "wave mechanics." This analogy was the conceptual engine behind his equation.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Interdisciplinary Reach</h4>
+            <p>His intellectual range was extraordinary: statistical mechanics, color perception, general relativity, biology, ancient philosophy. This breadth allowed him to see connections invisible to specialists, most dramatically in <em>What Is Life?</em></p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 11: Connections — SVG Network -->
+<section>
+    <span class="section-number">08 &mdash; CONNECTIONS</span>
+    <h2>The Intellectual Network</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines -->
+            <line x1="350" y1="60" x2="150" y2="150" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="550" y2="150" stroke="#2a2a3a" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="350" y2="180" stroke="#4ecca3" stroke-width="2" opacity="0.6"/>
+            <line x1="350" y1="60" x2="100" y2="280" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="350" y1="60" x2="600" y2="280" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="350" y1="60" x2="250" y2="300" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="350" y1="60" x2="450" y2="300" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="150" y1="150" x2="350" y2="180" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="550" y1="150" x2="350" y2="180" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="250" y1="300" x2="450" y2="300" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+            <!-- Schrodinger (center) -->
+            <circle cx="350" cy="60" r="28" fill="#161622" stroke="#4ecca3" stroke-width="2"/>
+            <text x="350" y="57" fill="#4ecca3" font-family="Playfair Display" font-size="11" text-anchor="middle" font-weight="700">Schro-</text>
+            <text x="350" y="70" fill="#4ecca3" font-family="Playfair Display" font-size="11" text-anchor="middle" font-weight="700">dinger</text>
+            <!-- Einstein -->
+            <circle cx="150" cy="150" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="150" y="154" fill="#d4a053" font-family="Playfair Display" font-size="10" text-anchor="middle">Einstein</text>
+            <!-- Heisenberg -->
+            <circle cx="550" cy="150" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="550" y="148" fill="#cf7272" font-family="Playfair Display" font-size="9" text-anchor="middle">Heisen-</text>
+            <text x="550" y="160" fill="#cf7272" font-family="Playfair Display" font-size="9" text-anchor="middle">berg</text>
+            <!-- Bohr -->
+            <circle cx="350" cy="180" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+            <text x="350" y="184" fill="#5b8cd4" font-family="Playfair Display" font-size="10" text-anchor="middle">Bohr</text>
+            <!-- De Broglie -->
+            <circle cx="100" cy="280" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="100" y="276" fill="#9b72cf" font-family="Playfair Display" font-size="9" text-anchor="middle">de</text>
+            <text x="100" y="288" fill="#9b72cf" font-family="Playfair Display" font-size="9" text-anchor="middle">Broglie</text>
+            <!-- Dirac -->
+            <circle cx="600" cy="280" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+            <text x="600" y="284" fill="#9b72cf" font-family="Playfair Display" font-size="10" text-anchor="middle">Dirac</text>
+            <!-- Watson/Crick -->
+            <circle cx="250" cy="300" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="250" y="296" fill="#4ecca3" font-family="Playfair Display" font-size="8" text-anchor="middle">Watson</text>
+            <text x="250" y="308" fill="#4ecca3" font-family="Playfair Display" font-size="8" text-anchor="middle">&amp; Crick</text>
+            <!-- Born -->
+            <circle cx="450" cy="300" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="450" y="304" fill="#d4a053" font-family="Playfair Display" font-size="10" text-anchor="middle">Born</text>
+            <!-- Labels -->
+            <text x="230" y="100" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle">EPR ally</text>
+            <text x="470" y="100" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8" text-anchor="middle">rival formalism</text>
+            <text x="370" y="125" fill="#4ecca3" font-family="JetBrains Mono" font-size="8" opacity="0.7">debated</text>
+            <text x="175" y="230" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">inspired by</text>
+            <text x="290" y="345" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">inspired</text>
+            <text x="530" y="230" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">shared Nobel</text>
+            <text x="410" y="345" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">|&psi;|&sup2; debate</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 12: Rivalry / Controversy -->
+<section>
+    <span class="section-number">09 &mdash; CONTROVERSY</span>
+    <h2>Waves vs. Matrices: The Great Debate</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p>The rivalry between Schrodinger and Heisenberg was both intellectual and temperamental. Heisenberg called wave mechanics "disgusting" (<em>abscheulich</em>) in a letter to Pauli, while Schrodinger found matrix mechanics repellent for its deliberate abandonment of visualization.</p>
+            <p>When Schrodinger visited Copenhagen in October 1926, Bohr subjected him to days of relentless argument about the interpretation of quantum mechanics. Schrodinger fell ill under the pressure, but even from his sickbed &mdash; nursed by Mrs. Bohr &mdash; he refused to concede that continuous wave pictures must be abandoned.</p>
+            <p>This was not mere stubbornness. Schrodinger's insistence that physics should provide <span class="accent">comprehensible pictures</span> of nature, not just predictive algorithms, anticipated debates about scientific realism that remain active today.</p>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-rose">Personal Life</h4>
+                <p>Schrodinger's unconventional personal life &mdash; he maintained relationships with multiple women simultaneously, with his wife Anny's knowledge &mdash; scandalized colleagues and complicated academic appointments, particularly at Oxford.</p>
+            </div>
+            <div class="card" style="margin-bottom:0.4em;">
+                <h4 class="accent-amber">The Graz Episode</h4>
+                <p>After Austria's annexation in 1938, Schrodinger published a conciliatory statement toward the Nazi regime, which he later deeply regretted. He was dismissed from Graz regardless and fled to Italy, then Ireland.</p>
+            </div>
+            <div class="card">
+                <h4 class="accent-blue">Unified Field Theory</h4>
+                <p>In Dublin, he announced a unified field theory in 1947 with premature enthusiasm. De Valera attended the press conference. Einstein gently corrected him; the theory proved untenable. The episode embarrassed Schrodinger considerably.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 13: Legacy -->
+<section>
+    <span class="section-number">10 &mdash; LEGACY</span>
+    <h2>An Enduring Presence in Science</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3">
+        <div class="card">
+            <h4 class="accent">Quantum Chemistry</h4>
+            <p>Every quantum chemistry calculation &mdash; from drug design to materials science &mdash; begins with the Schrodinger equation. Density functional theory, the workhorse of computational chemistry, is built on its foundations.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Quantum Computing</h4>
+            <p>Quantum computers manipulate wave functions and superpositions directly. The mathematical framework Schrodinger created is literally the operating language of quantum information science.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Molecular Biology</h4>
+            <p><em>What Is Life?</em> helped launch the molecular biology revolution. The aperiodic crystal concept anticipated the information-theoretic view of genetics that now dominates the field.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Foundations of QM</h4>
+            <p>The cat paradox remains the most recognized symbol of quantum weirdness. It drives ongoing research in decoherence, quantum measurement, and interpretations of quantum mechanics.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-rose">Philosophy of Science</h4>
+            <p>His insistence on understanding over mere prediction, and his ventures into Eastern philosophy, influenced thinkers from Penrose to Capra. His writings on consciousness anticipate modern debates on the hard problem.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-green">Cultural Icon</h4>
+            <p>Schrodinger's cat has transcended physics to become a cultural metaphor for uncertainty, duality, and the observer's role. It appears in literature, art, comedy, and popular science worldwide.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 14: Applications -->
+<section>
+    <span class="section-number">11 &mdash; APPLICATIONS</span>
+    <h2>Where the Wave Equation Lives Today</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Semiconductor Physics</h4>
+            <p>Every transistor in every computer relies on quantum mechanics. The band structure of silicon, the tunneling in flash memory, the quantum wells in LEDs &mdash; all are solutions to the Schrodinger equation in periodic or confined potentials. Without Schrodinger, no information age.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Drug Discovery</h4>
+            <p>Pharmaceutical companies routinely solve the Schrodinger equation (approximately) to model how drug molecules bind to protein targets. Computational quantum chemistry, an industry worth billions, rests entirely on his 1926 formalism.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Superconductivity &amp; Superfluidity</h4>
+            <p>The macroscopic quantum phenomena of superconductivity (BCS theory) and superfluidity are described by many-body Schrodinger equations. These underpin MRI machines, particle accelerators, and emerging quantum technologies.</p>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Quantum Cryptography</h4>
+            <p>Quantum key distribution exploits superposition and entanglement &mdash; both concepts Schrodinger named and formalized. His theoretical framework provides the security guarantees that classical cryptography cannot match.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 15: Timeline SVG -->
+<section>
+    <span class="section-number">12 &mdash; TIMELINE</span>
+    <h2>A Life in Physics</h2>
+    <div class="separator"></div>
+    <div class="diagram-container">
+        <svg viewBox="0 0 750 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main timeline line -->
+            <line x1="60" y1="200" x2="710" y2="200" stroke="#2a2a3a" stroke-width="2"/>
+            <!-- 1887 -->
+            <circle cx="80" cy="200" r="5" fill="#4ecca3"/>
+            <text x="80" y="225" fill="#4ecca3" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1887</text>
+            <text x="80" y="185" fill="#e8e6e3" font-family="DM Sans" font-size="8" text-anchor="middle">Born in</text>
+            <text x="80" y="175" fill="#e8e6e3" font-family="DM Sans" font-size="8" text-anchor="middle">Vienna</text>
+            <!-- 1910 -->
+            <circle cx="160" cy="200" r="4" fill="#5b8cd4"/>
+            <text x="160" y="225" fill="#5b8cd4" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1910</text>
+            <text x="160" y="248" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Doctorate,</text>
+            <text x="160" y="258" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Vienna</text>
+            <!-- 1914 -->
+            <circle cx="220" cy="200" r="4" fill="#cf7272"/>
+            <text x="220" y="225" fill="#cf7272" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1914</text>
+            <text x="220" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">WWI service</text>
+            <!-- 1921 -->
+            <circle cx="290" cy="200" r="4" fill="#d4a053"/>
+            <text x="290" y="225" fill="#d4a053" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1921</text>
+            <text x="290" y="248" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Zurich chair</text>
+            <!-- 1926 -->
+            <circle cx="370" cy="200" r="7" fill="#4ecca3" stroke="#4ecca3" stroke-width="2"/>
+            <text x="370" y="225" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" text-anchor="middle" font-weight="700">1926</text>
+            <text x="370" y="180" fill="#e8e6e3" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Wave Equation</text>
+            <text x="370" y="170" fill="#4ecca3" font-family="DM Sans" font-size="8" text-anchor="middle">&#9733;</text>
+            <!-- 1933 -->
+            <circle cx="440" cy="200" r="5" fill="#d4a053"/>
+            <text x="440" y="225" fill="#d4a053" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1933</text>
+            <text x="440" y="248" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Nobel Prize;</text>
+            <text x="440" y="258" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">flees Germany</text>
+            <!-- 1935 -->
+            <circle cx="490" cy="200" r="5" fill="#9b72cf"/>
+            <text x="490" y="225" fill="#9b72cf" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1935</text>
+            <text x="490" y="185" fill="#e8e6e3" font-family="DM Sans" font-size="8" text-anchor="middle">Cat paradox;</text>
+            <text x="490" y="175" fill="#e8e6e3" font-family="DM Sans" font-size="8" text-anchor="middle">entanglement</text>
+            <!-- 1944 -->
+            <circle cx="570" cy="200" r="5" fill="#4ecca3"/>
+            <text x="570" y="225" fill="#4ecca3" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1944</text>
+            <text x="570" y="248" fill="#e8e6e3" font-family="DM Sans" font-size="8" text-anchor="middle">What Is Life?</text>
+            <text x="570" y="258" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">published</text>
+            <!-- 1956 -->
+            <circle cx="640" cy="200" r="4" fill="#5b8cd4"/>
+            <text x="640" y="225" fill="#5b8cd4" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1956</text>
+            <text x="640" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Returns to</text>
+            <text x="640" y="175" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Vienna</text>
+            <!-- 1961 -->
+            <circle cx="700" cy="200" r="5" fill="#cf7272"/>
+            <text x="700" y="225" fill="#cf7272" font-family="JetBrains Mono" font-size="9" text-anchor="middle">1961</text>
+            <text x="700" y="248" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Dies in</text>
+            <text x="700" y="258" fill="#9a9a9a" font-family="DM Sans" font-size="8" text-anchor="middle">Vienna</text>
+            <!-- Era bars -->
+            <rect x="80" y="290" width="200" height="3" rx="1" fill="#5b8cd4" opacity="0.4"/>
+            <text x="180" y="308" fill="#5b8cd4" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.7">Early career &amp; war years</text>
+            <rect x="290" y="290" width="200" height="3" rx="1" fill="#4ecca3" opacity="0.4"/>
+            <text x="390" y="308" fill="#4ecca3" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.7">Golden era of quantum mechanics</text>
+            <rect x="500" y="290" width="200" height="3" rx="1" fill="#d4a053" opacity="0.4"/>
+            <text x="600" y="308" fill="#d4a053" font-family="JetBrains Mono" font-size="8" text-anchor="middle" opacity="0.7">Dublin years &amp; late career</text>
+        </svg>
+    </div>
+</section>
+
+<!-- Slide 16: Further Reading -->
+<section>
+    <span class="section-number">13 &mdash; FURTHER READING</span>
+    <h2>Essential Sources</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2">
+        <div class="card">
+            <h4 class="accent">Primary Works</h4>
+            <ul>
+                <li><em>Collected Papers on Wave Mechanics</em> (1928) &mdash; The six founding papers in English translation</li>
+                <li><em>What Is Life?</em> (1944) &mdash; The landmark lectures on physics and biology</li>
+                <li><em>My View of the World</em> (1961) &mdash; Philosophical essays on consciousness and Vedanta</li>
+                <li><em>Science and Humanism</em> (1951) &mdash; Reflections on physics and human values</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-amber">Biographies &amp; Context</h4>
+            <ul>
+                <li>Walter Moore, <em>Schrodinger: Life and Thought</em> (1989) &mdash; The definitive biography</li>
+                <li>John Gribbin, <em>Erwin Schrodinger and the Quantum Revolution</em> (2012)</li>
+                <li>David Lindley, <em>Uncertainty</em> (2007) &mdash; The Heisenberg-Schrodinger rivalry in context</li>
+                <li>Arthur I. Miller, <em>Deciphering the Cosmic Number</em> (2009) &mdash; Schrodinger, Jung, and Pauli</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-blue">Technical References</h4>
+            <ul>
+                <li>Max Jammer, <em>The Conceptual Development of Quantum Mechanics</em> (1966)</li>
+                <li>Jagdish Mehra &amp; Helmut Rechenberg, <em>The Historical Development of Quantum Theory</em>, Vol. 5</li>
+                <li>Helge Kragh, <em>Quantum Generations</em> (1999) &mdash; Broad history of 20th century physics</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 class="accent-purple">Foundational Debates</h4>
+            <ul>
+                <li>Mara Beller, <em>Quantum Dialogue</em> (1999) &mdash; The social construction of the Copenhagen interpretation</li>
+                <li>Guido Bacciagaluppi &amp; Antony Valentini, <em>Quantum Theory at the Crossroads</em> (2009)</li>
+                <li>Adam Becker, <em>What Is Real?</em> (2018) &mdash; The unfinished quest for quantum foundations</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Slide 17: Closing Quote -->
+<section>
+    <div style="margin-top:3em;"></div>
+    <div class="mandala-container">
+        <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="55" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="70" cy="70" r="40" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="70" cy="70" r="25" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
+            <path d="M70 15 C95 45 95 95 70 125 C45 95 45 45 70 15Z" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
+            <path d="M15 70 C45 45 95 45 125 70 C95 95 45 95 15 70Z" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
+        </svg>
+    </div>
+    <div class="quote-box" style="max-width:70%; margin-top:1.5em;">
+        <p>"The task is not so much to see what no one has yet seen, but to think what nobody has yet thought about that which everybody sees."</p>
+        <span class="attribution">&mdash; Erwin Schrodinger</span>
+    </div>
+    <div class="separator" style="margin-top:1.5em;"></div>
+    <p style="font-size:0.42em; color:var(--text-muted); margin-top:0.8em;">1887 &ndash; 1961</p>
+    <p style="font-size:0.36em; color:var(--text-muted);">He gave quantum mechanics its most powerful equation, its most famous paradox, and biology its most provocative question.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });</script>
+<script>(function(){ var h=Reveal.getConfig().height||900; var m=Reveal.getConfig().margin||0.02; var maxH=Math.floor(h*(1-2*m))+'px'; function f(){document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){s.style.display='block';s.style.maxHeight=maxH;});} Reveal.on('ready',f); Reveal.on('slidechanged',f); })();</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg></button>
+<script>function toggleFullscreen(){if(!document.fullscreenElement){document.documentElement.requestFullscreen();}else{document.exitFullscreen();}}</script>
+</body>
+</html>
