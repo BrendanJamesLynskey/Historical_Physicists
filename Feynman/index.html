@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Richard Feynman - The Great Explainer</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent: #e8b84b;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+    --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
+    --accent: #7a591d;
+    --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172;
+    --accent-rose: #9b5247; --accent-blue: #405477;
+    --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -33,7 +33,7 @@
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -52,11 +52,11 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
-.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
-.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
-.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
 .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -74,6 +74,7 @@
 .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
 .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -83,16 +84,16 @@
 <section>
     <div class="mandala-container">
         <svg viewBox="0 0 140 140">
-            <circle cx="70" cy="70" r="60" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.3"/>
-            <circle cx="70" cy="70" r="45" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.2"/>
-            <circle cx="70" cy="70" r="30" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.15"/>
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#7a591d" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#7a591d" stroke-width="0.5" opacity="0.2"/>
+            <circle cx="70" cy="70" r="30" fill="none" stroke="#7a591d" stroke-width="0.5" opacity="0.15"/>
             <g opacity="0.4">
-                <line x1="70" y1="10" x2="70" y2="130" stroke="#e8b84b" stroke-width="0.3"/>
-                <line x1="10" y1="70" x2="130" y2="70" stroke="#e8b84b" stroke-width="0.3"/>
-                <line x1="27" y1="27" x2="113" y2="113" stroke="#e8b84b" stroke-width="0.3"/>
-                <line x1="113" y1="27" x2="27" y2="113" stroke="#e8b84b" stroke-width="0.3"/>
+                <line x1="70" y1="10" x2="70" y2="130" stroke="#7a591d" stroke-width="0.3"/>
+                <line x1="10" y1="70" x2="130" y2="70" stroke="#7a591d" stroke-width="0.3"/>
+                <line x1="27" y1="27" x2="113" y2="113" stroke="#7a591d" stroke-width="0.3"/>
+                <line x1="113" y1="27" x2="27" y2="113" stroke="#7a591d" stroke-width="0.3"/>
             </g>
-            <circle cx="70" cy="70" r="4" fill="#e8b84b" opacity="0.6"/>
+            <circle cx="70" cy="70" r="4" fill="#7a591d" opacity="0.6"/>
         </svg>
     </div>
     <h1>Richard Feynman</h1>
@@ -200,35 +201,35 @@
         </div>
         <div class="diagram-container">
             <svg viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg">
-                <text x="140" y="18" text-anchor="middle" font-size="11" fill="#6a6a7a" font-family="JetBrains Mono, monospace">Electron-Electron Scattering</text>
+                <text x="140" y="18" text-anchor="middle" font-size="11" fill="#8f8676" font-family="JetBrains Mono, monospace">Electron-Electron Scattering</text>
                 <!-- Incoming electrons -->
-                <line x1="30" y1="60" x2="110" y2="100" stroke="#e8e6e3" stroke-width="2"/>
-                <line x1="30" y1="180" x2="110" y2="140" stroke="#e8e6e3" stroke-width="2"/>
+                <line x1="30" y1="60" x2="110" y2="100" stroke="#262019" stroke-width="2"/>
+                <line x1="30" y1="180" x2="110" y2="140" stroke="#262019" stroke-width="2"/>
                 <!-- Photon exchange (wavy) -->
-                <path d="M110,100 Q120,108 130,100 Q140,92 150,100 Q160,108 170,100" fill="none" stroke="#e8b84b" stroke-width="2"/>
-                <path d="M110,140 Q120,132 130,140 Q140,148 150,140 Q160,132 170,140" fill="none" stroke="#e8b84b" stroke-width="2"/>
+                <path d="M110,100 Q120,108 130,100 Q140,92 150,100 Q160,108 170,100" fill="none" stroke="#7a591d" stroke-width="2"/>
+                <path d="M110,140 Q120,132 130,140 Q140,148 150,140 Q160,132 170,140" fill="none" stroke="#7a591d" stroke-width="2"/>
                 <!-- Virtual photon -->
-                <path d="M110,100 Q125,120 110,140" fill="none" stroke="#e8b84b" stroke-width="1.5" stroke-dasharray="4,3"/>
-                <text x="90" y="124" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">&#947;</text>
+                <path d="M110,100 Q125,120 110,140" fill="none" stroke="#7a591d" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="90" y="124" text-anchor="middle" font-size="9" fill="#7a591d" font-family="JetBrains Mono">&#947;</text>
                 <!-- Outgoing electrons -->
-                <line x1="110" y1="100" x2="190" y2="60" stroke="#e8e6e3" stroke-width="2"/>
-                <line x1="110" y1="140" x2="190" y2="180" stroke="#e8e6e3" stroke-width="2"/>
+                <line x1="110" y1="100" x2="190" y2="60" stroke="#262019" stroke-width="2"/>
+                <line x1="110" y1="140" x2="190" y2="180" stroke="#262019" stroke-width="2"/>
                 <!-- Vertices -->
-                <circle cx="110" cy="100" r="4" fill="#e8b84b"/>
-                <circle cx="110" cy="140" r="4" fill="#e8b84b"/>
+                <circle cx="110" cy="100" r="4" fill="#7a591d"/>
+                <circle cx="110" cy="140" r="4" fill="#7a591d"/>
                 <!-- Labels -->
-                <text x="20" y="58" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
-                <text x="20" y="185" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
-                <text x="194" y="58" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
-                <text x="194" y="185" font-size="9" fill="#9a9a9a" font-family="DM Sans">e&minus;</text>
+                <text x="20" y="58" font-size="9" fill="#5c5549" font-family="DM Sans">e&minus;</text>
+                <text x="20" y="185" font-size="9" fill="#5c5549" font-family="DM Sans">e&minus;</text>
+                <text x="194" y="58" font-size="9" fill="#5c5549" font-family="DM Sans">e&minus;</text>
+                <text x="194" y="185" font-size="9" fill="#5c5549" font-family="DM Sans">e&minus;</text>
                 <!-- Arrows -->
-                <polygon points="75,82 80,78 78,84" fill="#e8e6e3"/>
-                <polygon points="75,158 80,162 78,156" fill="#e8e6e3"/>
+                <polygon points="75,82 80,78 78,84" fill="#262019"/>
+                <polygon points="75,158 80,162 78,156" fill="#262019"/>
                 <!-- Legend -->
-                <line x1="30" y1="218" x2="60" y2="218" stroke="#e8e6e3" stroke-width="2"/>
-                <text x="65" y="221" font-size="8" fill="#9a9a9a" font-family="DM Sans">Fermion</text>
-                <path d="M130,218 Q140,210 150,218 Q160,226 170,218" fill="none" stroke="#e8b84b" stroke-width="2"/>
-                <text x="175" y="221" font-size="8" fill="#9a9a9a" font-family="DM Sans">Photon</text>
+                <line x1="30" y1="218" x2="60" y2="218" stroke="#262019" stroke-width="2"/>
+                <text x="65" y="221" font-size="8" fill="#5c5549" font-family="DM Sans">Fermion</text>
+                <path d="M130,218 Q140,210 150,218 Q160,226 170,218" fill="none" stroke="#7a591d" stroke-width="2"/>
+                <text x="175" y="221" font-size="8" fill="#5c5549" font-family="DM Sans">Photon</text>
             </svg>
         </div>
     </div>
@@ -273,30 +274,30 @@
         </div>
         <div class="diagram-container">
             <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
-                <text x="130" y="16" text-anchor="middle" font-size="10" fill="#6a6a7a" font-family="JetBrains Mono, monospace">Sum Over All Paths</text>
+                <text x="130" y="16" text-anchor="middle" font-size="10" fill="#8f8676" font-family="JetBrains Mono, monospace">Sum Over All Paths</text>
                 <!-- Start and end points -->
-                <circle cx="40" cy="110" r="6" fill="#e8b84b" opacity="0.8"/>
-                <circle cx="220" cy="110" r="6" fill="#e8b84b" opacity="0.8"/>
-                <text x="40" y="132" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">A</text>
-                <text x="220" y="132" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">B</text>
+                <circle cx="40" cy="110" r="6" fill="#7a591d" opacity="0.8"/>
+                <circle cx="220" cy="110" r="6" fill="#7a591d" opacity="0.8"/>
+                <text x="40" y="132" text-anchor="middle" font-size="9" fill="#7a591d" font-family="JetBrains Mono">A</text>
+                <text x="220" y="132" text-anchor="middle" font-size="9" fill="#7a591d" font-family="JetBrains Mono">B</text>
                 <!-- Classical path (bold) -->
-                <path d="M40,110 Q130,108 220,110" fill="none" stroke="#e8e6e3" stroke-width="2.5"/>
+                <path d="M40,110 Q130,108 220,110" fill="none" stroke="#262019" stroke-width="2.5"/>
                 <!-- Quantum paths (various) -->
-                <path d="M40,110 Q90,40 140,70 Q190,100 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.4"/>
-                <path d="M40,110 Q80,160 130,150 Q180,140 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.35"/>
-                <path d="M40,110 Q70,30 130,50 Q190,70 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.25"/>
-                <path d="M40,110 Q90,190 150,170 Q200,150 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.2"/>
-                <path d="M40,110 Q60,80 100,60 Q160,40 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.3"/>
-                <path d="M40,110 Q100,180 160,160 Q200,140 220,110" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.28"/>
-                <path d="M40,110 Q80,90 130,95 Q180,100 220,110" fill="none" stroke="#e8b84b" stroke-width="1.0" opacity="0.5"/>
-                <path d="M40,110 Q80,130 130,125 Q180,120 220,110" fill="none" stroke="#e8b84b" stroke-width="1.0" opacity="0.5"/>
+                <path d="M40,110 Q90,40 140,70 Q190,100 220,110" fill="none" stroke="#7a591d" stroke-width="0.8" opacity="0.4"/>
+                <path d="M40,110 Q80,160 130,150 Q180,140 220,110" fill="none" stroke="#7a591d" stroke-width="0.8" opacity="0.35"/>
+                <path d="M40,110 Q70,30 130,50 Q190,70 220,110" fill="none" stroke="#7a591d" stroke-width="0.8" opacity="0.25"/>
+                <path d="M40,110 Q90,190 150,170 Q200,150 220,110" fill="none" stroke="#7a591d" stroke-width="0.8" opacity="0.2"/>
+                <path d="M40,110 Q60,80 100,60 Q160,40 220,110" fill="none" stroke="#7a591d" stroke-width="0.8" opacity="0.3"/>
+                <path d="M40,110 Q100,180 160,160 Q200,140 220,110" fill="none" stroke="#7a591d" stroke-width="0.8" opacity="0.28"/>
+                <path d="M40,110 Q80,90 130,95 Q180,100 220,110" fill="none" stroke="#7a591d" stroke-width="1.0" opacity="0.5"/>
+                <path d="M40,110 Q80,130 130,125 Q180,120 220,110" fill="none" stroke="#7a591d" stroke-width="1.0" opacity="0.5"/>
                 <!-- Formula -->
-                <text x="130" y="200" text-anchor="middle" font-size="11" fill="#e8e6e3" font-family="JetBrains Mono, monospace">K(B,A) = &Sigma; e<tspan baseline-shift="super" font-size="8">iS[path]/&hbar;</tspan></text>
+                <text x="130" y="200" text-anchor="middle" font-size="11" fill="#262019" font-family="JetBrains Mono, monospace">K(B,A) = &Sigma; e<tspan baseline-shift="super" font-size="8">iS[path]/&hbar;</tspan></text>
                 <!-- Legend -->
-                <line x1="30" y1="178" x2="55" y2="178" stroke="#e8e6e3" stroke-width="2.5"/>
-                <text x="60" y="181" font-size="8" fill="#9a9a9a" font-family="DM Sans">Classical</text>
-                <line x1="120" y1="178" x2="145" y2="178" stroke="#e8b84b" stroke-width="0.8" opacity="0.4"/>
-                <text x="150" y="181" font-size="8" fill="#9a9a9a" font-family="DM Sans">Quantum paths</text>
+                <line x1="30" y1="178" x2="55" y2="178" stroke="#262019" stroke-width="2.5"/>
+                <text x="60" y="181" font-size="8" fill="#5c5549" font-family="DM Sans">Classical</text>
+                <line x1="120" y1="178" x2="145" y2="178" stroke="#7a591d" stroke-width="0.8" opacity="0.4"/>
+                <text x="150" y="181" font-size="8" fill="#5c5549" font-family="DM Sans">Quantum paths</text>
             </svg>
         </div>
     </div>
@@ -404,47 +405,47 @@
     <div class="diagram-container">
         <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
             <!-- Connection lines -->
-            <line x1="350" y1="140" x2="140" y2="60" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="140" x2="560" y2="60" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="140" x2="100" y2="180" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="140" x2="600" y2="180" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="140" x2="180" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="140" x2="350" y2="290" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="140" x2="520" y2="280" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="140" y1="60" x2="560" y2="60" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
-            <line x1="180" y1="280" x2="520" y2="280" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+            <line x1="350" y1="140" x2="140" y2="60" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="560" y2="60" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="100" y2="180" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="600" y2="180" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="180" y2="280" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="350" y2="290" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="140" x2="520" y2="280" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="140" y1="60" x2="560" y2="60" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4"/>
+            <line x1="180" y1="280" x2="520" y2="280" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4"/>
             <!-- Center: Feynman -->
-            <circle cx="350" cy="140" r="28" fill="#161622" stroke="#e8b84b" stroke-width="2"/>
-            <text x="350" y="136" text-anchor="middle" font-size="10" fill="#e8b84b" font-weight="bold" font-family="DM Sans">Feynman</text>
-            <text x="350" y="148" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">1918&ndash;1988</text>
+            <circle cx="350" cy="140" r="28" fill="#e6e2d5" stroke="#7a591d" stroke-width="2"/>
+            <text x="350" y="136" text-anchor="middle" font-size="10" fill="#7a591d" font-weight="bold" font-family="DM Sans">Feynman</text>
+            <text x="350" y="148" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">1918&ndash;1988</text>
             <!-- Wheeler -->
-            <circle cx="140" cy="60" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
-            <text x="140" y="57" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="DM Sans">Wheeler</text>
-            <text x="140" y="68" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">PhD advisor</text>
+            <circle cx="140" cy="60" r="22" fill="#e6e2d5" stroke="#405477" stroke-width="1.5"/>
+            <text x="140" y="57" text-anchor="middle" font-size="9" fill="#405477" font-family="DM Sans">Wheeler</text>
+            <text x="140" y="68" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">PhD advisor</text>
             <!-- Schwinger -->
-            <circle cx="560" cy="60" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
-            <text x="560" y="57" text-anchor="middle" font-size="9" fill="#cf7272" font-family="DM Sans">Schwinger</text>
-            <text x="560" y="68" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Nobel co-laureate</text>
+            <circle cx="560" cy="60" r="22" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.5"/>
+            <text x="560" y="57" text-anchor="middle" font-size="9" fill="#9b5247" font-family="DM Sans">Schwinger</text>
+            <text x="560" y="68" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Nobel co-laureate</text>
             <!-- Bethe -->
-            <circle cx="100" cy="180" r="22" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
-            <text x="100" y="177" text-anchor="middle" font-size="9" fill="#4ecca3" font-family="DM Sans">Bethe</text>
-            <text x="100" y="188" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Los Alamos</text>
+            <circle cx="100" cy="180" r="22" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.5"/>
+            <text x="100" y="177" text-anchor="middle" font-size="9" fill="#3e6252" font-family="DM Sans">Bethe</text>
+            <text x="100" y="188" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Los Alamos</text>
             <!-- Dyson -->
-            <circle cx="600" cy="180" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
-            <text x="600" y="177" text-anchor="middle" font-size="9" fill="#d4a053" font-family="DM Sans">Dyson</text>
-            <text x="600" y="188" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Unified QED</text>
+            <circle cx="600" cy="180" r="22" fill="#e6e2d5" stroke="#8b6b40" stroke-width="1.5"/>
+            <text x="600" y="177" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="DM Sans">Dyson</text>
+            <text x="600" y="188" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Unified QED</text>
             <!-- Gell-Mann -->
-            <circle cx="180" cy="280" r="22" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
-            <text x="180" y="277" text-anchor="middle" font-size="9" fill="#9b72cf" font-family="DM Sans">Gell-Mann</text>
-            <text x="180" y="288" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Caltech rival</text>
+            <circle cx="180" cy="280" r="22" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.5"/>
+            <text x="180" y="277" text-anchor="middle" font-size="9" fill="#6d5172" font-family="DM Sans">Gell-Mann</text>
+            <text x="180" y="288" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Caltech rival</text>
             <!-- Tomonaga -->
-            <circle cx="350" cy="290" r="22" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
-            <text x="350" y="287" text-anchor="middle" font-size="9" fill="#cf7272" font-family="DM Sans">Tomonaga</text>
-            <text x="350" y="298" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Nobel co-laureate</text>
+            <circle cx="350" cy="290" r="22" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.5"/>
+            <text x="350" y="287" text-anchor="middle" font-size="9" fill="#9b5247" font-family="DM Sans">Tomonaga</text>
+            <text x="350" y="298" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Nobel co-laureate</text>
             <!-- Dirac -->
-            <circle cx="520" cy="280" r="22" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
-            <text x="520" y="277" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="DM Sans">Dirac</text>
-            <text x="520" y="288" text-anchor="middle" font-size="7" fill="#9a9a9a" font-family="DM Sans">Inspiration</text>
+            <circle cx="520" cy="280" r="22" fill="#e6e2d5" stroke="#405477" stroke-width="1.5"/>
+            <text x="520" y="277" text-anchor="middle" font-size="9" fill="#405477" font-family="DM Sans">Dirac</text>
+            <text x="520" y="288" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Inspiration</text>
         </svg>
     </div>
     <p style="text-align:center; font-size:0.48em !important; color:var(--text-muted);">Dashed lines indicate independent parallel work; solid lines indicate direct collaboration or mentorship.</p>
@@ -538,59 +539,59 @@
     <div class="diagram-container">
         <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
             <!-- Main timeline line -->
-            <line x1="60" y1="180" x2="740" y2="180" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="60" y1="180" x2="740" y2="180" stroke="#cac3b2" stroke-width="2"/>
             <!-- Year markers and events -->
-            <circle cx="80" cy="180" r="5" fill="#e8b84b"/>
-            <text x="80" y="200" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">1918</text>
-            <text x="80" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Born in</text>
-            <text x="80" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Queens, NY</text>
+            <circle cx="80" cy="180" r="5" fill="#7a591d"/>
+            <text x="80" y="200" text-anchor="middle" font-size="9" fill="#7a591d" font-family="JetBrains Mono">1918</text>
+            <text x="80" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Born in</text>
+            <text x="80" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Queens, NY</text>
 
-            <circle cx="175" cy="180" r="5" fill="#5b8cd4"/>
-            <text x="175" y="200" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="JetBrains Mono">1939</text>
-            <text x="175" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">MIT to Princeton</text>
+            <circle cx="175" cy="180" r="5" fill="#405477"/>
+            <text x="175" y="200" text-anchor="middle" font-size="9" fill="#405477" font-family="JetBrains Mono">1939</text>
+            <text x="175" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">MIT to Princeton</text>
 
-            <circle cx="250" cy="180" r="5" fill="#cf7272"/>
-            <text x="250" y="200" text-anchor="middle" font-size="9" fill="#cf7272" font-family="JetBrains Mono">1943</text>
-            <text x="250" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Los Alamos</text>
-            <text x="250" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Manhattan Project</text>
+            <circle cx="250" cy="180" r="5" fill="#9b5247"/>
+            <text x="250" y="200" text-anchor="middle" font-size="9" fill="#9b5247" font-family="JetBrains Mono">1943</text>
+            <text x="250" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Los Alamos</text>
+            <text x="250" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Manhattan Project</text>
 
-            <circle cx="340" cy="180" r="5" fill="#4ecca3"/>
-            <text x="340" y="200" text-anchor="middle" font-size="9" fill="#4ecca3" font-family="JetBrains Mono">1948</text>
-            <text x="340" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">QED formulation</text>
-            <text x="340" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Pocono Conference</text>
+            <circle cx="340" cy="180" r="5" fill="#3e6252"/>
+            <text x="340" y="200" text-anchor="middle" font-size="9" fill="#3e6252" font-family="JetBrains Mono">1948</text>
+            <text x="340" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">QED formulation</text>
+            <text x="340" y="230" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">Pocono Conference</text>
 
-            <circle cx="430" cy="180" r="5" fill="#d4a053"/>
-            <text x="430" y="200" text-anchor="middle" font-size="9" fill="#d4a053" font-family="JetBrains Mono">1950</text>
-            <text x="430" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Moves to Caltech</text>
+            <circle cx="430" cy="180" r="5" fill="#8b6b40"/>
+            <text x="430" y="200" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="JetBrains Mono">1950</text>
+            <text x="430" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Moves to Caltech</text>
 
-            <circle cx="520" cy="180" r="5" fill="#9b72cf"/>
-            <text x="520" y="200" text-anchor="middle" font-size="9" fill="#9b72cf" font-family="JetBrains Mono">1965</text>
-            <text x="520" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Nobel Prize</text>
-            <text x="520" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">in Physics</text>
+            <circle cx="520" cy="180" r="5" fill="#6d5172"/>
+            <text x="520" y="200" text-anchor="middle" font-size="9" fill="#6d5172" font-family="JetBrains Mono">1965</text>
+            <text x="520" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">Nobel Prize</text>
+            <text x="520" y="230" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">in Physics</text>
 
-            <circle cx="610" cy="180" r="5" fill="#5b8cd4"/>
-            <text x="610" y="200" text-anchor="middle" font-size="9" fill="#5b8cd4" font-family="JetBrains Mono">1969</text>
-            <text x="610" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Parton model</text>
+            <circle cx="610" cy="180" r="5" fill="#405477"/>
+            <text x="610" y="200" text-anchor="middle" font-size="9" fill="#405477" font-family="JetBrains Mono">1969</text>
+            <text x="610" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Parton model</text>
 
-            <circle cx="680" cy="180" r="5" fill="#cf7272"/>
-            <text x="680" y="200" text-anchor="middle" font-size="9" fill="#cf7272" font-family="JetBrains Mono">1986</text>
-            <text x="680" y="220" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Challenger</text>
-            <text x="680" y="230" text-anchor="middle" font-size="8" fill="#9a9a9a" font-family="DM Sans">Commission</text>
+            <circle cx="680" cy="180" r="5" fill="#9b5247"/>
+            <text x="680" y="200" text-anchor="middle" font-size="9" fill="#9b5247" font-family="JetBrains Mono">1986</text>
+            <text x="680" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">Challenger</text>
+            <text x="680" y="230" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">Commission</text>
 
-            <circle cx="720" cy="180" r="5" fill="#e8b84b"/>
-            <text x="720" y="200" text-anchor="middle" font-size="9" fill="#e8b84b" font-family="JetBrains Mono">1988</text>
-            <text x="720" y="165" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Dies in</text>
-            <text x="720" y="155" text-anchor="middle" font-size="8" fill="#e8e6e3" font-family="DM Sans">Los Angeles</text>
+            <circle cx="720" cy="180" r="5" fill="#7a591d"/>
+            <text x="720" y="200" text-anchor="middle" font-size="9" fill="#7a591d" font-family="JetBrains Mono">1988</text>
+            <text x="720" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Dies in</text>
+            <text x="720" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Los Angeles</text>
 
             <!-- Era brackets -->
-            <rect x="65" y="260" width="150" height="30" rx="4" fill="rgba(232,184,75,0.08)" stroke="#e8b84b" stroke-width="0.5"/>
-            <text x="140" y="280" text-anchor="middle" font-size="8" fill="#e8b84b" font-family="DM Sans">Formation</text>
+            <rect x="65" y="260" width="150" height="30" rx="4" fill="rgba(122,89,29,0.08)" stroke="#7a591d" stroke-width="0.5"/>
+            <text x="140" y="280" text-anchor="middle" font-size="8" fill="#7a591d" font-family="DM Sans">Formation</text>
 
-            <rect x="230" y="260" width="130" height="30" rx="4" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="0.5"/>
-            <text x="295" y="280" text-anchor="middle" font-size="8" fill="#cf7272" font-family="DM Sans">War &amp; Revolution</text>
+            <rect x="230" y="260" width="130" height="30" rx="4" fill="rgba(155,82,71,0.08)" stroke="#9b5247" stroke-width="0.5"/>
+            <text x="295" y="280" text-anchor="middle" font-size="8" fill="#9b5247" font-family="DM Sans">War &amp; Revolution</text>
 
-            <rect x="380" y="260" width="270" height="30" rx="4" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="0.5"/>
-            <text x="515" y="280" text-anchor="middle" font-size="8" fill="#4ecca3" font-family="DM Sans">Caltech &amp; Public Life</text>
+            <rect x="380" y="260" width="270" height="30" rx="4" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="0.5"/>
+            <text x="515" y="280" text-anchor="middle" font-size="8" fill="#3e6252" font-family="DM Sans">Caltech &amp; Public Life</text>
         </svg>
     </div>
 </section>
@@ -631,11 +632,11 @@
     <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
         <div class="mandala-container">
             <svg viewBox="0 0 140 140">
-                <circle cx="70" cy="70" r="55" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.2"/>
-                <circle cx="70" cy="70" r="40" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.15"/>
-                <circle cx="70" cy="70" r="25" fill="none" stroke="#e8b84b" stroke-width="0.4" opacity="0.1"/>
-                <path d="M70,15 L78,55 L120,40 L85,70 L120,100 L78,85 L70,125 L62,85 L20,100 L55,70 L20,40 L62,55 Z" fill="none" stroke="#e8b84b" stroke-width="0.6" opacity="0.3"/>
-                <circle cx="70" cy="70" r="3" fill="#e8b84b" opacity="0.5"/>
+                <circle cx="70" cy="70" r="55" fill="none" stroke="#7a591d" stroke-width="0.4" opacity="0.2"/>
+                <circle cx="70" cy="70" r="40" fill="none" stroke="#7a591d" stroke-width="0.4" opacity="0.15"/>
+                <circle cx="70" cy="70" r="25" fill="none" stroke="#7a591d" stroke-width="0.4" opacity="0.1"/>
+                <path d="M70,15 L78,55 L120,40 L85,70 L120,100 L78,85 L70,125 L62,85 L20,100 L55,70 L20,40 L62,55 Z" fill="none" stroke="#7a591d" stroke-width="0.6" opacity="0.3"/>
+                <circle cx="70" cy="70" r="3" fill="#7a591d" opacity="0.5"/>
             </svg>
         </div>
         <div class="quote-box" style="max-width:70%; border-left-width:4px;">

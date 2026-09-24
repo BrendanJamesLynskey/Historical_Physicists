@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>J.J. Thomson — Discoverer of the Electron</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent: #4ecca3;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+    --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
+    --accent: #3e6252;
+    --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172;
+    --accent-rose: #9b5247; --accent-blue: #405477;
+    --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -33,7 +33,7 @@
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -52,11 +52,11 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
-.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
-.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
-.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
 .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -74,6 +74,7 @@
 .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
 .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -83,26 +84,26 @@
 <section>
     <div class="mandala-container">
         <svg viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="90" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
-            <circle cx="100" cy="100" r="50" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
-            <circle cx="100" cy="100" r="6" fill="#4ecca3" opacity="0.8"/>
-            <g stroke="#4ecca3" stroke-width="0.6" opacity="0.5">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#3e6252" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#3e6252" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="100" cy="100" r="6" fill="#3e6252" opacity="0.8"/>
+            <g stroke="#3e6252" stroke-width="0.6" opacity="0.5">
                 <line x1="100" y1="10" x2="100" y2="190"/><line x1="10" y1="100" x2="190" y2="100"/>
                 <line x1="36" y1="36" x2="164" y2="164"/><line x1="164" y1="36" x2="36" y2="164"/>
             </g>
-            <circle cx="100" cy="10" r="3" fill="#4ecca3" opacity="0.7"/>
-            <circle cx="100" cy="190" r="3" fill="#4ecca3" opacity="0.7"/>
-            <circle cx="10" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
-            <circle cx="190" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
-            <circle cx="36" cy="36" r="3" fill="#4ecca3" opacity="0.6"/>
-            <circle cx="164" cy="36" r="3" fill="#4ecca3" opacity="0.6"/>
-            <circle cx="36" cy="164" r="3" fill="#4ecca3" opacity="0.6"/>
-            <circle cx="164" cy="164" r="3" fill="#4ecca3" opacity="0.6"/>
-            <path d="M100 30 A70 70 0 0 1 170 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
-            <path d="M170 100 A70 70 0 0 1 100 170" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
-            <path d="M100 170 A70 70 0 0 1 30 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
-            <path d="M30 100 A70 70 0 0 1 100 30" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <circle cx="100" cy="10" r="3" fill="#3e6252" opacity="0.7"/>
+            <circle cx="100" cy="190" r="3" fill="#3e6252" opacity="0.7"/>
+            <circle cx="10" cy="100" r="3" fill="#3e6252" opacity="0.7"/>
+            <circle cx="190" cy="100" r="3" fill="#3e6252" opacity="0.7"/>
+            <circle cx="36" cy="36" r="3" fill="#3e6252" opacity="0.6"/>
+            <circle cx="164" cy="36" r="3" fill="#3e6252" opacity="0.6"/>
+            <circle cx="36" cy="164" r="3" fill="#3e6252" opacity="0.6"/>
+            <circle cx="164" cy="164" r="3" fill="#3e6252" opacity="0.6"/>
+            <path d="M100 30 A70 70 0 0 1 170 100" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
+            <path d="M170 100 A70 70 0 0 1 100 170" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
+            <path d="M100 170 A70 70 0 0 1 30 100" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
+            <path d="M30 100 A70 70 0 0 1 100 30" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
         </svg>
     </div>
     <h1>J.J. Thomson</h1>
@@ -208,36 +209,36 @@
         </div>
         <div>
             <div class="diagram-container">
-                <svg viewBox="0 0 420 220" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+                <svg viewBox="0 0 420 220" style="width:100%;background:rgba(253,252,249,0.2);border-radius:8px;">
                     <!-- Cathode ray tube -->
-                    <rect x="20" y="60" width="60" height="100" rx="4" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
-                    <text x="50" y="115" text-anchor="middle" fill="#4ecca3" font-size="10" font-family="DM Sans">Cathode</text>
-                    <rect x="100" y="75" width="8" height="70" rx="2" fill="none" stroke="#d4a053" stroke-width="1.2"/>
+                    <rect x="20" y="60" width="60" height="100" rx="4" fill="none" stroke="#3e6252" stroke-width="1.5"/>
+                    <text x="50" y="115" text-anchor="middle" fill="#3e6252" font-size="10" font-family="DM Sans">Cathode</text>
+                    <rect x="100" y="75" width="8" height="70" rx="2" fill="none" stroke="#8b6b40" stroke-width="1.2"/>
                     <rect x="100" y="95" width="8" height="30" fill="none"/>
-                    <text x="104" y="72" text-anchor="middle" fill="#d4a053" font-size="8" font-family="DM Sans">Anode</text>
+                    <text x="104" y="72" text-anchor="middle" fill="#8b6b40" font-size="8" font-family="DM Sans">Anode</text>
                     <!-- Beam path -->
-                    <line x1="80" y1="110" x2="130" y2="110" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+                    <line x1="80" y1="110" x2="130" y2="110" stroke="#3e6252" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
                     <!-- Deflection plates -->
-                    <rect x="160" y="75" width="100" height="6" rx="2" fill="#cf7272" opacity="0.6"/>
-                    <rect x="160" y="139" width="100" height="6" rx="2" fill="#5b8cd4" opacity="0.6"/>
-                    <text x="210" y="70" text-anchor="middle" fill="#cf7272" font-size="8" font-family="DM Sans">+ Plate</text>
-                    <text x="210" y="158" text-anchor="middle" fill="#5b8cd4" font-size="8" font-family="DM Sans">&minus; Plate</text>
+                    <rect x="160" y="75" width="100" height="6" rx="2" fill="#9b5247" opacity="0.6"/>
+                    <rect x="160" y="139" width="100" height="6" rx="2" fill="#405477" opacity="0.6"/>
+                    <text x="210" y="70" text-anchor="middle" fill="#9b5247" font-size="8" font-family="DM Sans">+ Plate</text>
+                    <text x="210" y="158" text-anchor="middle" fill="#405477" font-size="8" font-family="DM Sans">&minus; Plate</text>
                     <!-- Beam through plates, deflected -->
-                    <path d="M130 110 L160 110 Q210 110 260 95" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+                    <path d="M130 110 L160 110 Q210 110 260 95" fill="none" stroke="#3e6252" stroke-width="1.5"/>
                     <!-- Undeflected path -->
-                    <line x1="260" y1="110" x2="390" y2="110" stroke="#6a6a7a" stroke-width="0.5" stroke-dasharray="4,3"/>
+                    <line x1="260" y1="110" x2="390" y2="110" stroke="#8f8676" stroke-width="0.5" stroke-dasharray="4,3"/>
                     <!-- Deflected beam continues -->
-                    <line x1="260" y1="95" x2="390" y2="68" stroke="#4ecca3" stroke-width="1.5"/>
+                    <line x1="260" y1="95" x2="390" y2="68" stroke="#3e6252" stroke-width="1.5"/>
                     <!-- Fluorescent screen -->
-                    <rect x="388" y="40" width="8" height="140" rx="3" fill="none" stroke="#9a9a9a" stroke-width="1"/>
-                    <circle cx="392" cy="68" r="5" fill="#4ecca3" opacity="0.6"/>
-                    <text x="392" y="190" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">Screen</text>
+                    <rect x="388" y="40" width="8" height="140" rx="3" fill="none" stroke="#5c5549" stroke-width="1"/>
+                    <circle cx="392" cy="68" r="5" fill="#3e6252" opacity="0.6"/>
+                    <text x="392" y="190" text-anchor="middle" fill="#5c5549" font-size="8" font-family="DM Sans">Screen</text>
                     <!-- Labels -->
-                    <text x="210" y="205" text-anchor="middle" fill="#e8e6e3" font-size="10" font-family="DM Sans">Cathode Ray Tube with Electric Deflection</text>
+                    <text x="210" y="205" text-anchor="middle" fill="#262019" font-size="10" font-family="DM Sans">Cathode Ray Tube with Electric Deflection</text>
                     <!-- Arrows showing E field -->
-                    <line x1="210" y1="82" x2="210" y2="137" stroke="#d4a053" stroke-width="0.7" marker-end="url(#arrowT)"/>
-                    <text x="225" y="113" fill="#d4a053" font-size="8" font-family="JetBrains Mono">E</text>
-                    <defs><marker id="arrowT" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#d4a053"/></marker></defs>
+                    <line x1="210" y1="82" x2="210" y2="137" stroke="#8b6b40" stroke-width="0.7" marker-end="url(#arrowT)"/>
+                    <text x="225" y="113" fill="#8b6b40" font-size="8" font-family="JetBrains Mono">E</text>
+                    <defs><marker id="arrowT" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#8b6b40"/></marker></defs>
                 </svg>
             </div>
         </div>
@@ -284,29 +285,29 @@
         </div>
         <div>
             <div class="diagram-container">
-                <svg viewBox="0 0 300 300" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+                <svg viewBox="0 0 300 300" style="width:100%;background:rgba(253,252,249,0.2);border-radius:8px;">
                     <!-- Positive charge sphere -->
-                    <circle cx="150" cy="140" r="100" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1" opacity="0.6"/>
-                    <circle cx="150" cy="140" r="100" fill="none" stroke="#4ecca3" stroke-width="0.5" stroke-dasharray="4,3"/>
-                    <text x="150" y="255" text-anchor="middle" fill="#9a9a9a" font-size="9" font-family="DM Sans">Diffuse positive charge sphere</text>
+                    <circle cx="150" cy="140" r="100" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="1" opacity="0.6"/>
+                    <circle cx="150" cy="140" r="100" fill="none" stroke="#3e6252" stroke-width="0.5" stroke-dasharray="4,3"/>
+                    <text x="150" y="255" text-anchor="middle" fill="#5c5549" font-size="9" font-family="DM Sans">Diffuse positive charge sphere</text>
                     <!-- Plus signs for positive charge -->
-                    <text x="90" y="105" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
-                    <text x="130" y="85" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
-                    <text x="175" y="90" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
-                    <text x="200" y="120" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
-                    <text x="110" y="160" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
-                    <text x="190" y="170" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
-                    <text x="145" y="195" fill="#4ecca3" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="90" y="105" fill="#3e6252" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="130" y="85" fill="#3e6252" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="175" y="90" fill="#3e6252" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="200" y="120" fill="#3e6252" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="110" y="160" fill="#3e6252" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="190" y="170" fill="#3e6252" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
+                    <text x="145" y="195" fill="#3e6252" font-size="8" opacity="0.3" font-family="DM Sans">+</text>
                     <!-- Electrons (the "plums") -->
-                    <circle cx="150" cy="140" r="7" fill="#cf7272" opacity="0.9"/><text x="150" y="143" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
-                    <circle cx="120" cy="110" r="7" fill="#cf7272" opacity="0.9"/><text x="120" y="113" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
-                    <circle cx="180" cy="110" r="7" fill="#cf7272" opacity="0.9"/><text x="180" y="113" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
-                    <circle cx="105" cy="150" r="7" fill="#cf7272" opacity="0.9"/><text x="105" y="153" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
-                    <circle cx="195" cy="150" r="7" fill="#cf7272" opacity="0.9"/><text x="195" y="153" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
-                    <circle cx="135" cy="175" r="7" fill="#cf7272" opacity="0.9"/><text x="135" y="178" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
-                    <circle cx="165" cy="175" r="7" fill="#cf7272" opacity="0.9"/><text x="165" y="178" text-anchor="middle" fill="#0a0a0f" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="150" cy="140" r="7" fill="#9b5247" opacity="0.9"/><text x="150" y="143" text-anchor="middle" fill="#f4f1e9" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="120" cy="110" r="7" fill="#9b5247" opacity="0.9"/><text x="120" y="113" text-anchor="middle" fill="#f4f1e9" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="180" cy="110" r="7" fill="#9b5247" opacity="0.9"/><text x="180" y="113" text-anchor="middle" fill="#f4f1e9" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="105" cy="150" r="7" fill="#9b5247" opacity="0.9"/><text x="105" y="153" text-anchor="middle" fill="#f4f1e9" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="195" cy="150" r="7" fill="#9b5247" opacity="0.9"/><text x="195" y="153" text-anchor="middle" fill="#f4f1e9" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="135" cy="175" r="7" fill="#9b5247" opacity="0.9"/><text x="135" y="178" text-anchor="middle" fill="#f4f1e9" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
+                    <circle cx="165" cy="175" r="7" fill="#9b5247" opacity="0.9"/><text x="165" y="178" text-anchor="middle" fill="#f4f1e9" font-size="7" font-weight="bold" font-family="DM Sans">e</text>
                     <!-- Label -->
-                    <text x="150" y="275" text-anchor="middle" fill="#e8e6e3" font-size="11" font-family="DM Sans">Thomson's "Plum Pudding" Atom</text>
+                    <text x="150" y="275" text-anchor="middle" fill="#262019" font-size="11" font-family="DM Sans">Thomson's "Plum Pudding" Atom</text>
                 </svg>
             </div>
         </div>
@@ -350,31 +351,31 @@
         </div>
         <div>
             <div class="diagram-container">
-                <svg viewBox="0 0 380 240" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+                <svg viewBox="0 0 380 240" style="width:100%;background:rgba(253,252,249,0.2);border-radius:8px;">
                     <!-- Ion source -->
-                    <rect x="20" y="90" width="50" height="50" rx="4" fill="none" stroke="#d4a053" stroke-width="1.2"/>
-                    <text x="45" y="118" text-anchor="middle" fill="#d4a053" font-size="8" font-family="DM Sans">Ion</text>
-                    <text x="45" y="128" text-anchor="middle" fill="#d4a053" font-size="8" font-family="DM Sans">Source</text>
+                    <rect x="20" y="90" width="50" height="50" rx="4" fill="none" stroke="#8b6b40" stroke-width="1.2"/>
+                    <text x="45" y="118" text-anchor="middle" fill="#8b6b40" font-size="8" font-family="DM Sans">Ion</text>
+                    <text x="45" y="128" text-anchor="middle" fill="#8b6b40" font-size="8" font-family="DM Sans">Source</text>
                     <!-- Beam -->
-                    <line x1="70" y1="115" x2="130" y2="115" stroke="#4ecca3" stroke-width="1.2"/>
+                    <line x1="70" y1="115" x2="130" y2="115" stroke="#3e6252" stroke-width="1.2"/>
                     <!-- E + B fields region -->
-                    <rect x="130" y="70" width="80" height="90" rx="4" fill="rgba(78,204,163,0.05)" stroke="#9b72cf" stroke-width="1" stroke-dasharray="3,2"/>
-                    <text x="170" y="65" text-anchor="middle" fill="#9b72cf" font-size="8" font-family="JetBrains Mono">E + B fields</text>
+                    <rect x="130" y="70" width="80" height="90" rx="4" fill="rgba(62,98,82,0.05)" stroke="#6d5172" stroke-width="1" stroke-dasharray="3,2"/>
+                    <text x="170" y="65" text-anchor="middle" fill="#6d5172" font-size="8" font-family="JetBrains Mono">E + B fields</text>
                     <!-- Diverging beams -->
-                    <line x1="210" y1="100" x2="340" y2="60" stroke="#4ecca3" stroke-width="1.2"/>
-                    <line x1="210" y1="115" x2="340" y2="115" stroke="#5b8cd4" stroke-width="1.2"/>
-                    <line x1="210" y1="130" x2="340" y2="165" stroke="#cf7272" stroke-width="1.2"/>
+                    <line x1="210" y1="100" x2="340" y2="60" stroke="#3e6252" stroke-width="1.2"/>
+                    <line x1="210" y1="115" x2="340" y2="115" stroke="#405477" stroke-width="1.2"/>
+                    <line x1="210" y1="130" x2="340" y2="165" stroke="#9b5247" stroke-width="1.2"/>
                     <!-- Detector -->
-                    <rect x="340" y="40" width="8" height="150" rx="3" fill="none" stroke="#9a9a9a" stroke-width="1"/>
-                    <circle cx="344" cy="60" r="4" fill="#4ecca3" opacity="0.7"/>
-                    <circle cx="344" cy="115" r="4" fill="#5b8cd4" opacity="0.7"/>
-                    <circle cx="344" cy="165" r="4" fill="#cf7272" opacity="0.7"/>
+                    <rect x="340" y="40" width="8" height="150" rx="3" fill="none" stroke="#5c5549" stroke-width="1"/>
+                    <circle cx="344" cy="60" r="4" fill="#3e6252" opacity="0.7"/>
+                    <circle cx="344" cy="115" r="4" fill="#405477" opacity="0.7"/>
+                    <circle cx="344" cy="165" r="4" fill="#9b5247" opacity="0.7"/>
                     <!-- Labels -->
-                    <text x="360" y="63" fill="#4ecca3" font-size="8" font-family="JetBrains Mono">m&#8321;</text>
-                    <text x="360" y="118" fill="#5b8cd4" font-size="8" font-family="JetBrains Mono">m&#8322;</text>
-                    <text x="360" y="168" fill="#cf7272" font-size="8" font-family="JetBrains Mono">m&#8323;</text>
-                    <text x="344" y="210" text-anchor="middle" fill="#9a9a9a" font-size="8" font-family="DM Sans">Plate</text>
-                    <text x="190" y="225" text-anchor="middle" fill="#e8e6e3" font-size="10" font-family="DM Sans">Mass Separation by Electric &amp; Magnetic Fields</text>
+                    <text x="360" y="63" fill="#3e6252" font-size="8" font-family="JetBrains Mono">m&#8321;</text>
+                    <text x="360" y="118" fill="#405477" font-size="8" font-family="JetBrains Mono">m&#8322;</text>
+                    <text x="360" y="168" fill="#9b5247" font-size="8" font-family="JetBrains Mono">m&#8323;</text>
+                    <text x="344" y="210" text-anchor="middle" fill="#5c5549" font-size="8" font-family="DM Sans">Plate</text>
+                    <text x="190" y="225" text-anchor="middle" fill="#262019" font-size="10" font-family="DM Sans">Mass Separation by Electric &amp; Magnetic Fields</text>
                 </svg>
             </div>
         </div>
@@ -423,48 +424,48 @@
     <span class="section-number">08 &mdash; CONNECTIONS</span>
     <h2>Connections &amp; Collaborations</h2>
     <div class="diagram-container">
-        <svg viewBox="0 0 700 340" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
+        <svg viewBox="0 0 700 340" style="width:100%;background:rgba(253,252,249,0.2);border-radius:8px;">
             <!-- Central node: Thomson -->
-            <circle cx="350" cy="170" r="38" fill="rgba(78,204,163,0.15)" stroke="#4ecca3" stroke-width="2"/>
-            <text x="350" y="166" text-anchor="middle" fill="#4ecca3" font-size="11" font-weight="bold" font-family="Playfair Display">J.J.</text>
-            <text x="350" y="180" text-anchor="middle" fill="#4ecca3" font-size="11" font-weight="bold" font-family="Playfair Display">Thomson</text>
+            <circle cx="350" cy="170" r="38" fill="rgba(62,98,82,0.15)" stroke="#3e6252" stroke-width="2"/>
+            <text x="350" y="166" text-anchor="middle" fill="#3e6252" font-size="11" font-weight="bold" font-family="Playfair Display">J.J.</text>
+            <text x="350" y="180" text-anchor="middle" fill="#3e6252" font-size="11" font-weight="bold" font-family="Playfair Display">Thomson</text>
             <!-- Rutherford -->
-            <circle cx="170" cy="90" r="30" fill="rgba(207,114,114,0.1)" stroke="#cf7272" stroke-width="1.2"/>
-            <text x="170" y="88" text-anchor="middle" fill="#cf7272" font-size="9" font-family="DM Sans">Rutherford</text>
-            <text x="170" y="100" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
-            <line x1="200" y1="105" x2="315" y2="155" stroke="#cf7272" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="170" cy="90" r="30" fill="rgba(155,82,71,0.1)" stroke="#9b5247" stroke-width="1.2"/>
+            <text x="170" y="88" text-anchor="middle" fill="#9b5247" font-size="9" font-family="DM Sans">Rutherford</text>
+            <text x="170" y="100" text-anchor="middle" fill="#5c5549" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="200" y1="105" x2="315" y2="155" stroke="#9b5247" stroke-width="0.8" opacity="0.5"/>
             <!-- Aston -->
-            <circle cx="540" cy="80" r="30" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1.2"/>
-            <text x="540" y="78" text-anchor="middle" fill="#d4a053" font-size="9" font-family="DM Sans">Aston</text>
-            <text x="540" y="90" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
-            <line x1="510" y1="95" x2="385" y2="155" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="540" cy="80" r="30" fill="rgba(139,107,64,0.1)" stroke="#8b6b40" stroke-width="1.2"/>
+            <text x="540" y="78" text-anchor="middle" fill="#8b6b40" font-size="9" font-family="DM Sans">Aston</text>
+            <text x="540" y="90" text-anchor="middle" fill="#5c5549" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="510" y1="95" x2="385" y2="155" stroke="#8b6b40" stroke-width="0.8" opacity="0.5"/>
             <!-- C.T.R. Wilson -->
-            <circle cx="150" cy="240" r="30" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.2"/>
-            <text x="150" y="238" text-anchor="middle" fill="#5b8cd4" font-size="9" font-family="DM Sans">C.T.R. Wilson</text>
-            <text x="150" y="250" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
-            <line x1="178" y1="225" x2="320" y2="190" stroke="#5b8cd4" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="150" cy="240" r="30" fill="rgba(64,84,119,0.1)" stroke="#405477" stroke-width="1.2"/>
+            <text x="150" y="238" text-anchor="middle" fill="#405477" font-size="9" font-family="DM Sans">C.T.R. Wilson</text>
+            <text x="150" y="250" text-anchor="middle" fill="#5c5549" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="178" y1="225" x2="320" y2="190" stroke="#405477" stroke-width="0.8" opacity="0.5"/>
             <!-- G.P. Thomson (son) -->
-            <circle cx="560" cy="250" r="30" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.2"/>
-            <text x="560" y="244" text-anchor="middle" fill="#9b72cf" font-size="9" font-family="DM Sans">G.P. Thomson</text>
-            <text x="560" y="258" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Son</text>
-            <line x1="530" y1="240" x2="385" y2="190" stroke="#9b72cf" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="560" cy="250" r="30" fill="rgba(109,81,114,0.1)" stroke="#6d5172" stroke-width="1.2"/>
+            <text x="560" y="244" text-anchor="middle" fill="#6d5172" font-size="9" font-family="DM Sans">G.P. Thomson</text>
+            <text x="560" y="258" text-anchor="middle" fill="#5c5549" font-size="7" font-family="DM Sans">Son</text>
+            <line x1="530" y1="240" x2="385" y2="190" stroke="#6d5172" stroke-width="0.8" opacity="0.5"/>
             <!-- Lord Rayleigh -->
-            <circle cx="350" cy="40" r="28" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="0.8"/>
-            <text x="350" y="38" text-anchor="middle" fill="#4ecca3" font-size="9" font-family="DM Sans">Rayleigh</text>
-            <text x="350" y="50" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Predecessor</text>
-            <line x1="350" y1="68" x2="350" y2="132" stroke="#4ecca3" stroke-width="0.6" opacity="0.4"/>
+            <circle cx="350" cy="40" r="28" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="0.8"/>
+            <text x="350" y="38" text-anchor="middle" fill="#3e6252" font-size="9" font-family="DM Sans">Rayleigh</text>
+            <text x="350" y="50" text-anchor="middle" fill="#5c5549" font-size="7" font-family="DM Sans">Predecessor</text>
+            <line x1="350" y1="68" x2="350" y2="132" stroke="#3e6252" stroke-width="0.6" opacity="0.4"/>
             <!-- Townsend -->
-            <circle cx="80" cy="160" r="26" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="0.8"/>
-            <text x="80" y="158" text-anchor="middle" fill="#e8e6e3" font-size="8" font-family="DM Sans">Townsend</text>
-            <text x="80" y="170" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Student</text>
-            <line x1="106" y1="162" x2="312" y2="168" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="80" cy="160" r="26" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="0.8"/>
+            <text x="80" y="158" text-anchor="middle" fill="#262019" font-size="8" font-family="DM Sans">Townsend</text>
+            <text x="80" y="170" text-anchor="middle" fill="#5c5549" font-size="7" font-family="DM Sans">Student</text>
+            <line x1="106" y1="162" x2="312" y2="168" stroke="#3e6252" stroke-width="0.5" opacity="0.3"/>
             <!-- Millikan connection -->
-            <circle cx="620" cy="170" r="26" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="0.8"/>
-            <text x="620" y="168" text-anchor="middle" fill="#e8e6e3" font-size="8" font-family="DM Sans">Millikan</text>
-            <text x="620" y="180" text-anchor="middle" fill="#9a9a9a" font-size="7" font-family="DM Sans">Measured e</text>
-            <line x1="594" y1="170" x2="388" y2="170" stroke="#cf7272" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="620" cy="170" r="26" fill="rgba(155,82,71,0.08)" stroke="#9b5247" stroke-width="0.8"/>
+            <text x="620" y="168" text-anchor="middle" fill="#262019" font-size="8" font-family="DM Sans">Millikan</text>
+            <text x="620" y="180" text-anchor="middle" fill="#5c5549" font-size="7" font-family="DM Sans">Measured e</text>
+            <line x1="594" y1="170" x2="388" y2="170" stroke="#9b5247" stroke-width="0.5" opacity="0.3"/>
             <!-- 7 Nobel Prizes note -->
-            <text x="350" y="320" text-anchor="middle" fill="#6a6a7a" font-size="9" font-family="DM Sans" font-style="italic">Seven of Thomson's research students went on to win Nobel Prizes</text>
+            <text x="350" y="320" text-anchor="middle" fill="#8f8676" font-size="9" font-family="DM Sans" font-style="italic">Seven of Thomson's research students went on to win Nobel Prizes</text>
         </svg>
     </div>
 </section>
@@ -557,18 +558,18 @@
     <div class="two-col">
         <div>
             <div class="diagram-container">
-                <svg viewBox="0 0 280 420" style="width:100%;background:rgba(0,0,0,0.2);border-radius:8px;">
-                    <line x1="40" y1="20" x2="40" y2="400" stroke="#2a2a3a" stroke-width="2"/>
-                    <circle cx="40" cy="30" r="4" fill="#4ecca3"/><text x="55" y="34" fill="#9a9a9a" font-size="9" font-family="DM Sans">1856 &mdash; Born, Manchester</text>
-                    <circle cx="40" cy="70" r="4" fill="#d4a053"/><text x="55" y="74" fill="#9a9a9a" font-size="9" font-family="DM Sans">1870 &mdash; Owens College (age 14)</text>
-                    <circle cx="40" cy="110" r="4" fill="#5b8cd4"/><text x="55" y="114" fill="#9a9a9a" font-size="9" font-family="DM Sans">1876 &mdash; Trinity College</text>
-                    <circle cx="40" cy="150" r="4" fill="#4ecca3"/><text x="55" y="154" fill="#9a9a9a" font-size="9" font-family="DM Sans">1884 &mdash; Cavendish Professor</text>
-                    <circle cx="40" cy="200" r="5" fill="#cf7272"/><text x="55" y="204" fill="#e8e6e3" font-size="10" font-weight="bold" font-family="DM Sans">1897 &mdash; Electron discovered</text>
-                    <circle cx="40" cy="240" r="4" fill="#9b72cf"/><text x="55" y="244" fill="#9a9a9a" font-size="9" font-family="DM Sans">1904 &mdash; Plum pudding model</text>
-                    <circle cx="40" cy="280" r="5" fill="#d4a053"/><text x="55" y="284" fill="#e8e6e3" font-size="10" font-weight="bold" font-family="DM Sans">1906 &mdash; Nobel Prize</text>
-                    <circle cx="40" cy="320" r="4" fill="#5b8cd4"/><text x="55" y="324" fill="#9a9a9a" font-size="9" font-family="DM Sans">1913 &mdash; Neon isotopes found</text>
-                    <circle cx="40" cy="360" r="4" fill="#4ecca3"/><text x="55" y="364" fill="#9a9a9a" font-size="9" font-family="DM Sans">1919 &mdash; Retires from Cavendish</text>
-                    <circle cx="40" cy="395" r="4" fill="#6a6a7a"/><text x="55" y="399" fill="#9a9a9a" font-size="9" font-family="DM Sans">1940 &mdash; Dies, Cambridge</text>
+                <svg viewBox="0 0 280 420" style="width:100%;background:rgba(253,252,249,0.2);border-radius:8px;">
+                    <line x1="40" y1="20" x2="40" y2="400" stroke="#cac3b2" stroke-width="2"/>
+                    <circle cx="40" cy="30" r="4" fill="#3e6252"/><text x="55" y="34" fill="#5c5549" font-size="9" font-family="DM Sans">1856 &mdash; Born, Manchester</text>
+                    <circle cx="40" cy="70" r="4" fill="#8b6b40"/><text x="55" y="74" fill="#5c5549" font-size="9" font-family="DM Sans">1870 &mdash; Owens College (age 14)</text>
+                    <circle cx="40" cy="110" r="4" fill="#405477"/><text x="55" y="114" fill="#5c5549" font-size="9" font-family="DM Sans">1876 &mdash; Trinity College</text>
+                    <circle cx="40" cy="150" r="4" fill="#3e6252"/><text x="55" y="154" fill="#5c5549" font-size="9" font-family="DM Sans">1884 &mdash; Cavendish Professor</text>
+                    <circle cx="40" cy="200" r="5" fill="#9b5247"/><text x="55" y="204" fill="#262019" font-size="10" font-weight="bold" font-family="DM Sans">1897 &mdash; Electron discovered</text>
+                    <circle cx="40" cy="240" r="4" fill="#6d5172"/><text x="55" y="244" fill="#5c5549" font-size="9" font-family="DM Sans">1904 &mdash; Plum pudding model</text>
+                    <circle cx="40" cy="280" r="5" fill="#8b6b40"/><text x="55" y="284" fill="#262019" font-size="10" font-weight="bold" font-family="DM Sans">1906 &mdash; Nobel Prize</text>
+                    <circle cx="40" cy="320" r="4" fill="#405477"/><text x="55" y="324" fill="#5c5549" font-size="9" font-family="DM Sans">1913 &mdash; Neon isotopes found</text>
+                    <circle cx="40" cy="360" r="4" fill="#3e6252"/><text x="55" y="364" fill="#5c5549" font-size="9" font-family="DM Sans">1919 &mdash; Retires from Cavendish</text>
+                    <circle cx="40" cy="395" r="4" fill="#8f8676"/><text x="55" y="399" fill="#5c5549" font-size="9" font-family="DM Sans">1940 &mdash; Dies, Cambridge</text>
                 </svg>
             </div>
         </div>
@@ -633,22 +634,22 @@
 <section>
     <div class="mandala-container" style="margin-top:1.5em;">
         <svg viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="90" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.3"/>
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#4ecca3" stroke-width="0.5" opacity="0.4"/>
-            <circle cx="100" cy="100" r="50" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.5"/>
-            <circle cx="100" cy="100" r="6" fill="#4ecca3" opacity="0.8"/>
-            <g stroke="#4ecca3" stroke-width="0.6" opacity="0.5">
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#3e6252" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#3e6252" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.5"/>
+            <circle cx="100" cy="100" r="6" fill="#3e6252" opacity="0.8"/>
+            <g stroke="#3e6252" stroke-width="0.6" opacity="0.5">
                 <line x1="100" y1="10" x2="100" y2="190"/><line x1="10" y1="100" x2="190" y2="100"/>
                 <line x1="36" y1="36" x2="164" y2="164"/><line x1="164" y1="36" x2="36" y2="164"/>
             </g>
-            <circle cx="100" cy="10" r="3" fill="#4ecca3" opacity="0.7"/>
-            <circle cx="100" cy="190" r="3" fill="#4ecca3" opacity="0.7"/>
-            <circle cx="10" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
-            <circle cx="190" cy="100" r="3" fill="#4ecca3" opacity="0.7"/>
-            <path d="M100 30 A70 70 0 0 1 170 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
-            <path d="M170 100 A70 70 0 0 1 100 170" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
-            <path d="M100 170 A70 70 0 0 1 30 100" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
-            <path d="M30 100 A70 70 0 0 1 100 30" fill="none" stroke="#4ecca3" stroke-width="0.8" opacity="0.35"/>
+            <circle cx="100" cy="10" r="3" fill="#3e6252" opacity="0.7"/>
+            <circle cx="100" cy="190" r="3" fill="#3e6252" opacity="0.7"/>
+            <circle cx="10" cy="100" r="3" fill="#3e6252" opacity="0.7"/>
+            <circle cx="190" cy="100" r="3" fill="#3e6252" opacity="0.7"/>
+            <path d="M100 30 A70 70 0 0 1 170 100" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
+            <path d="M170 100 A70 70 0 0 1 100 170" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
+            <path d="M100 170 A70 70 0 0 1 30 100" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
+            <path d="M30 100 A70 70 0 0 1 100 30" fill="none" stroke="#3e6252" stroke-width="0.8" opacity="0.35"/>
         </svg>
     </div>
     <div class="quote-box" style="max-width:70%;">

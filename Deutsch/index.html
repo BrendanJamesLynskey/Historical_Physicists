@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>David Deutsch — Pioneer of Quantum Computation</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #5b8cd4; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+:root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #405477; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
@@ -21,7 +21,7 @@
 .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -38,8 +38,8 @@
 .two-col .diagram-container { max-width: 100%; margin: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
 .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -57,6 +57,7 @@
 .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
 .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -68,49 +69,49 @@
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#5b8cd4;stop-opacity:0.9"/>
-          <stop offset="100%" style="stop-color:#9b72cf;stop-opacity:0.6"/>
+          <stop offset="0%" style="stop-color:#405477;stop-opacity:0.9"/>
+          <stop offset="100%" style="stop-color:#6d5172;stop-opacity:0.6"/>
         </linearGradient>
       </defs>
       <circle cx="100" cy="100" r="90" fill="none" stroke="url(#mg1)" stroke-width="0.5" opacity="0.3"/>
-      <circle cx="100" cy="100" r="70" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
-      <circle cx="100" cy="100" r="50" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#405477" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="100" cy="100" r="50" fill="none" stroke="#405477" stroke-width="0.5" opacity="0.5"/>
       <!-- Quantum branching pattern -->
       <g opacity="0.6">
-        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
-        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
-        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
-        <line x1="70" y1="80" x2="50" y2="120" stroke="#5b8cd4" stroke-width="0.5"/>
-        <line x1="70" y1="80" x2="85" y2="120" stroke="#4ecca3" stroke-width="0.5"/>
-        <line x1="130" y1="80" x2="115" y2="120" stroke="#9b72cf" stroke-width="0.5"/>
-        <line x1="130" y1="80" x2="150" y2="120" stroke="#d4a053" stroke-width="0.5"/>
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#405477" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#405477" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#6d5172" stroke-width="0.6"/>
+        <line x1="70" y1="80" x2="50" y2="120" stroke="#405477" stroke-width="0.5"/>
+        <line x1="70" y1="80" x2="85" y2="120" stroke="#3e6252" stroke-width="0.5"/>
+        <line x1="130" y1="80" x2="115" y2="120" stroke="#6d5172" stroke-width="0.5"/>
+        <line x1="130" y1="80" x2="150" y2="120" stroke="#8b6b40" stroke-width="0.5"/>
       </g>
       <!-- Rotational symmetry copies -->
       <g opacity="0.5" transform="rotate(90,100,100)">
-        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
-        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
-        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
-        <line x1="70" y1="80" x2="50" y2="120" stroke="#5b8cd4" stroke-width="0.5"/>
-        <line x1="130" y1="80" x2="150" y2="120" stroke="#d4a053" stroke-width="0.5"/>
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#405477" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#405477" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#6d5172" stroke-width="0.6"/>
+        <line x1="70" y1="80" x2="50" y2="120" stroke="#405477" stroke-width="0.5"/>
+        <line x1="130" y1="80" x2="150" y2="120" stroke="#8b6b40" stroke-width="0.5"/>
       </g>
       <g opacity="0.4" transform="rotate(180,100,100)">
-        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
-        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
-        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#405477" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#405477" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#6d5172" stroke-width="0.6"/>
       </g>
       <g opacity="0.3" transform="rotate(270,100,100)">
-        <line x1="100" y1="10" x2="100" y2="50" stroke="#5b8cd4" stroke-width="0.8"/>
-        <line x1="100" y1="50" x2="70" y2="80" stroke="#5b8cd4" stroke-width="0.6"/>
-        <line x1="100" y1="50" x2="130" y2="80" stroke="#9b72cf" stroke-width="0.6"/>
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#405477" stroke-width="0.8"/>
+        <line x1="100" y1="50" x2="70" y2="80" stroke="#405477" stroke-width="0.6"/>
+        <line x1="100" y1="50" x2="130" y2="80" stroke="#6d5172" stroke-width="0.6"/>
       </g>
       <!-- Central node -->
-      <circle cx="100" cy="100" r="4" fill="#5b8cd4" opacity="0.8"/>
-      <circle cx="100" cy="100" r="8" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="100" cy="100" r="4" fill="#405477" opacity="0.8"/>
+      <circle cx="100" cy="100" r="8" fill="none" stroke="#405477" stroke-width="0.5" opacity="0.4"/>
       <!-- Corner decorative nodes -->
-      <circle cx="50" cy="120" r="2" fill="#4ecca3" opacity="0.6"/>
-      <circle cx="150" cy="120" r="2" fill="#d4a053" opacity="0.6"/>
-      <circle cx="85" cy="120" r="2" fill="#9b72cf" opacity="0.5"/>
-      <circle cx="115" cy="120" r="2" fill="#cf7272" opacity="0.5"/>
+      <circle cx="50" cy="120" r="2" fill="#3e6252" opacity="0.6"/>
+      <circle cx="150" cy="120" r="2" fill="#8b6b40" opacity="0.6"/>
+      <circle cx="85" cy="120" r="2" fill="#6d5172" opacity="0.5"/>
+      <circle cx="115" cy="120" r="2" fill="#9b5247" opacity="0.5"/>
     </svg>
   </div>
   <h1>David Deutsch</h1>
@@ -227,43 +228,43 @@
     <div>
       <div class="diagram-container">
         <!-- Deutsch Algorithm Quantum Circuit -->
-        <svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(10,10,15,0.5); border-radius: 8px; padding: 10px;">
+        <svg viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(244,241,233,0.5); border-radius: 8px; padding: 10px;">
           <!-- Labels -->
-          <text x="15" y="72" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="13">|0&rang;</text>
-          <text x="15" y="152" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="13">|1&rang;</text>
+          <text x="15" y="72" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="13">|0&rang;</text>
+          <text x="15" y="152" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="13">|1&rang;</text>
           <!-- Qubit lines -->
-          <line x1="50" y1="70" x2="430" y2="70" stroke="#2a2a3a" stroke-width="1.5"/>
-          <line x1="50" y1="150" x2="430" y2="150" stroke="#2a2a3a" stroke-width="1.5"/>
+          <line x1="50" y1="70" x2="430" y2="70" stroke="#cac3b2" stroke-width="1.5"/>
+          <line x1="50" y1="150" x2="430" y2="150" stroke="#cac3b2" stroke-width="1.5"/>
           <!-- Hadamard gate 1 (top) -->
-          <rect x="75" y="50" width="40" height="40" rx="4" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
-          <text x="95" y="76" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
+          <rect x="75" y="50" width="40" height="40" rx="4" fill="none" stroke="#405477" stroke-width="1.5"/>
+          <text x="95" y="76" fill="#405477" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
           <!-- Hadamard gate 1 (bottom) -->
-          <rect x="75" y="130" width="40" height="40" rx="4" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
-          <text x="95" y="156" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
+          <rect x="75" y="130" width="40" height="40" rx="4" fill="none" stroke="#405477" stroke-width="1.5"/>
+          <text x="95" y="156" fill="#405477" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
           <!-- Oracle Uf box -->
-          <rect x="155" y="42" width="80" height="136" rx="6" fill="rgba(155,114,207,0.1)" stroke="#9b72cf" stroke-width="1.5"/>
-          <text x="195" y="100" fill="#9b72cf" font-family="Playfair Display, serif" font-size="18" text-anchor="middle" font-style="italic">U</text>
-          <text x="210" y="108" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">f</text>
+          <rect x="155" y="42" width="80" height="136" rx="6" fill="rgba(109,81,114,0.1)" stroke="#6d5172" stroke-width="1.5"/>
+          <text x="195" y="100" fill="#6d5172" font-family="Playfair Display, serif" font-size="18" text-anchor="middle" font-style="italic">U</text>
+          <text x="210" y="108" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">f</text>
           <!-- Oracle internal connections -->
-          <circle cx="195" cy="70" r="3" fill="#9b72cf" opacity="0.7"/>
-          <circle cx="195" cy="150" r="3" fill="#9b72cf" opacity="0.7"/>
-          <line x1="195" y1="73" x2="195" y2="147" stroke="#9b72cf" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+          <circle cx="195" cy="70" r="3" fill="#6d5172" opacity="0.7"/>
+          <circle cx="195" cy="150" r="3" fill="#6d5172" opacity="0.7"/>
+          <line x1="195" y1="73" x2="195" y2="147" stroke="#6d5172" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
           <!-- Hadamard gate 2 (top) -->
-          <rect x="275" y="50" width="40" height="40" rx="4" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
-          <text x="295" y="76" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
+          <rect x="275" y="50" width="40" height="40" rx="4" fill="none" stroke="#405477" stroke-width="1.5"/>
+          <text x="295" y="76" fill="#405477" font-family="JetBrains Mono, monospace" font-size="16" text-anchor="middle">H</text>
           <!-- Measurement (top) -->
-          <rect x="355" y="50" width="40" height="40" rx="4" fill="none" stroke="#d4a053" stroke-width="1.5"/>
-          <path d="M 365 80 Q 375 62 385 80" fill="none" stroke="#d4a053" stroke-width="1.2"/>
-          <line x1="375" y1="60" x2="375" y2="78" stroke="#d4a053" stroke-width="1.2"/>
+          <rect x="355" y="50" width="40" height="40" rx="4" fill="none" stroke="#8b6b40" stroke-width="1.5"/>
+          <path d="M 365 80 Q 375 62 385 80" fill="none" stroke="#8b6b40" stroke-width="1.2"/>
+          <line x1="375" y1="60" x2="375" y2="78" stroke="#8b6b40" stroke-width="1.2"/>
           <!-- Output label -->
-          <text x="440" y="74" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="11">f(0)&oplus;f(1)</text>
+          <text x="440" y="74" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="11">f(0)&oplus;f(1)</text>
           <!-- Stage labels -->
-          <text x="95" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Prepare</text>
-          <text x="195" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Query</text>
-          <text x="295" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Interfere</text>
-          <text x="375" y="200" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Measure</text>
+          <text x="95" y="200" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Prepare</text>
+          <text x="195" y="200" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Query</text>
+          <text x="295" y="200" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Interfere</text>
+          <text x="375" y="200" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">Measure</text>
           <!-- Title -->
-          <text x="230" y="22" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="12" text-anchor="middle" font-weight="700">Deutsch Algorithm Circuit</text>
+          <text x="230" y="22" fill="#405477" font-family="DM Sans, sans-serif" font-size="12" text-anchor="middle" font-weight="700">Deutsch Algorithm Circuit</text>
         </svg>
       </div>
     </div>
@@ -312,51 +313,51 @@
     <div>
       <div class="diagram-container">
         <!-- Constructor Theory Diagram -->
-        <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(10,10,15,0.5); border-radius: 8px; padding: 10px;">
-          <text x="200" y="22" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="12" text-anchor="middle" font-weight="700">Constructor Theory: Possible vs Impossible</text>
+        <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(244,241,233,0.5); border-radius: 8px; padding: 10px;">
+          <text x="200" y="22" fill="#405477" font-family="DM Sans, sans-serif" font-size="12" text-anchor="middle" font-weight="700">Constructor Theory: Possible vs Impossible</text>
           <!-- Possible region -->
-          <rect x="20" y="38" width="170" height="230" rx="8" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1" stroke-dasharray="4,3"/>
-          <text x="105" y="58" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle" font-weight="700">POSSIBLE</text>
+          <rect x="20" y="38" width="170" height="230" rx="8" fill="rgba(62,98,82,0.06)" stroke="#3e6252" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="105" y="58" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle" font-weight="700">POSSIBLE</text>
           <!-- Impossible region -->
-          <rect x="210" y="38" width="170" height="230" rx="8" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,3"/>
-          <text x="295" y="58" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle" font-weight="700">IMPOSSIBLE</text>
+          <rect x="210" y="38" width="170" height="230" rx="8" fill="rgba(155,82,71,0.06)" stroke="#9b5247" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="295" y="58" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle" font-weight="700">IMPOSSIBLE</text>
           <!-- Possible tasks -->
           <g transform="translate(105, 90)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(78,204,163,0.12)" stroke="#4ecca3" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Copying information</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(62,98,82,0.12)" stroke="#3e6252" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Copying information</text>
           </g>
           <g transform="translate(105, 130)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(91,140,212,0.12)" stroke="#5b8cd4" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Heat &rarr; Work (with waste)</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(64,84,119,0.12)" stroke="#405477" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#405477" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Heat &rarr; Work (with waste)</text>
           </g>
           <g transform="translate(105, 170)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(212,160,83,0.12)" stroke="#d4a053" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Quantum computation</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(139,107,64,0.12)" stroke="#8b6b40" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Quantum computation</text>
           </g>
           <g transform="translate(105, 210)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(155,114,207,0.12)" stroke="#9b72cf" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Biological replication</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(109,81,114,0.12)" stroke="#6d5172" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Biological replication</text>
           </g>
           <!-- Impossible tasks -->
           <g transform="translate(295, 90)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Perpetual motion</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(155,82,71,0.12)" stroke="#9b5247" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Perpetual motion</text>
           </g>
           <g transform="translate(295, 130)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Cloning quantum states</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(155,82,71,0.12)" stroke="#9b5247" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Cloning quantum states</text>
           </g>
           <g transform="translate(295, 170)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Superluminal signaling</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(155,82,71,0.12)" stroke="#9b5247" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Superluminal signaling</text>
           </g>
           <g transform="translate(295, 210)">
-            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(207,114,114,0.12)" stroke="#cf7272" stroke-width="0.8"/>
-            <text x="0" y="5" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Decreasing total entropy</text>
+            <rect x="-70" y="-14" width="140" height="28" rx="5" fill="rgba(155,82,71,0.12)" stroke="#9b5247" stroke-width="0.8"/>
+            <text x="0" y="5" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">Decreasing total entropy</text>
           </g>
           <!-- Constructor arrow in center -->
-          <line x1="105" y1="240" x2="105" y2="252" stroke="#4ecca3" stroke-width="1"/>
-          <text x="105" y="264" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Constructor retains ability</text>
+          <line x1="105" y1="240" x2="105" y2="252" stroke="#3e6252" stroke-width="1"/>
+          <text x="105" y="264" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Constructor retains ability</text>
         </svg>
       </div>
     </div>
@@ -474,64 +475,64 @@
   <h2>Connections & Collaborations</h2>
   <div class="diagram-container">
     <!-- Network Diagram SVG -->
-    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(10,10,15,0.5); border-radius: 8px;">
+    <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; background: rgba(244,241,233,0.5); border-radius: 8px;">
       <!-- Connection lines -->
-      <line x1="350" y1="185" x2="140" y2="80" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
-      <line x1="350" y1="185" x2="560" y2="80" stroke="#9b72cf" stroke-width="1.2" opacity="0.5"/>
-      <line x1="350" y1="185" x2="140" y2="185" stroke="#d4a053" stroke-width="1.2" opacity="0.5"/>
-      <line x1="350" y1="185" x2="560" y2="185" stroke="#4ecca3" stroke-width="1.2" opacity="0.5"/>
-      <line x1="350" y1="185" x2="140" y2="300" stroke="#cf7272" stroke-width="1.2" opacity="0.5"/>
-      <line x1="350" y1="185" x2="560" y2="300" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
-      <line x1="350" y1="185" x2="350" y2="50" stroke="#9b72cf" stroke-width="1.2" opacity="0.5"/>
-      <line x1="350" y1="185" x2="350" y2="340" stroke="#d4a053" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="140" y2="80" stroke="#405477" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="560" y2="80" stroke="#6d5172" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="140" y2="185" stroke="#8b6b40" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="560" y2="185" stroke="#3e6252" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="140" y2="300" stroke="#9b5247" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="560" y2="300" stroke="#405477" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="350" y2="50" stroke="#6d5172" stroke-width="1.2" opacity="0.5"/>
+      <line x1="350" y1="185" x2="350" y2="340" stroke="#8b6b40" stroke-width="1.2" opacity="0.5"/>
       <!-- Secondary connections -->
-      <line x1="140" y1="80" x2="350" y2="50" stroke="#2a2a3a" stroke-width="0.8" opacity="0.3"/>
-      <line x1="560" y1="80" x2="560" y2="185" stroke="#2a2a3a" stroke-width="0.8" opacity="0.3"/>
-      <line x1="140" y1="185" x2="140" y2="80" stroke="#2a2a3a" stroke-width="0.8" opacity="0.3"/>
+      <line x1="140" y1="80" x2="350" y2="50" stroke="#cac3b2" stroke-width="0.8" opacity="0.3"/>
+      <line x1="560" y1="80" x2="560" y2="185" stroke="#cac3b2" stroke-width="0.8" opacity="0.3"/>
+      <line x1="140" y1="185" x2="140" y2="80" stroke="#cac3b2" stroke-width="0.8" opacity="0.3"/>
       <!-- Central node: Deutsch -->
-      <circle cx="350" cy="185" r="28" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="2"/>
-      <text x="350" y="182" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="11" text-anchor="middle" font-weight="700">David</text>
-      <text x="350" y="196" fill="#5b8cd4" font-family="Playfair Display, serif" font-size="11" text-anchor="middle" font-weight="700">Deutsch</text>
+      <circle cx="350" cy="185" r="28" fill="var(--bg-card)" stroke="#405477" stroke-width="2"/>
+      <text x="350" y="182" fill="#405477" font-family="Playfair Display, serif" font-size="11" text-anchor="middle" font-weight="700">David</text>
+      <text x="350" y="196" fill="#405477" font-family="Playfair Display, serif" font-size="11" text-anchor="middle" font-weight="700">Deutsch</text>
       <!-- Feynman -->
-      <circle cx="140" cy="80" r="22" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
-      <text x="140" y="77" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Richard</text>
-      <text x="140" y="89" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Feynman</text>
-      <text x="140" y="112" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Parallel QC ideas</text>
+      <circle cx="140" cy="80" r="22" fill="var(--bg-card)" stroke="#8b6b40" stroke-width="1.5"/>
+      <text x="140" y="77" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Richard</text>
+      <text x="140" y="89" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Feynman</text>
+      <text x="140" y="112" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Parallel QC ideas</text>
       <!-- Shor -->
-      <circle cx="560" cy="80" r="22" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
-      <text x="560" y="77" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Peter</text>
-      <text x="560" y="89" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Shor</text>
-      <text x="560" y="112" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Built on Deutsch's model</text>
+      <circle cx="560" cy="80" r="22" fill="var(--bg-card)" stroke="#6d5172" stroke-width="1.5"/>
+      <text x="560" y="77" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Peter</text>
+      <text x="560" y="89" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Shor</text>
+      <text x="560" y="112" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Built on Deutsch's model</text>
       <!-- Popper -->
-      <circle cx="140" cy="185" r="22" fill="var(--bg-card)" stroke="#cf7272" stroke-width="1.5"/>
-      <text x="140" y="182" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Karl</text>
-      <text x="140" y="194" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Popper</text>
-      <text x="140" y="217" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Epistemology</text>
+      <circle cx="140" cy="185" r="22" fill="var(--bg-card)" stroke="#9b5247" stroke-width="1.5"/>
+      <text x="140" y="182" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Karl</text>
+      <text x="140" y="194" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Popper</text>
+      <text x="140" y="217" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Epistemology</text>
       <!-- Ekert -->
-      <circle cx="560" cy="185" r="22" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
-      <text x="560" y="182" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Artur</text>
-      <text x="560" y="194" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Ekert</text>
-      <text x="560" y="217" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Quantum cryptography</text>
+      <circle cx="560" cy="185" r="22" fill="var(--bg-card)" stroke="#3e6252" stroke-width="1.5"/>
+      <text x="560" y="182" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Artur</text>
+      <text x="560" y="194" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Ekert</text>
+      <text x="560" y="217" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Quantum cryptography</text>
       <!-- Everett -->
-      <circle cx="140" cy="300" r="22" fill="var(--bg-card)" stroke="#5b8cd4" stroke-width="1.5"/>
-      <text x="140" y="297" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Hugh</text>
-      <text x="140" y="309" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Everett</text>
-      <text x="140" y="332" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Many-worlds</text>
+      <circle cx="140" cy="300" r="22" fill="var(--bg-card)" stroke="#405477" stroke-width="1.5"/>
+      <text x="140" y="297" fill="#405477" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Hugh</text>
+      <text x="140" y="309" fill="#405477" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Everett</text>
+      <text x="140" y="332" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Many-worlds</text>
       <!-- Marletto -->
-      <circle cx="560" cy="300" r="22" fill="var(--bg-card)" stroke="#9b72cf" stroke-width="1.5"/>
-      <text x="560" y="297" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Chiara</text>
-      <text x="560" y="309" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Marletto</text>
-      <text x="560" y="332" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Constructor theory</text>
+      <circle cx="560" cy="300" r="22" fill="var(--bg-card)" stroke="#6d5172" stroke-width="1.5"/>
+      <text x="560" y="297" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Chiara</text>
+      <text x="560" y="309" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Marletto</text>
+      <text x="560" y="332" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Constructor theory</text>
       <!-- Bennett -->
-      <circle cx="350" cy="50" r="22" fill="var(--bg-card)" stroke="#4ecca3" stroke-width="1.5"/>
-      <text x="350" y="47" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Charles</text>
-      <text x="350" y="59" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Bennett</text>
-      <text x="350" y="28" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Quantum information</text>
+      <circle cx="350" cy="50" r="22" fill="var(--bg-card)" stroke="#3e6252" stroke-width="1.5"/>
+      <text x="350" y="47" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Charles</text>
+      <text x="350" y="59" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Bennett</text>
+      <text x="350" y="28" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">Quantum information</text>
       <!-- Sciama -->
-      <circle cx="350" cy="340" r="22" fill="var(--bg-card)" stroke="#d4a053" stroke-width="1.5"/>
-      <text x="350" y="337" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Dennis</text>
-      <text x="350" y="349" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Sciama</text>
-      <text x="350" y="370" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">PhD supervisor</text>
+      <circle cx="350" cy="340" r="22" fill="var(--bg-card)" stroke="#8b6b40" stroke-width="1.5"/>
+      <text x="350" y="337" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Dennis</text>
+      <text x="350" y="349" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle" font-weight="700">Sciama</text>
+      <text x="350" y="370" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="8" text-anchor="middle">PhD supervisor</text>
     </svg>
   </div>
 </section>
@@ -642,27 +643,27 @@
       <div class="diagram-container" style="max-width: 100%;">
         <svg viewBox="0 0 120 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
           <!-- Central line -->
-          <line x1="40" y1="15" x2="40" y2="405" stroke="#2a2a3a" stroke-width="2"/>
+          <line x1="40" y1="15" x2="40" y2="405" stroke="#cac3b2" stroke-width="2"/>
           <!-- Dots -->
-          <circle cx="40" cy="20" r="4" fill="#5b8cd4"/>
-          <circle cx="40" cy="70" r="4" fill="#d4a053"/>
-          <circle cx="40" cy="120" r="4" fill="#9b72cf"/>
-          <circle cx="40" cy="165" r="4" fill="#4ecca3"/>
-          <circle cx="40" cy="210" r="4" fill="#cf7272"/>
-          <circle cx="40" cy="255" r="4" fill="#5b8cd4"/>
-          <circle cx="40" cy="300" r="4" fill="#d4a053"/>
-          <circle cx="40" cy="345" r="4" fill="#9b72cf"/>
-          <circle cx="40" cy="395" r="4" fill="#4ecca3"/>
+          <circle cx="40" cy="20" r="4" fill="#405477"/>
+          <circle cx="40" cy="70" r="4" fill="#8b6b40"/>
+          <circle cx="40" cy="120" r="4" fill="#6d5172"/>
+          <circle cx="40" cy="165" r="4" fill="#3e6252"/>
+          <circle cx="40" cy="210" r="4" fill="#9b5247"/>
+          <circle cx="40" cy="255" r="4" fill="#405477"/>
+          <circle cx="40" cy="300" r="4" fill="#8b6b40"/>
+          <circle cx="40" cy="345" r="4" fill="#6d5172"/>
+          <circle cx="40" cy="395" r="4" fill="#3e6252"/>
           <!-- Years -->
-          <text x="60" y="24" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10">1953</text>
-          <text x="60" y="74" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10">1975</text>
-          <text x="60" y="124" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">1985</text>
-          <text x="60" y="169" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10">1992</text>
-          <text x="60" y="214" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10">1997</text>
-          <text x="60" y="259" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10">1998</text>
-          <text x="60" y="304" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10">2011</text>
-          <text x="60" y="349" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">2013</text>
-          <text x="60" y="399" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10">2023</text>
+          <text x="60" y="24" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10">1953</text>
+          <text x="60" y="74" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10">1975</text>
+          <text x="60" y="124" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">1985</text>
+          <text x="60" y="169" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">1992</text>
+          <text x="60" y="214" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10">1997</text>
+          <text x="60" y="259" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10">1998</text>
+          <text x="60" y="304" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10">2011</text>
+          <text x="60" y="349" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">2013</text>
+          <text x="60" y="399" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">2023</text>
         </svg>
       </div>
     </div>
@@ -745,41 +746,41 @@
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="mg2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#5b8cd4;stop-opacity:0.8"/>
-          <stop offset="50%" style="stop-color:#9b72cf;stop-opacity:0.6"/>
-          <stop offset="100%" style="stop-color:#4ecca3;stop-opacity:0.4"/>
+          <stop offset="0%" style="stop-color:#405477;stop-opacity:0.8"/>
+          <stop offset="50%" style="stop-color:#6d5172;stop-opacity:0.6"/>
+          <stop offset="100%" style="stop-color:#3e6252;stop-opacity:0.4"/>
         </linearGradient>
       </defs>
       <!-- Outer rings -->
       <circle cx="100" cy="100" r="92" fill="none" stroke="url(#mg2)" stroke-width="0.5" opacity="0.3"/>
-      <circle cx="100" cy="100" r="78" fill="none" stroke="#5b8cd4" stroke-width="0.4" opacity="0.3"/>
-      <circle cx="100" cy="100" r="62" fill="none" stroke="#9b72cf" stroke-width="0.4" opacity="0.4"/>
+      <circle cx="100" cy="100" r="78" fill="none" stroke="#405477" stroke-width="0.4" opacity="0.3"/>
+      <circle cx="100" cy="100" r="62" fill="none" stroke="#6d5172" stroke-width="0.4" opacity="0.4"/>
       <!-- Infinity-like pattern -->
       <g opacity="0.5">
-        <ellipse cx="75" cy="100" rx="30" ry="18" fill="none" stroke="#5b8cd4" stroke-width="0.8" transform="rotate(-20,75,100)"/>
-        <ellipse cx="125" cy="100" rx="30" ry="18" fill="none" stroke="#9b72cf" stroke-width="0.8" transform="rotate(20,125,100)"/>
+        <ellipse cx="75" cy="100" rx="30" ry="18" fill="none" stroke="#405477" stroke-width="0.8" transform="rotate(-20,75,100)"/>
+        <ellipse cx="125" cy="100" rx="30" ry="18" fill="none" stroke="#6d5172" stroke-width="0.8" transform="rotate(20,125,100)"/>
       </g>
       <!-- Branching patterns radiating outward -->
       <g opacity="0.4">
-        <line x1="100" y1="100" x2="100" y2="20" stroke="#5b8cd4" stroke-width="0.6"/>
-        <line x1="100" y1="100" x2="170" y2="50" stroke="#4ecca3" stroke-width="0.6"/>
-        <line x1="100" y1="100" x2="185" y2="115" stroke="#d4a053" stroke-width="0.6"/>
-        <line x1="100" y1="100" x2="150" y2="178" stroke="#cf7272" stroke-width="0.6"/>
-        <line x1="100" y1="100" x2="50" y2="178" stroke="#9b72cf" stroke-width="0.6"/>
-        <line x1="100" y1="100" x2="15" y2="115" stroke="#5b8cd4" stroke-width="0.6"/>
-        <line x1="100" y1="100" x2="30" y2="50" stroke="#4ecca3" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="100" y2="20" stroke="#405477" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="170" y2="50" stroke="#3e6252" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="185" y2="115" stroke="#8b6b40" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="150" y2="178" stroke="#9b5247" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="50" y2="178" stroke="#6d5172" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="15" y2="115" stroke="#405477" stroke-width="0.6"/>
+        <line x1="100" y1="100" x2="30" y2="50" stroke="#3e6252" stroke-width="0.6"/>
       </g>
       <!-- Endpoint nodes -->
-      <circle cx="100" cy="20" r="2.5" fill="#5b8cd4" opacity="0.6"/>
-      <circle cx="170" cy="50" r="2.5" fill="#4ecca3" opacity="0.6"/>
-      <circle cx="185" cy="115" r="2.5" fill="#d4a053" opacity="0.6"/>
-      <circle cx="150" cy="178" r="2.5" fill="#cf7272" opacity="0.6"/>
-      <circle cx="50" cy="178" r="2.5" fill="#9b72cf" opacity="0.6"/>
-      <circle cx="15" cy="115" r="2.5" fill="#5b8cd4" opacity="0.6"/>
-      <circle cx="30" cy="50" r="2.5" fill="#4ecca3" opacity="0.6"/>
+      <circle cx="100" cy="20" r="2.5" fill="#405477" opacity="0.6"/>
+      <circle cx="170" cy="50" r="2.5" fill="#3e6252" opacity="0.6"/>
+      <circle cx="185" cy="115" r="2.5" fill="#8b6b40" opacity="0.6"/>
+      <circle cx="150" cy="178" r="2.5" fill="#9b5247" opacity="0.6"/>
+      <circle cx="50" cy="178" r="2.5" fill="#6d5172" opacity="0.6"/>
+      <circle cx="15" cy="115" r="2.5" fill="#405477" opacity="0.6"/>
+      <circle cx="30" cy="50" r="2.5" fill="#3e6252" opacity="0.6"/>
       <!-- Central glow -->
-      <circle cx="100" cy="100" r="6" fill="#5b8cd4" opacity="0.7"/>
-      <circle cx="100" cy="100" r="10" fill="none" stroke="#5b8cd4" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="100" cy="100" r="6" fill="#405477" opacity="0.7"/>
+      <circle cx="100" cy="100" r="10" fill="none" stroke="#405477" stroke-width="0.5" opacity="0.3"/>
     </svg>
   </div>
   <div class="separator"></div>

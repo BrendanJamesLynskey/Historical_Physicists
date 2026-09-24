@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Peter Higgs — The Man Behind the Mass</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #d4a053; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+:root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #8b6b40; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
@@ -21,7 +21,7 @@
 .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -38,8 +38,8 @@
 .two-col .diagram-container { max-width: 100%; margin: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
 .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -57,6 +57,7 @@
 .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
 .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -66,37 +67,37 @@
 <section>
   <div class="mandala-container">
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="90" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.3"/>
-      <circle cx="100" cy="100" r="70" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.25"/>
-      <circle cx="100" cy="100" r="50" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.25"/>
+      <circle cx="100" cy="100" r="50" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.2"/>
       <!-- Higgs-field inspired radial petals -->
       <g opacity="0.4">
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(0 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(30 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(60 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(90 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(120 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(150 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(180 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(210 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(240 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(270 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(300 100 100)"/>
-        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#d4a053" stroke-width="0.8" transform="rotate(330 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(0 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(30 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(60 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(90 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(120 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(150 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(180 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(210 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(240 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(270 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(300 100 100)"/>
+        <ellipse cx="100" cy="30" rx="8" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.8" transform="rotate(330 100 100)"/>
       </g>
       <!-- Inner symmetry-breaking symbol -->
-      <circle cx="100" cy="100" r="12" fill="none" stroke="#d4a053" stroke-width="1.2" opacity="0.6"/>
-      <circle cx="100" cy="100" r="3" fill="#d4a053" opacity="0.8"/>
+      <circle cx="100" cy="100" r="12" fill="none" stroke="#8b6b40" stroke-width="1.2" opacity="0.6"/>
+      <circle cx="100" cy="100" r="3" fill="#8b6b40" opacity="0.8"/>
       <!-- Outer decorative dots -->
       <g opacity="0.35">
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(0 100 100)"/>
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(45 100 100)"/>
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(90 100 100)"/>
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(135 100 100)"/>
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(180 100 100)"/>
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(225 100 100)"/>
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(270 100 100)"/>
-        <circle cx="100" cy="10" r="2" fill="#d4a053" transform="rotate(315 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(0 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(45 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(90 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(135 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(180 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(225 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(270 100 100)"/>
+        <circle cx="100" cy="10" r="2" fill="#8b6b40" transform="rotate(315 100 100)"/>
       </g>
     </svg>
   </div>
@@ -225,39 +226,39 @@
           <!-- Mexican hat potential -->
           <defs>
             <linearGradient id="hatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style="stop-color:#d4a053;stop-opacity:0.3"/>
-              <stop offset="100%" style="stop-color:#d4a053;stop-opacity:0.05"/>
+              <stop offset="0%" style="stop-color:#8b6b40;stop-opacity:0.3"/>
+              <stop offset="100%" style="stop-color:#8b6b40;stop-opacity:0.05"/>
             </linearGradient>
           </defs>
           <!-- Axis -->
-          <line x1="30" y1="250" x2="360" y2="250" stroke="#2a2a3a" stroke-width="1"/>
-          <line x1="190" y1="40" x2="190" y2="260" stroke="#2a2a3a" stroke-width="1"/>
+          <line x1="30" y1="250" x2="360" y2="250" stroke="#cac3b2" stroke-width="1"/>
+          <line x1="190" y1="40" x2="190" y2="260" stroke="#cac3b2" stroke-width="1"/>
           <!-- Potential curve (Mexican hat cross-section) -->
           <path d="M 50,120 Q 90,240 130,200 Q 150,175 170,190 Q 185,198 190,200 Q 195,198 210,190 Q 230,175 250,200 Q 290,240 330,120"
-                fill="url(#hatGrad)" stroke="#d4a053" stroke-width="2" fill-opacity="0.3"/>
+                fill="url(#hatGrad)" stroke="#8b6b40" stroke-width="2" fill-opacity="0.3"/>
           <!-- Local maximum at center -->
-          <circle cx="190" cy="120" r="4" fill="#cf7272" opacity="0.9"/>
-          <text x="200" y="110" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="11">Unstable</text>
-          <text x="200" y="123" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="11">maximum</text>
+          <circle cx="190" cy="120" r="4" fill="#9b5247" opacity="0.9"/>
+          <text x="200" y="110" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="11">Unstable</text>
+          <text x="200" y="123" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="11">maximum</text>
           <!-- Minima -->
-          <circle cx="135" cy="200" r="5" fill="#4ecca3"/>
-          <circle cx="248" cy="200" r="5" fill="#4ecca3"/>
+          <circle cx="135" cy="200" r="5" fill="#3e6252"/>
+          <circle cx="248" cy="200" r="5" fill="#3e6252"/>
           <!-- Arrow showing "rolling" -->
-          <path d="M 180,130 Q 165,160 145,190" fill="none" stroke="#d4a053" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowHead)"/>
+          <path d="M 180,130 Q 165,160 145,190" fill="none" stroke="#8b6b40" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowHead)"/>
           <defs>
             <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M 0,0 L 8,4 L 0,8 Z" fill="#d4a053"/>
+              <path d="M 0,0 L 8,4 L 0,8 Z" fill="#8b6b40"/>
             </marker>
           </defs>
           <!-- Labels -->
-          <text x="90" y="220" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10">v = 246 GeV</text>
-          <text x="230" y="220" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10">v = 246 GeV</text>
-          <text x="155" y="280" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11">Field value (&#966;)</text>
-          <text x="15" y="45" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="11" transform="rotate(-90 20 140)">V(&#966;)</text>
+          <text x="90" y="220" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">v = 246 GeV</text>
+          <text x="230" y="220" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">v = 246 GeV</text>
+          <text x="155" y="280" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="11">Field value (&#966;)</text>
+          <text x="15" y="45" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="11" transform="rotate(-90 20 140)">V(&#966;)</text>
           <!-- Title -->
-          <text x="190" y="25" fill="#d4a053" font-family="Playfair Display, serif" font-size="14" text-anchor="middle">Mexican Hat Potential</text>
+          <text x="190" y="25" fill="#8b6b40" font-family="Playfair Display, serif" font-size="14" text-anchor="middle">Mexican Hat Potential</text>
           <!-- Equation -->
-          <text x="190" y="295" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">V(&#966;) = &#956;&#178;|&#966;|&#178; + &#955;|&#966;|&#8308; &nbsp; (&#956;&#178; &lt; 0)</text>
+          <text x="190" y="295" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">V(&#966;) = &#956;&#178;|&#966;|&#178; + &#955;|&#966;|&#8308; &nbsp; (&#956;&#178; &lt; 0)</text>
         </svg>
       </div>
     </div>
@@ -308,24 +309,24 @@
       <div class="diagram-container">
         <svg viewBox="0 0 380 310" xmlns="http://www.w3.org/2000/svg">
           <!-- Mass spectrum / resonance peak at 125 GeV -->
-          <text x="190" y="22" fill="#d4a053" font-family="Playfair Display, serif" font-size="13" text-anchor="middle">Discovery: The 125 GeV Resonance</text>
+          <text x="190" y="22" fill="#8b6b40" font-family="Playfair Display, serif" font-size="13" text-anchor="middle">Discovery: The 125 GeV Resonance</text>
           <!-- Axes -->
-          <line x1="50" y1="260" x2="350" y2="260" stroke="#2a2a3a" stroke-width="1"/>
-          <line x1="50" y1="260" x2="50" y2="40" stroke="#2a2a3a" stroke-width="1"/>
+          <line x1="50" y1="260" x2="350" y2="260" stroke="#cac3b2" stroke-width="1"/>
+          <line x1="50" y1="260" x2="50" y2="40" stroke="#cac3b2" stroke-width="1"/>
           <!-- X-axis labels -->
-          <text x="80" y="278" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="9">110</text>
-          <text x="140" y="278" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="9">120</text>
-          <text x="200" y="278" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="9">130</text>
-          <text x="260" y="278" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="9">140</text>
-          <text x="320" y="278" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="9">150</text>
-          <text x="190" y="300" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle">m&#x2084;&#x2084; (GeV)</text>
-          <text x="18" y="150" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="10" transform="rotate(-90 20 150)">Events / 2 GeV</text>
+          <text x="80" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">110</text>
+          <text x="140" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">120</text>
+          <text x="200" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">130</text>
+          <text x="260" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">140</text>
+          <text x="320" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">150</text>
+          <text x="190" y="300" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle">m&#x2084;&#x2084; (GeV)</text>
+          <text x="18" y="150" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="10" transform="rotate(-90 20 150)">Events / 2 GeV</text>
           <!-- Background (smooth curve) -->
           <path d="M 60,220 Q 100,215 140,210 Q 180,205 220,210 Q 260,215 300,222 Q 330,228 345,232"
-                fill="none" stroke="#6a6a7a" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
-          <text x="310" y="215" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9">Background</text>
+                fill="none" stroke="#8f8676" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
+          <text x="310" y="215" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9">Background</text>
           <!-- Data points (scatter approximation of excess at 125 GeV) -->
-          <g fill="#5b8cd4" opacity="0.7">
+          <g fill="#405477" opacity="0.7">
             <circle cx="68" cy="218" r="2.5"/><circle cx="80" cy="215" r="2.5"/>
             <circle cx="92" cy="220" r="2.5"/><circle cx="104" cy="212" r="2.5"/>
             <circle cx="116" cy="208" r="2.5"/><circle cx="128" cy="195" r="2.5"/>
@@ -340,14 +341,14 @@
           </g>
           <!-- Signal+background peak -->
           <path d="M 60,220 Q 100,215 128,197 Q 142,175 152,108 Q 157,85 160,82 Q 163,85 168,108 Q 178,175 194,205 Q 220,212 260,216 Q 300,223 345,232"
-                fill="none" stroke="#d4a053" stroke-width="2"/>
+                fill="none" stroke="#8b6b40" stroke-width="2"/>
           <!-- Peak annotation -->
-          <line x1="158" y1="75" x2="158" y2="260" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
-          <text x="158" y="68" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" font-weight="bold">125.1 GeV</text>
+          <line x1="158" y1="75" x2="158" y2="260" stroke="#8b6b40" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+          <text x="158" y="68" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" font-weight="bold">125.1 GeV</text>
           <!-- ATLAS/CMS labels -->
-          <rect x="250" y="50" width="95" height="42" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
-          <text x="297" y="67" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">ATLAS + CMS</text>
-          <text x="297" y="83" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">H &rarr; &gamma;&gamma; channel</text>
+          <rect x="250" y="50" width="95" height="42" rx="4" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
+          <text x="297" y="67" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">ATLAS + CMS</text>
+          <text x="297" y="83" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">H &rarr; &gamma;&gamma; channel</text>
         </svg>
       </div>
     </div>
@@ -464,54 +465,54 @@
   <div class="diagram-container">
     <svg viewBox="0 0 700 370" xmlns="http://www.w3.org/2000/svg">
       <!-- Connection lines (drawn first, behind nodes) -->
-      <line x1="350" y1="100" x2="150" y2="170" stroke="#2a2a3a" stroke-width="1.5"/>
-      <line x1="350" y1="100" x2="550" y2="170" stroke="#2a2a3a" stroke-width="1.5"/>
-      <line x1="350" y1="100" x2="350" y2="240" stroke="#2a2a3a" stroke-width="1.5"/>
-      <line x1="350" y1="100" x2="100" y2="290" stroke="#2a2a3a" stroke-width="1"/>
-      <line x1="350" y1="100" x2="250" y2="310" stroke="#2a2a3a" stroke-width="1"/>
-      <line x1="350" y1="100" x2="450" y2="310" stroke="#2a2a3a" stroke-width="1"/>
-      <line x1="350" y1="100" x2="600" y2="290" stroke="#2a2a3a" stroke-width="1"/>
-      <line x1="150" y1="170" x2="550" y2="170" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
-      <line x1="150" y1="170" x2="350" y2="240" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
-      <line x1="550" y1="170" x2="350" y2="240" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
+      <line x1="350" y1="100" x2="150" y2="170" stroke="#cac3b2" stroke-width="1.5"/>
+      <line x1="350" y1="100" x2="550" y2="170" stroke="#cac3b2" stroke-width="1.5"/>
+      <line x1="350" y1="100" x2="350" y2="240" stroke="#cac3b2" stroke-width="1.5"/>
+      <line x1="350" y1="100" x2="100" y2="290" stroke="#cac3b2" stroke-width="1"/>
+      <line x1="350" y1="100" x2="250" y2="310" stroke="#cac3b2" stroke-width="1"/>
+      <line x1="350" y1="100" x2="450" y2="310" stroke="#cac3b2" stroke-width="1"/>
+      <line x1="350" y1="100" x2="600" y2="290" stroke="#cac3b2" stroke-width="1"/>
+      <line x1="150" y1="170" x2="550" y2="170" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
+      <line x1="150" y1="170" x2="350" y2="240" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
+      <line x1="550" y1="170" x2="350" y2="240" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
       <!-- Central node: Higgs -->
-      <circle cx="350" cy="100" r="30" fill="#161622" stroke="#d4a053" stroke-width="2"/>
-      <text x="350" y="96" fill="#d4a053" font-family="Playfair Display, serif" font-size="12" text-anchor="middle" font-weight="700">Peter</text>
-      <text x="350" y="110" fill="#d4a053" font-family="Playfair Display, serif" font-size="12" text-anchor="middle" font-weight="700">Higgs</text>
+      <circle cx="350" cy="100" r="30" fill="#e6e2d5" stroke="#8b6b40" stroke-width="2"/>
+      <text x="350" y="96" fill="#8b6b40" font-family="Playfair Display, serif" font-size="12" text-anchor="middle" font-weight="700">Peter</text>
+      <text x="350" y="110" fill="#8b6b40" font-family="Playfair Display, serif" font-size="12" text-anchor="middle" font-weight="700">Higgs</text>
       <!-- Englert & Brout -->
-      <circle cx="150" cy="170" r="25" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
-      <text x="150" y="166" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Englert</text>
-      <text x="150" y="179" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Brout</text>
-      <text x="150" y="208" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Independent discovery</text>
+      <circle cx="150" cy="170" r="25" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.5"/>
+      <text x="150" y="166" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Englert</text>
+      <text x="150" y="179" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Brout</text>
+      <text x="150" y="208" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Independent discovery</text>
       <!-- GHK -->
-      <circle cx="550" cy="170" r="25" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
-      <text x="550" y="166" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Guralnik</text>
-      <text x="550" y="179" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Hagen Kibble</text>
-      <text x="550" y="208" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Third 1964 paper</text>
+      <circle cx="550" cy="170" r="25" fill="#e6e2d5" stroke="#405477" stroke-width="1.5"/>
+      <text x="550" y="166" fill="#405477" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Guralnik</text>
+      <text x="550" y="179" fill="#405477" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Hagen Kibble</text>
+      <text x="550" y="208" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Third 1964 paper</text>
       <!-- Weinberg & Salam -->
-      <circle cx="350" cy="240" r="25" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
-      <text x="350" y="236" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Weinberg</text>
-      <text x="350" y="249" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Salam</text>
-      <text x="350" y="278" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Electroweak unification</text>
+      <circle cx="350" cy="240" r="25" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.5"/>
+      <text x="350" y="236" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Weinberg</text>
+      <text x="350" y="249" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Salam</text>
+      <text x="350" y="278" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Electroweak unification</text>
       <!-- Goldstone -->
-      <circle cx="100" cy="290" r="20" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
-      <text x="100" y="294" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Goldstone</text>
-      <text x="100" y="322" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Goldstone theorem</text>
+      <circle cx="100" cy="290" r="20" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.2"/>
+      <text x="100" y="294" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Goldstone</text>
+      <text x="100" y="322" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Goldstone theorem</text>
       <!-- Anderson -->
-      <circle cx="250" cy="310" r="20" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
-      <text x="250" y="314" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Anderson</text>
-      <text x="250" y="340" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Condensed matter</text>
-      <text x="250" y="352" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">precursor</text>
+      <circle cx="250" cy="310" r="20" fill="#e6e2d5" stroke="#8b6b40" stroke-width="1.2"/>
+      <text x="250" y="314" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Anderson</text>
+      <text x="250" y="340" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Condensed matter</text>
+      <text x="250" y="352" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">precursor</text>
       <!-- 't Hooft -->
-      <circle cx="450" cy="310" r="20" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
-      <text x="450" y="314" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">'t Hooft</text>
-      <text x="450" y="340" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Renormalizability</text>
-      <text x="450" y="352" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">proof (1971)</text>
+      <circle cx="450" cy="310" r="20" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.2"/>
+      <text x="450" y="314" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">'t Hooft</text>
+      <text x="450" y="340" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Renormalizability</text>
+      <text x="450" y="352" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">proof (1971)</text>
       <!-- Gell-Mann -->
-      <circle cx="600" cy="290" r="20" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
-      <text x="600" y="294" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Gell-Mann</text>
-      <text x="600" y="322" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Quark model &amp;</text>
-      <text x="600" y="334" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Standard Model</text>
+      <circle cx="600" cy="290" r="20" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.2"/>
+      <text x="600" y="294" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Gell-Mann</text>
+      <text x="600" y="322" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Quark model &amp;</text>
+      <text x="600" y="334" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Standard Model</text>
     </svg>
   </div>
   <p style="text-align: center; max-width: 80%; margin: 0.3em auto;">The Higgs mechanism sits at the nexus of contributions from condensed matter physics, quantum field theory, and experimental particle physics &mdash; a collaborative achievement, even if the name of one man became attached to it.</p>
@@ -619,51 +620,51 @@
       <div class="diagram-container" style="margin-top: 0;">
         <svg viewBox="0 0 280 420" xmlns="http://www.w3.org/2000/svg">
           <!-- Timeline vertical line -->
-          <line x1="40" y1="20" x2="40" y2="400" stroke="#2a2a3a" stroke-width="2"/>
+          <line x1="40" y1="20" x2="40" y2="400" stroke="#cac3b2" stroke-width="2"/>
           <!-- Markers -->
-          <circle cx="40" cy="30" r="5" fill="#d4a053"/>
-          <text x="55" y="35" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1929</text>
-          <text x="100" y="35" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Born, Newcastle</text>
+          <circle cx="40" cy="30" r="5" fill="#8b6b40"/>
+          <text x="55" y="35" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1929</text>
+          <text x="100" y="35" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Born, Newcastle</text>
 
-          <circle cx="40" cy="75" r="4" fill="#5b8cd4"/>
-          <text x="55" y="79" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10">1950</text>
-          <text x="100" y="79" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">BSc, King's College</text>
+          <circle cx="40" cy="75" r="4" fill="#405477"/>
+          <text x="55" y="79" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10">1950</text>
+          <text x="100" y="79" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">BSc, King's College</text>
 
-          <circle cx="40" cy="115" r="4" fill="#5b8cd4"/>
-          <text x="55" y="119" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10">1954</text>
-          <text x="100" y="119" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">PhD completed</text>
+          <circle cx="40" cy="115" r="4" fill="#405477"/>
+          <text x="55" y="119" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10">1954</text>
+          <text x="100" y="119" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">PhD completed</text>
 
-          <circle cx="40" cy="155" r="4" fill="#4ecca3"/>
-          <text x="55" y="159" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10">1960</text>
-          <text x="100" y="159" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Joins Edinburgh</text>
+          <circle cx="40" cy="155" r="4" fill="#3e6252"/>
+          <text x="55" y="159" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">1960</text>
+          <text x="100" y="159" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Joins Edinburgh</text>
 
-          <circle cx="40" cy="200" r="6" fill="#d4a053" stroke="#d4a053" stroke-width="2"/>
-          <text x="55" y="204" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">1964</text>
-          <text x="100" y="197" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Landmark papers</text>
-          <text x="100" y="211" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Higgs mechanism &amp; boson</text>
+          <circle cx="40" cy="200" r="6" fill="#8b6b40" stroke="#8b6b40" stroke-width="2"/>
+          <text x="55" y="204" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">1964</text>
+          <text x="100" y="197" fill="#262019" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Landmark papers</text>
+          <text x="100" y="211" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Higgs mechanism &amp; boson</text>
 
-          <circle cx="40" cy="250" r="4" fill="#9b72cf"/>
-          <text x="55" y="254" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">1967</text>
-          <text x="100" y="247" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Weinberg-Salam model</text>
-          <text x="100" y="261" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">uses Higgs mechanism</text>
+          <circle cx="40" cy="250" r="4" fill="#6d5172"/>
+          <text x="55" y="254" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">1967</text>
+          <text x="100" y="247" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Weinberg-Salam model</text>
+          <text x="100" y="261" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">uses Higgs mechanism</text>
 
-          <circle cx="40" cy="295" r="4" fill="#9b72cf"/>
-          <text x="55" y="299" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">1971</text>
-          <text x="100" y="292" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">'t Hooft proves</text>
-          <text x="100" y="306" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">renormalizability</text>
+          <circle cx="40" cy="295" r="4" fill="#6d5172"/>
+          <text x="55" y="299" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">1971</text>
+          <text x="100" y="292" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">'t Hooft proves</text>
+          <text x="100" y="306" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">renormalizability</text>
 
-          <circle cx="40" cy="340" r="6" fill="#4ecca3" stroke="#4ecca3" stroke-width="2"/>
-          <text x="55" y="344" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">2012</text>
-          <text x="100" y="337" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Boson discovered</text>
-          <text x="100" y="351" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">ATLAS &amp; CMS, 125 GeV</text>
+          <circle cx="40" cy="340" r="6" fill="#3e6252" stroke="#3e6252" stroke-width="2"/>
+          <text x="55" y="344" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">2012</text>
+          <text x="100" y="337" fill="#262019" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Boson discovered</text>
+          <text x="100" y="351" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">ATLAS &amp; CMS, 125 GeV</text>
 
-          <circle cx="40" cy="375" r="5" fill="#d4a053"/>
-          <text x="55" y="379" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="10">2013</text>
-          <text x="100" y="379" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Nobel Prize in Physics</text>
+          <circle cx="40" cy="375" r="5" fill="#8b6b40"/>
+          <text x="55" y="379" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10">2013</text>
+          <text x="100" y="379" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Nobel Prize in Physics</text>
 
-          <circle cx="40" cy="400" r="4" fill="#cf7272"/>
-          <text x="55" y="404" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10">2024</text>
-          <text x="100" y="404" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="9">Dies, Edinburgh, aged 94</text>
+          <circle cx="40" cy="400" r="4" fill="#9b5247"/>
+          <text x="55" y="404" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10">2024</text>
+          <text x="100" y="404" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Dies, Edinburgh, aged 94</text>
         </svg>
       </div>
     </div>
@@ -736,36 +737,36 @@
 <section>
   <div class="mandala-container">
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="90" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.25"/>
-      <circle cx="100" cy="100" r="65" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.25"/>
+      <circle cx="100" cy="100" r="65" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.2"/>
       <!-- Symmetry-breaking motif: circle of dots splitting into two levels -->
       <g opacity="0.4">
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(0 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(36 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(72 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(108 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(144 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(180 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(216 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(252 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(288 100 100)"/>
-        <circle cx="100" cy="25" r="3" fill="#d4a053" transform="rotate(324 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(0 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(36 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(72 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(108 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(144 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(180 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(216 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(252 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(288 100 100)"/>
+        <circle cx="100" cy="25" r="3" fill="#8b6b40" transform="rotate(324 100 100)"/>
       </g>
       <g opacity="0.3">
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(18 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(54 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(90 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(126 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(162 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(198 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(234 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(270 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(306 100 100)"/>
-        <circle cx="100" cy="45" r="2" fill="#d4a053" transform="rotate(342 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(18 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(54 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(90 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(126 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(162 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(198 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(234 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(270 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(306 100 100)"/>
+        <circle cx="100" cy="45" r="2" fill="#8b6b40" transform="rotate(342 100 100)"/>
       </g>
       <!-- Central Higgs-field dot -->
-      <circle cx="100" cy="100" r="8" fill="none" stroke="#d4a053" stroke-width="1.5" opacity="0.5"/>
-      <circle cx="100" cy="100" r="3" fill="#d4a053" opacity="0.7"/>
+      <circle cx="100" cy="100" r="8" fill="none" stroke="#8b6b40" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="100" cy="100" r="3" fill="#8b6b40" opacity="0.7"/>
     </svg>
   </div>
   <h2>Peter Higgs</h2>

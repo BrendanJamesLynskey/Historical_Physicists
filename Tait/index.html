@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Peter Guthrie Tait — Mathematician, Physicist, Quaternionist</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #e8b84b; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+:root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #7a591d; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
@@ -21,7 +21,7 @@
 .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -38,8 +38,8 @@
 .two-col .diagram-container { max-width: 100%; margin: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
 .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -57,6 +57,7 @@
 .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
 .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -66,11 +67,11 @@
 <section>
   <div class="mandala-container">
     <svg viewBox="0 0 140 140">
-      <circle cx="70" cy="70" r="55" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.3"/>
-      <circle cx="70" cy="70" r="40" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.2"/>
-      <circle cx="70" cy="70" r="25" fill="none" stroke="#e8b84b" stroke-width="0.5" opacity="0.15"/>
-      <path d="M70 15 L85 55 L125 55 L92 78 L105 120 L70 95 L35 120 L48 78 L15 55 L55 55 Z" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.25"/>
-      <text x="70" y="74" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="18" font-weight="700">T</text>
+      <circle cx="70" cy="70" r="55" fill="none" stroke="#7a591d" stroke-width="1" opacity="0.3"/>
+      <circle cx="70" cy="70" r="40" fill="none" stroke="#7a591d" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="70" cy="70" r="25" fill="none" stroke="#7a591d" stroke-width="0.5" opacity="0.15"/>
+      <path d="M70 15 L85 55 L125 55 L92 78 L105 120 L70 95 L35 120 L48 78 L15 55 L55 55 Z" fill="none" stroke="#7a591d" stroke-width="1" opacity="0.25"/>
+      <text x="70" y="74" text-anchor="middle" fill="#7a591d" font-family="Playfair Display, serif" font-size="18" font-weight="700">T</text>
     </svg>
   </div>
   <h1>Peter Guthrie Tait</h1>
@@ -180,39 +181,39 @@
       <div class="diagram-container">
         <svg viewBox="0 0 280 320" xmlns="http://www.w3.org/2000/svg">
           <!-- Energy framework diagram -->
-          <rect x="10" y="10" width="260" height="300" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
-          <text x="140" y="38" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="14" font-weight="700">T&amp;T Energy Framework</text>
+          <rect x="10" y="10" width="260" height="300" rx="8" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
+          <text x="140" y="38" text-anchor="middle" fill="#7a591d" font-family="Playfair Display, serif" font-size="14" font-weight="700">T&amp;T Energy Framework</text>
           <!-- Top: Energy -->
-          <rect x="85" y="55" width="110" height="36" rx="6" fill="none" stroke="#e8b84b" stroke-width="1.5"/>
-          <text x="140" y="77" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">ENERGY</text>
+          <rect x="85" y="55" width="110" height="36" rx="6" fill="none" stroke="#7a591d" stroke-width="1.5"/>
+          <text x="140" y="77" text-anchor="middle" fill="#7a591d" font-family="DM Sans, sans-serif" font-size="11" font-weight="700">ENERGY</text>
           <!-- Branches -->
-          <line x1="115" y1="91" x2="75" y2="120" stroke="#4ecca3" stroke-width="1"/>
-          <line x1="165" y1="91" x2="205" y2="120" stroke="#5b8cd4" stroke-width="1"/>
+          <line x1="115" y1="91" x2="75" y2="120" stroke="#3e6252" stroke-width="1"/>
+          <line x1="165" y1="91" x2="205" y2="120" stroke="#405477" stroke-width="1"/>
           <!-- Kinetic -->
-          <rect x="25" y="120" width="100" height="32" rx="5" fill="none" stroke="#4ecca3" stroke-width="1"/>
-          <text x="75" y="140" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Kinetic (T)</text>
+          <rect x="25" y="120" width="100" height="32" rx="5" fill="none" stroke="#3e6252" stroke-width="1"/>
+          <text x="75" y="140" text-anchor="middle" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Kinetic (T)</text>
           <!-- Potential -->
-          <rect x="155" y="120" width="100" height="32" rx="5" fill="none" stroke="#5b8cd4" stroke-width="1"/>
-          <text x="205" y="140" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Potential (V)</text>
+          <rect x="155" y="120" width="100" height="32" rx="5" fill="none" stroke="#405477" stroke-width="1"/>
+          <text x="205" y="140" text-anchor="middle" fill="#405477" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Potential (V)</text>
           <!-- Conservation -->
-          <line x1="75" y1="152" x2="140" y2="180" stroke="#9a9a9a" stroke-width="0.8" stroke-dasharray="4,3"/>
-          <line x1="205" y1="152" x2="140" y2="180" stroke="#9a9a9a" stroke-width="0.8" stroke-dasharray="4,3"/>
-          <rect x="70" y="175" width="140" height="32" rx="5" fill="rgba(232,184,75,0.1)" stroke="#e8b84b" stroke-width="1"/>
-          <text x="140" y="190" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">T + V = const</text>
-          <text x="140" y="201" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Conservation of Energy</text>
+          <line x1="75" y1="152" x2="140" y2="180" stroke="#5c5549" stroke-width="0.8" stroke-dasharray="4,3"/>
+          <line x1="205" y1="152" x2="140" y2="180" stroke="#5c5549" stroke-width="0.8" stroke-dasharray="4,3"/>
+          <rect x="70" y="175" width="140" height="32" rx="5" fill="rgba(122,89,29,0.1)" stroke="#7a591d" stroke-width="1"/>
+          <text x="140" y="190" text-anchor="middle" fill="#7a591d" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">T + V = const</text>
+          <text x="140" y="201" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Conservation of Energy</text>
           <!-- Lower concepts -->
-          <line x1="105" y1="207" x2="65" y2="230" stroke="#9a9a9a" stroke-width="0.6"/>
-          <line x1="140" y1="207" x2="140" y2="230" stroke="#9a9a9a" stroke-width="0.6"/>
-          <line x1="175" y1="207" x2="215" y2="230" stroke="#9a9a9a" stroke-width="0.6"/>
-          <rect x="20" y="230" width="85" height="28" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
-          <text x="62" y="248" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Kinematics</text>
-          <rect x="118" y="230" width="45" height="28" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
-          <text x="140" y="248" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Work</text>
-          <rect x="175" y="230" width="85" height="28" rx="4" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
-          <text x="217" y="248" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Lagrangian</text>
+          <line x1="105" y1="207" x2="65" y2="230" stroke="#5c5549" stroke-width="0.6"/>
+          <line x1="140" y1="207" x2="140" y2="230" stroke="#5c5549" stroke-width="0.6"/>
+          <line x1="175" y1="207" x2="215" y2="230" stroke="#5c5549" stroke-width="0.6"/>
+          <rect x="20" y="230" width="85" height="28" rx="4" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
+          <text x="62" y="248" text-anchor="middle" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Kinematics</text>
+          <rect x="118" y="230" width="45" height="28" rx="4" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
+          <text x="140" y="248" text-anchor="middle" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Work</text>
+          <rect x="175" y="230" width="85" height="28" rx="4" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
+          <text x="217" y="248" text-anchor="middle" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Lagrangian</text>
           <!-- Bottom label -->
-          <text x="140" y="285" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="7">"The entire framework of mechanics</text>
-          <text x="140" y="297" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="7">rebuilt upon the concept of energy"</text>
+          <text x="140" y="285" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="7">"The entire framework of mechanics</text>
+          <text x="140" y="297" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="7">rebuilt upon the concept of energy"</text>
         </svg>
       </div>
     </div>
@@ -266,40 +267,40 @@
     <div>
       <div class="diagram-container">
         <svg viewBox="0 0 250 300" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="5" width="240" height="290" rx="8" fill="#161622" stroke="#2a2a3a" stroke-width="1"/>
-          <text x="125" y="30" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="12" font-weight="700">Quaternion Structure</text>
+          <rect x="5" y="5" width="240" height="290" rx="8" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
+          <text x="125" y="30" text-anchor="middle" fill="#7a591d" font-family="Playfair Display, serif" font-size="12" font-weight="700">Quaternion Structure</text>
           <!-- q = w + xi + yj + zk -->
-          <text x="125" y="58" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono, monospace" font-size="11">q = w + xi + yj + zk</text>
+          <text x="125" y="58" text-anchor="middle" fill="#262019" font-family="JetBrains Mono, monospace" font-size="11">q = w + xi + yj + zk</text>
           <!-- Scalar part -->
-          <rect x="25" y="72" width="90" height="40" rx="5" fill="rgba(232,184,75,0.08)" stroke="#e8b84b" stroke-width="1"/>
-          <text x="70" y="90" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Scalar Part</text>
-          <text x="70" y="104" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="8">w (real)</text>
+          <rect x="25" y="72" width="90" height="40" rx="5" fill="rgba(122,89,29,0.08)" stroke="#7a591d" stroke-width="1"/>
+          <text x="70" y="90" text-anchor="middle" fill="#7a591d" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Scalar Part</text>
+          <text x="70" y="104" text-anchor="middle" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="8">w (real)</text>
           <!-- Vector part -->
-          <rect x="135" y="72" width="90" height="40" rx="5" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1"/>
-          <text x="180" y="90" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Vector Part</text>
-          <text x="180" y="104" text-anchor="middle" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="8">xi + yj + zk</text>
+          <rect x="135" y="72" width="90" height="40" rx="5" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="1"/>
+          <text x="180" y="90" text-anchor="middle" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Vector Part</text>
+          <text x="180" y="104" text-anchor="middle" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="8">xi + yj + zk</text>
           <!-- Hamilton rules -->
-          <text x="125" y="135" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10">i&#xB2; = j&#xB2; = k&#xB2; = ijk = -1</text>
+          <text x="125" y="135" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">i&#xB2; = j&#xB2; = k&#xB2; = ijk = -1</text>
           <!-- Multiplication circle -->
-          <circle cx="125" cy="185" r="40" fill="none" stroke="#2a2a3a" stroke-width="1"/>
-          <circle cx="125" cy="145" r="8" fill="rgba(232,184,75,0.15)" stroke="#e8b84b" stroke-width="1"/>
-          <text x="125" y="148" text-anchor="middle" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">i</text>
-          <circle cx="90" cy="210" r="8" fill="rgba(78,204,163,0.15)" stroke="#4ecca3" stroke-width="1"/>
-          <text x="90" y="213" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">j</text>
-          <circle cx="160" cy="210" r="8" fill="rgba(91,140,212,0.15)" stroke="#5b8cd4" stroke-width="1"/>
-          <text x="160" y="213" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">k</text>
+          <circle cx="125" cy="185" r="40" fill="none" stroke="#cac3b2" stroke-width="1"/>
+          <circle cx="125" cy="145" r="8" fill="rgba(122,89,29,0.15)" stroke="#7a591d" stroke-width="1"/>
+          <text x="125" y="148" text-anchor="middle" fill="#7a591d" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">i</text>
+          <circle cx="90" cy="210" r="8" fill="rgba(62,98,82,0.15)" stroke="#3e6252" stroke-width="1"/>
+          <text x="90" y="213" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">j</text>
+          <circle cx="160" cy="210" r="8" fill="rgba(64,84,119,0.15)" stroke="#405477" stroke-width="1"/>
+          <text x="160" y="213" text-anchor="middle" fill="#405477" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">k</text>
           <!-- Arrows showing ij=k, jk=i, ki=j -->
-          <path d="M120 148 Q105 175 95 205" fill="none" stroke="#d4a053" stroke-width="0.8" marker-end="url(#arrowGold)"/>
-          <path d="M98 210 Q125 225 155 213" fill="none" stroke="#d4a053" stroke-width="0.8" marker-end="url(#arrowGold)"/>
-          <path d="M163 203 Q150 175 130 150" fill="none" stroke="#d4a053" stroke-width="0.8" marker-end="url(#arrowGold)"/>
-          <defs><marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#d4a053"/></marker></defs>
+          <path d="M120 148 Q105 175 95 205" fill="none" stroke="#8b6b40" stroke-width="0.8" marker-end="url(#arrowGold)"/>
+          <path d="M98 210 Q125 225 155 213" fill="none" stroke="#8b6b40" stroke-width="0.8" marker-end="url(#arrowGold)"/>
+          <path d="M163 203 Q150 175 130 150" fill="none" stroke="#8b6b40" stroke-width="0.8" marker-end="url(#arrowGold)"/>
+          <defs><marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8b6b40"/></marker></defs>
           <!-- Labels -->
-          <text x="80" y="173" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="7">ij=k</text>
-          <text x="132" y="227" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="7">jk=i</text>
-          <text x="162" y="173" fill="#d4a053" font-family="JetBrains Mono, monospace" font-size="7">ki=j</text>
+          <text x="80" y="173" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="7">ij=k</text>
+          <text x="132" y="227" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="7">jk=i</text>
+          <text x="162" y="173" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="7">ki=j</text>
           <!-- Bottom note -->
-          <text x="125" y="260" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="7">Non-commutative: ij = k but ji = -k</text>
-          <text x="125" y="275" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans, sans-serif" font-size="7">Encodes 3D rotations without gimbal lock</text>
+          <text x="125" y="260" text-anchor="middle" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="7">Non-commutative: ij = k but ji = -k</text>
+          <text x="125" y="275" text-anchor="middle" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="7">Encodes 3D rotations without gimbal lock</text>
         </svg>
       </div>
     </div>
@@ -403,50 +404,50 @@
   <div class="diagram-container">
     <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
       <!-- Connection lines (drawn first, behind nodes) -->
-      <line x1="350" y1="165" x2="140" y2="85" stroke="#e8b84b" stroke-width="2" opacity="0.5"/>
-      <line x1="350" y1="165" x2="560" y2="85" stroke="#4ecca3" stroke-width="1.5" opacity="0.5"/>
-      <line x1="350" y1="165" x2="140" y2="260" stroke="#5b8cd4" stroke-width="1.5" opacity="0.5"/>
-      <line x1="350" y1="165" x2="560" y2="260" stroke="#cf7272" stroke-width="1.5" opacity="0.4"/>
-      <line x1="350" y1="165" x2="350" y2="340" stroke="#9b72cf" stroke-width="1.5" opacity="0.4"/>
-      <line x1="350" y1="165" x2="140" y2="170" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
-      <line x1="350" y1="165" x2="560" y2="170" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
-      <line x1="140" y1="85" x2="560" y2="85" stroke="#2a2a3a" stroke-width="0.8" stroke-dasharray="4,4"/>
+      <line x1="350" y1="165" x2="140" y2="85" stroke="#7a591d" stroke-width="2" opacity="0.5"/>
+      <line x1="350" y1="165" x2="560" y2="85" stroke="#3e6252" stroke-width="1.5" opacity="0.5"/>
+      <line x1="350" y1="165" x2="140" y2="260" stroke="#405477" stroke-width="1.5" opacity="0.5"/>
+      <line x1="350" y1="165" x2="560" y2="260" stroke="#9b5247" stroke-width="1.5" opacity="0.4"/>
+      <line x1="350" y1="165" x2="350" y2="340" stroke="#6d5172" stroke-width="1.5" opacity="0.4"/>
+      <line x1="350" y1="165" x2="140" y2="170" stroke="#8b6b40" stroke-width="1.2" opacity="0.4"/>
+      <line x1="350" y1="165" x2="560" y2="170" stroke="#8b6b40" stroke-width="1.2" opacity="0.4"/>
+      <line x1="140" y1="85" x2="560" y2="85" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4"/>
       <!-- Central node: Tait -->
-      <circle cx="350" cy="165" r="35" fill="rgba(232,184,75,0.12)" stroke="#e8b84b" stroke-width="2"/>
-      <text x="350" y="160" text-anchor="middle" fill="#e8b84b" font-family="Playfair Display, serif" font-size="12" font-weight="700">P.G. Tait</text>
-      <text x="350" y="176" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">1831&ndash;1901</text>
+      <circle cx="350" cy="165" r="35" fill="rgba(122,89,29,0.12)" stroke="#7a591d" stroke-width="2"/>
+      <text x="350" y="160" text-anchor="middle" fill="#7a591d" font-family="Playfair Display, serif" font-size="12" font-weight="700">P.G. Tait</text>
+      <text x="350" y="176" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">1831&ndash;1901</text>
       <!-- Lord Kelvin -->
-      <circle cx="140" cy="85" r="28" fill="rgba(232,184,75,0.08)" stroke="#e8b84b" stroke-width="1.5"/>
-      <text x="140" y="80" text-anchor="middle" fill="#e8b84b" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Lord Kelvin</text>
-      <text x="140" y="93" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">T&amp;T collaborator</text>
+      <circle cx="140" cy="85" r="28" fill="rgba(122,89,29,0.08)" stroke="#7a591d" stroke-width="1.5"/>
+      <text x="140" y="80" text-anchor="middle" fill="#7a591d" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">Lord Kelvin</text>
+      <text x="140" y="93" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">T&amp;T collaborator</text>
       <!-- Maxwell -->
-      <circle cx="560" cy="85" r="28" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1.5"/>
-      <text x="560" y="80" text-anchor="middle" fill="#4ecca3" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">J.C. Maxwell</text>
-      <text x="560" y="93" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">School friend</text>
+      <circle cx="560" cy="85" r="28" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="1.5"/>
+      <text x="560" y="80" text-anchor="middle" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">J.C. Maxwell</text>
+      <text x="560" y="93" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">School friend</text>
       <!-- Hamilton -->
-      <circle cx="140" cy="260" r="28" fill="rgba(91,140,212,0.08)" stroke="#5b8cd4" stroke-width="1.5"/>
-      <text x="140" y="255" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">W.R. Hamilton</text>
-      <text x="140" y="268" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Quaternion mentor</text>
+      <circle cx="140" cy="260" r="28" fill="rgba(64,84,119,0.08)" stroke="#405477" stroke-width="1.5"/>
+      <text x="140" y="255" text-anchor="middle" fill="#405477" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">W.R. Hamilton</text>
+      <text x="140" y="268" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Quaternion mentor</text>
       <!-- Heaviside -->
-      <circle cx="560" cy="260" r="28" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="1.5"/>
-      <text x="560" y="255" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">O. Heaviside</text>
-      <text x="560" y="268" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Vector rival</text>
+      <circle cx="560" cy="260" r="28" fill="rgba(155,82,71,0.08)" stroke="#9b5247" stroke-width="1.5"/>
+      <text x="560" y="255" text-anchor="middle" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">O. Heaviside</text>
+      <text x="560" y="268" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Vector rival</text>
       <!-- Gibbs -->
-      <circle cx="560" cy="170" r="24" fill="rgba(207,114,114,0.06)" stroke="#cf7272" stroke-width="1"/>
-      <text x="560" y="167" text-anchor="middle" fill="#cf7272" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">J.W. Gibbs</text>
-      <text x="560" y="179" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Vector rival</text>
+      <circle cx="560" cy="170" r="24" fill="rgba(155,82,71,0.06)" stroke="#9b5247" stroke-width="1"/>
+      <text x="560" y="167" text-anchor="middle" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">J.W. Gibbs</text>
+      <text x="560" y="179" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Vector rival</text>
       <!-- Clausius -->
-      <circle cx="140" cy="170" r="24" fill="rgba(212,160,83,0.06)" stroke="#d4a053" stroke-width="1"/>
-      <text x="140" y="167" text-anchor="middle" fill="#d4a053" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">R. Clausius</text>
-      <text x="140" y="179" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Thermo. rival</text>
+      <circle cx="140" cy="170" r="24" fill="rgba(139,107,64,0.06)" stroke="#8b6b40" stroke-width="1"/>
+      <text x="140" y="167" text-anchor="middle" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">R. Clausius</text>
+      <text x="140" y="179" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Thermo. rival</text>
       <!-- Knot theorists -->
-      <circle cx="350" cy="340" r="28" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1.5"/>
-      <text x="350" y="335" text-anchor="middle" fill="#9b72cf" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">C.N. Little</text>
-      <text x="350" y="348" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="7">Knot collaborator</text>
+      <circle cx="350" cy="340" r="28" fill="rgba(109,81,114,0.08)" stroke="#6d5172" stroke-width="1.5"/>
+      <text x="350" y="335" text-anchor="middle" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">C.N. Little</text>
+      <text x="350" y="348" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Knot collaborator</text>
       <!-- Relationship labels -->
-      <text x="230" y="110" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(-20,230,110)">Treatise &amp; energy physics</text>
-      <text x="470" y="110" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(20,470,110)">Lifelong correspondence</text>
-      <text x="225" y="225" text-anchor="middle" fill="#6a6a7a" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(30,225,225)">Quaternion legacy</text>
+      <text x="230" y="110" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(-20,230,110)">Treatise &amp; energy physics</text>
+      <text x="470" y="110" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(20,470,110)">Lifelong correspondence</text>
+      <text x="225" y="225" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(30,225,225)">Quaternion legacy</text>
     </svg>
   </div>
 </section>
@@ -550,52 +551,52 @@
   <div class="diagram-container">
     <svg viewBox="0 0 750 420" xmlns="http://www.w3.org/2000/svg">
       <!-- Central timeline line -->
-      <line x1="80" y1="40" x2="80" y2="400" stroke="#2a2a3a" stroke-width="2"/>
+      <line x1="80" y1="40" x2="80" y2="400" stroke="#cac3b2" stroke-width="2"/>
       <!-- Year markers and events -->
-      <circle cx="80" cy="42" r="4" fill="#e8b84b"/>
-      <text x="60" y="47" text-anchor="end" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1831</text>
-      <text x="100" y="42" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Born in Dalkeith, Scotland</text>
-      <text x="100" y="55" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Son of John Tait, secretary to the Duke of Buccleuch</text>
+      <circle cx="80" cy="42" r="4" fill="#7a591d"/>
+      <text x="60" y="47" text-anchor="end" fill="#7a591d" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1831</text>
+      <text x="100" y="42" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Born in Dalkeith, Scotland</text>
+      <text x="100" y="55" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Son of John Tait, secretary to the Duke of Buccleuch</text>
 
-      <circle cx="80" cy="87" r="4" fill="#4ecca3"/>
-      <text x="60" y="92" text-anchor="end" fill="#4ecca3" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1847</text>
-      <text x="100" y="87" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Enters University of Edinburgh</text>
-      <text x="100" y="100" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">After Edinburgh Academy with Maxwell</text>
+      <circle cx="80" cy="87" r="4" fill="#3e6252"/>
+      <text x="60" y="92" text-anchor="end" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1847</text>
+      <text x="100" y="87" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Enters University of Edinburgh</text>
+      <text x="100" y="100" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">After Edinburgh Academy with Maxwell</text>
 
-      <circle cx="80" cy="132" r="4" fill="#5b8cd4"/>
-      <text x="60" y="137" text-anchor="end" fill="#5b8cd4" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1852</text>
-      <text x="100" y="132" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Senior Wrangler at Cambridge</text>
-      <text x="100" y="145" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Top mathematics graduate from Peterhouse</text>
+      <circle cx="80" cy="132" r="4" fill="#405477"/>
+      <text x="60" y="137" text-anchor="end" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1852</text>
+      <text x="100" y="132" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Senior Wrangler at Cambridge</text>
+      <text x="100" y="145" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Top mathematics graduate from Peterhouse</text>
 
-      <circle cx="80" cy="177" r="3" fill="#9a9a9a"/>
-      <text x="60" y="182" text-anchor="end" fill="#9a9a9a" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1854</text>
-      <text x="100" y="177" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Professor of Mathematics, Queen's Belfast</text>
+      <circle cx="80" cy="177" r="3" fill="#5c5549"/>
+      <text x="60" y="182" text-anchor="end" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1854</text>
+      <text x="100" y="177" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Professor of Mathematics, Queen's Belfast</text>
 
-      <circle cx="80" cy="212" r="4" fill="#e8b84b"/>
-      <text x="60" y="217" text-anchor="end" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1860</text>
-      <text x="100" y="212" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Chair of Natural Philosophy, Edinburgh</text>
-      <text x="100" y="225" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">A position he held for 41 years</text>
+      <circle cx="80" cy="212" r="4" fill="#7a591d"/>
+      <text x="60" y="217" text-anchor="end" fill="#7a591d" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1860</text>
+      <text x="100" y="212" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Chair of Natural Philosophy, Edinburgh</text>
+      <text x="100" y="225" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">A position he held for 41 years</text>
 
-      <circle cx="80" cy="257" r="5" fill="#e8b84b"/>
-      <text x="60" y="262" text-anchor="end" fill="#e8b84b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1867</text>
-      <text x="100" y="257" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Treatise on Natural Philosophy published</text>
-      <text x="100" y="270" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">With Thomson (Kelvin) — transforms physics education</text>
-      <rect x="97" y="247" width="380" height="28" rx="3" fill="rgba(232,184,75,0.05)" stroke="none"/>
+      <circle cx="80" cy="257" r="5" fill="#7a591d"/>
+      <text x="60" y="262" text-anchor="end" fill="#7a591d" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1867</text>
+      <text x="100" y="257" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Treatise on Natural Philosophy published</text>
+      <text x="100" y="270" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">With Thomson (Kelvin) — transforms physics education</text>
+      <rect x="97" y="247" width="380" height="28" rx="3" fill="rgba(122,89,29,0.05)" stroke="none"/>
 
-      <circle cx="80" cy="302" r="4" fill="#9b72cf"/>
-      <text x="60" y="307" text-anchor="end" fill="#9b72cf" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1877</text>
-      <text x="100" y="302" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">First systematic knot tabulations published</text>
-      <text x="100" y="315" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Classifying knots up to 7 crossings; Tait conjectures formulated</text>
+      <circle cx="80" cy="302" r="4" fill="#6d5172"/>
+      <text x="60" y="307" text-anchor="end" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1877</text>
+      <text x="100" y="302" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">First systematic knot tabulations published</text>
+      <text x="100" y="315" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Classifying knots up to 7 crossings; Tait conjectures formulated</text>
 
-      <circle cx="80" cy="347" r="3" fill="#cf7272"/>
-      <text x="60" y="352" text-anchor="end" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1890s</text>
-      <text x="100" y="347" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">The Great Vector Wars</text>
-      <text x="100" y="360" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Fierce public debate with Gibbs and Heaviside over quaternions vs. vectors</text>
+      <circle cx="80" cy="347" r="3" fill="#9b5247"/>
+      <text x="60" y="352" text-anchor="end" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1890s</text>
+      <text x="100" y="347" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">The Great Vector Wars</text>
+      <text x="100" y="360" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Fierce public debate with Gibbs and Heaviside over quaternions vs. vectors</text>
 
-      <circle cx="80" cy="392" r="4" fill="#cf7272"/>
-      <text x="60" y="397" text-anchor="end" fill="#cf7272" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1901</text>
-      <text x="100" y="392" fill="#e8e6e3" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Dies in Edinburgh, aged 70</text>
-      <text x="100" y="405" fill="#9a9a9a" font-family="DM Sans, sans-serif" font-size="8">Shortly after the death of his son in the Boer War</text>
+      <circle cx="80" cy="392" r="4" fill="#9b5247"/>
+      <text x="60" y="397" text-anchor="end" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1901</text>
+      <text x="100" y="392" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Dies in Edinburgh, aged 70</text>
+      <text x="100" y="405" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Shortly after the death of his son in the Boer War</text>
     </svg>
   </div>
 </section>

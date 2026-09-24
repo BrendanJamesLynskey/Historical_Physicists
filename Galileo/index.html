@@ -7,14 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent: #e8b84b;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+    --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
+    --accent: #7a591d;
+    --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172;
+    --accent-rose: #9b5247; --accent-blue: #405477;
+    --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -34,7 +34,7 @@
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -53,11 +53,11 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
-.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
-.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
-.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
 .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -75,6 +75,7 @@
 .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
 .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -85,28 +86,28 @@
     <div class="mandala-container">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Telescope motif -->
-            <circle cx="100" cy="100" r="90" fill="none" stroke="#2a2a3a" stroke-width="1"/>
-            <circle cx="100" cy="100" r="60" fill="none" stroke="#2a2a3a" stroke-width="0.5"/>
+            <circle cx="100" cy="100" r="90" fill="none" stroke="#cac3b2" stroke-width="1"/>
+            <circle cx="100" cy="100" r="60" fill="none" stroke="#cac3b2" stroke-width="0.5"/>
             <!-- Telescope body -->
-            <rect x="55" y="92" width="90" height="16" rx="3" fill="none" stroke="#e8b84b" stroke-width="2" transform="rotate(-15, 100, 100)"/>
-            <rect x="40" y="88" width="20" height="24" rx="4" fill="none" stroke="#e8b84b" stroke-width="2" transform="rotate(-15, 100, 100)"/>
-            <circle cx="148" cy="87" r="6" fill="none" stroke="#e8b84b" stroke-width="1.5" transform="rotate(-15, 100, 100)"/>
+            <rect x="55" y="92" width="90" height="16" rx="3" fill="none" stroke="#7a591d" stroke-width="2" transform="rotate(-15, 100, 100)"/>
+            <rect x="40" y="88" width="20" height="24" rx="4" fill="none" stroke="#7a591d" stroke-width="2" transform="rotate(-15, 100, 100)"/>
+            <circle cx="148" cy="87" r="6" fill="none" stroke="#7a591d" stroke-width="1.5" transform="rotate(-15, 100, 100)"/>
             <!-- Pendulum -->
-            <line x1="100" y1="30" x2="120" y2="75" stroke="#d4a053" stroke-width="1.5"/>
-            <circle cx="120" cy="78" r="5" fill="#d4a053" opacity="0.6"/>
-            <line x1="100" y1="30" x2="80" y2="75" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.3"/>
-            <circle cx="80" cy="78" r="5" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+            <line x1="100" y1="30" x2="120" y2="75" stroke="#8b6b40" stroke-width="1.5"/>
+            <circle cx="120" cy="78" r="5" fill="#8b6b40" opacity="0.6"/>
+            <line x1="100" y1="30" x2="80" y2="75" stroke="#8b6b40" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.3"/>
+            <circle cx="80" cy="78" r="5" fill="none" stroke="#8b6b40" stroke-width="0.8" opacity="0.3"/>
             <!-- Stars -->
-            <circle cx="30" cy="40" r="2" fill="#e8b84b" opacity="0.7"/>
-            <circle cx="170" cy="35" r="1.5" fill="#e8b84b" opacity="0.5"/>
-            <circle cx="160" cy="160" r="2" fill="#e8b84b" opacity="0.6"/>
-            <circle cx="35" cy="155" r="1.5" fill="#e8b84b" opacity="0.4"/>
+            <circle cx="30" cy="40" r="2" fill="#7a591d" opacity="0.7"/>
+            <circle cx="170" cy="35" r="1.5" fill="#7a591d" opacity="0.5"/>
+            <circle cx="160" cy="160" r="2" fill="#7a591d" opacity="0.6"/>
+            <circle cx="35" cy="155" r="1.5" fill="#7a591d" opacity="0.4"/>
             <!-- Jupiter and moons -->
-            <circle cx="165" cy="70" r="8" fill="none" stroke="#e8b84b" stroke-width="1.2"/>
-            <circle cx="150" cy="68" r="1.5" fill="#e8b84b" opacity="0.8"/>
-            <circle cx="178" cy="72" r="1.2" fill="#e8b84b" opacity="0.6"/>
-            <circle cx="158" cy="60" r="1" fill="#e8b84b" opacity="0.5"/>
-            <circle cx="172" cy="78" r="1.3" fill="#e8b84b" opacity="0.7"/>
+            <circle cx="165" cy="70" r="8" fill="none" stroke="#7a591d" stroke-width="1.2"/>
+            <circle cx="150" cy="68" r="1.5" fill="#7a591d" opacity="0.8"/>
+            <circle cx="178" cy="72" r="1.2" fill="#7a591d" opacity="0.6"/>
+            <circle cx="158" cy="60" r="1" fill="#7a591d" opacity="0.5"/>
+            <circle cx="172" cy="78" r="1.3" fill="#7a591d" opacity="0.7"/>
         </svg>
     </div>
     <h1>Galileo Galilei</h1>
@@ -214,31 +215,31 @@
             <div class="diagram-container">
                 <svg viewBox="0 0 380 280" xmlns="http://www.w3.org/2000/svg">
                     <!-- Inclined plane -->
-                    <line x1="40" y1="240" x2="340" y2="60" stroke="#e8b84b" stroke-width="2.5"/>
-                    <line x1="40" y1="240" x2="340" y2="240" stroke="#2a2a3a" stroke-width="1"/>
-                    <line x1="340" y1="60" x2="340" y2="240" stroke="#2a2a3a" stroke-width="1" stroke-dasharray="4,3"/>
+                    <line x1="40" y1="240" x2="340" y2="60" stroke="#7a591d" stroke-width="2.5"/>
+                    <line x1="40" y1="240" x2="340" y2="240" stroke="#cac3b2" stroke-width="1"/>
+                    <line x1="340" y1="60" x2="340" y2="240" stroke="#cac3b2" stroke-width="1" stroke-dasharray="4,3"/>
                     <!-- Angle arc -->
-                    <path d="M 80 240 A 40 40 0 0 0 66 218" fill="none" stroke="#d4a053" stroke-width="1.2"/>
-                    <text x="85" y="228" fill="#d4a053" font-size="12" font-family="JetBrains Mono">θ</text>
+                    <path d="M 80 240 A 40 40 0 0 0 66 218" fill="none" stroke="#8b6b40" stroke-width="1.2"/>
+                    <text x="85" y="228" fill="#8b6b40" font-size="12" font-family="JetBrains Mono">θ</text>
                     <!-- Balls at intervals showing acceleration -->
-                    <circle cx="80" cy="216" r="9" fill="#e8b84b" opacity="0.9"/>
-                    <circle cx="130" cy="186" r="9" fill="#e8b84b" opacity="0.75"/>
-                    <circle cx="200" cy="144" r="9" fill="#e8b84b" opacity="0.6"/>
-                    <circle cx="290" cy="90" r="9" fill="#e8b84b" opacity="0.45"/>
+                    <circle cx="80" cy="216" r="9" fill="#7a591d" opacity="0.9"/>
+                    <circle cx="130" cy="186" r="9" fill="#7a591d" opacity="0.75"/>
+                    <circle cx="200" cy="144" r="9" fill="#7a591d" opacity="0.6"/>
+                    <circle cx="290" cy="90" r="9" fill="#7a591d" opacity="0.45"/>
                     <!-- Distance markers -->
-                    <text x="90" y="210" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=1</text>
-                    <text x="140" y="180" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=4</text>
-                    <text x="210" y="138" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=9</text>
-                    <text x="300" y="84" fill="#9a9a9a" font-size="10" font-family="JetBrains Mono">d=16</text>
+                    <text x="90" y="210" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=1</text>
+                    <text x="140" y="180" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=4</text>
+                    <text x="210" y="138" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=9</text>
+                    <text x="300" y="84" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=16</text>
                     <!-- Time markers -->
-                    <text x="68" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=1</text>
-                    <text x="118" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=2</text>
-                    <text x="188" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=3</text>
-                    <text x="278" y="255" fill="#4ecca3" font-size="10" font-family="JetBrains Mono">t=4</text>
+                    <text x="68" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=1</text>
+                    <text x="118" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=2</text>
+                    <text x="188" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=3</text>
+                    <text x="278" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=4</text>
                     <!-- Title -->
-                    <text x="190" y="25" fill="#e8e6e3" font-size="13" font-family="DM Sans" text-anchor="middle">Uniformly Accelerated Motion on Inclined Plane</text>
+                    <text x="190" y="25" fill="#262019" font-size="13" font-family="DM Sans" text-anchor="middle">Uniformly Accelerated Motion on Inclined Plane</text>
                     <!-- g sin theta label -->
-                    <text x="180" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" transform="rotate(-25, 180, 175)">a = g sin θ</text>
+                    <text x="180" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" transform="rotate(-25, 180, 175)">a = g sin θ</text>
                 </svg>
             </div>
         </div>
@@ -286,46 +287,46 @@
         <div>
             <div class="diagram-container">
                 <svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-                    <text x="190" y="20" fill="#e8e6e3" font-size="13" font-family="DM Sans" text-anchor="middle">Galilean Moons of Jupiter</text>
+                    <text x="190" y="20" fill="#262019" font-size="13" font-family="DM Sans" text-anchor="middle">Galilean Moons of Jupiter</text>
                     <!-- Jupiter -->
-                    <circle cx="190" cy="130" r="35" fill="none" stroke="#e8b84b" stroke-width="2"/>
-                    <ellipse cx="190" cy="120" rx="30" ry="4" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
-                    <ellipse cx="190" cy="135" rx="32" ry="5" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.4"/>
-                    <text x="190" y="175" fill="#e8b84b" font-size="11" font-family="DM Sans" text-anchor="middle">Jupiter</text>
+                    <circle cx="190" cy="130" r="35" fill="none" stroke="#7a591d" stroke-width="2"/>
+                    <ellipse cx="190" cy="120" rx="30" ry="4" fill="none" stroke="#8b6b40" stroke-width="0.8" opacity="0.5"/>
+                    <ellipse cx="190" cy="135" rx="32" ry="5" fill="none" stroke="#8b6b40" stroke-width="0.8" opacity="0.4"/>
+                    <text x="190" y="175" fill="#7a591d" font-size="11" font-family="DM Sans" text-anchor="middle">Jupiter</text>
                     <!-- Io -->
-                    <circle cx="80" cy="130" r="5" fill="#cf7272" opacity="0.8"/>
-                    <text x="80" y="150" fill="#cf7272" font-size="10" font-family="DM Sans" text-anchor="middle">Io</text>
+                    <circle cx="80" cy="130" r="5" fill="#9b5247" opacity="0.8"/>
+                    <text x="80" y="150" fill="#9b5247" font-size="10" font-family="DM Sans" text-anchor="middle">Io</text>
                     <!-- Europa -->
-                    <circle cx="115" cy="130" r="4.5" fill="#5b8cd4" opacity="0.8"/>
-                    <text x="115" y="150" fill="#5b8cd4" font-size="10" font-family="DM Sans" text-anchor="middle">Europa</text>
+                    <circle cx="115" cy="130" r="4.5" fill="#405477" opacity="0.8"/>
+                    <text x="115" y="150" fill="#405477" font-size="10" font-family="DM Sans" text-anchor="middle">Europa</text>
                     <!-- Ganymede -->
-                    <circle cx="275" cy="130" r="6" fill="#4ecca3" opacity="0.8"/>
-                    <text x="275" y="150" fill="#4ecca3" font-size="10" font-family="DM Sans" text-anchor="middle">Ganymede</text>
+                    <circle cx="275" cy="130" r="6" fill="#3e6252" opacity="0.8"/>
+                    <text x="275" y="150" fill="#3e6252" font-size="10" font-family="DM Sans" text-anchor="middle">Ganymede</text>
                     <!-- Callisto -->
-                    <circle cx="330" cy="130" r="5.5" fill="#d4a053" opacity="0.8"/>
-                    <text x="330" y="150" fill="#d4a053" font-size="10" font-family="DM Sans" text-anchor="middle">Callisto</text>
+                    <circle cx="330" cy="130" r="5.5" fill="#8b6b40" opacity="0.8"/>
+                    <text x="330" y="150" fill="#8b6b40" font-size="10" font-family="DM Sans" text-anchor="middle">Callisto</text>
                     <!-- Orbital paths -->
-                    <circle cx="190" cy="130" r="110" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
-                    <circle cx="190" cy="130" r="75" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
-                    <circle cx="190" cy="130" r="85" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
-                    <circle cx="190" cy="130" r="140" fill="none" stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <circle cx="190" cy="130" r="110" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <circle cx="190" cy="130" r="75" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <circle cx="190" cy="130" r="85" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
+                    <circle cx="190" cy="130" r="140" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
                     <!-- Phases of Venus below -->
-                    <text x="190" y="200" fill="#e8e6e3" font-size="12" font-family="DM Sans" text-anchor="middle">Phases of Venus</text>
+                    <text x="190" y="200" fill="#262019" font-size="12" font-family="DM Sans" text-anchor="middle">Phases of Venus</text>
                     <!-- Phase circles -->
-                    <circle cx="60" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
-                    <path d="M 60 218 A 12 12 0 0 1 60 242" fill="#e8b84b" opacity="0.8"/>
-                    <text x="60" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Full</text>
-                    <circle cx="130" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
-                    <path d="M 130 218 A 12 12 0 0 1 130 242 A 6 12 0 0 1 130 218" fill="#e8b84b" opacity="0.8"/>
-                    <text x="130" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Gibbous</text>
-                    <circle cx="200" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
-                    <path d="M 200 218 A 12 12 0 0 1 200 242" fill="#e8b84b" opacity="0.7"/>
-                    <text x="200" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Half</text>
-                    <circle cx="270" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
-                    <path d="M 270 218 A 12 12 0 0 1 270 242 A 4 12 0 0 0 270 218" fill="#e8b84b" opacity="0.6"/>
-                    <text x="270" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">Crescent</text>
-                    <circle cx="340" cy="230" r="12" fill="none" stroke="#e8b84b" stroke-width="1"/>
-                    <text x="340" y="252" fill="#6a6a7a" font-size="8" font-family="DM Sans" text-anchor="middle">New</text>
+                    <circle cx="60" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
+                    <path d="M 60 218 A 12 12 0 0 1 60 242" fill="#7a591d" opacity="0.8"/>
+                    <text x="60" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Full</text>
+                    <circle cx="130" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
+                    <path d="M 130 218 A 12 12 0 0 1 130 242 A 6 12 0 0 1 130 218" fill="#7a591d" opacity="0.8"/>
+                    <text x="130" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Gibbous</text>
+                    <circle cx="200" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
+                    <path d="M 200 218 A 12 12 0 0 1 200 242" fill="#7a591d" opacity="0.7"/>
+                    <text x="200" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Half</text>
+                    <circle cx="270" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
+                    <path d="M 270 218 A 12 12 0 0 1 270 242 A 4 12 0 0 0 270 218" fill="#7a591d" opacity="0.6"/>
+                    <text x="270" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Crescent</text>
+                    <circle cx="340" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
+                    <text x="340" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">New</text>
                 </svg>
             </div>
         </div>
@@ -544,57 +545,57 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg">
             <!-- Main timeline line -->
-            <line x1="50" y1="190" x2="860" y2="190" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="50" y1="190" x2="860" y2="190" stroke="#cac3b2" stroke-width="2"/>
             <!-- Birth -->
-            <circle cx="80" cy="190" r="5" fill="#e8b84b"/>
-            <text x="80" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1564</text>
-            <text x="80" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Born in Pisa</text>
+            <circle cx="80" cy="190" r="5" fill="#7a591d"/>
+            <text x="80" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1564</text>
+            <text x="80" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">Born in Pisa</text>
             <!-- Pisa chair -->
-            <circle cx="180" cy="190" r="4" fill="#d4a053"/>
-            <text x="180" y="175" fill="#d4a053" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1589</text>
-            <text x="180" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Pisa Chair</text>
+            <circle cx="180" cy="190" r="4" fill="#8b6b40"/>
+            <text x="180" y="175" fill="#8b6b40" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1589</text>
+            <text x="180" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Pisa Chair</text>
             <!-- Padua -->
-            <circle cx="250" cy="190" r="4" fill="#4ecca3"/>
-            <text x="250" y="175" fill="#4ecca3" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1592</text>
-            <text x="250" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Padua</text>
+            <circle cx="250" cy="190" r="4" fill="#3e6252"/>
+            <text x="250" y="175" fill="#3e6252" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1592</text>
+            <text x="250" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Padua</text>
             <!-- Telescope -->
-            <circle cx="370" cy="190" r="5" fill="#e8b84b"/>
-            <text x="370" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1609</text>
-            <text x="370" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">First Telescope</text>
+            <circle cx="370" cy="190" r="5" fill="#7a591d"/>
+            <text x="370" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1609</text>
+            <text x="370" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">First Telescope</text>
             <!-- Sidereus Nuncius -->
-            <circle cx="430" cy="190" r="5" fill="#5b8cd4"/>
-            <text x="430" y="165" fill="#5b8cd4" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1610</text>
-            <text x="430" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Sidereus</text>
-            <text x="430" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Nuncius</text>
+            <circle cx="430" cy="190" r="5" fill="#405477"/>
+            <text x="430" y="165" fill="#405477" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1610</text>
+            <text x="430" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Sidereus</text>
+            <text x="430" y="227" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Nuncius</text>
             <!-- 1616 warning -->
-            <circle cx="520" cy="190" r="4" fill="#cf7272"/>
-            <text x="520" y="175" fill="#cf7272" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1616</text>
-            <text x="520" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Church Warning</text>
+            <circle cx="520" cy="190" r="4" fill="#9b5247"/>
+            <text x="520" y="175" fill="#9b5247" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1616</text>
+            <text x="520" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Church Warning</text>
             <!-- Dialogue -->
-            <circle cx="640" cy="190" r="5" fill="#e8b84b"/>
-            <text x="640" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1632</text>
-            <text x="640" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Dialogue</text>
+            <circle cx="640" cy="190" r="5" fill="#7a591d"/>
+            <text x="640" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1632</text>
+            <text x="640" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">Dialogue</text>
             <!-- Trial -->
-            <circle cx="700" cy="190" r="5" fill="#cf7272"/>
-            <text x="700" y="175" fill="#cf7272" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1633</text>
-            <text x="700" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Trial &amp; House</text>
-            <text x="700" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Arrest</text>
+            <circle cx="700" cy="190" r="5" fill="#9b5247"/>
+            <text x="700" y="175" fill="#9b5247" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1633</text>
+            <text x="700" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Trial &amp; House</text>
+            <text x="700" y="227" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Arrest</text>
             <!-- Two New Sciences -->
-            <circle cx="775" cy="190" r="5" fill="#9b72cf"/>
-            <text x="775" y="175" fill="#9b72cf" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1638</text>
-            <text x="775" y="215" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Two New</text>
-            <text x="775" y="227" fill="#9a9a9a" font-size="9" font-family="DM Sans" text-anchor="middle">Sciences</text>
+            <circle cx="775" cy="190" r="5" fill="#6d5172"/>
+            <text x="775" y="175" fill="#6d5172" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1638</text>
+            <text x="775" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Two New</text>
+            <text x="775" y="227" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Sciences</text>
             <!-- Death -->
-            <circle cx="840" cy="190" r="5" fill="#e8b84b"/>
-            <text x="840" y="175" fill="#e8b84b" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1642</text>
-            <text x="840" y="215" fill="#e8e6e3" font-size="9" font-family="DM Sans" text-anchor="middle">Dies at Arcetri</text>
+            <circle cx="840" cy="190" r="5" fill="#7a591d"/>
+            <text x="840" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1642</text>
+            <text x="840" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">Dies at Arcetri</text>
             <!-- Era labels -->
-            <rect x="160" y="260" width="120" height="25" rx="4" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
-            <text x="220" y="277" fill="#4ecca3" font-size="10" font-family="DM Sans" text-anchor="middle">Padua Years</text>
-            <rect x="400" y="260" width="140" height="25" rx="4" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.5"/>
-            <text x="470" y="277" fill="#e8b84b" font-size="10" font-family="DM Sans" text-anchor="middle">Telescopic Revolution</text>
-            <rect x="620" y="260" width="220" height="25" rx="4" fill="none" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
-            <text x="730" y="277" fill="#cf7272" font-size="10" font-family="DM Sans" text-anchor="middle">Conflict &amp; Confinement</text>
+            <rect x="160" y="260" width="120" height="25" rx="4" fill="none" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
+            <text x="220" y="277" fill="#3e6252" font-size="10" font-family="DM Sans" text-anchor="middle">Padua Years</text>
+            <rect x="400" y="260" width="140" height="25" rx="4" fill="none" stroke="#7a591d" stroke-width="1" opacity="0.5"/>
+            <text x="470" y="277" fill="#7a591d" font-size="10" font-family="DM Sans" text-anchor="middle">Telescopic Revolution</text>
+            <rect x="620" y="260" width="220" height="25" rx="4" fill="none" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
+            <text x="730" y="277" fill="#9b5247" font-size="10" font-family="DM Sans" text-anchor="middle">Conflict &amp; Confinement</text>
         </svg>
     </div>
 </section>
@@ -635,21 +636,21 @@
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 70vh;">
         <div class="mandala-container">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="80" fill="none" stroke="#e8b84b" stroke-width="1" opacity="0.3"/>
-                <circle cx="100" cy="100" r="50" fill="none" stroke="#e8b84b" stroke-width="0.8" opacity="0.2"/>
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#7a591d" stroke-width="1" opacity="0.3"/>
+                <circle cx="100" cy="100" r="50" fill="none" stroke="#7a591d" stroke-width="0.8" opacity="0.2"/>
                 <!-- Earth -->
-                <circle cx="100" cy="100" r="8" fill="#5b8cd4" opacity="0.6"/>
+                <circle cx="100" cy="100" r="8" fill="#405477" opacity="0.6"/>
                 <!-- Sun orbit path -->
-                <circle cx="100" cy="100" r="30" fill="none" stroke="#e8b84b" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4"/>
+                <circle cx="100" cy="100" r="30" fill="none" stroke="#7a591d" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4"/>
                 <!-- Sun -->
-                <circle cx="130" cy="100" r="5" fill="#e8b84b" opacity="0.8"/>
+                <circle cx="130" cy="100" r="5" fill="#7a591d" opacity="0.8"/>
                 <!-- Stars scattered -->
-                <circle cx="40" cy="50" r="1.5" fill="#e8b84b" opacity="0.5"/>
-                <circle cx="160" cy="40" r="1" fill="#e8b84b" opacity="0.4"/>
-                <circle cx="150" cy="160" r="1.5" fill="#e8b84b" opacity="0.6"/>
-                <circle cx="50" cy="150" r="1" fill="#e8b84b" opacity="0.3"/>
-                <circle cx="100" cy="25" r="1.2" fill="#e8b84b" opacity="0.5"/>
-                <circle cx="175" cy="100" r="1" fill="#e8b84b" opacity="0.4"/>
+                <circle cx="40" cy="50" r="1.5" fill="#7a591d" opacity="0.5"/>
+                <circle cx="160" cy="40" r="1" fill="#7a591d" opacity="0.4"/>
+                <circle cx="150" cy="160" r="1.5" fill="#7a591d" opacity="0.6"/>
+                <circle cx="50" cy="150" r="1" fill="#7a591d" opacity="0.3"/>
+                <circle cx="100" cy="25" r="1.2" fill="#7a591d" opacity="0.5"/>
+                <circle cx="175" cy="100" r="1" fill="#7a591d" opacity="0.4"/>
             </svg>
         </div>
         <h2 style="margin-bottom: 0.3em;">E pur si muove</h2>

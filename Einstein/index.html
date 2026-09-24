@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Albert Einstein - A Physics Presentation</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent: #d4a053;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a;
+    --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
+    --accent: #8b6b40;
+    --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172;
+    --accent-rose: #9b5247; --accent-blue: #405477;
+    --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -33,7 +33,7 @@
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -52,11 +52,11 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-.tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); }
-.tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); }
-.tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); }
-.tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
+.tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
+.tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
+.tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
 .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -74,6 +74,7 @@
 .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
 .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -83,13 +84,13 @@
 <section>
     <div class="mandala-container">
         <svg viewBox="0 0 140 140">
-            <circle cx="70" cy="70" r="60" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.3"/>
-            <circle cx="70" cy="70" r="45" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
-            <circle cx="70" cy="70" r="30" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.5"/>
-            <ellipse cx="70" cy="70" rx="60" ry="25" fill="none" stroke="#d4a053" stroke-width="0.4" opacity="0.3" transform="rotate(0 70 70)"/>
-            <ellipse cx="70" cy="70" rx="60" ry="25" fill="none" stroke="#d4a053" stroke-width="0.4" opacity="0.3" transform="rotate(60 70 70)"/>
-            <ellipse cx="70" cy="70" rx="60" ry="25" fill="none" stroke="#d4a053" stroke-width="0.4" opacity="0.3" transform="rotate(120 70 70)"/>
-            <circle cx="70" cy="70" r="4" fill="#d4a053" opacity="0.8"/>
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="70" cy="70" r="30" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.5"/>
+            <ellipse cx="70" cy="70" rx="60" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.4" opacity="0.3" transform="rotate(0 70 70)"/>
+            <ellipse cx="70" cy="70" rx="60" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.4" opacity="0.3" transform="rotate(60 70 70)"/>
+            <ellipse cx="70" cy="70" rx="60" ry="25" fill="none" stroke="#8b6b40" stroke-width="0.4" opacity="0.3" transform="rotate(120 70 70)"/>
+            <circle cx="70" cy="70" r="4" fill="#8b6b40" opacity="0.8"/>
         </svg>
     </div>
     <h1>Albert Einstein</h1>
@@ -195,31 +196,31 @@
                 <!-- Light cone diagram -->
                 <defs>
                     <linearGradient id="cone-grad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#d4a053" stop-opacity="0.3"/>
-                        <stop offset="100%" stop-color="#d4a053" stop-opacity="0.05"/>
+                        <stop offset="0%" stop-color="#8b6b40" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#8b6b40" stop-opacity="0.05"/>
                     </linearGradient>
                 </defs>
                 <!-- Axes -->
-                <line x1="160" y1="20" x2="160" y2="260" stroke="#6a6a7a" stroke-width="1"/>
-                <line x1="30" y1="140" x2="290" y2="140" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="160" y1="20" x2="160" y2="260" stroke="#8f8676" stroke-width="1"/>
+                <line x1="30" y1="140" x2="290" y2="140" stroke="#8f8676" stroke-width="1"/>
                 <!-- Future light cone -->
-                <polygon points="160,140 60,40 260,40" fill="url(#cone-grad)" stroke="#d4a053" stroke-width="1"/>
+                <polygon points="160,140 60,40 260,40" fill="url(#cone-grad)" stroke="#8b6b40" stroke-width="1"/>
                 <!-- Past light cone -->
-                <polygon points="160,140 60,240 260,240" fill="url(#cone-grad)" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+                <polygon points="160,140 60,240 260,240" fill="url(#cone-grad)" stroke="#8b6b40" stroke-width="1" opacity="0.5"/>
                 <!-- Light rays -->
-                <line x1="160" y1="140" x2="260" y2="40" stroke="#d4a053" stroke-width="1.5" stroke-dasharray="4,3"/>
-                <line x1="160" y1="140" x2="60" y2="40" stroke="#d4a053" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="160" y1="140" x2="260" y2="40" stroke="#8b6b40" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="160" y1="140" x2="60" y2="40" stroke="#8b6b40" stroke-width="1.5" stroke-dasharray="4,3"/>
                 <!-- Worldline -->
-                <path d="M 160 240 Q 150 190 160 140 Q 170 90 160 40" stroke="#4ecca3" stroke-width="2" fill="none"/>
+                <path d="M 160 240 Q 150 190 160 140 Q 170 90 160 40" stroke="#3e6252" stroke-width="2" fill="none"/>
                 <!-- Event point -->
-                <circle cx="160" cy="140" r="4" fill="#d4a053"/>
+                <circle cx="160" cy="140" r="4" fill="#8b6b40"/>
                 <!-- Labels -->
-                <text x="165" y="30" fill="#9a9a9a" font-size="11" font-family="DM Sans">time (ct)</text>
-                <text x="260" y="155" fill="#9a9a9a" font-size="11" font-family="DM Sans">space (x)</text>
-                <text x="230" y="35" fill="#d4a053" font-size="10" font-family="JetBrains Mono">v = c</text>
-                <text x="175" y="90" fill="#4ecca3" font-size="10" font-family="DM Sans">worldline</text>
-                <text x="200" y="75" fill="#d4a053" font-size="10" font-family="DM Sans">future</text>
-                <text x="200" y="225" fill="#6a6a7a" font-size="10" font-family="DM Sans">past</text>
+                <text x="165" y="30" fill="#5c5549" font-size="11" font-family="DM Sans">time (ct)</text>
+                <text x="260" y="155" fill="#5c5549" font-size="11" font-family="DM Sans">space (x)</text>
+                <text x="230" y="35" fill="#8b6b40" font-size="10" font-family="JetBrains Mono">v = c</text>
+                <text x="175" y="90" fill="#3e6252" font-size="10" font-family="DM Sans">worldline</text>
+                <text x="200" y="75" fill="#8b6b40" font-size="10" font-family="DM Sans">future</text>
+                <text x="200" y="225" fill="#8f8676" font-size="10" font-family="DM Sans">past</text>
             </svg>
         </div>
     </div>
@@ -273,35 +274,35 @@
                 <!-- Curved spacetime grid -->
                 <defs>
                     <radialGradient id="mass-glow" cx="50%" cy="50%">
-                        <stop offset="0%" stop-color="#d4a053" stop-opacity="0.4"/>
-                        <stop offset="100%" stop-color="#d4a053" stop-opacity="0"/>
+                        <stop offset="0%" stop-color="#8b6b40" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#8b6b40" stop-opacity="0"/>
                     </radialGradient>
                 </defs>
                 <!-- Flat grid lines (horizontal) that curve near center -->
-                <path d="M 20,60 Q 160,60 300,60" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 20,100 Q 160,110 300,100" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 20,140 Q 160,175 300,140" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 20,180 Q 160,210 300,180" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 20,220 Q 160,230 300,220" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
+                <path d="M 20,60 Q 160,60 300,60" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 20,100 Q 160,110 300,100" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 20,140 Q 160,175 300,140" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 20,180 Q 160,210 300,180" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 20,220 Q 160,230 300,220" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
                 <!-- Vertical grid lines that curve near center -->
-                <path d="M 60,30 Q 60,140 60,260" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 110,30 Q 120,140 110,260" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 160,30 Q 160,140 160,260" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 210,30 Q 200,140 210,260" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
-                <path d="M 260,30 Q 260,140 260,260" stroke="#2a2a3a" stroke-width="0.8" fill="none"/>
+                <path d="M 60,30 Q 60,140 60,260" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 110,30 Q 120,140 110,260" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 160,30 Q 160,140 160,260" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 210,30 Q 200,140 210,260" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
+                <path d="M 260,30 Q 260,140 260,260" stroke="#cac3b2" stroke-width="0.8" fill="none"/>
                 <!-- Mass object glow -->
                 <circle cx="160" cy="155" r="50" fill="url(#mass-glow)"/>
                 <!-- Mass object -->
-                <circle cx="160" cy="155" r="18" fill="#d4a053" opacity="0.8"/>
-                <text x="160" y="160" fill="#0a0a0f" font-size="12" font-family="DM Sans" font-weight="700" text-anchor="middle">M</text>
+                <circle cx="160" cy="155" r="18" fill="#8b6b40" opacity="0.8"/>
+                <text x="160" y="160" fill="#f4f1e9" font-size="12" font-family="DM Sans" font-weight="700" text-anchor="middle">M</text>
                 <!-- Orbit path -->
-                <ellipse cx="160" cy="155" rx="80" ry="55" fill="none" stroke="#4ecca3" stroke-width="1.5" stroke-dasharray="5,3" transform="rotate(-15 160 155)"/>
+                <ellipse cx="160" cy="155" rx="80" ry="55" fill="none" stroke="#3e6252" stroke-width="1.5" stroke-dasharray="5,3" transform="rotate(-15 160 155)"/>
                 <!-- Orbiting body -->
-                <circle cx="235" cy="125" r="5" fill="#5b8cd4"/>
+                <circle cx="235" cy="125" r="5" fill="#405477"/>
                 <!-- Labels -->
-                <text x="160" y="25" fill="#9a9a9a" font-size="11" font-family="DM Sans" text-anchor="middle">curved spacetime fabric</text>
-                <text x="250" y="118" fill="#5b8cd4" font-size="10" font-family="DM Sans">planet</text>
-                <text x="90" y="255" fill="#d4a053" font-size="10" font-family="JetBrains Mono">G&mu;&nu; = 8&pi;G/c&sup4; T&mu;&nu;</text>
+                <text x="160" y="25" fill="#5c5549" font-size="11" font-family="DM Sans" text-anchor="middle">curved spacetime fabric</text>
+                <text x="250" y="118" fill="#405477" font-size="10" font-family="DM Sans">planet</text>
+                <text x="90" y="255" fill="#8b6b40" font-size="10" font-family="JetBrains Mono">G&mu;&nu; = 8&pi;G/c&sup4; T&mu;&nu;</text>
             </svg>
         </div>
     </div>
@@ -399,39 +400,39 @@
     <div class="diagram-container">
         <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
             <!-- Connection lines -->
-            <line x1="350" y1="60" x2="150" y2="160" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="60" x2="350" y2="170" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="60" x2="550" y2="160" stroke="#2a2a3a" stroke-width="1.5"/>
-            <line x1="350" y1="60" x2="100" y2="280" stroke="#2a2a3a" stroke-width="1"/>
-            <line x1="350" y1="60" x2="250" y2="280" stroke="#2a2a3a" stroke-width="1"/>
-            <line x1="350" y1="60" x2="450" y2="280" stroke="#2a2a3a" stroke-width="1"/>
-            <line x1="350" y1="60" x2="600" y2="280" stroke="#2a2a3a" stroke-width="1"/>
-            <line x1="150" y1="160" x2="100" y2="280" stroke="#2a2a3a" stroke-width="1" opacity="0.5"/>
-            <line x1="550" y1="160" x2="450" y2="280" stroke="#2a2a3a" stroke-width="1" opacity="0.5"/>
-            <line x1="350" y1="170" x2="250" y2="280" stroke="#2a2a3a" stroke-width="1" opacity="0.5"/>
+            <line x1="350" y1="60" x2="150" y2="160" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="350" y2="170" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="550" y2="160" stroke="#cac3b2" stroke-width="1.5"/>
+            <line x1="350" y1="60" x2="100" y2="280" stroke="#cac3b2" stroke-width="1"/>
+            <line x1="350" y1="60" x2="250" y2="280" stroke="#cac3b2" stroke-width="1"/>
+            <line x1="350" y1="60" x2="450" y2="280" stroke="#cac3b2" stroke-width="1"/>
+            <line x1="350" y1="60" x2="600" y2="280" stroke="#cac3b2" stroke-width="1"/>
+            <line x1="150" y1="160" x2="100" y2="280" stroke="#cac3b2" stroke-width="1" opacity="0.5"/>
+            <line x1="550" y1="160" x2="450" y2="280" stroke="#cac3b2" stroke-width="1" opacity="0.5"/>
+            <line x1="350" y1="170" x2="250" y2="280" stroke="#cac3b2" stroke-width="1" opacity="0.5"/>
             <!-- Einstein node -->
-            <circle cx="350" cy="60" r="22" fill="#d4a053" opacity="0.2" stroke="#d4a053" stroke-width="2"/>
-            <text x="350" y="65" fill="#d4a053" font-size="13" font-family="DM Sans" font-weight="700" text-anchor="middle">Einstein</text>
+            <circle cx="350" cy="60" r="22" fill="#8b6b40" opacity="0.2" stroke="#8b6b40" stroke-width="2"/>
+            <text x="350" y="65" fill="#8b6b40" font-size="13" font-family="DM Sans" font-weight="700" text-anchor="middle">Einstein</text>
             <!-- Mentor nodes -->
-            <circle cx="150" cy="160" r="16" fill="#9b72cf" opacity="0.15" stroke="#9b72cf" stroke-width="1.5"/>
-            <text x="150" y="164" fill="#9b72cf" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Planck</text>
-            <circle cx="350" cy="170" r="16" fill="#5b8cd4" opacity="0.15" stroke="#5b8cd4" stroke-width="1.5"/>
-            <text x="350" y="174" fill="#5b8cd4" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Lorentz</text>
-            <circle cx="550" cy="160" r="16" fill="#4ecca3" opacity="0.15" stroke="#4ecca3" stroke-width="1.5"/>
-            <text x="550" y="164" fill="#4ecca3" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Grossmann</text>
+            <circle cx="150" cy="160" r="16" fill="#6d5172" opacity="0.15" stroke="#6d5172" stroke-width="1.5"/>
+            <text x="150" y="164" fill="#6d5172" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Planck</text>
+            <circle cx="350" cy="170" r="16" fill="#405477" opacity="0.15" stroke="#405477" stroke-width="1.5"/>
+            <text x="350" y="174" fill="#405477" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Lorentz</text>
+            <circle cx="550" cy="160" r="16" fill="#3e6252" opacity="0.15" stroke="#3e6252" stroke-width="1.5"/>
+            <text x="550" y="164" fill="#3e6252" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Grossmann</text>
             <!-- Collaborator/rival nodes -->
-            <circle cx="100" cy="280" r="14" fill="#cf7272" opacity="0.15" stroke="#cf7272" stroke-width="1.5"/>
-            <text x="100" y="284" fill="#cf7272" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Bohr</text>
-            <circle cx="250" cy="280" r="14" fill="#d4a053" opacity="0.15" stroke="#d4a053" stroke-width="1.5"/>
-            <text x="250" y="284" fill="#d4a053" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Minkowski</text>
-            <circle cx="450" cy="280" r="14" fill="#5b8cd4" opacity="0.15" stroke="#5b8cd4" stroke-width="1.5"/>
-            <text x="450" y="284" fill="#5b8cd4" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Hilbert</text>
-            <circle cx="600" cy="280" r="14" fill="#9b72cf" opacity="0.15" stroke="#9b72cf" stroke-width="1.5"/>
-            <text x="600" y="284" fill="#9b72cf" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Bose</text>
+            <circle cx="100" cy="280" r="14" fill="#9b5247" opacity="0.15" stroke="#9b5247" stroke-width="1.5"/>
+            <text x="100" y="284" fill="#9b5247" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Bohr</text>
+            <circle cx="250" cy="280" r="14" fill="#8b6b40" opacity="0.15" stroke="#8b6b40" stroke-width="1.5"/>
+            <text x="250" y="284" fill="#8b6b40" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Minkowski</text>
+            <circle cx="450" cy="280" r="14" fill="#405477" opacity="0.15" stroke="#405477" stroke-width="1.5"/>
+            <text x="450" y="284" fill="#405477" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Hilbert</text>
+            <circle cx="600" cy="280" r="14" fill="#6d5172" opacity="0.15" stroke="#6d5172" stroke-width="1.5"/>
+            <text x="600" y="284" fill="#6d5172" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Bose</text>
             <!-- Relationship labels -->
-            <text x="230" y="105" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono" transform="rotate(-22 230 105)">quantum</text>
-            <text x="350" y="120" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono">electrodynamics</text>
-            <text x="460" y="105" fill="#6a6a7a" font-size="8" font-family="JetBrains Mono" transform="rotate(22 460 105)">tensor math</text>
+            <text x="230" y="105" fill="#8f8676" font-size="8" font-family="JetBrains Mono" transform="rotate(-22 230 105)">quantum</text>
+            <text x="350" y="120" fill="#8f8676" font-size="8" font-family="JetBrains Mono">electrodynamics</text>
+            <text x="460" y="105" fill="#8f8676" font-size="8" font-family="JetBrains Mono" transform="rotate(22 460 105)">tensor math</text>
         </svg>
     </div>
     <p style="text-align: center; font-size: 0.44em !important;">Einstein's work sat at the intersection of multiple intellectual traditions: Planck's quantum hypothesis, Lorentz's electrodynamics, Grossmann's differential geometry, and a spirited rivalry with Niels Bohr over the meaning of quantum mechanics.</p>
@@ -524,44 +525,44 @@
     <div class="diagram-container">
         <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg">
             <!-- Timeline spine -->
-            <line x1="80" y1="30" x2="80" y2="370" stroke="#2a2a3a" stroke-width="2"/>
+            <line x1="80" y1="30" x2="80" y2="370" stroke="#cac3b2" stroke-width="2"/>
             <!-- Events -->
-            <circle cx="80" cy="40" r="5" fill="#d4a053"/>
-            <text x="100" y="40" fill="#d4a053" font-size="12" font-family="JetBrains Mono" font-weight="600">1879</text>
-            <text x="160" y="40" fill="#e8e6e3" font-size="11" font-family="DM Sans" font-weight="600">Born in Ulm, Germany</text>
+            <circle cx="80" cy="40" r="5" fill="#8b6b40"/>
+            <text x="100" y="40" fill="#8b6b40" font-size="12" font-family="JetBrains Mono" font-weight="600">1879</text>
+            <text x="160" y="40" fill="#262019" font-size="11" font-family="DM Sans" font-weight="600">Born in Ulm, Germany</text>
 
-            <circle cx="80" cy="80" r="5" fill="#5b8cd4"/>
-            <text x="100" y="80" fill="#5b8cd4" font-size="12" font-family="JetBrains Mono" font-weight="600">1896</text>
-            <text x="160" y="80" fill="#e8e6e3" font-size="11" font-family="DM Sans">Enrolls at ETH Z&uuml;rich</text>
+            <circle cx="80" cy="80" r="5" fill="#405477"/>
+            <text x="100" y="80" fill="#405477" font-size="12" font-family="JetBrains Mono" font-weight="600">1896</text>
+            <text x="160" y="80" fill="#262019" font-size="11" font-family="DM Sans">Enrolls at ETH Z&uuml;rich</text>
 
-            <circle cx="80" cy="120" r="5" fill="#4ecca3"/>
-            <text x="100" y="120" fill="#4ecca3" font-size="12" font-family="JetBrains Mono" font-weight="600">1902</text>
-            <text x="160" y="120" fill="#e8e6e3" font-size="11" font-family="DM Sans">Begins work at the Swiss Patent Office, Bern</text>
+            <circle cx="80" cy="120" r="5" fill="#3e6252"/>
+            <text x="100" y="120" fill="#3e6252" font-size="12" font-family="JetBrains Mono" font-weight="600">1902</text>
+            <text x="160" y="120" fill="#262019" font-size="11" font-family="DM Sans">Begins work at the Swiss Patent Office, Bern</text>
 
-            <circle cx="80" cy="160" r="7" fill="#d4a053" stroke="#d4a053" stroke-width="2"/>
-            <text x="100" y="160" fill="#d4a053" font-size="12" font-family="JetBrains Mono" font-weight="700">1905</text>
-            <text x="160" y="155" fill="#e8e6e3" font-size="11" font-family="DM Sans" font-weight="700">Annus Mirabilis: four revolutionary papers</text>
-            <text x="160" y="172" fill="#9a9a9a" font-size="10" font-family="DM Sans">Photoelectric effect, Brownian motion, Special Relativity, E=mc&sup2;</text>
+            <circle cx="80" cy="160" r="7" fill="#8b6b40" stroke="#8b6b40" stroke-width="2"/>
+            <text x="100" y="160" fill="#8b6b40" font-size="12" font-family="JetBrains Mono" font-weight="700">1905</text>
+            <text x="160" y="155" fill="#262019" font-size="11" font-family="DM Sans" font-weight="700">Annus Mirabilis: four revolutionary papers</text>
+            <text x="160" y="172" fill="#5c5549" font-size="10" font-family="DM Sans">Photoelectric effect, Brownian motion, Special Relativity, E=mc&sup2;</text>
 
-            <circle cx="80" cy="210" r="7" fill="#d4a053" stroke="#d4a053" stroke-width="2"/>
-            <text x="100" y="210" fill="#d4a053" font-size="12" font-family="JetBrains Mono" font-weight="700">1915</text>
-            <text x="160" y="210" fill="#e8e6e3" font-size="11" font-family="DM Sans" font-weight="700">General Theory of Relativity completed</text>
+            <circle cx="80" cy="210" r="7" fill="#8b6b40" stroke="#8b6b40" stroke-width="2"/>
+            <text x="100" y="210" fill="#8b6b40" font-size="12" font-family="JetBrains Mono" font-weight="700">1915</text>
+            <text x="160" y="210" fill="#262019" font-size="11" font-family="DM Sans" font-weight="700">General Theory of Relativity completed</text>
 
-            <circle cx="80" cy="250" r="5" fill="#9b72cf"/>
-            <text x="100" y="250" fill="#9b72cf" font-size="12" font-family="JetBrains Mono" font-weight="600">1921</text>
-            <text x="160" y="250" fill="#e8e6e3" font-size="11" font-family="DM Sans">Nobel Prize in Physics (photoelectric effect)</text>
+            <circle cx="80" cy="250" r="5" fill="#6d5172"/>
+            <text x="100" y="250" fill="#6d5172" font-size="12" font-family="JetBrains Mono" font-weight="600">1921</text>
+            <text x="160" y="250" fill="#262019" font-size="11" font-family="DM Sans">Nobel Prize in Physics (photoelectric effect)</text>
 
-            <circle cx="80" cy="290" r="5" fill="#cf7272"/>
-            <text x="100" y="290" fill="#cf7272" font-size="12" font-family="JetBrains Mono" font-weight="600">1933</text>
-            <text x="160" y="290" fill="#e8e6e3" font-size="11" font-family="DM Sans">Emigrates to the United States; joins Institute for Advanced Study</text>
+            <circle cx="80" cy="290" r="5" fill="#9b5247"/>
+            <text x="100" y="290" fill="#9b5247" font-size="12" font-family="JetBrains Mono" font-weight="600">1933</text>
+            <text x="160" y="290" fill="#262019" font-size="11" font-family="DM Sans">Emigrates to the United States; joins Institute for Advanced Study</text>
 
-            <circle cx="80" cy="330" r="5" fill="#5b8cd4"/>
-            <text x="100" y="330" fill="#5b8cd4" font-size="12" font-family="JetBrains Mono" font-weight="600">1935</text>
-            <text x="160" y="330" fill="#e8e6e3" font-size="11" font-family="DM Sans">EPR paradox paper challenges quantum mechanics</text>
+            <circle cx="80" cy="330" r="5" fill="#405477"/>
+            <text x="100" y="330" fill="#405477" font-size="12" font-family="JetBrains Mono" font-weight="600">1935</text>
+            <text x="160" y="330" fill="#262019" font-size="11" font-family="DM Sans">EPR paradox paper challenges quantum mechanics</text>
 
-            <circle cx="80" cy="365" r="5" fill="#6a6a7a"/>
-            <text x="100" y="365" fill="#6a6a7a" font-size="12" font-family="JetBrains Mono" font-weight="600">1955</text>
-            <text x="160" y="365" fill="#e8e6e3" font-size="11" font-family="DM Sans">Dies in Princeton, New Jersey, aged 76</text>
+            <circle cx="80" cy="365" r="5" fill="#8f8676"/>
+            <text x="100" y="365" fill="#8f8676" font-size="12" font-family="JetBrains Mono" font-weight="600">1955</text>
+            <text x="160" y="365" fill="#262019" font-size="11" font-family="DM Sans">Dies in Princeton, New Jersey, aged 76</text>
         </svg>
     </div>
 </section>
@@ -592,14 +593,14 @@
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh;">
         <div class="mandala-container" style="width: 100px; height: 100px; margin-bottom: 1em;">
             <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.3"/>
-                <circle cx="50" cy="50" r="28" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.4"/>
-                <circle cx="50" cy="50" r="16" fill="none" stroke="#d4a053" stroke-width="0.5" opacity="0.5"/>
-                <circle cx="50" cy="50" r="3" fill="#d4a053" opacity="0.8"/>
-                <line x1="50" y1="10" x2="50" y2="90" stroke="#d4a053" stroke-width="0.3" opacity="0.3"/>
-                <line x1="10" y1="50" x2="90" y2="50" stroke="#d4a053" stroke-width="0.3" opacity="0.3"/>
-                <line x1="21" y1="21" x2="79" y2="79" stroke="#d4a053" stroke-width="0.3" opacity="0.3"/>
-                <line x1="79" y1="21" x2="21" y2="79" stroke="#d4a053" stroke-width="0.3" opacity="0.3"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.3"/>
+                <circle cx="50" cy="50" r="28" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.4"/>
+                <circle cx="50" cy="50" r="16" fill="none" stroke="#8b6b40" stroke-width="0.5" opacity="0.5"/>
+                <circle cx="50" cy="50" r="3" fill="#8b6b40" opacity="0.8"/>
+                <line x1="50" y1="10" x2="50" y2="90" stroke="#8b6b40" stroke-width="0.3" opacity="0.3"/>
+                <line x1="10" y1="50" x2="90" y2="50" stroke="#8b6b40" stroke-width="0.3" opacity="0.3"/>
+                <line x1="21" y1="21" x2="79" y2="79" stroke="#8b6b40" stroke-width="0.3" opacity="0.3"/>
+                <line x1="79" y1="21" x2="21" y2="79" stroke="#8b6b40" stroke-width="0.3" opacity="0.3"/>
             </svg>
         </div>
         <div class="quote-box" style="max-width: 70%; border-left-width: 4px;">

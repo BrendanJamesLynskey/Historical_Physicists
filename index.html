@@ -8,21 +8,21 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #161622;
-            --accent-amber: #d4a053;
-            --accent-green: #4ecca3;
-            --accent-purple: #9b72cf;
-            --accent-rose: #cf7272;
-            --accent-blue: #5b8cd4;
-            --accent-teal: #3ec9b0;
-            --accent-gold: #e8b84b;
-            --accent-copper: #c97b4b;
-            --text-primary: #e8e6e3;
-            --text-secondary: #9a9a9a;
-            --text-muted: #6a6a7a;
-            --border-subtle: #2a2a3a;
+            --bg-primary: #f4f1e9;
+            --bg-secondary: #eae6db;
+            --bg-card: #e6e2d5;
+            --accent-amber: #8b6b40;
+            --accent-green: #3e6252;
+            --accent-purple: #6d5172;
+            --accent-rose: #9b5247;
+            --accent-blue: #405477;
+            --accent-teal: #406457;
+            --accent-gold: #7a591d;
+            --accent-copper: #a27753;
+            --text-primary: #262019;
+            --text-secondary: #5c5549;
+            --text-muted: #8f8676;
+            --border-subtle: #cac3b2;
         }
 
         html { scroll-behavior: smooth; }
@@ -47,7 +47,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(91,140,212,0.08) 0%, transparent 70%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(64,84,119,0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -145,7 +145,7 @@
 
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 30px rgba(253,252,249,0.4);
         }
 
         .card .accent-bar {
@@ -218,7 +218,7 @@
         .card .launch-btn:hover {
             border-color: var(--accent-blue);
             color: var(--accent-blue);
-            background: rgba(91,140,212,0.05);
+            background: rgba(64,84,119,0.05);
         }
 
         /* ── Color classes ── */
@@ -301,16 +301,16 @@
 <header class="hero">
     <svg class="hero-motif" viewBox="0 0 200 200">
         <!-- Atom / orbital motif -->
-        <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#5b8cd4" stroke-width="1.2" opacity="0.5"/>
-        <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#4ecca3" stroke-width="1.2" opacity="0.5" transform="rotate(60,100,100)"/>
-        <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#cf7272" stroke-width="1.2" opacity="0.5" transform="rotate(120,100,100)"/>
-        <circle cx="100" cy="100" r="6" fill="#d4a053" opacity="0.8"/>
+        <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#405477" stroke-width="1.2" opacity="0.5"/>
+        <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#3e6252" stroke-width="1.2" opacity="0.5" transform="rotate(60,100,100)"/>
+        <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#9b5247" stroke-width="1.2" opacity="0.5" transform="rotate(120,100,100)"/>
+        <circle cx="100" cy="100" r="6" fill="#8b6b40" opacity="0.8"/>
         <!-- Electron dots -->
-        <circle cx="180" cy="100" r="3" fill="#5b8cd4" opacity="0.8"/>
-        <circle cx="60" cy="31" r="3" fill="#4ecca3" opacity="0.8"/>
-        <circle cx="60" cy="169" r="3" fill="#cf7272" opacity="0.8"/>
+        <circle cx="180" cy="100" r="3" fill="#405477" opacity="0.8"/>
+        <circle cx="60" cy="31" r="3" fill="#3e6252" opacity="0.8"/>
+        <circle cx="60" cy="169" r="3" fill="#9b5247" opacity="0.8"/>
         <!-- Outer ring -->
-        <circle cx="100" cy="100" r="92" fill="none" stroke="#d4a053" stroke-width="0.6" opacity="0.3"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="#8b6b40" stroke-width="0.6" opacity="0.3"/>
     </svg>
     <h1>Historical Physicists</h1>
     <p class="subtitle">Interactive Presentations</p>
@@ -445,133 +445,133 @@
         <div class="influence-map-wrapper">
             <svg viewBox="0 0 1200 500">
                 <!-- Era bands -->
-                <rect x="0" y="0" width="280" height="500" fill="#12121a" opacity="0.5"/>
-                <rect x="280" y="0" width="250" height="500" fill="#0a0a0f" opacity="0.5"/>
-                <rect x="530" y="0" width="300" height="500" fill="#12121a" opacity="0.5"/>
-                <rect x="830" y="0" width="370" height="500" fill="#0a0a0f" opacity="0.5"/>
+                <rect x="0" y="0" width="280" height="500" fill="#eae6db" opacity="0.5"/>
+                <rect x="280" y="0" width="250" height="500" fill="#f4f1e9" opacity="0.5"/>
+                <rect x="530" y="0" width="300" height="500" fill="#eae6db" opacity="0.5"/>
+                <rect x="830" y="0" width="370" height="500" fill="#f4f1e9" opacity="0.5"/>
 
-                <text x="140" y="25" fill="#6a6a7a" font-size="11" text-anchor="middle" letter-spacing="2">SCIENTIFIC REVOLUTION</text>
-                <text x="405" y="25" fill="#6a6a7a" font-size="11" text-anchor="middle" letter-spacing="2">19TH CENTURY</text>
-                <text x="680" y="25" fill="#6a6a7a" font-size="11" text-anchor="middle" letter-spacing="2">TURN OF CENTURY</text>
-                <text x="1015" y="25" fill="#6a6a7a" font-size="11" text-anchor="middle" letter-spacing="2">QUANTUM &amp; MODERN</text>
+                <text x="140" y="25" fill="#8f8676" font-size="11" text-anchor="middle" letter-spacing="2">SCIENTIFIC REVOLUTION</text>
+                <text x="405" y="25" fill="#8f8676" font-size="11" text-anchor="middle" letter-spacing="2">19TH CENTURY</text>
+                <text x="680" y="25" fill="#8f8676" font-size="11" text-anchor="middle" letter-spacing="2">TURN OF CENTURY</text>
+                <text x="1015" y="25" fill="#8f8676" font-size="11" text-anchor="middle" letter-spacing="2">QUANTUM &amp; MODERN</text>
 
                 <!-- Nodes: Scientific Revolution -->
-                <circle cx="80" cy="120" r="28" fill="none" stroke="#e8b84b" stroke-width="1.8"/>
-                <text x="80" y="117" fill="#e8b84b" font-size="10" text-anchor="middle" font-weight="600">Galileo</text>
-                <text x="80" y="130" fill="#6a6a7a" font-size="7" text-anchor="middle">1564-1642</text>
+                <circle cx="80" cy="120" r="28" fill="none" stroke="#7a591d" stroke-width="1.8"/>
+                <text x="80" y="117" fill="#7a591d" font-size="10" text-anchor="middle" font-weight="600">Galileo</text>
+                <text x="80" y="130" fill="#8f8676" font-size="7" text-anchor="middle">1564-1642</text>
 
-                <circle cx="80" cy="260" r="28" fill="none" stroke="#c97b4b" stroke-width="1.8"/>
-                <text x="80" y="257" fill="#c97b4b" font-size="10" text-anchor="middle" font-weight="600">Kepler</text>
-                <text x="80" y="270" fill="#6a6a7a" font-size="7" text-anchor="middle">1571-1630</text>
+                <circle cx="80" cy="260" r="28" fill="none" stroke="#a27753" stroke-width="1.8"/>
+                <text x="80" y="257" fill="#a27753" font-size="10" text-anchor="middle" font-weight="600">Kepler</text>
+                <text x="80" y="270" fill="#8f8676" font-size="7" text-anchor="middle">1571-1630</text>
 
-                <circle cx="180" cy="180" r="28" fill="none" stroke="#3ec9b0" stroke-width="1.8"/>
-                <text x="180" y="177" fill="#3ec9b0" font-size="10" text-anchor="middle" font-weight="600">Huygens</text>
-                <text x="180" y="190" fill="#6a6a7a" font-size="7" text-anchor="middle">1629-1695</text>
+                <circle cx="180" cy="180" r="28" fill="none" stroke="#406457" stroke-width="1.8"/>
+                <text x="180" y="177" fill="#406457" font-size="10" text-anchor="middle" font-weight="600">Huygens</text>
+                <text x="180" y="190" fill="#8f8676" font-size="7" text-anchor="middle">1629-1695</text>
 
-                <circle cx="220" cy="330" r="32" fill="none" stroke="#d4a053" stroke-width="2.2"/>
-                <text x="220" y="327" fill="#d4a053" font-size="11" text-anchor="middle" font-weight="700">Newton</text>
-                <text x="220" y="342" fill="#6a6a7a" font-size="7" text-anchor="middle">1642-1727</text>
+                <circle cx="220" cy="330" r="32" fill="none" stroke="#8b6b40" stroke-width="2.2"/>
+                <text x="220" y="327" fill="#8b6b40" font-size="11" text-anchor="middle" font-weight="700">Newton</text>
+                <text x="220" y="342" fill="#8f8676" font-size="7" text-anchor="middle">1642-1727</text>
 
                 <!-- Nodes: 19th Century -->
-                <circle cx="360" cy="150" r="28" fill="none" stroke="#4ecca3" stroke-width="1.8"/>
-                <text x="360" y="147" fill="#4ecca3" font-size="10" text-anchor="middle" font-weight="600">Faraday</text>
-                <text x="360" y="160" fill="#6a6a7a" font-size="7" text-anchor="middle">1791-1867</text>
+                <circle cx="360" cy="150" r="28" fill="none" stroke="#3e6252" stroke-width="1.8"/>
+                <text x="360" y="147" fill="#3e6252" font-size="10" text-anchor="middle" font-weight="600">Faraday</text>
+                <text x="360" y="160" fill="#8f8676" font-size="7" text-anchor="middle">1791-1867</text>
 
-                <circle cx="440" cy="280" r="30" fill="none" stroke="#5b8cd4" stroke-width="2"/>
-                <text x="440" y="277" fill="#5b8cd4" font-size="10" text-anchor="middle" font-weight="600">Maxwell</text>
-                <text x="440" y="290" fill="#6a6a7a" font-size="7" text-anchor="middle">1831-1879</text>
+                <circle cx="440" cy="280" r="30" fill="none" stroke="#405477" stroke-width="2"/>
+                <text x="440" y="277" fill="#405477" font-size="10" text-anchor="middle" font-weight="600">Maxwell</text>
+                <text x="440" y="290" fill="#8f8676" font-size="7" text-anchor="middle">1831-1879</text>
 
-                <circle cx="380" cy="400" r="28" fill="none" stroke="#cf7272" stroke-width="1.8"/>
-                <text x="380" y="397" fill="#cf7272" font-size="10" text-anchor="middle" font-weight="600">Boltzmann</text>
-                <text x="380" y="410" fill="#6a6a7a" font-size="7" text-anchor="middle">1844-1906</text>
+                <circle cx="380" cy="400" r="28" fill="none" stroke="#9b5247" stroke-width="1.8"/>
+                <text x="380" y="397" fill="#9b5247" font-size="10" text-anchor="middle" font-weight="600">Boltzmann</text>
+                <text x="380" y="410" fill="#8f8676" font-size="7" text-anchor="middle">1844-1906</text>
 
                 <!-- Nodes: Turn of Century -->
-                <circle cx="580" cy="100" r="28" fill="none" stroke="#9b72cf" stroke-width="1.8"/>
-                <text x="580" y="97" fill="#9b72cf" font-size="10" text-anchor="middle" font-weight="600">Curie</text>
-                <text x="580" y="110" fill="#6a6a7a" font-size="7" text-anchor="middle">1867-1934</text>
+                <circle cx="580" cy="100" r="28" fill="none" stroke="#6d5172" stroke-width="1.8"/>
+                <text x="580" y="97" fill="#6d5172" font-size="10" text-anchor="middle" font-weight="600">Curie</text>
+                <text x="580" y="110" fill="#8f8676" font-size="7" text-anchor="middle">1867-1934</text>
 
-                <circle cx="600" cy="220" r="28" fill="none" stroke="#e8b84b" stroke-width="1.8"/>
-                <text x="600" y="217" fill="#e8b84b" font-size="10" text-anchor="middle" font-weight="600">Planck</text>
-                <text x="600" y="230" fill="#6a6a7a" font-size="7" text-anchor="middle">1858-1947</text>
+                <circle cx="600" cy="220" r="28" fill="none" stroke="#7a591d" stroke-width="1.8"/>
+                <text x="600" y="217" fill="#7a591d" font-size="10" text-anchor="middle" font-weight="600">Planck</text>
+                <text x="600" y="230" fill="#8f8676" font-size="7" text-anchor="middle">1858-1947</text>
 
-                <circle cx="640" cy="360" r="28" fill="none" stroke="#c97b4b" stroke-width="1.8"/>
-                <text x="640" y="357" fill="#c97b4b" font-size="10" text-anchor="middle" font-weight="600">Rutherford</text>
-                <text x="640" y="370" fill="#6a6a7a" font-size="7" text-anchor="middle">1871-1937</text>
+                <circle cx="640" cy="360" r="28" fill="none" stroke="#a27753" stroke-width="1.8"/>
+                <text x="640" y="357" fill="#a27753" font-size="10" text-anchor="middle" font-weight="600">Rutherford</text>
+                <text x="640" y="370" fill="#8f8676" font-size="7" text-anchor="middle">1871-1937</text>
 
-                <circle cx="730" cy="160" r="32" fill="none" stroke="#d4a053" stroke-width="2.2"/>
-                <text x="730" y="157" fill="#d4a053" font-size="11" text-anchor="middle" font-weight="700">Einstein</text>
-                <text x="730" y="172" fill="#6a6a7a" font-size="7" text-anchor="middle">1879-1955</text>
+                <circle cx="730" cy="160" r="32" fill="none" stroke="#8b6b40" stroke-width="2.2"/>
+                <text x="730" y="157" fill="#8b6b40" font-size="11" text-anchor="middle" font-weight="700">Einstein</text>
+                <text x="730" y="172" fill="#8f8676" font-size="7" text-anchor="middle">1879-1955</text>
 
-                <circle cx="760" cy="300" r="28" fill="none" stroke="#5b8cd4" stroke-width="1.8"/>
-                <text x="760" y="297" fill="#5b8cd4" font-size="10" text-anchor="middle" font-weight="600">Bohr</text>
-                <text x="760" y="310" fill="#6a6a7a" font-size="7" text-anchor="middle">1885-1962</text>
+                <circle cx="760" cy="300" r="28" fill="none" stroke="#405477" stroke-width="1.8"/>
+                <text x="760" y="297" fill="#405477" font-size="10" text-anchor="middle" font-weight="600">Bohr</text>
+                <text x="760" y="310" fill="#8f8676" font-size="7" text-anchor="middle">1885-1962</text>
 
                 <!-- Nodes: Quantum & Modern -->
-                <circle cx="880" cy="100" r="26" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
-                <text x="880" y="97" fill="#4ecca3" font-size="9" text-anchor="middle" font-weight="600">Schr&ouml;dinger</text>
-                <text x="880" y="110" fill="#6a6a7a" font-size="7" text-anchor="middle">1887-1961</text>
+                <circle cx="880" cy="100" r="26" fill="none" stroke="#3e6252" stroke-width="1.5"/>
+                <text x="880" y="97" fill="#3e6252" font-size="9" text-anchor="middle" font-weight="600">Schr&ouml;dinger</text>
+                <text x="880" y="110" fill="#8f8676" font-size="7" text-anchor="middle">1887-1961</text>
 
-                <circle cx="890" cy="210" r="26" fill="none" stroke="#cf7272" stroke-width="1.5"/>
-                <text x="890" y="207" fill="#cf7272" font-size="9" text-anchor="middle" font-weight="600">Heisenberg</text>
-                <text x="890" y="220" fill="#6a6a7a" font-size="7" text-anchor="middle">1901-1976</text>
+                <circle cx="890" cy="210" r="26" fill="none" stroke="#9b5247" stroke-width="1.5"/>
+                <text x="890" y="207" fill="#9b5247" font-size="9" text-anchor="middle" font-weight="600">Heisenberg</text>
+                <text x="890" y="220" fill="#8f8676" font-size="7" text-anchor="middle">1901-1976</text>
 
-                <circle cx="920" cy="320" r="26" fill="none" stroke="#9b72cf" stroke-width="1.5"/>
-                <text x="920" y="317" fill="#9b72cf" font-size="9" text-anchor="middle" font-weight="600">Dirac</text>
-                <text x="920" y="330" fill="#6a6a7a" font-size="7" text-anchor="middle">1902-1984</text>
+                <circle cx="920" cy="320" r="26" fill="none" stroke="#6d5172" stroke-width="1.5"/>
+                <text x="920" y="317" fill="#6d5172" font-size="9" text-anchor="middle" font-weight="600">Dirac</text>
+                <text x="920" y="330" fill="#8f8676" font-size="7" text-anchor="middle">1902-1984</text>
 
-                <circle cx="960" cy="430" r="26" fill="none" stroke="#c97b4b" stroke-width="1.5"/>
-                <text x="960" y="427" fill="#c97b4b" font-size="9" text-anchor="middle" font-weight="600">Fermi</text>
-                <text x="960" y="440" fill="#6a6a7a" font-size="7" text-anchor="middle">1901-1954</text>
+                <circle cx="960" cy="430" r="26" fill="none" stroke="#a27753" stroke-width="1.5"/>
+                <text x="960" y="427" fill="#a27753" font-size="9" text-anchor="middle" font-weight="600">Fermi</text>
+                <text x="960" y="440" fill="#8f8676" font-size="7" text-anchor="middle">1901-1954</text>
 
-                <circle cx="1060" cy="160" r="28" fill="none" stroke="#e8b84b" stroke-width="1.8"/>
-                <text x="1060" y="157" fill="#e8b84b" font-size="10" text-anchor="middle" font-weight="600">Feynman</text>
-                <text x="1060" y="170" fill="#6a6a7a" font-size="7" text-anchor="middle">1918-1988</text>
+                <circle cx="1060" cy="160" r="28" fill="none" stroke="#7a591d" stroke-width="1.8"/>
+                <text x="1060" y="157" fill="#7a591d" font-size="10" text-anchor="middle" font-weight="600">Feynman</text>
+                <text x="1060" y="170" fill="#8f8676" font-size="7" text-anchor="middle">1918-1988</text>
 
-                <circle cx="1080" cy="350" r="28" fill="none" stroke="#3ec9b0" stroke-width="1.8"/>
-                <text x="1080" y="347" fill="#3ec9b0" font-size="10" text-anchor="middle" font-weight="600">Hawking</text>
-                <text x="1080" y="360" fill="#6a6a7a" font-size="7" text-anchor="middle">1942-2018</text>
+                <circle cx="1080" cy="350" r="28" fill="none" stroke="#406457" stroke-width="1.8"/>
+                <text x="1080" y="347" fill="#406457" font-size="10" text-anchor="middle" font-weight="600">Hawking</text>
+                <text x="1080" y="360" fill="#8f8676" font-size="7" text-anchor="middle">1942-2018</text>
 
                 <!-- Influence lines -->
                 <!-- Galileo → Newton -->
-                <line x1="105" y1="135" x2="195" y2="310" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="105" y1="135" x2="195" y2="310" stroke="#7a591d" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Kepler → Newton -->
-                <line x1="105" y1="275" x2="195" y2="320" stroke="#c97b4b" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="105" y1="275" x2="195" y2="320" stroke="#a27753" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Huygens → Newton -->
-                <line x1="200" y1="200" x2="210" y2="305" stroke="#3ec9b0" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="200" y1="200" x2="210" y2="305" stroke="#406457" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Newton → Faraday (indirect) -->
-                <line x1="248" y1="325" x2="335" y2="155" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+                <line x1="248" y1="325" x2="335" y2="155" stroke="#8b6b40" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
                 <!-- Faraday → Maxwell -->
-                <line x1="380" y1="170" x2="420" y2="260" stroke="#4ecca3" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+                <line x1="380" y1="170" x2="420" y2="260" stroke="#3e6252" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
                 <!-- Maxwell → Boltzmann -->
-                <line x1="435" y1="308" x2="390" y2="378" stroke="#5b8cd4" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="435" y1="308" x2="390" y2="378" stroke="#405477" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Maxwell → Einstein -->
-                <line x1="465" y1="270" x2="702" y2="165" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="465" y1="270" x2="702" y2="165" stroke="#405477" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Boltzmann → Planck -->
-                <line x1="405" y1="390" x2="578" y2="235" stroke="#cf7272" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="405" y1="390" x2="578" y2="235" stroke="#9b5247" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Planck → Einstein -->
-                <line x1="625" y1="215" x2="705" y2="165" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="625" y1="215" x2="705" y2="165" stroke="#7a591d" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Planck → Bohr -->
-                <line x1="625" y1="235" x2="738" y2="285" stroke="#e8b84b" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="625" y1="235" x2="738" y2="285" stroke="#7a591d" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Rutherford → Bohr -->
-                <line x1="660" y1="345" x2="748" y2="315" stroke="#c97b4b" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+                <line x1="660" y1="345" x2="748" y2="315" stroke="#a27753" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
                 <!-- Einstein → Bohr (debate) -->
-                <line x1="735" y1="190" x2="755" y2="275" stroke="#d4a053" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.5"/>
+                <line x1="735" y1="190" x2="755" y2="275" stroke="#8b6b40" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.5"/>
                 <!-- Einstein → Schrödinger -->
-                <line x1="755" y1="148" x2="860" y2="105" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="755" y1="148" x2="860" y2="105" stroke="#8b6b40" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Bohr → Heisenberg -->
-                <line x1="782" y1="295" x2="868" y2="215" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+                <line x1="782" y1="295" x2="868" y2="215" stroke="#405477" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
                 <!-- Bohr → Dirac -->
-                <line x1="782" y1="315" x2="898" y2="318" stroke="#5b8cd4" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="782" y1="315" x2="898" y2="318" stroke="#405477" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Dirac → Feynman -->
-                <line x1="942" y1="310" x2="1040" y2="172" stroke="#9b72cf" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
+                <line x1="942" y1="310" x2="1040" y2="172" stroke="#6d5172" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.4"/>
                 <!-- Fermi → Feynman -->
-                <line x1="980" y1="418" x2="1048" y2="178" stroke="#c97b4b" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+                <line x1="980" y1="418" x2="1048" y2="178" stroke="#a27753" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
                 <!-- Einstein → Hawking -->
-                <line x1="750" y1="185" x2="1058" y2="338" stroke="#d4a053" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+                <line x1="750" y1="185" x2="1058" y2="338" stroke="#8b6b40" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
                 <!-- Curie → Rutherford -->
-                <line x1="600" y1="125" x2="630" y2="338" stroke="#9b72cf" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+                <line x1="600" y1="125" x2="630" y2="338" stroke="#6d5172" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
                 <!-- Heisenberg → Fermi -->
-                <line x1="905" y1="232" x2="948" y2="410" stroke="#cf7272" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+                <line x1="905" y1="232" x2="948" y2="410" stroke="#9b5247" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
             </svg>
         </div>
     </div>

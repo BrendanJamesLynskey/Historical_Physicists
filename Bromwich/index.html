@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thomas John l'Anson Bromwich - The Contour Integral Master</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622; --accent: #9b72cf; --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf; --accent-rose: #cf7272; --accent-blue: #5b8cd4; --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a; --border-subtle: #2a2a3a; }
+        :root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #6d5172; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
         .reveal-viewport { background: var(--bg-primary); }
         .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
         .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
@@ -21,7 +21,7 @@
         .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
         .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
         .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-        .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(255,255,255,0.02); border-radius: 0 6px 6px 0; }
+        .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
         .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
         .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
         .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -38,8 +38,8 @@
         .two-col .diagram-container { max-width: 100%; margin: 0; }
         .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
         .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-        .tag { display: inline-block; background: rgba(155,114,207,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
-        .tag.amber { background: rgba(212,160,83,0.12); color: var(--accent-amber); } .tag.green { background: rgba(78,204,163,0.12); color: var(--accent-green); } .tag.rose { background: rgba(207,114,114,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(91,140,212,0.12); color: var(--accent-blue); }
+        .tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+        .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
         .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
         .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
         .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
@@ -57,6 +57,7 @@
         .fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
         .fullscreen-btn:hover { border-color: var(--accent); color: var(--text-primary); }
     </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
     <div class="reveal">
@@ -66,14 +67,14 @@
             <section>
                 <div class="mandala-container">
                     <svg viewBox="0 0 140 140">
-                        <circle cx="70" cy="70" r="60" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.3"/>
-                        <circle cx="70" cy="70" r="45" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.25"/>
-                        <circle cx="70" cy="70" r="30" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.2"/>
-                        <path d="M70 10 L70 130 M10 70 L130 70 M25 25 L115 115 M115 25 L25 115" stroke="#9b72cf" stroke-width="0.3" opacity="0.15"/>
+                        <circle cx="70" cy="70" r="60" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.3"/>
+                        <circle cx="70" cy="70" r="45" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.25"/>
+                        <circle cx="70" cy="70" r="30" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.2"/>
+                        <path d="M70 10 L70 130 M10 70 L130 70 M25 25 L115 115 M115 25 L25 115" stroke="#6d5172" stroke-width="0.3" opacity="0.15"/>
                         <!-- Contour integral path suggestion -->
-                        <path d="M40 70 Q40 40 70 40 Q100 40 100 70 Q100 100 70 100 Q40 100 40 70" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.3"/>
-                        <circle cx="55" cy="60" r="2" fill="#9b72cf" opacity="0.4"/>
-                        <circle cx="85" cy="80" r="2" fill="#9b72cf" opacity="0.4"/>
+                        <path d="M40 70 Q40 40 70 40 Q100 40 100 70 Q100 100 70 100 Q40 100 40 70" fill="none" stroke="#6d5172" stroke-width="0.8" opacity="0.3"/>
+                        <circle cx="55" cy="60" r="2" fill="#6d5172" opacity="0.4"/>
+                        <circle cx="85" cy="80" r="2" fill="#6d5172" opacity="0.4"/>
                     </svg>
                 </div>
                 <h1>Thomas John l'Anson Bromwich</h1>
@@ -188,39 +189,39 @@
                     <div>
                         <div class="diagram-container">
                             <svg viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg">
-                                <text x="160" y="20" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">Bromwich Contour in the s-plane</text>
+                                <text x="160" y="20" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="11">Bromwich Contour in the s-plane</text>
                                 <!-- Axes -->
-                                <line x1="160" y1="40" x2="160" y2="310" stroke="#2a2a3a" stroke-width="1"/>
-                                <line x1="30" y1="175" x2="290" y2="175" stroke="#2a2a3a" stroke-width="1"/>
+                                <line x1="160" y1="40" x2="160" y2="310" stroke="#cac3b2" stroke-width="1"/>
+                                <line x1="30" y1="175" x2="290" y2="175" stroke="#cac3b2" stroke-width="1"/>
                                 <!-- Axis labels -->
-                                <text x="285" y="168" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">Re(s)</text>
-                                <text x="165" y="48" fill="#6a6a7a" font-family="JetBrains Mono" font-size="9">Im(s)</text>
+                                <text x="285" y="168" fill="#8f8676" font-family="JetBrains Mono" font-size="9">Re(s)</text>
+                                <text x="165" y="48" fill="#8f8676" font-family="JetBrains Mono" font-size="9">Im(s)</text>
                                 <!-- Poles (singularities) -->
-                                <text x="90" y="130" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="14">&times;</text>
-                                <text x="75" y="118" fill="#cf7272" font-family="DM Sans" font-size="7">pole</text>
-                                <text x="120" y="200" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="14">&times;</text>
-                                <text x="105" y="215" fill="#cf7272" font-family="DM Sans" font-size="7">pole</text>
-                                <text x="100" y="165" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="14">&times;</text>
+                                <text x="90" y="130" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono" font-size="14">&times;</text>
+                                <text x="75" y="118" fill="#9b5247" font-family="DM Sans" font-size="7">pole</text>
+                                <text x="120" y="200" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono" font-size="14">&times;</text>
+                                <text x="105" y="215" fill="#9b5247" font-family="DM Sans" font-size="7">pole</text>
+                                <text x="100" y="165" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono" font-size="14">&times;</text>
                                 <!-- Bromwich contour (vertical line) -->
-                                <line x1="210" y1="50" x2="210" y2="300" stroke="#9b72cf" stroke-width="2.5" opacity="0.8"/>
+                                <line x1="210" y1="50" x2="210" y2="300" stroke="#6d5172" stroke-width="2.5" opacity="0.8"/>
                                 <!-- Arrows on contour -->
-                                <polygon points="210,80 206,95 214,95" fill="#9b72cf" opacity="0.8"/>
-                                <polygon points="210,240 206,255 214,255" fill="#9b72cf" opacity="0.6"/>
+                                <polygon points="210,80 206,95 214,95" fill="#6d5172" opacity="0.8"/>
+                                <polygon points="210,240 206,255 214,255" fill="#6d5172" opacity="0.6"/>
                                 <!-- Label for contour -->
-                                <text x="232" y="170" fill="#9b72cf" font-family="JetBrains Mono" font-size="9">Re(s) = c</text>
+                                <text x="232" y="170" fill="#6d5172" font-family="JetBrains Mono" font-size="9">Re(s) = c</text>
                                 <!-- c marker -->
-                                <circle cx="210" cy="175" r="3" fill="#9b72cf"/>
-                                <text x="210" y="190" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">c</text>
+                                <circle cx="210" cy="175" r="3" fill="#6d5172"/>
+                                <text x="210" y="190" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="8">c</text>
                                 <!-- Shaded region left of contour -->
-                                <rect x="30" y="50" width="180" height="250" fill="rgba(155,114,207,0.04)" rx="0"/>
-                                <text x="80" y="265" fill="#6a6a7a" font-family="DM Sans" font-size="8">All poles lie in</text>
-                                <text x="80" y="278" fill="#6a6a7a" font-family="DM Sans" font-size="8">this half-plane</text>
+                                <rect x="30" y="50" width="180" height="250" fill="rgba(109,81,114,0.04)" rx="0"/>
+                                <text x="80" y="265" fill="#8f8676" font-family="DM Sans" font-size="8">All poles lie in</text>
+                                <text x="80" y="278" fill="#8f8676" font-family="DM Sans" font-size="8">this half-plane</text>
                                 <!-- Direction arrows -->
-                                <text x="210" y="45" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="8">c + i&infin;</text>
-                                <text x="210" y="318" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="8">c - i&infin;</text>
+                                <text x="210" y="45" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="8">c + i&infin;</text>
+                                <text x="210" y="318" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="8">c - i&infin;</text>
                                 <!-- Formula box -->
-                                <rect x="30" y="325" width="260" height="28" rx="5" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="0.5"/>
-                                <text x="160" y="344" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10">f(t) = (1/2&pi;i) &int; F(s)e&#x02E2;&#x1D57; ds</text>
+                                <rect x="30" y="325" width="260" height="28" rx="5" fill="rgba(109,81,114,0.08)" stroke="#6d5172" stroke-width="0.5"/>
+                                <text x="160" y="344" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="10">f(t) = (1/2&pi;i) &int; F(s)e&#x02E2;&#x1D57; ds</text>
                             </svg>
                         </div>
                     </div>
@@ -272,51 +273,51 @@
                     <div>
                         <div class="diagram-container">
                             <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
-                                <text x="150" y="20" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="11">Laplace Transform Pair</text>
+                                <text x="150" y="20" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="11">Laplace Transform Pair</text>
                                 <!-- Time domain box -->
-                                <rect x="20" y="40" width="120" height="100" rx="8" fill="rgba(78,204,163,0.06)" stroke="#4ecca3" stroke-width="1"/>
-                                <text x="80" y="60" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700">Time Domain</text>
-                                <text x="80" y="80" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono" font-size="11">f(t)</text>
+                                <rect x="20" y="40" width="120" height="100" rx="8" fill="rgba(62,98,82,0.06)" stroke="#3e6252" stroke-width="1"/>
+                                <text x="80" y="60" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="10" font-weight="700">Time Domain</text>
+                                <text x="80" y="80" text-anchor="middle" fill="#262019" font-family="JetBrains Mono" font-size="11">f(t)</text>
                                 <!-- Simple waveform sketch -->
-                                <path d="M35 115 Q50 95 65 110 Q80 125 95 100 Q110 80 125 110" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+                                <path d="M35 115 Q50 95 65 110 Q80 125 95 100 Q110 80 125 110" fill="none" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
                                 <!-- s-domain box -->
-                                <rect x="160" y="40" width="120" height="100" rx="8" fill="rgba(155,114,207,0.06)" stroke="#9b72cf" stroke-width="1"/>
-                                <text x="220" y="60" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="700">s-Domain</text>
-                                <text x="220" y="80" text-anchor="middle" fill="#e8e6e3" font-family="JetBrains Mono" font-size="11">F(s)</text>
+                                <rect x="160" y="40" width="120" height="100" rx="8" fill="rgba(109,81,114,0.06)" stroke="#6d5172" stroke-width="1"/>
+                                <text x="220" y="60" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="10" font-weight="700">s-Domain</text>
+                                <text x="220" y="80" text-anchor="middle" fill="#262019" font-family="JetBrains Mono" font-size="11">F(s)</text>
                                 <!-- Pole-zero sketch -->
-                                <text x="190" y="115" fill="#cf7272" font-family="JetBrains Mono" font-size="12">&times;</text>
-                                <text x="215" y="105" fill="#cf7272" font-family="JetBrains Mono" font-size="12">&times;</text>
-                                <circle cx="245" cy="110" r="4" fill="none" stroke="#4ecca3" stroke-width="1"/>
+                                <text x="190" y="115" fill="#9b5247" font-family="JetBrains Mono" font-size="12">&times;</text>
+                                <text x="215" y="105" fill="#9b5247" font-family="JetBrains Mono" font-size="12">&times;</text>
+                                <circle cx="245" cy="110" r="4" fill="none" stroke="#3e6252" stroke-width="1"/>
                                 <!-- Forward transform arrow -->
-                                <line x1="140" y1="70" x2="158" y2="70" stroke="#d4a053" stroke-width="1.5" marker-end="url(#arrBr1)"/>
-                                <text x="150" y="63" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="7">L</text>
+                                <line x1="140" y1="70" x2="158" y2="70" stroke="#8b6b40" stroke-width="1.5" marker-end="url(#arrBr1)"/>
+                                <text x="150" y="63" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="7">L</text>
                                 <!-- Inverse transform arrow -->
-                                <line x1="158" y1="90" x2="140" y2="90" stroke="#9b72cf" stroke-width="1.5" marker-end="url(#arrBr2)"/>
-                                <text x="150" y="100" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="7">L&sup1;</text>
+                                <line x1="158" y1="90" x2="140" y2="90" stroke="#6d5172" stroke-width="1.5" marker-end="url(#arrBr2)"/>
+                                <text x="150" y="100" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="7">L&sup1;</text>
                                 <!-- Convergence diagram below -->
-                                <text x="150" y="175" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="10">Convergence of Partial Sums</text>
+                                <text x="150" y="175" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="10">Convergence of Partial Sums</text>
                                 <!-- Axes -->
-                                <line x1="40" y1="300" x2="270" y2="300" stroke="#2a2a3a" stroke-width="1"/>
-                                <line x1="40" y1="190" x2="40" y2="300" stroke="#2a2a3a" stroke-width="1"/>
-                                <text x="270" y="315" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">n</text>
-                                <text x="28" y="195" fill="#6a6a7a" font-family="JetBrains Mono" font-size="8">S&#x2099;</text>
+                                <line x1="40" y1="300" x2="270" y2="300" stroke="#cac3b2" stroke-width="1"/>
+                                <line x1="40" y1="190" x2="40" y2="300" stroke="#cac3b2" stroke-width="1"/>
+                                <text x="270" y="315" fill="#8f8676" font-family="JetBrains Mono" font-size="8">n</text>
+                                <text x="28" y="195" fill="#8f8676" font-family="JetBrains Mono" font-size="8">S&#x2099;</text>
                                 <!-- Partial sums approaching limit -->
-                                <line x1="40" y1="240" x2="270" y2="240" stroke="#9b72cf" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
-                                <text x="278" y="243" fill="#9b72cf" font-family="JetBrains Mono" font-size="8">S</text>
+                                <line x1="40" y1="240" x2="270" y2="240" stroke="#6d5172" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.5"/>
+                                <text x="278" y="243" fill="#6d5172" font-family="JetBrains Mono" font-size="8">S</text>
                                 <!-- Oscillating convergence -->
-                                <circle cx="60" cy="270" r="2.5" fill="#d4a053"/>
-                                <circle cx="85" cy="220" r="2.5" fill="#d4a053"/>
-                                <circle cx="110" cy="258" r="2.5" fill="#d4a053"/>
-                                <circle cx="135" cy="228" r="2.5" fill="#d4a053"/>
-                                <circle cx="160" cy="250" r="2.5" fill="#d4a053"/>
-                                <circle cx="185" cy="234" r="2.5" fill="#d4a053"/>
-                                <circle cx="210" cy="245" r="2.5" fill="#d4a053"/>
-                                <circle cx="235" cy="237" r="2.5" fill="#d4a053"/>
-                                <circle cx="260" cy="241" r="2.5" fill="#d4a053"/>
-                                <path d="M60 270 L85 220 L110 258 L135 228 L160 250 L185 234 L210 245 L235 237 L260 241" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.6"/>
+                                <circle cx="60" cy="270" r="2.5" fill="#8b6b40"/>
+                                <circle cx="85" cy="220" r="2.5" fill="#8b6b40"/>
+                                <circle cx="110" cy="258" r="2.5" fill="#8b6b40"/>
+                                <circle cx="135" cy="228" r="2.5" fill="#8b6b40"/>
+                                <circle cx="160" cy="250" r="2.5" fill="#8b6b40"/>
+                                <circle cx="185" cy="234" r="2.5" fill="#8b6b40"/>
+                                <circle cx="210" cy="245" r="2.5" fill="#8b6b40"/>
+                                <circle cx="235" cy="237" r="2.5" fill="#8b6b40"/>
+                                <circle cx="260" cy="241" r="2.5" fill="#8b6b40"/>
+                                <path d="M60 270 L85 220 L110 258 L135 228 L160 250 L185 234 L210 245 L235 237 L260 241" fill="none" stroke="#8b6b40" stroke-width="0.8" opacity="0.6"/>
                                 <defs>
-                                    <marker id="arrBr1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#d4a053"/></marker>
-                                    <marker id="arrBr2" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M7,0 L0,2.5 L7,5" fill="#9b72cf"/></marker>
+                                    <marker id="arrBr1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#8b6b40"/></marker>
+                                    <marker id="arrBr2" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M7,0 L0,2.5 L7,5" fill="#6d5172"/></marker>
                                 </defs>
                             </svg>
                         </div>
@@ -425,45 +426,45 @@
                 <div class="diagram-container">
                     <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
                         <!-- Central node -->
-                        <circle cx="350" cy="190" r="40" fill="rgba(155,114,207,0.15)" stroke="#9b72cf" stroke-width="2"/>
-                        <text x="350" y="186" text-anchor="middle" fill="#9b72cf" font-family="Playfair Display" font-size="12" font-weight="700">Bromwich</text>
-                        <text x="350" y="200" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">1875-1929</text>
+                        <circle cx="350" cy="190" r="40" fill="rgba(109,81,114,0.15)" stroke="#6d5172" stroke-width="2"/>
+                        <text x="350" y="186" text-anchor="middle" fill="#6d5172" font-family="Playfair Display" font-size="12" font-weight="700">Bromwich</text>
+                        <text x="350" y="200" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">1875-1929</text>
                         <!-- Heaviside -->
-                        <circle cx="130" cy="100" r="32" fill="rgba(212,160,83,0.1)" stroke="#d4a053" stroke-width="1.5"/>
-                        <text x="130" y="97" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="700">Heaviside</text>
-                        <text x="130" y="110" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Operational calculus</text>
-                        <line x1="162" y1="115" x2="315" y2="175" stroke="#d4a053" stroke-width="0.8" opacity="0.4"/>
-                        <text x="225" y="135" fill="#6a6a7a" font-family="DM Sans" font-size="7" transform="rotate(-18 225 135)">justified methods</text>
+                        <circle cx="130" cy="100" r="32" fill="rgba(139,107,64,0.1)" stroke="#8b6b40" stroke-width="1.5"/>
+                        <text x="130" y="97" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="10" font-weight="700">Heaviside</text>
+                        <text x="130" y="110" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Operational calculus</text>
+                        <line x1="162" y1="115" x2="315" y2="175" stroke="#8b6b40" stroke-width="0.8" opacity="0.4"/>
+                        <text x="225" y="135" fill="#8f8676" font-family="DM Sans" font-size="7" transform="rotate(-18 225 135)">justified methods</text>
                         <!-- Hardy -->
-                        <circle cx="130" cy="280" r="32" fill="rgba(78,204,163,0.1)" stroke="#4ecca3" stroke-width="1.5"/>
-                        <text x="130" y="277" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700">Hardy</text>
-                        <text x="130" y="290" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Rigorous analysis</text>
-                        <line x1="162" y1="265" x2="315" y2="205" stroke="#4ecca3" stroke-width="0.8" opacity="0.4"/>
+                        <circle cx="130" cy="280" r="32" fill="rgba(62,98,82,0.1)" stroke="#3e6252" stroke-width="1.5"/>
+                        <text x="130" y="277" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="10" font-weight="700">Hardy</text>
+                        <text x="130" y="290" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Rigorous analysis</text>
+                        <line x1="162" y1="265" x2="315" y2="205" stroke="#3e6252" stroke-width="0.8" opacity="0.4"/>
                         <!-- Laplace (historical influence) -->
-                        <circle cx="350" cy="50" r="28" fill="rgba(155,114,207,0.08)" stroke="#9b72cf" stroke-width="1" stroke-dasharray="4,2"/>
-                        <text x="350" y="47" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="10" font-weight="700">Laplace</text>
-                        <text x="350" y="60" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Transform (1780s)</text>
-                        <line x1="350" y1="78" x2="350" y2="150" stroke="#9b72cf" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
+                        <circle cx="350" cy="50" r="28" fill="rgba(109,81,114,0.08)" stroke="#6d5172" stroke-width="1" stroke-dasharray="4,2"/>
+                        <text x="350" y="47" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="10" font-weight="700">Laplace</text>
+                        <text x="350" y="60" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Transform (1780s)</text>
+                        <line x1="350" y1="78" x2="350" y2="150" stroke="#6d5172" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
                         <!-- Watson -->
-                        <circle cx="570" cy="100" r="32" fill="rgba(91,140,212,0.1)" stroke="#5b8cd4" stroke-width="1.5"/>
-                        <text x="570" y="97" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="10" font-weight="700">Watson</text>
-                        <text x="570" y="110" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Transform methods</text>
-                        <line x1="538" y1="115" x2="385" y2="175" stroke="#5b8cd4" stroke-width="0.8" opacity="0.4"/>
+                        <circle cx="570" cy="100" r="32" fill="rgba(64,84,119,0.1)" stroke="#405477" stroke-width="1.5"/>
+                        <text x="570" y="97" text-anchor="middle" fill="#405477" font-family="DM Sans" font-size="10" font-weight="700">Watson</text>
+                        <text x="570" y="110" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Transform methods</text>
+                        <line x1="538" y1="115" x2="385" y2="175" stroke="#405477" stroke-width="0.8" opacity="0.4"/>
                         <!-- Cauchy (historical) -->
-                        <circle cx="570" cy="280" r="32" fill="rgba(207,114,114,0.08)" stroke="#cf7272" stroke-width="1" stroke-dasharray="4,2"/>
-                        <text x="570" y="277" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="10" font-weight="700">Cauchy</text>
-                        <text x="570" y="290" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Contour integration</text>
-                        <line x1="538" y1="265" x2="385" y2="205" stroke="#cf7272" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
+                        <circle cx="570" cy="280" r="32" fill="rgba(155,82,71,0.08)" stroke="#9b5247" stroke-width="1" stroke-dasharray="4,2"/>
+                        <text x="570" y="277" text-anchor="middle" fill="#9b5247" font-family="DM Sans" font-size="10" font-weight="700">Cauchy</text>
+                        <text x="570" y="290" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Contour integration</text>
+                        <line x1="538" y1="265" x2="385" y2="205" stroke="#9b5247" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
                         <!-- Littlewood -->
-                        <circle cx="240" cy="340" r="28" fill="rgba(78,204,163,0.08)" stroke="#4ecca3" stroke-width="1"/>
-                        <text x="240" y="337" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="10" font-weight="700">Littlewood</text>
-                        <text x="240" y="350" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Tauberian theory</text>
-                        <line x1="258" y1="316" x2="335" y2="225" stroke="#4ecca3" stroke-width="0.8" opacity="0.3"/>
+                        <circle cx="240" cy="340" r="28" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="1"/>
+                        <text x="240" y="337" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="10" font-weight="700">Littlewood</text>
+                        <text x="240" y="350" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Tauberian theory</text>
+                        <line x1="258" y1="316" x2="335" y2="225" stroke="#3e6252" stroke-width="0.8" opacity="0.3"/>
                         <!-- Whittaker -->
-                        <circle cx="460" cy="340" r="28" fill="rgba(212,160,83,0.08)" stroke="#d4a053" stroke-width="1"/>
-                        <text x="460" y="337" text-anchor="middle" fill="#d4a053" font-family="DM Sans" font-size="10" font-weight="700">Whittaker</text>
-                        <text x="460" y="350" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="7">Modern analysis</text>
-                        <line x1="442" y1="316" x2="365" y2="225" stroke="#d4a053" stroke-width="0.8" opacity="0.3"/>
+                        <circle cx="460" cy="340" r="28" fill="rgba(139,107,64,0.08)" stroke="#8b6b40" stroke-width="1"/>
+                        <text x="460" y="337" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="10" font-weight="700">Whittaker</text>
+                        <text x="460" y="350" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Modern analysis</text>
+                        <line x1="442" y1="316" x2="365" y2="225" stroke="#8b6b40" stroke-width="0.8" opacity="0.3"/>
                     </svg>
                 </div>
             </section>
@@ -556,55 +557,55 @@
                 <div class="diagram-container">
                     <svg viewBox="0 0 750 360" xmlns="http://www.w3.org/2000/svg">
                         <!-- Main timeline line -->
-                        <line x1="50" y1="180" x2="700" y2="180" stroke="#2a2a3a" stroke-width="2"/>
+                        <line x1="50" y1="180" x2="700" y2="180" stroke="#cac3b2" stroke-width="2"/>
                         <!-- Birth -->
-                        <circle cx="80" cy="180" r="5" fill="#9b72cf"/>
-                        <text x="80" y="170" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" font-weight="500">1875</text>
-                        <text x="80" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Born in</text>
-                        <text x="80" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Wolverhampton</text>
+                        <circle cx="80" cy="180" r="5" fill="#6d5172"/>
+                        <text x="80" y="170" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="10" font-weight="500">1875</text>
+                        <text x="80" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Born in</text>
+                        <text x="80" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Wolverhampton</text>
                         <!-- Senior Wrangler -->
-                        <circle cx="180" cy="180" r="6" fill="#d4a053"/>
-                        <text x="180" y="170" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1895</text>
-                        <text x="180" y="145" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Senior</text>
-                        <text x="180" y="156" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Wrangler</text>
+                        <circle cx="180" cy="180" r="6" fill="#8b6b40"/>
+                        <text x="180" y="170" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">1895</text>
+                        <text x="180" y="145" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Senior</text>
+                        <text x="180" y="156" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Wrangler</text>
                         <!-- Fellow -->
-                        <circle cx="250" cy="180" r="4" fill="#4ecca3"/>
-                        <text x="250" y="170" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="500">1897</text>
-                        <text x="250" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Fellow of</text>
-                        <text x="250" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">St John's</text>
+                        <circle cx="250" cy="180" r="4" fill="#3e6252"/>
+                        <text x="250" y="170" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono" font-size="10" font-weight="500">1897</text>
+                        <text x="250" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Fellow of</text>
+                        <text x="250" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">St John's</text>
                         <!-- Galway -->
-                        <circle cx="330" cy="180" r="4" fill="#5b8cd4"/>
-                        <text x="330" y="145" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="500">1902</text>
-                        <text x="330" y="156" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Professor, Galway</text>
+                        <circle cx="330" cy="180" r="4" fill="#405477"/>
+                        <text x="330" y="145" text-anchor="middle" fill="#405477" font-family="JetBrains Mono" font-size="10" font-weight="500">1902</text>
+                        <text x="330" y="156" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Professor, Galway</text>
                         <!-- FRS -->
-                        <circle cx="390" cy="180" r="5" fill="#4ecca3"/>
-                        <text x="390" y="170" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="10" font-weight="500">1906</text>
-                        <text x="390" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">FRS</text>
+                        <circle cx="390" cy="180" r="5" fill="#3e6252"/>
+                        <text x="390" y="170" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono" font-size="10" font-weight="500">1906</text>
+                        <text x="390" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">FRS</text>
                         <!-- Textbook -->
-                        <circle cx="450" cy="180" r="6" fill="#d4a053"/>
-                        <text x="450" y="145" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="10" font-weight="500">1908</text>
-                        <text x="450" y="156" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Infinite Series</text>
-                        <text x="450" y="167" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">published</text>
+                        <circle cx="450" cy="180" r="6" fill="#8b6b40"/>
+                        <text x="450" y="145" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">1908</text>
+                        <text x="450" y="156" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Infinite Series</text>
+                        <text x="450" y="167" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">published</text>
                         <!-- Bromwich Integral -->
-                        <circle cx="540" cy="180" r="7" fill="#9b72cf"/>
-                        <text x="540" y="170" text-anchor="middle" fill="#9b72cf" font-family="JetBrains Mono" font-size="10" font-weight="500">1916</text>
-                        <text x="540" y="205" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Bromwich</text>
-                        <text x="540" y="216" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="8" font-weight="700">Integral</text>
+                        <circle cx="540" cy="180" r="7" fill="#6d5172"/>
+                        <text x="540" y="170" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="10" font-weight="500">1916</text>
+                        <text x="540" y="205" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Bromwich</text>
+                        <text x="540" y="216" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Integral</text>
                         <!-- 2nd Edition -->
-                        <circle cx="620" cy="180" r="4" fill="#5b8cd4"/>
-                        <text x="620" y="145" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="10" font-weight="500">1926</text>
-                        <text x="620" y="156" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">2nd ed. Series</text>
+                        <circle cx="620" cy="180" r="4" fill="#405477"/>
+                        <text x="620" y="145" text-anchor="middle" fill="#405477" font-family="JetBrains Mono" font-size="10" font-weight="500">1926</text>
+                        <text x="620" y="156" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">2nd ed. Series</text>
                         <!-- Death -->
-                        <circle cx="680" cy="180" r="5" fill="#cf7272"/>
-                        <text x="680" y="170" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="10" font-weight="500">1929</text>
-                        <text x="680" y="205" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Dies in</text>
-                        <text x="680" y="216" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="8">Cambridge</text>
+                        <circle cx="680" cy="180" r="5" fill="#9b5247"/>
+                        <text x="680" y="170" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono" font-size="10" font-weight="500">1929</text>
+                        <text x="680" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Dies in</text>
+                        <text x="680" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Cambridge</text>
                         <!-- Context bar -->
-                        <rect x="50" y="260" width="650" height="1" fill="#2a2a3a"/>
-                        <text x="50" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1893: Heaviside publishes</text>
-                        <text x="50" y="293" fill="#6a6a7a" font-family="DM Sans" font-size="7" opacity="0.6">Electromagnetic Theory vol.1</text>
-                        <text x="300" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1901: Marconi transatlantic radio</text>
-                        <text x="540" y="280" fill="#6a6a7a" font-family="DM Sans" font-size="8">1925: Operational calculus debate peaks</text>
+                        <rect x="50" y="260" width="650" height="1" fill="#cac3b2"/>
+                        <text x="50" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">1893: Heaviside publishes</text>
+                        <text x="50" y="293" fill="#8f8676" font-family="DM Sans" font-size="7" opacity="0.6">Electromagnetic Theory vol.1</text>
+                        <text x="300" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">1901: Marconi transatlantic radio</text>
+                        <text x="540" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">1925: Operational calculus debate peaks</text>
                     </svg>
                 </div>
             </section>
@@ -645,12 +646,12 @@
                 <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh;">
                     <div class="mandala-container">
                         <svg viewBox="0 0 140 140">
-                            <circle cx="70" cy="70" r="60" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.2"/>
-                            <circle cx="70" cy="70" r="40" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.15"/>
-                            <circle cx="70" cy="70" r="20" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.1"/>
-                            <path d="M70 10 L70 130 M10 70 L130 70" stroke="#9b72cf" stroke-width="0.3" opacity="0.1"/>
+                            <circle cx="70" cy="70" r="60" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.2"/>
+                            <circle cx="70" cy="70" r="40" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.15"/>
+                            <circle cx="70" cy="70" r="20" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.1"/>
+                            <path d="M70 10 L70 130 M10 70 L130 70" stroke="#6d5172" stroke-width="0.3" opacity="0.1"/>
                             <!-- Contour path motif -->
-                            <path d="M50 70 Q50 45 70 45 Q90 45 90 70" fill="none" stroke="#9b72cf" stroke-width="0.5" opacity="0.2"/>
+                            <path d="M50 70 Q50 45 70 45 Q90 45 90 70" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.2"/>
                         </svg>
                     </div>
                     <div class="quote-box" style="max-width:70%; margin:0.8em auto;">
