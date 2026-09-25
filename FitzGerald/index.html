@@ -6,48 +6,48 @@
     <title>George Francis FitzGerald - The Maxwellian Pioneer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #8b6b40; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
         .reveal-viewport { background: var(--bg-primary); }
-        .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+        .reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
         .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
         .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
         .reveal h3 { font-size: 1.15em; font-weight: 700; }
         .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-        .reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-        .reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+        .reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+        .reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
         .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
         .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
-        .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+        .subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
         .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-        .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-        .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+        .quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+        .quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
         .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
         .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
         .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
         .card:hover { border-color: var(--accent); }
-        .card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+        .card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
         .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
         .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-        .timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+        .timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
         .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
         .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
         .diagram-container { margin: 0.6em auto; max-width: 85%; }
         .two-col .diagram-container { max-width: 100%; margin: 0; }
         .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
         .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-        .tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+        .tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
         .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-        .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+        .section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
         .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
         .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
         .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
         @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
         .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-        .process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+        .process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
         .process-step p { font-size: 0.40em !important; margin: 0; }
         .process-arrow { color: var(--accent); font-size: 1.0em; }
         .reveal ul { list-style: none; padding-left: 0; }
@@ -182,25 +182,25 @@
                         <div class="diagram-container">
                             <svg viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
                                 <!-- At rest -->
-                                <text x="160" y="20" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="11">Object at Rest</text>
+                                <text x="160" y="20" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="11">Object at Rest</text>
                                 <rect x="80" y="35" width="160" height="60" rx="8" fill="none" stroke="#8b6b40" stroke-width="1.5" opacity="0.8"/>
-                                <text x="160" y="70" text-anchor="middle" fill="#262019" font-family="JetBrains Mono" font-size="10">L&#x2080;</text>
+                                <text x="160" y="70" text-anchor="middle" fill="#262019" font-family="Courier Prime" font-size="10">L&#x2080;</text>
                                 <line x1="80" y1="105" x2="240" y2="105" stroke="#8f8676" stroke-width="0.5" stroke-dasharray="3,3"/>
-                                <text x="80" y="118" fill="#8f8676" font-family="JetBrains Mono" font-size="8">|</text>
-                                <text x="240" y="118" fill="#8f8676" font-family="JetBrains Mono" font-size="8">|</text>
+                                <text x="80" y="118" fill="#8f8676" font-family="Courier Prime" font-size="8">|</text>
+                                <text x="240" y="118" fill="#8f8676" font-family="Courier Prime" font-size="8">|</text>
                                 <!-- Arrow showing velocity -->
-                                <text x="160" y="150" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="11">Moving at velocity v</text>
+                                <text x="160" y="150" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="11">Moving at velocity v</text>
                                 <line x1="170" y1="158" x2="220" y2="158" stroke="#8b6b40" stroke-width="1" marker-end="url(#arrowAmber)"/>
-                                <text x="200" y="170" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="9">v</text>
+                                <text x="200" y="170" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="9">v</text>
                                 <!-- Contracted -->
                                 <rect x="105" y="180" width="110" height="60" rx="8" fill="none" stroke="#8b6b40" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,2"/>
                                 <rect x="105" y="180" width="110" height="60" rx="8" fill="rgba(139,107,64,0.06)"/>
-                                <text x="160" y="215" text-anchor="middle" fill="#262019" font-family="JetBrains Mono" font-size="10">L = L&#x2080;&radic;(1-v&sup2;/c&sup2;)</text>
+                                <text x="160" y="215" text-anchor="middle" fill="#262019" font-family="Courier Prime" font-size="10">L = L&#x2080;&radic;(1-v&sup2;/c&sup2;)</text>
                                 <line x1="105" y1="250" x2="215" y2="250" stroke="#8f8676" stroke-width="0.5" stroke-dasharray="3,3"/>
                                 <!-- Formula -->
                                 <rect x="40" y="275" width="240" height="45" rx="6" fill="rgba(139,107,64,0.08)" stroke="#8b6b40" stroke-width="0.5"/>
-                                <text x="160" y="295" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="11">L = L&#x2080; / &gamma;</text>
-                                <text x="160" y="312" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="9">&gamma; = 1 / &radic;(1 - v&sup2;/c&sup2;)</text>
+                                <text x="160" y="295" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="11">L = L&#x2080; / &gamma;</text>
+                                <text x="160" y="312" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="9">&gamma; = 1 / &radic;(1 - v&sup2;/c&sup2;)</text>
                                 <defs>
                                     <marker id="arrowAmber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#8b6b40"/></marker>
                                 </defs>
@@ -256,14 +256,14 @@
                         <div class="diagram-container">
                             <svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Dipole antenna -->
-                                <text x="150" y="18" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="11">Oscillating Dipole Radiation</text>
+                                <text x="150" y="18" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="11">Oscillating Dipole Radiation</text>
                                 <!-- Antenna rod -->
                                 <line x1="150" y1="120" x2="150" y2="200" stroke="#262019" stroke-width="3" stroke-linecap="round"/>
                                 <circle cx="150" cy="160" r="3" fill="#8b6b40"/>
                                 <!-- Current arrows -->
                                 <line x1="150" y1="155" x2="150" y2="130" stroke="#8b6b40" stroke-width="1.5" marker-end="url(#arrFG1)"/>
                                 <line x1="150" y1="165" x2="150" y2="190" stroke="#8b6b40" stroke-width="1.5" marker-end="url(#arrFG1)"/>
-                                <text x="165" y="140" fill="#8b6b40" font-family="JetBrains Mono" font-size="8">I(t)</text>
+                                <text x="165" y="140" fill="#8b6b40" font-family="Courier Prime" font-size="8">I(t)</text>
                                 <!-- Radiation pattern (figure-8 / toroidal cross-section) -->
                                 <ellipse cx="150" cy="160" rx="90" ry="45" fill="none" stroke="#8b6b40" stroke-width="1" opacity="0.25"/>
                                 <ellipse cx="150" cy="160" rx="70" ry="35" fill="none" stroke="#8b6b40" stroke-width="1" opacity="0.3"/>
@@ -279,9 +279,9 @@
                                 <path d="M60 100 Q40 160 60 220" fill="none" stroke="#8b6b40" stroke-width="0.7" opacity="0.3"/>
                                 <path d="M40 90 Q15 160 40 230" fill="none" stroke="#8b6b40" stroke-width="0.7" opacity="0.2"/>
                                 <!-- Labels -->
-                                <text x="260" y="165" fill="#8f8676" font-family="DM Sans" font-size="8">EM waves</text>
+                                <text x="260" y="165" fill="#8f8676" font-family="Figtree" font-size="8">EM waves</text>
                                 <rect x="50" y="280" width="200" height="30" rx="5" fill="rgba(139,107,64,0.08)" stroke="#8b6b40" stroke-width="0.5"/>
-                                <text x="150" y="299" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="9">P &prop; &omega;&#x2074; |p|&sup2; / c&sup3;</text>
+                                <text x="150" y="299" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="9">P &prop; &omega;&#x2074; |p|&sup2; / c&sup3;</text>
                                 <defs>
                                     <marker id="arrFG1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#8b6b40"/></marker>
                                 </defs>
@@ -397,42 +397,42 @@
                     <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
                         <!-- Central node -->
                         <circle cx="350" cy="190" r="40" fill="rgba(139,107,64,0.15)" stroke="#8b6b40" stroke-width="2"/>
-                        <text x="350" y="186" text-anchor="middle" fill="#8b6b40" font-family="Playfair Display" font-size="12" font-weight="700">FitzGerald</text>
-                        <text x="350" y="200" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">1851-1901</text>
+                        <text x="350" y="186" text-anchor="middle" fill="#8b6b40" font-family="Cormorant Garamond" font-size="12" font-weight="700">FitzGerald</text>
+                        <text x="350" y="200" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">1851-1901</text>
                         <!-- Heaviside -->
                         <circle cx="140" cy="100" r="32" fill="rgba(62,98,82,0.1)" stroke="#3e6252" stroke-width="1.5"/>
-                        <text x="140" y="97" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="10" font-weight="700">Heaviside</text>
-                        <text x="140" y="110" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Vector calculus</text>
+                        <text x="140" y="97" text-anchor="middle" fill="#3e6252" font-family="Figtree" font-size="10" font-weight="700">Heaviside</text>
+                        <text x="140" y="110" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Vector calculus</text>
                         <line x1="172" y1="115" x2="315" y2="175" stroke="#3e6252" stroke-width="0.8" opacity="0.4"/>
                         <!-- Lodge -->
                         <circle cx="140" cy="280" r="32" fill="rgba(64,84,119,0.1)" stroke="#405477" stroke-width="1.5"/>
-                        <text x="140" y="277" text-anchor="middle" fill="#405477" font-family="DM Sans" font-size="10" font-weight="700">Lodge</text>
-                        <text x="140" y="290" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Wireless telegraphy</text>
+                        <text x="140" y="277" text-anchor="middle" fill="#405477" font-family="Figtree" font-size="10" font-weight="700">Lodge</text>
+                        <text x="140" y="290" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Wireless telegraphy</text>
                         <line x1="172" y1="265" x2="315" y2="205" stroke="#405477" stroke-width="0.8" opacity="0.4"/>
                         <!-- Larmor -->
                         <circle cx="560" cy="100" r="32" fill="rgba(109,81,114,0.1)" stroke="#6d5172" stroke-width="1.5"/>
-                        <text x="560" y="97" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="10" font-weight="700">Larmor</text>
-                        <text x="560" y="110" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Electron theory</text>
+                        <text x="560" y="97" text-anchor="middle" fill="#6d5172" font-family="Figtree" font-size="10" font-weight="700">Larmor</text>
+                        <text x="560" y="110" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Electron theory</text>
                         <line x1="528" y1="115" x2="385" y2="175" stroke="#6d5172" stroke-width="0.8" opacity="0.4"/>
                         <!-- Lorentz -->
                         <circle cx="560" cy="280" r="32" fill="rgba(155,82,71,0.1)" stroke="#9b5247" stroke-width="1.5"/>
-                        <text x="560" y="277" text-anchor="middle" fill="#9b5247" font-family="DM Sans" font-size="10" font-weight="700">Lorentz</text>
-                        <text x="560" y="290" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Contraction theory</text>
+                        <text x="560" y="277" text-anchor="middle" fill="#9b5247" font-family="Figtree" font-size="10" font-weight="700">Lorentz</text>
+                        <text x="560" y="290" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Contraction theory</text>
                         <line x1="528" y1="265" x2="385" y2="205" stroke="#9b5247" stroke-width="0.8" opacity="0.4"/>
                         <!-- Maxwell (influence) -->
                         <circle cx="350" cy="50" r="28" fill="rgba(139,107,64,0.08)" stroke="#8b6b40" stroke-width="1" stroke-dasharray="4,2"/>
-                        <text x="350" y="47" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="10" font-weight="700">Maxwell</text>
-                        <text x="350" y="60" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">d. 1879</text>
+                        <text x="350" y="47" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="10" font-weight="700">Maxwell</text>
+                        <text x="350" y="60" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">d. 1879</text>
                         <line x1="350" y1="78" x2="350" y2="150" stroke="#8b6b40" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
                         <!-- Hertz -->
                         <circle cx="230" cy="340" r="28" fill="rgba(139,107,64,0.08)" stroke="#8b6b40" stroke-width="1"/>
-                        <text x="230" y="337" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="10" font-weight="700">Hertz</text>
-                        <text x="230" y="350" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">EM experiments</text>
+                        <text x="230" y="337" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="10" font-weight="700">Hertz</text>
+                        <text x="230" y="350" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">EM experiments</text>
                         <line x1="248" y1="316" x2="330" y2="225" stroke="#8b6b40" stroke-width="0.8" opacity="0.3"/>
                         <!-- Einstein (influence outward) -->
                         <circle cx="470" cy="340" r="28" fill="rgba(64,84,119,0.08)" stroke="#405477" stroke-width="1" stroke-dasharray="4,2"/>
-                        <text x="470" y="337" text-anchor="middle" fill="#405477" font-family="DM Sans" font-size="10" font-weight="700">Einstein</text>
-                        <text x="470" y="350" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Special relativity</text>
+                        <text x="470" y="337" text-anchor="middle" fill="#405477" font-family="Figtree" font-size="10" font-weight="700">Einstein</text>
+                        <text x="470" y="350" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Special relativity</text>
                         <line x1="452" y1="316" x2="370" y2="225" stroke="#405477" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,2"/>
                     </svg>
                 </div>
@@ -529,57 +529,57 @@
                         <line x1="50" y1="180" x2="700" y2="180" stroke="#cac3b2" stroke-width="2"/>
                         <!-- Birth -->
                         <circle cx="80" cy="180" r="5" fill="#8b6b40"/>
-                        <text x="80" y="170" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">1851</text>
-                        <text x="80" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Born in</text>
-                        <text x="80" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Dublin</text>
+                        <text x="80" y="170" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="10" font-weight="500">1851</text>
+                        <text x="80" y="205" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Born in</text>
+                        <text x="80" y="216" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Dublin</text>
                         <!-- TCD -->
                         <circle cx="170" cy="180" r="5" fill="#3e6252"/>
-                        <text x="170" y="170" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono" font-size="10" font-weight="500">1867</text>
-                        <text x="170" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Enters</text>
-                        <text x="170" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">TCD</text>
+                        <text x="170" y="170" text-anchor="middle" fill="#3e6252" font-family="Courier Prime" font-size="10" font-weight="500">1867</text>
+                        <text x="170" y="205" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Enters</text>
+                        <text x="170" y="216" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">TCD</text>
                         <!-- Fellow -->
                         <circle cx="260" cy="180" r="5" fill="#405477"/>
-                        <text x="260" y="170" text-anchor="middle" fill="#405477" font-family="JetBrains Mono" font-size="10" font-weight="500">1877</text>
-                        <text x="260" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Fellow</text>
-                        <text x="260" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">of TCD</text>
+                        <text x="260" y="170" text-anchor="middle" fill="#405477" font-family="Courier Prime" font-size="10" font-weight="500">1877</text>
+                        <text x="260" y="205" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Fellow</text>
+                        <text x="260" y="216" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">of TCD</text>
                         <!-- Professor -->
                         <circle cx="330" cy="180" r="5" fill="#6d5172"/>
-                        <text x="330" y="170" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="10" font-weight="500">1881</text>
-                        <text x="330" y="145" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Erasmus Smith</text>
-                        <text x="330" y="156" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Professor</text>
+                        <text x="330" y="170" text-anchor="middle" fill="#6d5172" font-family="Courier Prime" font-size="10" font-weight="500">1881</text>
+                        <text x="330" y="145" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Erasmus Smith</text>
+                        <text x="330" y="156" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Professor</text>
                         <!-- Radiation paper -->
                         <circle cx="400" cy="180" r="6" fill="#8b6b40"/>
-                        <text x="400" y="170" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">1883</text>
-                        <text x="400" y="205" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">EM Radiation</text>
-                        <text x="400" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">prediction</text>
+                        <text x="400" y="170" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="10" font-weight="500">1883</text>
+                        <text x="400" y="205" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8" font-weight="700">EM Radiation</text>
+                        <text x="400" y="216" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">prediction</text>
                         <!-- FRS -->
                         <circle cx="450" cy="180" r="4" fill="#3e6252"/>
-                        <text x="450" y="145" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono" font-size="10" font-weight="500">1883</text>
-                        <text x="450" y="156" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">FRS</text>
+                        <text x="450" y="145" text-anchor="middle" fill="#3e6252" font-family="Courier Prime" font-size="10" font-weight="500">1883</text>
+                        <text x="450" y="156" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">FRS</text>
                         <!-- Contraction -->
                         <circle cx="530" cy="180" r="7" fill="#8b6b40"/>
-                        <text x="530" y="170" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">1889</text>
-                        <text x="530" y="205" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Length</text>
-                        <text x="530" y="216" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Contraction</text>
+                        <text x="530" y="170" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="10" font-weight="500">1889</text>
+                        <text x="530" y="205" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8" font-weight="700">Length</text>
+                        <text x="530" y="216" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8" font-weight="700">Contraction</text>
                         <!-- Maxwellian work -->
                         <circle cx="610" cy="180" r="5" fill="#405477"/>
-                        <text x="610" y="145" text-anchor="middle" fill="#405477" font-family="JetBrains Mono" font-size="10" font-weight="500">1893</text>
-                        <text x="610" y="156" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Maxwellian</text>
-                        <text x="610" y="167" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">peak years</text>
+                        <text x="610" y="145" text-anchor="middle" fill="#405477" font-family="Courier Prime" font-size="10" font-weight="500">1893</text>
+                        <text x="610" y="156" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Maxwellian</text>
+                        <text x="610" y="167" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">peak years</text>
                         <!-- Death -->
                         <circle cx="680" cy="180" r="5" fill="#9b5247"/>
-                        <text x="680" y="170" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono" font-size="10" font-weight="500">1901</text>
-                        <text x="680" y="205" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Dies in</text>
-                        <text x="680" y="216" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Dublin, age 49</text>
+                        <text x="680" y="170" text-anchor="middle" fill="#9b5247" font-family="Courier Prime" font-size="10" font-weight="500">1901</text>
+                        <text x="680" y="205" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Dies in</text>
+                        <text x="680" y="216" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Dublin, age 49</text>
                         <!-- Context bar -->
                         <rect x="50" y="260" width="650" height="1" fill="#cac3b2"/>
-                        <text x="50" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">1865: Maxwell's equations</text>
-                        <text x="250" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">1879: Maxwell dies</text>
-                        <text x="420" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">1887: Hertz &amp; Michelson-Morley</text>
-                        <text x="600" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">1905: Einstein SR</text>
+                        <text x="50" y="280" fill="#8f8676" font-family="Figtree" font-size="8">1865: Maxwell's equations</text>
+                        <text x="250" y="280" fill="#8f8676" font-family="Figtree" font-size="8">1879: Maxwell dies</text>
+                        <text x="420" y="280" fill="#8f8676" font-family="Figtree" font-size="8">1887: Hertz &amp; Michelson-Morley</text>
+                        <text x="600" y="280" fill="#8f8676" font-family="Figtree" font-size="8">1905: Einstein SR</text>
                         <!-- Sub-labels for context -->
-                        <text x="50" y="295" fill="#8f8676" font-family="DM Sans" font-size="7" opacity="0.6">published</text>
-                        <text x="420" y="295" fill="#8f8676" font-family="DM Sans" font-size="7" opacity="0.6">experiments</text>
+                        <text x="50" y="295" fill="#8f8676" font-family="Figtree" font-size="7" opacity="0.6">published</text>
+                        <text x="420" y="295" fill="#8f8676" font-family="Figtree" font-size="7" opacity="0.6">experiments</text>
                     </svg>
                 </div>
             </section>

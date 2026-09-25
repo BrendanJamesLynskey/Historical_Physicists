@@ -6,48 +6,48 @@
 <title>John Stewart Bell — Quantum Foundations, Bell's Theorem</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #9b5247; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .two-col .diagram-container { max-width: 100%; margin: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -74,7 +74,7 @@
       <circle cx="50" cy="70" r="10" fill="none" stroke="#9b5247" stroke-width="1.2" opacity="0.6"/>
       <circle cx="90" cy="70" r="10" fill="none" stroke="#9b5247" stroke-width="1.2" opacity="0.6"/>
       <line x1="60" y1="70" x2="80" y2="70" stroke="#9b5247" stroke-width="1" opacity="0.5" stroke-dasharray="3,2"/>
-      <text x="70" y="45" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="8" opacity="0.5">|&#x3C8;&#x27E9;</text>
+      <text x="70" y="45" text-anchor="middle" fill="#9b5247" font-family="Courier Prime, monospace" font-size="8" opacity="0.5">|&#x3C8;&#x27E9;</text>
     </svg>
   </div>
   <h1>John Stewart Bell</h1>
@@ -190,45 +190,45 @@
       <div class="diagram-container">
         <svg viewBox="0 0 280 340" xmlns="http://www.w3.org/2000/svg">
           <rect x="5" y="5" width="270" height="330" rx="8" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
-          <text x="140" y="30" text-anchor="middle" fill="#9b5247" font-family="Playfair Display, serif" font-size="12" font-weight="700">Bell Experiment Setup</text>
+          <text x="140" y="30" text-anchor="middle" fill="#9b5247" font-family="Cormorant Garamond, serif" font-size="12" font-weight="700">Bell Experiment Setup</text>
           <!-- Source in center -->
           <circle cx="140" cy="110" r="18" fill="rgba(155,82,71,0.12)" stroke="#9b5247" stroke-width="1.5"/>
-          <text x="140" y="107" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="8" font-weight="600">Source</text>
-          <text x="140" y="118" text-anchor="middle" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="6">|&#x3C8;&#x27E9;</text>
+          <text x="140" y="107" text-anchor="middle" fill="#9b5247" font-family="Courier Prime, monospace" font-size="8" font-weight="600">Source</text>
+          <text x="140" y="118" text-anchor="middle" fill="#5c5549" font-family="Courier Prime, monospace" font-size="6">|&#x3C8;&#x27E9;</text>
           <!-- Particle paths -->
           <line x1="122" y1="110" x2="50" y2="110" stroke="#3e6252" stroke-width="1" stroke-dasharray="4,3"/>
           <line x1="158" y1="110" x2="230" y2="110" stroke="#405477" stroke-width="1" stroke-dasharray="4,3"/>
           <!-- Particle labels -->
-          <text x="85" y="100" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="7">particle A</text>
-          <text x="195" y="100" text-anchor="middle" fill="#405477" font-family="JetBrains Mono, monospace" font-size="7">particle B</text>
+          <text x="85" y="100" text-anchor="middle" fill="#3e6252" font-family="Courier Prime, monospace" font-size="7">particle A</text>
+          <text x="195" y="100" text-anchor="middle" fill="#405477" font-family="Courier Prime, monospace" font-size="7">particle B</text>
           <!-- Detector A -->
           <rect x="18" y="92" width="35" height="36" rx="4" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="1.2"/>
-          <text x="35" y="108" text-anchor="middle" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="7" font-weight="600">Det. A</text>
-          <text x="35" y="120" text-anchor="middle" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="6">angle a</text>
+          <text x="35" y="108" text-anchor="middle" fill="#3e6252" font-family="Figtree, sans-serif" font-size="7" font-weight="600">Det. A</text>
+          <text x="35" y="120" text-anchor="middle" fill="#5c5549" font-family="Courier Prime, monospace" font-size="6">angle a</text>
           <!-- Detector B -->
           <rect x="227" y="92" width="35" height="36" rx="4" fill="rgba(64,84,119,0.08)" stroke="#405477" stroke-width="1.2"/>
-          <text x="245" y="108" text-anchor="middle" fill="#405477" font-family="DM Sans, sans-serif" font-size="7" font-weight="600">Det. B</text>
-          <text x="245" y="120" text-anchor="middle" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="6">angle b</text>
+          <text x="245" y="108" text-anchor="middle" fill="#405477" font-family="Figtree, sans-serif" font-size="7" font-weight="600">Det. B</text>
+          <text x="245" y="120" text-anchor="middle" fill="#5c5549" font-family="Courier Prime, monospace" font-size="6">angle b</text>
           <!-- Measurement arrows -->
           <line x1="35" y1="88" x2="35" y2="60" stroke="#3e6252" stroke-width="0.8"/>
           <polygon points="30,65 35,55 40,65" fill="#3e6252"/>
-          <text x="35" y="52" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="7">+1/-1</text>
+          <text x="35" y="52" text-anchor="middle" fill="#3e6252" font-family="Courier Prime, monospace" font-size="7">+1/-1</text>
           <line x1="245" y1="88" x2="245" y2="60" stroke="#405477" stroke-width="0.8"/>
           <polygon points="240,65 245,55 250,65" fill="#405477"/>
-          <text x="245" y="52" text-anchor="middle" fill="#405477" font-family="JetBrains Mono, monospace" font-size="7">+1/-1</text>
+          <text x="245" y="52" text-anchor="middle" fill="#405477" font-family="Courier Prime, monospace" font-size="7">+1/-1</text>
           <!-- Bell inequality -->
           <rect x="25" y="150" width="230" height="50" rx="6" fill="rgba(155,82,71,0.06)" stroke="#9b5247" stroke-width="1"/>
-          <text x="140" y="168" text-anchor="middle" fill="#262019" font-family="Playfair Display, serif" font-size="10" font-weight="700">Bell Inequality (CHSH form)</text>
-          <text x="140" y="190" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500">|S| &#x2264; 2</text>
+          <text x="140" y="168" text-anchor="middle" fill="#262019" font-family="Cormorant Garamond, serif" font-size="10" font-weight="700">Bell Inequality (CHSH form)</text>
+          <text x="140" y="190" text-anchor="middle" fill="#9b5247" font-family="Courier Prime, monospace" font-size="11" font-weight="500">|S| &#x2264; 2</text>
           <!-- QM prediction -->
           <rect x="25" y="215" width="230" height="40" rx="6" fill="rgba(109,81,114,0.06)" stroke="#6d5172" stroke-width="1"/>
-          <text x="140" y="232" text-anchor="middle" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">QM predicts: S = 2&#x221A;2 &#x2248; 2.83</text>
-          <text x="140" y="247" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">VIOLATES the inequality!</text>
+          <text x="140" y="232" text-anchor="middle" fill="#6d5172" font-family="Figtree, sans-serif" font-size="9" font-weight="600">QM predicts: S = 2&#x221A;2 &#x2248; 2.83</text>
+          <text x="140" y="247" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">VIOLATES the inequality!</text>
           <!-- Bottom text -->
-          <text x="140" y="280" text-anchor="middle" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Local hidden variables: |S| &#x2264; 2</text>
-          <text x="140" y="295" text-anchor="middle" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Quantum mechanics: |S| = 2&#x221A;2</text>
-          <text x="140" y="310" text-anchor="middle" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="8" font-weight="700">Nature sides with QM</text>
-          <text x="140" y="325" text-anchor="middle" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="7">(Confirmed experimentally: Aspect 1982, etc.)</text>
+          <text x="140" y="280" text-anchor="middle" fill="#8b6b40" font-family="Figtree, sans-serif" font-size="8" font-weight="600">Local hidden variables: |S| &#x2264; 2</text>
+          <text x="140" y="295" text-anchor="middle" fill="#3e6252" font-family="Figtree, sans-serif" font-size="8" font-weight="600">Quantum mechanics: |S| = 2&#x221A;2</text>
+          <text x="140" y="310" text-anchor="middle" fill="#9b5247" font-family="Figtree, sans-serif" font-size="8" font-weight="700">Nature sides with QM</text>
+          <text x="140" y="325" text-anchor="middle" fill="#8f8676" font-family="Figtree, sans-serif" font-size="7">(Confirmed experimentally: Aspect 1982, etc.)</text>
         </svg>
       </div>
     </div>
@@ -287,40 +287,40 @@
       <div class="diagram-container">
         <svg viewBox="0 0 250 310" xmlns="http://www.w3.org/2000/svg">
           <rect x="5" y="5" width="240" height="300" rx="8" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
-          <text x="125" y="28" text-anchor="middle" fill="#9b5247" font-family="Playfair Display, serif" font-size="11" font-weight="700">Spaceship Paradox</text>
+          <text x="125" y="28" text-anchor="middle" fill="#9b5247" font-family="Cormorant Garamond, serif" font-size="11" font-weight="700">Spaceship Paradox</text>
           <!-- Before: at rest -->
-          <text x="125" y="52" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Before acceleration (lab frame)</text>
+          <text x="125" y="52" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Before acceleration (lab frame)</text>
           <!-- Ship A -->
           <polygon points="40,75 65,68 65,82" fill="rgba(62,98,82,0.3)" stroke="#3e6252" stroke-width="1"/>
-          <text x="52" y="95" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="7">A</text>
+          <text x="52" y="95" text-anchor="middle" fill="#3e6252" font-family="Courier Prime, monospace" font-size="7">A</text>
           <!-- String -->
           <line x1="65" y1="75" x2="165" y2="75" stroke="#8b6b40" stroke-width="1.5"/>
-          <text x="115" y="68" text-anchor="middle" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="6">string (taut)</text>
+          <text x="115" y="68" text-anchor="middle" fill="#8b6b40" font-family="Figtree, sans-serif" font-size="6">string (taut)</text>
           <!-- Ship B -->
           <polygon points="165,75 190,68 190,82" fill="rgba(64,84,119,0.3)" stroke="#405477" stroke-width="1"/>
-          <text x="177" y="95" text-anchor="middle" fill="#405477" font-family="JetBrains Mono, monospace" font-size="7">B</text>
+          <text x="177" y="95" text-anchor="middle" fill="#405477" font-family="Courier Prime, monospace" font-size="7">B</text>
           <!-- Arrow showing acceleration -->
           <line x1="52" y1="100" x2="52" y2="120" stroke="#3e6252" stroke-width="0.8" stroke-dasharray="3,2"/>
           <line x1="177" y1="100" x2="177" y2="120" stroke="#405477" stroke-width="0.8" stroke-dasharray="3,2"/>
           <!-- After: moving -->
-          <text x="125" y="140" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">After acceleration (lab frame)</text>
-          <text x="125" y="152" text-anchor="middle" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="7">Same distance in lab frame, but...</text>
+          <text x="125" y="140" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">After acceleration (lab frame)</text>
+          <text x="125" y="152" text-anchor="middle" fill="#8f8676" font-family="Figtree, sans-serif" font-size="7">Same distance in lab frame, but...</text>
           <!-- Ship A moving -->
           <polygon points="40,170 60,164 60,176" fill="rgba(62,98,82,0.3)" stroke="#3e6252" stroke-width="1"/>
           <!-- String breaking -->
           <line x1="60" y1="170" x2="103" y2="170" stroke="#8b6b40" stroke-width="1.5"/>
           <line x1="127" y1="170" x2="165" y2="170" stroke="#8b6b40" stroke-width="1.5"/>
-          <text x="115" y="167" text-anchor="middle" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">SNAP!</text>
+          <text x="115" y="167" text-anchor="middle" fill="#9b5247" font-family="Figtree, sans-serif" font-size="9" font-weight="700">SNAP!</text>
           <!-- Ship B moving -->
           <polygon points="165,170 185,164 185,176" fill="rgba(64,84,119,0.3)" stroke="#405477" stroke-width="1"/>
           <!-- Explanation box -->
           <rect x="20" y="195" width="210" height="95" rx="5" fill="rgba(155,82,71,0.05)" stroke="#9b5247" stroke-width="0.8"/>
-          <text x="125" y="212" text-anchor="middle" fill="#262019" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">Why does the string break?</text>
-          <text x="125" y="228" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">In the ships' rest frame, the</text>
-          <text x="125" y="240" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">distance between them INCREASES</text>
-          <text x="125" y="256" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="8">L(rest) = &#x3B3; &#xD7; L(lab)</text>
-          <text x="125" y="272" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">The string must Lorentz-contract</text>
-          <text x="125" y="284" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">but the gap grows &mdash; it snaps</text>
+          <text x="125" y="212" text-anchor="middle" fill="#262019" font-family="Figtree, sans-serif" font-size="8" font-weight="600">Why does the string break?</text>
+          <text x="125" y="228" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">In the ships' rest frame, the</text>
+          <text x="125" y="240" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">distance between them INCREASES</text>
+          <text x="125" y="256" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime, monospace" font-size="8">L(rest) = &#x3B3; &#xD7; L(lab)</text>
+          <text x="125" y="272" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">The string must Lorentz-contract</text>
+          <text x="125" y="284" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">but the gap grows &mdash; it snaps</text>
         </svg>
       </div>
     </div>
@@ -450,40 +450,40 @@
       <line x1="140" y1="80" x2="560" y2="80" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4"/>
       <!-- Central node: Bell -->
       <circle cx="350" cy="170" r="35" fill="rgba(155,82,71,0.12)" stroke="#9b5247" stroke-width="2"/>
-      <text x="350" y="165" text-anchor="middle" fill="#9b5247" font-family="Playfair Display, serif" font-size="12" font-weight="700">J.S. Bell</text>
-      <text x="350" y="181" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">1928&ndash;1990</text>
+      <text x="350" y="165" text-anchor="middle" fill="#9b5247" font-family="Cormorant Garamond, serif" font-size="12" font-weight="700">J.S. Bell</text>
+      <text x="350" y="181" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">1928&ndash;1990</text>
       <!-- Einstein -->
       <circle cx="140" cy="80" r="28" fill="rgba(155,82,71,0.08)" stroke="#9b5247" stroke-width="1.5"/>
-      <text x="140" y="75" text-anchor="middle" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">A. Einstein</text>
-      <text x="140" y="88" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">EPR inspiration</text>
+      <text x="140" y="75" text-anchor="middle" fill="#9b5247" font-family="Figtree, sans-serif" font-size="9" font-weight="600">A. Einstein</text>
+      <text x="140" y="88" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">EPR inspiration</text>
       <!-- Bohm -->
       <circle cx="560" cy="80" r="28" fill="rgba(62,98,82,0.08)" stroke="#3e6252" stroke-width="1.5"/>
-      <text x="560" y="75" text-anchor="middle" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">D. Bohm</text>
-      <text x="560" y="88" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Hidden variables</text>
+      <text x="560" y="75" text-anchor="middle" fill="#3e6252" font-family="Figtree, sans-serif" font-size="9" font-weight="600">D. Bohm</text>
+      <text x="560" y="88" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">Hidden variables</text>
       <!-- Bohr -->
       <circle cx="140" cy="170" r="24" fill="rgba(139,107,64,0.06)" stroke="#8b6b40" stroke-width="1"/>
-      <text x="140" y="167" text-anchor="middle" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">N. Bohr</text>
-      <text x="140" y="179" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Copenhagen</text>
+      <text x="140" y="167" text-anchor="middle" fill="#8b6b40" font-family="Figtree, sans-serif" font-size="8" font-weight="600">N. Bohr</text>
+      <text x="140" y="179" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">Copenhagen</text>
       <!-- Aspect -->
       <circle cx="140" cy="265" r="28" fill="rgba(64,84,119,0.08)" stroke="#405477" stroke-width="1.5"/>
-      <text x="140" y="260" text-anchor="middle" fill="#405477" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">A. Aspect</text>
-      <text x="140" y="273" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Experimental test</text>
+      <text x="140" y="260" text-anchor="middle" fill="#405477" font-family="Figtree, sans-serif" font-size="9" font-weight="600">A. Aspect</text>
+      <text x="140" y="273" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">Experimental test</text>
       <!-- Clauser -->
       <circle cx="560" cy="265" r="28" fill="rgba(109,81,114,0.08)" stroke="#6d5172" stroke-width="1.5"/>
-      <text x="560" y="260" text-anchor="middle" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">J. Clauser</text>
-      <text x="560" y="273" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">First Bell test</text>
+      <text x="560" y="260" text-anchor="middle" fill="#6d5172" font-family="Figtree, sans-serif" font-size="9" font-weight="600">J. Clauser</text>
+      <text x="560" y="273" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">First Bell test</text>
       <!-- Jackiw -->
       <circle cx="560" cy="170" r="24" fill="rgba(139,107,64,0.06)" stroke="#8b6b40" stroke-width="1"/>
-      <text x="560" y="167" text-anchor="middle" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="8" font-weight="600">R. Jackiw</text>
-      <text x="560" y="179" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">ABJ anomaly</text>
+      <text x="560" y="167" text-anchor="middle" fill="#8b6b40" font-family="Figtree, sans-serif" font-size="8" font-weight="600">R. Jackiw</text>
+      <text x="560" y="179" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">ABJ anomaly</text>
       <!-- Zeilinger -->
       <circle cx="350" cy="345" r="28" fill="rgba(155,82,71,0.08)" stroke="#9b5247" stroke-width="1.5"/>
-      <text x="350" y="340" text-anchor="middle" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="9" font-weight="600">A. Zeilinger</text>
-      <text x="350" y="353" text-anchor="middle" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="7">Loophole-free tests</text>
+      <text x="350" y="340" text-anchor="middle" fill="#9b5247" font-family="Figtree, sans-serif" font-size="9" font-weight="600">A. Zeilinger</text>
+      <text x="350" y="353" text-anchor="middle" fill="#5c5549" font-family="Figtree, sans-serif" font-size="7">Loophole-free tests</text>
       <!-- Relationship labels -->
-      <text x="230" y="112" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(-22,230,112)">EPR paradox (1935)</text>
-      <text x="470" y="112" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(22,470,112)">Pilot wave (1952)</text>
-      <text x="228" y="230" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="6" transform="rotate(28,228,230)">Paris experiments (1982)</text>
+      <text x="230" y="112" text-anchor="middle" fill="#8f8676" font-family="Courier Prime, monospace" font-size="6" transform="rotate(-22,230,112)">EPR paradox (1935)</text>
+      <text x="470" y="112" text-anchor="middle" fill="#8f8676" font-family="Courier Prime, monospace" font-size="6" transform="rotate(22,470,112)">Pilot wave (1952)</text>
+      <text x="228" y="230" text-anchor="middle" fill="#8f8676" font-family="Courier Prime, monospace" font-size="6" transform="rotate(28,228,230)">Paris experiments (1982)</text>
     </svg>
   </div>
 </section>
@@ -588,50 +588,50 @@
       <line x1="80" y1="35" x2="80" y2="405" stroke="#cac3b2" stroke-width="2"/>
 
       <circle cx="80" cy="37" r="4" fill="#9b5247"/>
-      <text x="60" y="42" text-anchor="end" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1928</text>
-      <text x="100" y="37" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Born in Belfast, Northern Ireland</text>
-      <text x="100" y="50" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Working-class family; self-educated passion for science</text>
+      <text x="60" y="42" text-anchor="end" fill="#9b5247" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1928</text>
+      <text x="100" y="37" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Born in Belfast, Northern Ireland</text>
+      <text x="100" y="50" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Working-class family; self-educated passion for science</text>
 
       <circle cx="80" cy="80" r="3" fill="#3e6252"/>
-      <text x="60" y="85" text-anchor="end" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1948</text>
-      <text x="100" y="80" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">BSc in Physics, Queen's University Belfast</text>
-      <text x="100" y="93" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Followed by second degree in mathematical physics (1949)</text>
+      <text x="60" y="85" text-anchor="end" fill="#3e6252" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1948</text>
+      <text x="100" y="80" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">BSc in Physics, Queen's University Belfast</text>
+      <text x="100" y="93" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Followed by second degree in mathematical physics (1949)</text>
 
       <circle cx="80" cy="125" r="3" fill="#5c5549"/>
-      <text x="60" y="130" text-anchor="end" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1949</text>
-      <text x="100" y="125" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Joins AERE Harwell</text>
-      <text x="100" y="138" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Accelerator physics and nuclear reactor theory</text>
+      <text x="60" y="130" text-anchor="end" fill="#5c5549" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1949</text>
+      <text x="100" y="125" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Joins AERE Harwell</text>
+      <text x="100" y="138" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Accelerator physics and nuclear reactor theory</text>
 
       <circle cx="80" cy="168" r="4" fill="#405477"/>
-      <text x="60" y="173" text-anchor="end" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1960</text>
-      <text x="100" y="168" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Moves to CERN, Geneva</text>
-      <text x="100" y="181" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Joins Theory Division; begins three decades of work</text>
+      <text x="60" y="173" text-anchor="end" fill="#405477" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1960</text>
+      <text x="100" y="168" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Moves to CERN, Geneva</text>
+      <text x="100" y="181" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Joins Theory Division; begins three decades of work</text>
 
       <circle cx="80" cy="218" r="5" fill="#9b5247"/>
-      <text x="60" y="223" text-anchor="end" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1964</text>
-      <text x="100" y="218" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Publishes Bell's Theorem</text>
-      <text x="100" y="231" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">"On the Einstein Podolsky Rosen Paradox" &mdash; 6 pages that changed physics</text>
+      <text x="60" y="223" text-anchor="end" fill="#9b5247" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1964</text>
+      <text x="100" y="218" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Publishes Bell's Theorem</text>
+      <text x="100" y="231" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">"On the Einstein Podolsky Rosen Paradox" &mdash; 6 pages that changed physics</text>
       <rect x="97" y="208" width="420" height="28" rx="3" fill="rgba(155,82,71,0.05)" stroke="none"/>
 
       <circle cx="80" cy="265" r="4" fill="#6d5172"/>
-      <text x="60" y="270" text-anchor="end" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1969</text>
-      <text x="100" y="265" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Bell-Jackiw anomaly discovered</text>
-      <text x="100" y="278" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">With Jackiw (and independently Adler) &mdash; key to the Standard Model</text>
+      <text x="60" y="270" text-anchor="end" fill="#6d5172" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1969</text>
+      <text x="100" y="265" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Bell-Jackiw anomaly discovered</text>
+      <text x="100" y="278" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">With Jackiw (and independently Adler) &mdash; key to the Standard Model</text>
 
       <circle cx="80" cy="310" r="3" fill="#8b6b40"/>
-      <text x="60" y="315" text-anchor="end" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1976</text>
-      <text x="100" y="310" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Bell's spaceship paradox published</text>
-      <text x="100" y="323" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Reveals widespread misunderstanding of Lorentz contraction</text>
+      <text x="60" y="315" text-anchor="end" fill="#8b6b40" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1976</text>
+      <text x="100" y="310" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Bell's spaceship paradox published</text>
+      <text x="100" y="323" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Reveals widespread misunderstanding of Lorentz contraction</text>
 
       <circle cx="80" cy="355" r="4" fill="#3e6252"/>
-      <text x="60" y="360" text-anchor="end" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1982</text>
-      <text x="100" y="355" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Aspect experiments confirm Bell violations</text>
-      <text x="100" y="368" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Alain Aspect's Paris experiments bring Bell's theorem to world attention</text>
+      <text x="60" y="360" text-anchor="end" fill="#3e6252" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1982</text>
+      <text x="100" y="355" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Aspect experiments confirm Bell violations</text>
+      <text x="100" y="368" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Alain Aspect's Paris experiments bring Bell's theorem to world attention</text>
 
       <circle cx="80" cy="397" r="4" fill="#9b5247"/>
-      <text x="60" y="402" text-anchor="end" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1990</text>
-      <text x="100" y="397" fill="#262019" font-family="DM Sans, sans-serif" font-size="10" font-weight="600">Dies suddenly at CERN, aged 62</text>
-      <text x="100" y="410" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Cerebral hemorrhage; had been nominated for the Nobel Prize</text>
+      <text x="60" y="402" text-anchor="end" fill="#9b5247" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1990</text>
+      <text x="100" y="397" fill="#262019" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Dies suddenly at CERN, aged 62</text>
+      <text x="100" y="410" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Cerebral hemorrhage; had been nominated for the Nobel Prize</text>
     </svg>
   </div>
 </section>

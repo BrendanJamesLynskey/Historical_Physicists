@@ -6,7 +6,7 @@
 <title>Nikola Tesla — Master of Alternating Current</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
@@ -16,14 +16,14 @@
     --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); }
 .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); }
@@ -32,19 +32,19 @@
 .accent-purple { color: var(--accent-purple); }
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
@@ -52,19 +52,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
 .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
 .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
 .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -209,20 +209,20 @@
         <div class="diagram-container">
             <svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg">
                 <!-- Title -->
-                <text x="190" y="20" fill="#6d5172" font-family="DM Sans" font-size="12" text-anchor="middle" font-weight="700">AC vs DC Waveforms</text>
+                <text x="190" y="20" fill="#6d5172" font-family="Figtree" font-size="12" text-anchor="middle" font-weight="700">AC vs DC Waveforms</text>
                 <!-- DC waveform -->
-                <text x="50" y="55" fill="#9b5247" font-family="DM Sans" font-size="10" font-weight="700">DC</text>
+                <text x="50" y="55" fill="#9b5247" font-family="Figtree" font-size="10" font-weight="700">DC</text>
                 <line x1="70" y1="52" x2="350" y2="52" stroke="#9b5247" stroke-width="2"/>
                 <line x1="70" y1="72" x2="350" y2="72" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
-                <text x="360" y="56" fill="#9b5247" font-family="DM Sans" font-size="8">+V</text>
-                <text x="360" y="76" fill="#8f8676" font-family="DM Sans" font-size="8">0</text>
+                <text x="360" y="56" fill="#9b5247" font-family="Figtree" font-size="8">+V</text>
+                <text x="360" y="76" fill="#8f8676" font-family="Figtree" font-size="8">0</text>
                 <!-- AC waveform - Phase A -->
-                <text x="50" y="120" fill="#6d5172" font-family="DM Sans" font-size="10" font-weight="700">AC</text>
+                <text x="50" y="120" fill="#6d5172" font-family="Figtree" font-size="10" font-weight="700">AC</text>
                 <line x1="70" y1="130" x2="350" y2="130" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
                 <path d="M70 130 Q105 90 140 130 Q175 170 210 130 Q245 90 280 130 Q315 170 350 130" fill="none" stroke="#6d5172" stroke-width="2"/>
-                <text x="360" y="134" fill="#6d5172" font-family="DM Sans" font-size="8">&#966;A</text>
+                <text x="360" y="134" fill="#6d5172" font-family="Figtree" font-size="8">&#966;A</text>
                 <!-- Three-phase section -->
-                <text x="190" y="195" fill="#262019" font-family="DM Sans" font-size="11" text-anchor="middle" font-weight="700">Three-Phase AC (Tesla's System)</text>
+                <text x="190" y="195" fill="#262019" font-family="Figtree" font-size="11" text-anchor="middle" font-weight="700">Three-Phase AC (Tesla's System)</text>
                 <line x1="70" y1="245" x2="350" y2="245" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
                 <!-- Phase A -->
                 <path d="M70 245 Q93 210 116 245 Q139 280 162 245 Q185 210 208 245 Q231 280 254 245 Q277 210 300 245 Q323 280 350 245" fill="none" stroke="#6d5172" stroke-width="1.8"/>
@@ -232,11 +232,11 @@
                 <path d="M70 230 Q93 195 116 230 Q139 265 162 230 Q185 195 208 230 Q231 265 254 230 Q277 195 300 230 Q323 265 350 230" fill="none" stroke="#8b6b40" stroke-width="1.5" transform="translate(-60,0)"/>
                 <!-- Legend -->
                 <line x1="80" y1="300" x2="100" y2="300" stroke="#6d5172" stroke-width="2"/>
-                <text x="108" y="304" fill="#5c5549" font-family="DM Sans" font-size="8">Phase A (0&#176;)</text>
+                <text x="108" y="304" fill="#5c5549" font-family="Figtree" font-size="8">Phase A (0&#176;)</text>
                 <line x1="175" y1="300" x2="195" y2="300" stroke="#3e6252" stroke-width="2"/>
-                <text x="203" y="304" fill="#5c5549" font-family="DM Sans" font-size="8">Phase B (120&#176;)</text>
+                <text x="203" y="304" fill="#5c5549" font-family="Figtree" font-size="8">Phase B (120&#176;)</text>
                 <line x1="280" y1="300" x2="300" y2="300" stroke="#8b6b40" stroke-width="2"/>
-                <text x="308" y="304" fill="#5c5549" font-family="DM Sans" font-size="8">Phase C (240&#176;)</text>
+                <text x="308" y="304" fill="#5c5549" font-family="Figtree" font-size="8">Phase C (240&#176;)</text>
             </svg>
         </div>
     </div>
@@ -285,38 +285,38 @@
         <div class="diagram-container">
             <svg viewBox="0 0 380 310" xmlns="http://www.w3.org/2000/svg">
                 <!-- Title -->
-                <text x="190" y="20" fill="#6d5172" font-family="DM Sans" font-size="12" text-anchor="middle" font-weight="700">Rotating Magnetic Field</text>
-                <text x="190" y="35" fill="#8f8676" font-family="DM Sans" font-size="9" text-anchor="middle">Polyphase Induction Motor Principle</text>
+                <text x="190" y="20" fill="#6d5172" font-family="Figtree" font-size="12" text-anchor="middle" font-weight="700">Rotating Magnetic Field</text>
+                <text x="190" y="35" fill="#8f8676" font-family="Figtree" font-size="9" text-anchor="middle">Polyphase Induction Motor Principle</text>
                 <!-- Motor cross-section -->
                 <circle cx="190" cy="150" r="90" fill="none" stroke="#cac3b2" stroke-width="1.5"/>
                 <circle cx="190" cy="150" r="88" fill="none" stroke="#6d5172" stroke-width="0.5" opacity="0.3"/>
                 <!-- Stator windings - Phase A (top/bottom) -->
                 <rect x="178" y="58" width="24" height="14" rx="3" fill="none" stroke="#6d5172" stroke-width="1.5"/>
-                <text x="190" y="69" fill="#6d5172" font-family="DM Sans" font-size="8" text-anchor="middle">A</text>
+                <text x="190" y="69" fill="#6d5172" font-family="Figtree" font-size="8" text-anchor="middle">A</text>
                 <rect x="178" y="228" width="24" height="14" rx="3" fill="none" stroke="#6d5172" stroke-width="1.5"/>
-                <text x="190" y="239" fill="#6d5172" font-family="DM Sans" font-size="8" text-anchor="middle">A'</text>
+                <text x="190" y="239" fill="#6d5172" font-family="Figtree" font-size="8" text-anchor="middle">A'</text>
                 <!-- Phase B (upper-right / lower-left) -->
                 <rect x="250" y="82" width="24" height="14" rx="3" fill="none" stroke="#3e6252" stroke-width="1.5" transform="rotate(30 262 89)"/>
-                <text x="266" y="92" fill="#3e6252" font-family="DM Sans" font-size="8" text-anchor="middle">B</text>
+                <text x="266" y="92" fill="#3e6252" font-family="Figtree" font-size="8" text-anchor="middle">B</text>
                 <rect x="106" y="204" width="24" height="14" rx="3" fill="none" stroke="#3e6252" stroke-width="1.5" transform="rotate(30 118 211)"/>
-                <text x="114" y="214" fill="#3e6252" font-family="DM Sans" font-size="8" text-anchor="middle">B'</text>
+                <text x="114" y="214" fill="#3e6252" font-family="Figtree" font-size="8" text-anchor="middle">B'</text>
                 <!-- Phase C (upper-left / lower-right) -->
                 <rect x="106" y="82" width="24" height="14" rx="3" fill="none" stroke="#8b6b40" stroke-width="1.5" transform="rotate(-30 118 89)"/>
-                <text x="114" y="92" fill="#8b6b40" font-family="DM Sans" font-size="8" text-anchor="middle">C</text>
+                <text x="114" y="92" fill="#8b6b40" font-family="Figtree" font-size="8" text-anchor="middle">C</text>
                 <rect x="250" y="204" width="24" height="14" rx="3" fill="none" stroke="#8b6b40" stroke-width="1.5" transform="rotate(-30 262 211)"/>
-                <text x="266" y="214" fill="#8b6b40" font-family="DM Sans" font-size="8" text-anchor="middle">C'</text>
+                <text x="266" y="214" fill="#8b6b40" font-family="Figtree" font-size="8" text-anchor="middle">C'</text>
                 <!-- Rotor -->
                 <circle cx="190" cy="150" r="45" fill="none" stroke="#262019" stroke-width="1" stroke-dasharray="4,2"/>
-                <text x="190" y="153" fill="#262019" font-family="DM Sans" font-size="9" text-anchor="middle">Rotor</text>
+                <text x="190" y="153" fill="#262019" font-family="Figtree" font-size="9" text-anchor="middle">Rotor</text>
                 <!-- Rotating field arrow -->
                 <path d="M190 105 A45 45 0 0 1 230 135" fill="none" stroke="#9b5247" stroke-width="2"/>
                 <polygon points="232,132 228,140 236,138" fill="#9b5247"/>
-                <text x="245" y="118" fill="#9b5247" font-family="DM Sans" font-size="8">Rotating</text>
-                <text x="245" y="128" fill="#9b5247" font-family="DM Sans" font-size="8">Field</text>
+                <text x="245" y="118" fill="#9b5247" font-family="Figtree" font-size="8">Rotating</text>
+                <text x="245" y="128" fill="#9b5247" font-family="Figtree" font-size="8">Field</text>
                 <!-- Legend box -->
                 <rect x="30" y="258" width="320" height="45" rx="6" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
-                <text x="190" y="276" fill="#262019" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Three phases create a smoothly rotating field</text>
-                <text x="190" y="293" fill="#5c5549" font-family="DM Sans" font-size="8" text-anchor="middle">The rotor follows by induction &mdash; no brushes or commutator needed</text>
+                <text x="190" y="276" fill="#262019" font-family="Figtree" font-size="9" text-anchor="middle" font-weight="700">Three phases create a smoothly rotating field</text>
+                <text x="190" y="293" fill="#5c5549" font-family="Figtree" font-size="8" text-anchor="middle">The rotor follows by induction &mdash; no brushes or commutator needed</text>
             </svg>
         </div>
     </div>
@@ -418,43 +418,43 @@
         <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
             <!-- Central node: Tesla -->
             <circle cx="350" cy="160" r="38" fill="#e6e2d5" stroke="#6d5172" stroke-width="2"/>
-            <text x="350" y="155" fill="#6d5172" font-family="Playfair Display" font-size="13" text-anchor="middle" font-weight="700">Nikola</text>
-            <text x="350" y="172" fill="#6d5172" font-family="Playfair Display" font-size="13" text-anchor="middle" font-weight="700">Tesla</text>
+            <text x="350" y="155" fill="#6d5172" font-family="Cormorant Garamond" font-size="13" text-anchor="middle" font-weight="700">Nikola</text>
+            <text x="350" y="172" fill="#6d5172" font-family="Cormorant Garamond" font-size="13" text-anchor="middle" font-weight="700">Tesla</text>
             <!-- Edison -->
             <line x1="312" y1="150" x2="150" y2="70" stroke="#9b5247" stroke-width="1.5" opacity="0.6"/>
             <circle cx="125" cy="60" r="30" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.5"/>
-            <text x="125" y="57" fill="#9b5247" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Edison</text>
-            <text x="125" y="69" fill="#5c5549" font-family="DM Sans" font-size="7" text-anchor="middle">Rival (DC)</text>
+            <text x="125" y="57" fill="#9b5247" font-family="Figtree" font-size="9" text-anchor="middle" font-weight="700">Edison</text>
+            <text x="125" y="69" fill="#5c5549" font-family="Figtree" font-size="7" text-anchor="middle">Rival (DC)</text>
             <!-- Westinghouse -->
             <line x1="315" y1="175" x2="130" y2="240" stroke="#3e6252" stroke-width="1.5" opacity="0.6"/>
             <circle cx="110" cy="250" r="30" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.5"/>
-            <text x="110" y="247" fill="#3e6252" font-family="DM Sans" font-size="8" text-anchor="middle" font-weight="700">Westinghouse</text>
-            <text x="110" y="259" fill="#5c5549" font-family="DM Sans" font-size="7" text-anchor="middle">Patron & ally</text>
+            <text x="110" y="247" fill="#3e6252" font-family="Figtree" font-size="8" text-anchor="middle" font-weight="700">Westinghouse</text>
+            <text x="110" y="259" fill="#5c5549" font-family="Figtree" font-size="7" text-anchor="middle">Patron & ally</text>
             <!-- Marconi -->
             <line x1="388" y1="155" x2="550" y2="75" stroke="#8b6b40" stroke-width="1.5" opacity="0.6"/>
             <circle cx="570" cy="65" r="28" fill="#e6e2d5" stroke="#8b6b40" stroke-width="1.5"/>
-            <text x="570" y="63" fill="#8b6b40" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Marconi</text>
-            <text x="570" y="74" fill="#5c5549" font-family="DM Sans" font-size="7" text-anchor="middle">Radio rival</text>
+            <text x="570" y="63" fill="#8b6b40" font-family="Figtree" font-size="9" text-anchor="middle" font-weight="700">Marconi</text>
+            <text x="570" y="74" fill="#5c5549" font-family="Figtree" font-size="7" text-anchor="middle">Radio rival</text>
             <!-- J.P. Morgan -->
             <line x1="385" y1="175" x2="560" y2="235" stroke="#405477" stroke-width="1.5" opacity="0.6"/>
             <circle cx="575" cy="245" r="28" fill="#e6e2d5" stroke="#405477" stroke-width="1.5"/>
-            <text x="575" y="243" fill="#405477" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">J.P. Morgan</text>
-            <text x="575" y="254" fill="#5c5549" font-family="DM Sans" font-size="7" text-anchor="middle">Funder</text>
+            <text x="575" y="243" fill="#405477" font-family="Figtree" font-size="9" text-anchor="middle" font-weight="700">J.P. Morgan</text>
+            <text x="575" y="254" fill="#5c5549" font-family="Figtree" font-size="7" text-anchor="middle">Funder</text>
             <!-- Mark Twain -->
             <line x1="350" y1="198" x2="350" y2="275" stroke="#7a591d" stroke-width="1.2" opacity="0.6"/>
             <circle cx="350" cy="290" r="28" fill="#e6e2d5" stroke="#7a591d" stroke-width="1.5"/>
-            <text x="350" y="288" fill="#7a591d" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Mark Twain</text>
-            <text x="350" y="299" fill="#5c5549" font-family="DM Sans" font-size="7" text-anchor="middle">Close friend</text>
+            <text x="350" y="288" fill="#7a591d" font-family="Figtree" font-size="9" text-anchor="middle" font-weight="700">Mark Twain</text>
+            <text x="350" y="299" fill="#5c5549" font-family="Figtree" font-size="7" text-anchor="middle">Close friend</text>
             <!-- Hertz -->
             <line x1="350" y1="122" x2="350" y2="45" stroke="#7a591d" stroke-width="1.2" opacity="0.6" stroke-dasharray="4,3"/>
             <circle cx="350" cy="30" r="28" fill="#e6e2d5" stroke="#7a591d" stroke-width="1.5"/>
-            <text x="350" y="28" fill="#7a591d" font-family="DM Sans" font-size="9" text-anchor="middle" font-weight="700">Hertz</text>
-            <text x="350" y="39" fill="#5c5549" font-family="DM Sans" font-size="7" text-anchor="middle">EM wave pioneer</text>
+            <text x="350" y="28" fill="#7a591d" font-family="Figtree" font-size="9" text-anchor="middle" font-weight="700">Hertz</text>
+            <text x="350" y="39" fill="#5c5549" font-family="Figtree" font-size="7" text-anchor="middle">EM wave pioneer</text>
             <!-- Kelvin -->
             <line x1="312" y1="145" x2="230" y2="55" stroke="#6d5172" stroke-width="1.2" opacity="0.6"/>
             <circle cx="215" cy="42" r="25" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.5"/>
-            <text x="215" y="40" fill="#6d5172" font-family="DM Sans" font-size="8" text-anchor="middle" font-weight="700">Lord Kelvin</text>
-            <text x="215" y="50" fill="#5c5549" font-family="DM Sans" font-size="7" text-anchor="middle">Admirer</text>
+            <text x="215" y="40" fill="#6d5172" font-family="Figtree" font-size="8" text-anchor="middle" font-weight="700">Lord Kelvin</text>
+            <text x="215" y="50" fill="#5c5549" font-family="Figtree" font-size="7" text-anchor="middle">Admirer</text>
         </svg>
     </div>
 </section>
@@ -558,14 +558,14 @@
             <circle cx="480" cy="20" r="4" fill="#9b5247"/>
             <circle cx="570" cy="20" r="4" fill="#7a591d"/>
             <circle cx="660" cy="20" r="4" fill="#9b5247"/>
-            <text x="40" y="12" fill="#6d5172" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1856</text>
-            <text x="130" y="12" fill="#6d5172" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1884</text>
-            <text x="210" y="12" fill="#3e6252" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1888</text>
-            <text x="300" y="12" fill="#8b6b40" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1893</text>
-            <text x="390" y="12" fill="#405477" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1899</text>
-            <text x="480" y="12" fill="#9b5247" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1901</text>
-            <text x="570" y="12" fill="#7a591d" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1917</text>
-            <text x="660" y="12" fill="#9b5247" font-family="JetBrains Mono" font-size="7" text-anchor="middle">1943</text>
+            <text x="40" y="12" fill="#6d5172" font-family="Courier Prime" font-size="7" text-anchor="middle">1856</text>
+            <text x="130" y="12" fill="#6d5172" font-family="Courier Prime" font-size="7" text-anchor="middle">1884</text>
+            <text x="210" y="12" fill="#3e6252" font-family="Courier Prime" font-size="7" text-anchor="middle">1888</text>
+            <text x="300" y="12" fill="#8b6b40" font-family="Courier Prime" font-size="7" text-anchor="middle">1893</text>
+            <text x="390" y="12" fill="#405477" font-family="Courier Prime" font-size="7" text-anchor="middle">1899</text>
+            <text x="480" y="12" fill="#9b5247" font-family="Courier Prime" font-size="7" text-anchor="middle">1901</text>
+            <text x="570" y="12" fill="#7a591d" font-family="Courier Prime" font-size="7" text-anchor="middle">1917</text>
+            <text x="660" y="12" fill="#9b5247" font-family="Courier Prime" font-size="7" text-anchor="middle">1943</text>
         </svg>
     </div>
     <div style="max-width: 85%; margin: 0.3em auto;">

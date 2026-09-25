@@ -6,7 +6,7 @@
 <title>Max Born — Architect of Quantum Probability</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
@@ -16,14 +16,14 @@
     --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); }
 .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); }
@@ -32,19 +32,19 @@
 .accent-purple { color: var(--accent-purple); }
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
@@ -52,19 +52,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
 .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
 .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
 .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -207,20 +207,20 @@
                     <!-- Axes -->
                     <line x1="50" y1="240" x2="380" y2="240" stroke="#8f8676" stroke-width="1"/>
                     <line x1="50" y1="240" x2="50" y2="20" stroke="#8f8676" stroke-width="1"/>
-                    <text x="210" y="270" fill="#8f8676" font-size="11" text-anchor="middle" font-family="DM Sans">Position x</text>
-                    <text x="15" y="130" fill="#8f8676" font-size="11" text-anchor="middle" font-family="DM Sans" transform="rotate(-90 15 130)">Amplitude</text>
+                    <text x="210" y="270" fill="#8f8676" font-size="11" text-anchor="middle" font-family="Figtree">Position x</text>
+                    <text x="15" y="130" fill="#8f8676" font-size="11" text-anchor="middle" font-family="Figtree" transform="rotate(-90 15 130)">Amplitude</text>
                     <!-- Wave function psi -->
                     <path d="M60,180 Q110,40 160,140 Q200,220 240,100 Q270,20 310,160 Q340,230 370,180" fill="none" stroke="#405477" stroke-width="2" opacity="0.7"/>
-                    <text x="375" y="175" fill="#405477" font-size="11" font-family="JetBrains Mono">&psi;(x)</text>
+                    <text x="375" y="175" fill="#405477" font-size="11" font-family="Courier Prime">&psi;(x)</text>
                     <!-- |psi|^2 filled -->
                     <path d="M60,220 Q110,130 160,195 Q200,240 240,165 Q270,100 310,210 Q340,238 370,220" fill="rgba(139,107,64,0.15)" stroke="#8b6b40" stroke-width="2.5"/>
-                    <text x="375" y="218" fill="#8b6b40" font-size="11" font-family="JetBrains Mono">|&psi;|&sup2;</text>
+                    <text x="375" y="218" fill="#8b6b40" font-size="11" font-family="Courier Prime">|&psi;|&sup2;</text>
                     <!-- Annotation -->
                     <rect x="100" y="5" rx="4" width="200" height="28" fill="rgba(230,226,213,0.9)" stroke="#cac3b2"/>
-                    <text x="200" y="24" fill="#8b6b40" font-size="12" text-anchor="middle" font-family="Playfair Display">P(x) = |&psi;(x)|&sup2; dx</text>
+                    <text x="200" y="24" fill="#8b6b40" font-size="12" text-anchor="middle" font-family="Cormorant Garamond">P(x) = |&psi;(x)|&sup2; dx</text>
                     <!-- Shaded region -->
                     <rect x="220" y="165" width="40" height="75" fill="rgba(139,107,64,0.1)" stroke="#8b6b40" stroke-width="0.5" stroke-dasharray="3,3"/>
-                    <text x="240" y="158" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="JetBrains Mono">dx</text>
+                    <text x="240" y="158" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="Courier Prime">dx</text>
                 </svg>
             </div>
         </div>
@@ -271,14 +271,14 @@
                         <line x1="30" y1="100" x2="30" y2="180"/><line x1="60" y1="90" x2="60" y2="190"/>
                         <line x1="90" y1="85" x2="90" y2="195"/><line x1="120" y1="80" x2="120" y2="200"/>
                     </g>
-                    <text x="75" y="75" fill="#405477" font-size="10" text-anchor="middle" font-family="JetBrains Mono">e^(ikx)</text>
+                    <text x="75" y="75" fill="#405477" font-size="10" text-anchor="middle" font-family="Courier Prime">e^(ikx)</text>
                     <!-- Arrow -->
                     <line x1="30" y1="140" x2="145" y2="140" stroke="#405477" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
                     <defs><marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#405477"/></marker></defs>
                     <!-- Scattering center -->
                     <circle cx="200" cy="140" r="35" fill="rgba(139,107,64,0.1)" stroke="#8b6b40" stroke-width="2"/>
                     <circle cx="200" cy="140" r="8" fill="#8b6b40" opacity="0.6"/>
-                    <text x="200" y="195" fill="#8b6b40" font-size="10" text-anchor="middle" font-family="JetBrains Mono">V(r)</text>
+                    <text x="200" y="195" fill="#8b6b40" font-size="10" text-anchor="middle" font-family="Courier Prime">V(r)</text>
                     <!-- Scattered spherical waves -->
                     <g fill="none" stroke="#3e6252" stroke-width="1" opacity="0.5">
                         <circle cx="200" cy="140" r="60"/><circle cx="200" cy="140" r="80"/><circle cx="200" cy="140" r="100"/>
@@ -290,10 +290,10 @@
                     <line x1="240" y1="170" x2="320" y2="220" stroke="#3e6252" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
                     <line x1="220" y1="175" x2="260" y2="250" stroke="#3e6252" stroke-width="1.2" marker-end="url(#arrowGreen)"/>
                     <defs><marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3e6252"/></marker></defs>
-                    <text x="345" y="138" fill="#3e6252" font-size="10" font-family="JetBrains Mono">f(&theta;)</text>
+                    <text x="345" y="138" fill="#3e6252" font-size="10" font-family="Courier Prime">f(&theta;)</text>
                     <!-- Cross section label -->
                     <rect x="240" y="5" rx="4" width="155" height="28" fill="rgba(230,226,213,0.9)" stroke="#cac3b2"/>
-                    <text x="317" y="24" fill="#8b6b40" font-size="11" text-anchor="middle" font-family="Playfair Display">d&sigma;/d&Omega; = |f(&theta;)|&sup2;</text>
+                    <text x="317" y="24" fill="#8b6b40" font-size="11" text-anchor="middle" font-family="Cormorant Garamond">d&sigma;/d&Omega; = |f(&theta;)|&sup2;</text>
                 </svg>
             </div>
         </div>
@@ -399,47 +399,47 @@
         <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
             <!-- Central node -->
             <circle cx="350" cy="170" r="30" fill="rgba(139,107,64,0.15)" stroke="#8b6b40" stroke-width="2"/>
-            <text x="350" y="174" fill="#8b6b40" font-size="12" text-anchor="middle" font-family="Playfair Display" font-weight="700">Born</text>
+            <text x="350" y="174" fill="#8b6b40" font-size="12" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700">Born</text>
             <!-- Connections -->
             <line x1="320" y1="170" x2="140" y2="80" stroke="#405477" stroke-width="1" opacity="0.5"/>
             <circle cx="120" cy="70" r="24" fill="rgba(64,84,119,0.1)" stroke="#405477" stroke-width="1.2"/>
-            <text x="120" y="64" fill="#405477" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Heisenberg</text>
-            <text x="120" y="78" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">matrix mech.</text>
+            <text x="120" y="64" fill="#405477" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Heisenberg</text>
+            <text x="120" y="78" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">matrix mech.</text>
 
             <line x1="320" y1="160" x2="160" y2="170" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
             <circle cx="140" cy="170" r="24" fill="rgba(62,98,82,0.1)" stroke="#3e6252" stroke-width="1.2"/>
-            <text x="140" y="164" fill="#3e6252" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Jordan</text>
-            <text x="140" y="178" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">matrix mech.</text>
+            <text x="140" y="164" fill="#3e6252" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Jordan</text>
+            <text x="140" y="178" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">matrix mech.</text>
 
             <line x1="350" y1="200" x2="180" y2="280" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
             <circle cx="160" cy="290" r="28" fill="rgba(155,82,71,0.1)" stroke="#9b5247" stroke-width="1.2"/>
-            <text x="160" y="284" fill="#9b5247" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Oppenheimer</text>
-            <text x="160" y="298" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">B-O approx.</text>
+            <text x="160" y="284" fill="#9b5247" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Oppenheimer</text>
+            <text x="160" y="298" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">B-O approx.</text>
 
             <line x1="380" y1="170" x2="540" y2="70" stroke="#6d5172" stroke-width="1" opacity="0.5"/>
             <circle cx="560" cy="60" r="24" fill="rgba(109,81,114,0.1)" stroke="#6d5172" stroke-width="1.2"/>
-            <text x="560" y="54" fill="#6d5172" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Einstein</text>
-            <text x="560" y="68" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">lifelong debate</text>
+            <text x="560" y="54" fill="#6d5172" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Einstein</text>
+            <text x="560" y="68" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">lifelong debate</text>
 
             <line x1="380" y1="160" x2="560" y2="150" stroke="#8b6b40" stroke-width="1" opacity="0.5"/>
             <circle cx="580" cy="150" r="24" fill="rgba(139,107,64,0.1)" stroke="#8b6b40" stroke-width="1.2"/>
-            <text x="580" y="144" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Pauli</text>
-            <text x="580" y="158" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">student/critic</text>
+            <text x="580" y="144" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Pauli</text>
+            <text x="580" y="158" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">student/critic</text>
 
             <line x1="380" y1="180" x2="560" y2="240" stroke="#405477" stroke-width="1" opacity="0.5"/>
             <circle cx="570" cy="250" r="24" fill="rgba(64,84,119,0.1)" stroke="#405477" stroke-width="1.2"/>
-            <text x="570" y="244" fill="#405477" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Fermi</text>
-            <text x="570" y="258" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">G&ouml;ttingen visitor</text>
+            <text x="570" y="244" fill="#405477" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Fermi</text>
+            <text x="570" y="258" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">G&ouml;ttingen visitor</text>
 
             <line x1="350" y1="200" x2="350" y2="300" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
             <circle cx="350" cy="320" r="24" fill="rgba(62,98,82,0.1)" stroke="#3e6252" stroke-width="1.2"/>
-            <text x="350" y="314" fill="#3e6252" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Dirac</text>
-            <text x="350" y="328" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">visitor 1927</text>
+            <text x="350" y="314" fill="#3e6252" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Dirac</text>
+            <text x="350" y="328" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">visitor 1927</text>
 
             <line x1="330" y1="145" x2="290" y2="60" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
             <circle cx="280" cy="45" r="24" fill="rgba(155,82,71,0.1)" stroke="#9b5247" stroke-width="1.2"/>
-            <text x="280" y="39" fill="#9b5247" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Hilbert</text>
-            <text x="280" y="53" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">mentor</text>
+            <text x="280" y="39" fill="#9b5247" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Hilbert</text>
+            <text x="280" y="53" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">mentor</text>
         </svg>
     </div>
 </section>
@@ -535,11 +535,11 @@
             <circle cx="310" cy="15" r="3" fill="#3e6252"/><circle cx="400" cy="15" r="3" fill="#9b5247"/>
             <circle cx="510" cy="15" r="3" fill="#6d5172"/><circle cx="610" cy="15" r="3" fill="#8b6b40"/>
             <circle cx="680" cy="15" r="4" fill="#8b6b40"/>
-            <text x="20" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1882</text>
-            <text x="310" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1925</text>
-            <text x="400" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1933</text>
-            <text x="610" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1954</text>
-            <text x="680" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1970</text>
+            <text x="20" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1882</text>
+            <text x="310" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1925</text>
+            <text x="400" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1933</text>
+            <text x="610" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1954</text>
+            <text x="680" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1970</text>
         </svg>
         <div class="timeline-item">
             <span class="year">1882</span>
@@ -637,7 +637,7 @@
         <span class="attribution">&mdash; Max Born, Nobel Lecture, December 11, 1954</span>
     </div>
     <div class="separator"></div>
-    <p style="text-align:center; margin-top:0.8em;"><span class="accent" style="font-family:'Playfair Display',serif; font-size:0.7em;">Max Born</span></p>
+    <p style="text-align:center; margin-top:0.8em;"><span class="accent" style="font-family:'Cormorant Garamond',serif; font-size:0.7em;">Max Born</span></p>
     <p style="text-align:center;" class="subtitle">1882 &ndash; 1970 &nbsp;&middot;&nbsp; Breslau &middot; G&ouml;ttingen &middot; Edinburgh</p>
 </section>
 

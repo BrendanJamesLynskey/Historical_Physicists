@@ -6,7 +6,7 @@
 <title>J. Robert Oppenheimer — The American Prometheus</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
@@ -16,14 +16,14 @@
     --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); }
 .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); }
@@ -32,19 +32,19 @@
 .accent-purple { color: var(--accent-purple); }
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
@@ -52,19 +52,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
 .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
 .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
 .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -205,31 +205,31 @@
             <div class="diagram-container">
                 <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                     <!-- Fission chain reaction diagram -->
-                    <text x="200" y="20" fill="#9b5247" font-size="12" text-anchor="middle" font-family="Playfair Display" font-weight="700">Fission Chain Reaction</text>
+                    <text x="200" y="20" fill="#9b5247" font-size="12" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700">Fission Chain Reaction</text>
                     <!-- Initial neutron -->
                     <circle cx="60" cy="80" r="4" fill="#405477"/>
-                    <text x="60" y="68" fill="#405477" font-size="8" text-anchor="middle" font-family="JetBrains Mono">n</text>
+                    <text x="60" y="68" fill="#405477" font-size="8" text-anchor="middle" font-family="Courier Prime">n</text>
                     <line x1="64" y1="80" x2="105" y2="80" stroke="#405477" stroke-width="1" marker-end="url(#arrB)"/>
                     <defs><marker id="arrB" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#405477"/></marker></defs>
                     <!-- U-235 nucleus -->
                     <circle cx="120" cy="80" r="14" fill="rgba(139,107,64,0.2)" stroke="#8b6b40" stroke-width="1.5"/>
-                    <text x="120" y="84" fill="#8b6b40" font-size="7" text-anchor="middle" font-family="JetBrains Mono">U-235</text>
+                    <text x="120" y="84" fill="#8b6b40" font-size="7" text-anchor="middle" font-family="Courier Prime">U-235</text>
                     <!-- Fission event - starburst -->
                     <g transform="translate(160,80)">
                         <line x1="0" y1="0" x2="15" y2="-8" stroke="#9b5247" stroke-width="1.5"/><line x1="0" y1="0" x2="18" y2="3" stroke="#9b5247" stroke-width="1.5"/>
                         <line x1="0" y1="0" x2="12" y2="14" stroke="#9b5247" stroke-width="1.5"/><line x1="0" y1="0" x2="-5" y2="15" stroke="#9b5247" stroke-width="1.5"/>
-                        <text x="0" y="-14" fill="#9b5247" font-size="7" text-anchor="middle" font-family="DM Sans">FISSION</text>
+                        <text x="0" y="-14" fill="#9b5247" font-size="7" text-anchor="middle" font-family="Figtree">FISSION</text>
                     </g>
                     <!-- Daughter nuclei -->
                     <circle cx="210" cy="55" r="10" fill="rgba(62,98,82,0.15)" stroke="#3e6252" stroke-width="1"/>
-                    <text x="210" y="58" fill="#3e6252" font-size="6" text-anchor="middle" font-family="JetBrains Mono">Ba</text>
+                    <text x="210" y="58" fill="#3e6252" font-size="6" text-anchor="middle" font-family="Courier Prime">Ba</text>
                     <circle cx="210" cy="110" r="8" fill="rgba(109,81,114,0.15)" stroke="#6d5172" stroke-width="1"/>
-                    <text x="210" y="113" fill="#6d5172" font-size="6" text-anchor="middle" font-family="JetBrains Mono">Kr</text>
+                    <text x="210" y="113" fill="#6d5172" font-size="6" text-anchor="middle" font-family="Courier Prime">Kr</text>
                     <!-- Released neutrons - generation 2 -->
                     <circle cx="240" cy="40" r="3" fill="#405477"/><circle cx="245" cy="70" r="3" fill="#405477"/><circle cx="240" cy="125" r="3" fill="#405477"/>
-                    <text x="250" y="38" fill="#405477" font-size="7" font-family="JetBrains Mono">n</text>
-                    <text x="253" y="68" fill="#405477" font-size="7" font-family="JetBrains Mono">n</text>
-                    <text x="248" y="123" fill="#405477" font-size="7" font-family="JetBrains Mono">n</text>
+                    <text x="250" y="38" fill="#405477" font-size="7" font-family="Courier Prime">n</text>
+                    <text x="253" y="68" fill="#405477" font-size="7" font-family="Courier Prime">n</text>
+                    <text x="248" y="123" fill="#405477" font-size="7" font-family="Courier Prime">n</text>
                     <!-- Arrows to next generation -->
                     <line x1="245" y1="40" x2="280" y2="40" stroke="#405477" stroke-width="0.8" marker-end="url(#arrB)"/>
                     <line x1="250" y1="70" x2="280" y2="70" stroke="#405477" stroke-width="0.8" marker-end="url(#arrB)"/>
@@ -238,9 +238,9 @@
                     <circle cx="295" cy="40" r="10" fill="rgba(139,107,64,0.15)" stroke="#8b6b40" stroke-width="1"/>
                     <circle cx="295" cy="70" r="10" fill="rgba(139,107,64,0.15)" stroke="#8b6b40" stroke-width="1"/>
                     <circle cx="295" cy="125" r="10" fill="rgba(139,107,64,0.15)" stroke="#8b6b40" stroke-width="1"/>
-                    <text x="295" y="43" fill="#8b6b40" font-size="6" text-anchor="middle" font-family="JetBrains Mono">U</text>
-                    <text x="295" y="73" fill="#8b6b40" font-size="6" text-anchor="middle" font-family="JetBrains Mono">U</text>
-                    <text x="295" y="128" fill="#8b6b40" font-size="6" text-anchor="middle" font-family="JetBrains Mono">U</text>
+                    <text x="295" y="43" fill="#8b6b40" font-size="6" text-anchor="middle" font-family="Courier Prime">U</text>
+                    <text x="295" y="73" fill="#8b6b40" font-size="6" text-anchor="middle" font-family="Courier Prime">U</text>
+                    <text x="295" y="128" fill="#8b6b40" font-size="6" text-anchor="middle" font-family="Courier Prime">U</text>
                     <!-- Exponential growth annotation -->
                     <g transform="translate(310,40)">
                         <line x1="0" y1="0" x2="12" y2="-10" stroke="#9b5247" stroke-width="0.7"/>
@@ -256,15 +256,15 @@
                     </g>
                     <!-- Energy annotation -->
                     <rect x="70" y="160" rx="4" width="260" height="50" fill="rgba(230,226,213,0.9)" stroke="#cac3b2"/>
-                    <text x="200" y="178" fill="#9b5247" font-size="10" text-anchor="middle" font-family="Playfair Display">E = &Delta;m c&sup2;</text>
-                    <text x="200" y="198" fill="#5c5549" font-size="8" text-anchor="middle" font-family="DM Sans">Each fission: ~200 MeV &middot; Chain doubles each generation</text>
+                    <text x="200" y="178" fill="#9b5247" font-size="10" text-anchor="middle" font-family="Cormorant Garamond">E = &Delta;m c&sup2;</text>
+                    <text x="200" y="198" fill="#5c5549" font-size="8" text-anchor="middle" font-family="Figtree">Each fission: ~200 MeV &middot; Chain doubles each generation</text>
                     <!-- Generation labels -->
-                    <text x="120" y="145" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">Gen 1</text>
-                    <text x="210" y="145" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">Products</text>
-                    <text x="295" y="145" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">Gen 2</text>
+                    <text x="120" y="145" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">Gen 1</text>
+                    <text x="210" y="145" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">Products</text>
+                    <text x="295" y="145" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">Gen 2</text>
                     <!-- Gamma rays -->
                     <path d="M165,65 L175,58 L185,72 L195,60" fill="none" stroke="#8b6b40" stroke-width="0.8"/>
-                    <text x="195" y="55" fill="#8b6b40" font-size="7" font-family="JetBrains Mono">&gamma;</text>
+                    <text x="195" y="55" fill="#8b6b40" font-size="7" font-family="Courier Prime">&gamma;</text>
                 </svg>
             </div>
         </div>
@@ -310,35 +310,35 @@
         <div>
             <div class="diagram-container">
                 <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <text x="200" y="20" fill="#9b5247" font-size="12" text-anchor="middle" font-family="Playfair Display" font-weight="700">Potential Energy Surface</text>
+                    <text x="200" y="20" fill="#9b5247" font-size="12" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700">Potential Energy Surface</text>
                     <!-- Axes -->
                     <line x1="50" y1="260" x2="380" y2="260" stroke="#8f8676" stroke-width="1"/>
                     <line x1="50" y1="260" x2="50" y2="40" stroke="#8f8676" stroke-width="1"/>
-                    <text x="215" y="285" fill="#8f8676" font-size="10" text-anchor="middle" font-family="DM Sans">Nuclear separation R</text>
-                    <text x="18" y="150" fill="#8f8676" font-size="10" text-anchor="middle" font-family="DM Sans" transform="rotate(-90 18 150)">Energy E(R)</text>
+                    <text x="215" y="285" fill="#8f8676" font-size="10" text-anchor="middle" font-family="Figtree">Nuclear separation R</text>
+                    <text x="18" y="150" fill="#8f8676" font-size="10" text-anchor="middle" font-family="Figtree" transform="rotate(-90 18 150)">Energy E(R)</text>
                     <!-- Ground state potential curve -->
                     <path d="M70,100 Q100,240 160,200 Q200,180 240,190 Q300,210 360,230" fill="none" stroke="#8b6b40" stroke-width="2.5"/>
-                    <text x="365" y="225" fill="#8b6b40" font-size="9" font-family="JetBrains Mono">E&#8320;(R)</text>
+                    <text x="365" y="225" fill="#8b6b40" font-size="9" font-family="Courier Prime">E&#8320;(R)</text>
                     <!-- Excited state curve -->
                     <path d="M70,60 Q120,130 170,120 Q220,110 270,130 Q320,160 360,180" fill="none" stroke="#405477" stroke-width="1.5" stroke-dasharray="4,3"/>
-                    <text x="365" y="175" fill="#405477" font-size="9" font-family="JetBrains Mono">E&#8321;(R)</text>
+                    <text x="365" y="175" fill="#405477" font-size="9" font-family="Courier Prime">E&#8321;(R)</text>
                     <!-- Equilibrium point -->
                     <circle cx="185" cy="188" r="4" fill="#3e6252"/>
                     <line x1="185" y1="192" x2="185" y2="260" stroke="#3e6252" stroke-width="0.5" stroke-dasharray="3,3"/>
-                    <text x="185" y="275" fill="#3e6252" font-size="8" text-anchor="middle" font-family="JetBrains Mono">R&#8342;</text>
+                    <text x="185" y="275" fill="#3e6252" font-size="8" text-anchor="middle" font-family="Courier Prime">R&#8342;</text>
                     <!-- Vibrational levels in well -->
                     <line x1="140" y1="202" x2="228" y2="202" stroke="#6d5172" stroke-width="0.8" opacity="0.6"/>
                     <line x1="148" y1="210" x2="222" y2="210" stroke="#6d5172" stroke-width="0.8" opacity="0.6"/>
                     <line x1="155" y1="218" x2="215" y2="218" stroke="#6d5172" stroke-width="0.8" opacity="0.6"/>
                     <line x1="160" y1="226" x2="210" y2="226" stroke="#6d5172" stroke-width="0.8" opacity="0.6"/>
-                    <text x="235" y="215" fill="#6d5172" font-size="8" font-family="JetBrains Mono">vibrational</text>
-                    <text x="235" y="225" fill="#6d5172" font-size="8" font-family="JetBrains Mono">levels</text>
+                    <text x="235" y="215" fill="#6d5172" font-size="8" font-family="Courier Prime">vibrational</text>
+                    <text x="235" y="225" fill="#6d5172" font-size="8" font-family="Courier Prime">levels</text>
                     <!-- Electron cloud annotation -->
                     <ellipse cx="120" cy="80" rx="25" ry="12" fill="rgba(155,82,71,0.08)" stroke="#9b5247" stroke-width="0.8" stroke-dasharray="2,2"/>
-                    <text x="120" y="84" fill="#9b5247" font-size="7" text-anchor="middle" font-family="JetBrains Mono">e&minus; cloud</text>
+                    <text x="120" y="84" fill="#9b5247" font-size="7" text-anchor="middle" font-family="Courier Prime">e&minus; cloud</text>
                     <!-- Formula -->
                     <rect x="220" y="38" rx="4" width="165" height="30" fill="rgba(230,226,213,0.9)" stroke="#cac3b2"/>
-                    <text x="302" y="58" fill="#8b6b40" font-size="10" text-anchor="middle" font-family="Playfair Display">&Psi; &asymp; &psi;&#8342;(r;R) &middot; &chi;(R)</text>
+                    <text x="302" y="58" fill="#8b6b40" font-size="10" text-anchor="middle" font-family="Cormorant Garamond">&Psi; &asymp; &psi;&#8342;(r;R) &middot; &chi;(R)</text>
                 </svg>
             </div>
         </div>
@@ -442,48 +442,48 @@
         <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
             <!-- Central node -->
             <circle cx="350" cy="170" r="32" fill="rgba(155,82,71,0.15)" stroke="#9b5247" stroke-width="2"/>
-            <text x="350" y="164" fill="#9b5247" font-size="11" text-anchor="middle" font-family="Playfair Display" font-weight="700">Oppen-</text>
-            <text x="350" y="180" fill="#9b5247" font-size="11" text-anchor="middle" font-family="Playfair Display" font-weight="700">heimer</text>
+            <text x="350" y="164" fill="#9b5247" font-size="11" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700">Oppen-</text>
+            <text x="350" y="180" fill="#9b5247" font-size="11" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700">heimer</text>
             <!-- Born -->
             <line x1="318" y1="165" x2="140" y2="75" stroke="#8b6b40" stroke-width="1" opacity="0.5"/>
             <circle cx="120" cy="65" r="24" fill="rgba(139,107,64,0.1)" stroke="#8b6b40" stroke-width="1.2"/>
-            <text x="120" y="59" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Born</text>
-            <text x="120" y="73" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">advisor/B-O</text>
+            <text x="120" y="59" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Born</text>
+            <text x="120" y="73" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">advisor/B-O</text>
             <!-- Groves -->
             <line x1="318" y1="175" x2="130" y2="180" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
             <circle cx="110" cy="180" r="24" fill="rgba(155,82,71,0.1)" stroke="#9b5247" stroke-width="1.2"/>
-            <text x="110" y="174" fill="#9b5247" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Groves</text>
-            <text x="110" y="188" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">Manhattan Proj.</text>
+            <text x="110" y="174" fill="#9b5247" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Groves</text>
+            <text x="110" y="188" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">Manhattan Proj.</text>
             <!-- Bethe -->
             <line x1="350" y1="202" x2="200" y2="290" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
             <circle cx="185" cy="300" r="24" fill="rgba(62,98,82,0.1)" stroke="#3e6252" stroke-width="1.2"/>
-            <text x="185" y="294" fill="#3e6252" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Bethe</text>
-            <text x="185" y="308" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">theory div. head</text>
+            <text x="185" y="294" fill="#3e6252" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Bethe</text>
+            <text x="185" y="308" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">theory div. head</text>
             <!-- Einstein -->
             <line x1="382" y1="165" x2="560" y2="60" stroke="#6d5172" stroke-width="1" opacity="0.5"/>
             <circle cx="575" cy="50" r="24" fill="rgba(109,81,114,0.1)" stroke="#6d5172" stroke-width="1.2"/>
-            <text x="575" y="44" fill="#6d5172" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Einstein</text>
-            <text x="575" y="58" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">IAS colleague</text>
+            <text x="575" y="44" fill="#6d5172" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Einstein</text>
+            <text x="575" y="58" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">IAS colleague</text>
             <!-- Teller -->
             <line x1="382" y1="175" x2="570" y2="155" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
             <circle cx="590" cy="155" r="24" fill="rgba(155,82,71,0.1)" stroke="#9b5247" stroke-width="1.2"/>
-            <text x="590" y="149" fill="#9b5247" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Teller</text>
-            <text x="590" y="163" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">rival / H-bomb</text>
+            <text x="590" y="149" fill="#9b5247" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Teller</text>
+            <text x="590" y="163" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">rival / H-bomb</text>
             <!-- Fermi -->
             <line x1="380" y1="185" x2="560" y2="250" stroke="#405477" stroke-width="1" opacity="0.5"/>
             <circle cx="570" cy="260" r="24" fill="rgba(64,84,119,0.1)" stroke="#405477" stroke-width="1.2"/>
-            <text x="570" y="254" fill="#405477" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Fermi</text>
-            <text x="570" y="268" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">Los Alamos</text>
+            <text x="570" y="254" fill="#405477" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Fermi</text>
+            <text x="570" y="268" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">Los Alamos</text>
             <!-- Snyder -->
             <line x1="350" y1="202" x2="350" y2="310" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
             <circle cx="350" cy="325" r="24" fill="rgba(62,98,82,0.1)" stroke="#3e6252" stroke-width="1.2"/>
-            <text x="350" y="319" fill="#3e6252" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Snyder</text>
-            <text x="350" y="333" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">grav. collapse</text>
+            <text x="350" y="319" fill="#3e6252" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Snyder</text>
+            <text x="350" y="333" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">grav. collapse</text>
             <!-- Dirac -->
             <line x1="335" y1="140" x2="300" y2="55" stroke="#8b6b40" stroke-width="1" opacity="0.5"/>
             <circle cx="290" cy="40" r="24" fill="rgba(139,107,64,0.1)" stroke="#8b6b40" stroke-width="1.2"/>
-            <text x="290" y="34" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="DM Sans" font-weight="700">Dirac</text>
-            <text x="290" y="48" fill="#8f8676" font-size="7" text-anchor="middle" font-family="DM Sans">positron theory</text>
+            <text x="290" y="34" fill="#8b6b40" font-size="9" text-anchor="middle" font-family="Figtree" font-weight="700">Dirac</text>
+            <text x="290" y="48" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Figtree">positron theory</text>
         </svg>
     </div>
 </section>
@@ -580,11 +580,11 @@
             <circle cx="250" cy="15" r="3" fill="#405477"/><circle cx="380" cy="15" r="3" fill="#9b5247"/>
             <circle cx="480" cy="15" r="3" fill="#6d5172"/><circle cx="570" cy="15" r="3" fill="#3e6252"/>
             <circle cx="680" cy="15" r="4" fill="#9b5247"/>
-            <text x="20" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1904</text>
-            <text x="250" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1929</text>
-            <text x="380" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1943</text>
-            <text x="480" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1954</text>
-            <text x="680" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="JetBrains Mono">1967</text>
+            <text x="20" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1904</text>
+            <text x="250" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1929</text>
+            <text x="380" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1943</text>
+            <text x="480" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1954</text>
+            <text x="680" y="10" fill="#8f8676" font-size="7" text-anchor="middle" font-family="Courier Prime">1967</text>
         </svg>
         <div class="timeline-item">
             <span class="year">1904</span>
@@ -690,7 +690,7 @@
         <span class="attribution">&mdash; J. Robert Oppenheimer, quoting the Bhagavad Gita (XI.32), recalling the Trinity test, July 16, 1945</span>
     </div>
     <div class="separator"></div>
-    <p style="text-align:center; margin-top:0.8em;"><span class="accent" style="font-family:'Playfair Display',serif; font-size:0.7em;">J. Robert Oppenheimer</span></p>
+    <p style="text-align:center; margin-top:0.8em;"><span class="accent" style="font-family:'Cormorant Garamond',serif; font-size:0.7em;">J. Robert Oppenheimer</span></p>
     <p style="text-align:center;" class="subtitle">1904 &ndash; 1967 &nbsp;&middot;&nbsp; New York &middot; Berkeley &middot; Los Alamos &middot; Princeton</p>
 </section>
 

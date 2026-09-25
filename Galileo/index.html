@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Galileo Galilei - Father of Modern Science</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <style>
@@ -17,14 +17,14 @@
     --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); }
 .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); }
@@ -33,19 +33,19 @@
 .accent-purple { color: var(--accent-purple); }
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
@@ -53,19 +53,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
 .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
 .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
 .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -220,26 +220,26 @@
                     <line x1="340" y1="60" x2="340" y2="240" stroke="#cac3b2" stroke-width="1" stroke-dasharray="4,3"/>
                     <!-- Angle arc -->
                     <path d="M 80 240 A 40 40 0 0 0 66 218" fill="none" stroke="#8b6b40" stroke-width="1.2"/>
-                    <text x="85" y="228" fill="#8b6b40" font-size="12" font-family="JetBrains Mono">θ</text>
+                    <text x="85" y="228" fill="#8b6b40" font-size="12" font-family="Courier Prime">θ</text>
                     <!-- Balls at intervals showing acceleration -->
                     <circle cx="80" cy="216" r="9" fill="#7a591d" opacity="0.9"/>
                     <circle cx="130" cy="186" r="9" fill="#7a591d" opacity="0.75"/>
                     <circle cx="200" cy="144" r="9" fill="#7a591d" opacity="0.6"/>
                     <circle cx="290" cy="90" r="9" fill="#7a591d" opacity="0.45"/>
                     <!-- Distance markers -->
-                    <text x="90" y="210" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=1</text>
-                    <text x="140" y="180" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=4</text>
-                    <text x="210" y="138" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=9</text>
-                    <text x="300" y="84" fill="#5c5549" font-size="10" font-family="JetBrains Mono">d=16</text>
+                    <text x="90" y="210" fill="#5c5549" font-size="10" font-family="Courier Prime">d=1</text>
+                    <text x="140" y="180" fill="#5c5549" font-size="10" font-family="Courier Prime">d=4</text>
+                    <text x="210" y="138" fill="#5c5549" font-size="10" font-family="Courier Prime">d=9</text>
+                    <text x="300" y="84" fill="#5c5549" font-size="10" font-family="Courier Prime">d=16</text>
                     <!-- Time markers -->
-                    <text x="68" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=1</text>
-                    <text x="118" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=2</text>
-                    <text x="188" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=3</text>
-                    <text x="278" y="255" fill="#3e6252" font-size="10" font-family="JetBrains Mono">t=4</text>
+                    <text x="68" y="255" fill="#3e6252" font-size="10" font-family="Courier Prime">t=1</text>
+                    <text x="118" y="255" fill="#3e6252" font-size="10" font-family="Courier Prime">t=2</text>
+                    <text x="188" y="255" fill="#3e6252" font-size="10" font-family="Courier Prime">t=3</text>
+                    <text x="278" y="255" fill="#3e6252" font-size="10" font-family="Courier Prime">t=4</text>
                     <!-- Title -->
-                    <text x="190" y="25" fill="#262019" font-size="13" font-family="DM Sans" text-anchor="middle">Uniformly Accelerated Motion on Inclined Plane</text>
+                    <text x="190" y="25" fill="#262019" font-size="13" font-family="Figtree" text-anchor="middle">Uniformly Accelerated Motion on Inclined Plane</text>
                     <!-- g sin theta label -->
-                    <text x="180" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" transform="rotate(-25, 180, 175)">a = g sin θ</text>
+                    <text x="180" y="175" fill="#7a591d" font-size="11" font-family="Courier Prime" transform="rotate(-25, 180, 175)">a = g sin θ</text>
                 </svg>
             </div>
         </div>
@@ -287,46 +287,46 @@
         <div>
             <div class="diagram-container">
                 <svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
-                    <text x="190" y="20" fill="#262019" font-size="13" font-family="DM Sans" text-anchor="middle">Galilean Moons of Jupiter</text>
+                    <text x="190" y="20" fill="#262019" font-size="13" font-family="Figtree" text-anchor="middle">Galilean Moons of Jupiter</text>
                     <!-- Jupiter -->
                     <circle cx="190" cy="130" r="35" fill="none" stroke="#7a591d" stroke-width="2"/>
                     <ellipse cx="190" cy="120" rx="30" ry="4" fill="none" stroke="#8b6b40" stroke-width="0.8" opacity="0.5"/>
                     <ellipse cx="190" cy="135" rx="32" ry="5" fill="none" stroke="#8b6b40" stroke-width="0.8" opacity="0.4"/>
-                    <text x="190" y="175" fill="#7a591d" font-size="11" font-family="DM Sans" text-anchor="middle">Jupiter</text>
+                    <text x="190" y="175" fill="#7a591d" font-size="11" font-family="Figtree" text-anchor="middle">Jupiter</text>
                     <!-- Io -->
                     <circle cx="80" cy="130" r="5" fill="#9b5247" opacity="0.8"/>
-                    <text x="80" y="150" fill="#9b5247" font-size="10" font-family="DM Sans" text-anchor="middle">Io</text>
+                    <text x="80" y="150" fill="#9b5247" font-size="10" font-family="Figtree" text-anchor="middle">Io</text>
                     <!-- Europa -->
                     <circle cx="115" cy="130" r="4.5" fill="#405477" opacity="0.8"/>
-                    <text x="115" y="150" fill="#405477" font-size="10" font-family="DM Sans" text-anchor="middle">Europa</text>
+                    <text x="115" y="150" fill="#405477" font-size="10" font-family="Figtree" text-anchor="middle">Europa</text>
                     <!-- Ganymede -->
                     <circle cx="275" cy="130" r="6" fill="#3e6252" opacity="0.8"/>
-                    <text x="275" y="150" fill="#3e6252" font-size="10" font-family="DM Sans" text-anchor="middle">Ganymede</text>
+                    <text x="275" y="150" fill="#3e6252" font-size="10" font-family="Figtree" text-anchor="middle">Ganymede</text>
                     <!-- Callisto -->
                     <circle cx="330" cy="130" r="5.5" fill="#8b6b40" opacity="0.8"/>
-                    <text x="330" y="150" fill="#8b6b40" font-size="10" font-family="DM Sans" text-anchor="middle">Callisto</text>
+                    <text x="330" y="150" fill="#8b6b40" font-size="10" font-family="Figtree" text-anchor="middle">Callisto</text>
                     <!-- Orbital paths -->
                     <circle cx="190" cy="130" r="110" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
                     <circle cx="190" cy="130" r="75" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
                     <circle cx="190" cy="130" r="85" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
                     <circle cx="190" cy="130" r="140" fill="none" stroke="#cac3b2" stroke-width="0.5" stroke-dasharray="3,3"/>
                     <!-- Phases of Venus below -->
-                    <text x="190" y="200" fill="#262019" font-size="12" font-family="DM Sans" text-anchor="middle">Phases of Venus</text>
+                    <text x="190" y="200" fill="#262019" font-size="12" font-family="Figtree" text-anchor="middle">Phases of Venus</text>
                     <!-- Phase circles -->
                     <circle cx="60" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
                     <path d="M 60 218 A 12 12 0 0 1 60 242" fill="#7a591d" opacity="0.8"/>
-                    <text x="60" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Full</text>
+                    <text x="60" y="252" fill="#8f8676" font-size="8" font-family="Figtree" text-anchor="middle">Full</text>
                     <circle cx="130" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
                     <path d="M 130 218 A 12 12 0 0 1 130 242 A 6 12 0 0 1 130 218" fill="#7a591d" opacity="0.8"/>
-                    <text x="130" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Gibbous</text>
+                    <text x="130" y="252" fill="#8f8676" font-size="8" font-family="Figtree" text-anchor="middle">Gibbous</text>
                     <circle cx="200" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
                     <path d="M 200 218 A 12 12 0 0 1 200 242" fill="#7a591d" opacity="0.7"/>
-                    <text x="200" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Half</text>
+                    <text x="200" y="252" fill="#8f8676" font-size="8" font-family="Figtree" text-anchor="middle">Half</text>
                     <circle cx="270" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
                     <path d="M 270 218 A 12 12 0 0 1 270 242 A 4 12 0 0 0 270 218" fill="#7a591d" opacity="0.6"/>
-                    <text x="270" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">Crescent</text>
+                    <text x="270" y="252" fill="#8f8676" font-size="8" font-family="Figtree" text-anchor="middle">Crescent</text>
                     <circle cx="340" cy="230" r="12" fill="none" stroke="#7a591d" stroke-width="1"/>
-                    <text x="340" y="252" fill="#8f8676" font-size="8" font-family="DM Sans" text-anchor="middle">New</text>
+                    <text x="340" y="252" fill="#8f8676" font-size="8" font-family="Figtree" text-anchor="middle">New</text>
                 </svg>
             </div>
         </div>
@@ -548,54 +548,54 @@
             <line x1="50" y1="190" x2="860" y2="190" stroke="#cac3b2" stroke-width="2"/>
             <!-- Birth -->
             <circle cx="80" cy="190" r="5" fill="#7a591d"/>
-            <text x="80" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1564</text>
-            <text x="80" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">Born in Pisa</text>
+            <text x="80" y="175" fill="#7a591d" font-size="11" font-family="Courier Prime" text-anchor="middle">1564</text>
+            <text x="80" y="215" fill="#262019" font-size="9" font-family="Figtree" text-anchor="middle">Born in Pisa</text>
             <!-- Pisa chair -->
             <circle cx="180" cy="190" r="4" fill="#8b6b40"/>
-            <text x="180" y="175" fill="#8b6b40" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1589</text>
-            <text x="180" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Pisa Chair</text>
+            <text x="180" y="175" fill="#8b6b40" font-size="11" font-family="Courier Prime" text-anchor="middle">1589</text>
+            <text x="180" y="215" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Pisa Chair</text>
             <!-- Padua -->
             <circle cx="250" cy="190" r="4" fill="#3e6252"/>
-            <text x="250" y="175" fill="#3e6252" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1592</text>
-            <text x="250" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Padua</text>
+            <text x="250" y="175" fill="#3e6252" font-size="11" font-family="Courier Prime" text-anchor="middle">1592</text>
+            <text x="250" y="215" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Padua</text>
             <!-- Telescope -->
             <circle cx="370" cy="190" r="5" fill="#7a591d"/>
-            <text x="370" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1609</text>
-            <text x="370" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">First Telescope</text>
+            <text x="370" y="175" fill="#7a591d" font-size="11" font-family="Courier Prime" text-anchor="middle">1609</text>
+            <text x="370" y="215" fill="#262019" font-size="9" font-family="Figtree" text-anchor="middle">First Telescope</text>
             <!-- Sidereus Nuncius -->
             <circle cx="430" cy="190" r="5" fill="#405477"/>
-            <text x="430" y="165" fill="#405477" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1610</text>
-            <text x="430" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Sidereus</text>
-            <text x="430" y="227" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Nuncius</text>
+            <text x="430" y="165" fill="#405477" font-size="11" font-family="Courier Prime" text-anchor="middle">1610</text>
+            <text x="430" y="215" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Sidereus</text>
+            <text x="430" y="227" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Nuncius</text>
             <!-- 1616 warning -->
             <circle cx="520" cy="190" r="4" fill="#9b5247"/>
-            <text x="520" y="175" fill="#9b5247" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1616</text>
-            <text x="520" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Church Warning</text>
+            <text x="520" y="175" fill="#9b5247" font-size="11" font-family="Courier Prime" text-anchor="middle">1616</text>
+            <text x="520" y="215" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Church Warning</text>
             <!-- Dialogue -->
             <circle cx="640" cy="190" r="5" fill="#7a591d"/>
-            <text x="640" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1632</text>
-            <text x="640" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">Dialogue</text>
+            <text x="640" y="175" fill="#7a591d" font-size="11" font-family="Courier Prime" text-anchor="middle">1632</text>
+            <text x="640" y="215" fill="#262019" font-size="9" font-family="Figtree" text-anchor="middle">Dialogue</text>
             <!-- Trial -->
             <circle cx="700" cy="190" r="5" fill="#9b5247"/>
-            <text x="700" y="175" fill="#9b5247" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1633</text>
-            <text x="700" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Trial &amp; House</text>
-            <text x="700" y="227" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Arrest</text>
+            <text x="700" y="175" fill="#9b5247" font-size="11" font-family="Courier Prime" text-anchor="middle">1633</text>
+            <text x="700" y="215" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Trial &amp; House</text>
+            <text x="700" y="227" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Arrest</text>
             <!-- Two New Sciences -->
             <circle cx="775" cy="190" r="5" fill="#6d5172"/>
-            <text x="775" y="175" fill="#6d5172" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1638</text>
-            <text x="775" y="215" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Two New</text>
-            <text x="775" y="227" fill="#5c5549" font-size="9" font-family="DM Sans" text-anchor="middle">Sciences</text>
+            <text x="775" y="175" fill="#6d5172" font-size="11" font-family="Courier Prime" text-anchor="middle">1638</text>
+            <text x="775" y="215" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Two New</text>
+            <text x="775" y="227" fill="#5c5549" font-size="9" font-family="Figtree" text-anchor="middle">Sciences</text>
             <!-- Death -->
             <circle cx="840" cy="190" r="5" fill="#7a591d"/>
-            <text x="840" y="175" fill="#7a591d" font-size="11" font-family="JetBrains Mono" text-anchor="middle">1642</text>
-            <text x="840" y="215" fill="#262019" font-size="9" font-family="DM Sans" text-anchor="middle">Dies at Arcetri</text>
+            <text x="840" y="175" fill="#7a591d" font-size="11" font-family="Courier Prime" text-anchor="middle">1642</text>
+            <text x="840" y="215" fill="#262019" font-size="9" font-family="Figtree" text-anchor="middle">Dies at Arcetri</text>
             <!-- Era labels -->
             <rect x="160" y="260" width="120" height="25" rx="4" fill="none" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
-            <text x="220" y="277" fill="#3e6252" font-size="10" font-family="DM Sans" text-anchor="middle">Padua Years</text>
+            <text x="220" y="277" fill="#3e6252" font-size="10" font-family="Figtree" text-anchor="middle">Padua Years</text>
             <rect x="400" y="260" width="140" height="25" rx="4" fill="none" stroke="#7a591d" stroke-width="1" opacity="0.5"/>
-            <text x="470" y="277" fill="#7a591d" font-size="10" font-family="DM Sans" text-anchor="middle">Telescopic Revolution</text>
+            <text x="470" y="277" fill="#7a591d" font-size="10" font-family="Figtree" text-anchor="middle">Telescopic Revolution</text>
             <rect x="620" y="260" width="220" height="25" rx="4" fill="none" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
-            <text x="730" y="277" fill="#9b5247" font-size="10" font-family="DM Sans" text-anchor="middle">Conflict &amp; Confinement</text>
+            <text x="730" y="277" fill="#9b5247" font-size="10" font-family="Figtree" text-anchor="middle">Conflict &amp; Confinement</text>
         </svg>
     </div>
 </section>

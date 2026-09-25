@@ -6,7 +6,7 @@
 <title>Max Planck - Father of Quantum Theory</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
@@ -16,14 +16,14 @@
     --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); }
 .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); }
@@ -32,19 +32,19 @@
 .accent-purple { color: var(--accent-purple); }
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
@@ -52,19 +52,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
 .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
 .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
 .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -89,7 +89,7 @@
             <circle cx="70" cy="70" r="30" fill="none" stroke="#7a591d" stroke-width="0.5" opacity="0.4"/>
             <circle cx="70" cy="70" r="4" fill="#7a591d" opacity="0.8"/>
             <g opacity="0.3"><line x1="70" y1="10" x2="70" y2="130" stroke="#7a591d" stroke-width="0.3"/><line x1="10" y1="70" x2="130" y2="70" stroke="#7a591d" stroke-width="0.3"/><line x1="27" y1="27" x2="113" y2="113" stroke="#7a591d" stroke-width="0.3"/><line x1="113" y1="27" x2="27" y2="113" stroke="#7a591d" stroke-width="0.3"/></g>
-            <text x="70" y="73" text-anchor="middle" fill="#7a591d" font-family="JetBrains Mono" font-size="7" opacity="0.6">h</text>
+            <text x="70" y="73" text-anchor="middle" fill="#7a591d" font-family="Courier Prime" font-size="7" opacity="0.6">h</text>
         </svg>
     </div>
     <h1>Max Planck</h1>
@@ -175,17 +175,17 @@
         <div>
             <div class="diagram-container">
                 <svg viewBox="0 0 280 220" width="100%">
-                    <text x="140" y="15" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="9">Black-Body Radiation Curves</text>
+                    <text x="140" y="15" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="9">Black-Body Radiation Curves</text>
                     <line x1="40" y1="190" x2="260" y2="190" stroke="#cac3b2" stroke-width="1"/>
                     <line x1="40" y1="190" x2="40" y2="30" stroke="#cac3b2" stroke-width="1"/>
-                    <text x="150" y="210" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="8">Frequency</text>
-                    <text x="15" y="110" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="8" transform="rotate(-90,15,110)">Intensity</text>
+                    <text x="150" y="210" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="8">Frequency</text>
+                    <text x="15" y="110" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="8" transform="rotate(-90,15,110)">Intensity</text>
                     <path d="M50,185 Q100,170 130,100 Q150,55 170,40 Q200,30 230,25 L250,24" fill="none" stroke="#9b5247" stroke-width="1.5" stroke-dasharray="4,3"/>
-                    <text x="252" y="28" fill="#9b5247" font-family="JetBrains Mono" font-size="7">Rayleigh-Jeans</text>
+                    <text x="252" y="28" fill="#9b5247" font-family="Courier Prime" font-size="7">Rayleigh-Jeans</text>
                     <path d="M50,185 Q90,150 120,90 Q140,55 160,70 Q190,120 220,155 L250,175" fill="none" stroke="#405477" stroke-width="1.5" stroke-dasharray="4,3"/>
-                    <text x="252" y="178" fill="#405477" font-family="JetBrains Mono" font-size="7">Wien</text>
+                    <text x="252" y="178" fill="#405477" font-family="Courier Prime" font-size="7">Wien</text>
                     <path d="M50,185 Q90,155 120,90 Q145,48 165,55 Q195,90 225,140 L250,168" fill="none" stroke="#7a591d" stroke-width="2"/>
-                    <text x="252" y="155" fill="#7a591d" font-family="JetBrains Mono" font-size="7">Planck</text>
+                    <text x="252" y="155" fill="#7a591d" font-family="Courier Prime" font-size="7">Planck</text>
                     <circle cx="145" cy="48" r="3" fill="#7a591d" opacity="0.6"/>
                 </svg>
             </div>
@@ -208,30 +208,30 @@
         <div>
             <div class="diagram-container">
                 <svg viewBox="0 0 260 240" width="100%">
-                    <text x="130" y="18" text-anchor="middle" fill="#7a591d" font-family="Playfair Display" font-size="10">Energy Quantization</text>
+                    <text x="130" y="18" text-anchor="middle" fill="#7a591d" font-family="Cormorant Garamond" font-size="10">Energy Quantization</text>
                     <g transform="translate(30,35)">
-                        <text x="50" y="0" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Classical</text>
+                        <text x="50" y="0" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Classical</text>
                         <rect x="10" y="8" width="80" height="100" rx="4" fill="none" stroke="#cac3b2" stroke-width="1"/>
                         <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9b5247" stop-opacity="0.4"/><stop offset="100%" stop-color="#9b5247" stop-opacity="0.05"/></linearGradient></defs>
                         <rect x="11" y="9" width="78" height="98" rx="3" fill="url(#cg)"/>
-                        <text x="50" y="125" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Continuous</text>
+                        <text x="50" y="125" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Continuous</text>
                     </g>
                     <g transform="translate(140,35)">
-                        <text x="50" y="0" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Quantum</text>
+                        <text x="50" y="0" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Quantum</text>
                         <rect x="10" y="8" width="80" height="100" rx="4" fill="none" stroke="#cac3b2" stroke-width="1"/>
                         <line x1="15" y1="100" x2="85" y2="100" stroke="#7a591d" stroke-width="1.5" opacity="0.9"/>
                         <line x1="15" y1="80" x2="85" y2="80" stroke="#7a591d" stroke-width="1.5" opacity="0.75"/>
                         <line x1="15" y1="60" x2="85" y2="60" stroke="#7a591d" stroke-width="1.5" opacity="0.6"/>
                         <line x1="15" y1="40" x2="85" y2="40" stroke="#7a591d" stroke-width="1.5" opacity="0.45"/>
                         <line x1="15" y1="20" x2="85" y2="20" stroke="#7a591d" stroke-width="1.5" opacity="0.3"/>
-                        <text x="92" y="103" fill="#7a591d" font-family="JetBrains Mono" font-size="6">h&nu;</text>
-                        <text x="92" y="83" fill="#7a591d" font-family="JetBrains Mono" font-size="6">2h&nu;</text>
-                        <text x="92" y="63" fill="#7a591d" font-family="JetBrains Mono" font-size="6">3h&nu;</text>
-                        <text x="92" y="43" fill="#7a591d" font-family="JetBrains Mono" font-size="6">4h&nu;</text>
-                        <text x="50" y="125" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Discrete levels</text>
+                        <text x="92" y="103" fill="#7a591d" font-family="Courier Prime" font-size="6">h&nu;</text>
+                        <text x="92" y="83" fill="#7a591d" font-family="Courier Prime" font-size="6">2h&nu;</text>
+                        <text x="92" y="63" fill="#7a591d" font-family="Courier Prime" font-size="6">3h&nu;</text>
+                        <text x="92" y="43" fill="#7a591d" font-family="Courier Prime" font-size="6">4h&nu;</text>
+                        <text x="50" y="125" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Discrete levels</text>
                     </g>
-                    <text x="130" y="185" text-anchor="middle" fill="#7a591d" font-family="JetBrains Mono" font-size="12" font-weight="700">E = nh&nu;</text>
-                    <text x="130" y="200" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="8">n = 0, 1, 2, 3, ...</text>
+                    <text x="130" y="185" text-anchor="middle" fill="#7a591d" font-family="Courier Prime" font-size="12" font-weight="700">E = nh&nu;</text>
+                    <text x="130" y="200" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="8">n = 0, 1, 2, 3, ...</text>
                 </svg>
             </div>
         </div>
@@ -279,17 +279,17 @@
         <div>
             <div class="diagram-container">
                 <svg viewBox="0 0 260 230" width="100%">
-                    <text x="130" y="15" text-anchor="middle" fill="#7a591d" font-family="Playfair Display" font-size="9">Planck Spectra at Different Temperatures</text>
+                    <text x="130" y="15" text-anchor="middle" fill="#7a591d" font-family="Cormorant Garamond" font-size="9">Planck Spectra at Different Temperatures</text>
                     <line x1="35" y1="195" x2="245" y2="195" stroke="#cac3b2" stroke-width="1"/>
                     <line x1="35" y1="195" x2="35" y2="30" stroke="#cac3b2" stroke-width="1"/>
                     <path d="M45,192 Q70,188 90,160 Q110,110 125,90 Q145,78 165,100 Q195,145 225,175" fill="none" stroke="#9b5247" stroke-width="1.5"/>
-                    <text x="228" y="178" fill="#9b5247" font-family="JetBrains Mono" font-size="6">3000K</text>
+                    <text x="228" y="178" fill="#9b5247" font-family="Courier Prime" font-size="6">3000K</text>
                     <path d="M45,190 Q65,175 80,120 Q95,60 110,42 Q130,35 155,60 Q185,110 220,155" fill="none" stroke="#7a591d" stroke-width="1.5"/>
-                    <text x="223" y="158" fill="#7a591d" font-family="JetBrains Mono" font-size="6">4000K</text>
+                    <text x="223" y="158" fill="#7a591d" font-family="Courier Prime" font-size="6">4000K</text>
                     <path d="M45,188 Q60,160 70,90 Q80,38 92,28 Q110,25 140,50 Q175,100 210,140" fill="none" stroke="#405477" stroke-width="1.5"/>
-                    <text x="213" y="143" fill="#405477" font-family="JetBrains Mono" font-size="6">5500K</text>
-                    <text x="140" y="215" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="8">Wavelength &rarr;</text>
-                    <text x="12" y="112" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7" transform="rotate(-90,12,112)">Spectral Radiance</text>
+                    <text x="213" y="143" fill="#405477" font-family="Courier Prime" font-size="6">5500K</text>
+                    <text x="140" y="215" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="8">Wavelength &rarr;</text>
+                    <text x="12" y="112" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7" transform="rotate(-90,12,112)">Spectral Radiance</text>
                 </svg>
             </div>
         </div>
@@ -396,40 +396,40 @@
         <svg viewBox="0 0 700 340" width="100%">
             <!-- Planck center -->
             <circle cx="350" cy="170" r="32" fill="#e6e2d5" stroke="#7a591d" stroke-width="2"/>
-            <text x="350" y="174" text-anchor="middle" fill="#7a591d" font-family="Playfair Display" font-size="11" font-weight="700">Planck</text>
+            <text x="350" y="174" text-anchor="middle" fill="#7a591d" font-family="Cormorant Garamond" font-size="11" font-weight="700">Planck</text>
             <!-- Boltzmann -->
             <circle cx="140" cy="80" r="26" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.5"/>
-            <text x="140" y="84" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="9">Boltzmann</text>
+            <text x="140" y="84" text-anchor="middle" fill="#6d5172" font-family="Figtree" font-size="9">Boltzmann</text>
             <line x1="170" y1="95" x2="320" y2="158" stroke="#6d5172" stroke-width="1" opacity="0.5"/>
             <!-- Einstein -->
             <circle cx="560" cy="80" r="26" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.5"/>
-            <text x="560" y="84" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="9">Einstein</text>
+            <text x="560" y="84" text-anchor="middle" fill="#3e6252" font-family="Figtree" font-size="9">Einstein</text>
             <line x1="530" y1="95" x2="380" y2="158" stroke="#3e6252" stroke-width="1" opacity="0.5"/>
             <!-- Kirchhoff -->
             <circle cx="130" cy="200" r="26" fill="#e6e2d5" stroke="#8b6b40" stroke-width="1.5"/>
-            <text x="130" y="204" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="9">Kirchhoff</text>
+            <text x="130" y="204" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="9">Kirchhoff</text>
             <line x1="158" y1="195" x2="318" y2="175" stroke="#8b6b40" stroke-width="1" opacity="0.5"/>
             <!-- Helmholtz -->
             <circle cx="200" cy="290" r="26" fill="#e6e2d5" stroke="#405477" stroke-width="1.5"/>
-            <text x="200" y="294" text-anchor="middle" fill="#405477" font-family="DM Sans" font-size="9">Helmholtz</text>
+            <text x="200" y="294" text-anchor="middle" fill="#405477" font-family="Figtree" font-size="9">Helmholtz</text>
             <line x1="222" y1="275" x2="335" y2="198" stroke="#405477" stroke-width="1" opacity="0.5"/>
             <!-- Bohr -->
             <circle cx="560" cy="200" r="26" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.5"/>
-            <text x="560" y="204" text-anchor="middle" fill="#9b5247" font-family="DM Sans" font-size="9">Bohr</text>
+            <text x="560" y="204" text-anchor="middle" fill="#9b5247" font-family="Figtree" font-size="9">Bohr</text>
             <line x1="532" y1="195" x2="382" y2="175" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
             <!-- Wien -->
             <circle cx="350" cy="50" r="22" fill="#e6e2d5" stroke="#8f8676" stroke-width="1"/>
-            <text x="350" y="54" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="9">Wien</text>
+            <text x="350" y="54" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="9">Wien</text>
             <line x1="350" y1="72" x2="350" y2="138" stroke="#8f8676" stroke-width="1" opacity="0.4"/>
             <!-- Rayleigh -->
             <circle cx="480" cy="290" r="26" fill="#e6e2d5" stroke="#8f8676" stroke-width="1"/>
-            <text x="480" y="294" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="9">Rayleigh</text>
+            <text x="480" y="294" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="9">Rayleigh</text>
             <line x1="460" y1="272" x2="370" y2="198" stroke="#8f8676" stroke-width="1" opacity="0.4"/>
             <!-- Labels -->
-            <text x="230" y="65" fill="#6d5172" font-family="JetBrains Mono" font-size="6" opacity="0.7">statistical methods</text>
-            <text x="430" y="68" fill="#3e6252" font-family="JetBrains Mono" font-size="6" opacity="0.7">quanta made real</text>
-            <text x="200" y="180" fill="#8b6b40" font-family="JetBrains Mono" font-size="6" opacity="0.7">teacher / predecessor</text>
-            <text x="440" y="185" fill="#9b5247" font-family="JetBrains Mono" font-size="6" opacity="0.7">atomic model</text>
+            <text x="230" y="65" fill="#6d5172" font-family="Courier Prime" font-size="6" opacity="0.7">statistical methods</text>
+            <text x="430" y="68" fill="#3e6252" font-family="Courier Prime" font-size="6" opacity="0.7">quanta made real</text>
+            <text x="200" y="180" fill="#8b6b40" font-family="Courier Prime" font-size="6" opacity="0.7">teacher / predecessor</text>
+            <text x="440" y="185" fill="#9b5247" font-family="Courier Prime" font-size="6" opacity="0.7">atomic model</text>
         </svg>
     </div>
 </section>
@@ -532,28 +532,28 @@
         <svg viewBox="0 0 750 300" width="100%">
             <line x1="50" y1="150" x2="710" y2="150" stroke="#cac3b2" stroke-width="2"/>
             <!-- 1858 Birth -->
-            <circle cx="80" cy="150" r="5" fill="#7a591d"/><text x="80" y="140" text-anchor="middle" fill="#7a591d" font-family="JetBrains Mono" font-size="8" font-weight="700">1858</text><text x="80" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">Born in Kiel</text>
+            <circle cx="80" cy="150" r="5" fill="#7a591d"/><text x="80" y="140" text-anchor="middle" fill="#7a591d" font-family="Courier Prime" font-size="8" font-weight="700">1858</text><text x="80" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">Born in Kiel</text>
             <!-- 1879 PhD -->
-            <circle cx="170" cy="150" r="4" fill="#6d5172"/><text x="170" y="130" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="8">1879</text><text x="170" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">PhD, Munich</text>
+            <circle cx="170" cy="150" r="4" fill="#6d5172"/><text x="170" y="130" text-anchor="middle" fill="#6d5172" font-family="Courier Prime" font-size="8">1879</text><text x="170" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">PhD, Munich</text>
             <!-- 1889 Berlin -->
-            <circle cx="260" cy="150" r="4" fill="#405477"/><text x="260" y="140" text-anchor="middle" fill="#405477" font-family="JetBrains Mono" font-size="8">1889</text><text x="260" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">Berlin chair</text>
+            <circle cx="260" cy="150" r="4" fill="#405477"/><text x="260" y="140" text-anchor="middle" fill="#405477" font-family="Courier Prime" font-size="8">1889</text><text x="260" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">Berlin chair</text>
             <!-- 1900 Quantum -->
-            <circle cx="360" cy="150" r="7" fill="#7a591d" stroke="#7a591d" stroke-width="2"/><text x="360" y="130" text-anchor="middle" fill="#7a591d" font-family="JetBrains Mono" font-size="9" font-weight="700">1900</text><text x="360" y="172" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Quantum hypothesis</text>
+            <circle cx="360" cy="150" r="7" fill="#7a591d" stroke="#7a591d" stroke-width="2"/><text x="360" y="130" text-anchor="middle" fill="#7a591d" font-family="Courier Prime" font-size="9" font-weight="700">1900</text><text x="360" y="172" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8" font-weight="700">Quantum hypothesis</text>
             <!-- 1918 Nobel -->
-            <circle cx="470" cy="150" r="5" fill="#8b6b40"/><text x="470" y="140" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="8">1918</text><text x="470" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">Nobel Prize</text>
+            <circle cx="470" cy="150" r="5" fill="#8b6b40"/><text x="470" y="140" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="8">1918</text><text x="470" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">Nobel Prize</text>
             <!-- 1930 KWS -->
-            <circle cx="550" cy="150" r="4" fill="#3e6252"/><text x="550" y="130" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono" font-size="8">1930</text><text x="550" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">KWS President</text>
+            <circle cx="550" cy="150" r="4" fill="#3e6252"/><text x="550" y="130" text-anchor="middle" fill="#3e6252" font-family="Courier Prime" font-size="8">1930</text><text x="550" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">KWS President</text>
             <!-- 1945 Erwin -->
-            <circle cx="630" cy="150" r="4" fill="#9b5247"/><text x="630" y="140" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono" font-size="8">1945</text><text x="630" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">Son executed</text>
+            <circle cx="630" cy="150" r="4" fill="#9b5247"/><text x="630" y="140" text-anchor="middle" fill="#9b5247" font-family="Courier Prime" font-size="8">1945</text><text x="630" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">Son executed</text>
             <!-- 1947 Death -->
-            <circle cx="690" cy="150" r="5" fill="#8f8676"/><text x="690" y="130" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono" font-size="8">1947</text><text x="690" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">Dies in</text><text x="690" y="180" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="7">Goettingen</text>
+            <circle cx="690" cy="150" r="5" fill="#8f8676"/><text x="690" y="130" text-anchor="middle" fill="#8f8676" font-family="Courier Prime" font-size="8">1947</text><text x="690" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">Dies in</text><text x="690" y="180" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="7">Goettingen</text>
             <!-- Era bars -->
             <rect x="75" y="210" width="185" height="16" rx="3" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
-            <text x="167" y="221" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">German Empire</text>
+            <text x="167" y="221" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">German Empire</text>
             <rect x="260" y="210" width="190" height="16" rx="3" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
-            <text x="355" y="221" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">Weimar &amp; Imperial Science</text>
+            <text x="355" y="221" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">Weimar &amp; Imperial Science</text>
             <rect x="450" y="210" width="200" height="16" rx="3" fill="#e6e2d5" stroke="#9b5247" stroke-width="1" opacity="0.5"/>
-            <text x="550" y="221" text-anchor="middle" fill="#9b5247" font-family="DM Sans" font-size="7" opacity="0.7">Nazi Era &amp; WWII</text>
+            <text x="550" y="221" text-anchor="middle" fill="#9b5247" font-family="Figtree" font-size="7" opacity="0.7">Nazi Era &amp; WWII</text>
         </svg>
     </div>
 </section>

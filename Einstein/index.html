@@ -6,7 +6,7 @@
 <title>Albert Einstein - A Physics Presentation</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
@@ -16,14 +16,14 @@
     --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); }
 .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); }
@@ -32,19 +32,19 @@
 .accent-purple { color: var(--accent-purple); }
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
@@ -52,19 +52,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
 .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
 .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
 .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -215,12 +215,12 @@
                 <!-- Event point -->
                 <circle cx="160" cy="140" r="4" fill="#8b6b40"/>
                 <!-- Labels -->
-                <text x="165" y="30" fill="#5c5549" font-size="11" font-family="DM Sans">time (ct)</text>
-                <text x="260" y="155" fill="#5c5549" font-size="11" font-family="DM Sans">space (x)</text>
-                <text x="230" y="35" fill="#8b6b40" font-size="10" font-family="JetBrains Mono">v = c</text>
-                <text x="175" y="90" fill="#3e6252" font-size="10" font-family="DM Sans">worldline</text>
-                <text x="200" y="75" fill="#8b6b40" font-size="10" font-family="DM Sans">future</text>
-                <text x="200" y="225" fill="#8f8676" font-size="10" font-family="DM Sans">past</text>
+                <text x="165" y="30" fill="#5c5549" font-size="11" font-family="Figtree">time (ct)</text>
+                <text x="260" y="155" fill="#5c5549" font-size="11" font-family="Figtree">space (x)</text>
+                <text x="230" y="35" fill="#8b6b40" font-size="10" font-family="Courier Prime">v = c</text>
+                <text x="175" y="90" fill="#3e6252" font-size="10" font-family="Figtree">worldline</text>
+                <text x="200" y="75" fill="#8b6b40" font-size="10" font-family="Figtree">future</text>
+                <text x="200" y="225" fill="#8f8676" font-size="10" font-family="Figtree">past</text>
             </svg>
         </div>
     </div>
@@ -294,15 +294,15 @@
                 <circle cx="160" cy="155" r="50" fill="url(#mass-glow)"/>
                 <!-- Mass object -->
                 <circle cx="160" cy="155" r="18" fill="#8b6b40" opacity="0.8"/>
-                <text x="160" y="160" fill="#f4f1e9" font-size="12" font-family="DM Sans" font-weight="700" text-anchor="middle">M</text>
+                <text x="160" y="160" fill="#f4f1e9" font-size="12" font-family="Figtree" font-weight="700" text-anchor="middle">M</text>
                 <!-- Orbit path -->
                 <ellipse cx="160" cy="155" rx="80" ry="55" fill="none" stroke="#3e6252" stroke-width="1.5" stroke-dasharray="5,3" transform="rotate(-15 160 155)"/>
                 <!-- Orbiting body -->
                 <circle cx="235" cy="125" r="5" fill="#405477"/>
                 <!-- Labels -->
-                <text x="160" y="25" fill="#5c5549" font-size="11" font-family="DM Sans" text-anchor="middle">curved spacetime fabric</text>
-                <text x="250" y="118" fill="#405477" font-size="10" font-family="DM Sans">planet</text>
-                <text x="90" y="255" fill="#8b6b40" font-size="10" font-family="JetBrains Mono">G&mu;&nu; = 8&pi;G/c&sup4; T&mu;&nu;</text>
+                <text x="160" y="25" fill="#5c5549" font-size="11" font-family="Figtree" text-anchor="middle">curved spacetime fabric</text>
+                <text x="250" y="118" fill="#405477" font-size="10" font-family="Figtree">planet</text>
+                <text x="90" y="255" fill="#8b6b40" font-size="10" font-family="Courier Prime">G&mu;&nu; = 8&pi;G/c&sup4; T&mu;&nu;</text>
             </svg>
         </div>
     </div>
@@ -412,27 +412,27 @@
             <line x1="350" y1="170" x2="250" y2="280" stroke="#cac3b2" stroke-width="1" opacity="0.5"/>
             <!-- Einstein node -->
             <circle cx="350" cy="60" r="22" fill="#8b6b40" opacity="0.2" stroke="#8b6b40" stroke-width="2"/>
-            <text x="350" y="65" fill="#8b6b40" font-size="13" font-family="DM Sans" font-weight="700" text-anchor="middle">Einstein</text>
+            <text x="350" y="65" fill="#8b6b40" font-size="13" font-family="Figtree" font-weight="700" text-anchor="middle">Einstein</text>
             <!-- Mentor nodes -->
             <circle cx="150" cy="160" r="16" fill="#6d5172" opacity="0.15" stroke="#6d5172" stroke-width="1.5"/>
-            <text x="150" y="164" fill="#6d5172" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Planck</text>
+            <text x="150" y="164" fill="#6d5172" font-size="10" font-family="Figtree" font-weight="600" text-anchor="middle">Planck</text>
             <circle cx="350" cy="170" r="16" fill="#405477" opacity="0.15" stroke="#405477" stroke-width="1.5"/>
-            <text x="350" y="174" fill="#405477" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Lorentz</text>
+            <text x="350" y="174" fill="#405477" font-size="10" font-family="Figtree" font-weight="600" text-anchor="middle">Lorentz</text>
             <circle cx="550" cy="160" r="16" fill="#3e6252" opacity="0.15" stroke="#3e6252" stroke-width="1.5"/>
-            <text x="550" y="164" fill="#3e6252" font-size="10" font-family="DM Sans" font-weight="600" text-anchor="middle">Grossmann</text>
+            <text x="550" y="164" fill="#3e6252" font-size="10" font-family="Figtree" font-weight="600" text-anchor="middle">Grossmann</text>
             <!-- Collaborator/rival nodes -->
             <circle cx="100" cy="280" r="14" fill="#9b5247" opacity="0.15" stroke="#9b5247" stroke-width="1.5"/>
-            <text x="100" y="284" fill="#9b5247" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Bohr</text>
+            <text x="100" y="284" fill="#9b5247" font-size="9" font-family="Figtree" font-weight="600" text-anchor="middle">Bohr</text>
             <circle cx="250" cy="280" r="14" fill="#8b6b40" opacity="0.15" stroke="#8b6b40" stroke-width="1.5"/>
-            <text x="250" y="284" fill="#8b6b40" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Minkowski</text>
+            <text x="250" y="284" fill="#8b6b40" font-size="9" font-family="Figtree" font-weight="600" text-anchor="middle">Minkowski</text>
             <circle cx="450" cy="280" r="14" fill="#405477" opacity="0.15" stroke="#405477" stroke-width="1.5"/>
-            <text x="450" y="284" fill="#405477" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Hilbert</text>
+            <text x="450" y="284" fill="#405477" font-size="9" font-family="Figtree" font-weight="600" text-anchor="middle">Hilbert</text>
             <circle cx="600" cy="280" r="14" fill="#6d5172" opacity="0.15" stroke="#6d5172" stroke-width="1.5"/>
-            <text x="600" y="284" fill="#6d5172" font-size="9" font-family="DM Sans" font-weight="600" text-anchor="middle">Bose</text>
+            <text x="600" y="284" fill="#6d5172" font-size="9" font-family="Figtree" font-weight="600" text-anchor="middle">Bose</text>
             <!-- Relationship labels -->
-            <text x="230" y="105" fill="#8f8676" font-size="8" font-family="JetBrains Mono" transform="rotate(-22 230 105)">quantum</text>
-            <text x="350" y="120" fill="#8f8676" font-size="8" font-family="JetBrains Mono">electrodynamics</text>
-            <text x="460" y="105" fill="#8f8676" font-size="8" font-family="JetBrains Mono" transform="rotate(22 460 105)">tensor math</text>
+            <text x="230" y="105" fill="#8f8676" font-size="8" font-family="Courier Prime" transform="rotate(-22 230 105)">quantum</text>
+            <text x="350" y="120" fill="#8f8676" font-size="8" font-family="Courier Prime">electrodynamics</text>
+            <text x="460" y="105" fill="#8f8676" font-size="8" font-family="Courier Prime" transform="rotate(22 460 105)">tensor math</text>
         </svg>
     </div>
     <p style="text-align: center; font-size: 0.44em !important;">Einstein's work sat at the intersection of multiple intellectual traditions: Planck's quantum hypothesis, Lorentz's electrodynamics, Grossmann's differential geometry, and a spirited rivalry with Niels Bohr over the meaning of quantum mechanics.</p>
@@ -528,41 +528,41 @@
             <line x1="80" y1="30" x2="80" y2="370" stroke="#cac3b2" stroke-width="2"/>
             <!-- Events -->
             <circle cx="80" cy="40" r="5" fill="#8b6b40"/>
-            <text x="100" y="40" fill="#8b6b40" font-size="12" font-family="JetBrains Mono" font-weight="600">1879</text>
-            <text x="160" y="40" fill="#262019" font-size="11" font-family="DM Sans" font-weight="600">Born in Ulm, Germany</text>
+            <text x="100" y="40" fill="#8b6b40" font-size="12" font-family="Courier Prime" font-weight="600">1879</text>
+            <text x="160" y="40" fill="#262019" font-size="11" font-family="Figtree" font-weight="600">Born in Ulm, Germany</text>
 
             <circle cx="80" cy="80" r="5" fill="#405477"/>
-            <text x="100" y="80" fill="#405477" font-size="12" font-family="JetBrains Mono" font-weight="600">1896</text>
-            <text x="160" y="80" fill="#262019" font-size="11" font-family="DM Sans">Enrolls at ETH Z&uuml;rich</text>
+            <text x="100" y="80" fill="#405477" font-size="12" font-family="Courier Prime" font-weight="600">1896</text>
+            <text x="160" y="80" fill="#262019" font-size="11" font-family="Figtree">Enrolls at ETH Z&uuml;rich</text>
 
             <circle cx="80" cy="120" r="5" fill="#3e6252"/>
-            <text x="100" y="120" fill="#3e6252" font-size="12" font-family="JetBrains Mono" font-weight="600">1902</text>
-            <text x="160" y="120" fill="#262019" font-size="11" font-family="DM Sans">Begins work at the Swiss Patent Office, Bern</text>
+            <text x="100" y="120" fill="#3e6252" font-size="12" font-family="Courier Prime" font-weight="600">1902</text>
+            <text x="160" y="120" fill="#262019" font-size="11" font-family="Figtree">Begins work at the Swiss Patent Office, Bern</text>
 
             <circle cx="80" cy="160" r="7" fill="#8b6b40" stroke="#8b6b40" stroke-width="2"/>
-            <text x="100" y="160" fill="#8b6b40" font-size="12" font-family="JetBrains Mono" font-weight="700">1905</text>
-            <text x="160" y="155" fill="#262019" font-size="11" font-family="DM Sans" font-weight="700">Annus Mirabilis: four revolutionary papers</text>
-            <text x="160" y="172" fill="#5c5549" font-size="10" font-family="DM Sans">Photoelectric effect, Brownian motion, Special Relativity, E=mc&sup2;</text>
+            <text x="100" y="160" fill="#8b6b40" font-size="12" font-family="Courier Prime" font-weight="700">1905</text>
+            <text x="160" y="155" fill="#262019" font-size="11" font-family="Figtree" font-weight="700">Annus Mirabilis: four revolutionary papers</text>
+            <text x="160" y="172" fill="#5c5549" font-size="10" font-family="Figtree">Photoelectric effect, Brownian motion, Special Relativity, E=mc&sup2;</text>
 
             <circle cx="80" cy="210" r="7" fill="#8b6b40" stroke="#8b6b40" stroke-width="2"/>
-            <text x="100" y="210" fill="#8b6b40" font-size="12" font-family="JetBrains Mono" font-weight="700">1915</text>
-            <text x="160" y="210" fill="#262019" font-size="11" font-family="DM Sans" font-weight="700">General Theory of Relativity completed</text>
+            <text x="100" y="210" fill="#8b6b40" font-size="12" font-family="Courier Prime" font-weight="700">1915</text>
+            <text x="160" y="210" fill="#262019" font-size="11" font-family="Figtree" font-weight="700">General Theory of Relativity completed</text>
 
             <circle cx="80" cy="250" r="5" fill="#6d5172"/>
-            <text x="100" y="250" fill="#6d5172" font-size="12" font-family="JetBrains Mono" font-weight="600">1921</text>
-            <text x="160" y="250" fill="#262019" font-size="11" font-family="DM Sans">Nobel Prize in Physics (photoelectric effect)</text>
+            <text x="100" y="250" fill="#6d5172" font-size="12" font-family="Courier Prime" font-weight="600">1921</text>
+            <text x="160" y="250" fill="#262019" font-size="11" font-family="Figtree">Nobel Prize in Physics (photoelectric effect)</text>
 
             <circle cx="80" cy="290" r="5" fill="#9b5247"/>
-            <text x="100" y="290" fill="#9b5247" font-size="12" font-family="JetBrains Mono" font-weight="600">1933</text>
-            <text x="160" y="290" fill="#262019" font-size="11" font-family="DM Sans">Emigrates to the United States; joins Institute for Advanced Study</text>
+            <text x="100" y="290" fill="#9b5247" font-size="12" font-family="Courier Prime" font-weight="600">1933</text>
+            <text x="160" y="290" fill="#262019" font-size="11" font-family="Figtree">Emigrates to the United States; joins Institute for Advanced Study</text>
 
             <circle cx="80" cy="330" r="5" fill="#405477"/>
-            <text x="100" y="330" fill="#405477" font-size="12" font-family="JetBrains Mono" font-weight="600">1935</text>
-            <text x="160" y="330" fill="#262019" font-size="11" font-family="DM Sans">EPR paradox paper challenges quantum mechanics</text>
+            <text x="100" y="330" fill="#405477" font-size="12" font-family="Courier Prime" font-weight="600">1935</text>
+            <text x="160" y="330" fill="#262019" font-size="11" font-family="Figtree">EPR paradox paper challenges quantum mechanics</text>
 
             <circle cx="80" cy="365" r="5" fill="#8f8676"/>
-            <text x="100" y="365" fill="#8f8676" font-size="12" font-family="JetBrains Mono" font-weight="600">1955</text>
-            <text x="160" y="365" fill="#262019" font-size="11" font-family="DM Sans">Dies in Princeton, New Jersey, aged 76</text>
+            <text x="100" y="365" fill="#8f8676" font-size="12" font-family="Courier Prime" font-weight="600">1955</text>
+            <text x="160" y="365" fill="#262019" font-size="11" font-family="Figtree">Dies in Princeton, New Jersey, aged 76</text>
         </svg>
     </div>
 </section>

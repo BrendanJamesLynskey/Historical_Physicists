@@ -6,48 +6,48 @@
     <title>Roger Penrose — Mathematical Physics &amp; the Nature of Reality</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #406457; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
         .reveal-viewport { background: var(--bg-primary); }
-        .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+        .reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
         .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
         .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
         .reveal h3 { font-size: 1.15em; font-weight: 700; }
         .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-        .reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-        .reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+        .reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+        .reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
         .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
         .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
-        .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+        .subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
         .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-        .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-        .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+        .quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+        .quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
         .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
         .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
         .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
         .card:hover { border-color: var(--accent); }
-        .card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+        .card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
         .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
         .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-        .timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+        .timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
         .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
         .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
         .diagram-container { margin: 0.6em auto; max-width: 85%; }
         .two-col .diagram-container { max-width: 100%; margin: 0; }
         .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
         .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-        .tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+        .tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
         .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-        .section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+        .section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
         .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
         .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
         .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
         @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
         .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-        .process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+        .process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
         .process-step p { font-size: 0.40em !important; margin: 0; }
         .process-arrow { color: var(--accent); font-size: 1.0em; }
         .reveal ul { list-style: none; padding-left: 0; }
@@ -188,26 +188,26 @@
                                 <line x1="300" y1="190" x2="160" y2="360" stroke="#cac3b2" stroke-width="1.5"/>
                                 <!-- Singularity wavy line at top -->
                                 <path d="M80,80 Q100,65 120,80 Q140,95 160,80 Q180,65 200,80 Q220,95 240,80" stroke="#9b5247" stroke-width="2.5" fill="none"/>
-                                <text x="160" y="60" text-anchor="middle" fill="#9b5247" font-family="DM Sans" font-size="11" font-weight="700">SINGULARITY</text>
+                                <text x="160" y="60" text-anchor="middle" fill="#9b5247" font-family="Figtree" font-size="11" font-weight="700">SINGULARITY</text>
                                 <!-- Event horizon -->
                                 <line x1="80" y1="80" x2="160" y2="360" stroke="#406457" stroke-width="1.8" stroke-dasharray="6,3"/>
                                 <line x1="240" y1="80" x2="160" y2="360" stroke="#406457" stroke-width="1.8" stroke-dasharray="6,3"/>
-                                <text x="58" y="200" text-anchor="middle" fill="#406457" font-family="JetBrains Mono" font-size="9" transform="rotate(-55,58,200)">event horizon</text>
+                                <text x="58" y="200" text-anchor="middle" fill="#406457" font-family="Courier Prime" font-size="9" transform="rotate(-55,58,200)">event horizon</text>
                                 <!-- Trapped surface -->
                                 <ellipse cx="160" cy="160" rx="45" ry="12" fill="rgba(64,100,87,0.15)" stroke="#406457" stroke-width="2"/>
-                                <text x="160" y="145" text-anchor="middle" fill="#406457" font-family="DM Sans" font-size="10" font-weight="600">trapped surface</text>
+                                <text x="160" y="145" text-anchor="middle" fill="#406457" font-family="Figtree" font-size="10" font-weight="600">trapped surface</text>
                                 <!-- Light cones from trapped surface -->
                                 <path d="M115,160 L130,120" stroke="#8b6b40" stroke-width="1.2" marker-end="url(#arrowAmber)"/>
                                 <path d="M205,160 L190,120" stroke="#8b6b40" stroke-width="1.2" marker-end="url(#arrowAmber)"/>
-                                <text x="105" y="118" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="8">light</text>
-                                <text x="218" y="118" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="8">light</text>
+                                <text x="105" y="118" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="8">light</text>
+                                <text x="218" y="118" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="8">light</text>
                                 <!-- Labels -->
-                                <text x="160" y="375" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="10">past timelike infinity</text>
-                                <text x="310" y="190" text-anchor="start" fill="#8f8676" font-family="JetBrains Mono" font-size="9">i+</text>
-                                <text x="8" y="190" text-anchor="end" fill="#8f8676" font-family="JetBrains Mono" font-size="9">i+</text>
+                                <text x="160" y="375" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="10">past timelike infinity</text>
+                                <text x="310" y="190" text-anchor="start" fill="#8f8676" font-family="Courier Prime" font-size="9">i+</text>
+                                <text x="8" y="190" text-anchor="end" fill="#8f8676" font-family="Courier Prime" font-size="9">i+</text>
                                 <!-- Collapsing matter -->
                                 <path d="M120,280 Q140,220 160,160 Q180,220 200,280" fill="rgba(109,81,114,0.1)" stroke="#6d5172" stroke-width="1.2"/>
-                                <text x="160" y="260" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="10">collapsing matter</text>
+                                <text x="160" y="260" text-anchor="middle" fill="#6d5172" font-family="Figtree" font-size="10">collapsing matter</text>
                                 <!-- Arrow markers -->
                                 <defs>
                                     <marker id="arrowAmber" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#8b6b40"/></marker>
@@ -275,10 +275,10 @@
                                 <!-- Twistor correspondence diagram -->
                                 <!-- Spacetime side -->
                                 <rect x="10" y="20" width="120" height="130" rx="8" fill="none" stroke="#cac3b2" stroke-width="1.2"/>
-                                <text x="70" y="15" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="11" font-weight="600">Spacetime M</text>
+                                <text x="70" y="15" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="11" font-weight="600">Spacetime M</text>
                                 <!-- Point in spacetime -->
                                 <circle cx="70" cy="75" r="4" fill="#406457"/>
-                                <text x="82" y="73" fill="#406457" font-family="JetBrains Mono" font-size="9">point x</text>
+                                <text x="82" y="73" fill="#406457" font-family="Courier Prime" font-size="9">point x</text>
                                 <!-- Light cone from point -->
                                 <line x1="70" y1="75" x2="40" y2="40" stroke="#8b6b40" stroke-width="0.8" opacity="0.6"/>
                                 <line x1="70" y1="75" x2="100" y2="40" stroke="#8b6b40" stroke-width="0.8" opacity="0.6"/>
@@ -287,30 +287,30 @@
                                 <!-- Null geodesic -->
                                 <line x1="30" y1="130" x2="110" y2="40" stroke="#6d5172" stroke-width="1.5"/>
                                 <circle cx="55" cy="100" r="3" fill="#6d5172"/>
-                                <text x="115" y="125" fill="#6d5172" font-family="JetBrains Mono" font-size="9">null ray</text>
+                                <text x="115" y="125" fill="#6d5172" font-family="Courier Prime" font-size="9">null ray</text>
                                 <!-- Twistor space side -->
                                 <rect x="170" y="20" width="120" height="130" rx="8" fill="none" stroke="#cac3b2" stroke-width="1.2"/>
-                                <text x="230" y="15" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="11" font-weight="600">Twistor Space T</text>
+                                <text x="230" y="15" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="11" font-weight="600">Twistor Space T</text>
                                 <!-- Line in twistor space (CP1) for spacetime point -->
                                 <path d="M195,55 Q230,40 265,70 Q240,95 195,80" fill="none" stroke="#406457" stroke-width="1.8"/>
-                                <text x="235" y="50" fill="#406457" font-family="JetBrains Mono" font-size="9">line (CP1)</text>
+                                <text x="235" y="50" fill="#406457" font-family="Courier Prime" font-size="9">line (CP1)</text>
                                 <!-- Point in twistor space for null ray -->
                                 <circle cx="220" cy="115" r="4" fill="#6d5172"/>
-                                <text x="232" y="118" fill="#6d5172" font-family="JetBrains Mono" font-size="9">point Z</text>
+                                <text x="232" y="118" fill="#6d5172" font-family="Courier Prime" font-size="9">point Z</text>
                                 <!-- Correspondence arrows -->
                                 <path d="M132,65 Q150,55 168,65" stroke="#406457" stroke-width="1.2" fill="none" marker-end="url(#arrowTeal)"/>
                                 <path d="M132,110 Q150,120 168,110" stroke="#6d5172" stroke-width="1.2" fill="none" marker-end="url(#arrowPurple)"/>
-                                <text x="150" y="52" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono" font-size="8">point &harr; line</text>
-                                <text x="150" y="135" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono" font-size="8">ray &harr; point</text>
+                                <text x="150" y="52" text-anchor="middle" fill="#8f8676" font-family="Courier Prime" font-size="8">point &harr; line</text>
+                                <text x="150" y="135" text-anchor="middle" fill="#8f8676" font-family="Courier Prime" font-size="8">ray &harr; point</text>
                                 <!-- Incidence relation box -->
                                 <rect x="30" y="180" width="240" height="60" rx="8" fill="var(--bg-card)" stroke="#cac3b2" stroke-width="1"/>
-                                <text x="150" y="200" text-anchor="middle" fill="#262019" font-family="Playfair Display" font-size="12" font-weight="700">Incidence Relation</text>
-                                <text x="150" y="225" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono" font-size="12">&#969;<tspan baseline-shift="super" font-size="8">A</tspan> = i x<tspan baseline-shift="super" font-size="8">AA'</tspan> &#960;<tspan baseline-shift="sub" font-size="8">A'</tspan></text>
+                                <text x="150" y="200" text-anchor="middle" fill="#262019" font-family="Cormorant Garamond" font-size="12" font-weight="700">Incidence Relation</text>
+                                <text x="150" y="225" text-anchor="middle" fill="#3e6252" font-family="Courier Prime" font-size="12">&#969;<tspan baseline-shift="super" font-size="8">A</tspan> = i x<tspan baseline-shift="super" font-size="8">AA'</tspan> &#960;<tspan baseline-shift="sub" font-size="8">A'</tspan></text>
                                 <!-- Key insight -->
                                 <rect x="30" y="260" width="240" height="65" rx="8" fill="var(--bg-card)" stroke="#cac3b2" stroke-width="1"/>
-                                <text x="150" y="280" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="10" font-weight="600">The Penrose Transform</text>
-                                <text x="150" y="300" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="9">Massless field equations become</text>
-                                <text x="150" y="315" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="9">sheaf cohomology in twistor space</text>
+                                <text x="150" y="280" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="10" font-weight="600">The Penrose Transform</text>
+                                <text x="150" y="300" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="9">Massless field equations become</text>
+                                <text x="150" y="315" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="9">sheaf cohomology in twistor space</text>
                                 <defs>
                                     <marker id="arrowTeal" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#406457"/></marker>
                                     <marker id="arrowPurple" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#6d5172"/></marker>
@@ -413,56 +413,56 @@
                     <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:700px; display:block; margin:0 auto;">
                         <!-- Central node: Penrose -->
                         <circle cx="350" cy="190" r="36" fill="var(--bg-card)" stroke="#406457" stroke-width="2.5"/>
-                        <text x="350" y="186" text-anchor="middle" fill="#406457" font-family="Playfair Display" font-size="13" font-weight="700">Roger</text>
-                        <text x="350" y="202" text-anchor="middle" fill="#406457" font-family="Playfair Display" font-size="13" font-weight="700">Penrose</text>
+                        <text x="350" y="186" text-anchor="middle" fill="#406457" font-family="Cormorant Garamond" font-size="13" font-weight="700">Roger</text>
+                        <text x="350" y="202" text-anchor="middle" fill="#406457" font-family="Cormorant Garamond" font-size="13" font-weight="700">Penrose</text>
 
                         <!-- Hawking -->
                         <circle cx="150" cy="100" r="30" fill="var(--bg-card)" stroke="#8b6b40" stroke-width="1.8"/>
-                        <text x="150" y="96" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="11" font-weight="600">Stephen</text>
-                        <text x="150" y="110" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="11" font-weight="600">Hawking</text>
+                        <text x="150" y="96" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="11" font-weight="600">Stephen</text>
+                        <text x="150" y="110" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="11" font-weight="600">Hawking</text>
                         <line x1="178" y1="116" x2="318" y2="174" stroke="#8b6b40" stroke-width="1.2" opacity="0.5"/>
-                        <text x="230" y="132" fill="#5c5549" font-family="DM Sans" font-size="9" transform="rotate(-14,230,132)">singularity theorems</text>
+                        <text x="230" y="132" fill="#5c5549" font-family="Figtree" font-size="9" transform="rotate(-14,230,132)">singularity theorems</text>
 
                         <!-- Sciama -->
                         <circle cx="140" cy="270" r="30" fill="var(--bg-card)" stroke="#6d5172" stroke-width="1.8"/>
-                        <text x="140" y="266" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="11" font-weight="600">Dennis</text>
-                        <text x="140" y="280" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="11" font-weight="600">Sciama</text>
+                        <text x="140" y="266" text-anchor="middle" fill="#6d5172" font-family="Figtree" font-size="11" font-weight="600">Dennis</text>
+                        <text x="140" y="280" text-anchor="middle" fill="#6d5172" font-family="Figtree" font-size="11" font-weight="600">Sciama</text>
                         <line x1="168" y1="256" x2="322" y2="206" stroke="#6d5172" stroke-width="1.2" opacity="0.5"/>
-                        <text x="220" y="246" fill="#5c5549" font-family="DM Sans" font-size="9" transform="rotate(16,220,246)">PhD supervisor</text>
+                        <text x="220" y="246" fill="#5c5549" font-family="Figtree" font-size="9" transform="rotate(16,220,246)">PhD supervisor</text>
 
                         <!-- Escher -->
                         <circle cx="560" cy="90" r="30" fill="var(--bg-card)" stroke="#9b5247" stroke-width="1.8"/>
-                        <text x="560" y="86" text-anchor="middle" fill="#9b5247" font-family="DM Sans" font-size="11" font-weight="600">M.C.</text>
-                        <text x="560" y="100" text-anchor="middle" fill="#9b5247" font-family="DM Sans" font-size="11" font-weight="600">Escher</text>
+                        <text x="560" y="86" text-anchor="middle" fill="#9b5247" font-family="Figtree" font-size="11" font-weight="600">M.C.</text>
+                        <text x="560" y="100" text-anchor="middle" fill="#9b5247" font-family="Figtree" font-size="11" font-weight="600">Escher</text>
                         <line x1="534" y1="108" x2="382" y2="176" stroke="#9b5247" stroke-width="1.2" opacity="0.5"/>
-                        <text x="470" y="128" fill="#5c5549" font-family="DM Sans" font-size="9" transform="rotate(26,470,128)">impossible objects</text>
+                        <text x="470" y="128" fill="#5c5549" font-family="Figtree" font-size="9" transform="rotate(26,470,128)">impossible objects</text>
 
                         <!-- Witten -->
                         <circle cx="570" cy="270" r="30" fill="var(--bg-card)" stroke="#405477" stroke-width="1.8"/>
-                        <text x="570" y="266" text-anchor="middle" fill="#405477" font-family="DM Sans" font-size="11" font-weight="600">Edward</text>
-                        <text x="570" y="280" text-anchor="middle" fill="#405477" font-family="DM Sans" font-size="11" font-weight="600">Witten</text>
+                        <text x="570" y="266" text-anchor="middle" fill="#405477" font-family="Figtree" font-size="11" font-weight="600">Edward</text>
+                        <text x="570" y="280" text-anchor="middle" fill="#405477" font-family="Figtree" font-size="11" font-weight="600">Witten</text>
                         <line x1="542" y1="256" x2="380" y2="204" stroke="#405477" stroke-width="1.2" opacity="0.5"/>
-                        <text x="478" y="244" fill="#5c5549" font-family="DM Sans" font-size="9" transform="rotate(-18,478,244)">twistor string theory</text>
+                        <text x="478" y="244" fill="#5c5549" font-family="Figtree" font-size="9" transform="rotate(-18,478,244)">twistor string theory</text>
 
                         <!-- Hawking-Penrose connection note -->
                         <rect x="10" y="30" width="130" height="45" rx="6" fill="var(--bg-card)" stroke="#cac3b2" stroke-width="0.8"/>
-                        <text x="75" y="47" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="8" font-weight="600">Hawking-Penrose 1970</text>
-                        <text x="75" y="62" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7.5">joint singularity theorem</text>
-                        <text x="75" y="72" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7.5">including cosmological case</text>
+                        <text x="75" y="47" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="8" font-weight="600">Hawking-Penrose 1970</text>
+                        <text x="75" y="62" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7.5">joint singularity theorem</text>
+                        <text x="75" y="72" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7.5">including cosmological case</text>
 
                         <!-- Hameroff -->
                         <circle cx="350" cy="340" r="28" fill="var(--bg-card)" stroke="#3e6252" stroke-width="1.5"/>
-                        <text x="350" y="336" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="10" font-weight="600">Stuart</text>
-                        <text x="350" y="349" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="10" font-weight="600">Hameroff</text>
+                        <text x="350" y="336" text-anchor="middle" fill="#3e6252" font-family="Figtree" font-size="10" font-weight="600">Stuart</text>
+                        <text x="350" y="349" text-anchor="middle" fill="#3e6252" font-family="Figtree" font-size="10" font-weight="600">Hameroff</text>
                         <line x1="350" y1="312" x2="350" y2="226" stroke="#3e6252" stroke-width="1.2" opacity="0.5"/>
-                        <text x="365" y="270" fill="#5c5549" font-family="DM Sans" font-size="9">Orch-OR theory</text>
+                        <text x="365" y="270" fill="#5c5549" font-family="Figtree" font-size="9">Orch-OR theory</text>
 
                         <!-- Shechtman -->
                         <circle cx="200" cy="340" r="26" fill="var(--bg-card)" stroke="#3e6252" stroke-width="1.2"/>
-                        <text x="200" y="336" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="9" font-weight="600">Dan</text>
-                        <text x="200" y="348" text-anchor="middle" fill="#3e6252" font-family="DM Sans" font-size="9" font-weight="600">Shechtman</text>
+                        <text x="200" y="336" text-anchor="middle" fill="#3e6252" font-family="Figtree" font-size="9" font-weight="600">Dan</text>
+                        <text x="200" y="348" text-anchor="middle" fill="#3e6252" font-family="Figtree" font-size="9" font-weight="600">Shechtman</text>
                         <line x1="218" y1="318" x2="338" y2="216" stroke="#3e6252" stroke-width="0.8" opacity="0.4" stroke-dasharray="4,3"/>
-                        <text x="260" y="280" fill="#8f8676" font-family="DM Sans" font-size="8">quasicrystals</text>
+                        <text x="260" y="280" fill="#8f8676" font-family="Figtree" font-size="8">quasicrystals</text>
                     </svg>
                 </div>
                 <p style="text-align:center; font-size:0.38em !important; color:var(--text-muted);">Penrose's work connects to an extraordinarily diverse network of collaborators and fields &mdash; from pure mathematics to consciousness research</p>
@@ -571,75 +571,75 @@
                         <line x1="60" y1="210" x2="710" y2="210" stroke="#cac3b2" stroke-width="2"/>
                         <!-- Decade markers -->
                         <circle cx="90" cy="210" r="4" fill="#406457"/>
-                        <text x="90" y="235" text-anchor="middle" fill="#406457" font-family="JetBrains Mono" font-size="10" font-weight="500">1931</text>
-                        <text x="90" y="248" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Born in</text>
-                        <text x="90" y="259" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Colchester</text>
+                        <text x="90" y="235" text-anchor="middle" fill="#406457" font-family="Courier Prime" font-size="10" font-weight="500">1931</text>
+                        <text x="90" y="248" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Born in</text>
+                        <text x="90" y="259" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Colchester</text>
 
                         <circle cx="180" cy="210" r="4" fill="#8b6b40"/>
-                        <text x="180" y="195" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">1957</text>
-                        <text x="180" y="182" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">PhD, Cambridge</text>
-                        <text x="180" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">(algebraic geometry)</text>
+                        <text x="180" y="195" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="10" font-weight="500">1957</text>
+                        <text x="180" y="182" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">PhD, Cambridge</text>
+                        <text x="180" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">(algebraic geometry)</text>
 
                         <circle cx="270" cy="210" r="6" fill="#9b5247"/>
-                        <text x="270" y="235" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono" font-size="10" font-weight="500">1965</text>
-                        <text x="270" y="248" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="600">Singularity</text>
-                        <text x="270" y="259" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="600">Theorem</text>
-                        <text x="270" y="272" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">(Nobel Prize work)</text>
+                        <text x="270" y="235" text-anchor="middle" fill="#9b5247" font-family="Courier Prime" font-size="10" font-weight="500">1965</text>
+                        <text x="270" y="248" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8" font-weight="600">Singularity</text>
+                        <text x="270" y="259" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8" font-weight="600">Theorem</text>
+                        <text x="270" y="272" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">(Nobel Prize work)</text>
 
                         <circle cx="340" cy="210" r="5" fill="#6d5172"/>
-                        <text x="340" y="195" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="10" font-weight="500">1967</text>
-                        <text x="340" y="182" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Twistor theory</text>
-                        <text x="340" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">introduced</text>
+                        <text x="340" y="195" text-anchor="middle" fill="#6d5172" font-family="Courier Prime" font-size="10" font-weight="500">1967</text>
+                        <text x="340" y="182" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Twistor theory</text>
+                        <text x="340" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">introduced</text>
 
                         <circle cx="400" cy="210" r="4" fill="#405477"/>
-                        <text x="400" y="235" text-anchor="middle" fill="#405477" font-family="JetBrains Mono" font-size="10" font-weight="500">1969</text>
-                        <text x="400" y="248" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Cosmic censorship</text>
-                        <text x="400" y="259" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">&amp; Penrose process</text>
+                        <text x="400" y="235" text-anchor="middle" fill="#405477" font-family="Courier Prime" font-size="10" font-weight="500">1969</text>
+                        <text x="400" y="248" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Cosmic censorship</text>
+                        <text x="400" y="259" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">&amp; Penrose process</text>
 
                         <circle cx="460" cy="210" r="5" fill="#8b6b40"/>
-                        <text x="460" y="195" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">1974</text>
-                        <text x="460" y="182" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Penrose tilings</text>
-                        <text x="460" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">discovered</text>
+                        <text x="460" y="195" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="10" font-weight="500">1974</text>
+                        <text x="460" y="182" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Penrose tilings</text>
+                        <text x="460" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">discovered</text>
 
                         <circle cx="530" cy="210" r="4" fill="#3e6252"/>
-                        <text x="530" y="235" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono" font-size="10" font-weight="500">1989</text>
-                        <text x="530" y="248" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Emperor's New</text>
-                        <text x="530" y="259" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Mind published</text>
+                        <text x="530" y="235" text-anchor="middle" fill="#3e6252" font-family="Courier Prime" font-size="10" font-weight="500">1989</text>
+                        <text x="530" y="248" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Emperor's New</text>
+                        <text x="530" y="259" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Mind published</text>
 
                         <circle cx="600" cy="210" r="4" fill="#8b6b40"/>
-                        <text x="600" y="195" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="10" font-weight="500">2004</text>
-                        <text x="600" y="182" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">The Road to</text>
-                        <text x="600" y="170" text-anchor="middle" fill="#5c5549" font-family="DM Sans" font-size="8">Reality published</text>
+                        <text x="600" y="195" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="10" font-weight="500">2004</text>
+                        <text x="600" y="182" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">The Road to</text>
+                        <text x="600" y="170" text-anchor="middle" fill="#5c5549" font-family="Figtree" font-size="8">Reality published</text>
 
                         <circle cx="675" cy="210" r="7" fill="#406457"/>
-                        <text x="675" y="235" text-anchor="middle" fill="#406457" font-family="JetBrains Mono" font-size="10" font-weight="500">2020</text>
-                        <text x="675" y="248" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8" font-weight="700">Nobel Prize</text>
-                        <text x="675" y="259" text-anchor="middle" fill="#262019" font-family="DM Sans" font-size="8">in Physics</text>
-                        <text x="675" y="272" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">(age 89)</text>
+                        <text x="675" y="235" text-anchor="middle" fill="#406457" font-family="Courier Prime" font-size="10" font-weight="500">2020</text>
+                        <text x="675" y="248" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8" font-weight="700">Nobel Prize</text>
+                        <text x="675" y="259" text-anchor="middle" fill="#262019" font-family="Figtree" font-size="8">in Physics</text>
+                        <text x="675" y="272" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">(age 89)</text>
 
                         <!-- Decorative connecting arcs -->
                         <path d="M270,204 Q305,160 340,204" fill="none" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="3,3"/>
-                        <text x="305" y="150" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="7">topology &rarr; complex geometry</text>
+                        <text x="305" y="150" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="7">topology &rarr; complex geometry</text>
 
                         <!-- Hawking-Penrose 1970 -->
                         <circle cx="310" cy="310" r="3" fill="#8b6b40" opacity="0.7"/>
-                        <text x="310" y="330" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono" font-size="9">1970</text>
-                        <text x="310" y="345" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="8">Hawking-Penrose theorem</text>
+                        <text x="310" y="330" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime" font-size="9">1970</text>
+                        <text x="310" y="345" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="8">Hawking-Penrose theorem</text>
                         <line x1="310" y1="306" x2="300" y2="216" stroke="#8b6b40" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/>
 
                         <!-- Wolf Prize -->
                         <circle cx="560" cy="310" r="3" fill="#6d5172" opacity="0.7"/>
-                        <text x="560" y="330" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono" font-size="9">1988</text>
-                        <text x="560" y="345" text-anchor="middle" fill="#8f8676" font-family="DM Sans" font-size="8">Wolf Prize (with Hawking)</text>
+                        <text x="560" y="330" text-anchor="middle" fill="#6d5172" font-family="Courier Prime" font-size="9">1988</text>
+                        <text x="560" y="345" text-anchor="middle" fill="#8f8676" font-family="Figtree" font-size="8">Wolf Prize (with Hawking)</text>
                         <line x1="560" y1="306" x2="540" y2="216" stroke="#6d5172" stroke-width="0.8" opacity="0.4" stroke-dasharray="3,2"/>
 
                         <!-- Era labels -->
                         <rect x="70" y="380" width="200" height="22" rx="4" fill="rgba(64,100,87,0.08)"/>
-                        <text x="170" y="395" text-anchor="middle" fill="#406457" font-family="DM Sans" font-size="8">Pure Mathematics Phase</text>
+                        <text x="170" y="395" text-anchor="middle" fill="#406457" font-family="Figtree" font-size="8">Pure Mathematics Phase</text>
                         <rect x="280" y="380" width="200" height="22" rx="4" fill="rgba(109,81,114,0.08)"/>
-                        <text x="380" y="395" text-anchor="middle" fill="#6d5172" font-family="DM Sans" font-size="8">Mathematical Physics Phase</text>
+                        <text x="380" y="395" text-anchor="middle" fill="#6d5172" font-family="Figtree" font-size="8">Mathematical Physics Phase</text>
                         <rect x="490" y="380" width="200" height="22" rx="4" fill="rgba(139,107,64,0.08)"/>
-                        <text x="590" y="395" text-anchor="middle" fill="#8b6b40" font-family="DM Sans" font-size="8">Popular Science &amp; Philosophy</text>
+                        <text x="590" y="395" text-anchor="middle" fill="#8b6b40" font-family="Figtree" font-size="8">Popular Science &amp; Philosophy</text>
                     </svg>
                 </div>
             </section>

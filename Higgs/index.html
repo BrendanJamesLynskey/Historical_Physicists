@@ -6,48 +6,48 @@
 <title>Peter Higgs — The Man Behind the Mass</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #8b6b40; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .two-col .diagram-container { max-width: 100%; margin: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -238,8 +238,8 @@
                 fill="url(#hatGrad)" stroke="#8b6b40" stroke-width="2" fill-opacity="0.3"/>
           <!-- Local maximum at center -->
           <circle cx="190" cy="120" r="4" fill="#9b5247" opacity="0.9"/>
-          <text x="200" y="110" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="11">Unstable</text>
-          <text x="200" y="123" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="11">maximum</text>
+          <text x="200" y="110" fill="#9b5247" font-family="Figtree, sans-serif" font-size="11">Unstable</text>
+          <text x="200" y="123" fill="#9b5247" font-family="Figtree, sans-serif" font-size="11">maximum</text>
           <!-- Minima -->
           <circle cx="135" cy="200" r="5" fill="#3e6252"/>
           <circle cx="248" cy="200" r="5" fill="#3e6252"/>
@@ -251,14 +251,14 @@
             </marker>
           </defs>
           <!-- Labels -->
-          <text x="90" y="220" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">v = 246 GeV</text>
-          <text x="230" y="220" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">v = 246 GeV</text>
-          <text x="155" y="280" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="11">Field value (&#966;)</text>
-          <text x="15" y="45" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="11" transform="rotate(-90 20 140)">V(&#966;)</text>
+          <text x="90" y="220" fill="#3e6252" font-family="Courier Prime, monospace" font-size="10">v = 246 GeV</text>
+          <text x="230" y="220" fill="#3e6252" font-family="Courier Prime, monospace" font-size="10">v = 246 GeV</text>
+          <text x="155" y="280" fill="#8f8676" font-family="Figtree, sans-serif" font-size="11">Field value (&#966;)</text>
+          <text x="15" y="45" fill="#8f8676" font-family="Figtree, sans-serif" font-size="11" transform="rotate(-90 20 140)">V(&#966;)</text>
           <!-- Title -->
-          <text x="190" y="25" fill="#8b6b40" font-family="Playfair Display, serif" font-size="14" text-anchor="middle">Mexican Hat Potential</text>
+          <text x="190" y="25" fill="#8b6b40" font-family="Cormorant Garamond, serif" font-size="14" text-anchor="middle">Mexican Hat Potential</text>
           <!-- Equation -->
-          <text x="190" y="295" fill="#5c5549" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">V(&#966;) = &#956;&#178;|&#966;|&#178; + &#955;|&#966;|&#8308; &nbsp; (&#956;&#178; &lt; 0)</text>
+          <text x="190" y="295" fill="#5c5549" font-family="Courier Prime, monospace" font-size="10" text-anchor="middle">V(&#966;) = &#956;&#178;|&#966;|&#178; + &#955;|&#966;|&#8308; &nbsp; (&#956;&#178; &lt; 0)</text>
         </svg>
       </div>
     </div>
@@ -309,22 +309,22 @@
       <div class="diagram-container">
         <svg viewBox="0 0 380 310" xmlns="http://www.w3.org/2000/svg">
           <!-- Mass spectrum / resonance peak at 125 GeV -->
-          <text x="190" y="22" fill="#8b6b40" font-family="Playfair Display, serif" font-size="13" text-anchor="middle">Discovery: The 125 GeV Resonance</text>
+          <text x="190" y="22" fill="#8b6b40" font-family="Cormorant Garamond, serif" font-size="13" text-anchor="middle">Discovery: The 125 GeV Resonance</text>
           <!-- Axes -->
           <line x1="50" y1="260" x2="350" y2="260" stroke="#cac3b2" stroke-width="1"/>
           <line x1="50" y1="260" x2="50" y2="40" stroke="#cac3b2" stroke-width="1"/>
           <!-- X-axis labels -->
-          <text x="80" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">110</text>
-          <text x="140" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">120</text>
-          <text x="200" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">130</text>
-          <text x="260" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">140</text>
-          <text x="320" y="278" fill="#8f8676" font-family="JetBrains Mono, monospace" font-size="9">150</text>
-          <text x="190" y="300" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="11" text-anchor="middle">m&#x2084;&#x2084; (GeV)</text>
-          <text x="18" y="150" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="10" transform="rotate(-90 20 150)">Events / 2 GeV</text>
+          <text x="80" y="278" fill="#8f8676" font-family="Courier Prime, monospace" font-size="9">110</text>
+          <text x="140" y="278" fill="#8f8676" font-family="Courier Prime, monospace" font-size="9">120</text>
+          <text x="200" y="278" fill="#8f8676" font-family="Courier Prime, monospace" font-size="9">130</text>
+          <text x="260" y="278" fill="#8f8676" font-family="Courier Prime, monospace" font-size="9">140</text>
+          <text x="320" y="278" fill="#8f8676" font-family="Courier Prime, monospace" font-size="9">150</text>
+          <text x="190" y="300" fill="#5c5549" font-family="Figtree, sans-serif" font-size="11" text-anchor="middle">m&#x2084;&#x2084; (GeV)</text>
+          <text x="18" y="150" fill="#5c5549" font-family="Figtree, sans-serif" font-size="10" transform="rotate(-90 20 150)">Events / 2 GeV</text>
           <!-- Background (smooth curve) -->
           <path d="M 60,220 Q 100,215 140,210 Q 180,205 220,210 Q 260,215 300,222 Q 330,228 345,232"
                 fill="none" stroke="#8f8676" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
-          <text x="310" y="215" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9">Background</text>
+          <text x="310" y="215" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9">Background</text>
           <!-- Data points (scatter approximation of excess at 125 GeV) -->
           <g fill="#405477" opacity="0.7">
             <circle cx="68" cy="218" r="2.5"/><circle cx="80" cy="215" r="2.5"/>
@@ -344,11 +344,11 @@
                 fill="none" stroke="#8b6b40" stroke-width="2"/>
           <!-- Peak annotation -->
           <line x1="158" y1="75" x2="158" y2="260" stroke="#8b6b40" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
-          <text x="158" y="68" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" font-weight="bold">125.1 GeV</text>
+          <text x="158" y="68" fill="#8b6b40" font-family="Courier Prime, monospace" font-size="11" text-anchor="middle" font-weight="bold">125.1 GeV</text>
           <!-- ATLAS/CMS labels -->
           <rect x="250" y="50" width="95" height="42" rx="4" fill="#e6e2d5" stroke="#cac3b2" stroke-width="1"/>
-          <text x="297" y="67" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">ATLAS + CMS</text>
-          <text x="297" y="83" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">H &rarr; &gamma;&gamma; channel</text>
+          <text x="297" y="67" fill="#405477" font-family="Courier Prime, monospace" font-size="10" text-anchor="middle">ATLAS + CMS</text>
+          <text x="297" y="83" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">H &rarr; &gamma;&gamma; channel</text>
         </svg>
       </div>
     </div>
@@ -477,42 +477,42 @@
       <line x1="550" y1="170" x2="350" y2="240" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.4"/>
       <!-- Central node: Higgs -->
       <circle cx="350" cy="100" r="30" fill="#e6e2d5" stroke="#8b6b40" stroke-width="2"/>
-      <text x="350" y="96" fill="#8b6b40" font-family="Playfair Display, serif" font-size="12" text-anchor="middle" font-weight="700">Peter</text>
-      <text x="350" y="110" fill="#8b6b40" font-family="Playfair Display, serif" font-size="12" text-anchor="middle" font-weight="700">Higgs</text>
+      <text x="350" y="96" fill="#8b6b40" font-family="Cormorant Garamond, serif" font-size="12" text-anchor="middle" font-weight="700">Peter</text>
+      <text x="350" y="110" fill="#8b6b40" font-family="Cormorant Garamond, serif" font-size="12" text-anchor="middle" font-weight="700">Higgs</text>
       <!-- Englert & Brout -->
       <circle cx="150" cy="170" r="25" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.5"/>
-      <text x="150" y="166" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Englert</text>
-      <text x="150" y="179" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Brout</text>
-      <text x="150" y="208" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Independent discovery</text>
+      <text x="150" y="166" fill="#3e6252" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Englert</text>
+      <text x="150" y="179" fill="#3e6252" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Brout</text>
+      <text x="150" y="208" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Independent discovery</text>
       <!-- GHK -->
       <circle cx="550" cy="170" r="25" fill="#e6e2d5" stroke="#405477" stroke-width="1.5"/>
-      <text x="550" y="166" fill="#405477" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Guralnik</text>
-      <text x="550" y="179" fill="#405477" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Hagen Kibble</text>
-      <text x="550" y="208" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Third 1964 paper</text>
+      <text x="550" y="166" fill="#405477" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Guralnik</text>
+      <text x="550" y="179" fill="#405477" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Hagen Kibble</text>
+      <text x="550" y="208" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Third 1964 paper</text>
       <!-- Weinberg & Salam -->
       <circle cx="350" cy="240" r="25" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.5"/>
-      <text x="350" y="236" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Weinberg</text>
-      <text x="350" y="249" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Salam</text>
-      <text x="350" y="278" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Electroweak unification</text>
+      <text x="350" y="236" fill="#6d5172" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Weinberg</text>
+      <text x="350" y="249" fill="#6d5172" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">&amp; Salam</text>
+      <text x="350" y="278" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Electroweak unification</text>
       <!-- Goldstone -->
       <circle cx="100" cy="290" r="20" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.2"/>
-      <text x="100" y="294" fill="#9b5247" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Goldstone</text>
-      <text x="100" y="322" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Goldstone theorem</text>
+      <text x="100" y="294" fill="#9b5247" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Goldstone</text>
+      <text x="100" y="322" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Goldstone theorem</text>
       <!-- Anderson -->
       <circle cx="250" cy="310" r="20" fill="#e6e2d5" stroke="#8b6b40" stroke-width="1.2"/>
-      <text x="250" y="314" fill="#8b6b40" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Anderson</text>
-      <text x="250" y="340" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Condensed matter</text>
-      <text x="250" y="352" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">precursor</text>
+      <text x="250" y="314" fill="#8b6b40" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Anderson</text>
+      <text x="250" y="340" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Condensed matter</text>
+      <text x="250" y="352" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">precursor</text>
       <!-- 't Hooft -->
       <circle cx="450" cy="310" r="20" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.2"/>
-      <text x="450" y="314" fill="#3e6252" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">'t Hooft</text>
-      <text x="450" y="340" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Renormalizability</text>
-      <text x="450" y="352" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">proof (1971)</text>
+      <text x="450" y="314" fill="#3e6252" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">'t Hooft</text>
+      <text x="450" y="340" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Renormalizability</text>
+      <text x="450" y="352" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">proof (1971)</text>
       <!-- Gell-Mann -->
       <circle cx="600" cy="290" r="20" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.2"/>
-      <text x="600" y="294" fill="#6d5172" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Gell-Mann</text>
-      <text x="600" y="322" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Quark model &amp;</text>
-      <text x="600" y="334" fill="#8f8676" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">Standard Model</text>
+      <text x="600" y="294" fill="#6d5172" font-family="Figtree, sans-serif" font-size="10" text-anchor="middle" font-weight="700">Gell-Mann</text>
+      <text x="600" y="322" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Quark model &amp;</text>
+      <text x="600" y="334" fill="#8f8676" font-family="Figtree, sans-serif" font-size="9" text-anchor="middle">Standard Model</text>
     </svg>
   </div>
   <p style="text-align: center; max-width: 80%; margin: 0.3em auto;">The Higgs mechanism sits at the nexus of contributions from condensed matter physics, quantum field theory, and experimental particle physics &mdash; a collaborative achievement, even if the name of one man became attached to it.</p>
@@ -623,48 +623,48 @@
           <line x1="40" y1="20" x2="40" y2="400" stroke="#cac3b2" stroke-width="2"/>
           <!-- Markers -->
           <circle cx="40" cy="30" r="5" fill="#8b6b40"/>
-          <text x="55" y="35" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10" font-weight="500">1929</text>
-          <text x="100" y="35" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Born, Newcastle</text>
+          <text x="55" y="35" fill="#8b6b40" font-family="Courier Prime, monospace" font-size="10" font-weight="500">1929</text>
+          <text x="100" y="35" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">Born, Newcastle</text>
 
           <circle cx="40" cy="75" r="4" fill="#405477"/>
-          <text x="55" y="79" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10">1950</text>
-          <text x="100" y="79" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">BSc, King's College</text>
+          <text x="55" y="79" fill="#405477" font-family="Courier Prime, monospace" font-size="10">1950</text>
+          <text x="100" y="79" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">BSc, King's College</text>
 
           <circle cx="40" cy="115" r="4" fill="#405477"/>
-          <text x="55" y="119" fill="#405477" font-family="JetBrains Mono, monospace" font-size="10">1954</text>
-          <text x="100" y="119" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">PhD completed</text>
+          <text x="55" y="119" fill="#405477" font-family="Courier Prime, monospace" font-size="10">1954</text>
+          <text x="100" y="119" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">PhD completed</text>
 
           <circle cx="40" cy="155" r="4" fill="#3e6252"/>
-          <text x="55" y="159" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10">1960</text>
-          <text x="100" y="159" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Joins Edinburgh</text>
+          <text x="55" y="159" fill="#3e6252" font-family="Courier Prime, monospace" font-size="10">1960</text>
+          <text x="100" y="159" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">Joins Edinburgh</text>
 
           <circle cx="40" cy="200" r="6" fill="#8b6b40" stroke="#8b6b40" stroke-width="2"/>
-          <text x="55" y="204" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">1964</text>
-          <text x="100" y="197" fill="#262019" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Landmark papers</text>
-          <text x="100" y="211" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">Higgs mechanism &amp; boson</text>
+          <text x="55" y="204" fill="#8b6b40" font-family="Courier Prime, monospace" font-size="10" font-weight="700">1964</text>
+          <text x="100" y="197" fill="#262019" font-family="Figtree, sans-serif" font-size="9" font-weight="700">Landmark papers</text>
+          <text x="100" y="211" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">Higgs mechanism &amp; boson</text>
 
           <circle cx="40" cy="250" r="4" fill="#6d5172"/>
-          <text x="55" y="254" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">1967</text>
-          <text x="100" y="247" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Weinberg-Salam model</text>
-          <text x="100" y="261" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">uses Higgs mechanism</text>
+          <text x="55" y="254" fill="#6d5172" font-family="Courier Prime, monospace" font-size="10">1967</text>
+          <text x="100" y="247" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">Weinberg-Salam model</text>
+          <text x="100" y="261" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">uses Higgs mechanism</text>
 
           <circle cx="40" cy="295" r="4" fill="#6d5172"/>
-          <text x="55" y="299" fill="#6d5172" font-family="JetBrains Mono, monospace" font-size="10">1971</text>
-          <text x="100" y="292" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">'t Hooft proves</text>
-          <text x="100" y="306" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">renormalizability</text>
+          <text x="55" y="299" fill="#6d5172" font-family="Courier Prime, monospace" font-size="10">1971</text>
+          <text x="100" y="292" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">'t Hooft proves</text>
+          <text x="100" y="306" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">renormalizability</text>
 
           <circle cx="40" cy="340" r="6" fill="#3e6252" stroke="#3e6252" stroke-width="2"/>
-          <text x="55" y="344" fill="#3e6252" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">2012</text>
-          <text x="100" y="337" fill="#262019" font-family="DM Sans, sans-serif" font-size="9" font-weight="700">Boson discovered</text>
-          <text x="100" y="351" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="8">ATLAS &amp; CMS, 125 GeV</text>
+          <text x="55" y="344" fill="#3e6252" font-family="Courier Prime, monospace" font-size="10" font-weight="700">2012</text>
+          <text x="100" y="337" fill="#262019" font-family="Figtree, sans-serif" font-size="9" font-weight="700">Boson discovered</text>
+          <text x="100" y="351" fill="#5c5549" font-family="Figtree, sans-serif" font-size="8">ATLAS &amp; CMS, 125 GeV</text>
 
           <circle cx="40" cy="375" r="5" fill="#8b6b40"/>
-          <text x="55" y="379" fill="#8b6b40" font-family="JetBrains Mono, monospace" font-size="10">2013</text>
-          <text x="100" y="379" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Nobel Prize in Physics</text>
+          <text x="55" y="379" fill="#8b6b40" font-family="Courier Prime, monospace" font-size="10">2013</text>
+          <text x="100" y="379" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">Nobel Prize in Physics</text>
 
           <circle cx="40" cy="400" r="4" fill="#9b5247"/>
-          <text x="55" y="404" fill="#9b5247" font-family="JetBrains Mono, monospace" font-size="10">2024</text>
-          <text x="100" y="404" fill="#5c5549" font-family="DM Sans, sans-serif" font-size="9">Dies, Edinburgh, aged 94</text>
+          <text x="55" y="404" fill="#9b5247" font-family="Courier Prime, monospace" font-size="10">2024</text>
+          <text x="100" y="404" fill="#5c5549" font-family="Figtree, sans-serif" font-size="9">Dies, Edinburgh, aged 94</text>
         </svg>
       </div>
     </div>

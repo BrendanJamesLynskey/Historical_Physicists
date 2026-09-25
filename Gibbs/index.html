@@ -6,48 +6,48 @@
 <title>Josiah Willard Gibbs — The Quiet Architect of Physical Chemistry</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root { --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5; --accent: #3e6252; --accent-amber: #8b6b40; --accent-green: #3e6252; --accent-purple: #6d5172; --accent-rose: #9b5247; --accent-blue: #405477; --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2; }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); } .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); } .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); } .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); } .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .two-col .diagram-container { max-width: 100%; margin: 0; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); } .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); } .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); } .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -72,7 +72,7 @@
       <circle cx="70" cy="70" r="30" fill="none" stroke="#3e6252" stroke-width="0.5" opacity="0.2"/>
       <polygon points="70,15 120,95 20,95" fill="none" stroke="#3e6252" stroke-width="0.6" opacity="0.35"/>
       <polygon points="70,125 20,45 120,45" fill="none" stroke="#3e6252" stroke-width="0.6" opacity="0.35"/>
-      <text x="70" y="74" text-anchor="middle" fill="#3e6252" font-family="Playfair Display,serif" font-size="16" font-weight="700">G</text>
+      <text x="70" y="74" text-anchor="middle" fill="#3e6252" font-family="Cormorant Garamond,serif" font-size="16" font-weight="700">G</text>
     </svg>
   </div>
   <h1>Josiah Willard Gibbs</h1>
@@ -195,25 +195,25 @@
           <!-- Axes -->
           <line x1="40" y1="240" x2="300" y2="240" stroke="#cac3b2" stroke-width="1.5"/>
           <line x1="40" y1="240" x2="40" y2="20" stroke="#cac3b2" stroke-width="1.5"/>
-          <text x="170" y="265" text-anchor="middle" fill="#8f8676" font-family="DM Sans,sans-serif" font-size="11">Temperature (T)</text>
-          <text x="15" y="130" text-anchor="middle" fill="#8f8676" font-family="DM Sans,sans-serif" font-size="11" transform="rotate(-90,15,130)">Gibbs Free Energy (G)</text>
+          <text x="170" y="265" text-anchor="middle" fill="#8f8676" font-family="Figtree,sans-serif" font-size="11">Temperature (T)</text>
+          <text x="15" y="130" text-anchor="middle" fill="#8f8676" font-family="Figtree,sans-serif" font-size="11" transform="rotate(-90,15,130)">Gibbs Free Energy (G)</text>
           <!-- G curves for two phases -->
           <path d="M60,60 Q120,100 180,160 Q220,200 280,230" fill="none" stroke="#3e6252" stroke-width="2"/>
           <path d="M60,180 Q120,170 180,160 Q220,140 280,100" fill="none" stroke="#8b6b40" stroke-width="2"/>
           <!-- Intersection point -->
           <circle cx="180" cy="160" r="5" fill="#3e6252" stroke="#f4f1e9" stroke-width="2"/>
           <!-- Labels -->
-          <text x="85" y="55" fill="#3e6252" font-family="Playfair Display,serif" font-style="italic" font-size="12">G (solid)</text>
-          <text x="85" y="195" fill="#8b6b40" font-family="Playfair Display,serif" font-style="italic" font-size="12">G (liquid)</text>
-          <text x="188" y="152" fill="#262019" font-family="DM Sans,sans-serif" font-size="10">T_m</text>
+          <text x="85" y="55" fill="#3e6252" font-family="Cormorant Garamond,serif" font-style="italic" font-size="12">G (solid)</text>
+          <text x="85" y="195" fill="#8b6b40" font-family="Cormorant Garamond,serif" font-style="italic" font-size="12">G (liquid)</text>
+          <text x="188" y="152" fill="#262019" font-family="Figtree,sans-serif" font-size="10">T_m</text>
           <!-- Annotation -->
           <line x1="180" y1="160" x2="180" y2="240" stroke="#3e6252" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
-          <text x="160" y="17" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="9">GIBBS FREE ENERGY vs TEMPERATURE</text>
+          <text x="160" y="17" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="9">GIBBS FREE ENERGY vs TEMPERATURE</text>
           <!-- Shaded stability regions -->
           <rect x="42" y="242" width="136" height="8" fill="#3e6252" opacity="0.15" rx="2"/>
           <rect x="182" y="242" width="116" height="8" fill="#8b6b40" opacity="0.15" rx="2"/>
-          <text x="110" y="260" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono,monospace" font-size="8">SOLID STABLE</text>
-          <text x="240" y="260" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono,monospace" font-size="8">LIQUID STABLE</text>
+          <text x="110" y="260" text-anchor="middle" fill="#3e6252" font-family="Courier Prime,monospace" font-size="8">SOLID STABLE</text>
+          <text x="240" y="260" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime,monospace" font-size="8">LIQUID STABLE</text>
         </svg>
       </div>
       <p style="font-size:0.40em !important; text-align:center; color:var(--text-muted);">The phase with lower G is thermodynamically stable. At T<sub>m</sub>, both phases coexist in equilibrium.</p>
@@ -270,12 +270,12 @@
       <div class="diagram-container">
         <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
           <!-- Phase diagram -->
-          <text x="160" y="17" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="9">PHASE DIAGRAM (P-T)</text>
+          <text x="160" y="17" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="9">PHASE DIAGRAM (P-T)</text>
           <!-- Axes -->
           <line x1="50" y1="250" x2="300" y2="250" stroke="#cac3b2" stroke-width="1.5"/>
           <line x1="50" y1="250" x2="50" y2="30" stroke="#cac3b2" stroke-width="1.5"/>
-          <text x="175" y="272" text-anchor="middle" fill="#8f8676" font-family="DM Sans,sans-serif" font-size="11">Temperature</text>
-          <text x="20" y="140" text-anchor="middle" fill="#8f8676" font-family="DM Sans,sans-serif" font-size="11" transform="rotate(-90,20,140)">Pressure</text>
+          <text x="175" y="272" text-anchor="middle" fill="#8f8676" font-family="Figtree,sans-serif" font-size="11">Temperature</text>
+          <text x="20" y="140" text-anchor="middle" fill="#8f8676" font-family="Figtree,sans-serif" font-size="11" transform="rotate(-90,20,140)">Pressure</text>
           <!-- Solid-Liquid boundary -->
           <path d="M130,30 Q135,100 140,170" fill="none" stroke="#6d5172" stroke-width="2"/>
           <!-- Solid-Gas boundary -->
@@ -284,20 +284,20 @@
           <path d="M140,170 Q190,145 240,120" fill="none" stroke="#8b6b40" stroke-width="2"/>
           <!-- Triple point -->
           <circle cx="140" cy="170" r="5" fill="#9b5247" stroke="#f4f1e9" stroke-width="2"/>
-          <text x="155" y="185" fill="#9b5247" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">Triple Point</text>
+          <text x="155" y="185" fill="#9b5247" font-family="Figtree,sans-serif" font-size="10" font-weight="700">Triple Point</text>
           <!-- Critical point -->
           <circle cx="240" cy="120" r="5" fill="#405477" stroke="#f4f1e9" stroke-width="2"/>
-          <text x="248" y="115" fill="#405477" font-family="DM Sans,sans-serif" font-size="10" font-weight="700">Critical Point</text>
+          <text x="248" y="115" fill="#405477" font-family="Figtree,sans-serif" font-size="10" font-weight="700">Critical Point</text>
           <!-- Phase labels -->
-          <text x="85" y="100" fill="#6d5172" font-family="Playfair Display,serif" font-size="14" font-weight="700" opacity="0.8">Solid</text>
-          <text x="190" y="80" fill="#8b6b40" font-family="Playfair Display,serif" font-size="14" font-weight="700" opacity="0.8">Liquid</text>
-          <text x="185" y="230" fill="#3e6252" font-family="Playfair Display,serif" font-size="14" font-weight="700" opacity="0.8">Gas</text>
+          <text x="85" y="100" fill="#6d5172" font-family="Cormorant Garamond,serif" font-size="14" font-weight="700" opacity="0.8">Solid</text>
+          <text x="190" y="80" fill="#8b6b40" font-family="Cormorant Garamond,serif" font-size="14" font-weight="700" opacity="0.8">Liquid</text>
+          <text x="185" y="230" fill="#3e6252" font-family="Cormorant Garamond,serif" font-size="14" font-weight="700" opacity="0.8">Gas</text>
           <!-- Supercritical region -->
-          <text x="268" y="72" fill="#405477" font-family="DM Sans,sans-serif" font-size="9" opacity="0.7">Supercritical</text>
-          <text x="268" y="83" fill="#405477" font-family="DM Sans,sans-serif" font-size="9" opacity="0.7">Fluid</text>
+          <text x="268" y="72" fill="#405477" font-family="Figtree,sans-serif" font-size="9" opacity="0.7">Supercritical</text>
+          <text x="268" y="83" fill="#405477" font-family="Figtree,sans-serif" font-size="9" opacity="0.7">Fluid</text>
           <!-- Phase rule annotation -->
           <rect x="55" y="35" width="65" height="20" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
-          <text x="87" y="49" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono,monospace" font-size="9">F = C-P+2</text>
+          <text x="87" y="49" text-anchor="middle" fill="#3e6252" font-family="Courier Prime,monospace" font-size="9">F = C-P+2</text>
         </svg>
       </div>
       <p style="font-size:0.40em !important; text-align:center; color:var(--text-muted);">A single-component phase diagram illustrating the Gibbs phase rule. At the triple point (P=3, C=1), F=0: no degrees of freedom remain.</p>
@@ -425,36 +425,36 @@
       <line x1="350" y1="190" x2="560" y2="320" stroke="#cac3b2" stroke-width="1.5"/>
       <!-- Gibbs node -->
       <circle cx="350" cy="190" r="32" fill="var(--bg-card)" stroke="#3e6252" stroke-width="2.5"/>
-      <text x="350" y="186" text-anchor="middle" fill="#3e6252" font-family="Playfair Display,serif" font-size="11" font-weight="700">Gibbs</text>
-      <text x="350" y="200" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">1839-1903</text>
+      <text x="350" y="186" text-anchor="middle" fill="#3e6252" font-family="Cormorant Garamond,serif" font-size="11" font-weight="700">Gibbs</text>
+      <text x="350" y="200" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">1839-1903</text>
       <!-- Maxwell -->
       <circle cx="140" cy="70" r="26" fill="var(--bg-card)" stroke="#405477" stroke-width="1.5"/>
-      <text x="140" y="67" text-anchor="middle" fill="#405477" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Maxwell</text>
-      <text x="140" y="79" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">Thermo surface</text>
+      <text x="140" y="67" text-anchor="middle" fill="#405477" font-family="Figtree,sans-serif" font-size="9" font-weight="700">Maxwell</text>
+      <text x="140" y="79" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">Thermo surface</text>
       <!-- Boltzmann -->
       <circle cx="560" cy="70" r="26" fill="var(--bg-card)" stroke="#8b6b40" stroke-width="1.5"/>
-      <text x="560" y="67" text-anchor="middle" fill="#8b6b40" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Boltzmann</text>
-      <text x="560" y="79" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">Stat. mech.</text>
+      <text x="560" y="67" text-anchor="middle" fill="#8b6b40" font-family="Figtree,sans-serif" font-size="9" font-weight="700">Boltzmann</text>
+      <text x="560" y="79" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">Stat. mech.</text>
       <!-- Heaviside -->
       <circle cx="100" cy="200" r="26" fill="var(--bg-card)" stroke="#6d5172" stroke-width="1.5"/>
-      <text x="100" y="197" text-anchor="middle" fill="#6d5172" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Heaviside</text>
-      <text x="100" y="209" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">Vectors</text>
+      <text x="100" y="197" text-anchor="middle" fill="#6d5172" font-family="Figtree,sans-serif" font-size="9" font-weight="700">Heaviside</text>
+      <text x="100" y="209" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">Vectors</text>
       <!-- Ostwald -->
       <circle cx="600" cy="200" r="26" fill="var(--bg-card)" stroke="#9b5247" stroke-width="1.5"/>
-      <text x="600" y="197" text-anchor="middle" fill="#9b5247" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Ostwald</text>
-      <text x="600" y="209" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">Translator</text>
+      <text x="600" y="197" text-anchor="middle" fill="#9b5247" font-family="Figtree,sans-serif" font-size="9" font-weight="700">Ostwald</text>
+      <text x="600" y="209" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">Translator</text>
       <!-- Shannon -->
       <circle cx="140" cy="320" r="26" fill="var(--bg-card)" stroke="#3e6252" stroke-width="1.5"/>
-      <text x="140" y="317" text-anchor="middle" fill="#3e6252" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">Shannon</text>
-      <text x="140" y="329" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">Info entropy</text>
+      <text x="140" y="317" text-anchor="middle" fill="#3e6252" font-family="Figtree,sans-serif" font-size="9" font-weight="700">Shannon</text>
+      <text x="140" y="329" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">Info entropy</text>
       <!-- Wilson -->
       <circle cx="350" cy="340" r="26" fill="var(--bg-card)" stroke="#405477" stroke-width="1.5"/>
-      <text x="350" y="337" text-anchor="middle" fill="#405477" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">E.B. Wilson</text>
-      <text x="350" y="349" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">Vector text</text>
+      <text x="350" y="337" text-anchor="middle" fill="#405477" font-family="Figtree,sans-serif" font-size="9" font-weight="700">E.B. Wilson</text>
+      <text x="350" y="349" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">Vector text</text>
       <!-- De Forest -->
       <circle cx="560" cy="320" r="26" fill="var(--bg-card)" stroke="#8b6b40" stroke-width="1.5"/>
-      <text x="560" y="317" text-anchor="middle" fill="#8b6b40" font-family="DM Sans,sans-serif" font-size="9" font-weight="700">De Forest</text>
-      <text x="560" y="329" text-anchor="middle" fill="#8f8676" font-family="JetBrains Mono,monospace" font-size="7">Radio pioneer</text>
+      <text x="560" y="317" text-anchor="middle" fill="#8b6b40" font-family="Figtree,sans-serif" font-size="9" font-weight="700">De Forest</text>
+      <text x="560" y="329" text-anchor="middle" fill="#8f8676" font-family="Courier Prime,monospace" font-size="7">Radio pioneer</text>
     </svg>
   </div>
   <p style="text-align:center; font-size:0.44em !important; color:var(--text-muted); max-width:80%; margin:0.3em auto;">Maxwell built a clay model of Gibbs's thermodynamic surface. Boltzmann and Gibbs developed statistical mechanics independently. Shannon's information entropy directly echoes the Gibbs entropy formula.</p>
@@ -570,63 +570,63 @@
       <!-- Year markers and events -->
       <!-- 1839 -->
       <circle cx="80" cy="170" r="5" fill="#3e6252"/>
-      <text x="80" y="155" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1839</text>
-      <text x="80" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">Born in</text>
-      <text x="80" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">New Haven</text>
+      <text x="80" y="155" text-anchor="middle" fill="#3e6252" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1839</text>
+      <text x="80" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">Born in</text>
+      <text x="80" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">New Haven</text>
       <!-- 1858 -->
       <circle cx="160" cy="170" r="4" fill="#405477"/>
-      <text x="160" y="155" text-anchor="middle" fill="#405477" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1858</text>
-      <text x="160" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">Yale B.A.</text>
+      <text x="160" y="155" text-anchor="middle" fill="#405477" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1858</text>
+      <text x="160" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">Yale B.A.</text>
       <!-- 1863 -->
       <circle cx="220" cy="170" r="4" fill="#405477"/>
-      <text x="220" y="155" text-anchor="middle" fill="#405477" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1863</text>
-      <text x="220" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">Ph.D.</text>
-      <text x="220" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">Engineering</text>
+      <text x="220" y="155" text-anchor="middle" fill="#405477" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1863</text>
+      <text x="220" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">Ph.D.</text>
+      <text x="220" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">Engineering</text>
       <!-- 1866-69 -->
       <circle cx="290" cy="170" r="4" fill="#8b6b40"/>
-      <text x="290" y="155" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1866</text>
-      <text x="290" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">European</text>
-      <text x="290" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">studies</text>
+      <text x="290" y="155" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1866</text>
+      <text x="290" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">European</text>
+      <text x="290" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">studies</text>
       <!-- 1871 -->
       <circle cx="350" cy="170" r="4" fill="#6d5172"/>
-      <text x="350" y="155" text-anchor="middle" fill="#6d5172" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1871</text>
-      <text x="350" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">Yale Prof.</text>
-      <text x="350" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">(unpaid)</text>
+      <text x="350" y="155" text-anchor="middle" fill="#6d5172" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1871</text>
+      <text x="350" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">Yale Prof.</text>
+      <text x="350" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">(unpaid)</text>
       <!-- 1876 -->
       <circle cx="420" cy="170" r="6" fill="#3e6252" stroke="#f4f1e9" stroke-width="2"/>
-      <text x="420" y="150" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1876</text>
-      <text x="420" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">Equilibrium</text>
-      <text x="420" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">Part I</text>
+      <text x="420" y="150" text-anchor="middle" fill="#3e6252" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1876</text>
+      <text x="420" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8" font-weight="700">Equilibrium</text>
+      <text x="420" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">Part I</text>
       <!-- 1881 -->
       <circle cx="490" cy="170" r="4" fill="#8b6b40"/>
-      <text x="490" y="155" text-anchor="middle" fill="#8b6b40" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1881</text>
-      <text x="490" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">Vector</text>
-      <text x="490" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">Analysis</text>
+      <text x="490" y="155" text-anchor="middle" fill="#8b6b40" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1881</text>
+      <text x="490" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">Vector</text>
+      <text x="490" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">Analysis</text>
       <!-- 1898 -->
       <circle cx="560" cy="170" r="4" fill="#9b5247"/>
-      <text x="560" y="155" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1898</text>
-      <text x="560" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">Gibbs</text>
-      <text x="560" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">phenomenon</text>
+      <text x="560" y="155" text-anchor="middle" fill="#9b5247" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1898</text>
+      <text x="560" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">Gibbs</text>
+      <text x="560" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">phenomenon</text>
       <!-- 1902 -->
       <circle cx="630" cy="170" r="6" fill="#3e6252" stroke="#f4f1e9" stroke-width="2"/>
-      <text x="630" y="150" text-anchor="middle" fill="#3e6252" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1902</text>
-      <text x="630" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8" font-weight="700">Statistical</text>
-      <text x="630" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">Mechanics</text>
+      <text x="630" y="150" text-anchor="middle" fill="#3e6252" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1902</text>
+      <text x="630" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8" font-weight="700">Statistical</text>
+      <text x="630" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">Mechanics</text>
       <!-- 1903 -->
       <circle cx="690" cy="170" r="5" fill="#9b5247"/>
-      <text x="690" y="155" text-anchor="middle" fill="#9b5247" font-family="JetBrains Mono,monospace" font-size="9" font-weight="500">1903</text>
-      <text x="690" y="195" text-anchor="middle" fill="#262019" font-family="DM Sans,sans-serif" font-size="8">Dies in</text>
-      <text x="690" y="206" text-anchor="middle" fill="#5c5549" font-family="DM Sans,sans-serif" font-size="7">New Haven</text>
+      <text x="690" y="155" text-anchor="middle" fill="#9b5247" font-family="Courier Prime,monospace" font-size="9" font-weight="500">1903</text>
+      <text x="690" y="195" text-anchor="middle" fill="#262019" font-family="Figtree,sans-serif" font-size="8">Dies in</text>
+      <text x="690" y="206" text-anchor="middle" fill="#5c5549" font-family="Figtree,sans-serif" font-size="7">New Haven</text>
       <!-- Era labels -->
       <rect x="60" y="230" width="200" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
-      <text x="160" y="244" text-anchor="middle" fill="#405477" font-family="DM Sans,sans-serif" font-size="8">Education &amp; Formation</text>
+      <text x="160" y="244" text-anchor="middle" fill="#405477" font-family="Figtree,sans-serif" font-size="8">Education &amp; Formation</text>
       <rect x="310" y="230" width="200" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
-      <text x="410" y="244" text-anchor="middle" fill="#3e6252" font-family="DM Sans,sans-serif" font-size="8">Thermodynamic Revolution</text>
+      <text x="410" y="244" text-anchor="middle" fill="#3e6252" font-family="Figtree,sans-serif" font-size="8">Thermodynamic Revolution</text>
       <rect x="520" y="230" width="180" height="22" rx="4" fill="var(--bg-card)" stroke="var(--border-subtle)" stroke-width="1"/>
-      <text x="610" y="244" text-anchor="middle" fill="#8b6b40" font-family="DM Sans,sans-serif" font-size="8">Final Synthesis</text>
+      <text x="610" y="244" text-anchor="middle" fill="#8b6b40" font-family="Figtree,sans-serif" font-size="8">Final Synthesis</text>
       <!-- Copley Medal annotation -->
       <line x1="660" y1="130" x2="660" y2="165" stroke="#8b6b40" stroke-width="1" stroke-dasharray="3,2"/>
-      <text x="660" y="125" text-anchor="middle" fill="#8b6b40" font-family="DM Sans,sans-serif" font-size="7">Copley Medal 1901</text>
+      <text x="660" y="125" text-anchor="middle" fill="#8b6b40" font-family="Figtree,sans-serif" font-size="7">Copley Medal 1901</text>
     </svg>
   </div>
   <div class="card-grid cols-2" style="margin-top:0.3em;">

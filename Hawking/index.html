@@ -6,7 +6,7 @@
 <title>Stephen Hawking - Master of Black Holes</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f4f1e9; --bg-secondary: #eae6db; --bg-card: #e6e2d5;
@@ -16,14 +16,14 @@
     --text-primary: #262019; --text-secondary: #5c5549; --text-muted: #8f8676; --border-subtle: #cac3b2;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Figtree', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Cormorant Garamond', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); }
 .reveal h2 { font-size: 1.6em; font-weight: 700; color: var(--accent); }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal code { font-family: 'JetBrains Mono', monospace; font-size: 0.65em; color: var(--accent-green); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal code { font-family: 'Courier Prime', monospace; font-size: 0.65em; color: var(--accent-green); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Courier Prime', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent); }
 .reveal .progress span { background: var(--accent); }
 .accent { color: var(--accent); }
@@ -32,19 +32,19 @@
 .accent-purple { color: var(--accent-purple); }
 .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Figtree', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(18,14,10,0.02); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Figtree', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
 .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; }
 .card:hover { border-color: var(--accent); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Figtree', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Courier Prime', monospace; font-size: 0.54em; color: var(--accent); min-width: 3.2em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
@@ -52,19 +52,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; }
 .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
-.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
+.tag { display: inline-block; background: rgba(109,81,114,0.12); color: var(--accent-purple); font-family: 'Courier Prime', monospace; font-size: 0.42em; padding: 0.15em 0.5em; border-radius: 4px; margin: 0.1em 0.15em; }
 .tag.amber { background: rgba(139,107,64,0.12); color: var(--accent-amber); }
 .tag.green { background: rgba(62,98,82,0.12); color: var(--accent-green); }
 .tag.rose { background: rgba(155,82,71,0.12); color: var(--accent-rose); }
 .tag.blue { background: rgba(64,84,119,0.12); color: var(--accent-blue); }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Courier Prime', monospace; font-size: 0.35em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .separator { width: 40px; height: 2px; background: var(--accent); margin: 0.5em auto; border-radius: 1px; }
 .mandala-container { position: relative; width: 140px; height: 140px; margin: 0 auto 0.6em auto; }
 .mandala-container svg { width: 100%; height: 100%; animation: mandala-rotate 60s linear infinite; }
 @keyframes mandala-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .process-flow { display: flex; align-items: center; justify-content: center; gap: 0.4em; margin: 0.6em auto; flex-wrap: wrap; }
 .process-step { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.5em 0.7em; text-align: center; min-width: 100px; }
-.process-step h4 { font-family: 'DM Sans', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
+.process-step h4 { font-family: 'Figtree', sans-serif; font-size: 0.50em; margin: 0 0 0.15em 0; }
 .process-step p { font-size: 0.40em !important; margin: 0; }
 .process-arrow { color: var(--accent); font-size: 1.0em; }
 .reveal ul { list-style: none; padding-left: 0; }
@@ -200,13 +200,13 @@
         </div>
         <div class="diagram-container">
             <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
-                <text x="140" y="18" text-anchor="middle" font-size="11" fill="#8f8676" font-family="JetBrains Mono, monospace">Hawking Radiation</text>
+                <text x="140" y="18" text-anchor="middle" font-size="11" fill="#8f8676" font-family="Courier Prime, monospace">Hawking Radiation</text>
                 <!-- Black hole -->
                 <circle cx="140" cy="140" r="50" fill="#f4f1e9" stroke="#406457" stroke-width="2"/>
                 <circle cx="140" cy="140" r="55" fill="none" stroke="#406457" stroke-width="0.5" opacity="0.3" stroke-dasharray="3,3"/>
-                <text x="140" y="143" text-anchor="middle" font-size="9" fill="#406457" font-family="JetBrains Mono">Singularity</text>
+                <text x="140" y="143" text-anchor="middle" font-size="9" fill="#406457" font-family="Courier Prime">Singularity</text>
                 <!-- Event horizon label -->
-                <text x="210" y="100" font-size="8" fill="#8f8676" font-family="DM Sans">Event Horizon</text>
+                <text x="210" y="100" font-size="8" fill="#8f8676" font-family="Figtree">Event Horizon</text>
                 <line x1="195" y1="100" x2="182" y2="108" stroke="#8f8676" stroke-width="0.5"/>
                 <!-- Virtual pair 1 -->
                 <circle cx="196" cy="130" r="4" fill="#9b5247" opacity="0.8"/>
@@ -215,11 +215,11 @@
                 <!-- Escaping particle (arrow outward) -->
                 <line x1="204" y1="122" x2="240" y2="90" stroke="#405477" stroke-width="1.5"/>
                 <polygon points="240,90 232,94 236,100" fill="#405477"/>
-                <text x="248" y="88" font-size="8" fill="#405477" font-family="DM Sans">Escapes!</text>
+                <text x="248" y="88" font-size="8" fill="#405477" font-family="Figtree">Escapes!</text>
                 <!-- Infalling particle (arrow inward) -->
                 <line x1="196" y1="130" x2="170" y2="135" stroke="#9b5247" stroke-width="1.5"/>
                 <polygon points="170,135 178,132 176,138" fill="#9b5247"/>
-                <text x="156" y="130" font-size="7" fill="#9b5247" font-family="DM Sans" text-anchor="end">Falls in</text>
+                <text x="156" y="130" font-size="7" fill="#9b5247" font-family="Figtree" text-anchor="end">Falls in</text>
                 <!-- Virtual pair 2 -->
                 <circle cx="155" cy="196" r="4" fill="#9b5247" opacity="0.8"/>
                 <circle cx="168" cy="200" r="4" fill="#405477" opacity="0.8"/>
@@ -231,9 +231,9 @@
                 <circle cx="140" cy="140" r="72" fill="none" stroke="#406457" stroke-width="0.3" opacity="0.1"/>
                 <!-- Legend -->
                 <circle cx="40" cy="245" r="3" fill="#405477"/>
-                <text x="48" y="248" font-size="8" fill="#5c5549" font-family="DM Sans">Escaping particle</text>
+                <text x="48" y="248" font-size="8" fill="#5c5549" font-family="Figtree">Escaping particle</text>
                 <circle cx="160" cy="245" r="3" fill="#9b5247"/>
-                <text x="168" y="248" font-size="8" fill="#5c5549" font-family="DM Sans">Infalling (negative E)</text>
+                <text x="168" y="248" font-size="8" fill="#5c5549" font-family="Figtree">Infalling (negative E)</text>
             </svg>
         </div>
     </div>
@@ -278,28 +278,28 @@
         </div>
         <div class="diagram-container">
             <svg viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg">
-                <text x="130" y="16" text-anchor="middle" font-size="10" fill="#8f8676" font-family="JetBrains Mono, monospace">Penrose Diagram: Black Hole</text>
+                <text x="130" y="16" text-anchor="middle" font-size="10" fill="#8f8676" font-family="Courier Prime, monospace">Penrose Diagram: Black Hole</text>
                 <!-- Penrose diagram -->
                 <polygon points="130,30 230,130 130,230 30,130" fill="none" stroke="#cac3b2" stroke-width="1.5"/>
                 <!-- Singularity (top, wavy) -->
                 <path d="M75,75 Q90,68 105,75 Q120,82 135,75 Q150,68 165,75 Q180,82 185,75" fill="none" stroke="#9b5247" stroke-width="2"/>
-                <text x="130" y="62" text-anchor="middle" font-size="8" fill="#9b5247" font-family="JetBrains Mono">Singularity (r=0)</text>
+                <text x="130" y="62" text-anchor="middle" font-size="8" fill="#9b5247" font-family="Courier Prime">Singularity (r=0)</text>
                 <!-- Event horizon -->
                 <line x1="130" y1="30" x2="130" y2="230" stroke="#406457" stroke-width="1.5" stroke-dasharray="5,3"/>
-                <text x="148" y="135" font-size="8" fill="#406457" font-family="DM Sans">Event</text>
-                <text x="148" y="145" font-size="8" fill="#406457" font-family="DM Sans">Horizon</text>
+                <text x="148" y="135" font-size="8" fill="#406457" font-family="Figtree">Event</text>
+                <text x="148" y="145" font-size="8" fill="#406457" font-family="Figtree">Horizon</text>
                 <!-- Timelike infinity labels -->
-                <text x="130" y="25" text-anchor="middle" font-size="7" fill="#5c5549" font-family="JetBrains Mono">i+</text>
-                <text x="130" y="242" text-anchor="middle" font-size="7" fill="#5c5549" font-family="JetBrains Mono">i&minus;</text>
-                <text x="240" y="133" font-size="7" fill="#5c5549" font-family="JetBrains Mono">i0</text>
+                <text x="130" y="25" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Courier Prime">i+</text>
+                <text x="130" y="242" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Courier Prime">i&minus;</text>
+                <text x="240" y="133" font-size="7" fill="#5c5549" font-family="Courier Prime">i0</text>
                 <!-- Infalling worldline -->
                 <path d="M90,190 Q100,160 110,130 Q120,100 130,80" fill="none" stroke="#8b6b40" stroke-width="1.5"/>
                 <polygon points="130,80 126,90 132,88" fill="#8b6b40"/>
-                <text x="78" y="195" font-size="7" fill="#8b6b40" font-family="DM Sans">Infalling</text>
-                <text x="78" y="204" font-size="7" fill="#8b6b40" font-family="DM Sans">observer</text>
+                <text x="78" y="195" font-size="7" fill="#8b6b40" font-family="Figtree">Infalling</text>
+                <text x="78" y="204" font-size="7" fill="#8b6b40" font-family="Figtree">observer</text>
                 <!-- Null infinity labels -->
-                <text x="188" y="72" font-size="7" fill="#8f8676" font-family="JetBrains Mono" transform="rotate(45,188,72)">J+</text>
-                <text x="188" y="195" font-size="7" fill="#8f8676" font-family="JetBrains Mono" transform="rotate(-45,188,195)">J&minus;</text>
+                <text x="188" y="72" font-size="7" fill="#8f8676" font-family="Courier Prime" transform="rotate(45,188,72)">J+</text>
+                <text x="188" y="195" font-size="7" fill="#8f8676" font-family="Courier Prime" transform="rotate(-45,188,195)">J&minus;</text>
                 <!-- Interior shading -->
                 <polygon points="130,30 185,75 130,130 75,75" fill="#406457" opacity="0.04"/>
             </svg>
@@ -423,36 +423,36 @@
             <line x1="180" y1="280" x2="520" y2="280" stroke="#cac3b2" stroke-width="0.8" stroke-dasharray="4,4"/>
             <!-- Center: Hawking -->
             <circle cx="350" cy="140" r="28" fill="#e6e2d5" stroke="#406457" stroke-width="2"/>
-            <text x="350" y="136" text-anchor="middle" font-size="10" fill="#406457" font-weight="bold" font-family="DM Sans">Hawking</text>
-            <text x="350" y="148" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">1942&ndash;2018</text>
+            <text x="350" y="136" text-anchor="middle" font-size="10" fill="#406457" font-weight="bold" font-family="Figtree">Hawking</text>
+            <text x="350" y="148" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">1942&ndash;2018</text>
             <!-- Penrose -->
             <circle cx="140" cy="60" r="22" fill="#e6e2d5" stroke="#8b6b40" stroke-width="1.5"/>
-            <text x="140" y="57" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="DM Sans">Penrose</text>
-            <text x="140" y="68" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Singularities</text>
+            <text x="140" y="57" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="Figtree">Penrose</text>
+            <text x="140" y="68" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">Singularities</text>
             <!-- Sciama -->
             <circle cx="560" cy="60" r="22" fill="#e6e2d5" stroke="#405477" stroke-width="1.5"/>
-            <text x="560" y="57" text-anchor="middle" font-size="9" fill="#405477" font-family="DM Sans">Sciama</text>
-            <text x="560" y="68" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">PhD supervisor</text>
+            <text x="560" y="57" text-anchor="middle" font-size="9" fill="#405477" font-family="Figtree">Sciama</text>
+            <text x="560" y="68" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">PhD supervisor</text>
             <!-- Thorne -->
             <circle cx="100" cy="180" r="22" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.5"/>
-            <text x="100" y="177" text-anchor="middle" font-size="9" fill="#9b5247" font-family="DM Sans">Thorne</text>
-            <text x="100" y="188" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Collaborator</text>
+            <text x="100" y="177" text-anchor="middle" font-size="9" fill="#9b5247" font-family="Figtree">Thorne</text>
+            <text x="100" y="188" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">Collaborator</text>
             <!-- Bekenstein -->
             <circle cx="600" cy="180" r="22" fill="#e6e2d5" stroke="#6d5172" stroke-width="1.5"/>
-            <text x="600" y="177" text-anchor="middle" font-size="9" fill="#6d5172" font-family="DM Sans">Bekenstein</text>
-            <text x="600" y="188" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">BH entropy</text>
+            <text x="600" y="177" text-anchor="middle" font-size="9" fill="#6d5172" font-family="Figtree">Bekenstein</text>
+            <text x="600" y="188" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">BH entropy</text>
             <!-- Hartle -->
             <circle cx="180" cy="280" r="22" fill="#e6e2d5" stroke="#3e6252" stroke-width="1.5"/>
-            <text x="180" y="277" text-anchor="middle" font-size="9" fill="#3e6252" font-family="DM Sans">Hartle</text>
-            <text x="180" y="288" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">No-boundary</text>
+            <text x="180" y="277" text-anchor="middle" font-size="9" fill="#3e6252" font-family="Figtree">Hartle</text>
+            <text x="180" y="288" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">No-boundary</text>
             <!-- Ellis -->
             <circle cx="350" cy="290" r="22" fill="#e6e2d5" stroke="#8b6b40" stroke-width="1.5"/>
-            <text x="350" y="287" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="DM Sans">Ellis</text>
-            <text x="350" y="298" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Large Scale Structure</text>
+            <text x="350" y="287" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="Figtree">Ellis</text>
+            <text x="350" y="298" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">Large Scale Structure</text>
             <!-- Preskill -->
             <circle cx="520" cy="280" r="22" fill="#e6e2d5" stroke="#9b5247" stroke-width="1.5"/>
-            <text x="520" y="277" text-anchor="middle" font-size="9" fill="#9b5247" font-family="DM Sans">Preskill</text>
-            <text x="520" y="288" text-anchor="middle" font-size="7" fill="#5c5549" font-family="DM Sans">Info paradox bet</text>
+            <text x="520" y="277" text-anchor="middle" font-size="9" fill="#9b5247" font-family="Figtree">Preskill</text>
+            <text x="520" y="288" text-anchor="middle" font-size="7" fill="#5c5549" font-family="Figtree">Info paradox bet</text>
         </svg>
     </div>
     <p style="text-align:center; font-size:0.48em !important; color:var(--text-muted);">Dashed lines indicate independent parallel work or intellectual rivalry; solid lines indicate direct collaboration or mentorship.</p>
@@ -550,56 +550,56 @@
             <line x1="50" y1="180" x2="750" y2="180" stroke="#cac3b2" stroke-width="2"/>
             <!-- Year markers and events -->
             <circle cx="70" cy="180" r="5" fill="#406457"/>
-            <text x="70" y="200" text-anchor="middle" font-size="9" fill="#406457" font-family="JetBrains Mono">1942</text>
-            <text x="70" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Born in</text>
-            <text x="70" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Oxford</text>
+            <text x="70" y="200" text-anchor="middle" font-size="9" fill="#406457" font-family="Courier Prime">1942</text>
+            <text x="70" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">Born in</text>
+            <text x="70" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">Oxford</text>
 
             <circle cx="155" cy="180" r="5" fill="#9b5247"/>
-            <text x="155" y="200" text-anchor="middle" font-size="9" fill="#9b5247" font-family="JetBrains Mono">1963</text>
-            <text x="155" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">ALS diagnosis</text>
+            <text x="155" y="200" text-anchor="middle" font-size="9" fill="#9b5247" font-family="Courier Prime">1963</text>
+            <text x="155" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="Figtree">ALS diagnosis</text>
 
             <circle cx="230" cy="180" r="5" fill="#8b6b40"/>
-            <text x="230" y="200" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="JetBrains Mono">1966</text>
-            <text x="230" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">PhD thesis</text>
+            <text x="230" y="200" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="Courier Prime">1966</text>
+            <text x="230" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">PhD thesis</text>
 
             <circle cx="310" cy="180" r="5" fill="#405477"/>
-            <text x="310" y="200" text-anchor="middle" font-size="9" fill="#405477" font-family="JetBrains Mono">1970</text>
-            <text x="310" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">Singularity theorems</text>
-            <text x="310" y="230" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">with Penrose</text>
+            <text x="310" y="200" text-anchor="middle" font-size="9" fill="#405477" font-family="Courier Prime">1970</text>
+            <text x="310" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="Figtree">Singularity theorems</text>
+            <text x="310" y="230" text-anchor="middle" font-size="8" fill="#5c5549" font-family="Figtree">with Penrose</text>
 
             <circle cx="400" cy="180" r="5" fill="#406457"/>
-            <text x="400" y="200" text-anchor="middle" font-size="9" fill="#406457" font-family="JetBrains Mono">1974</text>
-            <text x="400" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Hawking</text>
-            <text x="400" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">radiation</text>
+            <text x="400" y="200" text-anchor="middle" font-size="9" fill="#406457" font-family="Courier Prime">1974</text>
+            <text x="400" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">Hawking</text>
+            <text x="400" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">radiation</text>
 
             <circle cx="480" cy="180" r="5" fill="#6d5172"/>
-            <text x="480" y="200" text-anchor="middle" font-size="9" fill="#6d5172" font-family="JetBrains Mono">1979</text>
-            <text x="480" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">Lucasian Professor</text>
+            <text x="480" y="200" text-anchor="middle" font-size="9" fill="#6d5172" font-family="Courier Prime">1979</text>
+            <text x="480" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="Figtree">Lucasian Professor</text>
 
             <circle cx="560" cy="180" r="5" fill="#8b6b40"/>
-            <text x="560" y="200" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="JetBrains Mono">1988</text>
-            <text x="560" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">A Brief History</text>
-            <text x="560" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">of Time</text>
+            <text x="560" y="200" text-anchor="middle" font-size="9" fill="#8b6b40" font-family="Courier Prime">1988</text>
+            <text x="560" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">A Brief History</text>
+            <text x="560" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">of Time</text>
 
             <circle cx="640" cy="180" r="5" fill="#9b5247"/>
-            <text x="640" y="200" text-anchor="middle" font-size="9" fill="#9b5247" font-family="JetBrains Mono">2004</text>
-            <text x="640" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">Concedes info</text>
-            <text x="640" y="230" text-anchor="middle" font-size="8" fill="#5c5549" font-family="DM Sans">paradox bet</text>
+            <text x="640" y="200" text-anchor="middle" font-size="9" fill="#9b5247" font-family="Courier Prime">2004</text>
+            <text x="640" y="220" text-anchor="middle" font-size="8" fill="#5c5549" font-family="Figtree">Concedes info</text>
+            <text x="640" y="230" text-anchor="middle" font-size="8" fill="#5c5549" font-family="Figtree">paradox bet</text>
 
             <circle cx="720" cy="180" r="5" fill="#406457"/>
-            <text x="720" y="200" text-anchor="middle" font-size="9" fill="#406457" font-family="JetBrains Mono">2018</text>
-            <text x="720" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Dies in</text>
-            <text x="720" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="DM Sans">Cambridge</text>
+            <text x="720" y="200" text-anchor="middle" font-size="9" fill="#406457" font-family="Courier Prime">2018</text>
+            <text x="720" y="165" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">Dies in</text>
+            <text x="720" y="155" text-anchor="middle" font-size="8" fill="#262019" font-family="Figtree">Cambridge</text>
 
             <!-- Era brackets -->
             <rect x="55" y="260" width="200" height="30" rx="4" fill="rgba(64,100,87,0.08)" stroke="#406457" stroke-width="0.5"/>
-            <text x="155" y="280" text-anchor="middle" font-size="8" fill="#406457" font-family="DM Sans">Formation &amp; Singularities</text>
+            <text x="155" y="280" text-anchor="middle" font-size="8" fill="#406457" font-family="Figtree">Formation &amp; Singularities</text>
 
             <rect x="270" y="260" width="230" height="30" rx="4" fill="rgba(139,107,64,0.08)" stroke="#8b6b40" stroke-width="0.5"/>
-            <text x="385" y="280" text-anchor="middle" font-size="8" fill="#8b6b40" font-family="DM Sans">Black Holes &amp; Radiation</text>
+            <text x="385" y="280" text-anchor="middle" font-size="8" fill="#8b6b40" font-family="Figtree">Black Holes &amp; Radiation</text>
 
             <rect x="515" y="260" width="220" height="30" rx="4" fill="rgba(109,81,114,0.08)" stroke="#6d5172" stroke-width="0.5"/>
-            <text x="625" y="280" text-anchor="middle" font-size="8" fill="#6d5172" font-family="DM Sans">Public Science &amp; Legacy</text>
+            <text x="625" y="280" text-anchor="middle" font-size="8" fill="#6d5172" font-family="Figtree">Public Science &amp; Legacy</text>
         </svg>
     </div>
 </section>
