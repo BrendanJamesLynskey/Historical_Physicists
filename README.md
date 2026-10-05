@@ -186,7 +186,7 @@ Historical_Physicists/
 
 Dark theme with consistent visual language across all 37 presentations:
 
-- **Fonts:** Playfair Display (headings) · DM Sans (body) · JetBrains Mono (code/labels)
+- **Fonts:** Cormorant Garamond (headings) · Figtree (body) · Courier Prime (code/labels)
 - **Background:** `#0a0a0f`
 - **Accents:** Amber `#d4a053` · Green `#4ecca3` · Purple `#9b72cf` · Rose `#cf7272` · Blue `#5b8cd4` · Teal `#3ec9b0` · Gold `#e8b84b` · Copper `#c97b4b`
 - **Diagrams:** Inline SVG with physical illustrations, concept maps, influence diagrams, and timelines
